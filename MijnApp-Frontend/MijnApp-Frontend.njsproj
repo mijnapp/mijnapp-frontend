@@ -425,6 +425,7 @@
     <Content Include="src\sw-loader.js" />
     <Content Include="test\suites\sk-app.html" />
     <Content Include="wct.conf.js" />
+    <Content Include="Web.config" />
     <Content Include="webpack.config.js" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
