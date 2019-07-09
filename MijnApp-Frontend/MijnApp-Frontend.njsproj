@@ -1,0 +1,469 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>MijnApp-Frontend</Name>
+    <RootNamespace>MijnApp-Frontend</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>48506098-642d-4c2e-a4f6-244a991eec51</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>
+    </StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <NodejsPort>1337</NodejsPort>
+    <StartWebBrowser>true</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="src\" />
+    <Folder Include="src\assets\" />
+    <Folder Include="src\assets\fonts\" />
+    <Folder Include="src\assets\icons\" />
+    <Folder Include="src\assets\media\" />
+    <Folder Include="src\components\" />
+    <Folder Include="src\components\application\" />
+    <Folder Include="src\components\application\maf-app\" />
+    <Folder Include="src\components\application\maf-screen-avg-logs\" />
+    <Folder Include="src\components\application\maf-screen-avg-log\" />
+    <Folder Include="src\components\application\maf-screen-contracts\" />
+    <Folder Include="src\components\application\maf-screen-contract\" />
+    <Folder Include="src\components\application\maf-screen-home\" />
+    <Folder Include="src\components\application\maf-screen-journeys\" />
+    <Folder Include="src\components\application\maf-screen-journey\" />
+    <Folder Include="src\components\application\maf-screen-person-data\" />
+    <Folder Include="src\components\application\maf-screen-signin\" />
+    <Folder Include="src\components\helpers\" />
+    <Folder Include="src\components\lib\" />
+    <Folder Include="src\components\lib\maki-icons\" />
+    <Folder Include="src\components\lib\maki-icons\maki-icon-add\" />
+    <Folder Include="src\components\lib\maki-icons\maki-icon-back-arrow\" />
+    <Folder Include="src\components\lib\maki-icons\maki-icon-bell\" />
+    <Folder Include="src\components\lib\maki-icons\maki-icon-chat\" />
+    <Folder Include="src\components\lib\maki-icons\maki-icon-check\" />
+    <Folder Include="src\components\lib\maki-icons\maki-icon-cross\" />
+    <Folder Include="src\components\lib\maki-icons\maki-icon-drop-down-arrow\" />
+    <Folder Include="src\components\lib\maki-icons\maki-icon-duplicate\" />
+    <Folder Include="src\components\lib\maki-icons\maki-icon-edit\" />
+    <Folder Include="src\components\lib\maki-icons\maki-icon-home\" />
+    <Folder Include="src\components\lib\maki-icons\maki-icon-large-add\" />
+    <Folder Include="src\components\lib\maki-icons\maki-icon-large-cross\" />
+    <Folder Include="src\components\lib\maki-icons\maki-icon-left-arrow\" />
+    <Folder Include="src\components\lib\maki-icons\maki-icon-lock\" />
+    <Folder Include="src\components\lib\maki-icons\maki-icon-play\" />
+    <Folder Include="src\components\lib\maki-icons\maki-icon-right-arrow\" />
+    <Folder Include="src\components\lib\maki-icons\maki-icon-search\" />
+    <Folder Include="src\components\lib\maki-icons\maki-icon-small-add\" />
+    <Folder Include="src\components\lib\maki-icons\maki-icon-small-cross\" />
+    <Folder Include="src\components\lib\maki-icons\maki-icon-small-drop-down-arrow\" />
+    <Folder Include="src\components\lib\maki-icons\maki-icon-template\" />
+    <Folder Include="src\components\lib\maki-icons\maki-icon-thin-drop-down-arrow\" />
+    <Folder Include="src\components\lib\maki-icons\maki-icon-warn\" />
+    <Folder Include="src\components\lib\maki\" />
+    <Folder Include="src\components\lib\maki\maki-button\" />
+    <Folder Include="src\components\lib\maki\maki-card\" />
+    <Folder Include="src\components\lib\maki\maki-clickable\" />
+    <Folder Include="src\components\lib\maki\maki-drop-down\" />
+    <Folder Include="src\components\lib\maki\maki-header\" />
+    <Folder Include="src\components\lib\maki\maki-input\" />
+    <Folder Include="src\components\lib\maki\maki-paper\" />
+    <Folder Include="src\components\lib\maki\maki-shaded-paper\" />
+    <Folder Include="src\components\lib\maki\maki-tab-button\" />
+    <Folder Include="src\components\lib\maki\maki-theme-provider\" />
+    <Folder Include="src\components\lib\playback-screen-wrapper\" />
+    <Folder Include="src\components\lib\playback-screens\" />
+    <Folder Include="src\components\lib\playback-screens\playback-screen-agree\" />
+    <Folder Include="src\components\lib\playback-screens\playback-screen-calendar\" />
+    <Folder Include="src\components\lib\playback-screens\playback-screen-end\" />
+    <Folder Include="src\components\lib\playback-screens\playback-screen-error\" />
+    <Folder Include="src\components\lib\playback-screens\playback-screen-multiple-text\" />
+    <Folder Include="src\components\lib\playback-screens\playback-screen-multiple\" />
+    <Folder Include="src\components\lib\playback-screens\playback-screen-radio-buttons\" />
+    <Folder Include="src\components\lib\playback-screens\playback-screen-single\" />
+    <Folder Include="src\components\lib\playback-screens\playback-screen-start\" />
+    <Folder Include="src\components\lib\playback-screens\playback-screen-template\" />
+    <Folder Include="src\components\lib\playback-screens\playback-screen-text\" />
+    <Folder Include="src\components\lib\playback-screens\playback-screen-video\" />
+    <Folder Include="src\components\objects\" />
+    <Folder Include="src\components\objects\maf-screen\" />
+    <Folder Include="src\components\objects\maf-template\" />
+    <Folder Include="src\components\objects\sk-app\" />
+    <Folder Include="src\components\objects\sk-button\" />
+    <Folder Include="src\dev\" />
+    <Folder Include="src\global-style\" />
+    <Folder Include="src\global-style\basics\" />
+    <Folder Include="src\global-style\keyframes\" />
+    <Folder Include="src\helpers\" />
+    <Folder Include="src\redux\" />
+    <Folder Include="src\redux\actions\" />
+    <Folder Include="src\redux\api\" />
+    <Folder Include="src\redux\helpers\" />
+    <Folder Include="src\redux\reducers\" />
+    <Folder Include="src\redux\sagas\" />
+    <Folder Include="test\" />
+    <Folder Include="test\suites\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".editorconfig" />
+    <Content Include=".eslintrc.json" />
+    <Content Include=".npmrc" />
+    <Content Include=".stylelintrc" />
+    <Content Include=".travis.yml" />
+    <Content Include=".yarnrc" />
+    <Content Include="LICENCE.md" />
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
+    <Content Include="postcss.config.js" />
+    <Content Include="README.md" />
+    <Content Include="src\assets\AnimatedSkeleton.svg" />
+    <Content Include="src\assets\back.svg" />
+    <Content Include="src\assets\backWhite.svg" />
+    <Content Include="src\assets\checkBox.svg" />
+    <Content Include="src\assets\fonts\HKGrotesk-Bold.woff" />
+    <Content Include="src\assets\fonts\HKGrotesk-Bold.woff2" />
+    <Content Include="src\assets\fonts\HKGrotesk-BoldItalic.woff" />
+    <Content Include="src\assets\fonts\HKGrotesk-BoldItalic.woff2" />
+    <Content Include="src\assets\fonts\HKGrotesk-Italic.woff" />
+    <Content Include="src\assets\fonts\HKGrotesk-Italic.woff2" />
+    <Content Include="src\assets\fonts\HKGrotesk-Light.woff" />
+    <Content Include="src\assets\fonts\HKGrotesk-Light.woff2" />
+    <Content Include="src\assets\fonts\HKGrotesk-LightItalic.woff" />
+    <Content Include="src\assets\fonts\HKGrotesk-LightItalic.woff2" />
+    <Content Include="src\assets\fonts\HKGrotesk-Medium.woff" />
+    <Content Include="src\assets\fonts\HKGrotesk-Medium.woff2" />
+    <Content Include="src\assets\fonts\HKGrotesk-MediumItalic.woff" />
+    <Content Include="src\assets\fonts\HKGrotesk-MediumItalic.woff2" />
+    <Content Include="src\assets\fonts\HKGrotesk-Regular.woff" />
+    <Content Include="src\assets\fonts\HKGrotesk-Regular.woff2" />
+    <Content Include="src\assets\fonts\HKGrotesk-SemiBold.woff" />
+    <Content Include="src\assets\fonts\HKGrotesk-SemiBold.woff2" />
+    <Content Include="src\assets\fonts\HKGrotesk-SemiBoldItalic.woff" />
+    <Content Include="src\assets\fonts\HKGrotesk-SemiBoldItalic.woff2" />
+    <Content Include="src\assets\fonts\stylesheet.css" />
+    <Content Include="src\assets\icons\apple-touch-icon.png" />
+    <Content Include="src\assets\icons\browserconfig.xml" />
+    <Content Include="src\assets\icons\favicon-32x32.ico" />
+    <Content Include="src\assets\icons\favicon-32x32.png" />
+    <Content Include="src\assets\icons\icon-128x128.png" />
+    <Content Include="src\assets\icons\icon-144x144.png" />
+    <Content Include="src\assets\icons\icon-152x152.png" />
+    <Content Include="src\assets\icons\icon-192x192.png" />
+    <Content Include="src\assets\icons\icon-384x384.png" />
+    <Content Include="src\assets\icons\icon-512x512.png" />
+    <Content Include="src\assets\icons\icon-72x72.png" />
+    <Content Include="src\assets\icons\icon-96x96.png" />
+    <Content Include="src\assets\icons\mstile-150x150.png" />
+    <Content Include="src\assets\icons\safari-pinned-tab.svg" />
+    <Content Include="src\assets\itsme-login-button.svg" />
+    <Content Include="src\assets\logo-itsme.svg" />
+    <Content Include="src\assets\logo.svg" />
+    <Content Include="src\assets\media\Basisgegevens.svg" />
+    <Content Include="src\assets\media\Contracten.svg" />
+    <Content Include="src\assets\media\Inloggen.svg" />
+    <Content Include="src\assets\media\Machtigingen.svg" />
+    <Content Include="src\assets\media\Passen.svg" />
+    <Content Include="src\assets\phone.svg" />
+    <Content Include="src\assets\radio.svg" />
+    <Content Include="src\components\application\maf-app\index.js" />
+    <Content Include="src\components\application\maf-app\style.pcss" />
+    <Content Include="src\components\application\maf-app\template.html" />
+    <Content Include="src\components\application\maf-screen-avg-logs\index.js" />
+    <Content Include="src\components\application\maf-screen-avg-logs\style.pcss" />
+    <Content Include="src\components\application\maf-screen-avg-logs\template.html" />
+    <Content Include="src\components\application\maf-screen-avg-log\index.js" />
+    <Content Include="src\components\application\maf-screen-avg-log\style.pcss" />
+    <Content Include="src\components\application\maf-screen-avg-log\template.html" />
+    <Content Include="src\components\application\maf-screen-contracts\index.js" />
+    <Content Include="src\components\application\maf-screen-contracts\style.pcss" />
+    <Content Include="src\components\application\maf-screen-contracts\template.html" />
+    <Content Include="src\components\application\maf-screen-contract\index.js" />
+    <Content Include="src\components\application\maf-screen-contract\style.pcss" />
+    <Content Include="src\components\application\maf-screen-contract\template.html" />
+    <Content Include="src\components\application\maf-screen-home\index.js" />
+    <Content Include="src\components\application\maf-screen-home\style.pcss" />
+    <Content Include="src\components\application\maf-screen-home\template.html" />
+    <Content Include="src\components\application\maf-screen-journeys\index.js" />
+    <Content Include="src\components\application\maf-screen-journeys\style.pcss" />
+    <Content Include="src\components\application\maf-screen-journeys\template.html" />
+    <Content Include="src\components\application\maf-screen-journey\index.js" />
+    <Content Include="src\components\application\maf-screen-journey\style.pcss" />
+    <Content Include="src\components\application\maf-screen-journey\template.html" />
+    <Content Include="src\components\application\maf-screen-person-data\index.js" />
+    <Content Include="src\components\application\maf-screen-person-data\style.pcss" />
+    <Content Include="src\components\application\maf-screen-person-data\template.html" />
+    <Content Include="src\components\application\maf-screen-signin\index.js" />
+    <Content Include="src\components\application\maf-screen-signin\style.pcss" />
+    <Content Include="src\components\application\maf-screen-signin\template.html" />
+    <Content Include="src\components\helpers\dutchDate.js" />
+    <Content Include="src\components\helpers\palettes.js" />
+    <Content Include="src\components\helpers\regex.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-add\index.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-add\style.pcss" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-add\template.html" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-back-arrow\index.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-back-arrow\style.pcss" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-back-arrow\template.html" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-bell\index.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-bell\style.pcss" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-bell\template.html" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-chat\index.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-chat\style.pcss" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-chat\template.html" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-check\index.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-check\style.pcss" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-check\template.html" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-cross\index.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-cross\style.pcss" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-cross\template.html" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-drop-down-arrow\index.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-drop-down-arrow\style.pcss" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-drop-down-arrow\template.html" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-duplicate\index.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-duplicate\style.pcss" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-duplicate\template.html" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-edit\index.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-edit\style.pcss" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-edit\template.html" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-home\index.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-home\style.pcss" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-home\template.html" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-large-add\index.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-large-add\style.pcss" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-large-add\template.html" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-large-cross\index.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-large-cross\style.pcss" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-large-cross\template.html" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-left-arrow\index.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-left-arrow\style.pcss" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-left-arrow\template.html" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-lock\index.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-lock\style.pcss" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-lock\template.html" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-play\index.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-play\style.pcss" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-play\template.html" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-right-arrow\index.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-right-arrow\style.pcss" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-right-arrow\template.html" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-search\index.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-search\style.pcss" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-search\template.html" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-small-add\index.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-small-add\style.pcss" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-small-add\template.html" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-small-cross\index.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-small-cross\style.pcss" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-small-cross\template.html" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-small-drop-down-arrow\index.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-small-drop-down-arrow\style.pcss" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-small-drop-down-arrow\template.html" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-template\index.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-template\style.pcss" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-template\template.html" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-thin-drop-down-arrow\index.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-thin-drop-down-arrow\style.pcss" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-thin-drop-down-arrow\template.html" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-warn\index.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-warn\style.pcss" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-warn\template.html" />
+    <Content Include="src\components\lib\maki\maki-button\index.js" />
+    <Content Include="src\components\lib\maki\maki-button\README.md" />
+    <Content Include="src\components\lib\maki\maki-button\style.pcss" />
+    <Content Include="src\components\lib\maki\maki-button\template.html" />
+    <Content Include="src\components\lib\maki\maki-card\index.js" />
+    <Content Include="src\components\lib\maki\maki-card\README.md" />
+    <Content Include="src\components\lib\maki\maki-card\style.pcss" />
+    <Content Include="src\components\lib\maki\maki-card\template.html" />
+    <Content Include="src\components\lib\maki\maki-clickable\index.js" />
+    <Content Include="src\components\lib\maki\maki-clickable\README.md" />
+    <Content Include="src\components\lib\maki\maki-clickable\style.pcss" />
+    <Content Include="src\components\lib\maki\maki-clickable\template.html" />
+    <Content Include="src\components\lib\maki\maki-drop-down\index.js" />
+    <Content Include="src\components\lib\maki\maki-drop-down\style.pcss" />
+    <Content Include="src\components\lib\maki\maki-drop-down\template.html" />
+    <Content Include="src\components\lib\maki\maki-header\index.js" />
+    <Content Include="src\components\lib\maki\maki-header\style.pcss" />
+    <Content Include="src\components\lib\maki\maki-header\template.html" />
+    <Content Include="src\components\lib\maki\maki-input\index.js" />
+    <Content Include="src\components\lib\maki\maki-input\style.pcss" />
+    <Content Include="src\components\lib\maki\maki-input\template.html" />
+    <Content Include="src\components\lib\maki\maki-paper\index.js" />
+    <Content Include="src\components\lib\maki\maki-paper\README.md" />
+    <Content Include="src\components\lib\maki\maki-paper\style.pcss" />
+    <Content Include="src\components\lib\maki\maki-paper\template.html" />
+    <Content Include="src\components\lib\maki\maki-shaded-paper\index.js" />
+    <Content Include="src\components\lib\maki\maki-shaded-paper\README.md" />
+    <Content Include="src\components\lib\maki\maki-shaded-paper\style.pcss" />
+    <Content Include="src\components\lib\maki\maki-shaded-paper\template.html" />
+    <Content Include="src\components\lib\maki\maki-tab-button\index.js" />
+    <Content Include="src\components\lib\maki\maki-tab-button\README.md" />
+    <Content Include="src\components\lib\maki\maki-tab-button\style.pcss" />
+    <Content Include="src\components\lib\maki\maki-tab-button\template.html" />
+    <Content Include="src\components\lib\maki\maki-theme-provider\index.js" />
+    <Content Include="src\components\lib\maki\maki-theme-provider\style.pcss" />
+    <Content Include="src\components\lib\maki\maki-theme-provider\template.html" />
+    <Content Include="src\components\lib\playback-screen-wrapper\index.js" />
+    <Content Include="src\components\lib\playback-screen-wrapper\style.pcss" />
+    <Content Include="src\components\lib\playback-screen-wrapper\template.html" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-agree\index.js" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-agree\style.pcss" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-agree\template.html" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-calendar\index.js" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-calendar\style.pcss" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-calendar\template.html" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-end\index.js" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-end\style.pcss" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-end\template.html" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-error\index.js" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-error\style.pcss" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-error\template.html" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-multiple-text\index.js" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-multiple-text\style.pcss" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-multiple-text\template.html" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-multiple\index.js" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-multiple\style.pcss" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-multiple\template.html" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-radio-buttons\index.js" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-radio-buttons\style.pcss" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-radio-buttons\template.html" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-single\index.js" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-single\style.pcss" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-single\template.html" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-start\index.js" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-start\style.pcss" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-start\template.html" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-template\index.js" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-template\style.pcss" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-template\template.html" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-text\index.js" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-text\style.pcss" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-text\template.html" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-video\index.js" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-video\style.pcss" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-video\template.html" />
+    <Content Include="src\components\objects\maf-screen\index.js" />
+    <Content Include="src\components\objects\maf-screen\style.pcss" />
+    <Content Include="src\components\objects\maf-screen\template.html" />
+    <Content Include="src\components\objects\maf-template\index.js" />
+    <Content Include="src\components\objects\maf-template\style.pcss" />
+    <Content Include="src\components\objects\maf-template\template.html" />
+    <Content Include="src\components\objects\sk-app\index.js" />
+    <Content Include="src\components\objects\sk-app\style.pcss" />
+    <Content Include="src\components\objects\sk-app\template.html" />
+    <Content Include="src\components\objects\sk-button\index.js" />
+    <Content Include="src\components\objects\sk-button\style.pcss" />
+    <Content Include="src\components\objects\sk-button\template.html" />
+    <Content Include="src\dev\test.js" />
+    <Content Include="src\global-style\basics\helpers.pcss" />
+    <Content Include="src\global-style\basics\links.pcss" />
+    <Content Include="src\global-style\basics\media-queries.pcss" />
+    <Content Include="src\global-style\basics\typography.pcss" />
+    <Content Include="src\global-style\keyframes\fadeIn.pcss" />
+    <Content Include="src\helpers\common.js" />
+    <Content Include="src\helpers\palettes.js" />
+    <Content Include="src\helpers\uuid.js" />
+    <Content Include="src\index.html" />
+    <Content Include="src\index.js" />
+    <Content Include="src\manifest.json" />
+    <Content Include="src\redux\actions\application.js" />
+    <Content Include="src\redux\actions\avgLog.js" />
+    <Content Include="src\redux\actions\avgLogs.js" />
+    <Content Include="src\redux\actions\contract.js" />
+    <Content Include="src\redux\actions\contracts.js" />
+    <Content Include="src\redux\actions\journey.js" />
+    <Content Include="src\redux\actions\journeys.js" />
+    <Content Include="src\redux\actions\jwt.js" />
+    <Content Include="src\redux\actions\oauth.js" />
+    <Content Include="src\redux\actions\order.js" />
+    <Content Include="src\redux\actions\orders.js" />
+    <Content Include="src\redux\actions\person.js" />
+    <Content Include="src\redux\api\avgLogs.js" />
+    <Content Include="src\redux\api\contracts.js" />
+    <Content Include="src\redux\api\jwt.js" />
+    <Content Include="src\redux\api\oauth.js" />
+    <Content Include="src\redux\api\orders.js" />
+    <Content Include="src\redux\api\person.js" />
+    <Content Include="src\redux\helpers\headers.js" />
+    <Content Include="src\redux\reducers\application.js" />
+    <Content Include="src\redux\reducers\avgLog.js" />
+    <Content Include="src\redux\reducers\avgLogs.js" />
+    <Content Include="src\redux\reducers\contract.js" />
+    <Content Include="src\redux\reducers\contracts.js" />
+    <Content Include="src\redux\reducers\index.js" />
+    <Content Include="src\redux\reducers\journey.js" />
+    <Content Include="src\redux\reducers\journeys.js" />
+    <Content Include="src\redux\reducers\jwt.js" />
+    <Content Include="src\redux\reducers\oauth.js" />
+    <Content Include="src\redux\reducers\order.js" />
+    <Content Include="src\redux\reducers\person.js" />
+    <Content Include="src\redux\sagas\application.js" />
+    <Content Include="src\redux\sagas\avgLog.js" />
+    <Content Include="src\redux\sagas\avgLogs.js" />
+    <Content Include="src\redux\sagas\contract.js" />
+    <Content Include="src\redux\sagas\contracts.js" />
+    <Content Include="src\redux\sagas\index.js" />
+    <Content Include="src\redux\sagas\journey.js" />
+    <Content Include="src\redux\sagas\jwt.js" />
+    <Content Include="src\redux\sagas\oauth.js" />
+    <Content Include="src\redux\sagas\orders.js" />
+    <Content Include="src\redux\sagas\person.js" />
+    <Content Include="src\redux\saver.js" />
+    <Content Include="src\redux\store.js" />
+    <Content Include="src\sw-loader.js" />
+    <Content Include="test\suites\sk-app.html" />
+    <Content Include="wct.conf.js" />
+    <Content Include="webpack.config.js" />
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
