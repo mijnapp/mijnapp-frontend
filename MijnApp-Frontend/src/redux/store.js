@@ -11,6 +11,8 @@ export const BASE_URL_API = (() => {
   switch (window.location.hostname) {
     case 'demo.mijn-app.io':
       return 'https://api.mijn-app.io/v1';
+    case 'mijnappfrontend.z6.web.core.windows.net':
+      return 'https://mijnappbackend-dev.azurewebsites.net';
     default:
       //return `http://${window.location.hostname}/v1`;
       return `http://localhost:5000`;
