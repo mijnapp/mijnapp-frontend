@@ -16,13 +16,7 @@ module.exports = () => ({
     require('postcss-custom-media'),
     require('postcss-selector-not'),
     require('postcss-discard-comments'),
-    require('autoprefixer')({
-      browsers: [
-        '>=1%',
-        'not ie 11',
-        'not op_mini all'
-      ]
-    }),
+    require('autoprefixer'),
     require('cssnano')({
       preset: 'default'
     }),
