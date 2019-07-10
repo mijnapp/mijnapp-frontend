@@ -88,6 +88,11 @@ const copyStatics = {
       to: OUTPUT_PATH,
       flatten: true,
     },
+    {
+      from: resolve('./src/config/config.json'),
+      to: OUTPUT_PATH,
+      flatten: true,
+    },
   ],
 };
 

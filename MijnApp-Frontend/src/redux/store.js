@@ -4,19 +4,30 @@ import { loadState, saveState } from './saver';
 import createSagaMiddleware from 'redux-saga';
 import reducers from './reducers';
 import sagas from './sagas';
+import mijnAppConfiguration from "../config/config"
+
+const path = require('path');
 
 import { setJourneys } from './actions/journeys';
 
 export const BASE_URL_API = (() => {
-  switch (window.location.hostname) {
-    case 'demo.mijn-app.io':
-      return 'https://api.mijn-app.io/v1';
-    case 'mijnappfrontend.z6.web.core.windows.net':
-      return 'https://mijnappbackend-dev.azurewebsites.net';
-    default:
-      //return `http://${window.location.hostname}/v1`;
-      return `http://localhost:5000`;
+
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.open('GET', 'config.json', false);
+  if (xmlhttp.overrideMimeType) {
+    xmlhttp.overrideMimeType('application\\json');
   }
+  xmlhttp.send();
+  if (xmlhttp.status == 200) {
+    var configuration = JSON.parse(xmlhttp.responseText);
+    return configuration.BACKEND_URL;
+  }
+  else {
+    return 'https://localhost:5000/';
+  }
+
+
+  return mijnAppConfiguration().BACKEND_URL;
 })();
 
 // Init middlewares.

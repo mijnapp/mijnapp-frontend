@@ -29,6 +29,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Folder Include="src\config\" />
     <Folder Include="src\" />
     <Folder Include="src\assets\" />
     <Folder Include="src\assets\fonts\" />
@@ -377,6 +378,7 @@
     <Content Include="src\helpers\uuid.js" />
     <Content Include="src\index.html" />
     <Content Include="src\index.js" />
+    <Content Include="src\config\config.json" />
     <Content Include="src\manifest.json" />
     <Content Include="src\redux\actions\application.js" />
     <Content Include="src\redux\actions\avgLog.js" />
