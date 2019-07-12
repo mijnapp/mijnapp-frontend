@@ -23,7 +23,7 @@ export const BASE_URL_API = (() => {
     return configuration.BACKEND_URL;
   }
   else {
-    return 'https://localhost:5000/';
+    return 'http://localhost:5000/';
   }
 
 
