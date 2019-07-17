@@ -64,7 +64,7 @@ export default class MafScreenContract extends connect(store)(PolymerElement) {
     store.dispatch(selectPage('contracts'));
   }
 
-  _stateChanged(state) {
+  stateChanged(state) {
     this.contract = state.contract.data;
   }
 }

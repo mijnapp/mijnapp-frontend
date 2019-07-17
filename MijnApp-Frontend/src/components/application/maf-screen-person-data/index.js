@@ -37,7 +37,7 @@ export default class MafScreenPersonData extends connect(store)(
     return toDutchDate(date);
   }
 
-  _stateChanged(state) {
+  stateChanged(state) {
     if (state.person.data != undefined) {
       this.personData = state.person.data;
     }

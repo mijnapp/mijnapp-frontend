@@ -43,7 +43,7 @@ export default class MafScreenJourneys extends connect(store)(PolymerElement) {
     makiInput.shadowRoot.querySelector('.Input').focus();
   }
 
-  _stateChanged(state) {
+  stateChanged(state) {
     this.journeys = state.journeys.data;
   }
 }

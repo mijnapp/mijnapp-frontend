@@ -104,7 +104,7 @@ export default class MafScreenHome extends connect(store)(PolymerElement) {
     }, 5000);
   }
 
-  _stateChanged(state) {
+  stateChanged(state) {
     if (state != undefined && state.jwt.data.user != undefined) {
       this.userID = state.jwt.data.user.id;
       this.loggedInWithItsMe = state.oauth.provider === 'itsme';

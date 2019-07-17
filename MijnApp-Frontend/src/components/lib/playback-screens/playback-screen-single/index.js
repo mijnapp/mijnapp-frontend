@@ -63,7 +63,7 @@ export default class PlaybackScreenSingle extends connect(store)(
     return null;
   }
 
-  _stateChanged(state) {
+  stateChanged(state) {
     this.journey = state.journey;
     this.id =
       state.order.current === JOURNEY_START

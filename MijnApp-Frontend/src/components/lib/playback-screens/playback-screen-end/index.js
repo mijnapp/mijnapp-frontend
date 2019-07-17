@@ -72,7 +72,7 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
     return false;
   }
 
-  _stateChanged(state) {
+  stateChanged(state) {
     this.journey = state.journey;
     this.current = state.order.current;
     this.id = this.current === JOURNEY_START ? JOURNEY_START : JOURNEY_END;

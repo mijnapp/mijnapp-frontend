@@ -67,7 +67,7 @@ export default class MafScreenAvgLogs extends connect(store)(PolymerElement) {
     }
   }
 
-  _stateChanged(state) {
+  stateChanged(state) {
     this.cards = state.avgLogs.data;
   }
 }

@@ -60,7 +60,7 @@ export default class MafScreenContracts extends connect(store)(PolymerElement) {
     }
   }
 
-  _stateChanged(state) {
+  stateChanged(state) {
     this.cards = state.contracts.data;
   }
 }

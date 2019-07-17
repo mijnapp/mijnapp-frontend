@@ -83,7 +83,7 @@ export default class PlaybackScreenWrapper extends connect(store)(
     store.dispatch(orderPrev());
   }
 
-  _stateChanged(state) {
+  stateChanged(state) {
     this.journey = state.journey;
     this.id =
       state.order.current === JOURNEY_START
