@@ -68,7 +68,7 @@ export default class PlaybackScreenText extends connect(store)(PolymerElement) {
     return !this._getValue(order);
   }
 
-  _stateChanged(state) {
+  stateChanged(state) {
     this.journey = state.journey;
     this.current = state.order.current;
     this.id =

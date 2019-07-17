@@ -135,7 +135,7 @@ export default class MafApp extends connect(store)(PolymerElement) {
     }
   }
 
-  _stateChanged(state) {
+  stateChanged(state) {
     this.page = state.application.page;
     if (
       state.application.page != undefined &&

@@ -104,7 +104,7 @@ export default class PlaybackScreenMultiple extends connect(store)(
     return false;
   }
 
-  _stateChanged(state) {
+  stateChanged(state) {
     this.journey = state.journey;
     this.current = state.order.current;
     this.id =

@@ -70,7 +70,7 @@ export default class PlaybackScreenAgree extends connect(store)(
     return order && order.value ? false : true;
   }
 
-  _stateChanged(state) {
+  stateChanged(state) {
     this.journey = state.journey;
     this.current = state.order.current;
     this.id =

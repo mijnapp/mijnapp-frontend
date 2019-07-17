@@ -63,7 +63,7 @@ export default class MafScreenSignin extends connect(store)(PolymerElement) {
     store.dispatch(requestOAuthInit('itsme'));
   }
 
-  _stateChanged(state) {
+  stateChanged(state) {
     this.jwtError = state.jwt.error;
   }
 }

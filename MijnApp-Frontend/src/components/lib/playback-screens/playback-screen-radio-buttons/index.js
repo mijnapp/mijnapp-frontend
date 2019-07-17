@@ -95,7 +95,7 @@ export default class PlaybackScreenRadioButtons extends connect(store)(
     );
   }
 
-  _stateChanged(state) {
+  stateChanged(state) {
     this.journey = state.journey;
     this.current = state.order.current;
     this.id =
