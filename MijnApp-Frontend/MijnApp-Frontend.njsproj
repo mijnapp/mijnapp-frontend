@@ -169,6 +169,7 @@
     <Content Include="src\assets\icons\mstile-150x150.png" />
     <Content Include="src\assets\icons\safari-pinned-tab.svg" />
     <Content Include="src\assets\itsme-login-button.svg" />
+    <Content Include="src\assets\logo-digid.svg" />
     <Content Include="src\assets\logo-itsme.svg" />
     <Content Include="src\assets\logo.svg" />
     <Content Include="src\assets\media\Basisgegevens.svg" />

@@ -4,14 +4,20 @@
     <img src="/assets/media/Inloggen.svg" class="loginImage"/>
   </div>
   <div class="loginContent">
-    <img src="/assets/itsme-login-button.svg" class="loginSelectButton noselect" on-click="_signInWithItsMe"/>
+    <div class="loginDigidButton" on-click="_signInWithItsDigiD">
+      <img src="/assets/logo-digid.svg" class="loginSelectButton noselect" />
+      <div>
+        <div class="loginDigidButtonHeader">Inloggen bij</div>
+        <div class="loginDigidButtonSubHeader">Mijn-app</div>
+      </div>
+    </div>
 
     <span class="loginDivider"><u>of</u></span>
 
     <paper-input value="{{username}}" label="E-mail" auto-validate type="email"
-                   on-input="_onChangeHandler"></paper-input>
+                 on-input="_onChangeHandler"></paper-input>
     <paper-input value="{{password}}" label="Wachtwoord" type="password"
-                   on-input="_onChangeHandler"></paper-input>
+                 on-input="_onChangeHandler"></paper-input>
     <!-- <div class="loginForgot">Wachtwoord vergeten?</div> -->
   </div>
   <dom-if if="[[_showLoginWarning(jwtError)]]">
