@@ -16,43 +16,45 @@
     <dom-if if="[[_showTabs(page)]]">
       <template>
         <div class="TabSwitcher">
-          <div class="TabSwitcherTab" on-click="_goHome">
-            <div class="TabSwitcherTabIcon">
-              <maki-icon-home></maki-icon-home>
-            </div>
-            <div class="TabSwitcherTabText">
-              <div class="TabSwitcherTabTextInner">
-                Home
+          <div class="TabSwitcherWrapper">
+            <div class="TabSwitcherTab" on-click="_goHome">
+              <div class="TabSwitcherTabIcon">
+                <maki-icon-home></maki-icon-home>
+              </div>
+              <div class="TabSwitcherTabText">
+                <div class="TabSwitcherTabTextInner">
+                  Home
+                </div>
               </div>
             </div>
-          </div>
-          <div class="TabSwitcherTab" on-click="_goJourneys">
-            <div class="TabSwitcherTabIcon">
-              <maki-icon-search></maki-icon-search>
-            </div>
-            <div class="TabSwitcherTabText">
-              <div class="TabSwitcherTabTextInner">
-                Klantvragen
+            <div class="TabSwitcherTab" on-click="_goJourneys">
+              <div class="TabSwitcherTabIcon">
+                <maki-icon-search></maki-icon-search>
+              </div>
+              <div class="TabSwitcherTabText">
+                <div class="TabSwitcherTabTextInner">
+                  Klantvragen
+                </div>
               </div>
             </div>
-          </div>
-          <div class="TabSwitcherTab" style="opacity: 0.25; cursor:not-allowed;" on-click="_nope">
-            <div class="TabSwitcherTabIcon">
-              <maki-icon-bell></maki-icon-bell>
-            </div>
-            <div class="TabSwitcherTabText">
-              <div class="TabSwitcherTabTextInner">
-                Notificaties
+            <div class="TabSwitcherTab" style="opacity: 0.25; cursor: not-allowed;" on-click="_nope">
+              <div class="TabSwitcherTabIcon">
+                <maki-icon-bell></maki-icon-bell>
+              </div>
+              <div class="TabSwitcherTabText">
+                <div class="TabSwitcherTabTextInner">
+                  Notificaties
+                </div>
               </div>
             </div>
-          </div>
-          <div class="TabSwitcherTab" style="opacity: 0.25; cursor:not-allowed;" on-click="_nope">
-            <div class="TabSwitcherTabIcon">
-              <maki-icon-chat></maki-icon-chat>
-            </div>
-            <div class="TabSwitcherTabText">
-              <div class="TabSwitcherTabTextInner">
-                Chatten
+            <div class="TabSwitcherTab" style="opacity: 0.25; cursor: not-allowed;" on-click="_nope">
+              <div class="TabSwitcherTabIcon">
+                <maki-icon-chat></maki-icon-chat>
+              </div>
+              <div class="TabSwitcherTabText">
+                <div class="TabSwitcherTabTextInner">
+                  Chatten
+                </div>
               </div>
             </div>
           </div>
