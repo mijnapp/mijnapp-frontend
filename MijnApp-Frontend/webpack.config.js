@@ -4,7 +4,7 @@ const { resolve, join } = require('path');
 const webpack = require('webpack');
 const { GenerateSW } = require('workbox-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackExcludeAssetsPlugin = require('html-webpack-exclude-assets-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
@@ -136,7 +136,10 @@ const buildPlugins = [
     swDest: join(OUTPUT_PATH, 'sw.js'),
     skipWaiting: true,
   }),
-  new CleanWebpackPlugin([OUTPUT_PATH], { verbose: true }),
+  new CleanWebpackPlugin({
+    cleanOnceBeforeBuildPatterns: [OUTPUT_PATH],
+    verbose: true
+  }),
 ];
 
 const plugins = sharedPlugins.concat(IS_DEV_SERVER ? devPlugins : buildPlugins);
