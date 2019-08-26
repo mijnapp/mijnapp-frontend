@@ -2,6 +2,10 @@
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "http://localhost/MijnApp-Backend",
+      "sslPort": 0
+    },
     "iisExpress": {
       "applicationUrl": "https://localhost:44397/",
       "sslPort": 44397
@@ -18,13 +22,13 @@
       }
     },
     "MijnApp_Backend": {
-      "commandName": "Project",
-      "launchBrowser": true,
+      "commandName": "IIS",
       "launchUrl": "api/values",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "https://localhost:5001;http://localhost:5000"
+      "ancmHostingModel": "InProcess",
+      "applicationUrl": "http://localhost/MijnApp-Backend"
     }
   }
 }
