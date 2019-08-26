@@ -127,6 +127,8 @@
   <ItemGroup>
     <Content Include=".editorconfig" />
     <Content Include=".eslintrc.json" />
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
     <Content Include=".npmrc" />
     <Content Include=".stylelintrc" />
     <Content Include=".travis.yml" />
