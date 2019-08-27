@@ -6,7 +6,7 @@
   "version": "1.1.0",
   "main": "src/index.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js --mode=development --watch",
+    "build": "webpack --config webpack.config.js --mode=development --watch --env.NODE_ENV=development",
     "build:prod": "webpack --env.NODE_ENV=production --optimize-minimize",
     "dev": "webpack-dev-server --hot --inline",
     "pretest": "npm run build",

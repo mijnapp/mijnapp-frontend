@@ -142,7 +142,12 @@ const buildPlugins = [
   }),
 ];
 
-const plugins = sharedPlugins.concat(IS_DEV_SERVER ? devPlugins : buildPlugins);
+var plugins;
+if (ENV === 'development') {
+  plugins = sharedPlugins.concat(devPlugins);
+} else {
+  plugins = sharedPlugins.concat(buildPlugins);
+}
 
 module.exports = {
   mode: ENV,
