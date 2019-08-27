@@ -1,4 +1,5 @@
 import { all } from 'redux-saga/effects';
+import { watchRequestAddressData } from './address';
 import { watchRequestAvgLog } from './avgLog';
 import { watchRequestAvgLogs } from './avgLogs';
 import { watchRequestContract } from './contract';
@@ -26,6 +27,7 @@ import {
 
 export default function* rootSaga() {
   yield all([
+    watchRequestAddressData(),
     watchRequestAvgLog(),
     watchRequestAvgLogs(),
     watchRequestContract(),

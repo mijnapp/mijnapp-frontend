@@ -165,7 +165,7 @@ store.dispatch(
       questions: [
         {
           id: 'a7beef34-9aea-4891-971d-beb67b2e8010',
-          type: 'multipleText',
+          type: 'address',
           options: [
             {
               goto: null,
@@ -174,7 +174,7 @@ store.dispatch(
             },
             {
               goto: null,
-              title: 'Huisnummer (met toevoeging)',
+              title: 'Huisnummer',
               value: null,
             },
             {

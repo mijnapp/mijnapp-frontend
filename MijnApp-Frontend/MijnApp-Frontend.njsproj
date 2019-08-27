@@ -36,6 +36,7 @@
     <Folder Include="dist\assets\media\" />
     <Folder Include="dist\vendor\" />
     <Folder Include="dist\vendor\bundles\" />
+    <Folder Include="src\components\lib\playback-screens\playback-screen-address\" />
     <Folder Include="src\config\" />
     <Folder Include="src\" />
     <Folder Include="src\assets\" />
@@ -391,6 +392,9 @@
     <Content Include="src\components\lib\playback-screen-wrapper\index.js" />
     <Content Include="src\components\lib\playback-screen-wrapper\style.pcss" />
     <Content Include="src\components\lib\playback-screen-wrapper\template.html" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-address\index.js" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-address\style.pcss" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-address\template.html" />
     <Content Include="src\components\lib\playback-screens\playback-screen-agree\index.js" />
     <Content Include="src\components\lib\playback-screens\playback-screen-agree\style.pcss" />
     <Content Include="src\components\lib\playback-screens\playback-screen-agree\template.html" />
@@ -452,6 +456,7 @@
     <Content Include="src\index.js" />
     <Content Include="src\config\config.json" />
     <Content Include="src\manifest.json" />
+    <Content Include="src\redux\actions\address.js" />
     <Content Include="src\redux\actions\application.js" />
     <Content Include="src\redux\actions\avgLog.js" />
     <Content Include="src\redux\actions\avgLogs.js" />
@@ -464,6 +469,7 @@
     <Content Include="src\redux\actions\order.js" />
     <Content Include="src\redux\actions\orders.js" />
     <Content Include="src\redux\actions\person.js" />
+    <Content Include="src\redux\api\address.js" />
     <Content Include="src\redux\api\avgLogs.js" />
     <Content Include="src\redux\api\contracts.js" />
     <Content Include="src\redux\api\jwt.js" />
@@ -471,6 +477,7 @@
     <Content Include="src\redux\api\orders.js" />
     <Content Include="src\redux\api\person.js" />
     <Content Include="src\redux\helpers\headers.js" />
+    <Content Include="src\redux\reducers\address.js" />
     <Content Include="src\redux\reducers\application.js" />
     <Content Include="src\redux\reducers\avgLog.js" />
     <Content Include="src\redux\reducers\avgLogs.js" />
@@ -483,6 +490,7 @@
     <Content Include="src\redux\reducers\oauth.js" />
     <Content Include="src\redux\reducers\order.js" />
     <Content Include="src\redux\reducers\person.js" />
+    <Content Include="src\redux\sagas\address.js" />
     <Content Include="src\redux\sagas\application.js" />
     <Content Include="src\redux\sagas\avgLog.js" />
     <Content Include="src\redux\sagas\avgLogs.js" />
