@@ -14,10 +14,15 @@ import template from './template.html';
 
 import '../../playback-screen-wrapper';
 import { requestAddressData } from '../../../../redux/actions/address';
+import { isNullOrUndefined } from 'util';
 
 export default class PlaybackScreenAddress extends connect(store)(PolymerElement) {
   static get properties() {
-    return {};
+    return {
+      postalCode: String,
+      number: String,
+      numberAddition: String
+    };
   }
 
   static get template() {
@@ -26,6 +31,9 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
 
   constructor() {
     super();
+    this.postalCode = "";
+    this.number = "";
+    this.numberAddition = "";
   }
 
   _items(question) {
@@ -38,7 +46,41 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
     return title ? title : 'Naamloos veld';
   }
 
-  _inputCallback(question, index, order) {
+  isEmpty() {
+    return isNullOrUndefined(this.postalCode)
+      || this.postalCode === ""
+      || isNullOrUndefined(this.number)
+      || this.number === "";
+  }
+
+  _inputPostalCodeCallback() {
+    return (data) => {
+      this.postalCode = data.trim();
+      if (!this.isEmpty()) {
+        store.dispatch(requestAddressData(this.postalCode, this.number, this.numberAddition));
+      }
+    };
+  }
+
+  _inputNumberCallback() {
+    return (data) => {
+      this.number = data.trim();
+      if (!this.isEmpty()) {
+        store.dispatch(requestAddressData(this.postalCode, this.number, this.numberAddition));
+      }
+    };
+  }
+
+  _inputNumberAdditionCallback() {
+    return (data) => {
+      this.numberAddition = data.trim();
+      if (!this.isEmpty()) {
+        store.dispatch(requestAddressData(this.postalCode, this.number, this.numberAddition));
+      }
+    };
+  }
+
+  _selectAddress() {
     let key =
       question && question.options && Array.isArray(question.options)
         ? question.options.map((i) => i.value || i.title || 'Naamloos veld')
@@ -51,22 +93,14 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
             'Naamloos veld'}`
         )
         : [];
+
     return (data) => {
-      store.dispatch(requestAddressData());
-      //store.dispatch(
-      //orderSaveAnswer(
-      //  key,
-      //  order.value && Array.isArray(order.value)
-      //    ? order.value.map((o, i) => (i === index ? data : o))
-      //    : key.map((o, i) => (i === index ? data : '')),
-      //  keyTitle,
-      //  order.value && Array.isArray(order.value)
-      //    ? order.value.map((o, i) => (i === index ? data : o))
-      //    : key.map((o, i) => (i === index ? data : ''))
-      //)
-      //);
-    };
-  }
+      let value = order.value && Array.isArray(order.value)
+        ? order.value.map((o, i) => (i === index ? data : o))
+        : key.map((o, i) => (i === index ? data : ''));
+      store.dispatch(orderSaveAnswer(key, value, keyTitle, value));
+  };
+}
 
   _nextCallback(question) {
     return (next) => {

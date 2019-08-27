@@ -1,9 +1,14 @@
 import axios from 'axios';
 import { BASE_URL_API } from '../store';
+import { isNullOrUndefined } from 'util';
 
 export const addressApi = {
-  address: (token) => async () => {
-    const response = await axios.get(`/adres/1058VR/170`, {
+  address: (action, token) => async () => {
+    var url = isNullOrUndefined(action.numberAddition)
+      ? `/address/${action.postalCode}/${action.number}`
+      : `/address/${action.postalCode}/${action.number}/${action.numberAddition}`;
+
+    const response = await axios.get(url, {
       baseURL: BASE_URL_API,
       headers: { 'X-Auth': token }
     });

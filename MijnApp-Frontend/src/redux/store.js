@@ -166,23 +166,6 @@ store.dispatch(
         {
           id: 'a7beef34-9aea-4891-971d-beb67b2e8010',
           type: 'address',
-          options: [
-            {
-              goto: null,
-              title: 'Postcode',
-              value: null,
-            },
-            {
-              goto: null,
-              title: 'Huisnummer',
-              value: null,
-            },
-            {
-              goto: null,
-              title: 'Plaatsnaam',
-              value: '',
-            },
-          ],
           title: 'Wat wordt je nieuwe adres?',
           subtitle: 'bijv. Dorpstraat 10 1234 AB Eindhoven',
           next: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb',

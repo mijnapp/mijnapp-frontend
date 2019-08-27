@@ -13,7 +13,7 @@ export function* watchRequestAddressData() {
 
 function* fetchAddressData(action) {
   try {
-    const result = yield call(addressApi.address(xAuth()));
+    const result = yield call(addressApi.address(action, xAuth()));
     yield put(requestAddressSuccess(result.data));
   } catch (e) {
     yield put(requestAddressDataFailure(e));
