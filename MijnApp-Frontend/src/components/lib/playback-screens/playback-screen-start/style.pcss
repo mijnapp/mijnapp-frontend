@@ -7,6 +7,7 @@
   box-sizing: border-box;
   width: 100%;
   height: 100%;
+  max-width: 800px;
   float: left;
   background-color: #FFF;
   padding: 0 0 118px 0;
@@ -20,6 +21,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #FFF;
 }
 .ButtonInner {
   display: flex;
@@ -45,7 +47,7 @@
   overflow-y: auto;
 }
 .Scroller {
-  padding: 81px 16px 0 16px;
+  padding: 49px 16px 0 16px;
   position: relative;
 }
 .Title {
@@ -154,21 +156,20 @@
   background-repeat: no-repeat;
   background-position: 0 center;
   padding-left: 24px;
-  opacity: 0.5;
+  opacity: 1;
   font-family: var(--typography-fontFamily);
   font-size: 14px;
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
-  line-height: normal;
+  line-height: 2.4;
+  height: 34px;
   letter-spacing: -0.2px;
   text-align: left;
   cursor: pointer;
   color: var(--palette-primary-main);
-  position: absolute;
-  left: 16px;
-  top: 50px;
 }
+
 .Back:hover {
   opacity: 0.4;
 }

@@ -1,6 +1,7 @@
 .Wrapper {
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  max-width: 800px;
   box-sizing: border-box;
   float: left;
   background-color: var(--palette-secondary-main);
@@ -11,17 +12,20 @@
   width: 100%;
   height: 100%;
   float: left;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .Scroller {
-  padding: 70px 16px 0 16px;
+  padding: 49px 16px 0 16px;
 }
 .ButtonContainer {
   position: absolute;
-  bottom: 27px;
-  width: calc(100% - 32px);
+  bottom: 73px;
+  width: 100%;
+  max-width: 800px;
   height: 56px;
-  margin: 0 16px;
+  padding: 0 16px;
+  box-sizing: border-box;
+  background-color: var(--palette-secondary-main);
 }
 .PrevButton {
   float: left;
@@ -72,13 +76,13 @@
   background-position: 0 center;
   padding-left: 24px;
   opacity: 1;
-  margin-bottom: 15px;
   font-family: var(--typography-fontFamily);
   font-size: 14px;
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
-  line-height: normal;
+  line-height: 2.4;
+  height: 34px;
   letter-spacing: -0.2px;
   text-align: left;
   cursor: pointer;
