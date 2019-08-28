@@ -244,5 +244,89 @@ store.dispatch(
         subtitle: 'Verhuizen binnen of naar Eindhoven',
       },
     },
+    {
+      title: 'Ik wil verhuizen Eerst datum',
+      questions: [
+        {
+          id: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb',
+          type: 'calendar',
+          options: null,
+          title: 'Wanneer ga je verhuizen?',
+          subtitle: 'bijv. 01-11-2018',
+          next: 'a7beef34-9aea-4891-971d-beb67b2e8010',
+        },
+        {
+          id: 'a7beef34-9aea-4891-971d-beb67b2e8010',
+          type: 'address',
+          title: 'Wat wordt je nieuwe adres?',
+          subtitle: 'bijv. Dorpstraat 10 1234 AB Eindhoven',
+          next: '37e30b1f-fb51-4d49-8756-fa5d4d55829a',
+        },
+        {
+          id: '37e30b1f-fb51-4d49-8756-fa5d4d55829a',
+          type: 'multiple',
+          options: [
+            {
+              goto: null,
+              title: 'Evelien de Vries',
+              value: null,
+            },
+            {
+              goto: null,
+              title: 'Thomas de Vries',
+              value: null,
+            },
+          ],
+          title: 'Met wie ga je verhuizen?',
+          subtitle:
+            'Er wordt een bericht gestuurd naar de persoon die meeverhuist ' +
+            '(onderstaande personen staan nu op hetzelfde adres als jij ' +
+            'ingeschreven)',
+          next: '21586109-ce3b-4091-8420-85f92c0a6c11',
+        },
+        {
+          id: '21586109-ce3b-4091-8420-85f92c0a6c11',
+          type: 'single',
+          options: [
+            {
+              goto: 'END',
+              title: 'Ja',
+              value: null,
+            },
+            {
+              goto: 'END',
+              title: 'Nee, ik ga huren',
+              value: null,
+            },
+            {
+              goto: '10af45ba-b96c-44cc-865e-5f5342e0b793',
+              title: 'Nee, ik ga inwonen',
+              value: null,
+            },
+          ],
+          title: 'Ben of word je eigenaar van de woning?',
+        },
+        {
+          id: '10af45ba-b96c-44cc-865e-5f5342e0b793',
+          type: 'agree',
+          options: null,
+          title: 'Is de eigenaar akkoord met inwoning?',
+          subtitle:
+            'De eigenaar ontvangt een notificatie in MijnApp ter goedkeuring.',
+          next: 'END',
+        },
+      ],
+      overview: {
+        needed_documents: ['Geen'],
+        send_to: [],
+        steps: [
+          'Geef je nieuwe adres op.',
+          'Geef de datum op wanneer je gaat verhuizen.',
+          'Geef aan met wie je gaat verhuizen,',
+          'Geef de nieuwe woonsituatie aan.',
+        ],
+        subtitle: 'Verhuizen binnen of naar Eindhoven',
+      },
+    }
   ])
 );

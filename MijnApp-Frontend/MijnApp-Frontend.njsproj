@@ -37,7 +37,7 @@
     <Folder Include="dist\vendor\" />
     <Folder Include="dist\vendor\bundles\" />
     <Folder Include="src\components\lib\polymer-openajax-datepicker-master\" />
-    <Folder Include="src\components\lib\polymer-openajax-datepicker-master\images\" />
+    <Folder Include="src\assets\images\" />
     <Folder Include="src\components\lib\playback-screens\playback-screen-address\" />
     <Folder Include="src\config\" />
     <Folder Include="src\" />
@@ -433,8 +433,8 @@
     <Content Include="src\components\lib\playback-screens\playback-screen-video\index.js" />
     <Content Include="src\components\lib\playback-screens\playback-screen-video\style.pcss" />
     <Content Include="src\components\lib\playback-screens\playback-screen-video\template.html" />
-    <Content Include="src\components\lib\polymer-openajax-datepicker-master\images\next.png" />
-    <Content Include="src\components\lib\polymer-openajax-datepicker-master\images\prev.png" />
+    <Content Include="src\assets\images\next.png" />
+    <Content Include="src\assets\images\prev.png" />
     <Content Include="src\components\lib\polymer-openajax-datepicker-master\polymer-openajax-datepicker-styles.html" />
     <Content Include="src\components\lib\polymer-openajax-datepicker-master\polymer-openajax-datepicker.html" />
     <Content Include="src\components\lib\polymer-openajax-datepicker-master\polymer-openajax-datepicker.js" />

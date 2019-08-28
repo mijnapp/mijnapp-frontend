@@ -36,6 +36,10 @@ export default class MafScreenJourneys extends connect(store)(PolymerElement) {
     store.dispatch(setJourney(this.journeys[1]));
     store.dispatch(selectPage('journey'));
   }
+  _selectJourneyC() {
+    store.dispatch(setJourney(this.journeys[2]));
+    store.dispatch(selectPage('journey'));
+  }
 
   focusOnSearch() {
     this.shadowRoot.querySelector('maki-input').focus();
