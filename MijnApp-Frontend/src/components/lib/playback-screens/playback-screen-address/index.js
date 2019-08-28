@@ -34,7 +34,7 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
     super();
   }
 
-  isEmpty() {
+  _isEmpty() {
     return isNullOrUndefined(this.postalCode)
       || this.postalCode === ""
       || isNullOrUndefined(this.number)
@@ -44,8 +44,10 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
   _inputPostalCodeCallback() {
     return (data) => {
       this.postalCode = data.trim();
-      if (!this.isEmpty()) {
+      if (!this._isEmpty()) {
         store.dispatch(requestAddressData(this.postalCode, this.number, this.numberAddition));
+      } else {
+        this.addresses = [];
       }
     };
   }
@@ -53,8 +55,10 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
   _inputNumberCallback() {
     return (data) => {
       this.number = data.trim();
-      if (!this.isEmpty()) {
+      if (!this._isEmpty()) {
         store.dispatch(requestAddressData(this.postalCode, this.number, this.numberAddition));
+      } else {
+        this.addresses = [];
       }
     };
   }
@@ -62,33 +66,38 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
   _inputNumberAdditionCallback() {
     return (data) => {
       this.numberAddition = data.trim();
-      if (!this.isEmpty()) {
+      if (!this._isEmpty()) {
         store.dispatch(requestAddressData(this.postalCode, this.number, this.numberAddition));
+      } else {
+        this.addresses = [];
       }
     };
   }
 
-  _selectAddress() {
-    let key =
-      question && question.options && Array.isArray(question.options)
-        ? question.options.map((i) => i.value || i.title || 'Naamloos veld')
-        : [];
-    let keyTitle =
-      question && question.options && Array.isArray(question.options)
-        ? question.options.map(
-          (i) =>
-            `${question.title || 'Naamloze vraag'}: ${i.title ||
-            'Naamloos veld'}`
-        )
-        : [];
-
-    return (data) => {
-      let value = order.value && Array.isArray(order.value)
-        ? order.value.map((o, i) => (i === index ? data : o))
-        : key.map((o, i) => (i === index ? data : ''));
-      store.dispatch(orderSaveAnswer(key, value, keyTitle, value));
-  };
-}
+  _optionClick(e) {
+    if (e && e.target && e.target.dataQuestion && !isNaN(e.target.dataIndex)) {
+      let question = e.target.dataQuestion;
+      let index = e.target.dataIndex;
+      if (
+        question &&
+        question.options &&
+        Array.isArray(question.options) &&
+        question.options.length > index &&
+        question.options[index] &&
+        question.options[index].goto
+      ) {
+        store.dispatch(
+          orderSaveAnswer(
+            question.key || question.title,
+            question.options[index].value || question.options[index].title,
+            question.title,
+            question.options[index].title
+          )
+        );
+        store.dispatch(orderNext(question.options[index].goto));
+      }
+    }
+  }
 
   _nextCallback(question) {
     return (next) => {

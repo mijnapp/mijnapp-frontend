@@ -1,21 +1,23 @@
 <playback-screen-wrapper next-callback="[[_nextCallback(question)]]" skip-callback="[[_skipCallback(question)]]" disabled="[[_isDisabled(order)]]">
-  <div class="Item">
-    <maki-input elevation="0" rounding="0" fill secondary placeholder="Postcode" input-callback="[[_inputPostalCodeCallback(question)]]"></maki-input>
-  </div>
-  <div class="Item">
-    <maki-input elevation="0" rounding="0" fill secondary placeholder="Huisnummer" input-callback="[[_inputNumberCallback(question)]]"></maki-input>
-  </div>
-  <div class="Item">
-    <maki-input elevation="0" rounding="0" fill secondary placeholder="Huisnummer toevoeging" input-callback="[[_inputNumberAdditionCallback(question)]]"></maki-input>
-  </div>
-  <maki-header class="Title">Gevonden adressen</maki-header>
-  <dom-repeat items="{{addresses}}">
-    <template>
-      <div class="Item">
-        <div>{{item.id}}</div>
-        <div>{{item.straat}} {{item.huisnummer}} {{item.huisnummer_toevoeging}}</div>
-        <div>{{item.postcode}}, {{item.woonplaats}}</div>
-      </div>
-    </template>
-  </dom-repeat>
+    <div class="Item">
+      <maki-input elevation="0" rounding="0" fill secondary placeholder="Postcode" input-callback="[[_inputPostalCodeCallback()]]"></maki-input>
+    </div>
+    <div class="Item">
+      <maki-input elevation="0" rounding="0" fill secondary placeholder="Huisnummer" input-callback="[[_inputNumberCallback()]]"></maki-input>
+    </div>
+    <div class="Item">
+      <maki-input elevation="0" rounding="0" fill secondary placeholder="Huisnummer toevoeging" input-callback="[[_inputNumberAdditionCallback()]]"></maki-input>
+    </div>
+    <!--<dom-if if="{{_isEmpty()}}">
+      <template>-->
+        <maki-header class="Title">Gevonden adressen</maki-header>
+        <dom-repeat items="{{addresses}}">
+          <template>
+            <div class="Option" data-index="[[index]]" on-click="_optionClick">
+              <div>{{item.straat}} {{item.huisnummer}}{{item.huisnummertoevoeging}}, {{item.woonplaats}} {{item.postcode}}</div>
+            </div>
+          </template>
+        </dom-repeat>
+      <!--</template>
+    </dom-if>-->
 </playback-screen-wrapper>
