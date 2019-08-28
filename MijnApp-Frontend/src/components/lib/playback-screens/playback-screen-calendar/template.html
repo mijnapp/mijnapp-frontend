@@ -1,3 +1,5 @@
 <playback-screen-wrapper next-callback="[[_nextCallback(question)]]" skip-callback="[[_skipCallback(question)]]" disabled="[[_isDisabled(order)]]">
-  
+  <polymer-openajax-datepicker id="datePickerTest" date="{{datepickerValue}}"></polymer-openajax-datepicker>
+  <hr/>
+  <div>Gekozen:</div><input id="date" type="text" value="[[datepickerValue]]" />
 </playback-screen-wrapper>

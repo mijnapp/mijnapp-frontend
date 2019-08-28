@@ -15,7 +15,7 @@
   },
   "rules": {
     "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
-    "linebreak-style": ["error", "windows"],
+    "linebreak-style": "off",
     "new-cap": ["error", { "capIsNewExceptions": ["Polymer"] }],
     "no-var": "off",
     "require-jsdoc": "off",

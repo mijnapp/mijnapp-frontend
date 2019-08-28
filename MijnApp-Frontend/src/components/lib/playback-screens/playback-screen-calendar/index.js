@@ -13,7 +13,7 @@ import css from './style.pcss';
 import template from './template.html';
 
 import '../../playback-screen-wrapper';
-import '../../maki/maki-input';
+import '../../polymer-openajax-datepicker-master/polymer-openajax-datepicker';
 
 export default class PlaybackScreenCalendar extends connect(store)(
   PolymerElement
@@ -96,10 +96,8 @@ export default class PlaybackScreenCalendar extends connect(store)(
     if (!this.question) {
       this.question = '';
     }
+    this.datepickerValue = '01-01-2019';
   }
 }
 
-window.customElements.define(
-  'playback-screen-calendar',
-  PlaybackScreenCalendar
-);
+window.customElements.define('playback-screen-calendar',PlaybackScreenCalendar);
