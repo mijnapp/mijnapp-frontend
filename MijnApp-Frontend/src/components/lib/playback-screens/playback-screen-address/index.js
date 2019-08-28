@@ -123,7 +123,7 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
     return this.addresses;
   }
   _getAddressId(index) {
-    return isNullOrUndefined(this.addresses) || this.addresses.length === [] ? '' : this.addresses[index].id;
+    return []; //isNullOrUndefined(this.addresses) || this.addresses.length === [] ? '' : this.addresses[index].id;
   }
 
   stateChanged(state) {
