@@ -34,9 +34,10 @@ namespace MijnApp_Backend
             }
 
             //app.UseHttpsRedirection();
+            var origins = Configuration.GetValue<string>("Origins").Split(';');
             app.UseCors(builder =>
             {
-                builder.AllowAnyOrigin();
+                builder.WithOrigins(origins);
                 builder.AllowAnyHeader();
                 builder.AllowAnyMethod();
             });
