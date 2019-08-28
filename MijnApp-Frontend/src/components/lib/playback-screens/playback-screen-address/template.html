@@ -9,10 +9,12 @@
     <maki-input elevation="0" rounding="0" fill secondary placeholder="Huisnummer toevoeging" input-callback="[[_inputNumberAdditionCallback(question)]]"></maki-input>
   </div>
   <maki-header class="Title">Gevonden adressen</maki-header>
-  <dom-repeat items="[[_getAddresses()]]">
+  <dom-repeat items="{{addresses}}">
     <template>
       <div class="Item">
-        <maki-input elevation="0" rounding="0" fill secondary placeholder="adress" value="[[_getAddressId(index)]]" input-callback="[[_inputNumberAdditionCallback(question)]]"></maki-input>
+        <div>{{item.id}}</div>
+        <div>{{item.straat}}</div>
+        <div>{{item.woonplaats}}</div>
       </div>
     </template>
   </dom-repeat>

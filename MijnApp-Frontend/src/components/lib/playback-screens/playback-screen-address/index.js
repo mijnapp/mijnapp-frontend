@@ -32,10 +32,6 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
 
   constructor() {
     super();
-    this.postalCode = "";
-    this.number = "";
-    this.numberAddition = "";
-    this.addresses = [{ id: 'test1' }, { id: 'test2' }];
   }
 
   isEmpty() {
@@ -117,13 +113,6 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
       Array.isArray(order.value) &&
       order.value.map((i) => i.length).reduce((a, b) => a + b, 0) > 0
     );
-  }
-
-  _getAddresses() {
-    return this.addresses;
-  }
-  _getAddressId(index) {
-    return []; //isNullOrUndefined(this.addresses) || this.addresses.length === [] ? '' : this.addresses[index].id;
   }
 
   stateChanged(state) {
