@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 
+import * as address from './address';
 import * as application from './application';
 import * as avgLog from './avgLog';
 import * as avgLogs from './avgLogs';
@@ -13,6 +14,7 @@ import * as person from './person';
 import * as oauth from './oauth';
 
 export default combineReducers({
+  ...address,
   ...application,
   ...avgLog,
   ...avgLogs,

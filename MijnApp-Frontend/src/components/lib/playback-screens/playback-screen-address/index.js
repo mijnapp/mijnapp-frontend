@@ -21,7 +21,8 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
     return {
       postalCode: String,
       number: String,
-      numberAddition: String
+      numberAddition: String,
+      addresses: Array
     };
   }
 
@@ -34,16 +35,7 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
     this.postalCode = "";
     this.number = "";
     this.numberAddition = "";
-  }
-
-  _items(question) {
-    return question && question.options && Array.isArray(question.options)
-      ? question.options
-      : [];
-  }
-
-  _itemTitle(title) {
-    return title ? title : 'Naamloos veld';
+    this.addresses = [{ id: 'test1' }, { id: 'test2' }];
   }
 
   isEmpty() {
@@ -127,15 +119,21 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
     );
   }
 
+  _getAddresses() {
+    return this.addresses;
+  }
+  _getAddressId(index) {
+    return isNullOrUndefined(this.addresses) || this.addresses.length === [] ? '' : this.addresses[index].id;
+  }
+
   stateChanged(state) {
     this.journey = state.journey;
     this.current = state.order.current;
-    this.id =
-      this.current === JOURNEY_START
+    this.addresses = state.address.data;
+    this.id = this.current === JOURNEY_START
         ? JOURNEY_START
         : state.order.data[this.current].question;
-    this.order =
-      this.current === JOURNEY_START ? {} : state.order.data[this.current];
+    this.order = this.current === JOURNEY_START ? {} : state.order.data[this.current];
     this.selected = this.order._tracker;
     if (this.journey) {
       this.question = (this.journey.questions || []).find(

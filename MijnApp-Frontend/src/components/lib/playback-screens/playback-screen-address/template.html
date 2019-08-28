@@ -1,11 +1,19 @@
 <playback-screen-wrapper next-callback="[[_nextCallback(question)]]" skip-callback="[[_skipCallback(question)]]" disabled="[[_isDisabled(order)]]">
   <div class="Item">
-    <maki-input elevation="0" rounding="0" fill secondary placeholder="Postcode" value="[[_getValue(order)]]" input-callback="[[_inputPostalCodeCallback(question)]]"></maki-input>
+    <maki-input elevation="0" rounding="0" fill secondary placeholder="Postcode" input-callback="[[_inputPostalCodeCallback(question)]]"></maki-input>
   </div>
   <div class="Item">
-    <maki-input elevation="0" rounding="0" fill secondary placeholder="Huisnummer" value="[[_getValue(order)]]" input-callback="[[_inputNumberCallback(question)]]"></maki-input>
+    <maki-input elevation="0" rounding="0" fill secondary placeholder="Huisnummer" input-callback="[[_inputNumberCallback(question)]]"></maki-input>
   </div>
   <div class="Item">
-    <maki-input elevation="0" rounding="0" fill secondary placeholder="Huisnummer toevoeging" value="[[_getValue(order)]]" input-callback="[[_inputNumberAdditionCallback(question)]]"></maki-input>
+    <maki-input elevation="0" rounding="0" fill secondary placeholder="Huisnummer toevoeging" input-callback="[[_inputNumberAdditionCallback(question)]]"></maki-input>
   </div>
+  <maki-header class="Title">Gevonden adressen</maki-header>
+  <dom-repeat items="[[_getAddresses()]]">
+    <template>
+      <div class="Item">
+        <maki-input elevation="0" rounding="0" fill secondary placeholder="adress" value="[[_getAddressId(index)]]" input-callback="[[_inputNumberAdditionCallback(question)]]"></maki-input>
+      </div>
+    </template>
+  </dom-repeat>
 </playback-screen-wrapper>

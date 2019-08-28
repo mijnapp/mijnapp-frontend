@@ -14,7 +14,8 @@ export function* watchRequestAddressData() {
 function* fetchAddressData(action) {
   try {
     const result = yield call(addressApi.address(action, xAuth()));
-    yield put(requestAddressSuccess(result.data));
+    const address = JSON.parse(result.data).adressen;
+    yield put(requestAddressSuccess(address));
   } catch (e) {
     yield put(requestAddressDataFailure(e));
   }
