@@ -1,23 +1,24 @@
 <playback-screen-wrapper next-callback="[[_nextCallback(question)]]" skip-callback="[[_skipCallback(question)]]" disabled="[[_isDisabled(order)]]">
-    <div class="Item">
-      <maki-input elevation="0" rounding="0" fill secondary placeholder="Postcode" input-callback="[[_inputPostalCodeCallback()]]"></maki-input>
-    </div>
-    <div class="Item">
-      <maki-input elevation="0" rounding="0" fill secondary placeholder="Huisnummer" input-callback="[[_inputNumberCallback()]]"></maki-input>
-    </div>
-    <div class="Item">
-      <maki-input elevation="0" rounding="0" fill secondary placeholder="Huisnummer toevoeging" input-callback="[[_inputNumberAdditionCallback()]]"></maki-input>
-    </div>
-    <!--<dom-if if="{{_isEmpty()}}">
-      <template>-->
-        <div class="Title">Gevonden adressen</div>
-        <dom-repeat items="{{addresses}}">
-          <template>
-            <div class="Option" data-index="[[index]]" data-question="[[question]]" on-click="_optionClick">
-              <div>{{item.straat}} {{item.huisnummer}}{{item.huisnummertoevoeging}}, {{item.woonplaats}} {{item.postcode}}</div>
-            </div>
-          </template>
-        </dom-repeat>
-      <!--</template>
-    </dom-if>-->
+  <div class="Item">
+    <maki-input elevation="0" rounding="0" fill secondary placeholder="Postcode" input-callback="[[_inputPostalCodeCallback()]]"></maki-input>
+  </div>
+  <div class="Item">
+    <maki-input elevation="0" rounding="0" fill secondary placeholder="Huisnummer" input-callback="[[_inputNumberCallback()]]"></maki-input>
+  </div>
+  <div class="Item">
+    <maki-input elevation="0" rounding="0" fill secondary placeholder="Huisnummer toevoeging" input-callback="[[_inputNumberAdditionCallback()]]"></maki-input>
+  </div>
+  <div class="Title">Gevonden adressen</div>
+  <dom-if if="{{!addresses.length}}">
+    <template>
+      <div class="Subtitle">Geen adres gevonden</div>
+    </template>
+  </dom-if>
+  <dom-repeat items="{{addresses}}">
+    <template>
+      <div class="Option" data-index="[[index]]" data-question="[[question]]" on-click="_optionClick">
+        <div>{{item.straat}} {{item.huisnummer}}{{item.huisnummertoevoeging}}, {{item.woonplaats}} {{item.postcode}}</div>
+      </div>
+    </template>
+  </dom-repeat>
 </playback-screen-wrapper>

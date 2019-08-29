@@ -19,6 +19,7 @@ import { isNullOrUndefined } from 'util';
 export default class PlaybackScreenAddress extends connect(store)(PolymerElement) {
   static get properties() {
     return {
+      showPossibleAddresses: Boolean,
       postalCode: String,
       number: String,
       numberAddition: String,
@@ -44,8 +45,10 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
   _inputPostalCodeCallback() {
     return (data) => {
       this.postalCode = data.trim();
+      this.notifyPath("_isEmpty")
       if (!this._isEmpty()) {
         store.dispatch(requestAddressData(this.postalCode, this.number, this.numberAddition));
+        this.showPossibleAddresses = true;
       } else {
         this.addresses = [];
       }
@@ -57,6 +60,7 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
       this.number = data.trim();
       if (!this._isEmpty()) {
         store.dispatch(requestAddressData(this.postalCode, this.number, this.numberAddition));
+        this.showPossibleAddresses = true;
       } else {
         this.addresses = [];
       }
@@ -68,6 +72,7 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
       this.numberAddition = data.trim();
       if (!this._isEmpty()) {
         store.dispatch(requestAddressData(this.postalCode, this.number, this.numberAddition));
+        this.showPossibleAddresses = true;
       } else {
         this.addresses = [];
       }
