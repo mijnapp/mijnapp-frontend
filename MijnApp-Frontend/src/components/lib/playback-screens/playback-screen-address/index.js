@@ -86,7 +86,6 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
         )
       );
       store.dispatch(orderNext(question.next));
-      store.dispatch(this._nextCallback(question));
     }
   }
 
@@ -100,7 +99,11 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
   stateChanged(state) {
     this.journey = state.journey;
     this.current = state.order.current;
-    this.addresses = state.address.data;
+    if (!this._isEmpty()) {
+      this.addresses = state.address.data;
+    } else {
+      this.addresses = [];
+    }
     this.id = this.current === JOURNEY_START
         ? JOURNEY_START
         : state.order.data[this.current].question;
