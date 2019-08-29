@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MijnApp_Backend.Controllers
 {
+    [Authorize]
     public class AddressController : Controller
     {
         private const string URL_NoNumberAddition = "http://adressen.zaakonline.nl/adressen?postcode={0}&huisnummer={1}";

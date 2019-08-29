@@ -5,7 +5,7 @@ export const personApi = {
   person: (id, token) => async () => {
     const response = await axios.get(`/person/${id}`, {
       baseURL: BASE_URL_API,
-      headers: { 'X-Auth': token }
+      headers: { 'Authorization': 'Bearer ' + token }
     });
     if (response.statusText === 'OK' || response.status === 200) {
       return { data: response.data };

@@ -4,13 +4,14 @@ import { BASE_URL_API } from '../store';
 export const jwtApi = {
   signin: () => async () => {
     const response = await axios.post(
-      BASE_URL_API + 'jwt/signin',
+      '/jwt/signin',
       null,
       {
-        withCredentials: true
+        baseURL: BASE_URL_API,
       }
     );
     if (response.statusText === 'OK' || response.status === 200) {
+      response.headers.authorization = response.data.token;
       return { data: response.data, headers: response.headers };
     } else {
       throw response.status;
@@ -22,7 +23,7 @@ export const jwtApi = {
       { pin },
       {
         baseURL: BASE_URL_API,
-        headers: { 'X-Auth': token },
+        headers: { 'Authorization': 'Bearer ' + token }
       }
     );
     if (response.statusText === 'OK' || response.status === 200) {
@@ -37,7 +38,7 @@ export const jwtApi = {
       { pin },
       {
         baseURL: BASE_URL_API,
-        headers: { 'X-Auth': token },
+        headers: { 'Authorization': 'Bearer ' + token }
       }
     );
     if (response.statusText === 'OK' || response.status === 200) {
@@ -49,7 +50,7 @@ export const jwtApi = {
   refresh: (token) => async () => {
     const response = await axios.get('/jwt/refresh', {
       baseURL: BASE_URL_API,
-      headers: { 'X-Auth': token },
+      headers: { 'Authorization': 'Bearer ' + token }
     });
     if (response.statusText === 'OK' || response.status === 200) {
       return { data: response.data, headers: response.headers };

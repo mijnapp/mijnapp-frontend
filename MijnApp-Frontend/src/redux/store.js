@@ -23,11 +23,8 @@ export const BASE_URL_API = (() => {
     return configuration.BACKEND_URL;
   }
   else {
-    return 'http://localhost/MijnApp-Backend/';
+    return 'https://localhost/MijnApp-Backend/';
   }
-
-
-  return mijnAppConfiguration().BACKEND_URL;
 })();
 
 // Init middlewares.

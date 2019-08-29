@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using MijnApp_Backend.Security;
 
 namespace MijnApp_Backend
 {
@@ -34,9 +35,6 @@ namespace MijnApp_Backend
                         ValidAudience = Configuration["Jwt:Issuer"],
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
                     };
-                })
-                .AddCookie(options =>
-                {
                 });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
@@ -54,7 +52,7 @@ namespace MijnApp_Backend
                 app.UseHsts();
             }
 
-            //app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
 
             var origins = Configuration.GetValue<string>("Origins").Split(';');
             app.UseCors(builder =>

@@ -10,7 +10,7 @@ export const addressApi = {
 
     const response = await axios.get(url, {
       baseURL: BASE_URL_API,
-      headers: { 'X-Auth': token }
+      headers: { 'Authorization': 'Bearer ' + token }
     });
     if (response.statusText === 'OK' || response.status === 200) {
       return { data: response.data };

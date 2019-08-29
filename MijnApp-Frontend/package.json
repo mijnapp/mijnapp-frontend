@@ -85,7 +85,7 @@
     "web-component-tester": "6.9.2",
     "webpack": "4.35.3",
     "webpack-cli": "3.3.5",
-    "webpack-dev-server": "3.7.2",
+    "webpack-dev-server": "3.8.0",
     "workbox-webpack-plugin": "4.3.1",
     "xo": "0.24.0"
   },

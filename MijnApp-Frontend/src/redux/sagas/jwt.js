@@ -35,8 +35,7 @@ export function* watchJwtSigninSuccess() {
   yield takeLatest(REQUEST_JWT_SIGNIN_SUCCESS, onJwtSigninSuccess);
 }
 
-function* onJwtSigninSuccess(action) {
-  // create an httpcookie (non-persistent) with action.data.token
+function* onJwtSigninSuccess() {
   yield put(selectPage('home'));
 }
 

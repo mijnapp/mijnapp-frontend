@@ -34,7 +34,6 @@ namespace MijnApp_Backend.Controllers
             if (!string.IsNullOrEmpty(user))
             {
                 var tokenString = _jwtTokenProvider.GenerateJsonWebToken(user);
-                Response.Cookies.Append("JwtToken", tokenString, new CookieOptions { HttpOnly = true, IsEssential = true, Secure = true });
                 return Ok(new { token = tokenString });
             }
 
