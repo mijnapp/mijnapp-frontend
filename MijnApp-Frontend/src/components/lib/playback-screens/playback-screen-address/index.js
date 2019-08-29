@@ -4,10 +4,7 @@ import { store } from '../../../../redux/store';
 
 import { JOURNEY_START } from '../../../../helpers/common';
 
-import {
-  orderSaveAnswer,
-  orderClearAnswer,
-} from '../../../../redux/actions/order';
+import { orderNext, orderSaveAnswer } from '../../../../redux/actions/order';
 
 import css from './style.pcss';
 import template from './template.html';
@@ -19,7 +16,6 @@ import { isNullOrUndefined } from 'util';
 export default class PlaybackScreenAddress extends connect(store)(PolymerElement) {
   static get properties() {
     return {
-      showPossibleAddresses: Boolean,
       postalCode: String,
       number: String,
       numberAddition: String,
@@ -48,7 +44,6 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
       this.notifyPath("_isEmpty")
       if (!this._isEmpty()) {
         store.dispatch(requestAddressData(this.postalCode, this.number, this.numberAddition));
-        this.showPossibleAddresses = true;
       } else {
         this.addresses = [];
       }
@@ -60,7 +55,6 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
       this.number = data.trim();
       if (!this._isEmpty()) {
         store.dispatch(requestAddressData(this.postalCode, this.number, this.numberAddition));
-        this.showPossibleAddresses = true;
       } else {
         this.addresses = [];
       }
@@ -72,7 +66,6 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
       this.numberAddition = data.trim();
       if (!this._isEmpty()) {
         store.dispatch(requestAddressData(this.postalCode, this.number, this.numberAddition));
-        this.showPossibleAddresses = true;
       } else {
         this.addresses = [];
       }
@@ -80,6 +73,7 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
   }
 
   _optionClick(e) {
+    debugger;
     if (e && e.target && e.target.dataQuestion && !isNaN(e.target.dataIndex)) {
       let question = e.target.dataQuestion;
       let index = e.target.dataIndex;
@@ -92,16 +86,9 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
           value
         )
       );
+      store.dispatch(orderNext(question.next));
+      store.dispatch(this._nextCallback(question));
     }
-  }
-
-  _nextCallback(question) {
-    return (next) => {
-      console.log(question, next);
-      if (question && question.next) {
-        next(question.next);
-      }
-    };
   }
 
   _skipCallback(question) {
@@ -109,14 +96,6 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
       return (skip) => skip(question.optional.goto);
     }
     return null;
-  }
-
-
-  _getValue(order) {
-    return order && order.value ? order.value : '';
-  }
-  _isDisabled(order) {
-    return !this._getValue(order);
   }
 
   stateChanged(state) {

@@ -1,4 +1,4 @@
-<playback-screen-wrapper next-callback="[[_nextCallback(question)]]" skip-callback="[[_skipCallback(question)]]" disabled="[[_isDisabled(order)]]">
+<playback-screen-wrapper skip-callback="[[_skipCallback(question)]]" no-next>
   <div class="Item">
     <maki-input elevation="0" rounding="0" fill secondary placeholder="Postcode" input-callback="[[_inputPostalCodeCallback()]]"></maki-input>
   </div>
@@ -14,11 +14,13 @@
       <div class="Subtitle">Geen adres gevonden</div>
     </template>
   </dom-if>
-  <dom-repeat items="{{addresses}}">
-    <template>
-      <div class="Option" data-index="[[index]]" data-question="[[question]]" on-click="_optionClick">
-        <div>{{item.straat}} {{item.huisnummer}}{{item.huisnummertoevoeging}}, {{item.woonplaats}} {{item.postcode}}</div>
-      </div>
-    </template>
-  </dom-repeat>
+  <div class="Options">
+    <dom-repeat items="{{addresses}}">
+      <template>
+        <div class="Option" data-index="[[index]]" data-question="[[question]]" on-click="_optionClick">
+          <div>{{item.straat}} {{item.huisnummer}}{{item.huisnummertoevoeging}}, {{item.woonplaats}} {{item.postcode}}</div>
+        </div>
+      </template>
+    </dom-repeat>
+  </div>
 </playback-screen-wrapper>
