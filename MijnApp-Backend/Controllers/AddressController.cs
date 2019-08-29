@@ -9,7 +9,7 @@ namespace MijnApp_Backend.Controllers
     public class AddressController : Controller
     {
         private const string URL_NoNumberAddition = "http://adressen.zaakonline.nl/adressen?postcode={0}&huisnummer={1}";
-        private const string URL_WithNumberAddition = "http://adressen.zaakonline.nl/adressen?postcode={0}&huisnummer={1}&huisnummer_toevoeging={2}";
+        private const string URL_WithNumberAddition = "http://adressen.zaakonline.nl/adressen?postcode={0}&huisnummer={1}&huisnummertoevoeging={2}";
 
         [HttpGet]
         [Route("address/{postalcode}/{number}/")]

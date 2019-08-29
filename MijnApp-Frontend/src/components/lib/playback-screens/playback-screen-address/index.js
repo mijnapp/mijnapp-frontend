@@ -73,7 +73,6 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
   }
 
   _optionClick(e) {
-    debugger;
     if (e && e.target && e.target.dataQuestion && !isNaN(e.target.dataIndex)) {
       let question = e.target.dataQuestion;
       let index = e.target.dataIndex;
