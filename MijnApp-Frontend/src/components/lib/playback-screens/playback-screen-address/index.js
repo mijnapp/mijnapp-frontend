@@ -78,24 +78,15 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
     if (e && e.target && e.target.dataQuestion && !isNaN(e.target.dataIndex)) {
       let question = e.target.dataQuestion;
       let index = e.target.dataIndex;
-      if (
-        question &&
-        question.options &&
-        Array.isArray(question.options) &&
-        question.options.length > index &&
-        question.options[index] &&
-        question.options[index].goto
-      ) {
-        store.dispatch(
-          orderSaveAnswer(
-            question.key || question.title,
-            question.options[index].value || question.options[index].title,
-            question.title,
-            question.options[index].title
-          )
-        );
-        store.dispatch(orderNext(question.options[index].goto));
-      }
+      let value = this.addresses[index].id;
+      store.dispatch(
+        orderSaveAnswer(
+          question.key || question.title,
+          value,
+          question.title,
+          value
+        )
+      );
     }
   }
 
@@ -115,13 +106,12 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
     return null;
   }
 
+
+  _getValue(order) {
+    return order && order.value ? order.value : '';
+  }
   _isDisabled(order) {
-    return !(
-      order &&
-      order.value &&
-      Array.isArray(order.value) &&
-      order.value.map((i) => i.length).reduce((a, b) => a + b, 0) > 0
-    );
+    return !this._getValue(order);
   }
 
   stateChanged(state) {
