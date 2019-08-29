@@ -1,12 +1,22 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using MijnApp.Domain.Models;
+using Microsoft.Extensions.Configuration;
+using MijnApp_Backend.Security;
 
 namespace MijnApp_Backend.Controllers
 {
     [Route("jwt")]
+    [Authorize]
     public class JwtController : Controller
     {
+        private readonly JwtTokenProvider _jwtTokenProvider;
+
+        public JwtController(IConfiguration config)
+        {
+            _jwtTokenProvider = new JwtTokenProvider(config);
+        }
+
         [HttpGet]
         [Route("index")]
         public IActionResult Index()
@@ -16,13 +26,21 @@ namespace MijnApp_Backend.Controllers
 
         [HttpPost]
         [Route("signin")]
-        public IActionResult SigninPost()
+        [AllowAnonymous]
+        public IActionResult SigninDigidCgi()
         {
-            var test = new Persoon
+            var user = DigidCgi.AuthenticateUser();
+
+            if (!string.IsNullOrEmpty(user))
             {
-                Id = new Guid("F5BA2997-AD97-4085-AF9F-03919A1067F2")
-            };
-            return Json(test);
+                var tokenString = _jwtTokenProvider.GenerateJsonWebToken(user);
+                Response.Cookies.Append("JwtToken", tokenString, new CookieOptions { HttpOnly = true, IsEssential = true, Secure = true });
+                return Ok(new { token = tokenString });
+            }
+
+            return Unauthorized();
         }
+
+        
     }
 }

@@ -22,9 +22,9 @@ export function* watchRequestJwtSignin() {
   yield takeLatest(REQUEST_JWT_SIGNIN, fetchJwtSignin);
 }
 
-function* fetchJwtSignin(action) {
+function* fetchJwtSignin() {
   try {
-    const result = yield call(jwtApi.signin(action.email, action.password));
+    const result = yield call(jwtApi.signin());
     yield put(requestJwtSigninSuccess(result.data, result.headers));
   } catch (e) {
     yield put(requestJwtSigninFailure(e));
@@ -35,7 +35,8 @@ export function* watchJwtSigninSuccess() {
   yield takeLatest(REQUEST_JWT_SIGNIN_SUCCESS, onJwtSigninSuccess);
 }
 
-function* onJwtSigninSuccess() {
+function* onJwtSigninSuccess(action) {
+  // create an httpcookie (non-persistent) with action.data.token
   yield put(selectPage('home'));
 }
 

@@ -1,8 +1,6 @@
 export const REQUEST_JWT_SIGNIN = 'REQUEST_JWT_SIGNIN';
-export const requestJwtSignin = (email, password) => ({
+export const requestJwtSignin = () => ({
   type: REQUEST_JWT_SIGNIN,
-  email,
-  password,
 });
 export const REQUEST_JWT_SIGNIN_SUCCESS = 'REQUEST_JWT_SIGNIN_SUCCESS';
 export const requestJwtSigninSuccess = (data, headers) => ({

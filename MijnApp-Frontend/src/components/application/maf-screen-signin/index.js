@@ -63,8 +63,8 @@ export default class MafScreenSignin extends connect(store)(PolymerElement) {
     store.dispatch(requestOAuthInit('itsme'));
   }
 
-  _signInWithItsDigiD() {
-    store.dispatch(requestJwtSignin("digid@test.nl", "test"));
+  _signInWithDigiD() {
+    store.dispatch(requestJwtSignin());
   }
 
   stateChanged(state) {

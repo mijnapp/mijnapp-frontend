@@ -2,16 +2,12 @@ import axios from 'axios';
 import { BASE_URL_API } from '../store';
 
 export const jwtApi = {
-  signin: (email, password) => async () => {
+  signin: () => async () => {
     const response = await axios.post(
-      '/jwt/signin',
+      BASE_URL_API + 'jwt/signin',
       null,
       {
-        baseURL: BASE_URL_API,
-        auth: {
-          username: email,
-          password: password
-        }
+        withCredentials: true
       }
     );
     if (response.statusText === 'OK' || response.status === 200) {
