@@ -24,6 +24,9 @@ export const jwtApi = {
     const response = await axios.get(
       '/jwt/signin',
       {
+        params: {
+          frontEndRedirectTo: window.location.href + '/digidcgifinished'
+        },
         baseURL: BASE_URL_API,
       }
     );

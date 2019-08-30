@@ -29,9 +29,11 @@ namespace MijnApp_Backend.Controllers
         [HttpGet]
         [Route("signin")]
         [AllowAnonymous]
-        public async Task<IActionResult> StartSignInDigid()
+        public async Task<IActionResult> StartSignInDigid([FromQuery]string frontEndRedirectTo)
         {
-            var redirectUrl = await _digidCgi.StartAuthenticateUser();
+            //TODO - we should check this frontEndRedirectTo that it's from one of the clients we know
+
+            var redirectUrl = await _digidCgi.StartAuthenticateUser(frontEndRedirectTo);
 
             return Ok(new { redirectTo = redirectUrl });
         }

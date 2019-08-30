@@ -23,17 +23,16 @@ namespace MijnApp_Backend.Security
             return "Paco del Taco";
         }
 
-        internal async Task<string> StartAuthenticateUser()
+        internal async Task<string> StartAuthenticateUser(string frontendRedirectUrl)
         {
             //Call to SIAM server
             var siamUrl = _config["DigidCgi:SiamServer"];
             var applicationId = _config["DigidCgi:ApplicationId"];
-            var redirectUrl = _config["DigidCgi:RedirectUrl"];
             var aSelectServer = _config["DigidCgi:SiamServerName"];
 
             var sharedSecret = _config["DigidCgi:SharedSecret"];
 
-            var url = string.Format(SiamRequestAuthenticationUrl, siamUrl, applicationId, redirectUrl, aSelectServer, sharedSecret);
+            var url = string.Format(SiamRequestAuthenticationUrl, siamUrl, applicationId, frontendRedirectUrl, aSelectServer, sharedSecret);
 
             using (var httpClient = new HttpClient())
             {
