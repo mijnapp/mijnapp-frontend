@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <RootNamespace>MijnApp_Backend</RootNamespace>
+    <UserSecretsId>320e50fc-0267-417b-965b-f4c06031b254</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,5 +20,9 @@
   <ItemGroup>
     <ProjectReference Include="..\MijnApp.Domain\MijnApp.Domain.csproj" />
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy %25USERPROFILE%25\AppData\Roaming\Microsoft\UserSecrets\320e50fc-0267-417b-965b-f4c06031b254\secrets.json C:\UserSecrets\320e50fc-0267-417b-965b-f4c06031b254\ /Y" />
+  </Target>
 
 </Project>

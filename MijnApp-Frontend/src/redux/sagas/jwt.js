@@ -3,10 +3,13 @@ import { jwtApi } from '../api/jwt';
 import { xAuth } from '../helpers/headers';
 import { selectPage } from '../actions/application';
 import {
+  REQUEST_JWT_SIGNIN_FAKE,
   REQUEST_JWT_SIGNIN,
+  requestJwtSigninSuccessFake,
   requestJwtSigninSuccess,
   requestJwtSigninFailure,
   REQUEST_JWT_SIGNIN_SUCCESS,
+  REQUEST_JWT_SIGNIN_SUCCESS_FAKE,
   REQUEST_JWT_ELEVATE_WITH_PIN,
   requestJwtElevateWithPinSuccess,
   requestJwtElevateWithPinFailure,
@@ -17,6 +20,20 @@ import {
   requestJwtRefreshSuccess,
   requestJwtRefreshFailure,
 } from '../actions/jwt';
+
+
+export function* watchRequestJwtSigninFake() {
+  yield takeLatest(REQUEST_JWT_SIGNIN_FAKE, fetchJwtSigninFake);
+}
+
+function* fetchJwtSigninFake() {
+  try {
+    const result = yield call(jwtApi.signinfake());
+    yield put(requestJwtSigninSuccessFake(result.data, result.headers));
+  } catch (e) {
+    yield put(requestJwtSigninFailure(e));
+  }
+}
 
 export function* watchRequestJwtSignin() {
   yield takeLatest(REQUEST_JWT_SIGNIN, fetchJwtSignin);
@@ -35,7 +52,15 @@ export function* watchJwtSigninSuccess() {
   yield takeLatest(REQUEST_JWT_SIGNIN_SUCCESS, onJwtSigninSuccess);
 }
 
-function* onJwtSigninSuccess() {
+export function* watchJwtSigninSuccessFake() {
+  yield takeLatest(REQUEST_JWT_SIGNIN_SUCCESS_FAKE, onJwtSigninSuccessFake);
+}
+
+function onJwtSigninSuccess(action) {
+  window.location = action.data.redirectTo;
+}
+
+function* onJwtSigninSuccessFake() {
   yield put(selectPage('home'));
 }
 

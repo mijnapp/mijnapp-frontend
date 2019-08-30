@@ -4,6 +4,14 @@
     <img src="/assets/media/Inloggen.svg" class="loginImage"/>
   </div>
   <div class="loginContent">
+    <div class="loginDigidButton" on-click="_signInWithDigiDFake">
+      <img src="/assets/logo-digid.svg" class="loginSelectButton noselect" />
+      <div>
+        <div class="loginDigidButtonHeader">FAKE Inloggen bij</div>
+        <div class="loginDigidButtonSubHeader">Mijn-app</div>
+      </div>
+    </div>
+
     <div class="loginDigidButton" on-click="_signInWithDigiD">
       <img src="/assets/logo-digid.svg" class="loginSelectButton noselect" />
       <div>
@@ -11,14 +19,16 @@
         <div class="loginDigidButtonSubHeader">Mijn-app</div>
       </div>
     </div>
+
+
     <!-- Login only by DigiD.
-        <span class="loginDivider"><u>of</u></span>
-        <paper-input value="{{username}}" label="E-mail" auto-validate type="email"
-                 on-input="_onChangeHandler"></paper-input>
-    <paper-input value="{{password}}" label="Wachtwoord" type="password"
-                 on-input="_onChangeHandler"></paper-input>
-    <div class="loginForgot">Wachtwoord vergeten?</div>-->
-    </div>
+  <span class="loginDivider"><u>of</u></span>
+  <paper-input value="{{username}}" label="E-mail" auto-validate type="email"
+               on-input="_onChangeHandler"></paper-input>
+  <paper-input value="{{password}}" label="Wachtwoord" type="password"
+               on-input="_onChangeHandler"></paper-input>
+  <div class="loginForgot">Wachtwoord vergeten?</div>-->
+  </div>
   <dom-if if="[[_showLoginWarning(jwtError)]]">
     <template>
       <div class="Error">Verkeerde combinatie van gebruikersnaam en wachtwoord</div>

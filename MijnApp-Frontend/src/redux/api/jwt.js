@@ -2,7 +2,7 @@ import axios from 'axios';
 import { BASE_URL_API } from '../store';
 
 export const jwtApi = {
-  signin: () => async () => {
+  signinfake: () => async () => {
     const response = await axios.post(
       '/jwt/signin',
       null,
@@ -12,6 +12,19 @@ export const jwtApi = {
     );
     if (response.statusText === 'OK' || response.status === 200) {
       response.headers.authorization = response.data.token;
+      return { data: response.data, headers: response.headers };
+    } else {
+      throw response.status;
+    }
+  },
+  signin: () => async () => {
+    const response = await axios.get(
+      '/jwt/signin',
+      {
+        baseURL: BASE_URL_API,
+      }
+    );
+    if (response.statusText === 'OK' || response.status === 200) {
       return { data: response.data, headers: response.headers };
     } else {
       throw response.status;

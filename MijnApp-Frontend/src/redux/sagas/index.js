@@ -6,8 +6,10 @@ import { watchRequestContract } from './contract';
 import { watchRequestContracts } from './contracts';
 import { watchRequestPersonData } from './person';
 import {
+  watchRequestJwtSigninFake,
   watchRequestJwtSignin,
   watchJwtSigninSuccess,
+  watchJwtSigninSuccessFake,
   watchRequestJwtElevateWithPin,
   watchRequestJwtRenewWithPin,
   watchRequestJwtRefresh,
@@ -32,8 +34,10 @@ export default function* rootSaga() {
     watchRequestAvgLogs(),
     watchRequestContract(),
     watchRequestContracts(),
+    watchRequestJwtSigninFake(),
     watchRequestJwtSignin(),
     watchJwtSigninSuccess(),
+    watchJwtSigninSuccessFake(),
     watchRequestJwtElevateWithPin(),
     watchRequestJwtRenewWithPin(),
     watchRequestJwtRefresh(),
