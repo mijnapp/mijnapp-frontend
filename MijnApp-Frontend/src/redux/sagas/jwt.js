@@ -57,7 +57,20 @@ export function* watchJwtSigninSuccessFake() {
 }
 
 function onJwtSigninSuccess(action) {
-  window.open(action.data.redirectTo, '_blank');
+  const w = 500;
+  const h = 950;
+  var x = window.top.outerWidth / 2 + window.top.screenX - (w / 2);
+  var y = 0;
+  const params =
+    'toolbar=no, location=no, personalbar=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, alwaysOnTop=1, width=' +
+      w +
+      ', height=' +
+      h +
+      ', top=' +
+      y +
+      ', left=' +
+      x;
+  window.open(action.data.redirectTo, 'popup', params);
 }
 
 function* onJwtSigninSuccessFake() {
