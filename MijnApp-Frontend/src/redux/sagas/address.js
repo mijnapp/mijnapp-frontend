@@ -1,6 +1,6 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { addressApi } from '../api/address';
-import { xAuth } from '../helpers/headers';
+import { jwtBearerToken } from '../helpers/headers';
 import {
   REQUEST_ADDRESS_DATA,
   requestAddressSuccess,
@@ -13,7 +13,7 @@ export function* watchRequestAddressData() {
 
 function* fetchAddressData(action) {
   try {
-    const result = yield call(addressApi.address(action, xAuth()));
+    const result = yield call(addressApi.address(action, jwtBearerToken()));
     const address = JSON.parse(result.data).adressen;
     if (address.length > 1) {
       address.sort(sortAddress);

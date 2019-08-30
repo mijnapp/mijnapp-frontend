@@ -12,7 +12,7 @@ import {
   requestOrdersSubmitFailed,
 } from '../actions/orders';
 import { selectPage } from '../actions/application';
-import { xAuth } from '../helpers/headers';
+import { jwtBearerToken } from '../helpers/headers';
 
 export function* watchRequestOrdersList() {
   yield takeLatest(REQUEST_ORDERS_LIST, fetchOrdersList);
@@ -46,7 +46,7 @@ export function* watchRequestOrdersSubmit() {
 
 function* fetchOrdersSubmit(action) {
   try {
-    yield call(ordersApi.submit(action.data, xAuth()));
+    yield call(ordersApi.submit(action.data, jwtBearerToken()));
     yield put(requestOrdersSubmitSuccess());
     yield put(selectPage('journeys'));
   } catch (e) {

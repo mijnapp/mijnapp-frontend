@@ -1,6 +1,6 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { jwtApi } from '../api/jwt';
-import { xAuth } from '../helpers/headers';
+import { jwtBearerToken } from '../helpers/headers';
 import { selectPage } from '../actions/application';
 import {
   REQUEST_JWT_SIGNIN_FAKE,
@@ -57,7 +57,7 @@ export function* watchJwtSigninSuccessFake() {
 }
 
 function onJwtSigninSuccess(action) {
-  window.location = action.data.redirectTo;
+  window.open(action.data.redirectTo, '_blank');
 }
 
 function* onJwtSigninSuccessFake() {
@@ -70,7 +70,7 @@ export function* watchRequestJwtElevateWithPin() {
 
 function* fetchJwtElevateWithPin(action) {
   try {
-    const result = yield call(jwtApi.elevateWithPin(action.pin, xAuth()));
+    const result = yield call(jwtApi.elevateWithPin(action.pin, jwtBearerToken()));
     yield put(requestJwtElevateWithPinSuccess(result.data, result.headers));
   } catch (e) {
     yield put(requestJwtElevateWithPinFailure(e));
@@ -83,7 +83,7 @@ export function* watchRequestJwtRenewWithPin() {
 
 function* fetchJwtRenewWithPin(action) {
   try {
-    const result = yield call(jwtApi.renewWithPin(action.pin, xAuth()));
+    const result = yield call(jwtApi.renewWithPin(action.pin, jwtBearerToken()));
     yield put(requestJwtRenewWithPinSuccess(result.data, result.headers));
   } catch (e) {
     yield put(requestJwtRenewWithPinFailure(e));
@@ -96,7 +96,7 @@ export function* watchRequestJwtRefresh() {
 
 function* fetchJwtRefresh() {
   try {
-    const result = yield call(jwtApi.refresh(xAuth()));
+    const result = yield call(jwtApi.refresh(jwtBearerToken()));
     yield put(requestJwtRefreshSuccess(result.data, result.headers));
   } catch (e) {
     yield put(requestJwtRefreshFailure(e));

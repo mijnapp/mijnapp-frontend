@@ -11,6 +11,9 @@ export const jwtApi = {
       }
     );
     if (response.statusText === 'OK' || response.status === 200) {
+      //TODO -  Here the returned token is saved in the response headers
+      //        and these headers are stored in the redux store (which is stored in the localstorage)
+      //        This token, however, should be stored in a safer place (and retrieved from that saver place in helpers\headers.js)
       response.headers.authorization = response.data.token;
       return { data: response.data, headers: response.headers };
     } else {
