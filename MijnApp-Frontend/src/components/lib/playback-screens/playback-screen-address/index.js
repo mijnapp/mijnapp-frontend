@@ -91,7 +91,7 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
       let address = this.addresses[index];
       if (address.woonplaats !== "'s-Hertogenbosch") {
         clearWarningDialog();
-        warningText.innerHTML = `Dit adres ligt niet in de woonplaats Den Bosch('s-Hertogenbosch). Dit zal u via de woonplaats ${address.woonplaats} moeten doorgeven. <br/><br/> Klik op 'Annuleren' om uw postcode en huisnummer te controleren. <br/>Klik op 'Doorgaan' om dit adres te gebruiken.`;
+        warningText.innerHTML = `Dit adres ligt mogelijk niet in de gemeente Den Bosch('s-Hertogenbosch). Het is belangrijk dat u de adres wijziging bij je juiste gemeente doorgeeft.<br/><br/> Klik op 'Annuleren' om uw postcode en huisnummer te controleren. <br/>Klik op 'Doorgaan' om dit adres te gebruiken.`;
         warningConfirmButton.onclick = function () { self._saveWithoutCheck(question, address); };
         warningDialog.open();
       } else {
