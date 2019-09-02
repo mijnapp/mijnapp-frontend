@@ -17,7 +17,7 @@ namespace MijnApp_Backend.Security
             _config = config;
         }
 
-        internal string GenerateJsonWebToken(string username, SignInProvider signInProvider)
+        internal string GenerateJsonWebToken(DigidUser digidUser, SignInProvider signInProvider)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
@@ -42,7 +42,7 @@ namespace MijnApp_Backend.Security
             var exp = (int)expires.Subtract(utc0).TotalSeconds;
 
             var claims = new[] {
-                new Claim(JwtRegisteredClaimNames.Sub, username),
+                new Claim(JwtRegisteredClaimNames.Sub, digidUser.Username),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new Claim(JwtOriginalIdp, signInProvider.ToString()),
                 new Claim(JwtRegisteredClaimNames.Iat, iat.ToString()),
@@ -58,5 +58,6 @@ namespace MijnApp_Backend.Security
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+
     }
 }

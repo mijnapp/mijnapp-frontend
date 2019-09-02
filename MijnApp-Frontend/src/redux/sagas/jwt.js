@@ -10,6 +10,8 @@ import {
   requestJwtSigninFailure,
   REQUEST_JWT_SIGNIN_SUCCESS,
   REQUEST_JWT_SIGNIN_SUCCESS_FAKE,
+  REQUEST_JWT_FOR_DIGIDCGI, REQUEST_JWT_FOR_DIGIDCGI_SUCCESS,
+  requestJwtTokenForDigidSuccess, requestJwtTokenForDigidFailure,
   REQUEST_JWT_ELEVATE_WITH_PIN,
   requestJwtElevateWithPinSuccess,
   requestJwtElevateWithPinFailure,
@@ -57,23 +59,32 @@ export function* watchJwtSigninSuccessFake() {
 }
 
 function onJwtSigninSuccess(action) {
-  const w = 500;
-  const h = 950;
-  var x = window.top.outerWidth / 2 + window.top.screenX - (w / 2);
-  var y = 0;
-  const params =
-    'toolbar=no, location=no, personalbar=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, alwaysOnTop=1, width=' +
-      w +
-      ', height=' +
-      h +
-      ', top=' +
-      y +
-      ', left=' +
-      x;
-  window.open(action.data.redirectTo, 'popup', params);
+  window.location = action.data.redirectTo;
 }
 
 function* onJwtSigninSuccessFake() {
+  yield put(selectPage('home'));
+}
+
+
+export function* watchRequestJwtFromDigidCgi() {
+  yield takeLatest(REQUEST_JWT_FOR_DIGIDCGI, fetchJwtFromDigidCgi);
+}
+
+function* fetchJwtFromDigidCgi(action) {
+  try {
+    const result = yield call(jwtApi.getJwtForDigidCgi(action.aselectCredentials, action.rid));
+    yield put(requestJwtTokenForDigidSuccess(result.data, result.headers));
+  } catch (e) {
+    yield put(requestJwtTokenForDigidFailure(e));
+  }
+}
+
+export function* watchRequestJwtFromDigidCgiSuccess() {
+  yield takeLatest(REQUEST_JWT_FOR_DIGIDCGI_SUCCESS, onJwtFromDigidCgiSuccess);
+}
+
+function* onJwtFromDigidCgiSuccess() {
   yield put(selectPage('home'));
 }
 

@@ -42,23 +42,33 @@ namespace MijnApp_Backend.Controllers
         }
 
         [HttpPost]
+        [Route("getJwtForDigidCgi")]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetJwtForDigidCgi([FromQuery]string aselectCredentials, [FromQuery]string rid)
+        {
+            var user = await _digidCgi.VerifyUser(aselectCredentials, rid);
+
+            var tokenString = _jwtTokenProvider.GenerateJsonWebToken(user, SignInProvider.DigidCgi);
+            return Ok(new
+            {
+                token = tokenString,
+                user = new { id = "testUserId" }
+            });
+        }
+
+        [HttpPost]
         [Route("signin")]
         [AllowAnonymous]
         public IActionResult SigninDigidCgi()
         {
-            var user = _digidCgi.AuthenticateUser();
+            var user = _digidCgi.AuthenticateFakeUser();
 
-            if (!string.IsNullOrEmpty(user))
+            var tokenString = _jwtTokenProvider.GenerateJsonWebToken(user, SignInProvider.FakeLogin);
+            return Ok(new
             {
-                var tokenString = _jwtTokenProvider.GenerateJsonWebToken(user, SignInProvider.FakeLogin);
-                return Ok(new
-                {
-                    token = tokenString,
-                    user = new { id = "testUserId"}
-                });
-            }
-
-            return Unauthorized();
+                token = tokenString,
+                user = new { id = "testUserId" }
+            });
         }
 
 

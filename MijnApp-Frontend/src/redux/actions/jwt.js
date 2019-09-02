@@ -23,6 +23,23 @@ export const requestJwtSigninFailure = (error) => ({
   type: REQUEST_JWT_SIGNIN_FAILURE,
   error,
 });
+export const REQUEST_JWT_FOR_DIGIDCGI = 'REQUEST_JWT_FOR_DIGIDCGI';
+export const requestJwtTokenForDigidCgi = (aselectCredentials, rid) => ({
+  type: REQUEST_JWT_FOR_DIGIDCGI,
+  aselectCredentials,
+  rid
+});
+export const REQUEST_JWT_FOR_DIGIDCGI_SUCCESS = 'REQUEST_JWT_FOR_DIGIDCGI_SUCCESS';
+export const requestJwtTokenForDigidSuccess = (data, headers) => ({
+  type: REQUEST_JWT_FOR_DIGIDCGI_SUCCESS,
+  data,
+  headers,
+});
+export const REQUEST_JWT_FOR_DIGIDCGI_FAILURE = 'REQUEST_JWT_FOR_DIGIDCGI_FAILURE';
+export const requestJwtTokenForDigidFailure = (error) => ({
+  type: REQUEST_JWT_FOR_DIGIDCGI_FAILURE,
+  error,
+});
 
 export const REQUEST_JWT_ELEVATE_WITH_PIN = 'REQUEST_JWT_ELEVATE_WITH_PIN';
 export const requestJwtElevateWithPin = (pin) => ({

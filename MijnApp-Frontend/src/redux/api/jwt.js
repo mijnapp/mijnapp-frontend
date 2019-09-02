@@ -36,6 +36,28 @@ export const jwtApi = {
       throw response.status;
     }
   },
+  getJwtForDigidCgi: (aselectCredentials, rid) => async () => {
+    const response = await axios.post(
+      '/jwt/getJwtForDigidCgi',
+      null,
+      {
+        baseURL: BASE_URL_API,
+        params: {
+          aselectCredentials: aselectCredentials,
+          rid: rid
+        }
+      }
+    );
+    if (response.statusText === 'OK' || response.status === 200) {
+      //TODO -  Here the returned token is saved in the response headers
+      //        and these headers are stored in the redux store (which is stored in the localstorage)
+      //        This token, however, should be stored in a safer place (and retrieved from that saver place in helpers\headers.js)
+      response.headers.authorization = response.data.token;
+      return { data: response.data, headers: response.headers };
+    } else {
+      throw response.status;
+    }
+  },
   elevateWithPin: (pin, token) => async () => {
     const response = await axios.post(
       '/jwt/pin',

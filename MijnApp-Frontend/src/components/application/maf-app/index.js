@@ -26,6 +26,7 @@ import '../../lib/maki-icons/maki-icon-chat';
 import { MakiTheme } from '../../lib/maki/maki-theme-provider';
 import { primaryPalette, secondaryPalette } from '../../helpers/palettes';
 import { requestOAuthHandle } from '../../../redux/actions/oauth';
+import { requestJwtTokenForDigidCgi } from '../../../redux/actions/jwt';
 
 export default class MafApp extends connect(store)(PolymerElement) {
   static get properties() {
@@ -49,8 +50,11 @@ export default class MafApp extends connect(store)(PolymerElement) {
       if (window.location.pathname.indexOf('oauth-itsme') > -1) {
         this._handleOAuth();
       }
+      if (window.location.pathname.indexOf('digidcgifinished') > -1) {
+        this._handleDigidCgi();
+      }
 
-      let path = window.location.pathname
+      const path = window.location.pathname
         .split(/[/-]/)
         .filter((i) => i.length > 0);
       store.dispatch(selectPageNoHistory(path[0]));
@@ -65,7 +69,7 @@ export default class MafApp extends connect(store)(PolymerElement) {
         store.dispatch(selectPageNoHistory('signin'));
       }
     }, 500);
-    let theme = {
+    const theme = {
       palette: {
         primary: {
           light: '#d6dce2',
@@ -114,6 +118,13 @@ export default class MafApp extends connect(store)(PolymerElement) {
     store.dispatch(requestOAuthHandle(code, state.StateToken, 'itsme'));
   }
 
+  _handleDigidCgi() {
+    const url = decodeURI(window.location.href);
+    const aselectCredentials = url.split('aselect_credentials=')[1].split('&')[0];
+    const rid = url.split('rid=')[1].split('&')[0];
+    store.dispatch(requestJwtTokenForDigidCgi(aselectCredentials, rid));
+  }
+
   _goHome() {
     store.dispatch(selectPage('home'));
   }
@@ -127,7 +138,7 @@ export default class MafApp extends connect(store)(PolymerElement) {
   }
 
   _nope() {
-    let doPop = confirm(
+    const doPop = confirm(
       'Deze functie komt binnenkort beschikbaar! Op dit moment wordt er hard gewerkt aan nieuwe functionaliteiten van MijnApp.\n\nHeb je feedback? Laat het ons weten via de website. Klik op \'OK\' om naar de website te gaan.'
     );
     if (doPop) {

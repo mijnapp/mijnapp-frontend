@@ -4,6 +4,9 @@ import {
   REQUEST_JWT_SIGNIN_SUCCESS_FAKE,
   REQUEST_JWT_SIGNIN_SUCCESS,
   REQUEST_JWT_SIGNIN_FAILURE,
+  REQUEST_JWT_FOR_DIGIDCGI,
+  REQUEST_JWT_FOR_DIGIDCGI_SUCCESS,
+  REQUEST_JWT_FOR_DIGIDCGI_FAILURE,
   REQUEST_JWT_ELEVATE_WITH_PIN,
   REQUEST_JWT_ELEVATE_WITH_PIN_SUCCESS,
   REQUEST_JWT_ELEVATE_WITH_PIN_FAILURE,
@@ -33,6 +36,18 @@ export const jwt = (state = { data: {}, headers: {} }, action) => {
         error: null,
       };
     case REQUEST_JWT_SIGNIN_FAILURE:
+      return { ...state, error: action.error };
+    case REQUEST_JWT_FOR_DIGIDCGI:
+      return state;
+    case REQUEST_JWT_FOR_DIGIDCGI_SUCCESS:
+      return {
+        ...state,
+        provider: 'digidcgi',
+        data: { ...state.data, ...action.data },
+        headers: { ...state.headers, ...action.headers },
+        error: null,
+      };
+    case REQUEST_JWT_FOR_DIGIDCGI_FAILURE:
       return { ...state, error: action.error };
     case REQUEST_JWT_ELEVATE_WITH_PIN:
       return state;
