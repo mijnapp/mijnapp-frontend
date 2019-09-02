@@ -28,7 +28,7 @@ export default class MakiInput extends PolymerElement {
         value: '',
       },
       value: {
-        type: String,
+        type: Object,
         value: '',
       },
       inputCallback: {

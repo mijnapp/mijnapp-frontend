@@ -666,17 +666,6 @@
     "@polymer/iron-selector" "^3.0.0-pre.26"
     "@polymer/polymer" "^3.0.0"
 
-"@polymer/paper-dialog @3.0.1":
-  name "@polymer/paper-dialog"
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@polymer/paper-dialog/-/paper-dialog-3.0.1.tgz#728ebdbfc4d35ec1485e543434cef5dba476f15e"
-  integrity sha512-KvglYbEq7AWJvui2j6WKLnOvgVMeGjovAydGrPRj7kVzCiD49Eq/hpYFJTRV5iDcalWH+mORUpw+jrFnG9+Kgw==
-  dependencies:
-    "@polymer/iron-overlay-behavior" "^3.0.0-pre.27"
-    "@polymer/neon-animation" "^3.0.0-pre.26"
-    "@polymer/paper-dialog-behavior" "^3.0.0-pre.26"
-    "@polymer/polymer" "^3.0.0"
-
 "@polymer/paper-dialog-behavior@^3.0.0-pre.26":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@polymer/paper-dialog-behavior/-/paper-dialog-behavior-3.0.1.tgz#819b2fbb9444c1c318ddf55f02819bb29a85657b"
@@ -684,6 +673,16 @@
   dependencies:
     "@polymer/iron-overlay-behavior" "^3.0.0-pre.27"
     "@polymer/paper-styles" "^3.0.0-pre.26"
+    "@polymer/polymer" "^3.0.0"
+
+"@polymer/paper-dialog@3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@polymer/paper-dialog/-/paper-dialog-3.0.1.tgz#728ebdbfc4d35ec1485e543434cef5dba476f15e"
+  integrity sha512-KvglYbEq7AWJvui2j6WKLnOvgVMeGjovAydGrPRj7kVzCiD49Eq/hpYFJTRV5iDcalWH+mORUpw+jrFnG9+Kgw==
+  dependencies:
+    "@polymer/iron-overlay-behavior" "^3.0.0-pre.27"
+    "@polymer/neon-animation" "^3.0.0-pre.26"
+    "@polymer/paper-dialog-behavior" "^3.0.0-pre.26"
     "@polymer/polymer" "^3.0.0"
 
 "@polymer/paper-input@3.0.2":
