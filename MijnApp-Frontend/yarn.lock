@@ -707,6 +707,16 @@
     "@polymer/iron-flex-layout" "^3.0.0-pre.26"
     "@polymer/polymer" "^3.0.0"
 
+"@polymer/paper-toast@3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@polymer/paper-toast/-/paper-toast-3.0.1.tgz#213aa3373909cee7c8e17299cf70fa2603bfb358"
+  integrity sha512-pizuogzObniDdICUc6dSLrnDt2VzzoRne1gCmbD6sfOATVv5tc8UfrqhA2iHngbNBEbniBiciS3iogdp5KTVUQ==
+  dependencies:
+    "@polymer/iron-a11y-announcer" "^3.0.0-pre.26"
+    "@polymer/iron-fit-behavior" "^3.0.0-pre.26"
+    "@polymer/iron-overlay-behavior" "^3.0.0-pre.27"
+    "@polymer/polymer" "^3.0.0"
+
 "@polymer/polymer@3.3.0", "@polymer/polymer@^3.0.0":
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/@polymer/polymer/-/polymer-3.3.0.tgz#52a0665ac29654728e8f46e8ee178c02c49efdd0"
