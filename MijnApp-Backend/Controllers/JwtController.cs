@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -10,11 +11,13 @@ namespace MijnApp_Backend.Controllers
     [Authorize]
     public class JwtController : Controller
     {
+        private readonly IConfiguration _config;
         private readonly JwtTokenProvider _jwtTokenProvider;
         private readonly DigidCgi _digidCgi;
 
         public JwtController(IConfiguration config)
         {
+            _config = config;
             _jwtTokenProvider = new JwtTokenProvider(config);
             _digidCgi = new DigidCgi(config);
         }
@@ -31,7 +34,7 @@ namespace MijnApp_Backend.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> StartSignInDigid([FromQuery]string frontEndRedirectTo)
         {
-            //TODO - we should check this frontEndRedirectTo that it's from one of the clients we know
+            CheckFrontendRedirectUrl(frontEndRedirectTo);
 
             var redirectUrl = await _digidCgi.StartAuthenticateUser(frontEndRedirectTo);
 
@@ -54,6 +57,26 @@ namespace MijnApp_Backend.Controllers
             return Unauthorized();
         }
 
-        
+
+        private void CheckFrontendRedirectUrl(string redirectUrl)
+        {
+            if (string.IsNullOrWhiteSpace(redirectUrl))
+            {
+                throw new Exception("The redirect URL can't be empty");
+            }
+
+            //The redirect URL has to be one of our known front end URLs
+            var allowedOrigins = _config.GetValue<string>("Origins").ToLower().Split(';');
+
+            foreach (var allowedOrigin in allowedOrigins)
+            {
+                if (redirectUrl.ToLower().StartsWith(allowedOrigin))
+                {
+                    return;
+                }
+            }
+
+            throw new Exception("The redirect URL is not from an allowed origin");
+        }
     }
 }
