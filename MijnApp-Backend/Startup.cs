@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using MijnApp_Backend.Security;
 
 namespace MijnApp_Backend
 {
@@ -63,6 +64,8 @@ namespace MijnApp_Backend
             });
 
             app.UseAuthentication();
+
+            app.UseProlongSession();
 
             app.UseMvc();
         }

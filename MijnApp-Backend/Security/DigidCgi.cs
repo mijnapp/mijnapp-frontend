@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Http;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using Microsoft.Extensions.Configuration;
@@ -53,6 +54,11 @@ namespace MijnApp_Backend.Security
                 //TODO - Error handling in case result code is not 0000
                 throw new Exception($"SIAM Result code: {resultCode}");
             }
+        }
+
+        internal void ProlongSession(ClaimsPrincipal currentUser)
+        {
+            //TODO - implement Http call to SIAM server with rid from user claim
         }
     }
 }

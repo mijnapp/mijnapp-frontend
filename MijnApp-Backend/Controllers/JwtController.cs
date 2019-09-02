@@ -50,7 +50,7 @@ namespace MijnApp_Backend.Controllers
 
             if (!string.IsNullOrEmpty(user))
             {
-                var tokenString = _jwtTokenProvider.GenerateJsonWebToken(user, SignInProviders.DigidCgi);
+                var tokenString = _jwtTokenProvider.GenerateJsonWebToken(user, SignInProvider.FakeLogin);
                 return Ok(new
                 {
                     token = tokenString,

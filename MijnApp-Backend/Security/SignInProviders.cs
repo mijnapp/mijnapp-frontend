@@ -1,7 +1,8 @@
 ﻿namespace MijnApp_Backend.Security
 {
-    public enum SignInProviders
+    public enum SignInProvider
     {
+        FakeLogin,
         DigidCgi
     }
 }

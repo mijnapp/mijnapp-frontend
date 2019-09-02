@@ -9,6 +9,7 @@ namespace MijnApp_Backend.Security
 {
     internal class JwtTokenProvider
     {
+        internal const string JwtOriginalIdp = "mijnApp_oidp";
         private readonly IConfiguration _config;
 
         internal JwtTokenProvider(IConfiguration config)
@@ -16,7 +17,7 @@ namespace MijnApp_Backend.Security
             _config = config;
         }
 
-        internal string GenerateJsonWebToken(string username, SignInProviders signInProviders)
+        internal string GenerateJsonWebToken(string username, SignInProvider signInProvider)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
@@ -25,13 +26,25 @@ namespace MijnApp_Backend.Security
             var issueTime = DateTime.Now;
 
             var iat = (int)issueTime.Subtract(utc0).TotalSeconds;
-            var expires = DateTime.Now.AddMinutes(int.Parse(_config["Jwt:ExpirationInMinutes"]));
+
+            //Expiry depends on the identity provider
+            int expiryInMinutes = 0;
+            switch (signInProvider)
+            {
+                case SignInProvider.FakeLogin:
+                    expiryInMinutes = int.Parse(_config["Jwt:ExpirationInMinutes:Fake"]);
+                    break;
+                case SignInProvider.DigidCgi:
+                    expiryInMinutes = int.Parse(_config["Jwt:ExpirationInMinutes:DigidCgi"]);
+                    break;
+            }
+            var expires = DateTime.Now.AddMinutes(expiryInMinutes);
             var exp = (int)expires.Subtract(utc0).TotalSeconds;
 
             var claims = new[] {
                 new Claim(JwtRegisteredClaimNames.Sub, username),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim(JwtRegisteredClaimNames.Iss, signInProviders.ToString()),
+                new Claim(JwtOriginalIdp, signInProvider.ToString()),
                 new Claim(JwtRegisteredClaimNames.Iat, iat.ToString()),
                 new Claim(JwtRegisteredClaimNames.Exp, exp.ToString()),
             };
