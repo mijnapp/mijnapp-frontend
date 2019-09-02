@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy &quot;%25USERPROFILE%25\AppData\Roaming\Microsoft\UserSecrets\320e50fc-0267-417b-965b-f4c06031b254\secrets.json&quot; &quot;C:\UserSecrets\320e50fc-0267-417b-965b-f4c06031b254\&quot; /Y" />
+    <Exec Command="if EXIST &quot;C:\UserSecrets\320e50fc-0267-417b-965b-f4c06031b254\&quot; (&#xD;&#xA;xcopy &quot;%25USERPROFILE%25\AppData\Roaming\Microsoft\UserSecrets\320e50fc-0267-417b-965b-f4c06031b254\secrets.json&quot; &quot;C:\UserSecrets\320e50fc-0267-417b-965b-f4c06031b254\&quot; /Y&#xD;&#xA;)" />
   </Target>
 
 </Project>
