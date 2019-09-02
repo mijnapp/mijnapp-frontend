@@ -6,6 +6,7 @@
 import '@polymer/polymer/lib/elements/dom-if';
 import '@polymer/polymer/lib/elements/dom-repeat';
 import '@polymer/polymer/lib/elements/array-selector';
+import '@polymer/paper-dialog/paper-dialog.js';
 
 import './components/application/maf-app';
 // NOTE: service worker not enabled.

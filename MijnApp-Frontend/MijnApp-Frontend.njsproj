@@ -199,7 +199,6 @@
     <Content Include="dist\vendor\webcomponents-bundle.js" />
     <Content Include="dist\vendor\webcomponents-loader.js" />
     <Content Include="LICENCE.md" />
-    <Content Include="package-lock.json" />
     <Content Include="package.json" />
     <Content Include="postcss.config.js" />
     <Content Include="README.md" />
@@ -516,6 +515,7 @@
     <Content Include="wct.conf.js" />
     <Content Include="Web.config" />
     <Content Include="webpack.config.js" />
+    <Content Include="yarn.lock" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>

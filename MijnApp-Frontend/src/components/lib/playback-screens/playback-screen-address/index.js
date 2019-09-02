@@ -12,7 +12,6 @@ import template from './template.html';
 import '../../playback-screen-wrapper';
 import { requestAddressData } from '../../../../redux/actions/address';
 import { isNullOrUndefined } from 'util';
-
 export default class PlaybackScreenAddress extends connect(store)(PolymerElement) {
   static get properties() {
     return {
@@ -72,20 +71,32 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
     };
   }
 
+  _saveWithoutCheck(question, address) {
+    store.dispatch(
+      orderSaveAnswer(
+        question.key || question.title,
+        address.id,
+        question.title,
+        address.id
+      )
+    );
+    store.dispatch(orderNext(question.next));
+  }
+
   _optionClick(e) {
+    let self = this;
     if (e && e.target && e.target.dataQuestion && !isNaN(e.target.dataIndex)) {
       let question = e.target.dataQuestion;
       let index = e.target.dataIndex;
-      let value = this.addresses[index].id;
-      store.dispatch(
-        orderSaveAnswer(
-          question.key || question.title,
-          value,
-          question.title,
-          value
-        )
-      );
-      store.dispatch(orderNext(question.next));
+      let address = this.addresses[index];
+      if (address.woonplaats !== "'s-Hertogenbosch") {
+        clearWarningDialog();
+        warningText.innerHTML = `Dit adres ligt niet in de woonplaats Den Bosch('s-Hertogenbosch). Dit zal u via de woonplaats ${address.woonplaats} moeten doorgeven. <br/><br/> Klik op 'Annuleren' om uw postcode en huisnummer te controleren. <br/>Klik op 'Doorgaan' om dit adres te gebruiken.`;
+        warningConfirmButton.onclick = function () { self._saveWithoutCheck(question, address); };
+        warningDialog.open();
+      } else {
+        self._saveWithoutCheck(question, address);
+      }
     }
   }
 
