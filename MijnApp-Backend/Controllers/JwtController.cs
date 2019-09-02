@@ -51,7 +51,11 @@ namespace MijnApp_Backend.Controllers
             if (!string.IsNullOrEmpty(user))
             {
                 var tokenString = _jwtTokenProvider.GenerateJsonWebToken(user);
-                return Ok(new { token = tokenString });
+                return Ok(new
+                {
+                    token = tokenString,
+                    user = new { id = "testUserId"}
+                });
             }
 
             return Unauthorized();
