@@ -23,7 +23,12 @@ namespace MijnApp_Backend.Security
 
         internal DigidUser AuthenticateFakeUser()
         {
-            var digidUser = new DigidUser(new NameValueCollection());
+            var properties = new NameValueCollection();
+            properties.Add("uid", "testuseridPaco");
+            properties.Add("organization", "someorganizationfromPaco");
+            properties.Add("tgt_exp_time", "645643632");
+
+            var digidUser = new DigidUser(properties);
             digidUser.Username = "Paco del Taco";
             return digidUser;
         }
