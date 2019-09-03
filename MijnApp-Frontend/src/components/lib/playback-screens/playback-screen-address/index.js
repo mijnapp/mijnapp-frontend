@@ -90,13 +90,13 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
 
   _optionClick(e) {
     let self = this;
-    if (e && e.target && e.target.dataQuestion && !isNaN(e.target.dataIndex)) {
-      let question = e.target.dataQuestion;
-      let index = e.target.dataIndex;
+    if (e && e.currentTarget && e.currentTarget.dataQuestion && !isNaN(e.currentTarget.dataIndex)) {
+      let question = e.currentTarget.dataQuestion;
+      let index = e.currentTarget.dataIndex;
       let address = this.addresses[index];
       if (address.woonplaats !== "'s-Hertogenbosch") {
         clearWarningDialog();
-        warningText.innerHTML = `Dit adres ligt mogelijk niet in de gemeente Den Bosch('s-Hertogenbosch). Het is belangrijk dat u de adres wijziging bij de juiste gemeente doorgeeft.<br/><br/> Klik op 'Annuleren' om uw postcode en huisnummer te controleren. <br/>Klik op 'Doorgaan' om dit adres te gebruiken.`;
+        warningText.innerHTML = `Het nieuwe adres dat u opgeeft ligt niet in de gemeente 's-Hertogenbosch. Kies op de gemeentekeuze pagina de gemeente van uw nieuwe adres.<br/><br/> Klik op 'Annuleren' om uw postcode en huisnummer te controleren. <br/>Klik op 'Doorgaan' om dit adres te gebruiken.`;
         warningConfirmButton.onclick = function () { self._saveWithoutCheck(question, address); };
         warningDialog.open();
       } else {

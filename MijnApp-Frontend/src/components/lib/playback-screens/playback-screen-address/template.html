@@ -27,7 +27,8 @@
     <dom-repeat items="{{addresses}}">
       <template>
         <div class="Option" data-index="[[index]]" data-question="[[question]]" on-click="_optionClick">
-          <div>{{item.straat}} {{item.huisnummer}}{{item.huisnummertoevoeging}}, {{item.woonplaats}} {{item.postcode}}</div>
+          <div class="OptionText">{{item.straat}} {{item.huisnummer}}{{item.huisnummertoevoeging}}, {{item.woonplaats}} {{item.postcode}}</div>
+          <div class="OptionCarrot">></div>
         </div>
       </template>
     </dom-repeat>
