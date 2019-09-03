@@ -154,10 +154,6 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
     }
     this._renderCalendar();
 
-    // hide dialog if in modal mode
-    if(this.bModal === true) {
-      this.$id.setAttribute('aria-hidden', 'true');
-    }
 
     this._handlerShowDlg = function (e) {
       // ensure focus remains on the dialog
@@ -491,7 +487,7 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
     * @method _setSelectedDate
   * */
   _setSelectedDate(curDay) {
-    this.set('date', moment([this.year, this.month, curDay.innerText]).format());
+    this.set('date', moment([this.year, this.month, curDay.innerText]).format('YYYY-MM-DD'));
   }
 
   /**
@@ -995,9 +991,6 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
   // @return (boolean) true
   //
   _handleGridBlur() {
-    this.$id.querySelector('#' + this.$grid.getAttribute('aria-activedescendant')).classList.remove('focus');
-    // eslint-disable-next-line
-    this.$id.querySelector('#' + this.$grid.getAttribute('aria-activedescendant')).setAttribute('aria-selected', 'false');
     return true;
   }
 
@@ -1018,9 +1011,6 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
     this._checkDatesRange();
     this._updateAvailableDays();
 
-    // show the dialog
-    this.$id.setAttribute('aria-hidden', 'false');
-
     this.$grid.focus();
   } // end showDlg()
 
@@ -1037,9 +1027,6 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
     document.removeEventListener('mouseup', this._handlerShowDlg);
     document.removeEventListener('mousemove', this._handlerShowDlg);
     document.removeEventListener('mouseover', this._handlerShowDlg);
-
-    // hide the dialog
-    this.$id.setAttribute('aria-hidden', 'true');
 
     // set focus on the focus target
     // TODO

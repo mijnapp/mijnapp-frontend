@@ -169,10 +169,10 @@ store.dispatch(
         },
         {
           id: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb',
-          type: 'text',
+          type: 'calendar',
           options: null,
           title: 'Wanneer ga je verhuizen?',
-          subtitle: 'bijv. 01-11-2018',
+          subtitle: 'kies een datum',
           next: '37e30b1f-fb51-4d49-8756-fa5d4d55829a',
         },
         {
@@ -249,7 +249,7 @@ store.dispatch(
           type: 'calendar',
           options: null,
           title: 'Wanneer ga je verhuizen?',
-          subtitle: 'bijv. 01-11-2018',
+          subtitle: 'kies een datum',
           next: 'a7beef34-9aea-4891-971d-beb67b2e8010',
         },
         {

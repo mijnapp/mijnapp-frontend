@@ -1,12 +1,7 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element';
 import { connect } from 'pwa-helpers/connect-mixin';
 import { store } from '../../../../redux/store';
-
-import {
-  orderSaveAnswer,
-  orderClearAnswer,
-} from '../../../../redux/actions/order';
-
+import { orderSaveAnswer } from '../../../../redux/actions/order';
 import { JOURNEY_START } from '../../../../helpers/common';
 
 import css from './style.pcss';
@@ -19,7 +14,13 @@ export default class PlaybackScreenCalendar extends connect(store)(
   PolymerElement
 ) {
   static get properties() {
-    return {};
+    return {
+      datepickerValue: {
+        type: String,
+        notify: true,
+        observer: '_datePickerValueChanged'
+      }
+    };
   }
 
   static get template() {
@@ -34,25 +35,16 @@ export default class PlaybackScreenCalendar extends connect(store)(
     return question && question.title ? question.title : 'Naamloze vraag';
   }
 
-  daysInMonth(anyDateInMonth) {
-    return new Date(
-      anyDateInMonth.getFullYear(),
-      anyDateInMonth.getMonth() + 1,
-      0
-    ).getDate();
-  }
-
-  _inputCallback(question) {
-    return (data) => {
-      store.dispatch(
-        orderSaveAnswer(
-          question.key || question.title,
-          data,
-          question.title,
-          data
-        )
-      );
-    };
+  _datePickerValueChanged(data) {
+    var question = this.question;
+    store.dispatch(
+      orderSaveAnswer(
+        question.key || question.title,
+        data,
+        question.title,
+        data
+      )
+    );
   }
 
   _getValue(order) {
@@ -81,12 +73,10 @@ export default class PlaybackScreenCalendar extends connect(store)(
   stateChanged(state) {
     this.journey = state.journey;
     this.current = state.order.current;
-    this.id =
-      this.current === JOURNEY_START
-        ? JOURNEY_START
-        : state.order.data[this.current].question;
-    this.order =
-      this.current === JOURNEY_START ? {} : state.order.data[this.current];
+    this.id = this.current === JOURNEY_START
+      ? JOURNEY_START
+      : state.order.data[this.current].question;
+    this.order = this.current === JOURNEY_START ? {} : state.order.data[this.current];
     this.selected = this.order._tracker;
     if (this.journey) {
       this.question = (this.journey.questions || []).find(
@@ -96,7 +86,6 @@ export default class PlaybackScreenCalendar extends connect(store)(
     if (!this.question) {
       this.question = '';
     }
-    this.datepickerValue = '01-01-2019';
   }
 }
 
