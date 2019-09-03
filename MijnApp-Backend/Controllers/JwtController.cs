@@ -46,6 +46,9 @@ namespace MijnApp_Backend.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> GetJwtForDigidCgi([FromQuery]string aselectCredentials, [FromQuery]string rid)
         {
+            //TODO - moeten we hier checken dat rid eerder al verstrekt was door ons via StartSignInDigid?
+            //       hoe moeten we dit dan controleren? We houden geen state bij. Moeten we dan zoiets als Redis implementeren voor het geval we server farms gebruiken?
+
             var user = await _digidCgi.VerifyUser(aselectCredentials, rid);
 
             var tokenString = _jwtTokenProvider.GenerateJsonWebToken(user, SignInProvider.DigidCgi);

@@ -27,7 +27,7 @@ export const jwtApi = {
       '/jwt/signin',
       {
         params: {
-          frontEndRedirectTo: window.location.href + '/digidcgifinished'
+          frontEndRedirectTo: window.location.origin + '/digidcgifinished'
         },
         baseURL: BASE_URL_API,
       }

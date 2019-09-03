@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -19,16 +20,52 @@ namespace MijnApp_Backend.Security
 
         public async Task Invoke(HttpContext context, IConfiguration configuration)
         {
-            ProlongSession(context.User, configuration);
+            string newJwtToken = ProlongSessionAndCreateNewJwtToken(context.User, configuration);
 
-            // Call the next delegate/middleware in the pipeline
-            await _next(context);
+            if (string.IsNullOrEmpty(newJwtToken))
+            {
+                await _next(context);
+                return;
+            }
 
-            //TODO - we should do something with the renewed session in the existing JWT token
+            // Store the "pre-modified" response stream.
+            var existingBody = context.Response.Body;
+
+            using (var newBody = new MemoryStream())
+            {
+                // We set the response body to our stream so we can read after the chain of middle wares have been called.
+                context.Response.Body = newBody;
+
+                await _next(context);
+
+                // Reset the body so nothing from the latter middle wares goes to the output.
+                context.Response.Body = new MemoryStream();
+                newBody.Seek(0, SeekOrigin.Begin);
+
+                //Get the original content
+                var originalContent = new StreamReader(newBody).ReadToEnd();
+
+                //Remove the last "}
+                var newContent = originalContent.Substring(0, originalContent.Length - 2);
+
+                //Add the jwtToken
+                newContent += $",\"jwtToken\":\"{newJwtToken}\"";
+
+                //And reposition the last "}
+                newContent += "}\"";
+
+                //Set back the existing stream
+                context.Response.Body = existingBody;
+
+                // Send our modified content to the response body.
+                await context.Response.WriteAsync(newContent);
+            }
         }
 
-        private void ProlongSession(ClaimsPrincipal currentUser, IConfiguration configuration)
+        private string ProlongSessionAndCreateNewJwtToken(ClaimsPrincipal currentUser, IConfiguration configuration)
         {
+            string jwtToken = string.Empty;
+
             if (currentUser.HasClaim(c => c.Type == JwtTokenProvider.JwtOriginalIdp))
             {
                 var signInProviderString = currentUser.Claims.First(c => c.Type == JwtTokenProvider.JwtOriginalIdp).Value;
@@ -38,17 +75,23 @@ namespace MijnApp_Backend.Security
                 switch (signInProvider)
                 {
                     case SignInProvider.DigidCgi:
-                        ProlongSessionDigidCgi(currentUser, configuration);
+                        jwtToken = ProlongSessionDigidCgiAndCreateJwtToken(currentUser, configuration);
                         break;
                 }
             }
+
+            return jwtToken;
         }
 
-        private void ProlongSessionDigidCgi(ClaimsPrincipal currentUser, IConfiguration configuration)
+        private string ProlongSessionDigidCgiAndCreateJwtToken(ClaimsPrincipal currentUser, IConfiguration configuration)
         {
             var digidCgi = new DigidCgi(configuration);
 
             digidCgi.ProlongSession(currentUser);
+
+            var jwtTokenProvider = new JwtTokenProvider(configuration);
+
+            return jwtTokenProvider.ProlongJwtToken(currentUser, SignInProvider.DigidCgi);
         }
     }
 
