@@ -26,7 +26,8 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
        */
       date: {
         type: String,
-        notify: true
+        notify: true,
+        observer: '_dateChanged'
       },
       /**
        * Localize the calendar.
@@ -168,6 +169,18 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
     super.disconnectedCallback();
     this._unBindHandlers();
     this._unBindCellsClickHandlers();
+  }
+
+  _dateChanged(date) {
+    if (date === '') {
+      if (this.$grid !== null && this.$grid.querySelector('.focus') !== null) {
+        if (this.$grid.querySelector('.focus').classList.length > 0) {
+          this.$grid.querySelector('.focus').classList.remove('focus');
+          this.$grid.setAttribute('aria-selected', 'false');
+          this.set('date', '');
+        }
+      }
+    }
   }
 
   _initDateChanged(newInitDate, oldInitDate) {

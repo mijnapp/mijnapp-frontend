@@ -73,10 +73,13 @@ export default class PlaybackScreenCalendar extends connect(store)(
   stateChanged(state) {
     this.journey = state.journey;
     this.current = state.order.current;
-    this.id = this.current === JOURNEY_START
-      ? JOURNEY_START
-      : state.order.data[this.current].question;
-    this.order = this.current === JOURNEY_START ? {} : state.order.data[this.current];
+    if (this.current === JOURNEY_START) {
+      this.id = JOURNEY_START;
+      this.order = {};
+    } else {
+      this.id = state.order.data[this.current].question;
+      this.order = state.order.data[this.current];
+    }
     this.selected = this.order._tracker;
     if (this.journey) {
       this.question = (this.journey.questions || []).find(
@@ -85,6 +88,11 @@ export default class PlaybackScreenCalendar extends connect(store)(
     }
     if (!this.question) {
       this.question = '';
+    }
+    if (this.current === JOURNEY_START && state.order.data.length === 0) {
+      // Reset the datepicker value if we start a new journey,
+      // and no answers have been filled in.
+      this.datepickerValue = '';
     }
   }
 }
