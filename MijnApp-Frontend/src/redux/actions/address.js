@@ -15,3 +15,5 @@ export const requestAddressDataFailure = (error) => ({
   type: REQUEST_ADDRESS_DATA_FAILURE,
   error,
 });
+export const CLEAR_ADDRESS_DATA = 'CLEAR_ADDRESS_DATA';
+export const clearAddressData = () => ({ type: CLEAR_ADDRESS_DATA });

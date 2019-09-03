@@ -12,6 +12,7 @@ import template from './template.html';
 import '../../playback-screen-wrapper';
 import { requestAddressData } from '../../../../redux/actions/address';
 import { isNullOrUndefined } from 'util';
+import { reset } from 'axe-core';
 export default class PlaybackScreenAddress extends connect(store)(PolymerElement) {
   static get properties() {
     return {
@@ -107,14 +108,16 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
     return null;
   }
 
+  _reset() {
+    this.postalCode = "";
+    this.number = "";
+    this.numberAddition = "";
+    this.addresses = [];
+  }
+
   stateChanged(state) {
     this.journey = state.journey;
     this.current = state.order.current;
-    if (!this._isEmpty()) {
-      this.addresses = state.address.data;
-    } else {
-      this.addresses = [];
-    }
     this.id = this.current === JOURNEY_START
         ? JOURNEY_START
         : state.order.data[this.current].question;
@@ -127,6 +130,11 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
     }
     if (!this.question) {
       this.question = '';
+    }
+
+    this.addresses = state.address.data;
+    if (state.address.reset) {
+      this._reset();
     }
   }
 }

@@ -4,6 +4,7 @@ import { connect } from 'pwa-helpers/connect-mixin';
 
 import { setJourney } from '../../../redux/actions/journey';
 import { selectPage } from '../../../redux/actions/application';
+import { clearAddressData } from '../../../redux/actions/address';
 
 import css from './style.pcss';
 import template from './template.html';
@@ -29,16 +30,18 @@ export default class MafScreenJourneys extends connect(store)(PolymerElement) {
   }
 
   _selectJourneyA() {
-    store.dispatch(setJourney(this.journeys[0]));
-    store.dispatch(selectPage('journey'));
+    this._selectJourney(0);
   }
   _selectJourneyB() {
-    store.dispatch(setJourney(this.journeys[1]));
-    store.dispatch(selectPage('journey'));
+    this._selectJourney(1);
   }
   _selectJourneyC() {
-    store.dispatch(setJourney(this.journeys[2]));
+    this._selectJourney(2);
+  }
+  _selectJourney(index) {
+    store.dispatch(setJourney(this.journeys[index]));
     store.dispatch(selectPage('journey'));
+    store.dispatch(clearAddressData());
   }
 
   focusOnSearch() {
