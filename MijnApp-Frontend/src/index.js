@@ -14,3 +14,5 @@ import './components/application/maf-app';
 
 // NOTE: service worker not enabled.
 // sw();
+import axios from 'axios';
+axios.defaults.withCredentials = true;
