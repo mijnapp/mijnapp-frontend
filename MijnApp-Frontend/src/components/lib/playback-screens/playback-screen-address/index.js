@@ -19,7 +19,8 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
       postalCode: String,
       number: String,
       numberAddition: String,
-      addresses: Array
+      addresses: Array,
+      hasSearched: Boolean
     };
   }
 
@@ -44,6 +45,7 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
       this.notifyPath("_isEmpty()")
       if (!this._isEmpty()) {
         store.dispatch(requestAddressData(this.postalCode, this.number, this.numberAddition));
+        this.hasSearched = true;
       } else {
         this.addresses = [];
       }
@@ -55,6 +57,7 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
       this.number = data.trim();
       if (!this._isEmpty()) {
         store.dispatch(requestAddressData(this.postalCode, this.number, this.numberAddition));
+        this.hasSearched = true;
       } else {
         this.addresses = [];
       }
@@ -66,6 +69,7 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
       this.numberAddition = data.trim();
       if (!this._isEmpty()) {
         store.dispatch(requestAddressData(this.postalCode, this.number, this.numberAddition));
+        this.hasSearched = true;
       } else {
         this.addresses = [];
       }
@@ -113,6 +117,7 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
     this.number = "";
     this.numberAddition = "";
     this.addresses = [];
+    this.hasSearched = false;
   }
 
   stateChanged(state) {

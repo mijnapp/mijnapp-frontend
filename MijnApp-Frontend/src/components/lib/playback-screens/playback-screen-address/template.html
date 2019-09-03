@@ -8,21 +8,26 @@
   <div class="Item">
     <maki-input elevation="0" rounding="0" fill secondary placeholder="Huisnummertoevoeging" input-callback="[[_inputNumberAdditionCallback()]]"></maki-input>
   </div>
-  <dom-if if="{{!_isEmpty()}}">
+  <dom-if if="{{hasSearched}}">
     <template>
       <div class="Title">Gevonden adressen</div>
-    </template>
-  </dom-if>
-  <dom-if if="{{!addresses.length}}">
-    <template>
-      <div class="Subtitle">Geen adres gevonden</div>
+      <dom-if if="{{!addresses.length}}">
+        <template>
+          <div class="Subtitle">Uw nieuwe adres is bij de gemeente (nog) niet bekend. Controleer de postcode, huisnummer en eventueel toevoeging en probeer opnieuw.</div>
+        </template>
+      </dom-if>
+      <dom-if if="{{addresses.length}}">
+        <template>
+          <div class="Subtitle">Staat uw adres niet in de lijst, controleer dan de ingevulde postcode, huisnummer en eventueel huisnummertoevoeging en probeer opnieuw.</div>
+        </template>
+      </dom-if>
     </template>
   </dom-if>
   <div class="Options">
     <dom-repeat items="{{addresses}}">
       <template>
         <div class="Option" data-index="[[index]]" data-question="[[question]]" on-click="_optionClick">
-          <div>{{item.straat}} {{item.huisnummer}} {{item.huisnummertoevoeging}}, {{item.woonplaats}} {{item.postcode}}</div>
+          <div>{{item.straat}} {{item.huisnummer}}{{item.huisnummertoevoeging}}, {{item.woonplaats}} {{item.postcode}}</div>
         </div>
       </template>
     </dom-repeat>
