@@ -15,6 +15,8 @@ export const jwtApi = {
       //        and these headers are stored in the redux store (which is stored in the localstorage)
       //        This token, however, should be stored in a safer place (and retrieved from that saver place in helpers\headers.js)
       response.headers.authorization = response.data.token;
+      successToast.text = "Succesvol ingelogd";
+      successToast.open();
       return { data: response.data, headers: response.headers };
     } else {
       throw response.status;
@@ -53,6 +55,8 @@ export const jwtApi = {
       //        and these headers are stored in the redux store (which is stored in the localstorage)
       //        This token, however, should be stored in a safer place (and retrieved from that saver place in helpers\headers.js)
       response.headers.authorization = response.data.token;
+      successToast.text = "Succesvol ingelogd";
+      successToast.open();
       return { data: response.data, headers: response.headers };
     } else {
       throw response.status;

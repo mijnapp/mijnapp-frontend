@@ -66,14 +66,10 @@ export default class MafScreenSignin extends connect(store)(PolymerElement) {
 
   _signInWithDigiD() {
     store.dispatch(requestJwtSignin());
-    successToast.text = "Succesvol ingelogd";
-    successToast.open();
   }
 
   _signInWithDigiDFake() {
     store.dispatch(requestJwtSigninFake());
-    successToast.text = "Succesvol ingelogd";
-    successToast.open();
   }
 
   stateChanged(state) {
