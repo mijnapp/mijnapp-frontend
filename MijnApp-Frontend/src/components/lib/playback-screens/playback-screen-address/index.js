@@ -137,7 +137,11 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
       this.question = '';
     }
 
-    this.addresses = state.address.data;
+    if (this._isEmpty()) {
+      this.addresses = [];
+    } else {
+      this.addresses = state.address.data;
+    }
     if (state.address.reset) {
       this._reset();
     }
