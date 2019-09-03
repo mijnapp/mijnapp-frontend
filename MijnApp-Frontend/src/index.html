@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 
 <head>
@@ -161,12 +161,17 @@
       warningConfirmButton.innerHTML = "Doorgaan";
       warningConfirmButton.onclick = function () { };
     }
+
   </script>
 </head>
 
 <body>
-  <paper-toas id="succesToast" duration="3"></paper-toas>
-  <paper-dialog id="warningDialog" modal class="warningDialog">
+  <paper-toast id="successToast"></paper-toast>
+  <script>
+    successToast.horizontalAlign = "center"
+    successToast.verticalAlign = "top"
+  </script>
+  <paper-dialog id="warningDialog" modal class="warningDialog" style="display: none">
     <h1>Waarschuwing <span id="warningTitle"></span></h1>
     <p id="warningText" class="dialogText"></p>
     <div class="buttonContainer">
@@ -174,7 +179,7 @@
       <button id="warningConfirmButton" class="btn" dialog-confirm>Doorgaan</button>
     </div>
   </paper-dialog>
-  <paper-dialog id="errorDialog" modal class="errorDialog">
+  <paper-dialog id="errorDialog" modal class="errorDialog" style="display: none">
     <h1>Error: <span id="errorTitle"></span></h1>
     <p id="errorText" class="dialogText"></p>
     <div class="buttonContainer">
