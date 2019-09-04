@@ -120,6 +120,23 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
     this.hasSearched = false;
   }
 
+  ready() {
+    super.ready();
+    let postalCodeInput = this.shadowRoot.getElementById("postalCodeInput");
+    let numberInput = this.shadowRoot.getElementById("numberInput");
+    let numberAdditionInput = this.shadowRoot.getElementById("numberAdditionInput");
+    postalCodeInput.addEventListener('keyup', function (e) {
+      if (e.keyCode === 13) {
+        numberInput.shadowRoot.querySelector('.Input').focus();
+      }
+    });
+    numberInput.addEventListener('keyup', function (e) {
+      if (e.keyCode === 13) {
+        numberAdditionInput.shadowRoot.querySelector('.Input').focus();
+      }
+    });
+  }
+
   stateChanged(state) {
     this.journey = state.journey;
     this.current = state.order.current;

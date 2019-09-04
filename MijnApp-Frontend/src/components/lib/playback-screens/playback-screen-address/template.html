@@ -1,12 +1,12 @@
 <playback-screen-wrapper skip-callback="[[_skipCallback(question)]]" no-next>
   <div class="Item">
-    <maki-input elevation="0" rounding="0" fill secondary placeholder="Postcode" value="{{postalCode}}" input-callback="[[_inputPostalCodeCallback()]]"></maki-input>
+    <maki-input id="postalCodeInput" elevation="0" rounding="0" fill secondary placeholder="Postcode" value="{{postalCode}}" input-callback="[[_inputPostalCodeCallback()]]"></maki-input>
   </div>
   <div class="Item">
-    <maki-input elevation="0" rounding="0" fill secondary placeholder="Huisnummer" value="{{number}}" input-callback="[[_inputNumberCallback()]]"></maki-input>
+    <maki-input id="numberInput" elevation="0" rounding="0" fill secondary placeholder="Huisnummer" value="{{number}}" input-callback="[[_inputNumberCallback()]]"></maki-input>
   </div>
   <div class="Item">
-    <maki-input elevation="0" rounding="0" fill secondary placeholder="Huisnummertoevoeging" input-callback="[[_inputNumberAdditionCallback()]]"></maki-input>
+    <maki-input id="numberAdditionInput" elevation="0" rounding="0" fill secondary placeholder="Huisnummertoevoeging" input-callback="[[_inputNumberAdditionCallback()]]"></maki-input>
   </div>
   <dom-if if="{{hasSearched}}">
     <template>
