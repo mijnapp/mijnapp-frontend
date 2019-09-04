@@ -5,7 +5,7 @@ export const avgLogsApi = {
   avgLogs: (token) => async () => {
     const response = await axios.get('/avglogs', {
       baseURL: BASE_URL_API,
-      headers: { 'X-Auth': token },
+      headers: { 'Authorization': 'Bearer ' + token }
     });
     if (response.statusText === 'OK' || response.status === 200) {
       return { data: response.data };
@@ -16,7 +16,7 @@ export const avgLogsApi = {
   avgLog: (id, token) => async () => {
     const response = await axios.get(`/avglogs/${id}`, {
       baseURL: BASE_URL_API,
-      headers: { 'X-Auth': token },
+      headers: { 'Authorization': 'Bearer ' + token }
     });
     if (response.statusText === 'OK' || response.status === 200) {
       return { data: response.data };

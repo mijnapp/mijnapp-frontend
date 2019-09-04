@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 
 namespace MijnApp_Backend
 {
@@ -12,6 +13,14 @@ namespace MijnApp_Backend
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .ConfigureAppConfiguration((hostingContext, config) =>
+                {
+#if DEBUG
+                    var userSecretsId = "320e50fc-0267-417b-965b-f4c06031b254";
+                    var path = $@"C:\UserSecrets\{userSecretsId}\secrets.json";
+                    config.AddJsonFile(path);
+#endif
+                })
                 .UseStartup<Startup>();
     }
 }

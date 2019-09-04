@@ -29,6 +29,16 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Folder Include="dist\" />
+    <Folder Include="dist\assets\" />
+    <Folder Include="dist\assets\fonts\" />
+    <Folder Include="dist\assets\icons\" />
+    <Folder Include="dist\assets\media\" />
+    <Folder Include="dist\vendor\" />
+    <Folder Include="dist\vendor\bundles\" />
+    <Folder Include="src\components\lib\polymer-openajax-datepicker-master\" />
+    <Folder Include="src\assets\images\" />
+    <Folder Include="src\components\lib\playback-screens\playback-screen-address\" />
     <Folder Include="src\config\" />
     <Folder Include="src\" />
     <Folder Include="src\assets\" />
@@ -120,12 +130,75 @@
   <ItemGroup>
     <Content Include=".editorconfig" />
     <Content Include=".eslintrc.json" />
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
     <Content Include=".npmrc" />
     <Content Include=".stylelintrc" />
     <Content Include=".travis.yml" />
     <Content Include=".yarnrc" />
+    <Content Include="dist\assets\AnimatedSkeleton.svg" />
+    <Content Include="dist\assets\back.svg" />
+    <Content Include="dist\assets\backWhite.svg" />
+    <Content Include="dist\assets\checkBox.svg" />
+    <Content Include="dist\assets\fonts\HKGrotesk-Bold.woff" />
+    <Content Include="dist\assets\fonts\HKGrotesk-Bold.woff2" />
+    <Content Include="dist\assets\fonts\HKGrotesk-BoldItalic.woff" />
+    <Content Include="dist\assets\fonts\HKGrotesk-BoldItalic.woff2" />
+    <Content Include="dist\assets\fonts\HKGrotesk-Italic.woff" />
+    <Content Include="dist\assets\fonts\HKGrotesk-Italic.woff2" />
+    <Content Include="dist\assets\fonts\HKGrotesk-Light.woff" />
+    <Content Include="dist\assets\fonts\HKGrotesk-Light.woff2" />
+    <Content Include="dist\assets\fonts\HKGrotesk-LightItalic.woff" />
+    <Content Include="dist\assets\fonts\HKGrotesk-LightItalic.woff2" />
+    <Content Include="dist\assets\fonts\HKGrotesk-Medium.woff" />
+    <Content Include="dist\assets\fonts\HKGrotesk-Medium.woff2" />
+    <Content Include="dist\assets\fonts\HKGrotesk-MediumItalic.woff" />
+    <Content Include="dist\assets\fonts\HKGrotesk-MediumItalic.woff2" />
+    <Content Include="dist\assets\fonts\HKGrotesk-Regular.woff" />
+    <Content Include="dist\assets\fonts\HKGrotesk-Regular.woff2" />
+    <Content Include="dist\assets\fonts\HKGrotesk-SemiBold.woff" />
+    <Content Include="dist\assets\fonts\HKGrotesk-SemiBold.woff2" />
+    <Content Include="dist\assets\fonts\HKGrotesk-SemiBoldItalic.woff" />
+    <Content Include="dist\assets\fonts\HKGrotesk-SemiBoldItalic.woff2" />
+    <Content Include="dist\assets\fonts\stylesheet.css" />
+    <Content Include="dist\assets\icons\apple-touch-icon.png" />
+    <Content Include="dist\assets\icons\browserconfig.xml" />
+    <Content Include="dist\assets\icons\favicon-32x32.ico" />
+    <Content Include="dist\assets\icons\favicon-32x32.png" />
+    <Content Include="dist\assets\icons\icon-128x128.png" />
+    <Content Include="dist\assets\icons\icon-144x144.png" />
+    <Content Include="dist\assets\icons\icon-152x152.png" />
+    <Content Include="dist\assets\icons\icon-192x192.png" />
+    <Content Include="dist\assets\icons\icon-384x384.png" />
+    <Content Include="dist\assets\icons\icon-512x512.png" />
+    <Content Include="dist\assets\icons\icon-72x72.png" />
+    <Content Include="dist\assets\icons\icon-96x96.png" />
+    <Content Include="dist\assets\icons\mstile-150x150.png" />
+    <Content Include="dist\assets\icons\safari-pinned-tab.svg" />
+    <Content Include="dist\assets\itsme-login-button.svg" />
+    <Content Include="dist\assets\logo-digid.svg" />
+    <Content Include="dist\assets\logo-itsme.svg" />
+    <Content Include="dist\assets\logo.svg" />
+    <Content Include="dist\assets\media\Basisgegevens.svg" />
+    <Content Include="dist\assets\media\Contracten.svg" />
+    <Content Include="dist\assets\media\Inloggen.svg" />
+    <Content Include="dist\assets\media\Machtigingen.svg" />
+    <Content Include="dist\assets\media\Passen.svg" />
+    <Content Include="dist\assets\phone.svg" />
+    <Content Include="dist\assets\radio.svg" />
+    <Content Include="dist\bundle.js" />
+    <Content Include="dist\bundle.js.map" />
+    <Content Include="dist\config.json" />
+    <Content Include="dist\index.html" />
+    <Content Include="dist\manifest.json" />
+    <Content Include="dist\sw.js" />
+    <Content Include="dist\vendor\bundles\webcomponents-ce.js" />
+    <Content Include="dist\vendor\bundles\webcomponents-sd-ce-pf.js" />
+    <Content Include="dist\vendor\bundles\webcomponents-sd-ce.js" />
+    <Content Include="dist\vendor\bundles\webcomponents-sd.js" />
+    <Content Include="dist\vendor\webcomponents-bundle.js" />
+    <Content Include="dist\vendor\webcomponents-loader.js" />
     <Content Include="LICENCE.md" />
-    <Content Include="package-lock.json" />
     <Content Include="package.json" />
     <Content Include="postcss.config.js" />
     <Content Include="README.md" />
@@ -169,6 +242,7 @@
     <Content Include="src\assets\icons\mstile-150x150.png" />
     <Content Include="src\assets\icons\safari-pinned-tab.svg" />
     <Content Include="src\assets\itsme-login-button.svg" />
+    <Content Include="src\assets\logo-digid.svg" />
     <Content Include="src\assets\logo-itsme.svg" />
     <Content Include="src\assets\logo.svg" />
     <Content Include="src\assets\media\Basisgegevens.svg" />
@@ -319,6 +393,9 @@
     <Content Include="src\components\lib\playback-screen-wrapper\index.js" />
     <Content Include="src\components\lib\playback-screen-wrapper\style.pcss" />
     <Content Include="src\components\lib\playback-screen-wrapper\template.html" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-address\index.js" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-address\style.pcss" />
+    <Content Include="src\components\lib\playback-screens\playback-screen-address\template.html" />
     <Content Include="src\components\lib\playback-screens\playback-screen-agree\index.js" />
     <Content Include="src\components\lib\playback-screens\playback-screen-agree\style.pcss" />
     <Content Include="src\components\lib\playback-screens\playback-screen-agree\template.html" />
@@ -355,6 +432,9 @@
     <Content Include="src\components\lib\playback-screens\playback-screen-video\index.js" />
     <Content Include="src\components\lib\playback-screens\playback-screen-video\style.pcss" />
     <Content Include="src\components\lib\playback-screens\playback-screen-video\template.html" />
+    <Content Include="src\components\lib\polymer-openajax-datepicker-master\polymer-openajax-datepicker-styles.html" />
+    <Content Include="src\components\lib\polymer-openajax-datepicker-master\polymer-openajax-datepicker.html" />
+    <Content Include="src\components\lib\polymer-openajax-datepicker-master\polymer-openajax-datepicker.js" />
     <Content Include="src\components\objects\maf-screen\index.js" />
     <Content Include="src\components\objects\maf-screen\style.pcss" />
     <Content Include="src\components\objects\maf-screen\template.html" />
@@ -380,6 +460,7 @@
     <Content Include="src\index.js" />
     <Content Include="src\config\config.json" />
     <Content Include="src\manifest.json" />
+    <Content Include="src\redux\actions\address.js" />
     <Content Include="src\redux\actions\application.js" />
     <Content Include="src\redux\actions\avgLog.js" />
     <Content Include="src\redux\actions\avgLogs.js" />
@@ -392,6 +473,7 @@
     <Content Include="src\redux\actions\order.js" />
     <Content Include="src\redux\actions\orders.js" />
     <Content Include="src\redux\actions\person.js" />
+    <Content Include="src\redux\api\address.js" />
     <Content Include="src\redux\api\avgLogs.js" />
     <Content Include="src\redux\api\contracts.js" />
     <Content Include="src\redux\api\jwt.js" />
@@ -399,6 +481,7 @@
     <Content Include="src\redux\api\orders.js" />
     <Content Include="src\redux\api\person.js" />
     <Content Include="src\redux\helpers\headers.js" />
+    <Content Include="src\redux\reducers\address.js" />
     <Content Include="src\redux\reducers\application.js" />
     <Content Include="src\redux\reducers\avgLog.js" />
     <Content Include="src\redux\reducers\avgLogs.js" />
@@ -411,6 +494,7 @@
     <Content Include="src\redux\reducers\oauth.js" />
     <Content Include="src\redux\reducers\order.js" />
     <Content Include="src\redux\reducers\person.js" />
+    <Content Include="src\redux\sagas\address.js" />
     <Content Include="src\redux\sagas\application.js" />
     <Content Include="src\redux\sagas\avgLog.js" />
     <Content Include="src\redux\sagas\avgLogs.js" />
@@ -429,6 +513,7 @@
     <Content Include="wct.conf.js" />
     <Content Include="Web.config" />
     <Content Include="webpack.config.js" />
+    <Content Include="yarn.lock" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>

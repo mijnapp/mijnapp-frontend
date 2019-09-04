@@ -1,5 +1,6 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element';
 import { store } from '../../../redux/store';
+import { requestJwtSigninFake } from '../../../redux/actions/jwt';
 import { requestJwtSignin } from '../../../redux/actions/jwt';
 import { requestOAuthInit } from '../../../redux/actions/oauth';
 import { connect } from 'pwa-helpers/connect-mixin';
@@ -61,6 +62,14 @@ export default class MafScreenSignin extends connect(store)(PolymerElement) {
 
   _signInWithItsMe() {
     store.dispatch(requestOAuthInit('itsme'));
+  }
+
+  _signInWithDigiD() {
+    store.dispatch(requestJwtSignin());
+  }
+
+  _signInWithDigiDFake() {
+    store.dispatch(requestJwtSigninFake());
   }
 
   stateChanged(state) {

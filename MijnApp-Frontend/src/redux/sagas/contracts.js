@@ -1,6 +1,6 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { contractsApi } from '../api/contracts';
-import { xAuth } from '../helpers/headers';
+import { jwtBearerToken } from '../helpers/headers';
 import {
   REQUEST_CONTRACTS,
   requestContractsSuccess,
@@ -13,7 +13,7 @@ export function* watchRequestContracts() {
 
 function* fetchContracts() {
   try {
-    const result = yield call(contractsApi.contracts(xAuth()));
+    const result = yield call(contractsApi.contracts(jwtBearerToken()));
     yield put(requestContractsSuccess(result.data));
   } catch (e) {
     yield put(requestContractsFailure(e));

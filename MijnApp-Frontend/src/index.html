@@ -54,8 +54,8 @@
       -webkit-font-smoothing: antialiased;
       margin: 0;
       height: 100%;
-
       -webkit-tap-highlight-color: transparent;
+      background-color: #edf2f9;
     }
 
     .Loader {
@@ -63,6 +63,50 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
+    }
+
+    .warningDialog {
+      max-width: 700px;
+      font-family: var(--typography-fontFamily);
+      background-color: #ffc107;
+    }
+
+    .errorDialog {
+      max-width: 700px;
+      font-family: var(--typography-fontFamily);
+      background-color: red;
+      color: white;
+    }
+
+    .dialogText{      
+      font-size: 1rem;
+      line-height: 1rem;
+    }
+
+    .buttonContainer {
+      float: right;
+      box-sizing: border-box;
+      background-color: var(--palette-secondary-main);
+    }
+
+    .btn {
+      display: inline-block;
+      font-weight: 100;
+      font-size: 1rem;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      border: 1px solid transparent;
+      padding: .375rem .75rem;
+      border-radius: .25rem;
+      transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+    .btn:hover {
+      border: 1px solid black;
     }
   </style>
 
@@ -108,10 +152,38 @@
       var refScript = document.body.getElementsByTagName('script')[0];
       refScript.parentNode.insertBefore(script, refScript);
     }, false);
+
+    function clearWarningDialog() {
+      warningTitle.innerHTML = "";
+      warningText.innerHTML = "";
+      warningConfirmButton.innerHTML = "Doorgaan";
+      warningConfirmButton.onclick = function () { };
+    }
+
   </script>
 </head>
 
 <body>
+  <paper-toast id="successToast"></paper-toast>
+  <script>
+    successToast.horizontalAlign = "center"
+    successToast.verticalAlign = "top"
+  </script>
+  <paper-dialog id="warningDialog" modal class="warningDialog" style="display: none">
+    <h1>Waarschuwing <span id="warningTitle"></span></h1>
+    <p id="warningText" class="dialogText"></p>
+    <div class="buttonContainer">
+      <button class="btn" dialog-dismiss>Annuleren</button>
+      <button id="warningConfirmButton" class="btn" dialog-confirm>Doorgaan</button>
+    </div>
+  </paper-dialog>
+  <paper-dialog id="errorDialog" modal class="errorDialog" style="display: none">
+    <h1>Error: <span id="errorTitle"></span></h1>
+    <p id="errorText" class="dialogText"></p>
+    <div class="buttonContainer">
+      <button class="btn" dialog-confirm>Sluiten</button>
+    </div>
+  </paper-dialog>
   <maf-app></maf-app>
   <script defer src="<%= htmlWebpackPlugin.options.paths.webcomponents %>"></script>
 </body>

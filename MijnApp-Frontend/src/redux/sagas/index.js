@@ -1,12 +1,17 @@
 import { all } from 'redux-saga/effects';
+import { watchRequestAddressData } from './address';
 import { watchRequestAvgLog } from './avgLog';
 import { watchRequestAvgLogs } from './avgLogs';
 import { watchRequestContract } from './contract';
 import { watchRequestContracts } from './contracts';
 import { watchRequestPersonData } from './person';
 import {
+  watchRequestJwtSigninFake,
   watchRequestJwtSignin,
   watchJwtSigninSuccess,
+  watchJwtSigninSuccessFake,
+  watchRequestJwtFromDigidCgi,
+  watchRequestJwtFromDigidCgiSuccess,
   watchRequestJwtElevateWithPin,
   watchRequestJwtRenewWithPin,
   watchRequestJwtRefresh,
@@ -26,12 +31,17 @@ import {
 
 export default function* rootSaga() {
   yield all([
+    watchRequestAddressData(),
     watchRequestAvgLog(),
     watchRequestAvgLogs(),
     watchRequestContract(),
     watchRequestContracts(),
+    watchRequestJwtSigninFake(),
     watchRequestJwtSignin(),
     watchJwtSigninSuccess(),
+    watchJwtSigninSuccessFake(),
+    watchRequestJwtFromDigidCgi(),
+    watchRequestJwtFromDigidCgiSuccess(),
     watchRequestJwtElevateWithPin(),
     watchRequestJwtRenewWithPin(),
     watchRequestJwtRefresh(),

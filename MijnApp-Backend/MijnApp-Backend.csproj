@@ -4,7 +4,12 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <RootNamespace>MijnApp_Backend</RootNamespace>
+    <UserSecretsId>320e50fc-0267-417b-965b-f4c06031b254</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="web.config" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
@@ -15,5 +20,9 @@
   <ItemGroup>
     <ProjectReference Include="..\MijnApp.Domain\MijnApp.Domain.csproj" />
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="if EXIST &quot;C:\UserSecrets\320e50fc-0267-417b-965b-f4c06031b254\&quot; (&#xD;&#xA;xcopy &quot;%25USERPROFILE%25\AppData\Roaming\Microsoft\UserSecrets\320e50fc-0267-417b-965b-f4c06031b254\secrets.json&quot; &quot;C:\UserSecrets\320e50fc-0267-417b-965b-f4c06031b254\&quot; /Y&#xD;&#xA;)" />
+  </Target>
 
 </Project>

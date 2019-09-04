@@ -6,6 +6,8 @@
 import '@polymer/polymer/lib/elements/dom-if';
 import '@polymer/polymer/lib/elements/dom-repeat';
 import '@polymer/polymer/lib/elements/array-selector';
+import '@polymer/paper-dialog/paper-dialog.js';
+import '@polymer/paper-toast/paper-toast.js';
 
 import './components/application/maf-app';
 // NOTE: service worker not enabled.
@@ -13,3 +15,5 @@ import './components/application/maf-app';
 
 // NOTE: service worker not enabled.
 // sw();
+import axios from 'axios';
+axios.defaults.withCredentials = true;

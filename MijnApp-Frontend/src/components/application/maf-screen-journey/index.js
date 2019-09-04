@@ -10,6 +10,7 @@ import '../../objects/maf-screen';
 import '../../lib/maki/maki-input';
 import { selectPage } from '../../../redux/actions/application';
 
+import '../../lib/playback-screens/playback-screen-address';
 import '../../lib/playback-screens/playback-screen-agree';
 import '../../lib/playback-screens/playback-screen-calendar';
 import '../../lib/playback-screens/playback-screen-end';

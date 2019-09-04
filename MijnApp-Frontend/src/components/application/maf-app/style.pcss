@@ -4,13 +4,13 @@
 .AppWrapper {
   width: 100vw;
   height: 100vh;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .App {
   width: 100vw;
   min-height: calc(100vh - 57px);
   margin-bottom: 57px;
-  height: auto;
+  height: calc(100vh - 57px);
   float: left;
 }
 .TabSwitcher {
@@ -21,6 +21,12 @@
   width: 100%;
   background-color: var(--palette-background-paper);
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.11);
+}
+.TabSwitcherWrapper {
+  width: 100%;
+  height: 57px;
+  max-width: 800px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-around;
 }

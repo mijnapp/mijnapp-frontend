@@ -1,17 +1,18 @@
 :host {
   display: block;
   padding: 0;
-  background-color: #FFF;
+  background-color: #edf2f9;
   width: 100vw;
   min-height: 100vh;
 }
 
 .loginWrapper {
   width: 100%;
-  max-width: 700px;
-  margin: 0 auto;
   height: 100vh;
-  overflow-y: scroll;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow-y: auto;
+  background-color: #fff;
 }
 
 .loginHeader {
@@ -125,16 +126,42 @@
   text-align: center;
 }
 
-.loginSelectButton {
-  margin: 80px auto 50px;
-  display: block;
-  cursor: pointer;
-}
-
 .loginDivider {
   margin: 20px auto;
   width: 20px;
   display: block;
   font-weight: bold;
   font-size: 20px;
+}
+
+.loginDigidButton {
+  width: 160px;
+  height: 50px;
+  padding: 5px;
+  margin: 80px auto 50px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid #FFFFFF;
+}
+
+.loginDigidButton:hover{
+  border: 1px solid #19224C;
+  border-radius: 4px;
+}
+
+.loginSelectButton {
+  width: 50px;
+  height: 50px;
+  background-size: 50px 50px;
+  margin-right: 10px;
+}
+
+
+.loginDigidButtonHeader {
+  font-size: 18px;
+  font-weight: bold;
+}
+.loginDigidButtonSubHeader{
+  font-size: 14px;
 }

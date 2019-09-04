@@ -88,7 +88,6 @@ export default class PlaybackScreenAgree extends connect(store)(
     if (!this.question) {
       this.question = '';
     }
-    console.log(this.question);
   }
 }
 

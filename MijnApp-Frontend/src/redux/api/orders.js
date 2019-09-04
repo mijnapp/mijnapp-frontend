@@ -26,8 +26,8 @@ export const ordersApi = {
 
   submit: (data, token) => async () => {
     const response = await axios.post('/order', data, {
-      headers: { 'X-Auth': token },
       baseURL: BASE_URL_API,
+      headers: { 'Authorization': 'Bearer ' + token }
     });
     if (response.statusText === 'OK' || response.status === 204) {
       return { data: response.data };

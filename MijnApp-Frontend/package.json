@@ -6,7 +6,7 @@
   "version": "1.1.0",
   "main": "src/index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --config webpack.config.js --mode=development --watch --env.NODE_ENV=development",
     "build:prod": "webpack --env.NODE_ENV=production --optimize-minimize",
     "dev": "webpack-dev-server --hot --inline",
     "pretest": "npm run build",
@@ -24,7 +24,7 @@
     "start": "npm run build && http-server dist"
   },
   "engines": {
-    "node": ">= 8.0 < 10"
+    "node": ">= 8.0 <= 10"
   },
   "browserslist": [
     "last 1 version",
@@ -85,7 +85,7 @@
     "web-component-tester": "6.9.2",
     "webpack": "4.35.3",
     "webpack-cli": "3.3.5",
-    "webpack-dev-server": "3.7.2",
+    "webpack-dev-server": "3.8.0",
     "workbox-webpack-plugin": "4.3.1",
     "xo": "0.24.0"
   },
@@ -93,12 +93,21 @@
     "@polymer/iron-pages": "3.0.1",
     "@polymer/paper-input": "3.0.2",
     "@polymer/polymer": "3.3.0",
+    "@polymer/paper-dialog": "3.0.1",
+    "@polymer/paper-toast": "3.0.1",
     "@webcomponents/webcomponentsjs": "2.2.10",
     "axios": "0.19.0",
+    "moment": "2.24.0",
     "normalize.css": "8.0.1",
     "pwa-helpers": "0.9.1",
     "redux": "4.0.4",
     "redux-logger": "3.0.6",
     "redux-saga": "1.0.5"
+  },
+  "-vs-binding": {
+    "ProjectOpened": [
+      "build",
+      "dev"
+    ]
   }
 }

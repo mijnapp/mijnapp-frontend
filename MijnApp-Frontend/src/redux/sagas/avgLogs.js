@@ -1,6 +1,6 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { avgLogsApi } from '../api/avgLogs';
-import { xAuth } from '../helpers/headers';
+import { jwtBearerToken } from '../helpers/headers';
 import {
   REQUEST_AVG_LOGS,
   requestAvgLogsSuccess,
@@ -13,7 +13,7 @@ export function* watchRequestAvgLogs() {
 
 function* fetchAvgLogs() {
   try {
-    const result = yield call(avgLogsApi.avgLogs(xAuth()));
+    const result = yield call(avgLogsApi.avgLogs(jwtBearerToken()));
     yield put(requestAvgLogsSuccess(result.data));
   } catch (e) {
     yield put(requestAvgLogsFailure(e));
