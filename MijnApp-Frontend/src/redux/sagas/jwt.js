@@ -107,8 +107,8 @@ export function* watchRequestJwtLogout401() {
 
 function* doJwtLogout401() {
   removeJwtBearerToken();
-
-  errorText.innerHTML = `'U heeft geen geldige sessie meer en zult opnieuw moeten inloggen.`;
+  clearErrorDialog();
+  errorText.innerHTML = `U heeft geen geldige sessie meer en zult opnieuw moeten inloggen.`;
   errorDialog.open();
 
   yield put(selectPage('signin'));
