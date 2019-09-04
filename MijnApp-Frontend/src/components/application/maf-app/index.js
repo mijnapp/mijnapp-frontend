@@ -4,6 +4,9 @@ import {
   selectPage,
   selectPageNoHistory,
 } from '../../../redux/actions/application';
+import {
+  requestJwtLogout,
+} from '../../../redux/actions/jwt';
 import { connect } from 'pwa-helpers/connect-mixin';
 
 import css from './style.pcss';
@@ -22,6 +25,7 @@ import '../../lib/maki-icons/maki-icon-home';
 import '../../lib/maki-icons/maki-icon-search';
 import '../../lib/maki-icons/maki-icon-bell';
 import '../../lib/maki-icons/maki-icon-chat';
+import '../../lib/maki-icons/maki-icon-logout';
 
 import { MakiTheme } from '../../lib/maki/maki-theme-provider';
 import { primaryPalette, secondaryPalette } from '../../helpers/palettes';
@@ -131,6 +135,10 @@ export default class MafApp extends connect(store)(PolymerElement) {
 
   _goJourneys() {
     store.dispatch(selectPage('journeys'));
+  }
+
+  _goLogout() {
+    store.dispatch(requestJwtLogout());
   }
 
   _showTabs(page) {

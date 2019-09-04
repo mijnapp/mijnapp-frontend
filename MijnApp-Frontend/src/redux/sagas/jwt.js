@@ -8,6 +8,7 @@ import {
   requestJwtSigninSuccessFake,
   requestJwtSigninSuccess,
   requestJwtSigninFailure,
+  REQUEST_JWT_LOGOUT,
   REQUEST_JWT_SIGNIN_SUCCESS,
   REQUEST_JWT_SIGNIN_SUCCESS_FAKE,
   REQUEST_JWT_FOR_DIGIDCGI, REQUEST_JWT_FOR_DIGIDCGI_SUCCESS,
@@ -65,7 +66,6 @@ function onJwtSigninSuccess(action) {
 function* onJwtSigninSuccessFake() {
   yield put(selectPage('home'));
 }
-
 
 export function* watchRequestJwtFromDigidCgi() {
   yield takeLatest(REQUEST_JWT_FOR_DIGIDCGI, fetchJwtFromDigidCgi);

@@ -40,6 +40,10 @@ export const requestJwtTokenForDigidFailure = (error) => ({
   type: REQUEST_JWT_FOR_DIGIDCGI_FAILURE,
   error,
 });
+export const REQUEST_JWT_LOGOUT = 'REQUEST_JWT_LOGOUT';
+export const requestJwtLogout = () => ({
+  type: REQUEST_JWT_LOGOUT
+});
 
 export const REQUEST_JWT_ELEVATE_WITH_PIN = 'REQUEST_JWT_ELEVATE_WITH_PIN';
 export const requestJwtElevateWithPin = (pin) => ({
