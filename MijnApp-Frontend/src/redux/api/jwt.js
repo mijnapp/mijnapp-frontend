@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { BASE_URL_API } from '../store';
+import { setJwtBearerToken } from '../helpers/headers';
 
 export const jwtApi = {
   signinfake: () => async () => {
@@ -11,10 +12,8 @@ export const jwtApi = {
       }
     );
     if (response.statusText === 'OK' || response.status === 200) {
-      //TODO -  Here the returned token is saved in the response headers
-      //        and these headers are stored in the redux store (which is stored in the localstorage)
-      //        This token, however, should be stored in a safer place (and retrieved from that saver place in helpers\headers.js)
-      response.headers.authorization = response.data.token;
+      setJwtBearerToken(response.data.token);
+      delete response.data.token;
       successToast.text = "Succesvol ingelogd";
       successToast.open();
       return { data: response.data, headers: response.headers };
@@ -51,10 +50,8 @@ export const jwtApi = {
       }
     );
     if (response.statusText === 'OK' || response.status === 200) {
-      //TODO -  Here the returned token is saved in the response headers
-      //        and these headers are stored in the redux store (which is stored in the localstorage)
-      //        This token, however, should be stored in a safer place (and retrieved from that saver place in helpers\headers.js)
-      response.headers.authorization = response.data.token;
+      setJwtBearerToken(response.data.token);
+      delete response.data.token;
       successToast.text = "Succesvol ingelogd";
       successToast.open();
       return { data: response.data, headers: response.headers };

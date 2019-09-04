@@ -21,7 +21,7 @@ import {
   watchRequestOrdersItem,
   watchRequestOrdersSubmit,
 } from './orders';
-import { watchSelectPage } from './application';
+import { watchSelectPage, watchSelectPageNoHistory } from './application';
 import {
   watchRequestOAuthInit,
   watchRequestOAuthInitSuccess,
@@ -46,6 +46,7 @@ export default function* rootSaga() {
     watchRequestJwtRenewWithPin(),
     watchRequestJwtRefresh(),
     watchSelectPage(),
+    watchSelectPageNoHistory(),
     watchRequestPersonData(),
     watchRequestOrdersList(),
     watchRequestOrdersItem(),

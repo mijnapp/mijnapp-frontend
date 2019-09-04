@@ -1,6 +1,6 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { jwtApi } from '../api/jwt';
-import { jwtBearerToken } from '../helpers/headers';
+import { jwtBearerToken, removeJwtBearerToken } from '../helpers/headers';
 import { selectPage } from '../actions/application';
 import {
   REQUEST_JWT_SIGNIN_FAKE,
@@ -86,6 +86,18 @@ export function* watchRequestJwtFromDigidCgiSuccess() {
 
 function* onJwtFromDigidCgiSuccess() {
   yield put(selectPage('home'));
+}
+
+export function* watchRequestJwtLogout() {
+  yield takeLatest(REQUEST_JWT_LOGOUT, doJwtLogout);
+}
+
+function* doJwtLogout() {
+  removeJwtBearerToken();
+
+  successToast.text = "Succesvol uitgelogd";
+  successToast.open();
+  yield put(selectPage('signin'));
 }
 
 export function* watchRequestJwtElevateWithPin() {

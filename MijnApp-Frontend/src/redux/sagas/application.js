@@ -1,13 +1,17 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { SELECT_PAGE, SELECT_PAGE_NO_HISTORY } from '../actions/application';
+import { SELECT_PAGE, SELECT_PAGE_NO_HISTORY, selectPageNoHistory } from '../actions/application';
 import { store } from '../store';
 import { clearContract } from '../actions/contract';
+import { jwtBearerTokenExists } from '../helpers/headers';
 
 export function* watchSelectPage() {
   yield takeLatest(SELECT_PAGE, pageSelected);
 }
 
 function* pageSelected(action) {
+  if (action.page !== 'signin' && !jwtBearerTokenExists()) {
+    yield put(selectPageNoHistory('signin'));
+  }
   yield call(scrollToTop());
   yield call(setHistory(action.page, action.page, action.page));
   let state = store.getState();
@@ -23,7 +27,10 @@ export function* watchSelectPageNoHistory() {
   yield takeLatest(SELECT_PAGE_NO_HISTORY, pageSelectedNoHistory);
 }
 
-function* pageSelectedNoHistory() {
+function* pageSelectedNoHistory(action) {
+  if (action.page !== 'signin' && !jwtBearerTokenExists()) {
+    yield put(selectPageNoHistory('signin'));
+  }
   yield call(scrollToTop());
 }
 
