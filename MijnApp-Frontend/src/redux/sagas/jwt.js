@@ -9,6 +9,7 @@ import {
   requestJwtSigninSuccess,
   requestJwtSigninFailure,
   REQUEST_JWT_LOGOUT,
+  REQUEST_JWT_LOGOUT_401,
   REQUEST_JWT_SIGNIN_SUCCESS,
   REQUEST_JWT_SIGNIN_SUCCESS_FAKE,
   REQUEST_JWT_FOR_DIGIDCGI, REQUEST_JWT_FOR_DIGIDCGI_SUCCESS,
@@ -95,7 +96,19 @@ export function* watchRequestJwtLogout() {
 function* doJwtLogout() {
   removeJwtBearerToken();
 
-  successToast.text = "Succesvol uitgelogd";
+  successToast.text = 'Succesvol uitgelogd';
+  successToast.open();
+  yield put(selectPage('signin'));
+}
+
+export function* watchRequestJwtLogout401() {
+  yield takeLatest(REQUEST_JWT_LOGOUT_401, doJwtLogout401);
+}
+
+function* doJwtLogout401() {
+  removeJwtBearerToken();
+
+  successToast.text = 'U heeft geen geldige sessie meer en zult opnieuw moeten inloggen';
   successToast.open();
   yield put(selectPage('signin'));
 }

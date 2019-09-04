@@ -42,7 +42,11 @@ export const requestJwtTokenForDigidFailure = (error) => ({
 });
 export const REQUEST_JWT_LOGOUT = 'REQUEST_JWT_LOGOUT';
 export const requestJwtLogout = () => ({
-  type: REQUEST_JWT_LOGOUT
+  type: REQUEST_JWT_LOGOUT,
+});
+export const REQUEST_JWT_LOGOUT_401 = 'REQUEST_JWT_LOGOUT_401';
+export const requestJwtLogoutUnauthorized = () => ({
+  type: REQUEST_JWT_LOGOUT_401,
 });
 
 export const REQUEST_JWT_ELEVATE_WITH_PIN = 'REQUEST_JWT_ELEVATE_WITH_PIN';

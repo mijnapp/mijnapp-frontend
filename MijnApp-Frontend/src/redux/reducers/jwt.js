@@ -2,6 +2,7 @@ import {
   REQUEST_JWT_SIGNIN_FAKE,
   REQUEST_JWT_SIGNIN,
   REQUEST_JWT_LOGOUT,
+  REQUEST_JWT_LOGOUT_401,
   REQUEST_JWT_SIGNIN_SUCCESS_FAKE,
   REQUEST_JWT_SIGNIN_SUCCESS,
   REQUEST_JWT_SIGNIN_FAILURE,
@@ -28,6 +29,7 @@ export const jwt = (state = { data: {}, headers: {} }, action) => {
       return state;
     case REQUEST_JWT_SIGNIN:
     case REQUEST_JWT_LOGOUT:
+    case REQUEST_JWT_LOGOUT_401:
       return state;
     case REQUEST_JWT_SIGNIN_SUCCESS:
     case REQUEST_JWT_SIGNIN_SUCCESS_FAKE:

@@ -10,6 +10,12 @@ import '@polymer/paper-dialog/paper-dialog.js';
 import '@polymer/paper-toast/paper-toast.js';
 
 import './components/application/maf-app';
+
+import { store } from './redux/store';
+import {
+  requestJwtLogout,
+} from './redux/actions/jwt';
+
 // NOTE: service worker not enabled.
 // import sw from './sw-loader';
 
@@ -17,3 +23,16 @@ import './components/application/maf-app';
 // sw();
 import axios from 'axios';
 axios.defaults.withCredentials = true;
+
+import {
+  requestJwtLogoutUnauthorized,
+} from './redux/actions/jwt';
+
+axios.interceptors.response.use((response) => {
+  return response;
+}, (error) => {
+  if (error.response.status === 401) {
+    store.dispatch(requestJwtLogoutUnauthorized());
+  }
+  return Promise.reject(error);
+});
