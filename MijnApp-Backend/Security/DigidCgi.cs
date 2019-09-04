@@ -97,7 +97,7 @@ namespace MijnApp_Backend.Security
 
         internal void ProlongSession(ClaimsPrincipal currentUser)
         {
-            //TODO - implement Http call to SIAM server with rid from user claim
+            //TODO - implement Http call to SIAM server with aselect_credentials from user
         }
 
     }
