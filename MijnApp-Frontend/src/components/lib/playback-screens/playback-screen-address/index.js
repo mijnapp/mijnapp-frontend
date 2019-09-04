@@ -12,7 +12,7 @@ import template from './template.html';
 import '../../playback-screen-wrapper';
 import { requestAddressData } from '../../../../redux/actions/address';
 import { isNullOrUndefined } from 'util';
-import { reset } from 'axe-core';
+
 export default class PlaybackScreenAddress extends connect(store)(PolymerElement) {
   static get properties() {
     return {
