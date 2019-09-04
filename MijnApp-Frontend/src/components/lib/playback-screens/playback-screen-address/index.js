@@ -42,7 +42,6 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
   _inputPostalCodeCallback() {
     return (data) => {
       this.postalCode = data.replace(/\s/g, "").toUpperCase().trim();
-      this.notifyPath("_isEmpty()")
       if (!this._isEmpty()) {
         store.dispatch(requestAddressData(this.postalCode, this.number, this.numberAddition));
         this.hasSearched = true;
