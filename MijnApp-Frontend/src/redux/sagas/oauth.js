@@ -1,5 +1,5 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { oauthApi } from "../api/oauth";
+import { oauthApi } from '../api/oauth';
 import { selectPage } from '../actions/application';
 import {
   REQUEST_OAUTH_HANDLE, REQUEST_OAUTH_HANDLE_SUCCESS,
