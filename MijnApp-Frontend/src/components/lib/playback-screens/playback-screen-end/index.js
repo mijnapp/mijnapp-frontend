@@ -1,20 +1,12 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element';
 import { connect } from 'pwa-helpers/connect-mixin';
 import { store } from '../../../../redux/store';
-
-import {
-  orderSaveAnswer,
-  orderClearAnswer,
-} from '../../../../redux/actions/order';
+import { selectPage } from '../../../../redux/actions/application';
 import { requestOrdersSubmit } from '../../../../redux/actions/orders';
-
+import { orderPrev } from '../../../../redux/actions/order';
 import { JOURNEY_START, JOURNEY_END } from '../../../../helpers/common';
-
 import css from './style.pcss';
 import template from './template.html';
-
-import { orderPrev } from '../../../../redux/actions/order';
-
 import '../../playback-screen-wrapper';
 
 export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
@@ -43,17 +35,21 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
       store.dispatch(requestOrdersSubmit({ data: JSON.stringify(order) }));
   }
 
+  _stop() {
+    store.dispatch(selectPage('home'));
+  }
+
   _prev() {
     store.dispatch(orderPrev());
   }
 
   _getOrderItems(order) {
-    let returnable = [];
+    const returnable = [];
     order.filter((o) => o.question && o.question !== 'END').forEach((o) => {
       if (Array.isArray(o.valueTitle)) {
-        let addin = o.valueTitle.map((o) => ({ value: o }));
-        o.keyTitle.forEach((o, i) => (addin[i].key = o));
-        returnable = [...returnable, ...addin];
+        if (o.valueTitle.length > 0) {
+          returnable.push({ key: o.keyTitle, value: o.valueTitle.join(', ') });
+        }
       } else {
         returnable.push({ key: o.keyTitle, value: o.valueTitle });
       }

@@ -1,22 +1,14 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element';
 import { connect } from 'pwa-helpers/connect-mixin';
 import { store } from '../../../../redux/store';
-
-import {
-  orderSaveAnswer,
-  orderClearAnswer,
-} from '../../../../redux/actions/order';
-
+import { orderSaveAnswer, orderClearAnswer, } from '../../../../redux/actions/order';
 import { JOURNEY_START } from '../../../../helpers/common';
-
 import css from './style.pcss';
 import template from './template.html';
 
 import '../../playback-screen-wrapper';
 
-export default class PlaybackScreenMultiple extends connect(store)(
-  PolymerElement
-) {
+export default class PlaybackScreenMultiple extends connect(store)(PolymerElement) {
   static get properties() {
     return {};
   }
@@ -76,8 +68,8 @@ export default class PlaybackScreenMultiple extends connect(store)(
       store.dispatch(
         orderSaveAnswer(
           key,
-          keyTitle,
           answer.value,
+          keyTitle,
           answer.valueTitle,
           selected
         )

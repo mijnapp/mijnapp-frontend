@@ -27,6 +27,27 @@
   box-sizing: border-box;
   background-color: var(--palette-secondary-main);
 }
+.Back {
+  background-image: url('/assets/backWhite.svg');
+  background-repeat: no-repeat;
+  background-position: 0 center;
+  padding-left: 24px;
+  opacity: 1;
+  font-family: var(--typography-fontFamily);
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.4;
+  height: 34px;
+  letter-spacing: -0.2px;
+  text-align: left;
+  cursor: pointer;
+  color: var(--palette-primary-contrastText);
+}
+.Back:hover {
+  opacity: 0.4;
+}
 .PrevButton {
   float: left;
   height: 18px;
@@ -70,10 +91,8 @@
   color: var(--palette-secondary-contrastText);
   margin-top: 7px;
 }
-
 .Answer {
   padding: 15px 0;
-  border-bottom: 1px solid #EFF1F3;
 }
 .AnswerLabel {
   opacity: 0.79;
@@ -85,7 +104,7 @@
   line-height: 1.44;
   letter-spacing: -0.2px;
   text-align: left;
-  color: #FFF;
+  color: var(--palette-secondary-contrastText);
   margin-bottom: 3px;
 }
 .AnswerAnswer {
@@ -97,5 +116,5 @@
   line-height: 1.28;
   letter-spacing: -0.3px;
   text-align: left;
-  color: #FFF;
+  color: var(--palette-secondary-contrastText);
 }
