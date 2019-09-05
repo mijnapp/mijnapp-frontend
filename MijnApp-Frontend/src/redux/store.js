@@ -4,27 +4,19 @@ import { loadState, saveState } from './saver';
 import createSagaMiddleware from 'redux-saga';
 import reducers from './reducers';
 import sagas from './sagas';
-import mijnAppConfiguration from "../config/config"
-
-const path = require('path');
-
 import { setJourneys } from './actions/journeys';
 
-
-
 export const BASE_URL_API = (() => {
-
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.open('GET', 'config/config.json', false);
   if (xmlhttp.overrideMimeType) {
     xmlhttp.overrideMimeType('application\\json');
   }
   xmlhttp.send();
-  if (xmlhttp.status == 200) {
+  if (xmlhttp.status === 200) {
     var configuration = JSON.parse(xmlhttp.responseText);
     return configuration.BACKEND_URL;
-  }
-  else {
+  } else {
     return 'https://localhost/MijnApp-Backend/';
   }
 })();
@@ -36,11 +28,10 @@ export const HAS_FAKE_INLOG_ENABLED = (() => {
     xmlhttp.overrideMimeType('application\\json');
   }
   xmlhttp.send();
-  if (xmlhttp.status == 200) {
+  if (xmlhttp.status === 200) {
     var configuration = JSON.parse(xmlhttp.responseText);
     return configuration.HAS_FAKE_INLOG_ENABLED;
-  }
-  else {
+  } else {
     return false;
   }
 })();
