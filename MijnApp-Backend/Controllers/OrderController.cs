@@ -1,14 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 
 namespace MijnApp_Backend.Controllers
 {
     //[Authorize]
     public class OrderController : Controller
     {
+        private readonly string BaseUri = "";
+
+        public OrderController([FromServices] IConfiguration config)
+        {
+            BaseUri = config.GetValue<string>("Api:OrderUri");
+        }
+
         [HttpPost]        
         [Route("order")]
         public IActionResult Order(dynamic data)

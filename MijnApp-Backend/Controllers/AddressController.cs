@@ -2,14 +2,21 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Configuration;
 
 namespace MijnApp_Backend.Controllers
 {
     [Authorize]
     public class AddressController : Controller
     {
-        private const string URL_NoNumberAddition = "http://adressen.zaakonline.nl/adressen?postcode={0}&huisnummer={1}";
-        private const string URL_WithNumberAddition = "http://adressen.zaakonline.nl/adressen?postcode={0}&huisnummer={1}&huisnummertoevoeging={2}";
+        private readonly string BaseUri = "";
+        private const string NoNumberAddition = "{0}adressen?postcode={1}&huisnummer={2}";
+        private const string WithNumberAddition = "{0}adressen?postcode={1}&huisnummer={2}&huisnummertoevoeging={3}";
+
+        public AddressController([FromServices] IConfiguration config)
+        {
+            BaseUri = config.GetValue<string>("Api:AddressUri");
+        }
 
         [HttpGet]
         [Route("address/{postalcode}/{number}/")]
@@ -37,11 +44,11 @@ namespace MijnApp_Backend.Controllers
                 HttpResponseMessage response;
                 if (string.IsNullOrWhiteSpace(numberAddition))
                 {
-                    response = await httpClient.GetAsync(string.Format(URL_NoNumberAddition, postalcode, number));
+                    response = await httpClient.GetAsync(string.Format(NoNumberAddition, BaseUri, postalcode, number));
                 }
                 else
                 {
-                    response = await httpClient.GetAsync(string.Format(URL_WithNumberAddition, postalcode, number, numberAddition));
+                    response = await httpClient.GetAsync(string.Format(WithNumberAddition, BaseUri, postalcode, number, numberAddition));
                 }
                 var result = await response.Content.ReadAsStringAsync();
                 return Json(result);

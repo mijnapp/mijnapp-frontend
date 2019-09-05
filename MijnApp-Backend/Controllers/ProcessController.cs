@@ -2,14 +2,21 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Configuration;
 
 namespace MijnApp_Backend.Controllers
 {
     //[Authorize]
     public class ProcessController : Controller
     {
-        private const string URL_GETALL = "http://processes.zaakonline.nl/processes";
-        private const string URL_GETBYID = "http://processes.zaakonline.nl/processes/{0}";
+        private readonly string BaseUri = "";
+        private const string URL_GETALL = "{0}processes";
+        private const string URL_GETBYID = "{0}processes/{1}";
+
+        public ProcessController([FromServices] IConfiguration config)
+        {
+            BaseUri = config.GetValue<string>("Api:ProcessUri");
+        }
 
         [HttpGet]
         [Route("processes")]
@@ -17,7 +24,7 @@ namespace MijnApp_Backend.Controllers
         {
             using (var httpClient = new HttpClient())
             {
-                var response = await httpClient.GetAsync(URL_GETALL);                
+                var response = await httpClient.GetAsync(string.Format(URL_GETALL, BaseUri));                
                 var result = await response.Content.ReadAsStringAsync();
                 return Json(result);
             }
@@ -29,7 +36,7 @@ namespace MijnApp_Backend.Controllers
         {
             using (var httpClient = new HttpClient())
             {
-                var response = await httpClient.GetAsync(string.Format(URL_GETBYID, id));
+                var response = await httpClient.GetAsync(string.Format(URL_GETBYID, BaseUri, id));
                 var result = await response.Content.ReadAsStringAsync();
                 return Json(result);
             }
