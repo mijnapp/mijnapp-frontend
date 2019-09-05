@@ -1,10 +1,10 @@
 import axios from 'axios';
-import { BASE_URL_API } from '../store';
+import { configuration } from '../../helpers/configuration';
 
 export const personApi = {
   person: (id, token) => async () => {
     const response = await axios.get(`/person/${id}`, {
-      baseURL: BASE_URL_API,
+      baseURL: configuration.BASE_URL_API(),
       headers: { 'Authorization': 'Bearer ' + token }
     });
     if (response.statusText === 'OK' || response.status === 200) {

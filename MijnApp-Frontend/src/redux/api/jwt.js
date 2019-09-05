@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { BASE_URL_API } from '../store';
+import { configuration } from '../../helpers/configuration';
 import { setJwtBearerToken } from '../helpers/headers';
 
 export const jwtApi = {
@@ -8,7 +8,7 @@ export const jwtApi = {
       '/jwt/signin',
       null,
       {
-        baseURL: BASE_URL_API,
+        baseURL: configuration.BASE_URL_API(),
       }
     );
     if (response.statusText === 'OK' || response.status === 200) {
@@ -28,7 +28,7 @@ export const jwtApi = {
         params: {
           frontEndRedirectTo: window.location.origin + '/digidcgifinished'
         },
-        baseURL: BASE_URL_API,
+        baseURL: configuration.BASE_URL_API(),
       }
     );
     if (response.statusText === 'OK' || response.status === 200) {
@@ -42,7 +42,7 @@ export const jwtApi = {
       '/jwt/getJwtForDigidCgi',
       null,
       {
-        baseURL: BASE_URL_API,
+        baseURL: configuration.BASE_URL_API(),
         params: {
           aselectCredentials: aselectCredentials,
           rid: rid
@@ -64,7 +64,7 @@ export const jwtApi = {
       '/jwt/pin',
       { pin },
       {
-        baseURL: BASE_URL_API,
+        baseURL: configuration.BASE_URL_API(),
         headers: { 'Authorization': 'Bearer ' + token }
       }
     );
@@ -79,7 +79,7 @@ export const jwtApi = {
       '/jwt/renew',
       { pin },
       {
-        baseURL: BASE_URL_API,
+        baseURL: configuration.BASE_URL_API(),
         headers: { 'Authorization': 'Bearer ' + token }
       }
     );
@@ -91,7 +91,7 @@ export const jwtApi = {
   },
   refresh: (token) => async () => {
     const response = await axios.get('/jwt/refresh', {
-      baseURL: BASE_URL_API,
+      baseURL: configuration.BASE_URL_API(),
       headers: { 'Authorization': 'Bearer ' + token }
     });
     if (response.statusText === 'OK' || response.status === 200) {

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { BASE_URL_API } from '../store';
+import { configuration } from '../../helpers/configuration';
 import { isNullOrUndefined } from 'util';
 
 export const addressApi = {
@@ -9,7 +9,7 @@ export const addressApi = {
       : `/address/${action.postalCode}/${action.number}/${action.numberAddition}`;
 
     const response = await axios.get(url, {
-      baseURL: BASE_URL_API,
+      baseURL: configuration.BASE_URL_API(),
       headers: { 'Authorization': 'Bearer ' + token }
     });
     if (response.statusText === 'OK' || response.status === 200) {

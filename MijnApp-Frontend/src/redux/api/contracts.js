@@ -1,10 +1,10 @@
 import axios from 'axios';
-import { BASE_URL_API } from '../store';
+import { configuration } from '../../helpers/configuration';
 
 export const contractsApi = {
   contracts: (token) => async () => {
     const response = await axios.get('/contracts', {
-      baseURL: BASE_URL_API,
+      baseURL: configuration.BASE_URL_API(),
       headers: { 'Authorization': 'Bearer ' + token }
     });
     if (response.statusText === 'OK' || response.status === 200) {
@@ -15,7 +15,7 @@ export const contractsApi = {
   },
   contract: (id, token) => async () => {
     const response = await axios.get(`/contracts/${id}`, {
-      baseURL: BASE_URL_API,
+      baseURL: configuration.BASE_URL_API(),
       headers: { 'Authorization': 'Bearer ' + token }
     });
     if (response.statusText === 'OK' || response.status === 200) {

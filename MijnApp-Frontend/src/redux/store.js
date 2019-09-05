@@ -6,36 +6,6 @@ import reducers from './reducers';
 import sagas from './sagas';
 import { setJourneys } from './actions/journeys';
 
-export const BASE_URL_API = (() => {
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open('GET', 'config/config.json', false);
-  if (xmlhttp.overrideMimeType) {
-    xmlhttp.overrideMimeType('application\\json');
-  }
-  xmlhttp.send();
-  if (xmlhttp.status === 200) {
-    var configuration = JSON.parse(xmlhttp.responseText);
-    return configuration.BACKEND_URL;
-  } else {
-    return 'https://localhost/MijnApp-Backend/';
-  }
-})();
-
-export const HAS_FAKE_INLOG_ENABLED = (() => {
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open('GET', 'config/config.json', false);
-  if (xmlhttp.overrideMimeType) {
-    xmlhttp.overrideMimeType('application\\json');
-  }
-  xmlhttp.send();
-  if (xmlhttp.status === 200) {
-    var configuration = JSON.parse(xmlhttp.responseText);
-    return configuration.HAS_FAKE_INLOG_ENABLED;
-  } else {
-    return false;
-  }
-})();
-
 // Init middlewares.
 const loggerMiddleware = createLogger();
 const sagaMiddleware = createSagaMiddleware();
@@ -333,6 +303,6 @@ store.dispatch(
         ],
         subtitle: 'Verhuizen binnen of naar Eindhoven',
       },
-    },
+    }
   ])
 );

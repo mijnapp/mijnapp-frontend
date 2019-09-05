@@ -1,10 +1,10 @@
 import axios from 'axios';
-import { BASE_URL_API } from '../store';
+import { configuration } from '../../helpers/configuration';
 
 export const oauthApi = {
   init: (provider) => async () => {
     const response = await axios.get(`/oauth/init/${provider}`, {
-      baseURL: BASE_URL_API,
+      baseURL: configuration.BASE_URL_API(),
       params: {
         appName: 'mijn-app',
       },
@@ -17,7 +17,7 @@ export const oauthApi = {
   },
   handle: (code, stateToken, provider) => async () => {
     const response = await axios.get(`/oauth/handle/${provider}`, {
-      baseURL: BASE_URL_API,
+      baseURL: configuration.BASE_URL_API(),
       params: {
         code: code,
         state_token: stateToken,

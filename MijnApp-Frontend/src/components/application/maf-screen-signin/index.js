@@ -1,9 +1,10 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element';
-import { store, HAS_FAKE_INLOG_ENABLED } from '../../../redux/store';
+import { store } from '../../../redux/store';
 import { requestJwtSigninFake } from '../../../redux/actions/jwt';
 import { requestJwtSignin } from '../../../redux/actions/jwt';
 import { requestOAuthInit } from '../../../redux/actions/oauth';
 import { connect } from 'pwa-helpers/connect-mixin';
+import { configuration } from '../../../helpers/configuration';
 
 import css from './style.pcss';
 import template from './template.html';
@@ -43,7 +44,7 @@ export default class MafScreenSignin extends connect(store)(PolymerElement) {
 
   constructor() {
     super();
-    this.hasFakeInlogEnabled = HAS_FAKE_INLOG_ENABLED;
+    this.hasFakeInlogEnabled = configuration.HAS_FAKE_INLOG_ENABLED();
   }
 
   _onChangeHandler() {

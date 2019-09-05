@@ -1,10 +1,10 @@
 import axios from 'axios';
-import { BASE_URL_API } from '../store';
+import { configuration } from '../../helpers/configuration';
 
 export const ordersApi = {
   list: () => async () => {
     const response = await axios.get('/order', {
-      baseURL: BASE_URL_API,
+      baseURL: configuration.BASE_URL_API(),
     });
     if (response.statusText === 'OK' || response.status === 200) {
       return { data: response.data };
@@ -15,7 +15,7 @@ export const ordersApi = {
 
   item: (id) => async () => {
     const response = await axios.get(`/order/${id}`, {
-      baseURL: BASE_URL_API,
+      baseURL: configuration.BASE_URL_API(),
     });
     if (response.statusText === 'OK' || response.status === 200) {
       return { data: response.data };
@@ -26,7 +26,7 @@ export const ordersApi = {
 
   submit: (data, token) => async () => {
     const response = await axios.post('/order', data, {
-      baseURL: BASE_URL_API,
+      baseURL: configuration.BASE_URL_API(),
       headers: { 'Authorization': 'Bearer ' + token }
     });
     if (response.statusText === 'OK' || response.status === 204) {
