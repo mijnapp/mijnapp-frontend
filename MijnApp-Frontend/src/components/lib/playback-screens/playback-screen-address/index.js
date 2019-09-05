@@ -42,37 +42,31 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
   _inputPostalCodeCallback() {
     return (data) => {
       this.postalCode = data.replace(/\s/g, '').toUpperCase().trim();
-      if (!this._isEmpty()) {
-        store.dispatch(requestAddressData(this.postalCode, this.number, this.numberAddition));
-        this.hasSearched = true;
-      } else {
-        this.addresses = [];
-      }
+      this.callApi();
     };
   }
 
   _inputNumberCallback() {
     return (data) => {
       this.number = data.trim();
-      if (!this._isEmpty()) {
-        store.dispatch(requestAddressData(this.postalCode, this.number, this.numberAddition));
-        this.hasSearched = true;
-      } else {
-        this.addresses = [];
-      }
+      this.callApi();
     };
   }
 
   _inputNumberAdditionCallback() {
     return (data) => {
       this.numberAddition = data.trim();
-      if (!this._isEmpty()) {
-        store.dispatch(requestAddressData(this.postalCode, this.number, this.numberAddition));
-        this.hasSearched = true;
-      } else {
-        this.addresses = [];
-      }
+      this.callApi();
     };
+  }
+
+  callApi() {
+    if (!this._isEmpty()) {
+      store.dispatch(requestAddressData(this.postalCode, this.number, this.numberAddition));
+      this.hasSearched = true;
+    } else {
+      this.addresses = [];
+    }
   }
 
   _saveWithoutCheck(question, address) {
