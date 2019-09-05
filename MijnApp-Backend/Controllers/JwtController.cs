@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
+using log4net;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using MijnApp_Backend.Helpers;
 using MijnApp_Backend.Security;
 
 namespace MijnApp_Backend.Controllers
@@ -14,12 +16,14 @@ namespace MijnApp_Backend.Controllers
         private readonly IConfiguration _config;
         private readonly JwtTokenProvider _jwtTokenProvider;
         private readonly DigidCgi _digidCgi;
+        private readonly ILog _auditLogger;
 
         public JwtController(IConfiguration config)
         {
             _config = config;
             _jwtTokenProvider = new JwtTokenProvider(config);
             _digidCgi = new DigidCgi(config);
+            _auditLogger = Log4NetLogManager.AuditLogger;
         }
 
         [HttpGet]
@@ -34,6 +38,7 @@ namespace MijnApp_Backend.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> StartSignInDigid([FromQuery]string frontEndRedirectTo)
         {
+            _auditLogger.Info("StartSignInDigid aangeroepen");
             CheckFrontendRedirectUrl(frontEndRedirectTo);
 
             var redirectUrl = await _digidCgi.StartAuthenticateUser(frontEndRedirectTo);
@@ -46,8 +51,7 @@ namespace MijnApp_Backend.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> GetJwtForDigidCgi([FromQuery]string aselectCredentials, [FromQuery]string rid)
         {
-            //TODO - moeten we hier checken dat rid eerder al verstrekt was door ons via StartSignInDigid?
-            //       hoe moeten we dit dan controleren? We houden geen state bij. Moeten we dan zoiets als Redis implementeren voor het geval we server farms gebruiken?
+            _auditLogger.Info("GetJwtForDigidCgi aangeroepen");
 
             var user = await _digidCgi.VerifyUser(aselectCredentials, rid);
 
@@ -64,6 +68,7 @@ namespace MijnApp_Backend.Controllers
         [AllowAnonymous]
         public IActionResult SigninDigidCgi([FromServices] IConfiguration config)
         {
+            _auditLogger.Info("SigninDigidCgi aangeroepen - dit is de Fake inlog");
             var hasFakeLoginEnabled = config.GetValue<bool>("HasFakeLoginEnabled");
             if (!hasFakeLoginEnabled)
             {

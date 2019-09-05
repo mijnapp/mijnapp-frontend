@@ -6,3 +6,4 @@
 *.user
 /MijnApp-Frontend/bin
 /MijnApp-Frontend/obj
+/MijnApp-Backend/Logs
