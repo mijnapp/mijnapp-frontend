@@ -90,7 +90,7 @@ const copyStatics = {
     },
     {
       from: resolve('./src/config/config.json'),
-      to: OUTPUT_PATH,
+      to: OUTPUT_PATH + "/config/",
       flatten: true,
     },
   ],

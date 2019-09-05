@@ -1,5 +1,5 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element';
-import { store } from '../../../redux/store';
+import { store, HAS_FAKE_INLOG_ENABLED } from '../../../redux/store';
 import { requestJwtSigninFake } from '../../../redux/actions/jwt';
 import { requestJwtSignin } from '../../../redux/actions/jwt';
 import { requestOAuthInit } from '../../../redux/actions/oauth';
@@ -14,15 +14,15 @@ export default class MafScreenSignin extends connect(store)(PolymerElement) {
     return {
       username: {
         type: String,
-        value: '',
+        value: ''
       },
       password: {
         type: String,
-        value: '',
+        value: ''
       },
       validated: {
         type: Boolean,
-        value: false,
+        value: false
       },
       continue: {
         type: Function,
@@ -30,6 +30,10 @@ export default class MafScreenSignin extends connect(store)(PolymerElement) {
           console.warn('No continune function set for app-login.');
         },
       },
+      hasFakeInlogEnabled: {
+        type: Boolean,
+        value: false
+      }
     };
   }
 
@@ -39,6 +43,7 @@ export default class MafScreenSignin extends connect(store)(PolymerElement) {
 
   constructor() {
     super();
+    this.hasFakeInlogEnabled = HAS_FAKE_INLOG_ENABLED;
   }
 
   _onChangeHandler() {

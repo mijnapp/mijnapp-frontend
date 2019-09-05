@@ -4,13 +4,17 @@
     <img src="/assets/media/Inloggen.svg" class="loginImage"/>
   </div>
   <div class="loginContent">
-    <div class="loginDigidButton" on-click="_signInWithDigiDFake">
-      <img src="/assets/logo-digid.svg" class="loginSelectButton noselect" />
-      <div>
-        <div class="loginDigidButtonHeader">FAKE Inloggen bij</div>
-        <div class="loginDigidButtonSubHeader">Mijn-app</div>
-      </div>
-    </div>
+    <dom-if if="{{hasFakeInlogEnabled}}">
+      <template>
+        <div class="loginDigidButton" on-click="_signInWithDigiDFake">
+          <img src="/assets/logo-digid.svg" class="loginSelectButton noselect" />
+          <div>
+            <div class="loginDigidButtonHeader">FAKE Inloggen bij</div>
+            <div class="loginDigidButtonSubHeader">Mijn-app</div>
+          </div>
+        </div>
+      </template>
+    </dom-if>
 
     <div class="loginDigidButton" on-click="_signInWithDigiD">
       <img src="/assets/logo-digid.svg" class="loginSelectButton noselect" />

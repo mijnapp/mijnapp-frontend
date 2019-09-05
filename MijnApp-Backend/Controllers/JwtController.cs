@@ -62,8 +62,13 @@ namespace MijnApp_Backend.Controllers
         [HttpPost]
         [Route("signin")]
         [AllowAnonymous]
-        public IActionResult SigninDigidCgi()
+        public IActionResult SigninDigidCgi([FromServices] IConfiguration config)
         {
+            var hasFakeLoginEnabled = config.GetValue<bool>("HasFakeLoginEnabled");
+            if (!hasFakeLoginEnabled)
+            {
+                return BadRequest("Fake login is disabled");
+            }
             var user = _digidCgi.AuthenticateFakeUser();
 
             var tokenString = _jwtTokenProvider.GenerateJsonWebToken(user, SignInProvider.FakeLogin);
