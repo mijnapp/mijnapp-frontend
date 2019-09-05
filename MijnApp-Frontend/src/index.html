@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 
 <head>
@@ -65,17 +65,24 @@
       height: 100vh;
     }
 
-    .warningDialog {
+    .dialog {
       max-width: 700px;
       font-family: var(--typography-fontFamily);
+    }
+    .warningDialogHeader{
+      margin-top: -24px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      line-height: 1rem;
       background-color: #ffc107;
     }
 
-    .errorDialog {
-      max-width: 700px;
-      font-family: var(--typography-fontFamily);
+    .errorDialogHeader {
+      margin-top: -24px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      line-height: 1rem;
       background-color: red;
-      color: white;
     }
 
     .dialogText{      
@@ -173,16 +180,16 @@
     successToast.horizontalAlign = "center"
     successToast.verticalAlign = "top"
   </script>
-  <paper-dialog id="warningDialog" modal class="warningDialog" style="display: none">
-    <h1>Waarschuwing <span id="warningTitle"></span></h1>
+  <paper-dialog id="warningDialog" modal class="dialog" style="display: none">
+    <div class="warningDialogHeader">Waarschuwing <span id="warningTitle"></span></div>
     <p id="warningText" class="dialogText"></p>
     <div class="buttonContainer">
       <button class="btn" dialog-dismiss>Annuleren</button>
       <button id="warningConfirmButton" class="btn" dialog-confirm>Doorgaan</button>
     </div>
   </paper-dialog>
-  <paper-dialog id="errorDialog" modal class="errorDialog" style="display: none">
-    <h1>Error: <span id="errorTitle"></span></h1>
+  <paper-dialog id="errorDialog" modal class="dialog" style="display: none">
+    <div class="errorDialogHeader">Waarschuwing <span id="errorTitle"></span></div>
     <p id="errorText" class="dialogText"></p>
     <div class="buttonContainer">
       <button class="btn" dialog-confirm>Sluiten</button>
