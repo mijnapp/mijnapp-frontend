@@ -20,7 +20,7 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
       number: String,
       numberAddition: String,
       addresses: Array,
-      hasSearched: Boolean
+      hasSearched: Boolean,
     };
   }
 
@@ -34,14 +34,14 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
 
   _isEmpty() {
     return isNullOrUndefined(this.postalCode)
-      || this.postalCode === ""
+      || this.postalCode === ''
       || isNullOrUndefined(this.number)
-      || this.number === "";
+      || this.number === '';
   }
 
   _inputPostalCodeCallback() {
     return (data) => {
-      this.postalCode = data.replace(/\s/g, "").toUpperCase().trim();
+      this.postalCode = data.replace(/\s/g, '').toUpperCase().trim();
       if (!this._isEmpty()) {
         store.dispatch(requestAddressData(this.postalCode, this.number, this.numberAddition));
         this.hasSearched = true;
@@ -81,23 +81,23 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
         question.key || question.title,
         address.id,
         question.title,
-        `${address.straat} ${address.huisnummer}${address.huisnummertoevoeging ? item.huisnummertoevoeging : ''}, ${address.woonplaats} ${address.postcode}`
+        `${address.straat} ${address.huisnummer}${address.huisnummertoevoeging ? address.huisnummertoevoeging : ''}, ${address.woonplaats} ${address.postcode}`
       )
     );
     store.dispatch(orderNext(question.next));
   }
 
   _optionClick(e) {
-    let self = this;
+    const self = this;
     if (e && e.currentTarget && e.currentTarget.dataQuestion && !isNaN(e.currentTarget.dataIndex)) {
-      let question = e.currentTarget.dataQuestion;
-      let index = e.currentTarget.dataIndex;
-      let address = this.addresses[index];
-      if (address.woonplaats !== "'s-Hertogenbosch") {
-        clearWarningDialog();
-        warningText.innerHTML = `Het nieuwe adres dat u opgeeft ligt niet in de gemeente 's-Hertogenbosch. Kies op de gemeentekeuze pagina de gemeente van uw nieuwe adres.<br/><br/> Klik op 'Annuleren' om uw postcode en huisnummer te controleren. <br/>Klik op 'Doorgaan' om dit adres te gebruiken.`;
-        warningConfirmButton.onclick = function () { self._saveWithoutCheck(question, address); };
-        warningDialog.open();
+      const question = e.currentTarget.dataQuestion;
+      const index = e.currentTarget.dataIndex;
+      const address = this.addresses[index];
+      if (address.woonplaats !== '\'s-Hertogenbosch') {
+        window.clearWarningDialog();
+        window.warningText.innerHTML = `Het nieuwe adres dat u opgeeft ligt niet in de gemeente 's-Hertogenbosch. Kies op de gemeentekeuze pagina de gemeente van uw nieuwe adres.<br/><br/> Klik op 'Annuleren' om uw postcode en huisnummer te controleren. <br/>Klik op 'Doorgaan' om dit adres te gebruiken.`;
+        window.warningConfirmButton.onclick = function() {self._saveWithoutCheck(question, address);};
+        window.warningDialog.open();
       } else {
         self._saveWithoutCheck(question, address);
       }
@@ -112,18 +112,18 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
   }
 
   _reset() {
-    this.postalCode = "";
-    this.number = "";
-    this.numberAddition = "";
+    this.postalCode = '';
+    this.number = '';
+    this.numberAddition = '';
     this.addresses = [];
     this.hasSearched = false;
   }
 
   ready() {
     super.ready();
-    let postalCodeInput = this.shadowRoot.getElementById("postalCodeInput");
-    let numberInput = this.shadowRoot.getElementById("numberInput");
-    let numberAdditionInput = this.shadowRoot.getElementById("numberAdditionInput");
+    const postalCodeInput = this.shadowRoot.getElementById('postalCodeInput');
+    const numberInput = this.shadowRoot.getElementById('numberInput');
+    const numberAdditionInput = this.shadowRoot.getElementById('numberAdditionInput');
     postalCodeInput.addEventListener('keyup', function (e) {
       if (e.keyCode === 13) {
         numberInput.shadowRoot.querySelector('.Input').focus();
@@ -137,7 +137,7 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
   }
 
   filterAddresses(address) {
-    if (address.status_verblijfsobject === "VerblijfsobjectIngetrokken") {
+    if (address.status_verblijfsobject === 'VerblijfsobjectIngetrokken') {
       return false;
     }
 
@@ -148,8 +148,8 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
     this.journey = state.journey;
     this.current = state.order.current;
     this.id = this.current === JOURNEY_START
-        ? JOURNEY_START
-        : state.order.data[this.current].question;
+      ? JOURNEY_START
+      : state.order.data[this.current].question;
     this.order = this.current === JOURNEY_START ? {} : state.order.data[this.current];
     this.selected = this.order._tracker;
     if (this.journey) {

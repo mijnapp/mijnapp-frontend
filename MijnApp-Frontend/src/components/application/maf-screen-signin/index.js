@@ -14,15 +14,15 @@ export default class MafScreenSignin extends connect(store)(PolymerElement) {
     return {
       username: {
         type: String,
-        value: ''
+        value: '',
       },
       password: {
         type: String,
-        value: ''
+        value: '',
       },
       validated: {
         type: Boolean,
-        value: false
+        value: false,
       },
       continue: {
         type: Function,
@@ -32,8 +32,8 @@ export default class MafScreenSignin extends connect(store)(PolymerElement) {
       },
       hasFakeInlogEnabled: {
         type: Boolean,
-        value: false
-      }
+        value: false,
+      },
     };
   }
 

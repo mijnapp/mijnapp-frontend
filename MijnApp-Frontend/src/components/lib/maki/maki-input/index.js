@@ -91,7 +91,7 @@ export default class MakiInput extends PolymerElement {
 
   ready() {
     super.ready();
-    let field = this.shadowRoot.querySelector('.Input');
+    const field = this.shadowRoot.querySelector('.Input');
     field.addEventListener('focus', this._onFocus.bind(this));
     field.addEventListener('blur', this._onBlur.bind(this));
   }

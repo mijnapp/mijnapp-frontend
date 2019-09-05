@@ -90,7 +90,7 @@ export default class MakiDropDown extends PolymerElement {
   }
 
   _openDropDown() {
-    let dropDown = this.shadowRoot
+    const dropDown = this.shadowRoot
       .querySelector('.DropDown')
       .getBoundingClientRect();
     this.style.setProperty('--popup-pos-left', `${dropDown.left}px`);
@@ -105,7 +105,7 @@ export default class MakiDropDown extends PolymerElement {
 
   _selectedName(selected, items, names, placeholder) {
     if (!this._isPlaceholder(selected)) {
-      let index = items.indexOf(selected);
+      const index = items.indexOf(selected);
       if (index > -1) {
         return names.length > index ? names[index] : selected;
       }
@@ -116,7 +116,7 @@ export default class MakiDropDown extends PolymerElement {
 
   _itemToName(item, items, names) {
     if (this.items && this.items.length > 0) {
-      let index = items.indexOf(item);
+      const index = items.indexOf(item);
       if (index > -1) {
         return names.length > index ? names[index] : item;
       }

@@ -141,7 +141,7 @@ export default class MakiButton extends PolymerElement {
   }
 
   _colorChanged() {
-    let button = this.shadowRoot.querySelector('.Button');
+    const button = this.shadowRoot.querySelector('.Button');
     button.style.setProperty('--main-color', this.setColorMain);
     button.style.setProperty('--highlight-color', this.setColorHighlight);
     button.style.setProperty('--disabled-color', this.setColorDisabled);
@@ -160,7 +160,7 @@ export default class MakiButton extends PolymerElement {
   }
 
   _bubbleGenerator(color) {
-    let svg = btoa(
+    const svg = btoa(
       `<svg height="5px" width="10px" viewBox="0 0 4 2" version="1.1" xmlns="http://www.w3.org/2000/svg" >` +
         `<g transform="rotate(45, 2, 2) translate(0.63212 0.63212)" fill="${color ||
           '#19224c'}">` +
@@ -197,13 +197,13 @@ export default class MakiButton extends PolymerElement {
     }
   }
   showHover() {
-    let button = this.shadowRoot
+    const button = this.shadowRoot
       .querySelector('.Button')
       .getBoundingClientRect();
-    let label = this.shadowRoot
+    const label = this.shadowRoot
       .querySelector('.HeadingAsProp')
       .getBoundingClientRect();
-    let bubbleSvg = this.shadowRoot.querySelector('.After');
+    const bubbleSvg = this.shadowRoot.querySelector('.After');
 
     if (this.bubbleColorMain) {
       bubbleSvg.style.backgroundImage = `url('${this._bubbleGenerator(
@@ -227,8 +227,8 @@ export default class MakiButton extends PolymerElement {
       )}')`;
     }
 
-    let x = button.left + button.width / 2 - label.width / 2;
-    let y = button.top + button.height + 2;
+    const x = button.left + button.width / 2 - label.width / 2;
+    const y = button.top + button.height + 2;
     this._hoverStyle = `position: fixed; top: ${y}px; left: ${x}px;`;
     this._hovering = true;
   }
@@ -272,10 +272,10 @@ export default class MakiButton extends PolymerElement {
   }
 
   _wrapperSize(size) {
-    let marginLeft = size / 3.25;
-    let borderWidth = this.stroke;
+    const marginLeft = size / 3.25;
+    const borderWidth = this.stroke;
     if (this.round) {
-      let borderRadius = size / 2;
+      const borderRadius = size / 2;
       return [
         `border-radius: ${borderRadius}px;`,
         `margin-left: ${marginLeft}px;`,
@@ -289,10 +289,10 @@ export default class MakiButton extends PolymerElement {
   }
 
   _buttonSize(size, heading) {
-    let innerHeight = size - 2 * this.stroke;
-    let fontSize = this.fontSize;
-    let height = Math.floor(this.fontSize * 1.25);
-    let vPad = (innerHeight - height) / 2;
+    const innerHeight = size - 2 * this.stroke;
+    const fontSize = this.fontSize;
+    const height = Math.floor(this.fontSize * 1.25);
+    const vPad = (innerHeight - height) / 2;
     let lPad = vPad * 1.75;
     let rPad = vPad * 2;
     let width = 'auto';
@@ -316,10 +316,10 @@ export default class MakiButton extends PolymerElement {
 
   _iconSize(size, heading) {
     if (this.hasHeading(heading) || this.small) {
-      let innerHeight = size - 2 * this.stroke;
-      let height = size * 0.66;
-      let width = height;
-      let pos = (innerHeight - height) / 2;
+      const innerHeight = size - 2 * this.stroke;
+      const height = size * 0.66;
+      const width = height;
+      const pos = (innerHeight - height) / 2;
 
       return [
         `height: ${height}px;`,

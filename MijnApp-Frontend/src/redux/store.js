@@ -342,6 +342,6 @@ store.dispatch(
         ],
         subtitle: 'Verhuizen binnen of naar Eindhoven',
       },
-    }
+    },
   ])
 );

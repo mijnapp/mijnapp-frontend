@@ -18,8 +18,8 @@ export default class PlaybackScreenCalendar extends connect(store)(
       datepickerValue: {
         type: String,
         notify: true,
-        observer: '_datePickerValueChanged'
-      }
+        observer: '_datePickerValueChanged',
+      },
     };
   }
 
@@ -97,4 +97,4 @@ export default class PlaybackScreenCalendar extends connect(store)(
   }
 }
 
-window.customElements.define('playback-screen-calendar',PlaybackScreenCalendar);
+window.customElements.define('playback-screen-calendar', PlaybackScreenCalendar);
