@@ -12,7 +12,7 @@ namespace MijnApp_Backend.Security
     internal class JwtTokenProvider
     {
         internal const string JwtOriginalIdp = "mijnApp_oidp";
-        internal const string JwtOriginalUSername = "mijnApp_username";
+        internal const string JwtEncryptedBsn = "mijnApp_username";
         private readonly IConfiguration _config;
 
         internal JwtTokenProvider(IConfiguration config)
@@ -22,20 +22,21 @@ namespace MijnApp_Backend.Security
 
         internal string GenerateJsonWebToken(DigidUser digidUser, SignInProvider signInProvider)
         {
-            return CreateJwtSecurityToken(digidUser.Username, signInProvider);
+            return CreateJwtSecurityToken(digidUser.Bsn, signInProvider);
         }
 
         internal string ProlongJwtToken(ClaimsPrincipal currentUser, SignInProvider signInProvider)
         {
-            if (currentUser.HasClaim(c => c.Type == JwtOriginalUSername)) { 
-                var username = currentUser.Claims.First(c => c.Type == JwtOriginalUSername).Value;
-                return CreateJwtSecurityToken(username, signInProvider);
+            if (currentUser.HasClaim(c => c.Type == JwtEncryptedBsn)) { 
+                var bsnEncrypted = currentUser.Claims.First(c => c.Type == JwtEncryptedBsn).Value;
+                var bsn = JwtClaimEncryptor.Decrypt(bsnEncrypted, _config["JwtClaimEncryption:SecretKey"]);
+                return CreateJwtSecurityToken(bsn, signInProvider);
             }
 
             return string.Empty;
         }
 
-        private string CreateJwtSecurityToken(string username, SignInProvider signInProvider)
+        private string CreateJwtSecurityToken(string bsn, SignInProvider signInProvider)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
@@ -60,7 +61,7 @@ namespace MijnApp_Backend.Security
             var exp = (int)expires.Subtract(utc0).TotalSeconds;
 
             var claims = new[] {
-                new Claim(JwtOriginalUSername, username),
+                new Claim(JwtEncryptedBsn, JwtClaimEncryptor.Encrypt(bsn, _config["JwtClaimEncryption:SecretKey"])),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new Claim(JwtOriginalIdp, signInProvider.ToString()),
                 new Claim(JwtRegisteredClaimNames.Iat, iat.ToString()),

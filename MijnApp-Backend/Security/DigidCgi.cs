@@ -8,11 +8,33 @@ using Microsoft.Extensions.Configuration;
 
 namespace MijnApp_Backend.Security
 {
+    internal struct DigidConstants
+    {
+        internal const string Rid = "rid";
+        internal const string ResultCode = "result_code";
+        internal const string ASelectServer = "a-select-server";
+        internal const string AppId = "app_id";
+        internal const string AsUrl = "as_url";
+        internal const string AppUrl = "app_url";
+        internal const string AppLevel = "app_level";
+        internal const string AuthspLevel = "authsp_level";
+        internal const string Uid = "uid";
+        internal const string Organization = "organization";
+        internal const string TgtExpTime = "tgt_exp_time";
+        internal const string Attributes = "attributes";
+        internal const string SamlAttributes = "saml_attributes";
+        internal const string SamlAttributeToken = "saml_attribute_token";
+        internal const string SelectCredentials = "aselect_credentials";
+        internal const string SharedSecret = "shared_secret";
+
+        internal const string ResultCodeOk = "0000";
+    }
+
     internal class DigidCgi
     {
-        private const string SiamRedirectUrl = "{0}&a-select-server={1}&rid={2}";
-        private const string SiamRequestAuthenticationUrl = "{0}?request=authenticate&app_id={1}&app_url={2}&a-select-server={3}&shared_secret={4}";
-        private const string SiamRequestVerifyUserUrl = "{0}?request=verify_credentials&a-select-server={1}&rid={2}&aselect_credentials={3}&shared_secret={4}";
+        private const string SiamRedirectUrl = "{0}&"+ DigidConstants.ASelectServer + "={1}&" + DigidConstants.Rid + "={2}";
+        private const string SiamRequestAuthenticationUrl = "{0}?request=authenticate&" + DigidConstants.AppId + "={1}&" + DigidConstants.AppUrl + "={2}&" + DigidConstants.ASelectServer + "={3}&" + DigidConstants.SharedSecret + "={4}";
+        private const string SiamRequestVerifyUserUrl = "{0}?request=verify_credentials&"+ DigidConstants.ASelectServer + "={1}&"+ DigidConstants.Rid + "={2}&" + DigidConstants.SelectCredentials + "={3}&" + DigidConstants.SharedSecret + "={4}&" + DigidConstants.SamlAttributes + "={5}";
 
         private readonly IConfiguration _config;
 
@@ -24,12 +46,11 @@ namespace MijnApp_Backend.Security
         internal DigidUser AuthenticateFakeUser()
         {
             var properties = new NameValueCollection();
-            properties.Add("uid", "testuseridPaco");
-            properties.Add("organization", "someorganizationfromPaco");
-            properties.Add("tgt_exp_time", "645643632");
+            properties.Add(DigidConstants.Uid, "900003509");
+            properties.Add(DigidConstants.Organization, "someOrganization");
+            properties.Add(DigidConstants.TgtExpTime, "645643632");
 
             var digidUser = new DigidUser(properties);
-            digidUser.Username = "Paco del Taco";
             return digidUser;
         }
 
@@ -51,12 +72,11 @@ namespace MijnApp_Backend.Security
 
                 var dict = HttpUtility.ParseQueryString(result);
 
-                var resultCode = dict["result_code"];
+                var resultCode = dict[DigidConstants.ResultCode];
 
-                if (resultCode.Equals("0000"))
+                if (resultCode.Equals(DigidConstants.ResultCodeOk))
                 {
-                    var siamRedirectUrl = string.Format(SiamRedirectUrl, dict["as_url"], dict["a-select-server"],
-                        dict["rid"]);
+                    var siamRedirectUrl = string.Format(SiamRedirectUrl, dict[DigidConstants.AsUrl], dict[DigidConstants.ASelectServer], dict[DigidConstants.Rid]);
                     return siamRedirectUrl;
                 }
 
@@ -72,25 +92,35 @@ namespace MijnApp_Backend.Security
             var aSelectServer = _config["DigidCgi:SiamServerName"];
 
             var sharedSecret = _config["DigidCgi:SharedSecret"];
+            var extraAttributes = "givenName";
 
-            var url = string.Format(SiamRequestVerifyUserUrl, siamUrl, aSelectServer, rid, aselectCredentials, sharedSecret);
+            var url = string.Format(SiamRequestVerifyUserUrl, siamUrl, aSelectServer, rid, aselectCredentials, sharedSecret, extraAttributes);
 
             using (var httpClient = new HttpClient())
             {
                 var response = await httpClient.GetAsync(url);
                 string result = await response.Content.ReadAsStringAsync();
 
-                var dict = HttpUtility.ParseQueryString(result);
+                var digidValues = HttpUtility.ParseQueryString(result);
 
-                var resultCode = dict["result_code"];
+                var resultCode = digidValues[DigidConstants.ResultCode];
 
-                if (!resultCode.Equals("0000"))
+                if (!resultCode.Equals(DigidConstants.ResultCodeOk))
                 {
                     //TODO - Error handling in case result code is not 0000
                     throw new Exception($"SIAM Result code: {resultCode}");
                 }
 
-                var digidUser = new DigidUser(dict);
+                var demandedAuthenticationLevel = int.Parse(digidValues[DigidConstants.AppLevel]);
+                var usedAuthenticationLevel = int.Parse(digidValues[DigidConstants.AuthspLevel]);
+
+                if (demandedAuthenticationLevel > usedAuthenticationLevel)
+                {
+                    // DigiD should make sure the user can only login at the desired level or higher. We just throw an exception when this happens.
+                    throw new Exception("Het gebruikte authenticatieniveau is {usedAuthenticationLevel}, maar moet minimaal {demandedAuthenticationLevel} zijn.");
+                }
+
+                var digidUser = new DigidUser(digidValues);
                 return digidUser;
             }
         }

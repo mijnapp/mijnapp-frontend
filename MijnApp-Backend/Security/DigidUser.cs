@@ -4,7 +4,7 @@ namespace MijnApp_Backend.Security
 {
     internal class DigidUser
     {
-        public string Username { get; set; }
+        public string Bsn { get; set; }
 
         public string Organization { get; set; }
 
@@ -12,9 +12,30 @@ namespace MijnApp_Backend.Security
 
         internal DigidUser(NameValueCollection digidValues)
         {
-            Username = digidValues["uid"];
-            Organization = digidValues["organization"];
-            ExpiryTime = long.Parse(digidValues["tgt_exp_time"]);
+            Bsn = digidValues[DigidConstants.Uid];
+            Organization = digidValues[DigidConstants.Organization];
+            ExpiryTime = long.Parse(digidValues[DigidConstants.TgtExpTime]);
+            //HandleAttributes(digidValues[DigidConstants.Attributes]);
         }
+
+        //private void HandleAttributes(string base64EncodedAttributes)
+        //{
+        //    try
+        //    {
+        //        var decodedBytes = Convert.FromBase64String(base64EncodedAttributes);
+        //        var decodedAttributesString = Encoding.UTF8.GetString(decodedBytes);
+
+        //        var decodedAttributes = HttpUtility.ParseQueryString(decodedAttributesString);
+        //        var samlAttributeToken = decodedAttributes[DigidConstants.SamlAttributeToken];
+        //        var samlAttributesBytes = Convert.FromBase64String(samlAttributeToken);
+                
+        //        var samlAttributesString = Encoding.UTF8.GetString(samlAttributesBytes);
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //        string s = "";
+        //    }
+        //}
     }
 }
