@@ -96,8 +96,8 @@ export function* watchRequestJwtLogout() {
 function* doJwtLogout() {
   removeJwtBearerToken();
 
-  successToast.text = 'Succesvol uitgelogd';
-  successToast.open();
+  window.successToast.text = 'Succesvol uitgelogd';
+  window.successToast.open();
   yield put(selectPage('signin'));
 }
 
@@ -107,9 +107,9 @@ export function* watchRequestJwtLogout401() {
 
 function* doJwtLogout401() {
   removeJwtBearerToken();
-  clearErrorDialog();
-  errorText.innerHTML = `U heeft geen geldige sessie meer en zult opnieuw moeten inloggen.`;
-  errorDialog.open();
+  window.clearErrorDialog();
+  window.errorText.innerHTML = `U heeft geen geldige sessie meer en zult opnieuw moeten inloggen.`;
+  window.errorDialog.open();
 
   yield put(selectPage('signin'));
 }

@@ -22,7 +22,7 @@ function* deleteQuestionPreflightCheck(action) {
     if (action.id === 'START') {
       yield put(uiDeleteDialogSetStart());
     } else {
-      let state = store.getState();
+      const state = store.getState();
       if (
         state &&
         state.journey &&
@@ -30,7 +30,7 @@ function* deleteQuestionPreflightCheck(action) {
         Array.isArray(state.journey.questions) &&
         state.journey.questions.length > 0
       ) {
-        let q = state.journey.questions.find((i) => i.id === action.id);
+        const q = state.journey.questions.find((i) => i.id === action.id);
         if (q) {
           let found =
             q && q.options && Array.isArray(q.options) && q.options.length > 0
