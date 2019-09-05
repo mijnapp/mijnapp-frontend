@@ -136,6 +136,14 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
     });
   }
 
+  filterAddresses(address) {
+    if (address.status_verblijfsobject === "VerblijfsobjectIngetrokken") {
+      return false;
+    }
+
+    return true;
+  }
+
   stateChanged(state) {
     this.journey = state.journey;
     this.current = state.order.current;
@@ -156,7 +164,7 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
     if (this._isEmpty()) {
       this.addresses = [];
     } else {
-      this.addresses = state.address.data;
+      this.addresses = state.address.data.filter(this.filterAddresses);
     }
     if (state.address.reset) {
       this._reset();
