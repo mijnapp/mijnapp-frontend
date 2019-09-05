@@ -1,12 +1,6 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element';
 import { connect } from 'pwa-helpers/connect-mixin';
 import { store } from '../../../../redux/store';
-
-import {
-  orderSaveAnswer,
-  orderClearAnswer,
-} from '../../../../redux/actions/order';
-
 import { JOURNEY_START } from '../../../../helpers/common';
 
 import css from './style.pcss';

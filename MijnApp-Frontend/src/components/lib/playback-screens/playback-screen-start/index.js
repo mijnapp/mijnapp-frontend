@@ -8,7 +8,6 @@ import { selectPage } from '../../../../redux/actions/application';
 import {
   JOURNEY_START,
   JOURNEY_END,
-  QUESTION_TYPE_END,
 } from '../../../../helpers/common';
 
 import css from './style.pcss';

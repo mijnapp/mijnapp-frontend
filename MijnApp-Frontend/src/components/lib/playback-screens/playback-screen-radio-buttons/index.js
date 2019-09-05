@@ -43,16 +43,15 @@ export default class PlaybackScreenRadioButtons extends connect(store)(
 
   _optionClick(e) {
     if (e && e.target && !isNaN(e.target.dataIndex)) {
-      let index = e.target.dataIndex;
+      const index = e.target.dataIndex;
       if (index === this.selected) {
         store.dispatch(orderClearAnswer());
       } else {
-        let key = this.question.key || this.question.title;
-        let keyTitle = this.question.title;
-        let value =
-          this.question.options[index].value ||
+        const key = this.question.key || this.question.title;
+        const keyTitle = this.question.title;
+        const value = this.question.options[index].value ||
           this.question.options[index].title;
-        let valueTitle = this.question.options[index].title;
+        const valueTitle = this.question.options[index].title;
         store.dispatch(
           orderSaveAnswer(key, value, keyTitle, valueTitle, index)
         );

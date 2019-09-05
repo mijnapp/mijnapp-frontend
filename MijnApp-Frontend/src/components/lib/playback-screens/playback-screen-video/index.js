@@ -33,8 +33,8 @@ export default class PlaybackScreenVideo extends connect(store)(
 
   _optionClick(e) {
     if (e && e.target && e.target.dataQuestion && !isNaN(e.target.dataIndex)) {
-      let question = e.target.dataQuestion;
-      let index = e.target.dataIndex;
+      const question = e.target.dataQuestion;
+      const index = e.target.dataIndex;
       if (
         question &&
         question.options &&

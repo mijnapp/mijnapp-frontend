@@ -41,18 +41,16 @@ export default class PlaybackScreenMultipleText extends connect(store)(
   }
 
   _inputCallback(question, index, order) {
-    let key =
-      question && question.options && Array.isArray(question.options)
-        ? question.options.map((i) => i.value || i.title || 'Naamloos veld')
-        : [];
-    let keyTitle =
-      question && question.options && Array.isArray(question.options)
-        ? question.options.map(
-          (i) =>
-            `${question.title || 'Naamloze vraag'}: ${i.title ||
-                'Naamloos veld'}`
-        )
-        : [];
+    const key = question && question.options && Array.isArray(question.options)
+      ? question.options.map((i) => i.value || i.title || 'Naamloos veld')
+      : [];
+    const keyTitle = question && question.options && Array.isArray(question.options)
+      ? question.options.map(
+        (i) =>
+        `${question.title || 'Naamloze vraag'}: ${i.title ||
+        'Naamloos veld'}`
+      )
+      : [];
     return (data) => {
       store.dispatch(
         orderSaveAnswer(
