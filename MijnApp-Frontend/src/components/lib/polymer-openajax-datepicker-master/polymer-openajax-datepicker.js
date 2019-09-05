@@ -27,7 +27,7 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
       date: {
         type: String,
         notify: true,
-        observer: '_dateChanged'
+        observer: '_dateChanged',
       },
       /**
        * Localize the calendar.
@@ -38,7 +38,7 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
         type: String,
         value: 'en',
         notify: true,
-        observer: '_localeChanged'
+        observer: '_localeChanged',
       },
       /**
        * Optional init date for the calendar
@@ -48,7 +48,7 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
       initDate: {
         type: String,
         value: '',
-        observer: '_initDateChanged'
+        observer: '_initDateChanged',
       },
       /**
        * Optional min date for the calendar
@@ -59,7 +59,7 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
         type: String,
         notify: true,
         value: '',
-        observer: '_minDateChanged'
+        observer: '_minDateChanged',
       },
       /**
        * Optional max date for the calendar
@@ -69,8 +69,8 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
       maxDate: {
         type: String,
         value: '',
-        notify: true
-      }
+        notify: true,
+      },
     };
   }
 
@@ -143,20 +143,20 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
       left: 37,
       up: 38,
       right: 39,
-      down: 40
+      down: 40,
     };
 
-    if(this.maxDate !== '') {
+    if (this.maxDate !== '') {
       this.maxDateMoment = moment(this.maxDate);
     }
 
-    if(this.minDate !== '') {
+    if (this.minDate !== '') {
       this.minDateMoment = moment(this.minDate);
     }
     this._renderCalendar();
 
 
-    this._handlerShowDlg = function (e) {
+    this._handlerShowDlg = function(e) {
       // ensure focus remains on the dialog
       this.$grid.focus();
       // Consume all mouse events and do nothing
@@ -184,8 +184,8 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
   }
 
   _initDateChanged(newInitDate, oldInitDate) {
-    if(typeof oldInitDate !== 'undefined' && newInitDate !== oldInitDate) {
-      Polymer.RenderStatus.afterNextRender(this, function() {
+    if (typeof oldInitDate !== 'undefined' && newInitDate !== oldInitDate) {
+      Polymer.RenderStatus.afterNextRender(this, function () {
         this._unBindHandlers();
         this._unBindCellsClickHandlers();
         this._renderCalendar();
@@ -194,7 +194,7 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
   }
 
   _minDateChanged(minDate) {
-    if(minDate !== '') {
+    if (minDate !== '') {
       this.minDateMoment = moment(minDate);
       Polymer.RenderStatus.afterNextRender(this, function() {
         this._checkDatesRange();
@@ -228,7 +228,7 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
     var cellsHeader = '\t<tr id="row1">\n';
     // Insert the leading empty cells
     thead.innerHTML = '';
-    for(; weekday < 7; weekday++) {
+    for (; weekday < 7; weekday++) {
       // eslint-disable-next-line
       cellsHeader += '\t\t<th id="' + this.dayNames[weekday] + '"><abbr title="' + this.dayNames[weekday] + '">' + this.dayNamesAbbr[weekday] + '</abbr></th>\n';
     }
@@ -257,20 +257,20 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
     $tbody.innerHTML = '';
 
     // Insert the leading empty cells
-    for(weekday = 0; weekday < startWeekday; weekday++) {
+    for (weekday = 0; weekday < startWeekday; weekday++) {
       gridCells += '\t\t<td class="empty">&nbsp;</td>\n';
     }
 
     // insert the days of the month.
-    for(curDay = 1; curDay <= numDays; curDay++) {
-      if(curDay === dayOfMonth && this.currentDate === true) {
+    for (curDay = 1; curDay <= numDays; curDay++) {
+      if (curDay === dayOfMonth && this.currentDate === true) {
         // eslint-disable-next-line
         gridCells += '\t\t<td id="day' + curDay + '" class="today" headers="row' + rowCount + ' ' + this.dayNames[weekday] + '" role="gridcell" aria-selected="false">' + curDay + '</td>';
       } else {
         // eslint-disable-next-line
         gridCells += '\t\t<td id="day' + curDay + '" headers="row' + rowCount + ' ' + this.dayNames[weekday] + '" role="gridcell" aria-selected="false">' + curDay + '</td>';
       }
-      if(weekday === 6 && curDay < numDays) {
+      if (weekday === 6 && curDay < numDays) {
         // This was the last day of the week, close it out
         // and begin a new one
         gridCells += '\t</tr>\n\t<tr id="row' + rowCount + '">\n';
@@ -282,7 +282,7 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
     }
 
     // Insert any trailing empty cells
-    for(weekday; weekday < 7; weekday++) {
+    for (weekday; weekday < 7; weekday++) {
       gridCells += '\t\t<td class="empty">&nbsp;</td>\n';
     }
     gridCells += '\t</tr>';
@@ -302,19 +302,19 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
     // this value will be used to select the first available on the current month when the user clicks inside
     // the calendar. By default, it will be the first day of the month.
     var active = 'day1';
-    for(i = 0; i < len; i++) {
+    for (i = 0; i < len; i++) {
       days[i].classList.remove('disabled');
     }
-    if(this.maxDateMoment && this.shouldDisableNext) {
+    if (this.maxDateMoment && this.shouldDisableNext) {
       day = this.maxDateMoment.date();
-      for(i = day; i < len; i++) {
+      for (i = day; i < len; i++) {
         days[i].classList.add('disabled');
       }
       active = 'day' + days[0].firstChild.nodeValue;
     }
-    if(this.minDateMoment && this.shouldDisablePrev) {
+    if (this.minDateMoment && this.shouldDisablePrev) {
       day = this.minDateMoment.date();
-      for(i = 0; i < day; i++) {
+      for (i = 0; i < day; i++) {
         days[i].classList.add('disabled');
       }
       active = 'day' + days[i].firstChild.nodeValue;
@@ -334,11 +334,11 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
     var weekdaysAbbr = [];
     var i = 0;
     localeMoment.locale(locale);
-    for(; i < 7; i++) {
+    for (; i < 7; i++) {
       weekdays.push(localeMoment.weekday(i).format('dddd'));
       weekdaysAbbr.push(localeMoment.weekday(i).format('dd'));
     }
-    for(i = 0; i < 12; i++) {
+    for (i = 0; i < 12; i++) {
       months.push(localeMoment.month(i).format('MMMM'));
     }
     this.dayNames = weekdays;
@@ -378,14 +378,14 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
     var day;
 
     // show the previous month
-    if(this.month === 0) {
+    if (this.month === 0) {
       this.month = 11;
       this.year -= 1;
     } else {
       this.month -= 1;
     }
 
-    if(this.month !== this.curMonth || this.year !== this.curYear) {
+    if (this.month !== this.curMonth || this.year !== this.curYear) {
       this.currentDate = false;
     } else {
       this.currentDate = true;
@@ -401,7 +401,7 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
     this.$monthObj.innerHTML = this.monthNames[this.month] + ' ' + this.year;
 
     // if offset was specified, set focus on the last day - specified offset
-    if(typeof offset !== 'undefined') {
+    if (typeof offset !== 'undefined') {
       numDays = this._calcNumDays(this.year, this.month);
       day = 'day' + (numDays - offset);
 
@@ -422,14 +422,14 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
   _showNextMonth(offset) {
     var day;
     // show the next month
-    if(this.month === 11) {
+    if (this.month === 11) {
       this.month = 0;
       this.year += 1;
     } else {
       this.month += 1;
     }
 
-    if(this.month !== this.curMonth || this.year !== this.curYear) {
+    if (this.month !== this.curMonth || this.year !== this.curYear) {
       this.currentDate = false;
     } else {
       this.currentDate = true;
@@ -444,7 +444,7 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
     this.$monthObj.innerHTML = this.monthNames[this.month] + ' ' + this.year;
 
     // if offset was specified, set focus on the first day + specified offset
-    if(typeof offset !== 'undefined') {
+    if (typeof offset !== 'undefined') {
       day = 'day' + offset;
 
       this.$grid.setAttribute('aria-activedescendant', day);
@@ -461,7 +461,7 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
   _showPrevYear() {
     // decrement the year
     this.year -= 1;
-    if(this.month !== this.curMonth || this.year !== this.curYear) {
+    if (this.month !== this.curMonth || this.year !== this.curYear) {
       this.currentDate = false;
     } else {
       this.currentDate = true;
@@ -482,7 +482,7 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
   _showNextYear() {
     // increment the year
     this.year += 1;
-    if(this.month !== this.curMonth || this.year !== this.curYear) {
+    if (this.month !== this.curMonth || this.year !== this.curYear) {
       this.currentDate = false;
     } else {
       this.currentDate = true;
@@ -571,7 +571,7 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
   // @return (boolean) false if consuming event, true if propagating
   //
   _handlePrevClick(e) {
-    if(e.ctrlKey) {
+    if (e.ctrlKey) {
       this._showPrevYear();
     } else {
       this._showPrevMonth();
@@ -588,7 +588,7 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
   // @return (boolean) false if consuming event, true if propagating
   //
   _handleNextClick(e) {
-    if(e.ctrlKey) {
+    if (e.ctrlKey) {
       this._showNextYear();
     } else {
       this._showNextMonth();
@@ -605,12 +605,12 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
   // @return (boolean) false if consuming event, true if propagating
   //
   _handlePrevKeyDown(e) {
-    if(e.altKey) {
+    if (e.altKey) {
       return true;
     }
     switch (e.keyCode) {
       case this.keys.tab: {
-        if(this.bModal === false || !e.shiftKey || e.ctrlKey) {
+        if (this.bModal === false || !e.shiftKey || e.ctrlKey) {
           return true;
         }
 
@@ -620,11 +620,11 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
       }
       case this.keys.enter:
       case this.keys.space: {
-        if(e.shiftKey) {
+        if (e.shiftKey) {
           return true;
         }
 
-        if(e.ctrlKey) {
+        if (e.ctrlKey) {
           this._showPrevYear();
         } else {
           this._showPrevMonth();
@@ -648,13 +648,13 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
   // @return (boolean) false if consuming event, true if propagating
   //
   _handleNextKeyDown(e) {
-    if(e.altKey) {
+    if (e.altKey) {
       return true;
     }
     switch (e.keyCode) {
       case this.keys.enter:
       case this.keys.space: {
-        if(e.ctrlKey) {
+        if (e.ctrlKey) {
           this._showNextYear();
         } else {
           this._showNextMonth();
@@ -683,14 +683,14 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
     var $daysArray = [].slice.call($days);
     var $curRow = $curDay.parentNode;
 
-    if(e.altKey) {
+    if (e.altKey) {
       return true;
     }
 
     switch (e.keyCode) {
       case this.keys.tab: {
-        if(this.bModal === true) {
-          if(e.shiftKey) {
+        if (this.bModal === true) {
+          if (e.shiftKey) {
             this.$next.focus();
           } else {
             this.$prev.focus();
@@ -702,7 +702,7 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
       }
       case this.keys.enter:
       case this.keys.space: {
-        if(e.ctrlKey) {
+        if (e.ctrlKey) {
           return true;
         }
         // update date selected
@@ -717,13 +717,13 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
         return false;
       }
       case this.keys.left: {
-        if(e.ctrlKey || e.shiftKey) {
+        if (e.ctrlKey || e.shiftKey) {
           return true;
         }
         var dayIndex = $daysArray.indexOf($curDay) - 1;
         var $prevDay = null;
 
-        if(dayIndex >= 0) {
+        if (dayIndex >= 0) {
           $prevDay = $days[dayIndex];
 
           $curDay.classList.remove('focus');
@@ -741,14 +741,14 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
       }
       case this.keys.right: {
 
-        if(e.ctrlKey || e.shiftKey) {
+        if (e.ctrlKey || e.shiftKey) {
           return true;
         }
 
         var dayIndex = $daysArray.indexOf($curDay) + 1;
         var $nextDay = null;
 
-        if(dayIndex < $days.length) {
+        if (dayIndex < $days.length) {
           $nextDay = $days[dayIndex];
           $curDay.classList.remove('focus');
           $curDay.setAttribute('aria-selected', 'false');
@@ -765,14 +765,14 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
         return false;
       }
       case this.keys.up: {
-        if(e.ctrlKey || e.shiftKey) {
+        if (e.ctrlKey || e.shiftKey) {
           return true;
         }
 
         var dayIndex = $daysArray.indexOf($curDay) - 7;
         var $prevDay = null;
 
-        if(dayIndex >= 0) {
+        if (dayIndex >= 0) {
           $prevDay = $days[dayIndex];
 
           $curDay.classList.remove('focus');
@@ -792,14 +792,14 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
         return false;
       }
       case this.keys.down: {
-        if(e.ctrlKey || e.shiftKey) {
+        if (e.ctrlKey || e.shiftKey) {
           return true;
         }
 
         var dayIndex = $daysArray.indexOf($curDay) + 7;
         var $prevDay = null;
 
-        if(dayIndex < $days.length) {
+        if (dayIndex < $days.length) {
           $prevDay = $days[dayIndex];
 
           $curDay.classList.remove('focus');
@@ -822,18 +822,18 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
         var active = this.$grid.getAttribute('aria-activedescendant');
 
 
-        if(e.shiftKey) {
+        if (e.shiftKey) {
           return true;
         }
 
 
-        if(e.ctrlKey) {
+        if (e.ctrlKey) {
           this._showPrevYear();
         } else {
           this._showPrevMonth();
         }
 
-        if(typeof this.$id.querySelector('#' + active).setAttribute('id') === 'undefined') {
+        if (typeof this.$id.querySelector('#' + active).setAttribute('id') === 'undefined') {
           var lastDay = 'day' + this._calcNumDays(this.year, this.month);
           this.$id.querySelector('#' + lastDay).classList.add('focus');
           this.$id.querySelector('#' + lastDay).setAttribute('aria-selected', 'true');
@@ -847,15 +847,15 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
       }
       case this.keys.pagedown: {
         var active = this.$grid.getAttribute('aria-activedescendant');
-        if(e.shiftKey) {
+        if (e.shiftKey) {
           return true;
         }
-        if(e.ctrlKey) {
+        if (e.ctrlKey) {
           this._showNextYear();
         } else {
           this._showNextMonth();
         }
-        if(this.$id.querySelector('#' + active).setAttribute('id') == undefined) {
+        if (this.$id.querySelector('#' + active).setAttribute('id') == undefined) {
           var lastDay = 'day' + this._calcNumDays(this.year, this.month);
           this.$id.querySelector('#' + lastDay).classList.add('focus');
           this.$id.querySelector('#' + lastDay).setAttribute('aria-selected', 'true');
@@ -868,7 +868,7 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
         return false;
       }
       case this.keys.home: {
-        if(e.ctrlKey || e.shiftKey) {
+        if (e.ctrlKey || e.shiftKey) {
           return true;
         }
         $curDay.classList.remove('focus');
@@ -883,7 +883,7 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
         return false;
       }
       case this.keys.end: {
-        if(e.ctrlKey || e.shiftKey) {
+        if (e.ctrlKey || e.shiftKey) {
           return true;
         }
 
@@ -915,7 +915,7 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
   // @return (boolean) false if consuming event, true if propagating
   //
   _handleGridKeyPress(e) {
-    if(e.altKey) {
+    if (e.altKey) {
       return true;
     }
 
@@ -953,7 +953,7 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
   //
   _handleGridClick(e) {
     var $cell = e.target;
-    if($cell.classList.contains('empty') || $cell.classList.contains('disabled')) {
+    if ($cell.classList.contains('empty') || $cell.classList.contains('disabled')) {
       return true;
     }
 
@@ -985,7 +985,7 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
   _handleGridFocus() {
     var active = this.$grid.getAttribute('aria-activedescendant');
 
-    if(typeof this.$grid.querySelector('#' + active).getAttribute('id') === 'undefined') {
+    if (typeof this.$grid.querySelector('#' + active).getAttribute('id') === 'undefined') {
       var lastDay = 'day' + this._calcNumDays(this.year, this.month);
       this.$grid.querySelector('#' + lastDay).classList.add('focus');
       this.$grid.querySelector('#' + lastDay).setAttribute('aria-selected', 'true');
