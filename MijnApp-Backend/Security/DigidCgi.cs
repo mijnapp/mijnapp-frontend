@@ -80,7 +80,6 @@ namespace MijnApp_Backend.Security
                 return siamRedirectUrl;
             }
 
-            //TODO - Error handling in case result code is not 0000
             throw new Exception($"SIAM Result code: {resultCode}");
         }
 
@@ -104,7 +103,6 @@ namespace MijnApp_Backend.Security
 
             if (!resultCode.Equals(DigidConstants.ResultCodeOk))
             {
-                //TODO - Error handling in case result code is not 0000
                 throw new Exception($"SIAM Result code: {resultCode}");
             }
 

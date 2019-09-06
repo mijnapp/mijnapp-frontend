@@ -14,5 +14,15 @@ namespace MijnApp_Backend.Helpers
         {
             logger.Error($"[{correlationId}] - {message}", exception);
         }
+
+        internal static void Warn(this ILog logger, string message, string correlationId)
+        {
+            logger.Warn($"[{correlationId}] - {message}");
+        }
+
+        internal static void Info(this ILog logger, string message, string correlationId)
+        {
+            logger.Info($"[{correlationId}] - {message}");
+        }
     }
 }

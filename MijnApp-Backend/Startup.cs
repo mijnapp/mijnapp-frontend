@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Net.Http;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -62,9 +61,6 @@ namespace MijnApp_Backend
                 app.UseHsts();
             }
 
-            app.UseExceptionLogging();
-
-
             app.UseHttpsRedirection();
 
             var origins = Configuration.GetValue<string>("Origins").Split(';');
@@ -76,8 +72,10 @@ namespace MijnApp_Backend
                 builder.AllowCredentials();
             });
             
-
             app.UseAuthentication();
+
+            app.UseExceptionLogging();
+            app.UseRequestResponseLogging();
 
             //Comment this out for now, because we can't prolong the session since we are completely stateless (session-less)
             //and don't have the necessary data to prolong the session.

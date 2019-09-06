@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Text;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using MijnApp_Backend.Helpers;
 using JwtRegisteredClaimNames = System.IdentityModel.Tokens.Jwt.JwtRegisteredClaimNames;
 
 namespace MijnApp_Backend.Security
@@ -70,9 +71,11 @@ namespace MijnApp_Backend.Security
             var expires = DateTime.Now.AddMinutes(expiryInMinutes);
             var exp = (int)expires.Subtract(utc0).TotalSeconds;
 
+            var jwtId = Guid.NewGuid().ToString();
+
             var claims = new[] {
                 new Claim(JwtEncryptedBsn, JwtClaimEncryptor.Encrypt(bsn, _config["JwtClaimEncryption:SecretKey"])),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim(JwtRegisteredClaimNames.Jti, jwtId),
                 new Claim(JwtOriginalIdp, signInProvider.ToString()),
                 new Claim(JwtRegisteredClaimNames.Iat, iat.ToString()),
                 new Claim(JwtRegisteredClaimNames.Exp, exp.ToString())
@@ -84,6 +87,8 @@ namespace MijnApp_Backend.Security
                 claims,
                 expires: expires,
                 signingCredentials: credentials);
+
+            Log4NetLogManager.AuditLogger.Info("Gebruiker aangemaakt na succesvolle login", jwtId);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
