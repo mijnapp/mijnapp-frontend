@@ -94,8 +94,8 @@ export function* watchRequestJwtLogout() {
 }
 
 function* doJwtLogout() {
+  yield call(jwtApi.logout(jwtBearerToken()));
   removeJwtBearerToken();
-
   window.successToast.text = 'Succesvol uitgelogd';
   window.successToast.open();
   yield put(selectPage('signin'));

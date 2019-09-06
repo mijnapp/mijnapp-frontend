@@ -66,7 +66,17 @@ namespace MijnApp_Backend.Controllers
         }
 
         [HttpPost]
-        [Route("signin")]
+        [Route("signout")]
+        public IActionResult SignOut()
+        {
+            var correlationId = JwtTokenProvider.GetCorrelationIdForLogging(HttpContext.User);
+            _auditLogger.Info("Gebruiker uitgelogd", correlationId);
+
+            return Ok();
+        }
+
+        [HttpPost]
+        [Route("signinfake")]
         [AllowAnonymous]
         public IActionResult SigninDigidCgiFake([FromServices] IConfiguration config)
         {

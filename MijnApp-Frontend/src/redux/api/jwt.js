@@ -5,7 +5,7 @@ import { setJwtBearerToken } from '../helpers/headers';
 export const jwtApi = {
   signinfake: () => async () => {
     const response = await axios.post(
-      '/jwt/signin',
+      '/jwt/signinfake',
       null,
       {
         baseURL: configuration.BASE_URL_API(),
@@ -58,6 +58,16 @@ export const jwtApi = {
     } else {
       throw response.status;
     }
+  },
+  logout: (token) => async () => {
+    await axios.post(
+      '/jwt/signout',
+      null,
+      {
+        baseURL: configuration.BASE_URL_API(),
+        headers: { 'Authorization': 'Bearer ' + token }
+      }
+    );
   },
   elevateWithPin: (pin, token) => async () => {
     const response = await axios.post(
