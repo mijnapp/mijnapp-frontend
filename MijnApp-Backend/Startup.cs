@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Http;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -9,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using MijnApp_Backend.Helpers;
+using MijnApp_Backend.HttpClients;
 
 namespace MijnApp_Backend
 {
@@ -39,6 +41,9 @@ namespace MijnApp_Backend
                         ClockSkew = new TimeSpan(0,1,0)
                     };
                 });
+
+            services.AddSingleton<HttpClient>();
+            services.AddTransient<IDigidClient, DigidClient>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

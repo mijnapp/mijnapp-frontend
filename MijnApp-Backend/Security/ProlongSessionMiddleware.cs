@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
+using MijnApp_Backend.HttpClients;
 
 namespace MijnApp_Backend.Security
 {
@@ -18,9 +19,9 @@ namespace MijnApp_Backend.Security
             _next = next;
         }
 
-        public async Task Invoke(HttpContext context, IConfiguration configuration)
+        public async Task Invoke(HttpContext context, IConfiguration configuration, IDigidClient digidClient)
         {
-            string newJwtToken = ProlongSessionAndCreateNewJwtToken(context.User, configuration);
+            string newJwtToken = ProlongSessionAndCreateNewJwtToken(context.User, configuration, digidClient);
 
             if (string.IsNullOrEmpty(newJwtToken))
             {
@@ -62,7 +63,7 @@ namespace MijnApp_Backend.Security
             }
         }
 
-        private string ProlongSessionAndCreateNewJwtToken(ClaimsPrincipal currentUser, IConfiguration configuration)
+        private string ProlongSessionAndCreateNewJwtToken(ClaimsPrincipal currentUser, IConfiguration configuration, IDigidClient digidClient)
         {
             string jwtToken = string.Empty;
 
@@ -75,7 +76,7 @@ namespace MijnApp_Backend.Security
                 switch (signInProvider)
                 {
                     case SignInProvider.DigidCgi:
-                        jwtToken = ProlongSessionDigidCgiAndCreateJwtToken(currentUser, configuration);
+                        jwtToken = ProlongSessionDigidCgiAndCreateJwtToken(currentUser, configuration, digidClient);
                         break;
                 }
             }
@@ -83,9 +84,9 @@ namespace MijnApp_Backend.Security
             return jwtToken;
         }
 
-        private string ProlongSessionDigidCgiAndCreateJwtToken(ClaimsPrincipal currentUser, IConfiguration configuration)
+        private string ProlongSessionDigidCgiAndCreateJwtToken(ClaimsPrincipal currentUser, IConfiguration configuration, IDigidClient digidClient)
         {
-            var digidCgi = new DigidCgi(configuration);
+            var digidCgi = new DigidCgi(configuration, digidClient);
 
             digidCgi.ProlongSession(currentUser);
 

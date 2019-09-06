@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using MijnApp_Backend.Helpers;
+using MijnApp_Backend.HttpClients;
 using MijnApp_Backend.Security;
 
 namespace MijnApp_Backend.Controllers
@@ -18,11 +19,11 @@ namespace MijnApp_Backend.Controllers
         private readonly DigidCgi _digidCgi;
         private readonly ILog _auditLogger;
 
-        public JwtController(IConfiguration config)
+        public JwtController(IConfiguration config, IDigidClient digidClient)
         {
             _config = config;
             _jwtTokenProvider = new JwtTokenProvider(config);
-            _digidCgi = new DigidCgi(config);
+            _digidCgi = new DigidCgi(config, digidClient);
             _auditLogger = Log4NetLogManager.AuditLogger;
         }
 

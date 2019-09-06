@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Specialized;
-using System.Net.Http;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using Microsoft.Extensions.Configuration;
+using MijnApp_Backend.HttpClients;
 
 namespace MijnApp_Backend.Security
 {
@@ -37,10 +37,12 @@ namespace MijnApp_Backend.Security
         private const string SiamRequestVerifyUserUrl = "{0}?request=verify_credentials&"+ DigidConstants.ASelectServer + "={1}&"+ DigidConstants.Rid + "={2}&" + DigidConstants.SelectCredentials + "={3}&" + DigidConstants.SharedSecret + "={4}&" + DigidConstants.SamlAttributes + "={5}";
 
         private readonly IConfiguration _config;
+        private readonly IDigidClient _digidClient;
 
-        internal DigidCgi(IConfiguration config)
+        internal DigidCgi(IConfiguration config, IDigidClient digidClient)
         {
             _config = config;
+            _digidClient = digidClient;
         }
 
         internal DigidUser AuthenticateFakeUser()
@@ -65,24 +67,21 @@ namespace MijnApp_Backend.Security
 
             var url = string.Format(SiamRequestAuthenticationUrl, siamUrl, applicationId, frontendRedirectUrl, aSelectServer, sharedSecret);
 
-            using (var httpClient = new HttpClient())
+            var response = await _digidClient.GetAsync(url);
+            string result = await response.Content.ReadAsStringAsync();
+
+            var dict = HttpUtility.ParseQueryString(result);
+
+            var resultCode = dict[DigidConstants.ResultCode];
+
+            if (resultCode.Equals(DigidConstants.ResultCodeOk))
             {
-                var response = await httpClient.GetAsync(url);
-                string result = await response.Content.ReadAsStringAsync();
-
-                var dict = HttpUtility.ParseQueryString(result);
-
-                var resultCode = dict[DigidConstants.ResultCode];
-
-                if (resultCode.Equals(DigidConstants.ResultCodeOk))
-                {
-                    var siamRedirectUrl = string.Format(SiamRedirectUrl, dict[DigidConstants.AsUrl], dict[DigidConstants.ASelectServer], dict[DigidConstants.Rid]);
-                    return siamRedirectUrl;
-                }
-
-                //TODO - Error handling in case result code is not 0000
-                throw new Exception($"SIAM Result code: {resultCode}");
+                var siamRedirectUrl = string.Format(SiamRedirectUrl, dict[DigidConstants.AsUrl], dict[DigidConstants.ASelectServer], dict[DigidConstants.Rid]);
+                return siamRedirectUrl;
             }
+
+            //TODO - Error handling in case result code is not 0000
+            throw new Exception($"SIAM Result code: {resultCode}");
         }
 
         public async Task<DigidUser> VerifyUser(string aselectCredentials, string rid)
@@ -96,33 +95,30 @@ namespace MijnApp_Backend.Security
 
             var url = string.Format(SiamRequestVerifyUserUrl, siamUrl, aSelectServer, rid, aselectCredentials, sharedSecret, extraAttributes);
 
-            using (var httpClient = new HttpClient())
+            var response = await _digidClient.GetAsync(url);
+            string result = await response.Content.ReadAsStringAsync();
+
+            var digidValues = HttpUtility.ParseQueryString(result);
+
+            var resultCode = digidValues[DigidConstants.ResultCode];
+
+            if (!resultCode.Equals(DigidConstants.ResultCodeOk))
             {
-                var response = await httpClient.GetAsync(url);
-                string result = await response.Content.ReadAsStringAsync();
-
-                var digidValues = HttpUtility.ParseQueryString(result);
-
-                var resultCode = digidValues[DigidConstants.ResultCode];
-
-                if (!resultCode.Equals(DigidConstants.ResultCodeOk))
-                {
-                    //TODO - Error handling in case result code is not 0000
-                    throw new Exception($"SIAM Result code: {resultCode}");
-                }
-
-                var demandedAuthenticationLevel = int.Parse(digidValues[DigidConstants.AppLevel]);
-                var usedAuthenticationLevel = int.Parse(digidValues[DigidConstants.AuthspLevel]);
-
-                if (demandedAuthenticationLevel > usedAuthenticationLevel)
-                {
-                    // DigiD should make sure the user can only login at the desired level or higher. We just throw an exception when this happens.
-                    throw new Exception("Het gebruikte authenticatieniveau is {usedAuthenticationLevel}, maar moet minimaal {demandedAuthenticationLevel} zijn.");
-                }
-
-                var digidUser = new DigidUser(digidValues);
-                return digidUser;
+                //TODO - Error handling in case result code is not 0000
+                throw new Exception($"SIAM Result code: {resultCode}");
             }
+
+            var demandedAuthenticationLevel = int.Parse(digidValues[DigidConstants.AppLevel]);
+            var usedAuthenticationLevel = int.Parse(digidValues[DigidConstants.AuthspLevel]);
+
+            if (demandedAuthenticationLevel > usedAuthenticationLevel)
+            {
+                // DigiD should make sure the user can only login at the desired level or higher. We just throw an exception when this happens.
+                throw new Exception("Het gebruikte authenticatieniveau is {usedAuthenticationLevel}, maar moet minimaal {demandedAuthenticationLevel} zijn.");
+            }
+
+            var digidUser = new DigidUser(digidValues);
+            return digidUser;
         }
 
         internal void ProlongSession(ClaimsPrincipal currentUser)
