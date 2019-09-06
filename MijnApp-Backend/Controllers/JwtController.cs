@@ -56,6 +56,7 @@ namespace MijnApp_Backend.Controllers
             var user = await _digidCgi.VerifyUser(aselectCredentials, rid);
 
             var tokenString = _jwtTokenProvider.GenerateJsonWebToken(user, SignInProvider.DigidCgi);
+
             return Ok(new
             {
                 token = tokenString,
@@ -66,9 +67,9 @@ namespace MijnApp_Backend.Controllers
         [HttpPost]
         [Route("signin")]
         [AllowAnonymous]
-        public IActionResult SigninDigidCgi([FromServices] IConfiguration config)
+        public IActionResult SigninDigidCgiFake([FromServices] IConfiguration config)
         {
-            _auditLogger.Info("SigninDigidCgi aangeroepen - dit is de Fake inlog");
+            _auditLogger.Info("SigninDigidCgiFake aangeroepen - dit is de Fake inlog");
             var hasFakeLoginEnabled = config.GetValue<bool>("HasFakeLoginEnabled");
             if (!hasFakeLoginEnabled)
             {
