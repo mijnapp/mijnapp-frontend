@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Net.Http;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using MijnApp_Backend.Helpers;
 using MijnApp_Backend.HttpClients;
+using MijnApp_Backend.Security;
 
 namespace MijnApp_Backend
 {
@@ -41,10 +44,18 @@ namespace MijnApp_Backend
                     };
                 });
 
+            services.AddHttpContextAccessor();
             services.AddHttpClient<IDigidClient,DigidClient>();
-            services.AddHttpClient<IServiceClient, ServiceClient>();
+            services.AddHttpClient<IServiceClient, ServiceClient>(ConfigureServiceClient);
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+        }
+
+        private void ConfigureServiceClient(IServiceProvider serviceProvider, HttpClient httpClient)
+        {
+            var httpContextAccessor = serviceProvider.GetService<IHttpContextAccessor>();
+            var correlationId = JwtTokenProvider.GetCorrelationIdForLogging(httpContextAccessor.HttpContext.User);
+            httpClient.DefaultRequestHeaders.Add("MijnAppCorrelationId", correlationId);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
