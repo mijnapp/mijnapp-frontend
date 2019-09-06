@@ -24,7 +24,7 @@ namespace MijnApp_Backend.Helpers
             {
                 var calledUrl = context.Request.GetDisplayUrl();
                 var correlationId = JwtTokenProvider.GetCorrelationIdForLogging(context.User);
-                Log4NetLogManager.ErrorLogger.Error($"Onverwachte fout bij het opvragen van URL '{calledUrl}'", correlationId ,exception);
+                Log4NetLogManager.ErrorLogger.Error($"Onverwachte fout bij het opvragen van URL '{calledUrl}'", correlationId, exception);
 
                 throw;
             }
