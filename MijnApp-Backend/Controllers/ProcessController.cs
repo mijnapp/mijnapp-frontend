@@ -1,45 +1,41 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Net.Http;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Configuration;
+using MijnApp_Backend.HttpClients;
 
 namespace MijnApp_Backend.Controllers
 {
     //[Authorize]
     public class ProcessController : Controller
     {
-        private readonly string BaseUri = "";
-        private const string URL_GETALL = "{0}processes";
-        private const string URL_GETBYID = "{0}processes/{1}";
+        private readonly string _baseUri;
+        private const string UrlGetAll = "{0}processes";
+        private const string UrlGetById = "{0}processes/{1}";
 
-        public ProcessController([FromServices] IConfiguration config)
+        private readonly IServiceClient _serviceClient;
+
+        public ProcessController(IConfiguration config, IServiceClient serviceClient)
         {
-            BaseUri = config.GetValue<string>("Api:ProcessUri");
+            _baseUri = config.GetValue<string>("Api:ProcessUri");
+            _serviceClient = serviceClient;
         }
 
         [HttpGet]
         [Route("processes")]
         public async Task<IActionResult> Processes()
         {
-            using (var httpClient = new HttpClient())
-            {
-                var response = await httpClient.GetAsync(string.Format(URL_GETALL, BaseUri));                
-                var result = await response.Content.ReadAsStringAsync();
-                return Json(result);
-            }
+            var response = await _serviceClient.GetAsync(string.Format(UrlGetAll, _baseUri));
+            var result = await response.Content.ReadAsStringAsync();
+            return Json(result);
         }
 
         [HttpGet]
         [Route("processes/{id}")]
         public async Task<IActionResult> GetProcessesById(string id)
         {
-            using (var httpClient = new HttpClient())
-            {
-                var response = await httpClient.GetAsync(string.Format(URL_GETBYID, BaseUri, id));
-                var result = await response.Content.ReadAsStringAsync();
-                return Json(result);
-            }
+            var response = await _serviceClient.GetAsync(string.Format(UrlGetById, _baseUri, id));
+            var result = await response.Content.ReadAsStringAsync();
+            return Json(result);
         }
     }
 }

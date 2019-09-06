@@ -44,6 +44,7 @@ namespace MijnApp_Backend
 
             services.AddSingleton<HttpClient>();
             services.AddTransient<IDigidClient, DigidClient>();
+            services.AddTransient<IServiceClient, ServiceClient>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
