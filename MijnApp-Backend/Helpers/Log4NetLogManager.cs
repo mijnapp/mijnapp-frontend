@@ -1,4 +1,5 @@
-﻿using log4net;
+﻿using System;
+using log4net;
 
 namespace MijnApp_Backend.Helpers
 {
@@ -8,5 +9,10 @@ namespace MijnApp_Backend.Helpers
 
         internal static ILog AuditLogger => LogManager.GetLogger(DefaultRepositoryName, "Audit");
         internal static ILog ErrorLogger => LogManager.GetLogger(DefaultRepositoryName, "Error");
+
+        internal static void Error(this ILog logger, string message, string correlationId, Exception exception)
+        {
+            logger.Error($"[{correlationId}] - {message}", exception);
+        }
     }
 }

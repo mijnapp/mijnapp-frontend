@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using MijnApp_Backend.Helpers;
 
 namespace MijnApp_Backend
 {
@@ -55,7 +56,10 @@ namespace MijnApp_Backend
             {
                 app.UseHsts();
             }
-            
+
+            app.UseExceptionLogging();
+
+
             app.UseHttpsRedirection();
 
             var origins = Configuration.GetValue<string>("Origins").Split(';');
@@ -66,10 +70,13 @@ namespace MijnApp_Backend
                 builder.AllowAnyMethod();
                 builder.AllowCredentials();
             });
+            
 
             app.UseAuthentication();
 
-            //app.UseProlongSession();
+            //Comment this out for now, because we can't prolong the session since we are completely stateless (session-less)
+            //and don't have the necessary data to prolong the session.
+            //app.UseProlongSession(); 
 
             app.UseMvc();
         }

@@ -15,6 +15,16 @@ namespace MijnApp_Backend.Security
         internal const string JwtEncryptedBsn = "mijnApp_username";
         private readonly IConfiguration _config;
 
+        internal static string GetCorrelationIdForLogging(ClaimsPrincipal currentUser)
+        {
+            if (currentUser.HasClaim(c => c.Type == JwtRegisteredClaimNames.Jti))
+            {
+                return currentUser.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value;
+            }
+
+            return "onbekend ID";
+        }
+
         internal JwtTokenProvider(IConfiguration config)
         {
             _config = config;
