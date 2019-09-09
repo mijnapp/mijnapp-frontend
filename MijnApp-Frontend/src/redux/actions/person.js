@@ -12,3 +12,17 @@ export const requestPersonDataFailure = (error) => ({
 });
 export const CLEAR_PERSON_DATA = 'CLEAR_PERSON_DATA';
 export const clearPersonData = () => ({ type: CLEAR_PERSON_DATA });
+
+//BRP moving people
+export const REQUEST_PERSONS_MOVING = 'REQUEST_PERSONS_MOVING';
+export const requestPersonsMoving = (id) => ({ type: REQUEST_PERSONS_MOVING, id });
+export const REQUEST_PERSONS_MOVING_SUCCESS = 'REQUEST_PERSONS_MOVING_SUCCESS';
+export const requestPersonsMovingSuccess = (data) => ({
+  type: REQUEST_PERSONS_MOVING_SUCCESS,
+  data,
+});
+export const REQUEST_PERSONS_MOVING_FAILURE = 'REQUEST_PERSONS_MOVING_FAILURE';
+export const requestPersonsMovingFailure = (error) => ({
+  type: REQUEST_PERSONS_MOVING_FAILURE,
+  error,
+});

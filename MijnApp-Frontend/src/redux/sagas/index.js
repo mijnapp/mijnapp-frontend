@@ -4,7 +4,10 @@ import { watchRequestAvgLog } from './avgLog';
 import { watchRequestAvgLogs } from './avgLogs';
 import { watchRequestContract } from './contract';
 import { watchRequestContracts } from './contracts';
-import { watchRequestPersonData } from './person';
+import {
+  watchRequestPersonData,
+  watchRequestPersonsMoving,
+} from './person';
 import {
   watchRequestJwtSigninFake,
   watchRequestJwtSignin,
@@ -52,6 +55,7 @@ export default function* rootSaga() {
     watchSelectPage(),
     watchSelectPageNoHistory(),
     watchRequestPersonData(),
+    watchRequestPersonsMoving(),
     watchRequestOrdersList(),
     watchRequestOrdersItem(),
     watchRequestOrdersSubmit(),
