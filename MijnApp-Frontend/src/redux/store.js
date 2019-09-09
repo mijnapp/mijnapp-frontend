@@ -303,6 +303,44 @@ store.dispatch(
         ],
         subtitle: 'Verhuizen binnen of naar Eindhoven',
       },
+    },
+    {
+      title: 'Medeverhuizers test',
+      questions: [
+        {
+          id: '37e30b1f-fb51-4d49-8756-fa5d4d55829a',
+          type: 'personsMoving',
+          title: 'Met wie ga je verhuizen?',
+          subtitle:
+            'Er wordt een bericht gestuurd naar de persoon die meeverhuist ' +
+            '(onderstaande personen staan nu op hetzelfde adres als jij ' +
+            'ingeschreven)',
+          next: 'END',
+          options: [
+            {
+              goto: null,
+              title: 'Evelien de Vries',
+              value: null,
+            },
+            {
+              goto: null,
+              title: 'Thomas de Vries',
+              value: null,
+            },
+          ],
+        }
+      ],
+      overview: {
+        needed_documents: ['Geen'],
+        send_to: [],
+        steps: [
+          'Geef je nieuwe adres op.',
+          'Geef de datum op wanneer je gaat verhuizen.',
+          'Geef aan met wie je gaat verhuizen,',
+          'Geef de nieuwe woonsituatie aan.',
+        ],
+        subtitle: 'Verhuizen binnen of naar Eindhoven',
+      },
     }
   ])
 );

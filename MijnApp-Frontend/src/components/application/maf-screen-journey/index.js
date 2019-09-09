@@ -17,6 +17,7 @@ import '../../lib/playback-screens/playback-screen-end';
 import '../../lib/playback-screens/playback-screen-error';
 import '../../lib/playback-screens/playback-screen-multiple';
 import '../../lib/playback-screens/playback-screen-multiple-text';
+import '../../lib/playback-screens/playback-screen-persons-moving';
 import '../../lib/playback-screens/playback-screen-radio-buttons';
 import '../../lib/playback-screens/playback-screen-single';
 import '../../lib/playback-screens/playback-screen-start';
