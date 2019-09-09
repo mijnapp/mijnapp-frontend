@@ -48,7 +48,6 @@ function* fetchOrdersSubmit(action) {
   try {
     yield call(ordersApi.submit(action.data, jwtBearerToken()));
     yield put(requestOrdersSubmitSuccess());
-    yield put(selectPage('journeys'));
   } catch (e) {
     yield put(requestOrdersSubmitFailed(e));
   }

@@ -1,4 +1,4 @@
-import { JOURNEY_START } from '../../helpers/common';
+import { JOURNEY_START, ORDER_STATUS_SENDING, ORDER_STATUS_SEND_OK, ORDER_STATUS_NOT_SEND, ORDER_STATUS_SEND_FAILED  } from '../../helpers/common';
 import {
   ORDER_SAVE_ANSWER,
   ORDER_CLEAR_ANSWER,
@@ -6,11 +6,12 @@ import {
   ORDER_PREV,
 } from '../actions/order';
 import { SET_JOURNEY } from '../actions/journey';
+import { REQUEST_ORDERS_SUBMIT, REQUEST_ORDERS_SUBMIT_SUCCESS, REQUEST_ORDERS_SUBMIT_FAILED } from '../actions/orders'
 
 export const order = (state = { data: [], current: JOURNEY_START }, action) => {
   switch (action.type) {
     case SET_JOURNEY:
-      return { data: [], current: JOURNEY_START };
+      return { data: [], current: JOURNEY_START, order_status: ORDER_STATUS_NOT_SEND };
     case ORDER_SAVE_ANSWER:
     case ORDER_CLEAR_ANSWER:
       return {
@@ -40,6 +41,12 @@ export const order = (state = { data: [], current: JOURNEY_START }, action) => {
         ...state,
         current: state.current === 0 ? JOURNEY_START : state.current - 1,
       };
+    case REQUEST_ORDERS_SUBMIT:
+      return { ...state, order_status: ORDER_STATUS_SENDING }
+    case REQUEST_ORDERS_SUBMIT_SUCCESS:
+      return { ...state, order_status: ORDER_STATUS_SEND_OK }
+    case REQUEST_ORDERS_SUBMIT_FAILED:
+      return { ...state, order_status: ORDER_STATUS_SEND_FAILED }
     default:
       return state;
   }

@@ -4,7 +4,7 @@ import { store } from '../../../../redux/store';
 import { selectPage } from '../../../../redux/actions/application';
 import { requestOrdersSubmit } from '../../../../redux/actions/orders';
 import { orderPrev } from '../../../../redux/actions/order';
-import { JOURNEY_START, JOURNEY_END } from '../../../../helpers/common';
+import { JOURNEY_START, JOURNEY_END, ORDER_STATUS_SENDING, ORDER_STATUS_SEND_OK, ORDER_STATUS_NOT_SEND, ORDER_STATUS_SEND_FAILED } from '../../../../helpers/common';
 import css from './style.pcss';
 import template from './template.html';
 import '../../playback-screen-wrapper';
@@ -73,6 +73,12 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
     this.current = state.order.current;
     this.id = this.current === JOURNEY_START ? JOURNEY_START : JOURNEY_END;
     this.order = state.order.data;
+    this.order_status_not_send = (state.order.order_status === ORDER_STATUS_NOT_SEND);
+    this.order_status_sending = (state.order.order_status === ORDER_STATUS_SENDING);
+    this.order_status_send_ok = (state.order.order_status === ORDER_STATUS_SEND_OK);
+    this.order_status_send_failed = (state.order.order_status === ORDER_STATUS_SEND_FAILED);
+    this.order_show_buttons = this.order_status_not_send || this.order_status_send_failed;
+    this.order_end_title = this.order_show_buttons ? "Controleer je gegevens" : "Verstuurde aanvraag";
   }
 }
 

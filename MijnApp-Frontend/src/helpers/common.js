@@ -14,6 +14,11 @@ export const QUESTION_TYPE_VIDEO = 'video';
 export const JOURNEY_START = 'START';
 export const JOURNEY_END = 'END';
 
+export const ORDER_STATUS_NOT_SEND = 'NOT_SEND';
+export const ORDER_STATUS_SENDING = 'SENDING';
+export const ORDER_STATUS_SEND_OK = 'SEND_OK';
+export const ORDER_STATUS_SEND_FAILED = 'SEND_FAILED';
+
 export const typeToDisplayName = (type) => {
   switch (type) {
     case QUESTION_TYPE_AGREE:

@@ -1,8 +1,12 @@
 <div class="Wrapper">
   <div class="ScrollContainer">
     <div class="Scroller">
-      <div class="Back" on-click="_stop">Stoppen</div>
-      <div class="Title">Controleer je gegevens</div>
+      <dom-if if="{{order_show_buttons}}">
+        <template>
+          <div class="Back" on-click="_stop">Stoppen</div>
+        </template>
+      </dom-if>
+      <div class="Title">{{order_end_title}}</div>
       <dom-repeat items="[[_getOrderItems(order)]]">
         <template>
           <div class="Answer">
@@ -13,8 +17,30 @@
       </dom-repeat>
     </div>
   </div>
-  <div class="ButtonContainer">
-    <div class="PrevButton" on-click="_prev">Vorige</div>
-    <maki-button class="NextButton" disabled="[[disabled]]" set-color-highlight="white" text-color-main highlight stroke="0" size="56" font-size="18" on-click="[[_submit(order)]]">Versturen</maki-button>
-  </div>
+  <dom-if if="{{order_status_send_ok}}">
+    <template>
+      <div class="RequestMessageBox">
+        <div class="RequestMessage">Uw aanvraag is verstuurd.</div>
+        <maki-button class="CloseRequestButton" set-color-highlight="white" text-color-main highlight stroke="0" size="56" font-size="18" on-click="_stop">Sluiten</maki-button>
+      </div>
+    </template>
+  </dom-if>
+  <dom-if if="{{order_status_sending}}">
+    <template>
+      <div class="RequestMessage">Bezig met verzenden...</div>
+    </template>
+  </dom-if>
+  <dom-if if="{{order_status_send_failed}}">
+    <template>
+      <div class="RequestMessage">Er is een fout opgetreden bij het versturen van de aanvraag.</div>
+    </template>
+  </dom-if>
+  <dom-if if="{{order_show_buttons}}">
+    <template>
+      <div class="ButtonContainer">
+        <div class="PrevButton" on-click="_prev">Vorige</div>
+        <maki-button class="NextButton" disabled="[[disabled]]" set-color-highlight="white" text-color-main highlight stroke="0" size="56" font-size="18" on-click="[[_submit(order)]]">Versturen</maki-button>
+      </div>
+    </template>
+  </dom-if>
 </div>
