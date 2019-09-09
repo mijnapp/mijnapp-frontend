@@ -52,7 +52,6 @@ export default class PlaybackScreenAgree extends connect(store)(
 
   _nextCallback(question) {
     return (next) => {
-      console.log(question, next);
       if (question && question.next) {
         next(question.next);
       }

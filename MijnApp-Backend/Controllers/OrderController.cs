@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
@@ -39,58 +40,38 @@ namespace MijnApp_Backend.Controllers
                     submitter = "Solviteers Sjoerd test",
                     submitter_person = true,
                     cases = new string[0],
-                    properties = new[] {"Test1", "Test2", "Test3"},
-                    rsin = "100",
-                    request_type = new RequestType
+                    properties = new Dictionary<string, object>
                     {
-                        name = "verhuizen",
-                        rsin = "1",
-                        properties = new[]
-                        {
-                            new Property
-                            {
-                                title = "ingangsDatum",
-                                type = "string",
-                                format = "date",
-                                description = "De datum waarop een persoon gaat verhuizen"
-                            },
-                            new Property
-                            {
-                                title = "adress",
-                                type = "string",
-                                format = "uri",
-                                description = "De bag nummer aanduiding waar een persoon heen haat verhuizen"
-                            },
-                            new Property
-                            {
-                                title = "persoon",
-                                type = "string",
-                                format = "bsn",
-                                description = "Persoon dat gaat verhuizen"
-                            }
-                        }
-                    }
+                        {"IngangsDatum", "09-09-2019"},
+                        {"Adress", "0384200000016667"},
+                        {"Persoon", "123456782"},
+                    },
+                    rsin = "100",
+                    request_type = "/request_types/06daeb7f-6503-4b8e-8aa1-5a5767b53b22"
                 };
 
                 var stringContent = new StringContent(JsonConvert.SerializeObject(dataModel), Encoding.UTF8, "application/json");
                 //response = await httpClient.PostAsync(string.Format(PostRequest, _baseUri), stringContent);
                 //var result = await response.Content.ReadAsStringAsync();
-
-                var mockResult = stringContent.ReadAsStringAsync().Result;
-                return Json(mockResult);
+                var requestString = stringContent.ReadAsStringAsync().Result;
+                return Json(requestString);
             }
         }
     }
 
     internal class Request
     {
-        public RequestType request_type { get; set; }
+        public string request_type { get; set; }
         public string rsin { get; set; }
         public string submitter { get; set; }
         public bool submitter_person { get; set; }
-        public string[] properties { get; set; }
+        public Dictionary<string,object> properties { get; set; }
         public string[] cases { get; set; }
     }
+
+    /*
+
+    Not needed yet.
 
     internal class RequestType
     {
@@ -105,35 +86,9 @@ namespace MijnApp_Backend.Controllers
         public string title { get; set; }
         public string type { get; set; }
         public string format { get; set; }
-        public string description { get; set; }
 
-        /* Other fields, Discuss with conduction if these are needed in when creating the request.
-        "multiple_of": null,
-        "maximum": null,
-        "exclusive_maximum": null,
-        "minimum": null,
-        "exclusive_minimum": null,
-        "max_length": null,
-        "min_length": null,
-        "pattern": null,
-        "additional_items": null,
-        "max_items": null,
-        "min_items": null,
-        "unique_items": null,
-        "max_properties": null,
-        "min_properties": null,
-        "required": true,
-        "properties": null,
-        "additional_properties": null,
-        "object": null,
-        "enum": [],        
-        "default_value": null,
-        "nullable": null,
-        "read_only": null,
-        "write_only": null,
-        "external_doc": null,
-        "example": null,
-        "deprecated": null
-        */
+        //Other fields are not required!
     }
+
+    */
 }
