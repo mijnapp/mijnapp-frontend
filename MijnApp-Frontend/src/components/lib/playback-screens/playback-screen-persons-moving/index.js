@@ -10,7 +10,9 @@ import '../../playback-screen-wrapper';
 
 export default class PlaybackScreenPersonsMoving extends connect(store)(PolymerElement) {
   static get properties() {
-    return {};
+    return {
+      persons: Array,
+    };
   }
 
   static get template() {
@@ -19,59 +21,37 @@ export default class PlaybackScreenPersonsMoving extends connect(store)(PolymerE
 
   constructor() {
     super();
+    this.persons = [
+      {
+        id: 1,
+        name: 'Eveliene de Vries',
+        selected: false,
+      }
+    ];
   }
 
-  _optionNames(question) {
-    return question && question.options && Array.isArray(question.options)
-      ? question.options.map((o) => (o.title ? o.title : 'Naamloze optie'))
-      : [];
-  }
-
-  _isSelected(index, selected) {
-    return Array.isArray(selected) &&
-      !isNaN(index) &&
-      selected.indexOf(index) > -1
-      ? ' selected'
-      : '';
-  }
-
-  _answerFromSelects(selects = []) {
-    const question = this.question;
-    const getGoto = (index) =>
-      question &&
-      question.options &&
-      Array.isArray(question.options) &&
-      question.options[index]
-        ? question.options[index]
-        : {};
-    return {
-      value: selects.map((i) => {
-        const opt = getGoto(i);
-        return opt.value || opt.title;
-      }),
-      valueTitle: selects.map((i) => getGoto(i).title),
-    };
+  _isSelected(selected) {
+    return selected
+      ? 'Circle selected'
+      : 'Circle';
   }
 
   _optionClick(e) {
     if (e && e.target && !isNaN(e.target.dataIndex)) {
       const index = e.target.dataIndex;
-      const key = this.question.key || this.question.title;
-      const keyTitle = this.question.title;
-      let selected = [];
-      if (Array.isArray(this.selected) && this.selected.indexOf(index) > -1) {
-        selected = this.selected.filter((i) => i !== index);
-      } else {
-        selected = [...(this.selected || []), index];
-      }
-      const answer = this._answerFromSelects(selected);
+
+      this.set(`persons.${index}.selected`, !this.persons[index].selected);
+
+      const selectedPersons = this.persons.filter(function(item) { return item.selected });
+      const ids = selectedPersons.map(function (item) { return item.id; });
+      const names = selectedPersons.map(function (item) { return item.name; });
+
       store.dispatch(
         orderSaveAnswer(
-          key,
-          answer.value,
-          keyTitle,
-          answer.valueTitle,
-          selected
+          this.question.key || this.question.title,
+          ids,
+          this.question.title,
+          names,
         )
       );
     }
@@ -103,8 +83,7 @@ export default class PlaybackScreenPersonsMoving extends connect(store)(PolymerE
       this.current === JOURNEY_START
         ? JOURNEY_START
         : state.order.data[this.current].question;
-    this.order =
-      this.current === JOURNEY_START ? {} : state.order.data[this.current];
+    this.order = this.current === JOURNEY_START ? {} : state.order.data[this.current];
     this.selected = this.order._tracker;
     if (this.journey) {
       this.question = (this.journey.questions || []).find(

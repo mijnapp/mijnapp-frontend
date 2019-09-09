@@ -315,20 +315,16 @@ store.dispatch(
             'Er wordt een bericht gestuurd naar de persoon die meeverhuist ' +
             '(onderstaande personen staan nu op hetzelfde adres als jij ' +
             'ingeschreven)',
+          next: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb',
+        },
+        {
+          id: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb',
+          type: 'calendar',
+          options: null,
+          title: 'Wanneer ga je verhuizen?',
+          subtitle: 'kies een datum',
           next: 'END',
-          options: [
-            {
-              goto: null,
-              title: 'Evelien de Vries',
-              value: null,
-            },
-            {
-              goto: null,
-              title: 'Thomas de Vries',
-              value: null,
-            },
-          ],
-        }
+        },
       ],
       overview: {
         needed_documents: ['Geen'],

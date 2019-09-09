@@ -1,3 +1,4 @@
+export const QUESTION_TYPE_ADDRESS = 'address';
 export const QUESTION_TYPE_AGREE = 'agree';
 export const QUESTION_TYPE_CALENDAR = 'calendar';
 export const QUESTION_TYPE_DOCUMENTS = 'documents';
@@ -5,6 +6,7 @@ export const QUESTION_TYPE_END = 'end';
 export const QUESTION_TYPE_LOCATION = 'location';
 export const QUESTION_TYPE_MULTIPLE = 'multiple';
 export const QUESTION_TYPE_MULTIPLE_TEXT = 'multipleText';
+export const QUESTION_TYPE_PERSONS_MOVING = 'personsMoving';
 export const QUESTION_TYPE_PHOTOS = 'photos';
 export const QUESTION_TYPE_RADIO_BUTTONS = 'radioButtons';
 export const QUESTION_TYPE_SINGLE = 'single';
@@ -21,6 +23,8 @@ export const ORDER_STATUS_SEND_FAILED = 'SEND_FAILED';
 
 export const typeToDisplayName = (type) => {
   switch (type) {
+    case QUESTION_TYPE_ADDRESS:
+      return 'Adres';
     case QUESTION_TYPE_AGREE:
       return 'Accepteren';
     case QUESTION_TYPE_CALENDAR:
@@ -35,6 +39,8 @@ export const typeToDisplayName = (type) => {
       return 'Meerkeuze';
     case QUESTION_TYPE_MULTIPLE_TEXT:
       return 'Meerdere tekstvelden';
+    case QUESTION_TYPE_PERSONS_MOVING:
+      return 'Verhuis mede bewoners';
     case QUESTION_TYPE_PHOTOS:
       return 'Fotos';
     case QUESTION_TYPE_RADIO_BUTTONS:

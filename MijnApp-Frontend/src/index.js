@@ -34,5 +34,5 @@ axios.interceptors.response.use((response) => {
   if (error.response.status === 401) {
     store.dispatch(requestJwtLogoutUnauthorized());
   }
-  return Promise.reject(error);
+    return Promise.reject(error);
 });

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using MijnApp.Domain.Models;
 using MijnApp_Backend.HttpClients;
+using Newtonsoft.Json;
 
 namespace MijnApp_Backend.Controllers
 {

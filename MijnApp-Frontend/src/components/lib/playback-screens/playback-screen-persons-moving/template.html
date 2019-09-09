@@ -1,10 +1,10 @@
 <playback-screen-wrapper next-callback="[[_nextCallback(question)]]" skip-callback="[[_skipCallback(question)]]" disabled="[[_isDisabled()]]">
   <div class="Options">
-    <dom-repeat items="[[_optionNames(question)]]">
+    <dom-repeat items="[[persons]]">
       <template>
         <div class="Option" data-index="[[index]]" on-click="_optionClick">
-          [[item]]
-          <div class$="Circle[[_isSelected(index, selected)]]"></div>
+          [[item.name]]
+          <div class$="{{_isSelected(item.selected)}}"></div>
         </div>
       </template>
     </dom-repeat>
