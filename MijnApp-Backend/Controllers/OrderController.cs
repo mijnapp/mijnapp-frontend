@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,12 +9,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using MijnApp_Backend.HttpClients;
+using MijnApp_Backend.Security;
 
 namespace MijnApp_Backend.Controllers
 {
     [Authorize]
     public class OrderController : Controller
     {
+        private readonly JwtTokenProvider _jwtTokenProvider;
         private readonly string _baseUri;
         private readonly IServiceClient _serviceClient;
         private const string PostRequest = "{0}requests";
@@ -21,6 +25,7 @@ namespace MijnApp_Backend.Controllers
         {
             _baseUri = config.GetValue<string>("Api:OrderUri");
             _serviceClient = serviceClient;
+            _jwtTokenProvider = new JwtTokenProvider(config);
         }
 
         [HttpPost]
@@ -32,19 +37,20 @@ namespace MijnApp_Backend.Controllers
 
         private async Task<IActionResult> CallRequestApiAsync(string empty)
         {
+            var bsn = _jwtTokenProvider.GetBsnFromClaims(HttpContext.User);
             using (var httpClient = new HttpClient())
             {
                 HttpResponseMessage response;
                 var dataModel = new Request
                 {
-                    submitter = "Solviteers Sjoerd test",
+                    submitter = bsn,
                     submitter_person = true,
                     cases = new string[0],
                     properties = new Dictionary<string, object>
                     {
                         {"IngangsDatum", "09-09-2019"},
                         {"Adress", "0384200000016667"},
-                        {"Persoon", "123456782"},
+                        {"Persoon", bsn},
                     },
                     rsin = "100",
                     request_type = "/request_types/06daeb7f-6503-4b8e-8aa1-5a5767b53b22"

@@ -38,7 +38,8 @@ namespace MijnApp_Backend.Security
 
         internal string ProlongJwtToken(ClaimsPrincipal currentUser, SignInProvider signInProvider)
         {
-            if (currentUser.HasClaim(c => c.Type == JwtEncryptedBsn)) { 
+            if (currentUser.HasClaim(c => c.Type == JwtEncryptedBsn))
+            {
                 var bsnEncrypted = currentUser.Claims.First(c => c.Type == JwtEncryptedBsn).Value;
                 var bsn = JwtClaimEncryptor.Decrypt(bsnEncrypted, _config["JwtClaimEncryption:SecretKey"]);
                 return CreateJwtSecurityToken(bsn, signInProvider);
@@ -55,7 +56,7 @@ namespace MijnApp_Backend.Security
             var utc0 = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
             var issueTime = DateTime.Now;
 
-            var iat = (int)issueTime.Subtract(utc0).TotalSeconds;
+            var iat = (int) issueTime.Subtract(utc0).TotalSeconds;
 
             //Expiry depends on the identity provider
             int expiryInMinutes = 0;
@@ -68,19 +69,21 @@ namespace MijnApp_Backend.Security
                     expiryInMinutes = int.Parse(_config["Jwt:ExpirationInMinutes:DigidCgi"]);
                     break;
             }
+
             var expires = DateTime.Now.AddMinutes(expiryInMinutes);
-            var exp = (int)expires.Subtract(utc0).TotalSeconds;
+            var exp = (int) expires.Subtract(utc0).TotalSeconds;
 
             var jwtId = Guid.NewGuid().ToString();
 
-            var claims = new[] {
+            var claims = new[]
+            {
                 new Claim(JwtEncryptedBsn, JwtClaimEncryptor.Encrypt(bsn, _config["JwtClaimEncryption:SecretKey"])),
                 new Claim(JwtRegisteredClaimNames.Jti, jwtId),
                 new Claim(JwtOriginalIdp, signInProvider.ToString()),
                 new Claim(JwtRegisteredClaimNames.Iat, iat.ToString()),
                 new Claim(JwtRegisteredClaimNames.Exp, exp.ToString())
             };
-            
+
             var token = new JwtSecurityToken(
                 _config["Jwt:Issuer"],
                 _config["Jwt:Issuer"],
@@ -93,5 +96,15 @@ namespace MijnApp_Backend.Security
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
+        public string GetBsnFromClaims(ClaimsPrincipal currentUser)
+        {
+            if (currentUser.HasClaim(c => c.Type == JwtEncryptedBsn))
+            {
+                var bsnEncrypted = currentUser.Claims.First(c => c.Type == JwtEncryptedBsn).Value;
+                var bsn = JwtClaimEncryptor.Decrypt(bsnEncrypted, _config["JwtClaimEncryption:SecretKey"]);
+                return bsn;
+            }
+            return "";
+        }
     }
 }
