@@ -40,7 +40,7 @@ export default class PlaybackScreenAgree extends connect(store)(
       } else if (this.question.title) {
         store.dispatch(
           orderSaveAnswer(
-            this.question.key || this.question.title,
+            this.question.key || this.question.property,
             true,
             this.question.title,
             'Ja'

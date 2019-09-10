@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,19 +48,20 @@ namespace MijnApp_Backend.Controllers
                     cases = new string[0],
                     properties = new Dictionary<string, object>(),
                     rsin = "100",
-                    request_type = "/request_types/06daeb7f-6503-4b8e-8aa1-5a5767b53b22"
+                    request_type = "/request_types/" + order.requestType
                 };
-                foreach (var question in order.data)
+                foreach (var question in order.data.Where(q => q.question != "END"))
                 {
-                    if (question.question != "END")
+                    if (question.value is string)
                     {
                         dataModel.properties.Add(question.key, question.value);
                     }
+                    else
+                    {
+                        var values = string.Join(", ", question.value);
+                        dataModel.properties.Add(question.key, values);
+                    }
                 }
-
-                //{ "IngangsDatum", "09-09-2019"},
-                //{ "Adress", "0384200000016667"},
-                //{ "Persoon", bsn},
 
                 var stringContent = new StringContent(JsonConvert.SerializeObject(dataModel), Encoding.UTF8, "application/json");
                 //response = await httpClient.PostAsync(string.Format(PostRequest, _baseUri), stringContent);
@@ -73,15 +75,16 @@ namespace MijnApp_Backend.Controllers
     public class Order
     {
         public List<Question> data { get; set; }
+        public string requestType { get; set; }
     }
 
     public class Question
     {
         public string question { get; set; }
         public string key { get; set; }
-        public string value { get; set; }
+        public dynamic value { get; set; }
         public string keyTitle { get; set; }
-        public string valueTitle { get; set; }
+        public dynamic valueTitle { get; set; }
     }
 
     internal class Request

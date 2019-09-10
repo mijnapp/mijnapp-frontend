@@ -37,9 +37,10 @@ export default class PlaybackScreenCalendar extends connect(store)(
 
   _datePickerValueChanged(data) {
     const question = this.question;
+    console.log(question);
     store.dispatch(
       orderSaveAnswer(
-        question.key || question.title,
+        question.key || question.property,
         data,
         question.title,
         data

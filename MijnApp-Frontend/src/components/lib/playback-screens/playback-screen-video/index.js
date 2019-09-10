@@ -45,7 +45,7 @@ export default class PlaybackScreenVideo extends connect(store)(
       ) {
         store.dispatch(
           orderSaveAnswer(
-            question.key || question.title,
+            question.key || question.property,
             question.options[index].value || question.options[index].title,
             question.title,
             question.options[index].title

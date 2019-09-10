@@ -56,10 +56,12 @@ store.dispatch(
   setJourneys([
     {
       title: 'Ik heb een goed idee',
+      request_type_id: '06daeb7f-6503-4b8e-8aa1-5a5767b53b22',
       questions: [
         {
           id: '6abbb0e1-3ef5-4206-a2e3-aba72ad1259a',
           type: 'single',
+          property: 'Anoniem',
           options: [
             {
               goto: 'f4efa6ca-158b-4184-958f-52ae8b47f561',
@@ -83,6 +85,7 @@ store.dispatch(
         {
           id: 'f4efa6ca-158b-4184-958f-52ae8b47f561',
           type: 'agree',
+          property: 'Toestemming',
           options: null,
           title: 'Toestemming voor gebruik gegevens',
           subtitle:
@@ -93,6 +96,7 @@ store.dispatch(
         {
           id: 'b52cf9a7-30d1-4eb7-bf64-34f3a6380c11',
           type: 'text',
+          property: 'IdeeOmschrijving',
           options: null,
           title: 'Wat is jouw idee?',
           next: '12e51aa9-0a9b-4e74-a273-65e27763073c',
@@ -100,6 +104,7 @@ store.dispatch(
         {
           id: '12e51aa9-0a9b-4e74-a273-65e27763073c',
           type: 'radioButtons',
+          property: 'Contact',
           options: [
             {
               goto: 'END',
@@ -119,6 +124,7 @@ store.dispatch(
         {
           id: 'e8877860-f3b2-46d2-a3b8-e0b70c93492b',
           type: 'text',
+          property: 'IdeeOmschrijving',
           options: null,
           title: 'Wat is jouw idee?',
           subtitle: '',
@@ -138,10 +144,12 @@ store.dispatch(
     },
     {
       title: 'Ik wil verhuizen',
+      request_type_id: '06daeb7f-6503-4b8e-8aa1-5a5767b53b22',
       questions: [
         {
           id: 'a7beef34-9aea-4891-971d-beb67b2e8010',
           type: 'address',
+          property: 'Adress',
           title: 'Wat wordt je nieuwe adres?',
           subtitle: 'Vul je postcode en huisnummer, en kies je nieuwe adres',
           next: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb',
@@ -149,6 +157,7 @@ store.dispatch(
         {
           id: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb',
           type: 'calendar',
+          property: 'IngangsDatum',
           options: null,
           title: 'Wanneer ga je verhuizen?',
           subtitle: 'kies een datum',
@@ -157,6 +166,7 @@ store.dispatch(
         {
           id: '37e30b1f-fb51-4d49-8756-fa5d4d55829a',
           type: 'multiple',
+          property: 'MedeVerhuizers',
           options: [
             {
               goto: null,
@@ -178,6 +188,7 @@ store.dispatch(
         },
         {
           id: '21586109-ce3b-4091-8420-85f92c0a6c11',
+          property: 'Eigenaar',
           type: 'single',
           options: [
             {
@@ -201,90 +212,7 @@ store.dispatch(
         {
           id: '10af45ba-b96c-44cc-865e-5f5342e0b793',
           type: 'agree',
-          options: null,
-          title: 'Is de eigenaar akkoord met inwoning?',
-          subtitle:
-            'De eigenaar ontvangt een notificatie in MijnApp ter goedkeuring.',
-          next: 'END',
-        },
-      ],
-      overview: {
-        needed_documents: ['Geen'],
-        send_to: [],
-        steps: [
-          'Geef je nieuwe adres op.',
-          'Geef de datum op wanneer je gaat verhuizen.',
-          'Geef aan met wie je gaat verhuizen,',
-          'Geef de nieuwe woonsituatie aan.',
-        ],
-        subtitle: 'Verhuizen binnen of naar Eindhoven',
-      },
-    },
-    {
-      title: 'Ik wil verhuizen Eerst datum',
-      questions: [
-        {
-          id: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb',
-          type: 'calendar',
-          options: null,
-          title: 'Wanneer ga je verhuizen?',
-          subtitle: 'kies een datum',
-          next: 'a7beef34-9aea-4891-971d-beb67b2e8010',
-        },
-        {
-          id: 'a7beef34-9aea-4891-971d-beb67b2e8010',
-          type: 'address',
-          title: 'Wat wordt je nieuwe adres?',
-          subtitle: 'bijv. Dorpstraat 10 1234 AB Eindhoven',
-          next: '37e30b1f-fb51-4d49-8756-fa5d4d55829a',
-        },
-        {
-          id: '37e30b1f-fb51-4d49-8756-fa5d4d55829a',
-          type: 'multiple',
-          options: [
-            {
-              goto: null,
-              title: 'Evelien de Vries',
-              value: null,
-            },
-            {
-              goto: null,
-              title: 'Thomas de Vries',
-              value: null,
-            },
-          ],
-          title: 'Met wie ga je verhuizen?',
-          subtitle:
-            'Er wordt een bericht gestuurd naar de persoon die meeverhuist ' +
-            '(onderstaande personen staan nu op hetzelfde adres als jij ' +
-            'ingeschreven)',
-          next: '21586109-ce3b-4091-8420-85f92c0a6c11',
-        },
-        {
-          id: '21586109-ce3b-4091-8420-85f92c0a6c11',
-          type: 'single',
-          options: [
-            {
-              goto: 'END',
-              title: 'Ja',
-              value: null,
-            },
-            {
-              goto: 'END',
-              title: 'Nee, ik ga huren',
-              value: null,
-            },
-            {
-              goto: '10af45ba-b96c-44cc-865e-5f5342e0b793',
-              title: 'Nee, ik ga inwonen',
-              value: null,
-            },
-          ],
-          title: 'Ben of word je eigenaar van de woning?',
-        },
-        {
-          id: '10af45ba-b96c-44cc-865e-5f5342e0b793',
-          type: 'agree',
+          property: 'EigenaarAkoord',
           options: null,
           title: 'Is de eigenaar akkoord met inwoning?',
           subtitle:
@@ -306,10 +234,12 @@ store.dispatch(
     },
     {
       title: 'Medeverhuizers test',
+      request_type_id: '06daeb7f-6503-4b8e-8aa1-5a5767b53b22',
       questions: [
         {
           id: '37e30b1f-fb51-4d49-8756-fa5d4d55829a',
           type: 'personsMoving',
+          property: 'MedeVerhuizers',
           title: 'Met wie ga je verhuizen?',
           subtitle:
             'Er wordt een bericht gestuurd naar de persoon die meeverhuist ' +
@@ -320,6 +250,7 @@ store.dispatch(
         {
           id: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb',
           type: 'calendar',
+          property: 'IngangsDatum',
           options: null,
           title: 'Wanneer ga je verhuizen?',
           subtitle: 'kies een datum',

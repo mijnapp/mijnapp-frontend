@@ -49,7 +49,7 @@ export default class PlaybackScreenPersonsMoving extends connect(store)(PolymerE
 
       store.dispatch(
         orderSaveAnswer(
-          this.question.key || this.question.title,
+          this.question.key || this.question.property,
           ids,
           this.question.title,
           names,

@@ -56,7 +56,7 @@ export default class PlaybackScreenMultiple extends connect(store)(PolymerElemen
   _optionClick(e) {
     if (e && e.target && !isNaN(e.target.dataIndex)) {
       const index = e.target.dataIndex;
-      const key = this.question.key || this.question.title;
+      const key = this.question.key || this.question.property;
       const keyTitle = this.question.title;
       let selected = [];
       if (Array.isArray(this.selected) && this.selected.indexOf(index) > -1) {

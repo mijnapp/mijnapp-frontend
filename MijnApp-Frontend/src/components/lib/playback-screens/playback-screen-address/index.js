@@ -72,7 +72,7 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
   _saveWithoutCheck(question, address) {
     store.dispatch(
       orderSaveAnswer(
-        question.key || question.title,
+        question.key || question.property,
         address.id,
         question.title,
         `${address.straat} ${address.huisnummer}${address.huisnummertoevoeging ? address.huisnummertoevoeging : ''}, ${address.woonplaats} ${address.postcode}`
