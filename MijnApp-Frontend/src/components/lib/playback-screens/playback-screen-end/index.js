@@ -32,7 +32,7 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
 
   _submit(order) {
     return () =>
-      store.dispatch(requestOrdersSubmit({ data: JSON.stringify(order) }));
+      store.dispatch(requestOrdersSubmit({ data: order }));
   }
 
   _stop() {

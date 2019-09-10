@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,12 +28,13 @@ namespace MijnApp_Backend.Controllers
 
         [HttpPost]
         [Route("order")]
-        public async Task<IActionResult> Order(dynamic data)
+        public async Task<IActionResult> Order([FromBody]dynamic order)
         {
-            return await CallRequestApiAsync("");
+            var orderObject = JsonConvert.DeserializeObject<Order>(order.ToString());
+            return await CallRequestApiAsync(orderObject);
         }
 
-        private async Task<IActionResult> CallRequestApiAsync(string empty)
+        private async Task<IActionResult> CallRequestApiAsync(Order order)
         {
             var bsn = _jwtTokenProvider.GetBsnFromClaims(HttpContext.User);
             using (var httpClient = new HttpClient())
@@ -46,15 +45,21 @@ namespace MijnApp_Backend.Controllers
                     submitter = bsn,
                     submitter_person = true,
                     cases = new string[0],
-                    properties = new Dictionary<string, object>
-                    {
-                        {"IngangsDatum", "09-09-2019"},
-                        {"Adress", "0384200000016667"},
-                        {"Persoon", bsn},
-                    },
+                    properties = new Dictionary<string, object>(),
                     rsin = "100",
                     request_type = "/request_types/06daeb7f-6503-4b8e-8aa1-5a5767b53b22"
                 };
+                foreach (var question in order.data)
+                {
+                    if (question.question != "END")
+                    {
+                        dataModel.properties.Add(question.key, question.value);
+                    }
+                }
+
+                //{ "IngangsDatum", "09-09-2019"},
+                //{ "Adress", "0384200000016667"},
+                //{ "Persoon", bsn},
 
                 var stringContent = new StringContent(JsonConvert.SerializeObject(dataModel), Encoding.UTF8, "application/json");
                 //response = await httpClient.PostAsync(string.Format(PostRequest, _baseUri), stringContent);
@@ -63,6 +68,20 @@ namespace MijnApp_Backend.Controllers
                 return Json(requestString);
             }
         }
+    }
+
+    public class Order
+    {
+        public List<Question> data { get; set; }
+    }
+
+    public class Question
+    {
+        public string question { get; set; }
+        public string key { get; set; }
+        public string value { get; set; }
+        public string keyTitle { get; set; }
+        public string valueTitle { get; set; }
     }
 
     internal class Request
