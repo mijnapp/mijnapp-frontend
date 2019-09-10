@@ -13,8 +13,8 @@ export const personApi = {
       throw response.status;
     }
   },
-  personsMoving: (id, token) => async () => {
-    const response = await axios.get(`/personsMoving/${id}`, {
+  personsMoving: (token) => async () => {
+    const response = await axios.get(`/personsMoving`, {
       baseURL: configuration.BASE_URL_API(),
       headers: { 'Authorization': 'Bearer ' + token }
     });

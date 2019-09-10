@@ -27,9 +27,9 @@ export function* watchRequestPersonsMoving() {
   yield takeLatest(REQUEST_PERSONS_MOVING, fetchPersonsMoving);
 }
 
-function* fetchPersonsMoving(action) {
+function* fetchPersonsMoving() {
   try {
-    const result = yield call(personApi.personsMoving(action.id, jwtBearerToken()));
+    const result = yield call(personApi.personsMoving(jwtBearerToken()));
     yield put(requestPersonsMovingSuccess(result.data));
   } catch (e) {
     yield put(requestPersonsMovingFailure(e));

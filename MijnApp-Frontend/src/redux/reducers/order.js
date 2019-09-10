@@ -21,7 +21,7 @@ export const order = (state = { data: [], current: JOURNEY_START }, action) => {
         ),
       };
     case ORDER_NEXT: {
-      let nextCurrent = state.current === JOURNEY_START ? 0 : state.current + 1;
+      const nextCurrent = state.current === JOURNEY_START ? 0 : state.current + 1;
       return {
         ...state,
         current: nextCurrent,

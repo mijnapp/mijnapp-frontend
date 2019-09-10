@@ -2,7 +2,8 @@ import { PolymerElement, html } from '@polymer/polymer/polymer-element';
 import { connect } from 'pwa-helpers/connect-mixin';
 import { store } from '../../../../redux/store';
 import { orderSaveAnswer, orderClearAnswer, } from '../../../../redux/actions/order';
-import { JOURNEY_START } from '../../../../helpers/common';
+import { requestPersonsMoving, clearPersonsMoving, } from '../../../../redux/actions/person';
+import { JOURNEY_START, QUESTION_TYPE_PERSONS_MOVING, } from '../../../../helpers/common';
 import css from './style.pcss';
 import template from './template.html';
 
@@ -76,14 +77,24 @@ export default class PlaybackScreenPersonsMoving extends connect(store)(PolymerE
     return false;
   }
 
+  _getPersons() {
+    store.dispatch(requestPersonsMoving());
+  }
+
+  _clearPersonData() {
+    store.dispatch(clearPersonsMoving());
+  }
+
   stateChanged(state) {
     this.journey = state.journey;
     this.current = state.order.current;
-    this.id =
-      this.current === JOURNEY_START
-        ? JOURNEY_START
-        : state.order.data[this.current].question;
-    this.order = this.current === JOURNEY_START ? {} : state.order.data[this.current];
+    if (this.current === JOURNEY_START) {
+      this.id = JOURNEY_START;
+      this.order = {};
+    } else {
+      this.id = state.order.data[this.current].question;
+      this.order = state.order.data[this.current];
+    }
     this.selected = this.order._tracker;
     if (this.journey) {
       this.question = (this.journey.questions || []).find(
@@ -93,7 +104,18 @@ export default class PlaybackScreenPersonsMoving extends connect(store)(PolymerE
     if (!this.question) {
       this.question = '';
     }
+
+    this.persons = state.person.movingPersons;
+    if (this.question.type === QUESTION_TYPE_PERSONS_MOVING && !state.person.movingPersonsFetched) {
+      this._getPersons();
+    }
+    if (this.current === JOURNEY_START && state.order.data.length === 0 && state.person.movingPersonsFetched) {
+      this._clearPersonData();
+    }
   }
 }
 
-window.customElements.define('playback-screen-persons-moving', PlaybackScreenPersonsMoving);
+window.customElements.define(
+  'playback-screen-persons-moving',
+  PlaybackScreenPersonsMoving
+);

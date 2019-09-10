@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using MijnApp.Domain.Models;
 using MijnApp_Backend.HttpClients;
-using Newtonsoft.Json;
 
 namespace MijnApp_Backend.Controllers
 {
@@ -15,8 +14,8 @@ namespace MijnApp_Backend.Controllers
     public class PersonController : Controller
     {
         private readonly string _baseUri;
-        private const string UrlGetAll = "{0}processes";
-        private const string UrlGetById = "{0}processes/{1}";
+        private const string UrlGetAll = "{0}personen";
+        private const string UrlGetById = "{0}personen/{1}";
 
         private readonly IServiceClient _serviceClient;
 
@@ -46,14 +45,27 @@ namespace MijnApp_Backend.Controllers
         }
 
         [HttpGet]
-        [Route("personsMoving/{id}")]
-        public IActionResult GetPersonsMoving(string id)
+        [Route("personsMoving")]
+        public IActionResult GetPersonsMoving()
         {
-            return Ok(new[]
+            var persons = new List<PersonMoving>
             {
-                "Evelien de Vries",
-                "Thomas de Vries"
-            });
+                new PersonMoving("9999999", "Evelien de Vries"),
+                new PersonMoving("8888888", "Thomas de Vries"),
+            };
+            return Ok(persons);
+        }
+
+        internal class PersonMoving
+        {
+            public string Id { get; set; }
+            public string Name { get; set; }
+
+            public PersonMoving(string id, string name)
+            {
+                Id = id;
+                Name = name;
+            }
         }
     }
 }
