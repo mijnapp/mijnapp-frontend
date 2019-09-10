@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,14 +41,13 @@ namespace MijnApp_Backend.Controllers
             var bsn = _jwtTokenProvider.GetBsnFromClaims(HttpContext.User);
             using (var httpClient = new HttpClient())
             {
-                HttpResponseMessage response;
                 var dataModel = new Request
                 {
                     submitter = bsn,
                     submitter_person = true,
                     cases = new string[0],
                     properties = new Dictionary<string, object>(),
-                    rsin = "100",
+                    rsin = "1", //Id van de organisatie die verzoek gaat oppakken. Krijgen we nog van DenBosch. Later uit process halen.
                     request_type = "/request_types/" + order.requestType
                 };
                 foreach (var question in order.data.Where(q => q.question != "END"))
@@ -58,16 +58,32 @@ namespace MijnApp_Backend.Controllers
                     }
                     else
                     {
-                        var values = string.Join(", ", question.value);
-                        dataModel.properties.Add(question.key, values);
+                        var values = "";
+                        if (question.value != null)
+                        {
+                            values = string.Join(", ", question.value);
+                        }
+                        if (question.key != null)
+                        {
+                            dataModel.properties.Add(question.key, values);
+                        }
                     }
+                }
+                //TODO: Add "Persoon" to verhuizen requestType. Voor nu vast. Later op basis van process doen.
+                if (order.requestType == "06daeb7f-6503-4b8e-8aa1-5a5767b53b22")
+                {
+                    dataModel.properties.Add("Persoon", bsn);
                 }
 
                 var stringContent = new StringContent(JsonConvert.SerializeObject(dataModel), Encoding.UTF8, "application/json");
-                //response = await httpClient.PostAsync(string.Format(PostRequest, _baseUri), stringContent);
+                //var response = await httpClient.PostAsync(string.Format(PostRequest, _baseUri), stringContent);
                 //var result = await response.Content.ReadAsStringAsync();
-                var requestString = stringContent.ReadAsStringAsync().Result;
-                return Json(requestString);
+                var result = stringContent.ReadAsStringAsync().Result;
+                //if (response.StatusCode == HttpStatusCode.Created)
+                //{
+                    return Json(result);
+                //}
+                //return BadRequest(Json(result));
             }
         }
     }
