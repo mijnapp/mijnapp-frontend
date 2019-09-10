@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -23,9 +23,9 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="MijnApp">
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-32x32.png">
-  <link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#A7FFEB">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-32x32.png">
+  <link rel="mask-icon" href="./assets/icons/safari-pinned-tab.svg" color="#A7FFEB">
 
   <!-- Manifest for Windows -->
   <meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
@@ -37,7 +37,7 @@
   <meta property="og:image" content="/assets/icons/polymer-skeleton-192x192.png" />
 
   <style>
-    @import url('/assets/fonts/stylesheet.css');
+    @import url('./assets/fonts/stylesheet.css');
     * {
       box-sizing: border-box;
     }
@@ -161,14 +161,14 @@
     }, false);
 
     function clearWarningDialog() {
-      warningTitle.innerHTML = "";
-      warningText.innerHTML = "";
-      warningConfirmButton.innerHTML = "Doorgaan";
-      warningConfirmButton.onclick = function () { };
+      window.warningTitle.innerHTML = "";
+      window.warningText.innerHTML = "";
+      window.warningConfirmButton.innerHTML = "Doorgaan";
+      window.warningConfirmButton.onclick = function () { };
     }
 
     function clearErrorDialog() {
-      errorText.innerHTML = "";
+      window.errorText.innerHTML = "";
     }
 
   </script>
@@ -177,8 +177,8 @@
 <body>
   <paper-toast id="successToast"></paper-toast>
   <script>
-    successToast.horizontalAlign = "center"
-    successToast.verticalAlign = "top"
+    successToast.horizontalAlign = "center";
+    successToast.verticalAlign = "top";
   </script>
   <paper-dialog id="warningDialog" modal class="dialog" style="display: none">
     <div class="warningDialogHeader">Waarschuwing <span id="warningTitle"></span></div>
