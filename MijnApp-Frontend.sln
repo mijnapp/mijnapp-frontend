@@ -11,9 +11,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{DD08
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{7A261AE9-8FBC-4032-8BE7-CF91A2FA45F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MijnApp-Backend", "MijnApp-Backend\MijnApp-Backend.csproj", "{A2B9756B-45AB-484E-984E-74812A5B215F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MijnApp-Backend", "MijnApp-Backend\MijnApp-Backend.csproj", "{A2B9756B-45AB-484E-984E-74812A5B215F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MijnApp.Domain", "MijnApp.Domain\MijnApp.Domain.csproj", "{29B0FEB0-59A5-4FF8-B603-0FC8A07459C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MijnApp.Domain", "MijnApp.Domain\MijnApp.Domain.csproj", "{29B0FEB0-59A5-4FF8-B603-0FC8A07459C1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution items", "{CC034BB2-C7F4-4023-AF4E-BE1963534C26}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
