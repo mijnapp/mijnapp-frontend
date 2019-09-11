@@ -35,7 +35,7 @@ namespace MijnApp_Backend.Helpers
 
         private string FormatRequest(HttpRequest request)
         {
-            return $"{request.Scheme} {request.Host}{request.Path} {request.QueryString}";
+            return $"[{request.Method}] {request.Scheme} {request.Host}{request.Path} {request.QueryString}";
         }
 
         private string FormatResponse(HttpResponse response)
