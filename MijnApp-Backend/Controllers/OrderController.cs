@@ -20,6 +20,7 @@ namespace MijnApp_Backend.Controllers
         private readonly string _baseUri;
         private readonly IServiceClient _serviceClient;
         private const string PostRequest = "{0}requests";
+        private const string RSIN_DEN_BOSCH = "1709124";
 
         public OrderController(IConfiguration config, IServiceClient serviceClient)
         {
@@ -67,7 +68,7 @@ namespace MijnApp_Backend.Controllers
                 submitter_person = true,
                 cases = new string[0],
                 properties = new Dictionary<string, object>(),
-                rsin = "1", //Id van de organisatie die verzoek gaat oppakken. Krijgen we nog van DenBosch. Later uit process halen.
+                rsin = RSIN_DEN_BOSCH, //Id van de organisatie die verzoek gaat oppakken. Later uit process halen.
                 request_type = "/request_types/" + order.requestType
             };
             foreach (var question in order.data.Where(q => q.question != "END"))
