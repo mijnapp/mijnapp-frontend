@@ -40,11 +40,11 @@ switch (window.location.hostname) {
 // Create store.
 export const store = createStore(
   reducers,
-  loadState(), // If there is local storage data, load it.
+  loadState(), // If there is storage data, load it.
   composeEnhancers(middlewares)
 );
 
-// This subscriber writes to local storage anytime the state updates.
+// This subscriber writes to storage anytime the state updates.
 store.subscribe(() => {
   saveState(store.getState());
 });

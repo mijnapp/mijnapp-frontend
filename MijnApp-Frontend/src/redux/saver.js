@@ -1,9 +1,11 @@
+const appStateStorageKey = 'mijnApp-appState';
+
 export const saveState = (state) => {
   const stringifiedState = JSON.stringify(state);
-  localStorage.setItem('appState', stringifiedState);
+  window.sessionStorage.setItem(appStateStorageKey, stringifiedState);
 };
 export const loadState = () => {
-  const json = localStorage.getItem('appState') || '{}';
+  const json = window.sessionStorage.getItem(appStateStorageKey) || '{}';
   const state = JSON.parse(json);
 
   if (state) {
@@ -11,4 +13,7 @@ export const loadState = () => {
   } else {
     return undefined; // To use the defaults in the reducers
   }
+};
+export const clearState = () => {
+  window.sessionStorage.setItem(appStateStorageKey, '{}');
 };
