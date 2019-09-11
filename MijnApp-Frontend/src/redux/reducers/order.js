@@ -4,14 +4,15 @@ import {
   ORDER_CLEAR_ANSWER,
   ORDER_NEXT,
   ORDER_PREV,
+  ORDER_SKIP,
 } from '../actions/order';
 import { SET_JOURNEY } from '../actions/journey';
 import { REQUEST_ORDERS_SUBMIT, REQUEST_ORDERS_SUBMIT_SUCCESS, REQUEST_ORDERS_SUBMIT_FAILED } from '../actions/orders'
 
-export const order = (state = { data: [], current: JOURNEY_START }, action) => {
+export const order = (state = { data: [], current: JOURNEY_START, skipList: [], }, action) => {
   switch (action.type) {
     case SET_JOURNEY:
-      return { data: [], current: JOURNEY_START, order_status: ORDER_STATUS_NOT_SEND };
+      return { data: [], current: JOURNEY_START, order_status: ORDER_STATUS_NOT_SEND, skipList: [], };
     case ORDER_SAVE_ANSWER:
     case ORDER_CLEAR_ANSWER:
       return {
@@ -21,25 +22,24 @@ export const order = (state = { data: [], current: JOURNEY_START }, action) => {
         ),
       };
     case ORDER_NEXT: {
-      const nextCurrent = state.current === JOURNEY_START ? 0 : state.current + 1;
+      const nextCurrent = calcNextIndex(state.skipList, state.current);
       return {
         ...state,
         current: nextCurrent,
-        data:
-          nextCurrent < state.data.length
-            ? state.data[nextCurrent].question === action.question
-              ? [...state.data]
-              : [
-                ...state.data.filter((o, i) => i < nextCurrent),
-                item(null, action),
-              ]
-            : [...state.data, item(null, action)],
+        data: [...state.data, item(null, action)],
       };
     }
-    case ORDER_PREV:
+    case ORDER_PREV: {
+      const prevCurrent = calcPrevIndex(state.skipList, state.current);
       return {
         ...state,
-        current: state.current === 0 ? JOURNEY_START : state.current - 1,
+        current: prevCurrent,
+      };
+    }
+    case ORDER_SKIP:
+      return {
+        ...state,
+        skipList: [...state.skipList, action.index],
       };
     case REQUEST_ORDERS_SUBMIT:
       return { ...state, order_status: ORDER_STATUS_SENDING }
@@ -50,6 +50,27 @@ export const order = (state = { data: [], current: JOURNEY_START }, action) => {
     default:
       return state;
   }
+};
+
+const calcNextIndex = function (skipList, current) {
+  var next = 0;
+  if (current !== JOURNEY_START) {
+    next = current + 1;
+  }
+
+  while (skipList.includes(next)) {
+    next++;
+  }
+  return next;
+};
+
+const calcPrevIndex = function (skipList, current) {
+  var next = current - 1;
+  while (skipList.includes(next)) {
+    console.log('skipped ' + next);
+    next--;
+  }
+  return next < 0 ? JOURNEY_START : next;;
 };
 
 const item = (

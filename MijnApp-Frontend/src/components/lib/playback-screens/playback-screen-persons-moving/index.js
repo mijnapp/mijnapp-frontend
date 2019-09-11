@@ -1,7 +1,7 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element';
 import { connect } from 'pwa-helpers/connect-mixin';
 import { store } from '../../../../redux/store';
-import { orderSaveAnswer, orderClearAnswer, } from '../../../../redux/actions/order';
+import { orderSaveAnswer, orderSkip, } from '../../../../redux/actions/order';
 import { requestPersonsMoving, clearPersonsMoving, } from '../../../../redux/actions/person';
 import { JOURNEY_START, QUESTION_TYPE_PERSONS_MOVING, } from '../../../../helpers/common';
 import css from './style.pcss';
@@ -108,10 +108,12 @@ export default class PlaybackScreenPersonsMoving extends connect(store)(PolymerE
     this.persons = state.person.movingPersons;
     if (this.question.type === QUESTION_TYPE_PERSONS_MOVING && !state.person.movingPersonsFetched) {
       this._getPersons();
+      store.dispatch(orderSkip(this.current));
     }
     if (this.current === JOURNEY_START && state.order.data.length === 0 && state.person.movingPersonsFetched) {
       this._clearPersonData();
     }
+    
   }
 }
 
