@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using MijnApp.Domain.Models;
 using MijnApp_Backend.HttpClients;
+using MijnApp_Backend.Security;
 
 namespace MijnApp_Backend.Controllers
 {
@@ -14,34 +15,27 @@ namespace MijnApp_Backend.Controllers
     public class PersonController : Controller
     {
         private readonly string _baseUri;
-        private const string UrlGetAll = "{0}personen";
-        private const string UrlGetById = "{0}personen/{1}";
+        private const string UrlGetAll = "{0}ingeschrevenpersonen";
+        private const string UrlGetById = "{0}ingeschrevenpersonen/{1}";
 
+        private readonly JwtTokenProvider _jwtTokenProvider;
         private readonly IServiceClient _serviceClient;
 
         public PersonController(IConfiguration config, IServiceClient serviceClient)
         {
             _baseUri = config.GetValue<string>("Api:BrpUri");
             _serviceClient = serviceClient;
+            _jwtTokenProvider = new JwtTokenProvider(config);
         }
 
         [HttpGet]
         [Route("person")]
-        public IActionResult GetPerson(string id)
+        public async Task<IActionResult> GetPerson()
         {
-            var currentUser = HttpContext.User;
-            string username = "Onbekend";
-            if (currentUser.HasClaim(c => c.Type == JwtRegisteredClaimNames.Sub))
-            {
-                username = currentUser.Claims.First(c => c.Type == JwtRegisteredClaimNames.Sub).Value;
-            }
-            var test = new Persoon
-            {
-                Id = new Guid("F5BA2997-AD97-4085-AF9F-03919A1067F2"),
-                Voornamen = "Erik",
-                Geslachtsnaam = username
-            };
-            return Ok(test);
+            var bsn = _jwtTokenProvider.GetBsnFromClaims(User);
+            var result = await _serviceClient.GetAsync(string.Format(UrlGetById, _baseUri, bsn));
+            return Json(result);
+
         }
 
         [HttpGet]

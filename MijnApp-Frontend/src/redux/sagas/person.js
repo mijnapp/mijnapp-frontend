@@ -14,9 +14,9 @@ export function* watchRequestPersonData() {
   yield takeLatest(REQUEST_PERSON_DATA, fetchPersonData);
 }
 
-function* fetchPersonData(action) {
+function* fetchPersonData() {
   try {
-    const result = yield call(personApi.person(action.id, jwtBearerToken()));
+    const result = yield call(personApi.person(jwtBearerToken()));
     yield put(requestPersonSuccess(result.data));
   } catch (e) {
     yield put(requestPersonDataFailure(e));

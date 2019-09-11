@@ -76,11 +76,7 @@ export default class MafScreenHome extends connect(store)(PolymerElement) {
           store.dispatch(requestContracts());
           break;
         case 'person-data':
-          if (this.userID != undefined) {
-            store.dispatch(requestPersonData(this.userID));
-          } else {
-            return;
-          }
+            store.dispatch(requestPersonData());
           break;
         case 'avg-logs':
           store.dispatch(requestAvgLogs());

@@ -13,16 +13,25 @@ export const person = (state = { data: {} }, action) => {
   switch (action.type) {
     case REQUEST_PERSON_DATA:
       return state;
-    case REQUEST_PERSONS_MOVING:
-      return {
-        ...state,
-        movingPersonsFetched: true,
-      };
     case REQUEST_PERSON_DATA_SUCCESS:
       return {
         ...state,
         data: action.data,
         error: null,
+      };
+    case REQUEST_PERSON_DATA_FAILURE:
+      return {
+        ...state,
+        error: action.error,
+      };
+    case CLEAR_PERSON_DATA:
+      return {
+        data: {},
+      };
+    case REQUEST_PERSONS_MOVING:
+      return {
+        ...state,
+        movingPersonsFetched: true,
       };
     case REQUEST_PERSONS_MOVING_SUCCESS:
       return {
@@ -30,11 +39,11 @@ export const person = (state = { data: {} }, action) => {
         movingPersons: action.data,
         error: null,
       };
-    case REQUEST_PERSON_DATA_FAILURE:
     case REQUEST_PERSONS_MOVING_FAILURE:
-      return { ...state, error: action.error };
-    case CLEAR_PERSON_DATA:
-      return { data: {} };
+      return {
+        ...state,
+        error: action.error,
+      };
     case CLEAR_PERSONS_MOVING:
       return {
         ...state,

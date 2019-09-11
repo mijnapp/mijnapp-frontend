@@ -2,8 +2,8 @@ import axios from 'axios';
 import { configuration } from '../../helpers/configuration';
 
 export const personApi = {
-  person: (id, token) => async () => {
-    const response = await axios.get(`/person/${id}`, {
+  person: (token) => async () => {
+    const response = await axios.get(`/person`, {
       baseURL: configuration.BASE_URL_API(),
       headers: { 'Authorization': 'Bearer ' + token }
     });
