@@ -30,7 +30,7 @@ namespace MijnApp_Backend.Controllers
 
         [HttpPost]
         [Route("order")]
-        public async Task<IActionResult> Order([FromBody]dynamic order)
+        public async Task<IActionResult> Order([FromBody] dynamic order)
         {
             var orderObject = JsonConvert.DeserializeObject<Order>(order.ToString());
             return await CallRequestApiAsync(orderObject);
@@ -39,54 +39,65 @@ namespace MijnApp_Backend.Controllers
         private async Task<IActionResult> CallRequestApiAsync(Order order)
         {
             var bsn = _jwtTokenProvider.GetBsnFromClaims(HttpContext.User);
-            using (var httpClient = new HttpClient())
+            var requestData = CreateRequestData(order, bsn);
+            var stringContent = new StringContent(JsonConvert.SerializeObject(requestData), Encoding.UTF8, "application/json");
+            var response = await _serviceClient.PostAsync(string.Format(PostRequest, _baseUri), stringContent);
+            var result = await response.Content.ReadAsStringAsync();
+            if (response.StatusCode == HttpStatusCode.Created)
             {
-                var dataModel = new Request
-                {
-                    submitter = bsn,
-                    submitter_person = true,
-                    cases = new string[0],
-                    properties = new Dictionary<string, object>(),
-                    rsin = "1", //Id van de organisatie die verzoek gaat oppakken. Krijgen we nog van DenBosch. Later uit process halen.
-                    request_type = "/request_types/" + order.requestType
-                };
-                foreach (var question in order.data.Where(q => q.question != "END"))
-                {
-                    if (question.value is string)
-                    {
-                        dataModel.properties.Add(question.key, question.value);
-                    }
-                    else
-                    {
-                        var values = "";
-                        if (question.value != null)
-                        {
-                            values = string.Join(", ", question.value);
-                        }
-                        if (question.key != null)
-                        {
-                            dataModel.properties.Add(question.key, values);
-                        }
-                    }
-                }
-                //TODO: Add "Persoon" to verhuizen requestType. Voor nu vast. Later op basis van process doen.
-                if (order.requestType == "fc79c4c9-b3b3-4258-bdbb-449262f3e5d7")
-                {
-                    dataModel.properties.Add("persoon", bsn);
-                }
-
-                var stringContent = new StringContent(JsonConvert.SerializeObject(dataModel), Encoding.UTF8, "application/json");
-                var response = await httpClient.PostAsync(string.Format(PostRequest, _baseUri), stringContent);
-                var result = await response.Content.ReadAsStringAsync();
-                if (response.StatusCode == HttpStatusCode.Created)
-                {
-                    //Haal het verzoek id uit de response.
-                    dynamic resultDynamic = JsonConvert.DeserializeObject<dynamic>(result);
-                    var self = resultDynamic._links.self;
-                    return Json(self);
-                }
-                return BadRequest(Json(result));
+                //Haal de verzoek url uit de response.
+                dynamic resultDynamic = JsonConvert.DeserializeObject<dynamic>(result);
+                var self = resultDynamic._links.self;
+                return Json(self);
             }
+
+            return BadRequest(Json(result));
+        }
+
+        /// <summary>
+        /// Maakt op basis van de order en het bsn een geldig verzoek(request) om naar de API te sturen.
+        /// </summary>
+        /// <param name="order"></param>
+        /// <param name="bsn"></param>
+        private Request CreateRequestData(Order order, string bsn)
+        {
+            var request = new Request
+            {
+                submitter = bsn,
+                submitter_person = true,
+                cases = new string[0],
+                properties = new Dictionary<string, object>(),
+                rsin = "1", //Id van de organisatie die verzoek gaat oppakken. Krijgen we nog van DenBosch. Later uit process halen.
+                request_type = "/request_types/" + order.requestType
+            };
+            foreach (var question in order.data.Where(q => q.question != "END"))
+            {
+                if (question.value is string)
+                {
+                    request.properties.Add(question.key, question.value);
+                }
+                else
+                {
+                    var values = "";
+                    if (question.value != null)
+                    {
+                        values = string.Join(", ", question.value);
+                    }
+
+                    if (question.key != null)
+                    {
+                        request.properties.Add(question.key, values);
+                    }
+                }
+            }
+
+            //TODO: Add "Persoon" to verhuizen requestType. Voor nu vast. Later op basis van process doen.
+            if (order.requestType == "fc79c4c9-b3b3-4258-bdbb-449262f3e5d7")
+            {
+                request.properties.Add("persoon", bsn);
+            }
+
+            return request;
         }
     }
 
