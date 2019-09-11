@@ -67,7 +67,6 @@ const calcNextIndex = function (skipList, current) {
 const calcPrevIndex = function (skipList, current) {
   var next = current - 1;
   while (skipList.includes(next)) {
-    console.log('skipped ' + next);
     next--;
   }
   return next < 0 ? JOURNEY_START : next;;
