@@ -19,6 +19,9 @@ export default class MakiInput extends PolymerElement {
       placeholder: {
         type: String,
       },
+      maxlength: {
+        type: String,
+      },
       focussed: {
         type: Boolean,
         value: false,
@@ -78,6 +81,7 @@ export default class MakiInput extends PolymerElement {
       stroke: {
         type: Number,
       },
+     
     };
   }
 
