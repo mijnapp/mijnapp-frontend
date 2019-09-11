@@ -35,8 +35,9 @@ export const requestOrdersSubmit = (data) => ({
 });
 
 export const REQUEST_ORDERS_SUBMIT_SUCCESS = 'REQUEST_ORDERS_SUBMIT_SUCCESS';
-export const requestOrdersSubmitSuccess = () => ({
+export const requestOrdersSubmitSuccess = (data) => ({
   type: REQUEST_ORDERS_SUBMIT_SUCCESS,
+  data,
 });
 
 export const REQUEST_ORDERS_SUBMIT_FAILED = 'REQUEST_ORDERS_SUBMIT_FAILED';

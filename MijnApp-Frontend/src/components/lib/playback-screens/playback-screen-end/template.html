@@ -23,6 +23,7 @@
         <div class="RequestMessage">Uw aanvraag is verstuurd.</div>
         <maki-button class="CloseRequestButton" set-color-highlight="white" text-color-main highlight stroke="0" size="56" font-size="18" on-click="_stop">Sluiten</maki-button>
       </div>
+      <div class="RequestSubMessage">{{order_reponse_data}}</div>
     </template>
   </dom-if>
   <dom-if if="{{order_status_sending}}">

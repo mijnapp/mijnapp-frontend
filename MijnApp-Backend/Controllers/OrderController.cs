@@ -70,20 +70,22 @@ namespace MijnApp_Backend.Controllers
                     }
                 }
                 //TODO: Add "Persoon" to verhuizen requestType. Voor nu vast. Later op basis van process doen.
-                if (order.requestType == "06daeb7f-6503-4b8e-8aa1-5a5767b53b22")
+                if (order.requestType == "fc79c4c9-b3b3-4258-bdbb-449262f3e5d7")
                 {
-                    dataModel.properties.Add("Persoon", bsn);
+                    dataModel.properties.Add("persoon", bsn);
                 }
 
                 var stringContent = new StringContent(JsonConvert.SerializeObject(dataModel), Encoding.UTF8, "application/json");
-                //var response = await httpClient.PostAsync(string.Format(PostRequest, _baseUri), stringContent);
-                //var result = await response.Content.ReadAsStringAsync();
-                var result = stringContent.ReadAsStringAsync().Result;
-                //if (response.StatusCode == HttpStatusCode.Created)
-                //{
-                    return Json(result);
-                //}
-                //return BadRequest(Json(result));
+                var response = await httpClient.PostAsync(string.Format(PostRequest, _baseUri), stringContent);
+                var result = await response.Content.ReadAsStringAsync();
+                if (response.StatusCode == HttpStatusCode.Created)
+                {
+                    //Haal het verzoek id uit de response.
+                    dynamic resultDynamic = JsonConvert.DeserializeObject<dynamic>(result);
+                    var self = resultDynamic._links.self;
+                    return Json(self);
+                }
+                return BadRequest(Json(result));
             }
         }
     }

@@ -61,7 +61,7 @@ store.dispatch(
         {
           id: '6abbb0e1-3ef5-4206-a2e3-aba72ad1259a',
           type: 'single',
-          property: 'Anoniem',
+          property: 'anoniem',
           options: [
             {
               goto: 'f4efa6ca-158b-4184-958f-52ae8b47f561',
@@ -85,7 +85,7 @@ store.dispatch(
         {
           id: 'f4efa6ca-158b-4184-958f-52ae8b47f561',
           type: 'agree',
-          property: 'Toestemming',
+          property: 'toestemming',
           options: null,
           title: 'Toestemming voor gebruik gegevens',
           subtitle:
@@ -96,7 +96,7 @@ store.dispatch(
         {
           id: 'b52cf9a7-30d1-4eb7-bf64-34f3a6380c11',
           type: 'text',
-          property: 'IdeeOmschrijving',
+          property: 'ideeomschrijving',
           options: null,
           title: 'Wat is jouw idee?',
           next: '12e51aa9-0a9b-4e74-a273-65e27763073c',
@@ -104,7 +104,7 @@ store.dispatch(
         {
           id: '12e51aa9-0a9b-4e74-a273-65e27763073c',
           type: 'radioButtons',
-          property: 'Contact',
+          property: 'contact',
           options: [
             {
               goto: 'END',
@@ -124,7 +124,7 @@ store.dispatch(
         {
           id: 'e8877860-f3b2-46d2-a3b8-e0b70c93492b',
           type: 'text',
-          property: 'IdeeOmschrijving',
+          property: 'ideeomschrijving',
           options: null,
           title: 'Wat is jouw idee?',
           subtitle: '',
@@ -144,12 +144,12 @@ store.dispatch(
     },
     {
       title: 'Ik wil verhuizen',
-      request_type_id: '06daeb7f-6503-4b8e-8aa1-5a5767b53b22',
+      request_type_id: 'fc79c4c9-b3b3-4258-bdbb-449262f3e5d7',
       questions: [
         {
           id: 'a7beef34-9aea-4891-971d-beb67b2e8010',
           type: 'address',
-          property: 'Adress',
+          property: 'adress',
           title: 'Wat wordt je nieuwe adres?',
           subtitle: 'Vul je postcode en huisnummer, en kies je nieuwe adres',
           next: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb',
@@ -157,7 +157,7 @@ store.dispatch(
         {
           id: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb',
           type: 'calendar',
-          property: 'IngangsDatum',
+          property: 'ingangsdatum',
           options: null,
           title: 'Wanneer ga je verhuizen?',
           subtitle: 'kies een datum',
@@ -166,7 +166,7 @@ store.dispatch(
         {
           id: '37e30b1f-fb51-4d49-8756-fa5d4d55829a',
           type: 'multiple',
-          property: 'MedeVerhuizers',
+          property: 'meeverhuizers',
           options: [
             {
               goto: null,
@@ -188,7 +188,7 @@ store.dispatch(
         },
         {
           id: '21586109-ce3b-4091-8420-85f92c0a6c11',
-          property: 'Eigenaar',
+          property: 'eigenaar',
           type: 'single',
           options: [
             {
@@ -212,7 +212,7 @@ store.dispatch(
         {
           id: '10af45ba-b96c-44cc-865e-5f5342e0b793',
           type: 'agree',
-          property: 'EigenaarAkoord',
+          property: 'eigenaarakoord',
           options: null,
           title: 'Is de eigenaar akkoord met inwoning?',
           subtitle:
@@ -239,7 +239,7 @@ store.dispatch(
         {
           id: '37e30b1f-fb51-4d49-8756-fa5d4d55829a',
           type: 'personsMoving',
-          property: 'MedeVerhuizers',
+          property: 'meeverhuizers',
           title: 'Met wie ga je verhuizen?',
           subtitle:
             'Er wordt een bericht gestuurd naar de persoon die meeverhuist ' +
@@ -250,7 +250,7 @@ store.dispatch(
         {
           id: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb',
           type: 'calendar',
-          property: 'IngangsDatum',
+          property: 'ingangsdatum',
           options: null,
           title: 'Wanneer ga je verhuizen?',
           subtitle: 'kies een datum',

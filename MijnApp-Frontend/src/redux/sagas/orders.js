@@ -46,8 +46,8 @@ export function* watchRequestOrdersSubmit() {
 
 function* fetchOrdersSubmit(action) {
   try {
-    yield call(ordersApi.submit(action.data, jwtBearerToken()));
-    yield put(requestOrdersSubmitSuccess());
+    const result = yield call(ordersApi.submit(action.data, jwtBearerToken()));
+    yield put(requestOrdersSubmitSuccess(result.data));
   } catch (e) {
     yield put(requestOrdersSubmitFailed(e));
   }

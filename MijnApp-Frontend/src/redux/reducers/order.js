@@ -44,7 +44,7 @@ export const order = (state = { data: [], current: JOURNEY_START, skipList: [], 
     case REQUEST_ORDERS_SUBMIT:
       return { ...state, order_status: ORDER_STATUS_SENDING }
     case REQUEST_ORDERS_SUBMIT_SUCCESS:
-      return { ...state, order_status: ORDER_STATUS_SEND_OK }
+      return { ...state, order_status: ORDER_STATUS_SEND_OK, response_data: action.data }
     case REQUEST_ORDERS_SUBMIT_FAILED:
       return { ...state, order_status: ORDER_STATUS_SEND_FAILED }
     default:
