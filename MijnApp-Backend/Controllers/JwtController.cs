@@ -28,13 +28,6 @@ namespace MijnApp_Backend.Controllers
         }
 
         [HttpGet]
-        [Route("index")]
-        public IActionResult Index()
-        {
-            return Ok("Test");
-        }
-
-        [HttpGet]
         [Route("signin")]
         [AllowAnonymous]
         public async Task<IActionResult> StartSignInDigid([FromQuery]string frontEndRedirectTo)

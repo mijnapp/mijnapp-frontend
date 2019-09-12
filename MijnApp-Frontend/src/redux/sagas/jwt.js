@@ -15,15 +15,6 @@ import {
   REQUEST_JWT_SIGNIN_SUCCESS_FAKE,
   REQUEST_JWT_FOR_DIGIDCGI, REQUEST_JWT_FOR_DIGIDCGI_SUCCESS,
   requestJwtTokenForDigidSuccess, requestJwtTokenForDigidFailure,
-  REQUEST_JWT_ELEVATE_WITH_PIN,
-  requestJwtElevateWithPinSuccess,
-  requestJwtElevateWithPinFailure,
-  REQUEST_JWT_RENEW_WITH_PIN,
-  requestJwtRenewWithPinSuccess,
-  requestJwtRenewWithPinFailure,
-  REQUEST_JWT_REFRESH,
-  requestJwtRefreshSuccess,
-  requestJwtRefreshFailure,
 } from '../actions/jwt';
 
 
@@ -114,43 +105,4 @@ function* doJwtLogout401() {
   window.errorDialog.open();
 
   yield put(selectPage('signin'));
-}
-
-export function* watchRequestJwtElevateWithPin() {
-  yield takeLatest(REQUEST_JWT_ELEVATE_WITH_PIN, fetchJwtElevateWithPin);
-}
-
-function* fetchJwtElevateWithPin(action) {
-  try {
-    const result = yield call(jwtApi.elevateWithPin(action.pin, jwtBearerToken()));
-    yield put(requestJwtElevateWithPinSuccess(result.data, result.headers));
-  } catch (e) {
-    yield put(requestJwtElevateWithPinFailure(e));
-  }
-}
-
-export function* watchRequestJwtRenewWithPin() {
-  yield takeLatest(REQUEST_JWT_RENEW_WITH_PIN, fetchJwtRenewWithPin);
-}
-
-function* fetchJwtRenewWithPin(action) {
-  try {
-    const result = yield call(jwtApi.renewWithPin(action.pin, jwtBearerToken()));
-    yield put(requestJwtRenewWithPinSuccess(result.data, result.headers));
-  } catch (e) {
-    yield put(requestJwtRenewWithPinFailure(e));
-  }
-}
-
-export function* watchRequestJwtRefresh() {
-  yield takeLatest(REQUEST_JWT_REFRESH, fetchJwtRefresh);
-}
-
-function* fetchJwtRefresh() {
-  try {
-    const result = yield call(jwtApi.refresh(jwtBearerToken()));
-    yield put(requestJwtRefreshSuccess(result.data, result.headers));
-  } catch (e) {
-    yield put(requestJwtRefreshFailure(e));
-  }
 }

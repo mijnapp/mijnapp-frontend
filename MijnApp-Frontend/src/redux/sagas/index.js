@@ -17,9 +17,6 @@ import {
   watchRequestJwtFromDigidCgiSuccess,
   watchRequestJwtLogout,
   watchRequestJwtLogout401,
-  watchRequestJwtElevateWithPin,
-  watchRequestJwtRenewWithPin,
-  watchRequestJwtRefresh,
 } from './jwt';
 import {
   watchRequestOrdersList,
@@ -49,9 +46,6 @@ export default function* rootSaga() {
     watchRequestJwtFromDigidCgiSuccess(),
     watchRequestJwtLogout(),
     watchRequestJwtLogout401(),
-    watchRequestJwtElevateWithPin(),
-    watchRequestJwtRenewWithPin(),
-    watchRequestJwtRefresh(),
     watchSelectPage(),
     watchSelectPageNoHistory(),
     watchRequestPersonData(),

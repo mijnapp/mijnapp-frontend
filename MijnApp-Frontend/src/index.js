@@ -12,9 +12,6 @@ import '@polymer/paper-toast/paper-toast.js';
 import './components/application/maf-app';
 
 import { store } from './redux/store';
-import {
-  requestJwtLogout,
-} from './redux/actions/jwt';
 
 // NOTE: service worker not enabled.
 // import sw from './sw-loader';
@@ -34,5 +31,5 @@ axios.interceptors.response.use((response) => {
   if (error.response.status === 401) {
     store.dispatch(requestJwtLogoutUnauthorized());
   }
-    return Promise.reject(error);
+  return Promise.reject(error);
 });
