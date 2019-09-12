@@ -13,24 +13,6 @@ import '@polymer/paper-input/paper-input';
 export default class MafScreenSignin extends connect(store)(PolymerElement) {
   static get properties() {
     return {
-      username: {
-        type: String,
-        value: '',
-      },
-      password: {
-        type: String,
-        value: '',
-      },
-      validated: {
-        type: Boolean,
-        value: false,
-      },
-      continue: {
-        type: Function,
-        value: () => () => {
-          console.warn('No continune function set for app-login.');
-        },
-      },
       hasFakeInlogEnabled: {
         type: Boolean,
         value: false,
@@ -47,29 +29,10 @@ export default class MafScreenSignin extends connect(store)(PolymerElement) {
     this.hasFakeInlogEnabled = configuration.HAS_FAKE_INLOG_ENABLED();
   }
 
-  _onChangeHandler() {
-    this.validated =
-      /.+@.+?\..+/.test(this.username) && /.+/.test(this.password);
-  }
-
   _showLoginWarning(jwtError) {
-    return (jwtError && jwtError.message) || (true && this.validated);
+    return (jwtError && jwtError.message);
   }
-
-  _getClass(value) {
-    return value ? 'classTrue' : 'classFalse';
-  }
-
-  _signInHandler() {
-    if (this.validated) {
-      store.dispatch(requestJwtSignin(this.username, this.password));
-    }
-  }
-
-  _signInWithItsMe() {
-    store.dispatch(requestOAuthInit('itsme'));
-  }
-
+  
   _signInWithDigiD() {
     store.dispatch(requestJwtSignin());
   }
