@@ -1,5 +1,16 @@
 <maki-theme-provider theme="[[theme]]">
   <div class="AppWrapper">
+    <dom-if if="[[_showTabs(page)]]">
+      <template>
+        <div class="TopBar">
+          <div class="TopBarWrapper">
+            <div class="HamburgerMenuIcon">
+              <maki-icon-hamburger></maki-icon-hamburger>
+            </div>
+          </div>
+        </div>
+      </template>
+    </dom-if>
     <div class="App">
       <iron-pages selected="[[page]]" attr-for-selected="page" fallback-selection="view404">
         <maf-screen-avg-log page="avg-log"></maf-screen-avg-log>
@@ -37,7 +48,7 @@
                 </div>
               </div>
             </div>
-            <div class="TabSwitcherTab" style="opacity: 0.25; cursor: not-allowed;" on-click="_nope">
+            <div class="TabSwitcherTab NotAllowed" on-click="_nope">
               <div class="TabSwitcherTabIcon">
                 <maki-icon-bell></maki-icon-bell>
               </div>
@@ -47,7 +58,7 @@
                 </div>
               </div>
             </div>
-            <div class="TabSwitcherTab" style="opacity: 0.25; cursor: not-allowed;" on-click="_nope">
+            <div class="TabSwitcherTab NotAllowed" on-click="_nope">
               <div class="TabSwitcherTabIcon">
                 <maki-icon-chat></maki-icon-chat>
               </div>

@@ -36,6 +36,7 @@
     <Folder Include="dist\assets\media\" />
     <Folder Include="dist\vendor\" />
     <Folder Include="dist\vendor\bundles\" />
+    <Folder Include="src\components\lib\maki-icons\maki-icon-hamburger\" />
     <Folder Include="src\components\lib\maki-icons\maki-icon-logout\" />
     <Folder Include="src\components\lib\playback-screens\playback-screen-persons-moving\" />
     <Folder Include="src\components\lib\polymer-openajax-datepicker-master\" />
@@ -328,6 +329,9 @@
     <Content Include="src\components\lib\maki-icons\maki-icon-lock\index.js" />
     <Content Include="src\components\lib\maki-icons\maki-icon-lock\style.pcss" />
     <Content Include="src\components\lib\maki-icons\maki-icon-lock\template.html" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-hamburger\index.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-hamburger\style.pcss" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-hamburger\template.html" />
     <Content Include="src\components\lib\maki-icons\maki-icon-logout\index.js" />
     <Content Include="src\components\lib\maki-icons\maki-icon-logout\style.pcss" />
     <Content Include="src\components\lib\maki-icons\maki-icon-logout\template.html" />
