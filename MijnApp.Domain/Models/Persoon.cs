@@ -1,21 +1,24 @@
-﻿using System;
-using Newtonsoft.Json;
-
-namespace MijnApp.Domain.Models
+﻿namespace MijnApp.Domain.Models
 {
     public class Persoon
     {
-        public Guid Id { get; set; }
-        public string Bsn { get; set; }
-        public string Voornamen { get; set; }
-        public string VoorvoegselGeslachtsnaam { get; set; }
-        public string Geslachtsnaam { get; set; }
-        public string Geslacht { get; set; }
-        [JsonConverter(typeof(DateConverter))]
-        public DateTime? Geboortedatum { get; set; }
-        public string Naamgebruik { get; set; }
-        public string PartnerVoorvoegselGeslachtsnaam { get; set; }
-        public string PartnerGeslachtsnaam { get; set; }
-        public Adres Adres { get; set; }
+        public string id { get; set; }
+        public string burgerservicenummer { get; set; }
+        //geheimhouding_persoonsgegevens
+        //geslachtsaanduiding
+        //leeftijd
+        //datum_eerste_inschrijving_g_b_a
+        //kiesrecht
+        public Naam naam { get; set; }
+        //nationaliteit
+        public Geboorte geboorte { get; set; }
+        //opschorting_bijhouding
+        //overlijden
+        public Verblijfplaats verblijfplaats { get; set; }
+        //gezagsverhouding
+        //verblijfstitel
+        //ouders
+        //kinderen
+        //partners
     }
 }
