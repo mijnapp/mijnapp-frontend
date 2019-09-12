@@ -18,11 +18,7 @@ import {
   watchRequestJwtLogout,
   watchRequestJwtLogout401,
 } from './jwt';
-import {
-  watchRequestOrdersList,
-  watchRequestOrdersItem,
-  watchRequestOrdersSubmit,
-} from './orders';
+import { watchRequestOrdersSubmit } from './orders';
 import { watchSelectPage, watchSelectPageNoHistory } from './application';
 
 export default function* rootSaga() {
@@ -44,8 +40,6 @@ export default function* rootSaga() {
     watchSelectPageNoHistory(),
     watchRequestPersonData(),
     watchRequestPersonsMoving(),
-    watchRequestOrdersList(),
-    watchRequestOrdersItem(),
     watchRequestOrdersSubmit(),
   ]);
 }

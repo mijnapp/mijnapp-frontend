@@ -46,7 +46,7 @@ namespace MijnApp_Backend.Controllers
             var result = await response.Content.ReadAsStringAsync();
             if (response.StatusCode == HttpStatusCode.Created)
             {
-                //Haal de verzoek url uit de response.
+                //Retrieve the "request url" from the response.
                 dynamic resultDynamic = JsonConvert.DeserializeObject<dynamic>(result);
                 var self = resultDynamic._links.self;
                 return Json(self);
@@ -56,7 +56,9 @@ namespace MijnApp_Backend.Controllers
         }
 
         /// <summary>
-        /// Maakt op basis van de order en het bsn een geldig verzoek(request) om naar de API te sturen.
+        /// Create an "request" (verzoek) to send to the API. It will fill in the properties based on the suplied order, and the user bsn.
+        /// For the move request we add the person as an property as an exception.
+        /// The RSIN of municipality DenBosch is used for now. This will be the organization that will handle the request.
         /// </summary>
         /// <param name="order"></param>
         /// <param name="bsn"></param>
@@ -68,7 +70,7 @@ namespace MijnApp_Backend.Controllers
                 submitter_person = true,
                 cases = new string[0],
                 properties = new Dictionary<string, object>(),
-                rsin = RSIN_DEN_BOSCH, //Id van de organisatie die verzoek gaat oppakken. Later uit process halen.
+                rsin = RSIN_DEN_BOSCH,
                 request_type = "/request_types/" + order.requestType
             };
             foreach (var question in order.data.Where(q => q.question != "END"))
@@ -92,7 +94,7 @@ namespace MijnApp_Backend.Controllers
                 }
             }
 
-            //TODO: Add "Persoon" to verhuizen requestType. Voor nu vast. Later op basis van process doen.
+            //TODO: Add "Persoon" to verhuizen requestType Fixed id for now. Will need to be discussed with Conduction.
             if (order.requestType == "fc79c4c9-b3b3-4258-bdbb-449262f3e5d7")
             {
                 request.properties.Add("persoon", bsn);
@@ -129,7 +131,7 @@ namespace MijnApp_Backend.Controllers
 
     /*
 
-    Not needed yet.
+    These will be needed when we will use the process API to generate the journeys.
 
     internal class RequestType
     {

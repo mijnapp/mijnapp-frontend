@@ -1,11 +1,5 @@
 import { JOURNEY_START, ORDER_STATUS_SENDING, ORDER_STATUS_SEND_OK, ORDER_STATUS_NOT_SEND, ORDER_STATUS_SEND_FAILED  } from '../../helpers/common';
-import {
-  ORDER_SAVE_ANSWER,
-  ORDER_CLEAR_ANSWER,
-  ORDER_NEXT,
-  ORDER_PREV,
-  ORDER_SKIP,
-} from '../actions/order';
+import { ORDER_SAVE_ANSWER, ORDER_CLEAR_ANSWER, ORDER_NEXT, ORDER_PREV, ORDER_SKIP } from '../actions/order';
 import { SET_JOURNEY } from '../actions/journey';
 import { REQUEST_ORDERS_SUBMIT, REQUEST_ORDERS_SUBMIT_SUCCESS, REQUEST_ORDERS_SUBMIT_FAILED } from '../actions/orders'
 
@@ -27,6 +21,7 @@ export const order = (state = { data: [], current: JOURNEY_START, skipList: [], 
         ...state,
         current: nextCurrent,
         data: [...state.data, item(null, action)],
+        order_status: ORDER_STATUS_NOT_SEND,
       };
     }
     case ORDER_PREV: {
