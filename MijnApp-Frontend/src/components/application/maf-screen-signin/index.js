@@ -2,7 +2,6 @@ import { PolymerElement, html } from '@polymer/polymer/polymer-element';
 import { store } from '../../../redux/store';
 import { requestJwtSigninFake } from '../../../redux/actions/jwt';
 import { requestJwtSignin } from '../../../redux/actions/jwt';
-import { requestOAuthInit } from '../../../redux/actions/oauth';
 import { connect } from 'pwa-helpers/connect-mixin';
 import { configuration } from '../../../helpers/configuration';
 

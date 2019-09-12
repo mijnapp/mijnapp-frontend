@@ -41,7 +41,6 @@ export default class MafScreenHome extends connect(store)(PolymerElement) {
         ],
       },
       userID: String,
-      loggedInWithItsMe: Boolean,
     };
   }
 
@@ -55,9 +54,6 @@ export default class MafScreenHome extends connect(store)(PolymerElement) {
 
   ready() {
     super.ready();
-    if (this.loggedInWithItsMe) {
-      this._showToast();
-    }
   }
 
   _clickHandler(e) {
@@ -76,7 +72,7 @@ export default class MafScreenHome extends connect(store)(PolymerElement) {
           store.dispatch(requestContracts());
           break;
         case 'person-data':
-            store.dispatch(requestPersonData());
+          store.dispatch(requestPersonData());
           break;
         case 'avg-logs':
           store.dispatch(requestAvgLogs());
@@ -93,18 +89,9 @@ export default class MafScreenHome extends connect(store)(PolymerElement) {
     // TODO: trigger search focus
   }
 
-  _showToast() {
-    this.$.ItsMeLoginToast.className = 'show';
-
-    setTimeout(() => {
-      this.$.ItsMeLoginToast.className = this.$.ItsMeLoginToast.className.replace('show', '');
-    }, 5000);
-  }
-
   stateChanged(state) {
     if (state != undefined && state.jwt.data.user != undefined) {
       this.userID = state.jwt.data.user.id;
-      this.loggedInWithItsMe = state.oauth.provider === 'itsme';
     }
   }
 }

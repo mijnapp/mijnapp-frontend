@@ -24,12 +24,6 @@ import {
   watchRequestOrdersSubmit,
 } from './orders';
 import { watchSelectPage, watchSelectPageNoHistory } from './application';
-import {
-  watchRequestOAuthInit,
-  watchRequestOAuthInitSuccess,
-  watchRequestOAuthHandle,
-  watchRequestOAuthHandleSuccess,
-} from './oauth';
 
 export default function* rootSaga() {
   yield all([
@@ -53,9 +47,5 @@ export default function* rootSaga() {
     watchRequestOrdersList(),
     watchRequestOrdersItem(),
     watchRequestOrdersSubmit(),
-    watchRequestOAuthInit(),
-    watchRequestOAuthInitSuccess(),
-    watchRequestOAuthHandle(),
-    watchRequestOAuthHandleSuccess(),
   ]);
 }

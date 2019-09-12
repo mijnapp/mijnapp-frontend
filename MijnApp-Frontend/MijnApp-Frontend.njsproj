@@ -477,7 +477,6 @@
     <Content Include="src\redux\actions\journey.js" />
     <Content Include="src\redux\actions\journeys.js" />
     <Content Include="src\redux\actions\jwt.js" />
-    <Content Include="src\redux\actions\oauth.js" />
     <Content Include="src\redux\actions\order.js" />
     <Content Include="src\redux\actions\orders.js" />
     <Content Include="src\redux\actions\person.js" />
@@ -485,7 +484,6 @@
     <Content Include="src\redux\api\avgLogs.js" />
     <Content Include="src\redux\api\contracts.js" />
     <Content Include="src\redux\api\jwt.js" />
-    <Content Include="src\redux\api\oauth.js" />
     <Content Include="src\redux\api\orders.js" />
     <Content Include="src\redux\api\person.js" />
     <Content Include="src\helpers\configuration.js" />
@@ -500,7 +498,6 @@
     <Content Include="src\redux\reducers\journey.js" />
     <Content Include="src\redux\reducers\journeys.js" />
     <Content Include="src\redux\reducers\jwt.js" />
-    <Content Include="src\redux\reducers\oauth.js" />
     <Content Include="src\redux\reducers\order.js" />
     <Content Include="src\redux\reducers\person.js" />
     <Content Include="src\redux\sagas\address.js" />
@@ -512,7 +509,6 @@
     <Content Include="src\redux\sagas\index.js" />
     <Content Include="src\redux\sagas\journey.js" />
     <Content Include="src\redux\sagas\jwt.js" />
-    <Content Include="src\redux\sagas\oauth.js" />
     <Content Include="src\redux\sagas\orders.js" />
     <Content Include="src\redux\sagas\person.js" />
     <Content Include="src\redux\saver.js" />

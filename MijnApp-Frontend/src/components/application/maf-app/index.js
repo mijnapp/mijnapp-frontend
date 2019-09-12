@@ -29,7 +29,6 @@ import '../../lib/maki-icons/maki-icon-logout';
 
 import { MakiTheme } from '../../lib/maki/maki-theme-provider';
 import { primaryPalette, secondaryPalette } from '../../helpers/palettes';
-import { requestOAuthHandle } from '../../../redux/actions/oauth';
 import { requestJwtTokenForDigidCgi } from '../../../redux/actions/jwt';
 
 export default class MafApp extends connect(store)(PolymerElement) {
@@ -51,9 +50,6 @@ export default class MafApp extends connect(store)(PolymerElement) {
       store.dispatch(selectPageNoHistory(event.state));
     };
     if (window.location.pathname && window.location.pathname.length > 0) {
-      if (window.location.pathname.indexOf('oauth-itsme') > -1) {
-        this._handleOAuth();
-      }
       if (window.location.pathname.indexOf('digidcgifinished') > -1) {
         this._handleDigidCgi();
       }
@@ -111,15 +107,6 @@ export default class MafApp extends connect(store)(PolymerElement) {
     // };
 
     // f();
-  }
-
-  _handleOAuth() {
-    const url = decodeURI(window.location.href);
-    const code = url.split('code=')[1].split('&')[0];
-    const stateRaw = url.split('state=')[1].split('}')[0] + '}';
-    const state = JSON.parse(stateRaw);
-
-    store.dispatch(requestOAuthHandle(code, state.StateToken, 'itsme'));
   }
 
   _handleDigidCgi() {
