@@ -44,8 +44,8 @@ namespace MijnApp_Backend.Controllers
         {
             var persons = new List<PersonMoving>
             {
-                new PersonMoving("9999999", "Evelien de Vries"),
-                new PersonMoving("8888888", "Thomas de Vries"),
+                //new PersonMoving("9999999", "Evelien de Vries"),
+                //new PersonMoving("8888888", "Thomas de Vries"),
             };
             return Ok(persons);
         }

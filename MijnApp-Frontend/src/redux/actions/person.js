@@ -32,3 +32,6 @@ export const requestPersonsMovingFailure = (error) => ({
 });
 export const CLEAR_PERSONS_MOVING = 'CLEAR_PERSONS_MOVING';
 export const clearPersonsMoving = () => ({ type: CLEAR_PERSONS_MOVING });
+
+export const REQUEST_PERSONS_MOVING_SKIPQUESTION = 'REQUEST_PERSONS_MOVING_SKIPQUESTION';
+export const requestPersonsMovingSkipQuestion = () => ({ type: REQUEST_PERSONS_MOVING_SKIPQUESTION });
