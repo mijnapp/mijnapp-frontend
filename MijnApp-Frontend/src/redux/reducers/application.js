@@ -1,4 +1,4 @@
-import { SELECT_PAGE, SELECT_PAGE_NO_HISTORY } from '../actions/application';
+import { SELECT_PAGE, SELECT_PAGE_NO_HISTORY, NEXT_PAGE_AFTER_LOGIN } from '../actions/application';
 
 export const application = (state = { page: 'signin' }, action) => {
   switch (action.type) {
@@ -9,6 +9,8 @@ export const application = (state = { page: 'signin' }, action) => {
         page: action.page || 'signin',
         data: null,
       };
+    case NEXT_PAGE_AFTER_LOGIN:
+      return state;
     default:
       return state;
   }

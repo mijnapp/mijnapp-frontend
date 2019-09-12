@@ -1,7 +1,7 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { jwtApi } from '../api/jwt';
 import { jwtBearerToken, removeJwtBearerToken } from '../helpers/headers';
-import { selectPage } from '../actions/application';
+import { selectPage, selectPageNoHistory, nextPageAfterLogin } from '../actions/application';
 import { clearState } from '../saver';
 import {
   REQUEST_JWT_SIGNIN_FAKE,
@@ -57,7 +57,7 @@ function onJwtSigninSuccess(action) {
 }
 
 function* onJwtSigninSuccessFake() {
-  yield put(selectPage('home'));
+  yield put(nextPageAfterLogin());
 }
 
 export function* watchRequestJwtFromDigidCgi() {
@@ -78,7 +78,7 @@ export function* watchRequestJwtFromDigidCgiSuccess() {
 }
 
 function* onJwtFromDigidCgiSuccess() {
-  yield put(selectPage('home'));
+  yield put(nextPageAfterLogin());
 }
 
 export function* watchRequestJwtLogout() {
@@ -104,5 +104,5 @@ function* doJwtLogout401() {
   window.errorText.innerHTML = `U heeft geen geldige sessie meer en zult opnieuw moeten inloggen.`;
   window.errorDialog.open();
 
-  yield put(selectPage('signin'));
+  yield put(selectPageNoHistory('signin'));
 }

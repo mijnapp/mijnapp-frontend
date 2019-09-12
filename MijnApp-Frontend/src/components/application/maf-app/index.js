@@ -1,12 +1,13 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element';
 import { store } from '../../../redux/store';
-import {
-  selectPage,
-  selectPageNoHistory,
-} from '../../../redux/actions/application';
-import {
-  requestJwtLogout,
-} from '../../../redux/actions/jwt';
+
+import { selectPage, selectPageNoHistory } from '../../../redux/actions/application';
+import { setJourney } from '../../../redux/actions/journey';
+import { requestJwtLogout } from '../../../redux/actions/jwt';
+import { clearAddressData } from '../../../redux/actions/address';
+
+import { getJourneyId } from '../../../redux/helpers/journeys';
+
 import { connect } from 'pwa-helpers/connect-mixin';
 
 import css from './style.pcss';
@@ -50,15 +51,19 @@ export default class MafApp extends connect(store)(PolymerElement) {
     window.onpopstate = function(event) {
       store.dispatch(selectPageNoHistory(event.state));
     };
+
     if (window.location.pathname && window.location.pathname.length > 0) {
       if (window.location.pathname.indexOf('digidcgifinished') > -1) {
         this._handleDigidCgi();
       }
-
-      const path = window.location.pathname
-        .split(/[/-]/)
-        .filter((i) => i.length > 0);
-      store.dispatch(selectPageNoHistory(path[0]));
+      if (window.location.pathname.indexOf('startjourney') > -1) {
+        this._handleStartJourney();
+      } else {
+        const path = window.location.pathname
+          .split(/[/-]/)
+          .filter((i) => i.length > 0);
+        store.dispatch(selectPageNoHistory(path[0]));
+      }
     }
   }
 
@@ -117,6 +122,32 @@ export default class MafApp extends connect(store)(PolymerElement) {
     store.dispatch(requestJwtTokenForDigidCgi(aselectCredentials, rid));
   }
 
+  _handleStartJourney() {
+    const url = decodeURI(window.location.href);
+    const journeyToStart = url.split('name=')[1].split('&')[0];
+    var journeyIdToStart = getJourneyId(journeyToStart);
+
+    var foundJourneyToStart;
+
+    if (journeyIdToStart) {
+      var journeys = store.getState().journeys.data;
+
+      for (var counter = 0; counter < journeys.length; counter++) {
+        var journey = journeys[counter];
+        if (journey.request_type_id.toLowerCase() === journeyIdToStart.toLowerCase()) {
+          foundJourneyToStart = journey;
+          break;
+        }
+      }
+    }
+
+    if (foundJourneyToStart) {
+      store.dispatch(setJourney(foundJourneyToStart));
+      store.dispatch(selectPage('journey'));
+      store.dispatch(clearAddressData());
+    }
+  }
+
   _goHome() {
     store.dispatch(selectPage('home'));
   }
@@ -147,7 +178,7 @@ export default class MafApp extends connect(store)(PolymerElement) {
     this.page = state.application.page;
     if (
       state.application.page != undefined &&
-      state.application.page == 'journeys' &&
+      state.application.page === 'journeys' &&
       this.shadowRoot != null
     ) {
       this.shadowRoot.querySelector('#journeyScreen').focusOnSearch();

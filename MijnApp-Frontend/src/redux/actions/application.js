@@ -6,3 +6,7 @@ export const selectPageNoHistory = (page) => ({
   type: SELECT_PAGE_NO_HISTORY,
   page,
 });
+
+export const NEXT_PAGE_AFTER_LOGIN = 'NEXT_PAGE_AFTER_LOGIN';
+export const nextPageAfterLogin = () => ({ type: NEXT_PAGE_AFTER_LOGIN });
+

@@ -1,5 +1,5 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { SELECT_PAGE, SELECT_PAGE_NO_HISTORY, selectPageNoHistory } from '../actions/application';
+import { SELECT_PAGE, SELECT_PAGE_NO_HISTORY, NEXT_PAGE_AFTER_LOGIN, selectPage, selectPageNoHistory } from '../actions/application';
 import { store } from '../store';
 import { clearContract } from '../actions/contract';
 import { jwtBearerTokenExists } from '../helpers/headers';
@@ -40,4 +40,27 @@ const scrollToTop = () => async () => {
 
 const setHistory = (state, title, url) => async () => {
   history.pushState(state, title, url);
-};
+  var historyInStorage = { 'state': state, 'title': title, 'url': url };
+  const stringifiedHistory = JSON.stringify(historyInStorage);
+  window.sessionStorage.setItem("mijnApp-history", stringifiedHistory);
+  
+}
+
+export function* watchNextPageAfterLogin() {
+  yield takeLatest(NEXT_PAGE_AFTER_LOGIN, nextPageAfterLogin);
+}
+
+function* nextPageAfterLogin() {
+  var stringifiedHistory = sessionStorage.getItem("mijnApp-history");
+  if (stringifiedHistory) {
+    var historyFromStorage = JSON.parse(stringifiedHistory);
+    if (historyFromStorage && historyFromStorage.state && historyFromStorage.state !== 'signin') {
+      yield put(selectPage(historyFromStorage.state));
+    } else {
+      yield put(selectPage('home'));
+    }
+  }else {
+    yield put(selectPage('home'));
+  }
+  yield call(scrollToTop());
+}
