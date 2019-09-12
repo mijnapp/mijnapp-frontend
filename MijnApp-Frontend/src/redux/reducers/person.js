@@ -35,8 +35,6 @@ export const person = (state = { data: {}, movingPersonsStatus: CLEAR_PERSONS_MO
         movingPersonsStatus: REQUEST_PERSONS_MOVING,
       };
     case REQUEST_PERSONS_MOVING_SUCCESS: {
-        console.log(action.data);
-        console.log(action.data.length === 0);
       return {
         ...state,
         movingPersons: action.data,
@@ -57,7 +55,6 @@ export const person = (state = { data: {}, movingPersonsStatus: CLEAR_PERSONS_MO
         movingPersonsStatus: CLEAR_PERSONS_MOVING,
       };
     case REQUEST_PERSONS_MOVING_SKIPQUESTION: {
-      console.log(REQUEST_PERSONS_MOVING_SKIPQUESTION);
       return {
         ...state,
         movingPersonsStatus: REQUEST_PERSONS_MOVING_SUCCESS
