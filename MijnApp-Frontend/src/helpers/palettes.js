@@ -4,7 +4,7 @@ export const secondaryPalette = {
   200: '#ffb1b0',
   300: '#ff9190',
   400: '#ff7a79',
-  500: '#ff6261',
+  500: '#3192CF',
   600: '#ff5a59',
   700: '#ff504f',
   800: '#ff4645',

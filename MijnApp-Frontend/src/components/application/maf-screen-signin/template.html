@@ -1,27 +1,28 @@
 <div class="loginWrapper">
-  <div class="loginHeader">
-    <div class="loginTitle">Inloggen</div>
-    <img src="/assets/media/Inloggen.svg" class="loginImage"/>
+  <div>
+    <div class="loginTitle">MijnApp</div>
+    <img class="loginImage" src="/assets/media/Inloggen.svg" />
   </div>
   <div class="loginContent">
     <dom-if if="{{hasFakeInlogEnabled}}">
       <template>
         <div class="loginDigidButton" on-click="_signInWithDigiDFake">
-          <img src="/assets/logo-digid.svg" class="loginSelectButton noselect" />
-          <div>
-            <div class="loginDigidButtonHeader">FAKE Inloggen bij</div>
-            <div class="loginDigidButtonSubHeader">Mijn-app</div>
+          <div class="loginDigidButtonText">
+            <img src="/assets/logo-digid.svg" class="loginSelectButton noselect" />
+            <div class="loginDigidButtonHeader">Fake inloggen met DigiD</div>
           </div>
         </div>
       </template>
     </dom-if>
-
     <div class="loginDigidButton" on-click="_signInWithDigiD">
-      <img src="/assets/logo-digid.svg" class="loginSelectButton noselect" />
-      <div>
-        <div class="loginDigidButtonHeader">Inloggen bij</div>
-        <div class="loginDigidButtonSubHeader">Mijn-app</div>
+      <div class="loginDigidButtonText">
+        <img src="/assets/logo-digid.svg" class="loginSelectButton noselect" />
+        <div class="loginDigidButtonHeader">Inloggen met DigiD</div>
       </div>
+    </div>
+    <div class="Info">
+      <div class="InfoText">Heeft u nog geen DigiD?</div>
+      <div class="InfoSubText">U kunt zelf uw DigiD aanvragen op <a href="http://www.digid.nl">www.digid.nl</a></div>
     </div>
   </div>
   <dom-if if="[[_showLoginWarning(jwtError)]]">
