@@ -1,11 +1,15 @@
 <div class="Wrapper">
   <div class="ScrollContainer">
     <div class="Scroller">
-      <dom-if if="{{order_show_buttons}}">
-        <template>
-          <div class="Back" on-click="_stop">Stoppen</div>
-        </template>
-      </dom-if>
+      <div class="TopbarButtonContainer">
+        <dom-if if="{{order_show_buttons}}">
+          <template>
+            <maki-button on-click="_stop" size="30" stroke="0" font-size="14" heading="Stoppen">
+              <maki-icon-back-arrow/>
+            </maki-button>
+          </template>
+        </dom-if>
+      </div>
       <div class="Title">{{order_end_title}}</div>
       <dom-repeat items="[[_getOrderItems(order)]]">
         <template>
