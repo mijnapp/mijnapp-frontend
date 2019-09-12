@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Net.Http;
-using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using MijnApp.Domain.Models;
 using MijnApp_Backend.HttpClients;
 using MijnApp_Backend.Security;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace MijnApp_Backend.Controllers
 {
@@ -38,11 +32,13 @@ namespace MijnApp_Backend.Controllers
         [Route("persons")]
         public async Task<IActionResult> GetPersons()
         {
-            var bsn = _jwtTokenProvider.GetBsnFromClaims(User);
             var response = await _serviceClient.GetAsync(string.Format(UrlGetAll, _baseUri));
             var result = await response.Content.ReadAsStringAsync();
-            //var persoon = JsonConvert.DeserializeObject(result, typeof(Persoon));
-            return Json(result);
+            var token = JObject.Parse(result);
+            var embedded = (JObject)token.SelectToken("_embedded");
+            var list = (JArray)embedded.SelectToken("item");
+            var personList = list.ToObject<List<Persoon>>();
+            return Json(personList);
         }
 
         [HttpGet]
@@ -52,8 +48,8 @@ namespace MijnApp_Backend.Controllers
             var bsn = _jwtTokenProvider.GetBsnFromClaims(User);
             var response = await _serviceClient.GetAsync(string.Format(UrlGetByBsn, _baseUri, bsn));
             var result = await response.Content.ReadAsStringAsync();
-            var persoon = JsonConvert.DeserializeObject(result, typeof(Persoon));
-            return Json(persoon);
+            var person = JsonConvert.DeserializeObject(result, typeof(Persoon));
+            return Json(person);
         }
 
         //[HttpGet]
@@ -89,15 +85,17 @@ namespace MijnApp_Backend.Controllers
         public async Task<IActionResult> GetPersonsMovingOldAsync()
         {
             //Call Brp to get current address id
-            //var bsn = _jwtTokenProvider.GetBsnFromClaims(User);
-            var bsn = "900003509";
+            var bsn = _jwtTokenProvider.GetBsnFromClaims(User);
             var bagId = GetBagIdForPerson(bsn);
 
             //Call Url for persons on address
             var response = await _serviceClient.GetAsync(string.Format(UrlGetPersonsOnAddress, _baseUri, bsn, bagId));
             var result = await response.Content.ReadAsStringAsync();
-
-            return Json(result);
+            var token = JObject.Parse(result);
+            var embedded = (JObject)token.SelectToken("_embedded");
+            var list = (JArray)embedded.SelectToken("item");
+            var personList = list.ToObject<List<Persoon>>();
+            return Json(personList);
         }
 
         private async Task<string> GetBagIdForPerson(string bsn)

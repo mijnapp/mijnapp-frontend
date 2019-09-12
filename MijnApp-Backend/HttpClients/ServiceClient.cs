@@ -1,4 +1,5 @@
 ﻿using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
 namespace MijnApp_Backend.HttpClients
@@ -20,6 +21,8 @@ namespace MijnApp_Backend.HttpClients
 
         public async Task<HttpResponseMessage> GetAsync(string url)
         {
+            _client.DefaultRequestHeaders.Accept.Clear();
+            _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             return await _client.GetAsync(url);
         }
 

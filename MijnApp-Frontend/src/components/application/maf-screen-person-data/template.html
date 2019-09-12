@@ -1,9 +1,9 @@
 <div class="Wrapper">
-    <maf-screen on-back="[[_onBack]]" heading="[[personData.first_name]] [[personData.last_name_prefix]] [[personData.last_name]]">
+    <maf-screen on-back="[[_onBack]]" heading="[[personData.naam.volledigenaam]]">
         <h2>Basisgegevens</h2>
         <div class="ContractDataPoint">
             <div class="ContractDataPointLabel">Naam</div>
-            <div class="ContractDataPointValue">[[personData.first_name]] [[personData.last_name_prefix]] [[personData.last_name]]</div>
+            <div class="ContractDataPointValue">[[personData.naam.volledigenaam]]</div>
         </div>
         <div class="ContractDataPoint">
             <div class="ContractDataPointLabel">Geboortedatum</div>
@@ -15,12 +15,12 @@
         </div>
         <div class="ContractDataPoint">
             <div class="ContractDataPointLabel">BSN</div>
-            <div class="ContractDataPointValue">[[personData.gov_identifier]]</div>
+            <div class="ContractDataPointValue">[[personData.burgerservicenummer]]</div>
         </div>
         <div class="ContractDataPoint">
             <div class="ContractDataPointLabel">Adres</div>
-            <div class="ContractDataPointValue">[[personData.address.street]] [[personData.address.house_number]], [[personData.address.zipcode]]
-                [[personData.address.location]]
+            <div class="ContractDataPointValue">
+              [[personData.verblijfplaats.straatnaam]] [[personData.verblijfplaats.huisnummer]][[personData.verblijfplaats.huisnummertoevoeging]][[personData.verblijfplaats.huisletter]], [[personData.verblijfplaats.postcode]] [[personData.verblijfplaats.woonplaatsnaam]]
             </div>
         </div>
         <div class="ContractDataPoint">

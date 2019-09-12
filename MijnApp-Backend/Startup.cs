@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -56,6 +57,8 @@ namespace MijnApp_Backend
             var httpContextAccessor = serviceProvider.GetService<IHttpContextAccessor>();
             var correlationId = JwtTokenProvider.GetCorrelationIdForLogging(httpContextAccessor.HttpContext.User);
             httpClient.DefaultRequestHeaders.Add("MijnAppCorrelationId", correlationId);
+            httpClient.DefaultRequestHeaders.Accept.Clear();
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
