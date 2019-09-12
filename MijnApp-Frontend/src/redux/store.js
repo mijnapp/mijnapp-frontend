@@ -14,23 +14,24 @@ const sagaMiddleware = createSagaMiddleware();
 let composeEnhancers = compose;
 
 switch (window.location.hostname) {
-  case 'demo.mijn-app.io':
-    break;
-  default: {
-    composeEnhancers =
-      typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+  case 'localhost':
+    {
+      composeEnhancers = typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
         ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
           // Extension options
         })
         : compose;
-  }
+    }
+    break;
+  default:
+    break;
 }
 
 // Link middlewares
 let middlewares = null;
 
 switch (window.location.hostname) {
-  case 'demo.mijn-app.io':
+  case 'localhost':
     middlewares = applyMiddleware(sagaMiddleware, loggerMiddleware);
     break;
   default:
