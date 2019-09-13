@@ -76,7 +76,7 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
             widths: ['*', 100],
             body: [
               [
-                { text: `Document gegenereerd op ${toDutchDate(today)}` },
+                { text: `Document gegenereerd op ${toDutchDate(today).toLowerCase()}` },
                 { text: `pagina ${currentPage.toString()} van ${pageCount}`, alignment: 'right' }
               ]
             ]
@@ -102,9 +102,10 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
           margin: [0, 0, 0, 10],
           fontSize: 14,
           color: '#283583',
+          italics: true,
         },
         answer: {
-          margin: [0, 0, 0, 10],
+          margin: [10, 0, 0, 15],
           fontSize: 14,
         }
       }
