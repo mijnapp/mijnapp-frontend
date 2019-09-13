@@ -6,6 +6,7 @@ import {
   requestPersonsMoving,
   clearPersonsMoving,
   CLEAR_PERSONS_MOVING,
+  REQUEST_PERSONS_MOVING_SUCCESS,
   REQUEST_PERSONS_MOVING_SKIPQUESTION,
   requestPersonsMovingSkipQuestion,
 } from '../../../../redux/actions/person';
@@ -79,10 +80,6 @@ export default class PlaybackScreenPersonsMoving extends connect(store)(PolymerE
     return null;
   }
 
-  _isDisabled() {
-    return false;
-  }
-
   _getPersons() {
     store.dispatch(requestPersonsMoving());
   }
@@ -113,6 +110,7 @@ export default class PlaybackScreenPersonsMoving extends connect(store)(PolymerE
 
     this.persons = state.person.movingPersons;
     this.personsStatus = state.person.movingPersonsStatus;
+    this.isDisabled = this.personsStatus !== REQUEST_PERSONS_MOVING_SUCCESS;
     if (this.question.type === QUESTION_TYPE_PERSONS_MOVING && this.personsStatus === CLEAR_PERSONS_MOVING) {
       this._getPersons();
     }
