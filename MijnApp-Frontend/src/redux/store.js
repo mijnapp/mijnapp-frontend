@@ -144,7 +144,7 @@ store.dispatch(
       },
     },
     {
-      title: 'Ik wil verhuizen',
+      title: 'Ik ga verhuizen',
       request_type_id: 'fc79c4c9-b3b3-4258-bdbb-449262f3e5d7',
       questions: [
         {
@@ -210,15 +210,15 @@ store.dispatch(
         },
       ],
       overview: {
-        needed_documents: ['Geen'],
+        needed_documents: ['Geen documenten nodig'],
         send_to: [],
         steps: [
-          'Geef je nieuwe adres op.',
-          'Geef de datum op wanneer je gaat verhuizen.',
-          'Geef aan met wie je gaat verhuizen,',
-          'Geef de nieuwe woonsituatie aan.',
+          'Geef je nieuwe adres op',
+          'Geef de datum op wanneer je gaat verhuizen',
+          'Geef aan met wie je gaat verhuizen',
+          'Geef de nieuwe woonsituatie aan',
         ],
-        subtitle: 'Verhuizen binnen of naar Eindhoven',
+        subtitle: 'Verhuizen binnen of naar gemeente \'s-Hertogenbosch',
       },
     },
   ])

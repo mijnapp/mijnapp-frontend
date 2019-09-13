@@ -4,7 +4,7 @@ import { PolymerElement, html } from '@polymer/polymer/polymer-element';
 import css from './style.pcss';
 import template from './template.html';
 
-export default class MakiIconAdd extends PolymerElement {
+export default class MakiIconBulb extends PolymerElement {
   static get properties() {
     return {};
   }
@@ -18,4 +18,4 @@ export default class MakiIconAdd extends PolymerElement {
   }
 }
 
-window.customElements.define('maki-icon-bulb', MakiIconAdd);
+window.customElements.define('maki-icon-bulb', MakiIconBulb);

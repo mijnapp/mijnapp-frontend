@@ -37,6 +37,8 @@
     <Folder Include="dist\vendor\" />
     <Folder Include="dist\vendor\bundles\" />
     <Folder Include="src\components\lib\maki-icons\maki-icon-bulb\" />
+    <Folder Include="src\components\lib\maki-icons\maki-icon-edit-document\" />
+    <Folder Include="src\components\lib\maki-icons\maki-icon-steps\" />
     <Folder Include="src\components\lib\maki-icons\maki-icon-truck\" />
     <Folder Include="src\components\lib\maki-icons\maki-icon-hamburger\" />
     <Folder Include="src\components\lib\maki-icons\maki-icon-logout\" />
@@ -292,6 +294,12 @@
     <Content Include="src\components\lib\maki-icons\maki-icon-bulb\index.js" />
     <Content Include="src\components\lib\maki-icons\maki-icon-bulb\style.pcss" />
     <Content Include="src\components\lib\maki-icons\maki-icon-bulb\template.html" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-edit-document\index.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-edit-document\style.pcss" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-edit-document\template.html" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-steps\index.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-steps\style.pcss" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-steps\template.html" />
     <Content Include="src\components\lib\maki-icons\maki-icon-truck\index.js" />
     <Content Include="src\components\lib\maki-icons\maki-icon-truck\style.pcss" />
     <Content Include="src\components\lib\maki-icons\maki-icon-truck\template.html" />

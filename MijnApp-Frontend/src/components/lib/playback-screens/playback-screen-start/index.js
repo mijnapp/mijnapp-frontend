@@ -2,13 +2,8 @@ import { PolymerElement, html } from '@polymer/polymer/polymer-element';
 import { connect } from 'pwa-helpers/connect-mixin';
 import { store } from '../../../../redux/store';
 import { orderNext } from '../../../../redux/actions/order';
-
 import { selectPage } from '../../../../redux/actions/application';
-
-import {
-  JOURNEY_START,
-  JOURNEY_END,
-} from '../../../../helpers/common';
+import { JOURNEY_START, JOURNEY_END } from '../../../../helpers/common';
 
 import css from './style.pcss';
 import template from './template.html';

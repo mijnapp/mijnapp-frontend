@@ -6,9 +6,15 @@
           <maki-icon-cross />
         </maki-button>
       </div>
-      <div class="Title">[[_title(journey)]]</div>
-      <div class="Subtitle">[[_subtitle(journey)]]</div>
-      <div class="SectionTitle">Benodigde documenten</div>
+      <div class="JourneyHeader">
+        <div class="JourneyIcon"><maki-icon-truck/></div>
+        <div class="Title">[[_title(journey)]]</div>
+        <div class="Subtitle">[[_subtitle(journey)]]</div>
+      </div>
+      <div class="SectionTitle">
+        <maki-icon-edit-document></maki-icon-edit-document>
+        <div>Benodigde documenten</div>
+      </div>
       <div class="DotList">
         <dom-repeat items="[[_documents(journey)]]">
           <template>
@@ -19,12 +25,15 @@
           </template>
         </dom-repeat>
       </div>
-      <div class="SectionTitle">Deze stappen ga je doorlopen</div>
-      <div class="NumberedList">
+      <div class="SectionTitle">
+        <maki-icon-steps></maki-icon-steps>
+        <div>Deze stappen ga je doorlopen</div>
+      </div>
+      <div class="DotList">
         <dom-repeat items="[[_steps(journey)]]">
           <template>
-            <div class="NumberedListItem">
-              <div class="Number">[[_indexToCount(index)]]</div>
+            <div class="DotListItem">
+              <div class="Dot"></div>
               <div class="Text">[[item]]</div>
             </div>
           </template>
@@ -33,9 +42,8 @@
     </div>
   </div>
   <div class="ButtonContainer">
-    <maki-button highlight size="56" font-size="18" on-click="[[_start(journey)]]">
+    <maki-button size="50" font-size="18" on-click="[[_start(journey)]]">
       <div class="ButtonInner">
-        <div class="ButtonInnerLeft"><</div>
         <div class="ButtonInnerText">Starten</div>
         <div class="ButtonInnerRight">></div>
       </div>

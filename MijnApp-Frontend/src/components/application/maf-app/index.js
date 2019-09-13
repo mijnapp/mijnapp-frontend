@@ -28,6 +28,8 @@ import '../../lib/maki-icons/maki-icon-bell';
 import '../../lib/maki-icons/maki-icon-chat';
 import '../../lib/maki-icons/maki-icon-logout';
 import '../../lib/maki-icons/maki-icon-hamburger';
+import '../../lib/maki-icons/maki-icon-edit-document';
+import '../../lib/maki-icons/maki-icon-steps';
 
 import { MakiTheme } from '../../lib/maki/maki-theme-provider';
 import { primaryPalette, secondaryPalette } from '../../helpers/palettes';
