@@ -55,13 +55,10 @@ export default class MafApp extends connect(store)(PolymerElement) {
     if (window.location.pathname && window.location.pathname.length > 0) {
       if (window.location.pathname.indexOf('digidcgifinished') > -1) {
         this._handleDigidCgi();
-      }
-      if (window.location.pathname.indexOf('startjourney') > -1) {
+      } else if (window.location.pathname.indexOf('startjourney') > -1) {
         this._handleStartJourney();
       } else {
-        const path = window.location.pathname
-          .split(/[/-]/)
-          .filter((i) => i.length > 0);
+        const path = window.location.pathname.split(/[/-]/).filter((i) => i.length > 0);
         store.dispatch(selectPageNoHistory(path[0]));
       }
     }

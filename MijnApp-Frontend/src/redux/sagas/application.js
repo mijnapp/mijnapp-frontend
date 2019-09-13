@@ -40,9 +40,9 @@ const scrollToTop = () => async () => {
 
 const setHistory = (state, title, url) => async () => {
   history.pushState(state, title, url);
-  var historyInStorage = { 'state': state, 'title': title, 'url': url };
-  const stringifiedHistory = JSON.stringify(historyInStorage);
-  window.sessionStorage.setItem("mijnApp-history", stringifiedHistory);
+  var lastState = { 'state': state, 'title': title, 'url': url };
+  const stringifiedLastState = JSON.stringify(lastState);
+  window.sessionStorage.setItem("mijnApp-lastState", stringifiedLastState);
   
 }
 
@@ -51,11 +51,12 @@ export function* watchNextPageAfterLogin() {
 }
 
 function* nextPageAfterLogin() {
-  var stringifiedHistory = sessionStorage.getItem("mijnApp-history");
-  if (stringifiedHistory) {
-    var historyFromStorage = JSON.parse(stringifiedHistory);
-    if (historyFromStorage && historyFromStorage.state && historyFromStorage.state !== 'signin') {
-      yield put(selectPage(historyFromStorage.state));
+  //Try to move to the last known page. If that is not available, just navigate home
+  var stringifiedLastState = sessionStorage.getItem("mijnApp-lastState");
+  if (stringifiedLastState) {
+    var lastStateFromStorage = JSON.parse(stringifiedLastState);
+    if (lastStateFromStorage && lastStateFromStorage.state && lastStateFromStorage.state !== 'signin') {
+      yield put(selectPage(lastStateFromStorage.state));
     } else {
       yield put(selectPage('home'));
     }
