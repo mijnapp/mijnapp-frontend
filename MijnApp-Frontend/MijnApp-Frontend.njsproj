@@ -36,6 +36,8 @@
     <Folder Include="dist\assets\media\" />
     <Folder Include="dist\vendor\" />
     <Folder Include="dist\vendor\bundles\" />
+    <Folder Include="src\components\lib\maki-icons\maki-icon-bulb\" />
+    <Folder Include="src\components\lib\maki-icons\maki-icon-truck\" />
     <Folder Include="src\components\lib\maki-icons\maki-icon-hamburger\" />
     <Folder Include="src\components\lib\maki-icons\maki-icon-logout\" />
     <Folder Include="src\components\lib\playback-screens\playback-screen-persons-moving\" />
@@ -287,6 +289,12 @@
     <Content Include="src\components\helpers\dutchDate.js" />
     <Content Include="src\components\helpers\palettes.js" />
     <Content Include="src\components\helpers\regex.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-bulb\index.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-bulb\style.pcss" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-bulb\template.html" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-truck\index.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-truck\style.pcss" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-truck\template.html" />
     <Content Include="src\components\lib\maki-icons\maki-icon-add\index.js" />
     <Content Include="src\components\lib\maki-icons\maki-icon-add\style.pcss" />
     <Content Include="src\components\lib\maki-icons\maki-icon-add\template.html" />

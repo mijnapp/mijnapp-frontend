@@ -188,7 +188,7 @@ export class MakiTheme {
           ].join(''),
         },
         typography: {
-          fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif"',
+          fontFamily: '"Lato", "Roboto", "Helvetica", "Arial", "sans-serif"',
           fontSize: '14px',
           fontWeightLight: 300,
           fontWeightRegular: 400,
