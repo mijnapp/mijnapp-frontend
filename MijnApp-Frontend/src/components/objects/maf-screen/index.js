@@ -6,7 +6,7 @@ import template from './template.html';
 import '../../lib/maki/maki-header';
 import '../../lib/maki/maki-button';
 import '../../lib/maki-icons/maki-icon-search';
-import '../../lib/maki-icons/maki-icon-back-arrow';
+import '../../lib/maki-icons/maki-icon-cross';
 
 export default class MafScreen extends PolymerElement {
   static get properties() {
