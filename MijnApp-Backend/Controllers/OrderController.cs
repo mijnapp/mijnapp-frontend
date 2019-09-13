@@ -46,10 +46,11 @@ namespace MijnApp_Backend.Controllers
             var result = await response.Content.ReadAsStringAsync();
             if (response.StatusCode == HttpStatusCode.Created)
             {
-                //Retrieve the "request url" from the response.
-                dynamic resultDynamic = JsonConvert.DeserializeObject<dynamic>(result);
-                var self = resultDynamic._links.self;
-                return Json(self);
+                ////Retrieve the "request url" from the response.
+                //dynamic resultDynamic = JsonConvert.DeserializeObject<dynamic>(result);
+                //var self = resultDynamic._links.self;
+                //return Json(self);
+                return Ok();
             }
 
             return BadRequest(Json(result));

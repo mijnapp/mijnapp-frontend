@@ -178,7 +178,7 @@ module.exports = {
       {
         test: /\.js$/,
         // We need to transpile Polymer itself and other ES6 code
-        // exclude: /(node_modules)/,
+        exclude: [/node_modules/, /pdfmake.js$/],
         use: {
           loader: 'babel-loader',
           options: {
