@@ -45,6 +45,7 @@
     <template>
       <div class="ButtonContainer">
         <div class="PrevButton" on-click="_prev">Vorige</div>
+        <maki-button class="NextButton" set-color-highlight="white" text-color-main highlight stroke="0" size="56" font-size="18" on-click="_createPdf">Download overzicht</maki-button>
         <maki-button class="NextButton" disabled="[[disabled]]" set-color-highlight="white" text-color-main highlight stroke="0" size="56" font-size="18" on-click="[[_submit(order)]]">Versturen</maki-button>
       </div>
     </template>
