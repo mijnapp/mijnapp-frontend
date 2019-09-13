@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using MijnApp.Domain.Models;
 using MijnApp_Backend.HttpClients;
@@ -10,11 +11,10 @@ using System.Threading.Tasks;
 
 namespace MijnApp_Backend.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class PersonController : Controller
     {
         private readonly string _baseUri;
-        private const string UrlGetAll = "{0}ingeschrevenpersonen?expand=false";
         private const string UrlGetByBsn = "{0}ingeschrevenpersonen/{1}";
         private const string UrlGetPersonsOnAddress = "{0}ingeschrevenpersonen?familie_eerstegraad={1}&verblijfplaats__identificatiecodenummeraanduiding={2}";
 
@@ -26,19 +26,6 @@ namespace MijnApp_Backend.Controllers
             _baseUri = config.GetValue<string>("Api:BrpUri");
             _serviceClient = serviceClient;
             _jwtTokenProvider = new JwtTokenProvider(config);
-        }
-
-        [HttpGet]
-        [Route("persons")]
-        public async Task<IActionResult> GetPersons()
-        {
-            var response = await _serviceClient.GetAsync(string.Format(UrlGetAll, _baseUri));
-            var result = await response.Content.ReadAsStringAsync();
-            var token = JObject.Parse(result);
-            var embedded = (JObject)token.SelectToken("_embedded");
-            var list = (JArray)embedded.SelectToken("item");
-            var personList = list.ToObject<List<Persoon>>();
-            return Json(personList);
         }
 
         [HttpGet]
