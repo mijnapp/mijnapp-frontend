@@ -35,12 +35,6 @@ export default class MafScreenJourneys extends connect(store)(PolymerElement) {
   _selectJourneyB() {
     this._selectJourney(1);
   }
-  _selectJourneyC() {
-    this._selectJourney(2);
-  }
-  _selectJourneyD() {
-    this._selectJourney(3);
-  }
   _selectJourney(index) {
     store.dispatch(setJourney(this.journeys[index]));
     store.dispatch(selectPage('journey'));

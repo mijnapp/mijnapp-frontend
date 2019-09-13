@@ -166,25 +166,13 @@ store.dispatch(
         },
         {
           id: '37e30b1f-fb51-4d49-8756-fa5d4d55829a',
-          type: 'multiple',
+          type: 'personsMoving',
           property: 'meeverhuizers',
-          options: [
-            {
-              goto: null,
-              title: 'Evelien de Vries',
-              value: null,
-            },
-            {
-              goto: null,
-              title: 'Thomas de Vries',
-              value: null,
-            },
-          ],
           title: 'Met wie ga je verhuizen?',
           subtitle:
             'Er wordt een bericht gestuurd naar de persoon die meeverhuist ' +
-            '(onderstaande personen staan nu op hetzelfde adres als jij ' +
-            'ingeschreven)',
+              '(onderstaande personen staan nu op hetzelfde adres als jij ' +
+              'ingeschreven)',
           next: '21586109-ce3b-4091-8420-85f92c0a6c11',
         },
         {
@@ -233,42 +221,5 @@ store.dispatch(
         subtitle: 'Verhuizen binnen of naar Eindhoven',
       },
     },
-    {
-      title: 'Medeverhuizers test',
-      request_type_id: '06daeb7f-6503-4b8e-8aa1-5a5767b53b22',
-      questions: [
-        {
-          id: '37e30b1f-fb51-4d49-8756-fa5d4d55829a',
-          type: 'personsMoving',
-          property: 'meeverhuizers',
-          title: 'Met wie ga je verhuizen?',
-          subtitle:
-            'Er wordt een bericht gestuurd naar de persoon die meeverhuist ' +
-            '(onderstaande personen staan nu op hetzelfde adres als jij ' +
-            'ingeschreven)',
-          next: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb',
-        },
-        {
-          id: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb',
-          type: 'calendar',
-          property: 'ingangsdatum',
-          options: null,
-          title: 'Wanneer ga je verhuizen?',
-          subtitle: 'kies een datum',
-          next: 'END',
-        },
-      ],
-      overview: {
-        needed_documents: ['Geen'],
-        send_to: [],
-        steps: [
-          'Geef je nieuwe adres op.',
-          'Geef de datum op wanneer je gaat verhuizen.',
-          'Geef aan met wie je gaat verhuizen,',
-          'Geef de nieuwe woonsituatie aan.',
-        ],
-        subtitle: 'Verhuizen binnen of naar Eindhoven',
-      },
-    }
   ])
 );

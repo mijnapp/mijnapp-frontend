@@ -51,7 +51,7 @@ export default class PlaybackScreenPersonsMoving extends connect(store)(PolymerE
 
       const selectedPersons = this.persons.filter(function (item) { return item.selected });
       const ids = selectedPersons.map(function (item) { return item.id; });
-      const names = selectedPersons.map(function (item) { return item.name; });
+      const names = selectedPersons.map(function (item) { return item.naam.volledigenaam; });
 
       store.dispatch(
         orderSaveAnswer(
