@@ -87,7 +87,8 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
       const address = this.addresses[index];
       if (address.woonplaats !== '\'s-Hertogenbosch') {
         window.clearWarningDialog();
-        window.warningText.innerHTML = `Het nieuwe adres dat u opgeeft ligt niet in de gemeente 's-Hertogenbosch. Kies op de gemeentekeuze pagina de gemeente van uw nieuwe adres.<br/><br/> Klik op 'Annuleren' om uw postcode en huisnummer te controleren. <br/>Klik op 'Doorgaan' om dit adres te gebruiken.`;
+        window.warningTitle.innerHTML = 'Let op!';
+        window.warningText.innerHTML = 'Het nieuwe adres dat je opgeeft ligt niet in de gemeente \'s-Hertogenbosch.';
         window.warningConfirmButton.onclick = function() {self._saveWithoutCheck(question, address);};
         window.warningDialog.open();
       } else {

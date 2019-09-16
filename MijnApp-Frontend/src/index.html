@@ -75,11 +75,20 @@
     }
 
     .warningDialogHeader {
-      margin-top: -24px;
       padding: 12px 24px;
-      font-size: 1rem;
-      line-height: 1rem;
-      background-color: #ffc107;
+      font-size: 28px;
+      font-weight: bold;
+      line-height: 40px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+    }
+    .warningDialogHeader maki-icon-attention {
+      --icon-size: 40px;
+      --icon-color: #FFBA5C;
+    }
+    .warningDialogHeader #warningTitle {
+      margin-left: 16px;
     }
 
     .errorDialogHeader {
@@ -94,17 +103,21 @@
       font-size: 0.75rem;
       line-height: 0.75rem;
     }
+    .warningDialogText {
+      font-size: 18px;
+    }
 
     .buttonContainer {
       float: right;
       box-sizing: border-box;
       background-color: var(--palette-secondary-main);
+      display: flex;
+      justify-content: center;
     }
 
     .btn {
       display: inline-block;
-      font-weight: 100;
-      font-size: 0.75rem;
+      font-size: 18px;
       text-align: center;
       white-space: nowrap;
       vertical-align: middle;
@@ -113,14 +126,42 @@
       -ms-user-select: none;
       user-select: none;
       border: 1px solid transparent;
-      padding: .375rem .75rem;
-      border-radius: .25rem;
+      color: #fff;
+      background-color: #3192CF;
+      padding: 10px 25px;
+      margin-right: 5px;
+      border-radius: 3px;
       transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     }
 
-      .btn:hover {
-        border: 1px solid black;
-      }
+    .btn:hover {
+      cursor: pointer;
+      background-color: #56A6D8;
+    }
+
+    .btnLink {
+      display: inline-block;
+      font-size: 18px;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      border: 1px solid transparent;
+      color: #3192CF;
+      background-color: #fff;
+      padding: 10px 25px;
+      border-radius: 3px;
+      transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+
+    .btnLink:hover {
+      cursor: pointer;
+      background-color: #F1F1F1;
+    }
+
   </style>
 
   <script>
@@ -169,7 +210,7 @@
     function clearWarningDialog() {
       window.warningTitle.innerHTML = "";
       window.warningText.innerHTML = "";
-      window.warningConfirmButton.innerHTML = "Doorgaan";
+      window.warningConfirmButton.innerHTML = "Doorgaan >";
       window.warningConfirmButton.onclick = function () { };
     }
 
@@ -187,11 +228,14 @@
     successToast.verticalAlign = "top";
   </script>
   <paper-dialog id="warningDialog" modal class="dialog" style="display: none">
-    <div class="warningDialogHeader">Waarschuwing <span id="warningTitle"></span></div>
-    <p id="warningText" class="dialogText"></p>
+    <div class="warningDialogHeader">
+      <maki-icon-attention></maki-icon-attention>
+      <div id="warningTitle"></div>
+    </div>
+    <p id="warningText" class="warningDialogText"></p>
     <div class="buttonContainer">
-      <button class="btn" dialog-dismiss>Annuleren</button>
-      <button id="warningConfirmButton" class="btn" dialog-confirm>Doorgaan</button>
+      <button id="warningConfirmButton" class="btn" dialog-confirm>Doorgaan ></button>
+      <button class="btnLink" dialog-dismiss>Ga terug</button>
     </div>
   </paper-dialog>
   <paper-dialog id="errorDialog" modal class="dialog" style="display: none">
