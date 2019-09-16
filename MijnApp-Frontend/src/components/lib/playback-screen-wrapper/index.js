@@ -2,9 +2,7 @@ import { PolymerElement, html } from '@polymer/polymer/polymer-element';
 import { connect } from 'pwa-helpers/connect-mixin';
 import { store } from '../../../redux/store';
 import { orderNext, orderPrev } from '../../../redux/actions/order';
-
 import { selectPage } from '../../../redux/actions/application';
-
 import { JOURNEY_START, JOURNEY_END } from '../../../helpers/common';
 
 import css from './style.pcss';
@@ -100,6 +98,13 @@ export default class PlaybackScreenWrapper extends connect(store)(
     }
     if (!this.question) {
       this.question = '';
+    }
+    if (this.journey.title === "Ik ga verhuizen") {
+      this.show_journey_icon_truck = true;
+      this.show_journey_icon_bulb = false;
+    } else {
+      this.show_journey_icon_truck = false;
+      this.show_journey_icon_bulb = true;
     }
   }
 }

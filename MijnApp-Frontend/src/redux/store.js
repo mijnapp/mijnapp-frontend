@@ -152,7 +152,7 @@ store.dispatch(
           type: 'address',
           property: 'adress',
           title: 'Wat wordt je nieuwe adres?',
-          subtitle: 'Vul je postcode en huisnummer, en kies je nieuwe adres',
+          subtitle: 'Vul je postcode, huisnummer en eventueel toevoeging in van het nieuwe adres.',
           next: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb',
         },
         {
