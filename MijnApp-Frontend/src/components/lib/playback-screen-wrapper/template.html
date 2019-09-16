@@ -20,6 +20,34 @@
           </dom-if>
         </div>
         <div class="JoureyTitle">[[_title(journey)]]</div>
+        <div class="JourneyProgress">
+          <dom-repeat items="{{journey.questions}}">
+            <template>
+              <dom-if if="{{isCurrentQuestion(current, index)}}">
+                <template>
+                  <div class="JourneyProgressDot"></div>
+                </template>
+              </dom-if>
+              <dom-if if="{{isNotAnswered(current, index)}}">
+                <template>
+                  <div class="JourneyProgressDotEmpty"></div>
+                </template>
+              </dom-if>
+              <dom-if if="{{isAnswered(current, index)}}">
+                <template>
+                  <div class="JourneyProgressDotCheck">
+                    <maki-icon-check/>
+                  </div>
+                </template>
+              </dom-if>
+              <dom-if if="{{isNotLastItem(current, index)}}">
+                <template>
+                  <div class="JourneyProgressLine"></div>
+                </template>
+              </dom-if>
+            </template>
+          </dom-repeat>
+        </div>
       </div>
       <div class="Title">[[_title(question)]]</div>
       <div class="Subtitle">[[_subtitle(question)]]</div>
@@ -27,7 +55,7 @@
     </div>
   </div>
   <div class="ButtonContainer">
-    <maki-button class="PrevButton" stroke="0" size="50" font-size="18" on-click="_prev">
+    <maki-button class="PrevButton" stroke="0" size="50" font-size="18" set-color-main="#3192CF" on-click="_prev">
       <div class="ButtonInner">
         <div class="ButtonInnerLeft"><</div>
         <div class="ButtonInnerText">Ga terug</div>

@@ -81,6 +81,19 @@ export default class PlaybackScreenWrapper extends connect(store)(
     store.dispatch(orderPrev());
   }
 
+  isNotLastItem(current, index) {
+    return this.journey.questions.length - 1 !== index;
+  }
+  isCurrentQuestion(current, index) {
+    return current === index;
+  }
+  isNotAnswered(current, index) {
+    return index > current;
+  }
+  isAnswered(current, index) {
+    return index < current;
+  }
+
   stateChanged(state) {
     this.journey = state.journey;
     this.id =
@@ -99,6 +112,7 @@ export default class PlaybackScreenWrapper extends connect(store)(
     if (!this.question) {
       this.question = '';
     }
+    this.current = state.order.current;
     if (this.journey.title === "Ik ga verhuizen") {
       this.show_journey_icon_truck = true;
       this.show_journey_icon_bulb = false;
