@@ -4,6 +4,7 @@
       <template>
         <div class="Option" data-index="[[index]]" on-click="_optionClick">
           [[item.naam.volledigenaam]]
+          <div class$="{{_isSelected(item.selected)}}"></div>
         </div>
       </template>
     </dom-repeat>
