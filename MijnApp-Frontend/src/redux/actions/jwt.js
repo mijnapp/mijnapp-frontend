@@ -45,6 +45,7 @@ export const requestJwtLogout = () => ({
   type: REQUEST_JWT_LOGOUT,
 });
 export const REQUEST_JWT_LOGOUT_401 = 'REQUEST_JWT_LOGOUT_401';
-export const requestJwtLogoutUnauthorized = () => ({
+export const requestJwtLogoutUnauthorized = (lastAction) => ({
   type: REQUEST_JWT_LOGOUT_401,
+  lastActionBefore401: lastAction,
 });

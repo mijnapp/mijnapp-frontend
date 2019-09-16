@@ -506,6 +506,8 @@
     <Content Include="src\redux\api\orders.js" />
     <Content Include="src\redux\api\person.js" />
     <Content Include="src\helpers\configuration.js" />
+    <Content Include="src\redux\helpers\lastAction.js" />
+    <Content Include="src\redux\helpers\lastPage.js" />
     <Content Include="src\redux\helpers\journeys.js" />
     <Content Include="src\redux\helpers\headers.js" />
     <Content Include="src\redux\reducers\address.js" />

@@ -3,6 +3,8 @@ import { SELECT_PAGE, SELECT_PAGE_NO_HISTORY, NEXT_PAGE_AFTER_LOGIN, selectPage,
 import { store } from '../store';
 import { clearContract } from '../actions/contract';
 import { jwtBearerTokenExists } from '../helpers/headers';
+import { setLastPage, getLastPage, removeLastPage } from '../helpers/lastPage';
+import { getLastAction, removeLastAction } from '../helpers/lastAction';
 
 export function* watchSelectPage() {
   yield takeLatest(SELECT_PAGE, pageSelected);
@@ -41,9 +43,7 @@ const scrollToTop = () => async () => {
 const setHistory = (state, title, url) => async () => {
   history.pushState(state, title, url);
   var lastState = { 'state': state, 'title': title, 'url': url };
-  const stringifiedLastState = JSON.stringify(lastState);
-  window.sessionStorage.setItem("mijnApp-lastState", stringifiedLastState);
-  
+  setLastPage(lastState);
 }
 
 export function* watchNextPageAfterLogin() {
@@ -52,15 +52,19 @@ export function* watchNextPageAfterLogin() {
 
 function* nextPageAfterLogin() {
   //Try to move to the last known page. If that is not available, just navigate home
-  var stringifiedLastState = sessionStorage.getItem("mijnApp-lastState");
-  if (stringifiedLastState) {
-    var lastStateFromStorage = JSON.parse(stringifiedLastState);
-    if (lastStateFromStorage && lastStateFromStorage.state && lastStateFromStorage.state !== 'signin') {
-      yield put(selectPage(lastStateFromStorage.state));
-    } else {
-      yield put(selectPage('home'));
+  var lastPageBefore401 = getLastPage();
+  
+  if (lastPageBefore401 && lastPageBefore401.state && lastPageBefore401.state !== 'signin') {
+    removeLastPage();
+    yield put(selectPage(lastPageBefore401.state));
+
+    //Now also try to replay the last action before the 401 occured.
+    var lastActionBefore401 = getLastAction();
+    if (lastActionBefore401) {
+      removeLastAction();
+      yield put(lastActionBefore401);
     }
-  }else {
+  } else {
     yield put(selectPage('home'));
   }
   yield call(scrollToTop());

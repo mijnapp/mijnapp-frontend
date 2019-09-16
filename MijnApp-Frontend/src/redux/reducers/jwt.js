@@ -17,8 +17,12 @@ export const jwt = (state = { data: {}, headers: {} }, action) => {
       return state;
     case REQUEST_JWT_SIGNIN:
     case REQUEST_JWT_LOGOUT:
-    case REQUEST_JWT_LOGOUT_401:
       return state;
+    case REQUEST_JWT_LOGOUT_401:
+      return {
+        ...state,
+        lastActionBefore401: action.lastActionBefore401,
+      };
     case REQUEST_JWT_SIGNIN_SUCCESS:
     case REQUEST_JWT_SIGNIN_SUCCESS_FAKE:
       return {

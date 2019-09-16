@@ -3,6 +3,8 @@ import { jwtApi } from '../api/jwt';
 import { jwtBearerToken, removeJwtBearerToken } from '../helpers/headers';
 import { selectPage, selectPageNoHistory, nextPageAfterLogin } from '../actions/application';
 import { clearState } from '../saver';
+import { setLastAction, removeLastAction } from '../helpers/lastAction';
+
 import {
   REQUEST_JWT_SIGNIN_FAKE,
   REQUEST_JWT_SIGNIN,
@@ -89,6 +91,7 @@ function* doJwtLogout() {
   yield call(jwtApi.logout(jwtBearerToken()));
   clearState();
   removeJwtBearerToken();
+  removeLastAction();
   window.successToast.text = 'Succesvol uitgelogd';
   window.successToast.open();
   yield put(selectPage('signin'));
@@ -98,8 +101,11 @@ export function* watchRequestJwtLogout401() {
   yield takeLatest(REQUEST_JWT_LOGOUT_401, doJwtLogout401);
 }
 
-function* doJwtLogout401() {
+function* doJwtLogout401(action) {
   removeJwtBearerToken();
+  if (action && action.lastActionBefore401) {
+    setLastAction(action.lastActionBefore401);
+  }
   window.clearErrorDialog();
   window.errorText.innerHTML = `U heeft geen geldige sessie meer en zult opnieuw moeten inloggen.`;
   window.errorDialog.open();

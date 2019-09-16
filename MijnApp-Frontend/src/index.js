@@ -29,7 +29,8 @@ axios.interceptors.response.use((response) => {
   return response;
 }, (error) => {
   if (error.response.status === 401) {
-    store.dispatch(requestJwtLogoutUnauthorized());
+    var actionLeadingTo401 = store.getState().lastAction;
+    store.dispatch(requestJwtLogoutUnauthorized(actionLeadingTo401));
   }
   return Promise.reject(error);
 });
