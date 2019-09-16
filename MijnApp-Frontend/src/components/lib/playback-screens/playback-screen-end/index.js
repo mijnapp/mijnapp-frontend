@@ -40,6 +40,7 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
   }
 
   _createPdf() {
+    const documentTitle = `MijnApp ${this.journey.title}`;
     const contentData = [];
     contentData.push({ text: 'Overzicht van uw verzoek', style: 'header' });
     contentData.push({ text: 'Het verzoek', style: 'subheader' });
@@ -61,6 +62,9 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
     const today = new Date();
     const docDefinition = {
       content: contentData,
+      info: {
+        title: documentTitle,
+      },
       background: function (currentPage, pageSize) {
         return {
           image:
@@ -111,7 +115,7 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
       }
     };
 
-    pdfMake.createPdf(docDefinition).download();
+    pdfMake.createPdf(docDefinition).download(documentTitle);
   }
 
   _stop() {
