@@ -126,6 +126,10 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
     store.dispatch(orderPrev());
   }
 
+  _title(journey) {
+    return journey && journey.title ? journey.title : 'Naamloze klantvraag';
+  }
+
   _getOrderItems(order) {
     const returnable = [];
     order.filter((o) => o.question && o.question !== 'END').forEach((o) => {
@@ -163,6 +167,13 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
     this.order_show_buttons = this.order_status_not_send || this.order_status_send_failed;
     this.order_end_title = this.order_show_buttons ? "Controleer je gegevens" : "Verstuurde aanvraag";
     this.order_reponse_data = this.order_status_send_ok ? state.order.response_data.href : '';
+    if (this.journey.title === "Ik ga verhuizen") {
+      this.show_journey_icon_truck = true;
+      this.show_journey_icon_bulb = false;
+    } else {
+      this.show_journey_icon_truck = false;
+      this.show_journey_icon_bulb = true;
+    }
   }
 }
 
