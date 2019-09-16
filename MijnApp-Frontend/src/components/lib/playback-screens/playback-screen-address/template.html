@@ -13,7 +13,10 @@
       <div class="Title">Gevonden adressen</div>
       <dom-if if="{{!addresses.length}}">
         <template>
-          <div class="Subtitle">Uw nieuwe adres is bij de gemeente (nog) niet bekend. Controleer de postcode, huisnummer en eventueel toevoeging en probeer opnieuw.</div>
+          <div class="Subtitle">
+            <maki-icon-attention></maki-icon-attention>
+            <div class="SubtitleAttention">Het nieuwe adres is niet bekend bij de gemeente. Controleer de postcode, huisnummer en eventueel toevoeging en probeer opnieuw.</div>
+          </div>
         </template>
       </dom-if>
       <dom-if if="{{addresses.length}}">

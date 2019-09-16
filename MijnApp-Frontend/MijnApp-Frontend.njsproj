@@ -36,6 +36,7 @@
     <Folder Include="dist\assets\media\" />
     <Folder Include="dist\vendor\" />
     <Folder Include="dist\vendor\bundles\" />
+    <Folder Include="src\components\lib\maki-icons\maki-icon-attention\" />
     <Folder Include="src\components\lib\maki-icons\maki-icon-bulb\" />
     <Folder Include="src\components\lib\maki-icons\maki-icon-edit-document\" />
     <Folder Include="src\components\lib\maki-icons\maki-icon-steps\" />
@@ -291,6 +292,9 @@
     <Content Include="src\components\helpers\dutchDate.js" />
     <Content Include="src\components\helpers\palettes.js" />
     <Content Include="src\components\helpers\regex.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-attention\index.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-attention\style.pcss" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-attention\template.html" />
     <Content Include="src\components\lib\maki-icons\maki-icon-bulb\index.js" />
     <Content Include="src\components\lib\maki-icons\maki-icon-bulb\style.pcss" />
     <Content Include="src\components\lib\maki-icons\maki-icon-bulb\template.html" />

@@ -1,9 +1,7 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element';
 import { connect } from 'pwa-helpers/connect-mixin';
 import { store } from '../../../../redux/store';
-
 import { JOURNEY_START } from '../../../../helpers/common';
-
 import { orderNext, orderSaveAnswer } from '../../../../redux/actions/order';
 
 import css from './style.pcss';
