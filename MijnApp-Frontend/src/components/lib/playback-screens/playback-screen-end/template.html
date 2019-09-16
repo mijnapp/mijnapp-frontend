@@ -19,6 +19,9 @@
           </div>
         </template>
       </dom-repeat>
+      <div>
+        <maki-button set-color-highlight="white" text-color-main highlight stroke="0" size="56" font-size="18" on-click="_createPdf">Download overzicht</maki-button>
+      </div>
     </div>
   </div>
   <dom-if if="{{order_status_send_ok}}">
@@ -26,7 +29,6 @@
       <div class="RequestMessageBox">
         <div class="RequestMessage">Uw aanvraag is verstuurd.</div>
         <maki-button class="CloseRequestButton" set-color-highlight="white" text-color-main highlight stroke="0" size="56" font-size="18" on-click="_stop">Sluiten</maki-button>
-        <maki-button class="CloseRequestButton" set-color-highlight="white" text-color-main highlight stroke="0" size="56" font-size="18" on-click="_createPdf">Download overzicht</maki-button>
       </div>
       <div class="RequestSubMessage">{{order_reponse_data}}</div>
     </template>
@@ -45,7 +47,6 @@
     <template>
       <div class="ButtonContainer">
         <div class="PrevButton" on-click="_prev">Vorige</div>
-        <maki-button class="NextButton" set-color-highlight="white" text-color-main highlight stroke="0" size="56" font-size="18" on-click="_createPdf">Download overzicht</maki-button>
         <maki-button class="NextButton" disabled="[[disabled]]" set-color-highlight="white" text-color-main highlight stroke="0" size="56" font-size="18" on-click="[[_submit(order)]]">Versturen</maki-button>
       </div>
     </template>
