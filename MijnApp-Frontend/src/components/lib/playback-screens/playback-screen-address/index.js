@@ -130,7 +130,8 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
   }
 
   filterAddresses(address) {
-    if (address.status_verblijfsobject === 'VerblijfsobjectIngetrokken') {
+    if (address.status_verblijfsobject === 'VerblijfsobjectIngetrokken'
+      || address.status_verblijfsobject === 'NietGerealiseerdVerblijfsobject') {
       return false;
     }
 
