@@ -97,10 +97,12 @@
   color: var(--palette-text-disabled);
 }
 .TopBar {
-  position: absolute;
+  position: fixed;
   left: 0;
   height: 62px;
   width: 100%;
+  z-index: 100;
+  visibility: hidden;
 }
 .TopBarWrapper {
   width: 100%;
@@ -119,6 +121,7 @@
   border-radius: 15px;
   padding: 7px;
   cursor: pointer;
+  visibility: initial;
 }
 .HamburgerMenuIcon:hover {
   background-color: var(--button-gray-background-color-hover-dark);
