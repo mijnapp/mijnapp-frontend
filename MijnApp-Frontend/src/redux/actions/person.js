@@ -1,6 +1,6 @@
 export const REQUEST_PERSON_DATA = 'REQUEST_PERSON_DATA';
 export const requestPersonData = () => ({
-   type: REQUEST_PERSON_DATA,
+  type: REQUEST_PERSON_DATA,
 });
 export const REQUEST_PERSON_DATA_SUCCESS = 'REQUEST_PERSON_DATA_SUCCESS';
 export const requestPersonSuccess = (data) => ({
@@ -14,10 +14,10 @@ export const requestPersonDataFailure = (error) => ({
 });
 export const CLEAR_PERSON_DATA = 'CLEAR_PERSON_DATA';
 export const clearPersonData = () => ({
-   type: CLEAR_PERSON_DATA,
+  type: CLEAR_PERSON_DATA,
 });
 
-//BRP moving people
+// BRP moving people
 export const REQUEST_PERSONS_MOVING = 'REQUEST_PERSONS_MOVING';
 export const requestPersonsMoving = () => ({ type: REQUEST_PERSONS_MOVING });
 export const REQUEST_PERSONS_MOVING_SUCCESS = 'REQUEST_PERSONS_MOVING_SUCCESS';
