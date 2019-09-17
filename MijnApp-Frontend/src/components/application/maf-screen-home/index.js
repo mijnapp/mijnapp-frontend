@@ -58,13 +58,9 @@ export default class MafScreenHome extends connect(store)(PolymerElement) {
 
   _clickHandler(e) {
     if (e.model == undefined) {
-      const doPop = confirm(
-        'Deze functie komt binnenkort beschikbaar! Op dit moment wordt er hard gewerkt aan nieuwe functionaliteiten van MijnApp.\n\n' +
-        'Heb je feedback? Laat het ons weten via de website. Klik op \'OK\' om naar de website te gaan.'
+      const doPop = alert(
+        'Deze functie komt binnenkort beschikbaar! Op dit moment wordt er hard gewerkt aan nieuwe functionaliteiten van MijnApp.'
       );
-      if (doPop) {
-        window.open('https://mijn-app.io/', '_blank');
-      }
     }
     if (e.model.tile && e.model.tile.target) {
       switch (e.model.tile.target) {
