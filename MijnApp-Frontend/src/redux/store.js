@@ -201,7 +201,7 @@ store.dispatch(
         {
           id: '10af45ba-b96c-44cc-865e-5f5342e0b793',
           type: 'agree',
-          property: ' toestemmingeigenaar',
+          property: 'toestemmingeigenaar',
           options: null,
           title: 'Is de eigenaar akkoord met inwoning?',
           subtitle:
