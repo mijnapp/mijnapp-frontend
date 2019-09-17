@@ -6,7 +6,7 @@
     <maki-input id="numberInput" elevation="0" stroke="1" placeholder="Huisnummer" value="{{number}}" input-callback="[[_inputNumberCallback()]]" type="number"></maki-input>
   </div>
   <div class="Item">
-    <maki-input id="numberAdditionInput" elevation="0" stroke="1" placeholder="Huisnummertoevoeging" input-callback="[[_inputNumberAdditionCallback()]]"></maki-input>
+    <maki-input id="numberAdditionInput" elevation="0" stroke="1" placeholder="Huisnummertoevoeging" value="{{numberAddition}}" input-callback="[[_inputNumberAdditionCallback()]]"></maki-input>
   </div>
   <dom-if if="{{hasSearched}}">
     <template>
