@@ -40,7 +40,7 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
   }
 
   _createPdf() {
-    const documentTitle = `MijnApp ${this.journey.title}`;
+    const documentTitle = `MijnApp ${this.journey.title}.pdf`;
     const contentData = [];
     contentData.push({ text: 'Overzicht van uw verzoek', style: 'header' });
     contentData.push({ text: 'Het verzoek', style: 'subheader' });
