@@ -1,16 +1,18 @@
 <div class="Wrapper">
-  <maf-screen on-back="[[_onBack]]" heading="Klantvragen">
-    <div class="SearchWrapper">
-      <maki-input elevation="0" stroke="1" placeholder="Wat wil je regelen?"></maki-input>
-      <div class="Head">Suggesties</div>
-      <div class="Title" on-click="_selectJourneyA">
-        <maki-icon-bulb></maki-icon-bulb>
-        <div class="TitleText">Ik heb een goed idee</div>
+  <div class="ScrollContainer">
+    <maf-screen on-back="[[_onBack]]" heading="Klantvragen">
+      <div class="SearchWrapper">
+        <maki-input elevation="0" stroke="1" placeholder="Wat wil je regelen?"></maki-input>
+        <div class="Head">Suggesties</div>
+        <div class="Title" on-click="_selectJourneyA">
+          <maki-icon-bulb></maki-icon-bulb>
+          <div class="TitleText">Ik heb een goed idee</div>
+        </div>
+        <div class="Title" on-click="_selectJourneyB">
+          <maki-icon-truck></maki-icon-truck>
+          <div class="TitleText">Ik ga verhuizen</div>
+        </div>
       </div>
-      <div class="Title" on-click="_selectJourneyB">
-        <maki-icon-truck></maki-icon-truck>
-        <div class="TitleText">Ik ga verhuizen</div>
-      </div>
-    </div>
-  </maf-screen>
+    </maf-screen>
+  </div>
 </div>
