@@ -29,13 +29,7 @@ export default class PlaybackScreenPersonsMoving extends connect(store)(PolymerE
 
   constructor() {
     super();
-    this.persons = [
-      {
-        id: 1,
-        name: 'Eveliene de Vries',
-        selected: false,
-      }
-    ];
+    this.persons = [];
   }
 
   _isSelected(selected) {
