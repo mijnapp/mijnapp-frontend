@@ -32,10 +32,7 @@ namespace MijnApp_Backend.Controllers
         [Route("person")]
         public async Task<IActionResult> GetPerson()
         {
-            var bsn = _jwtTokenProvider.GetBsnFromClaims(User);
-            var url = string.Format(UrlGetByBsn, _baseUri, bsn);
-            var result = await CallApi(url);
-            var person = JsonConvert.DeserializeObject(result, typeof(Persoon));
+            var person = await GetPersonFromApi();
             return Json(person);
         }
         
@@ -44,9 +41,10 @@ namespace MijnApp_Backend.Controllers
         public async Task<IActionResult> GetPersonsMovingAsync()
         {
             //Call Brp to get current address id
-            var bsn = _jwtTokenProvider.GetBsnFromClaims(User);
-            var bagId = GetBagIdForPerson(bsn);
+            var bagId = GetBagIdForPerson();
 
+
+            var bsn = _jwtTokenProvider.GetBsnFromClaims(User);
             //Call Url for persons on address
             var url = string.Format(UrlGetPersonsOnAddress, _baseUri, bsn, bagId);
             var result = await CallApi(url);
@@ -56,12 +54,19 @@ namespace MijnApp_Backend.Controllers
             return Json(personList);
         }
 
-        private async Task<string> GetBagIdForPerson(string bsn)
+        private async Task<Persoon> GetPersonFromApi()
         {
+            var bsn = _jwtTokenProvider.GetBsnFromClaims(User);
             var url = string.Format(UrlGetByBsn, _baseUri, bsn);
             var result = await CallApi(url);
-            var token = JObject.Parse(result);
-            return (string)token.SelectToken("verblijfplaats.id");
+            var person = JsonConvert.DeserializeObject<Persoon>(result);
+            return person;
+        }
+
+        private async Task<string> GetBagIdForPerson()
+        {
+            var person = await GetPersonFromApi();
+            return person.verblijfplaats.id;
         }
 
         private async Task<string> CallApi(string url)
