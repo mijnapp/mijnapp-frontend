@@ -36,7 +36,7 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
        */
       locale: {
         type: String,
-        value: 'en',
+        value: 'nl',
         notify: true,
         observer: '_localeChanged',
       },
@@ -500,7 +500,7 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
     * @method _setSelectedDate
   * */
   _setSelectedDate(curDay) {
-    this.set('date', moment([this.year, this.month, curDay.innerText]).format('YYYY-MM-DD'));
+    this.set('date', moment([this.year, this.month, curDay.innerText]).format('DD-MM-YYYY'));
   }
 
   /**
