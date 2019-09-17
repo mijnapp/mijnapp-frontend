@@ -11,6 +11,8 @@ import template from './template.html';
 
 import '../../objects/maf-screen';
 import '../../lib/maki/maki-input';
+import '../../lib/maki-icons/maki-icon-truck';
+import '../../lib/maki-icons/maki-icon-bulb';
 
 export default class MafScreenJourneys extends connect(store)(PolymerElement) {
   static get properties() {
@@ -34,9 +36,6 @@ export default class MafScreenJourneys extends connect(store)(PolymerElement) {
   }
   _selectJourneyB() {
     this._selectJourney(1);
-  }
-  _selectJourneyC() {
-    this._selectJourney(2);
   }
   _selectJourney(index) {
     store.dispatch(setJourney(this.journeys[index]));

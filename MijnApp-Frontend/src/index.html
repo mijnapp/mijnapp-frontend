@@ -23,9 +23,12 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="MijnApp">
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-32x32.png">
-  <link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#A7FFEB">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-32x32.png">
+  <link rel="mask-icon" href="./assets/icons/safari-pinned-tab.svg" color="#A7FFEB">
+
+  <!-- Add the Leto font (default, and bold)-->
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
 
   <!-- Manifest for Windows -->
   <meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
@@ -37,7 +40,8 @@
   <meta property="og:image" content="/assets/icons/polymer-skeleton-192x192.png" />
 
   <style>
-    @import url('/assets/fonts/stylesheet.css');
+    @import url('./assets/fonts/stylesheet.css');
+
     * {
       box-sizing: border-box;
     }
@@ -65,34 +69,55 @@
       height: 100vh;
     }
 
-    .warningDialog {
+    .dialog {
       max-width: 700px;
       font-family: var(--typography-fontFamily);
-      background-color: #ffc107;
     }
 
-    .errorDialog {
-      max-width: 700px;
-      font-family: var(--typography-fontFamily);
-      background-color: red;
-      color: white;
+    .warningDialogHeader {
+      padding: 12px 24px;
+      font-size: 28px;
+      font-weight: bold;
+      line-height: 40px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+    }
+    .warningDialogHeader maki-icon-attention {
+      --icon-size: 40px;
+      --icon-color: #FFBA5C;
+    }
+    .warningDialogHeader #warningTitle {
+      margin-left: 16px;
     }
 
-    .dialogText{      
+    .errorDialogHeader {
+      margin-top: -24px;
+      padding: 12px 24px;
       font-size: 1rem;
       line-height: 1rem;
+      background-color: red;
+    }
+
+    .dialogText {
+      font-size: 0.75rem;
+      line-height: 0.75rem;
+    }
+    .warningDialogText {
+      font-size: 18px;
     }
 
     .buttonContainer {
       float: right;
       box-sizing: border-box;
       background-color: var(--palette-secondary-main);
+      display: flex;
+      justify-content: center;
     }
 
     .btn {
       display: inline-block;
-      font-weight: 100;
-      font-size: 1rem;
+      font-size: 18px;
       text-align: center;
       white-space: nowrap;
       vertical-align: middle;
@@ -101,13 +126,42 @@
       -ms-user-select: none;
       user-select: none;
       border: 1px solid transparent;
-      padding: .375rem .75rem;
-      border-radius: .25rem;
+      color: #fff;
+      background-color: #3192CF;
+      padding: 10px 25px;
+      margin-right: 5px;
+      border-radius: 3px;
       transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     }
+
     .btn:hover {
-      border: 1px solid black;
+      cursor: pointer;
+      background-color: #56A6D8;
     }
+
+    .btnLink {
+      display: inline-block;
+      font-size: 18px;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      border: 1px solid transparent;
+      color: #3192CF;
+      background-color: #fff;
+      padding: 10px 25px;
+      border-radius: 3px;
+      transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+
+    .btnLink:hover {
+      cursor: pointer;
+      background-color: #F1F1F1;
+    }
+
   </style>
 
   <script>
@@ -154,10 +208,14 @@
     }, false);
 
     function clearWarningDialog() {
-      warningTitle.innerHTML = "";
-      warningText.innerHTML = "";
-      warningConfirmButton.innerHTML = "Doorgaan";
-      warningConfirmButton.onclick = function () { };
+      window.warningTitle.innerHTML = "";
+      window.warningText.innerHTML = "";
+      window.warningConfirmButton.innerHTML = "Doorgaan >";
+      window.warningConfirmButton.onclick = function () { };
+    }
+
+    function clearErrorDialog() {
+      window.errorText.innerHTML = "";
     }
 
   </script>
@@ -166,19 +224,22 @@
 <body>
   <paper-toast id="successToast"></paper-toast>
   <script>
-    successToast.horizontalAlign = "center"
-    successToast.verticalAlign = "top"
+    successToast.horizontalAlign = "center";
+    successToast.verticalAlign = "top";
   </script>
-  <paper-dialog id="warningDialog" modal class="warningDialog" style="display: none">
-    <h1>Waarschuwing <span id="warningTitle"></span></h1>
-    <p id="warningText" class="dialogText"></p>
+  <paper-dialog id="warningDialog" modal class="dialog" style="display: none">
+    <div class="warningDialogHeader">
+      <maki-icon-attention></maki-icon-attention>
+      <div id="warningTitle"></div>
+    </div>
+    <p id="warningText" class="warningDialogText"></p>
     <div class="buttonContainer">
-      <button class="btn" dialog-dismiss>Annuleren</button>
-      <button id="warningConfirmButton" class="btn" dialog-confirm>Doorgaan</button>
+      <button id="warningConfirmButton" class="btn" dialog-confirm>Doorgaan ></button>
+      <button class="btnLink" dialog-dismiss>Ga terug</button>
     </div>
   </paper-dialog>
-  <paper-dialog id="errorDialog" modal class="errorDialog" style="display: none">
-    <h1>Error: <span id="errorTitle"></span></h1>
+  <paper-dialog id="errorDialog" modal class="dialog" style="display: none">
+    <div class="errorDialogHeader">Waarschuwing <span id="errorTitle"></span></div>
     <p id="errorText" class="dialogText"></p>
     <div class="buttonContainer">
       <button class="btn" dialog-confirm>Sluiten</button>

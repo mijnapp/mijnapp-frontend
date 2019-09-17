@@ -2,10 +2,7 @@ import { PolymerElement, html } from '@polymer/polymer/polymer-element';
 import { connect } from 'pwa-helpers/connect-mixin';
 import { store } from '../../../../redux/store';
 
-import {
-  orderSaveAnswer,
-  orderClearAnswer,
-} from '../../../../redux/actions/order';
+import { orderSaveAnswer } from '../../../../redux/actions/order';
 
 import { JOURNEY_START } from '../../../../helpers/common';
 
@@ -36,7 +33,7 @@ export default class PlaybackScreenText extends connect(store)(PolymerElement) {
     return (data) => {
       store.dispatch(
         orderSaveAnswer(
-          question.key || question.title,
+          question.key || question.property,
           data,
           question.title,
           data

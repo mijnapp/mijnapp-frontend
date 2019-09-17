@@ -19,6 +19,9 @@ export default class MakiInput extends PolymerElement {
       placeholder: {
         type: String,
       },
+      maxlength: {
+        type: String,
+      },
       focussed: {
         type: Boolean,
         value: false,
@@ -78,6 +81,7 @@ export default class MakiInput extends PolymerElement {
       stroke: {
         type: Number,
       },
+     
     };
   }
 
@@ -91,7 +95,7 @@ export default class MakiInput extends PolymerElement {
 
   ready() {
     super.ready();
-    let field = this.shadowRoot.querySelector('.Input');
+    const field = this.shadowRoot.querySelector('.Input');
     field.addEventListener('focus', this._onFocus.bind(this));
     field.addEventListener('blur', this._onBlur.bind(this));
   }

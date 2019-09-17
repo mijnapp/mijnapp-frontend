@@ -18,8 +18,8 @@ export default class PlaybackScreenCalendar extends connect(store)(
       datepickerValue: {
         type: String,
         notify: true,
-        observer: '_datePickerValueChanged'
-      }
+        observer: '_datePickerValueChanged',
+      },
     };
   }
 
@@ -36,10 +36,10 @@ export default class PlaybackScreenCalendar extends connect(store)(
   }
 
   _datePickerValueChanged(data) {
-    var question = this.question;
+    const question = this.question;
     store.dispatch(
       orderSaveAnswer(
-        question.key || question.title,
+        question.key || question.property,
         data,
         question.title,
         data
@@ -97,4 +97,4 @@ export default class PlaybackScreenCalendar extends connect(store)(
   }
 }
 
-window.customElements.define('playback-screen-calendar',PlaybackScreenCalendar);
+window.customElements.define('playback-screen-calendar', PlaybackScreenCalendar);

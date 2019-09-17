@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
+using log4net;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using MijnApp_Backend.Helpers;
+using MijnApp_Backend.HttpClients;
 using MijnApp_Backend.Security;
 
 namespace MijnApp_Backend.Controllers
@@ -14,19 +17,14 @@ namespace MijnApp_Backend.Controllers
         private readonly IConfiguration _config;
         private readonly JwtTokenProvider _jwtTokenProvider;
         private readonly DigidCgi _digidCgi;
+        private readonly ILog _auditLogger;
 
-        public JwtController(IConfiguration config)
+        public JwtController(IConfiguration config, IDigidClient digidClient)
         {
             _config = config;
             _jwtTokenProvider = new JwtTokenProvider(config);
-            _digidCgi = new DigidCgi(config);
-        }
-
-        [HttpGet]
-        [Route("index")]
-        public IActionResult Index()
-        {
-            return Ok("Test");
+            _digidCgi = new DigidCgi(config, digidClient);
+            _auditLogger = Log4NetLogManager.AuditLogger;
         }
 
         [HttpGet]
@@ -34,6 +32,7 @@ namespace MijnApp_Backend.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> StartSignInDigid([FromQuery]string frontEndRedirectTo)
         {
+            _auditLogger.Info("StartSignInDigid aangeroepen");
             CheckFrontendRedirectUrl(frontEndRedirectTo);
 
             var redirectUrl = await _digidCgi.StartAuthenticateUser(frontEndRedirectTo);
@@ -46,12 +45,12 @@ namespace MijnApp_Backend.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> GetJwtForDigidCgi([FromQuery]string aselectCredentials, [FromQuery]string rid)
         {
-            //TODO - moeten we hier checken dat rid eerder al verstrekt was door ons via StartSignInDigid?
-            //       hoe moeten we dit dan controleren? We houden geen state bij. Moeten we dan zoiets als Redis implementeren voor het geval we server farms gebruiken?
+            _auditLogger.Info("GetJwtForDigidCgi aangeroepen");
 
             var user = await _digidCgi.VerifyUser(aselectCredentials, rid);
 
             var tokenString = _jwtTokenProvider.GenerateJsonWebToken(user, SignInProvider.DigidCgi);
+
             return Ok(new
             {
                 token = tokenString,
@@ -60,10 +59,26 @@ namespace MijnApp_Backend.Controllers
         }
 
         [HttpPost]
-        [Route("signin")]
-        [AllowAnonymous]
-        public IActionResult SigninDigidCgi()
+        [Route("signout")]
+        public IActionResult SignOut()
         {
+            var correlationId = JwtTokenProvider.GetCorrelationIdForLogging(HttpContext.User);
+            _auditLogger.Info("Gebruiker uitgelogd", correlationId);
+
+            return Ok();
+        }
+
+        [HttpPost]
+        [Route("signinfake")]
+        [AllowAnonymous]
+        public IActionResult SigninDigidCgiFake([FromServices] IConfiguration config)
+        {
+            _auditLogger.Info("SigninDigidCgiFake aangeroepen - dit is de Fake inlog");
+            var hasFakeLoginEnabled = config.GetValue<bool>("HasFakeLoginEnabled");
+            if (!hasFakeLoginEnabled)
+            {
+                return BadRequest("Fake login is disabled");
+            }
             var user = _digidCgi.AuthenticateFakeUser();
 
             var tokenString = _jwtTokenProvider.GenerateJsonWebToken(user, SignInProvider.FakeLogin);

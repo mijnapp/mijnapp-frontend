@@ -1,22 +1,21 @@
 import axios from 'axios';
-import { BASE_URL_API } from '../store';
+import { configuration } from '../../helpers/configuration';
+import { setJwtBearerToken } from '../helpers/headers';
 
 export const jwtApi = {
   signinfake: () => async () => {
     const response = await axios.post(
-      '/jwt/signin',
+      '/jwt/signinfake',
       null,
       {
-        baseURL: BASE_URL_API,
+        baseURL: configuration.BASE_URL_API(),
       }
     );
     if (response.statusText === 'OK' || response.status === 200) {
-      //TODO -  Here the returned token is saved in the response headers
-      //        and these headers are stored in the redux store (which is stored in the localstorage)
-      //        This token, however, should be stored in a safer place (and retrieved from that saver place in helpers\headers.js)
-      response.headers.authorization = response.data.token;
-      successToast.text = "Succesvol ingelogd";
-      successToast.open();
+      setJwtBearerToken(response.data.token);
+      delete response.data.token;
+      window.successToast.text = "Succesvol ingelogd";
+      window.successToast.open();
       return { data: response.data, headers: response.headers };
     } else {
       throw response.status;
@@ -29,7 +28,7 @@ export const jwtApi = {
         params: {
           frontEndRedirectTo: window.location.origin + '/digidcgifinished'
         },
-        baseURL: BASE_URL_API,
+        baseURL: configuration.BASE_URL_API(),
       }
     );
     if (response.statusText === 'OK' || response.status === 200) {
@@ -43,7 +42,7 @@ export const jwtApi = {
       '/jwt/getJwtForDigidCgi',
       null,
       {
-        baseURL: BASE_URL_API,
+        baseURL: configuration.BASE_URL_API(),
         params: {
           aselectCredentials: aselectCredentials,
           rid: rid
@@ -51,56 +50,23 @@ export const jwtApi = {
       }
     );
     if (response.statusText === 'OK' || response.status === 200) {
-      //TODO -  Here the returned token is saved in the response headers
-      //        and these headers are stored in the redux store (which is stored in the localstorage)
-      //        This token, however, should be stored in a safer place (and retrieved from that saver place in helpers\headers.js)
-      response.headers.authorization = response.data.token;
-      successToast.text = "Succesvol ingelogd";
-      successToast.open();
+      setJwtBearerToken(response.data.token);
+      delete response.data.token;
+      window.successToast.text = "Succesvol ingelogd";
+      window.successToast.open();
       return { data: response.data, headers: response.headers };
     } else {
       throw response.status;
     }
   },
-  elevateWithPin: (pin, token) => async () => {
-    const response = await axios.post(
-      '/jwt/pin',
-      { pin },
+  logout: (token) => async () => {
+    await axios.post(
+      '/jwt/signout',
+      null,
       {
-        baseURL: BASE_URL_API,
+        baseURL: configuration.BASE_URL_API(),
         headers: { 'Authorization': 'Bearer ' + token }
       }
     );
-    if (response.statusText === 'OK' || response.status === 200) {
-      return { data: response.data, headers: response.headers };
-    } else {
-      throw response.status;
-    }
   },
-  renewWithPin: (pin, token) => async () => {
-    const response = await axios.post(
-      '/jwt/renew',
-      { pin },
-      {
-        baseURL: BASE_URL_API,
-        headers: { 'Authorization': 'Bearer ' + token }
-      }
-    );
-    if (response.statusText === 'OK' || response.status === 200) {
-      return { data: response.data, headers: response.headers };
-    } else {
-      throw response.status;
-    }
-  },
-  refresh: (token) => async () => {
-    const response = await axios.get('/jwt/refresh', {
-      baseURL: BASE_URL_API,
-      headers: { 'Authorization': 'Bearer ' + token }
-    });
-    if (response.statusText === 'OK' || response.status === 200) {
-      return { data: response.data, headers: response.headers };
-    } else {
-      throw response.status;
-    }
-  }
 };

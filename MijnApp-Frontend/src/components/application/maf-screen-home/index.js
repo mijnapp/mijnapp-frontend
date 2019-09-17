@@ -41,7 +41,6 @@ export default class MafScreenHome extends connect(store)(PolymerElement) {
         ],
       },
       userID: String,
-      loggedInWithItsMe: Boolean,
     };
   }
 
@@ -55,19 +54,13 @@ export default class MafScreenHome extends connect(store)(PolymerElement) {
 
   ready() {
     super.ready();
-    if (this.loggedInWithItsMe) {
-      this._showToast();
-    }
   }
 
   _clickHandler(e) {
     if (e.model == undefined) {
-      let doPop = confirm(
-        'Deze functie komt binnenkort beschikbaar! Op dit moment wordt er hard gewerkt aan nieuwe functionaliteiten van MijnApp.\n\nHeb je feedback? Laat het ons weten via de website. Klik op \'OK\' om naar de website te gaan.'
+      const doPop = alert(
+        'Deze functie komt binnenkort beschikbaar! Op dit moment wordt er hard gewerkt aan nieuwe functionaliteiten van MijnApp.'
       );
-      if (doPop) {
-        window.open('https://mijn-app.io/', '_blank');
-      }
     }
     if (e.model.tile && e.model.tile.target) {
       switch (e.model.tile.target) {
@@ -75,11 +68,7 @@ export default class MafScreenHome extends connect(store)(PolymerElement) {
           store.dispatch(requestContracts());
           break;
         case 'person-data':
-          if (this.userID != undefined) {
-            store.dispatch(requestPersonData(this.userID));
-          } else {
-            return;
-          }
+          store.dispatch(requestPersonData());
           break;
         case 'avg-logs':
           store.dispatch(requestAvgLogs());
@@ -96,18 +85,9 @@ export default class MafScreenHome extends connect(store)(PolymerElement) {
     // TODO: trigger search focus
   }
 
-  _showToast() {
-    this.$.ItsMeLoginToast.className = 'show';
-
-    setTimeout(() => {
-      this.$.ItsMeLoginToast.className = this.$.ItsMeLoginToast.className.replace('show', '');
-    }, 5000);
-  }
-
   stateChanged(state) {
     if (state != undefined && state.jwt.data.user != undefined) {
       this.userID = state.jwt.data.user.id;
-      this.loggedInWithItsMe = state.oauth.provider === 'itsme';
     }
   }
 }

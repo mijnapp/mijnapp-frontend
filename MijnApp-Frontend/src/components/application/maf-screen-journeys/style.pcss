@@ -2,9 +2,18 @@
 .Wrapper {
   width: 100%;
   height: 100vh;
-  max-width: 800px;
+  max-width: var(--main-max-width);
   margin: 0 auto;
-  background-color: #fff;  
+  background-color: var(--main-content-background-color);
+  padding: 0 0 57px 0;
+  box-sizing: border-box;
+}
+.ScrollContainer {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  float: left;
+  overflow-y: auto;
 }
 .SearchWrapper {
   margin: 13px 0 19px 0;
@@ -20,7 +29,7 @@
   font-stretch: normal;
   line-height: normal;
   letter-spacing: 0;
-  text-align: left;
+  color: var(--main-header-text-color);
   color: #19224C;
   margin: 25px 0 10px 0;
 }
@@ -30,20 +39,41 @@
   font-weight: 600;
   font-style: normal;
   font-stretch: normal;
-  line-height: 1.28;
-  letter-spacing: -0.4px;
+  line-height: 30px;
   text-align: left;
-  color: #19224C;
+  color: var(--main-header-text-color);
   padding: 22px 0;
   border-bottom: 1px solid #EFF1F3;
   position: relative;
   cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
 }
 .Title::after {
   content: '>';
   transform: scale(1, 1.5);
   color: var(--palette-secondary-main);
   position: absolute;
-  top: 45%;
   right: 26px;
+}
+.Title:hover{
+  background-color: var(--button-gray-background-color-hover);
+}
+maki-icon-truck {
+  --icon-color: var(--icon-color-teal);
+  background-color: var(--button-gray-background-color);
+  border-radius: 15px;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  margin: 0px 10px;
+}
+maki-icon-bulb {
+  --icon-color: var(--icon-color-teal);
+  background-color: var(--button-gray-background-color);
+  border-radius: 15px;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  margin: 0px 10px;
 }

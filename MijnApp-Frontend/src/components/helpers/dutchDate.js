@@ -35,8 +35,8 @@ const maand = (date, kort) => {
 };
 
 export const time = (date) => {
-  let h = date.getHours();
-  let m = date.getMinutes();
+  const h = date.getHours();
+  const m = date.getMinutes();
   return `${h < 10 ? `0${h}` : h}:${m < 10 ? `0${m}` : m}`;
 };
 

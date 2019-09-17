@@ -1,8 +1,20 @@
-import { store } from '../store';
+const tokenStorageKey = 'mijnApp-JwtToken';
+
+export const setJwtBearerToken = (jwtToken) => {
+  window.sessionStorage.setItem(tokenStorageKey, jwtToken);
+};
+
+export const removeJwtBearerToken = () => {
+  window.sessionStorage.removeItem(tokenStorageKey);
+};
 
 export const jwtBearerToken = () => {
-  const state = store.getState();
-  return state.jwt && state.jwt.headers && state.jwt.headers.authorization
-    ? state.jwt.headers.authorization
-    : '';
+  const jwtToken = window.sessionStorage.getItem(tokenStorageKey);
+  return jwtToken ? jwtToken : '';
+};
+
+export const jwtBearerTokenExists = () => {
+  const jwtToken = window.sessionStorage.getItem(tokenStorageKey);
+
+  return jwtToken ? true : false;
 };

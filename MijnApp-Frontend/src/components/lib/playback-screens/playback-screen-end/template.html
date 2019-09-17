@@ -1,7 +1,31 @@
 <div class="Wrapper">
   <div class="ScrollContainer">
     <div class="Scroller">
-      <div class="Title">Controleer je gegevens</div>
+      <div class="TopbarButtonContainer">
+        <dom-if if="{{order_show_buttons}}">
+          <template>
+            <maki-button on-click="_stop" size="30" stroke="0" font-size="16" heading="Stoppen">
+              <maki-icon-cross/>
+            </maki-button>
+          </template>
+        </dom-if>
+      </div>
+      <div class="JourneyHeader">
+        <div class="JourneyIcon">
+          <dom-if if="{{show_journey_icon_truck}}">
+            <template>
+              <maki-icon-truck />
+            </template>
+          </dom-if>
+          <dom-if if="{{show_journey_icon_bulb}}">
+            <template>
+              <maki-icon-bulb />
+            </template>
+          </dom-if>
+        </div>
+        <div class="JourneyTitle">[[_title(journey)]]</div>
+      </div>
+      <div class="Title">{{order_end_title}}</div>
       <dom-repeat items="[[_getOrderItems(order)]]">
         <template>
           <div class="Answer">
@@ -10,10 +34,45 @@
           </div>
         </template>
       </dom-repeat>
+      <div class="DownloadButton">
+        <maki-button highlight set-color-highlight="#3192CF" stroke="0" size="50" font-size="18" on-click="_createPdf">Download overzicht</maki-button>
+      </div>
     </div>
   </div>
-  <div class="ButtonContainer">
-    <div class="PrevButton" on-click="_prev">Vorige</div>
-    <maki-button class="NextButton" disabled="[[disabled]]" set-color-highlight="white" text-color-main highlight stroke="0" size="56" font-size="18" on-click="[[_submit(order)]]">Versturen</maki-button>
-  </div>
+  <dom-if if="{{order_status_send_ok}}">
+    <template>
+      <div class="RequestMessageBox">
+        <div class="RequestMessage">Uw aanvraag is verstuurd.</div>
+        <maki-button class="CloseRequestButton" highlight set-color-highlight="#3192CF" stroke="0" size="50" font-size="18" on-click="_stop">Sluiten</maki-button>
+      </div>
+      <div class="RequestSubMessage">{{order_reponse_data}}</div>
+    </template>
+  </dom-if>
+  <dom-if if="{{order_status_sending}}">
+    <template>
+      <div class="RequestMessage">Bezig met verzenden...</div>
+    </template>
+  </dom-if>
+  <dom-if if="{{order_status_send_failed}}">
+    <template>
+      <div class="RequestMessage">Er is een fout opgetreden bij het versturen van de aanvraag.</div>
+    </template>
+  </dom-if>
+  <dom-if if="{{order_show_buttons}}">
+    <template>
+      <div class="ButtonContainer">
+        <maki-button class="PrevButton" stroke="0" size="50" font-size="18" set-color-main="#3192CF" on-click="_prev">
+          <div class="ButtonInner">
+            <div class="ButtonInnerLeft"><</div>
+            <div class="ButtonInnerText">Ga terug</div>
+          </div>
+        </maki-button>
+        <maki-button class="NextButton" disabled="[[disabled]]" highlight set-color-highlight="#3192CF" stroke="0" size="50" font-size="18" on-click="[[_submit(order)]]">
+          <div class="ButtonInner">
+            <div class="ButtonInnerText">Versturen</div>
+          </div>
+        </maki-button>
+      </div>
+    </template>
+  </dom-if>
 </div>

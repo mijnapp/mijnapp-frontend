@@ -1,9 +1,7 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element';
 import { connect } from 'pwa-helpers/connect-mixin';
 import { store } from '../../../../redux/store';
-
 import { JOURNEY_START } from '../../../../helpers/common';
-
 import { orderNext, orderSaveAnswer } from '../../../../redux/actions/order';
 
 import css from './style.pcss';
@@ -20,7 +18,7 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
       number: String,
       numberAddition: String,
       addresses: Array,
-      hasSearched: Boolean
+      hasSearched: Boolean,
     };
   }
 
@@ -34,70 +32,65 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
 
   _isEmpty() {
     return isNullOrUndefined(this.postalCode)
-      || this.postalCode === ""
+      || this.postalCode === ''
       || isNullOrUndefined(this.number)
-      || this.number === "";
+      || this.number === '';
   }
 
   _inputPostalCodeCallback() {
     return (data) => {
-      this.postalCode = data.replace(/\s/g, "").toUpperCase().trim();
-      if (!this._isEmpty()) {
-        store.dispatch(requestAddressData(this.postalCode, this.number, this.numberAddition));
-        this.hasSearched = true;
-      } else {
-        this.addresses = [];
-      }
+      this.postalCode = data.replace(/\s/g, '').toUpperCase().trim();
+      this.callApi();
     };
   }
 
   _inputNumberCallback() {
     return (data) => {
       this.number = data.trim();
-      if (!this._isEmpty()) {
-        store.dispatch(requestAddressData(this.postalCode, this.number, this.numberAddition));
-        this.hasSearched = true;
-      } else {
-        this.addresses = [];
-      }
+      this.callApi();
     };
   }
 
   _inputNumberAdditionCallback() {
     return (data) => {
       this.numberAddition = data.trim();
-      if (!this._isEmpty()) {
-        store.dispatch(requestAddressData(this.postalCode, this.number, this.numberAddition));
-        this.hasSearched = true;
-      } else {
-        this.addresses = [];
-      }
+      this.callApi();
     };
+  }
+
+  callApi() {
+    if (!this._isEmpty()) {
+      store.dispatch(requestAddressData(this.postalCode, this.number, this.numberAddition));
+      this.hasSearched = true;
+    } else {
+      this.addresses = [];
+    }
   }
 
   _saveWithoutCheck(question, address) {
     store.dispatch(
       orderSaveAnswer(
-        question.key || question.title,
+        question.key || question.property,
         address.id,
         question.title,
-        address.id
+        `${address.straat} ${address.huisnummer}${address.huisnummertoevoeging ? address.huisnummertoevoeging : ''}, ${address.woonplaats} ${address.postcode}`
       )
     );
     store.dispatch(orderNext(question.next));
   }
 
   _optionClick(e) {
-    let self = this;
+    const self = this;
     if (e && e.currentTarget && e.currentTarget.dataQuestion && !isNaN(e.currentTarget.dataIndex)) {
-      let question = e.currentTarget.dataQuestion;
-      let index = e.currentTarget.dataIndex;
-      let address = this.addresses[index];
-      if (address.woonplaats !== "'s-Hertogenbosch") {
-        clearWarningDialog();
-        warningText.innerHTML = `Het nieuwe adres dat u opgeeft ligt niet in de gemeente 's-Hertogenbosch. Kies op de gemeentekeuze pagina de gemeente van uw nieuwe adres.<br/><br/> Klik op 'Annuleren' om uw postcode en huisnummer te controleren. <br/>Klik op 'Doorgaan' om dit adres te gebruiken.`;
-        warningConfirmButton.onclick = function () { self._saveWithoutCheck(question, address); };
-        warningDialog.open();
+      const question = e.currentTarget.dataQuestion;
+      const index = e.currentTarget.dataIndex;
+      const address = this.addresses[index];
+      if (address.woonplaats !== '\'s-Hertogenbosch') {
+        window.clearWarningDialog();
+        window.warningTitle.innerHTML = 'Let op!';
+        window.warningText.innerHTML = 'Het nieuwe adres dat je opgeeft ligt niet in de gemeente \'s-Hertogenbosch.';
+        window.warningConfirmButton.onclick = function() {self._saveWithoutCheck(question, address);};
+        window.warningDialog.open();
       } else {
         self._saveWithoutCheck(question, address);
       }
@@ -112,18 +105,18 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
   }
 
   _reset() {
-    this.postalCode = "";
-    this.number = "";
-    this.numberAddition = "";
+    this.postalCode = '';
+    this.number = '';
+    this.numberAddition = '';
     this.addresses = [];
     this.hasSearched = false;
   }
 
   ready() {
     super.ready();
-    let postalCodeInput = this.shadowRoot.getElementById("postalCodeInput");
-    let numberInput = this.shadowRoot.getElementById("numberInput");
-    let numberAdditionInput = this.shadowRoot.getElementById("numberAdditionInput");
+    const postalCodeInput = this.shadowRoot.getElementById('postalCodeInput');
+    const numberInput = this.shadowRoot.getElementById('numberInput');
+    const numberAdditionInput = this.shadowRoot.getElementById('numberAdditionInput');
     postalCodeInput.addEventListener('keyup', function (e) {
       if (e.keyCode === 13) {
         numberInput.shadowRoot.querySelector('.Input').focus();
@@ -136,12 +129,21 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
     });
   }
 
+  filterAddresses(address) {
+    if (address.status_verblijfsobject === 'VerblijfsobjectIngetrokken'
+      || address.status_verblijfsobject === 'NietGerealiseerdVerblijfsobject') {
+      return false;
+    }
+
+    return true;
+  }
+
   stateChanged(state) {
     this.journey = state.journey;
     this.current = state.order.current;
     this.id = this.current === JOURNEY_START
-        ? JOURNEY_START
-        : state.order.data[this.current].question;
+      ? JOURNEY_START
+      : state.order.data[this.current].question;
     this.order = this.current === JOURNEY_START ? {} : state.order.data[this.current];
     this.selected = this.order._tracker;
     if (this.journey) {
@@ -156,7 +158,7 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
     if (this._isEmpty()) {
       this.addresses = [];
     } else {
-      this.addresses = state.address.data;
+      this.addresses = state.address.data.filter(this.filterAddresses);
     }
     if (state.address.reset) {
       this._reset();

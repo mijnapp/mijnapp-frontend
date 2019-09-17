@@ -36,16 +36,25 @@ input[type=number] {
   background-color: transparent;
   outline: none;
   font-size: 1.3em;
+  font-family: inherit;
   line-height: 1.28;
   color: var(--shaded-color-main);  
 }
 .Input:focus {
   outline: none;
+  box-shadow: none;
 }
+.Input:hover {
+  box-shadow: 0px 0px 5px 1px rgba(30,189,211,0.4);
+}
+.Input.focussed {
+  box-shadow: 0px 0px 5px 1px rgba(30,189,211,0.6);
+}
+
 .Input::placeholder {
   opacity: 0.6;
   color: var(--shaded-color-main);
-  font-style: italic;
+  font-style: italic;  
 }
 .Highlight {
   height: 2px;

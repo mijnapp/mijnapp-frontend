@@ -1,26 +1,22 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { jwtApi } from '../api/jwt';
-import { jwtBearerToken } from '../helpers/headers';
-import { selectPage } from '../actions/application';
+import { jwtBearerToken, removeJwtBearerToken } from '../helpers/headers';
+import { selectPage, selectPageNoHistory, nextPageAfterLogin } from '../actions/application';
+import { clearState } from '../saver';
+import { setLastAction, removeLastAction } from '../helpers/lastAction';
+
 import {
   REQUEST_JWT_SIGNIN_FAKE,
   REQUEST_JWT_SIGNIN,
   requestJwtSigninSuccessFake,
   requestJwtSigninSuccess,
   requestJwtSigninFailure,
+  REQUEST_JWT_LOGOUT,
+  REQUEST_JWT_LOGOUT_401,
   REQUEST_JWT_SIGNIN_SUCCESS,
   REQUEST_JWT_SIGNIN_SUCCESS_FAKE,
   REQUEST_JWT_FOR_DIGIDCGI, REQUEST_JWT_FOR_DIGIDCGI_SUCCESS,
   requestJwtTokenForDigidSuccess, requestJwtTokenForDigidFailure,
-  REQUEST_JWT_ELEVATE_WITH_PIN,
-  requestJwtElevateWithPinSuccess,
-  requestJwtElevateWithPinFailure,
-  REQUEST_JWT_RENEW_WITH_PIN,
-  requestJwtRenewWithPinSuccess,
-  requestJwtRenewWithPinFailure,
-  REQUEST_JWT_REFRESH,
-  requestJwtRefreshSuccess,
-  requestJwtRefreshFailure,
 } from '../actions/jwt';
 
 
@@ -63,9 +59,8 @@ function onJwtSigninSuccess(action) {
 }
 
 function* onJwtSigninSuccessFake() {
-  yield put(selectPage('home'));
+  yield put(nextPageAfterLogin());
 }
-
 
 export function* watchRequestJwtFromDigidCgi() {
   yield takeLatest(REQUEST_JWT_FOR_DIGIDCGI, fetchJwtFromDigidCgi);
@@ -85,44 +80,35 @@ export function* watchRequestJwtFromDigidCgiSuccess() {
 }
 
 function* onJwtFromDigidCgiSuccess() {
-  yield put(selectPage('home'));
+  yield put(nextPageAfterLogin());
 }
 
-export function* watchRequestJwtElevateWithPin() {
-  yield takeLatest(REQUEST_JWT_ELEVATE_WITH_PIN, fetchJwtElevateWithPin);
+export function* watchRequestJwtLogout() {
+  yield takeLatest(REQUEST_JWT_LOGOUT, doJwtLogout);
 }
 
-function* fetchJwtElevateWithPin(action) {
-  try {
-    const result = yield call(jwtApi.elevateWithPin(action.pin, jwtBearerToken()));
-    yield put(requestJwtElevateWithPinSuccess(result.data, result.headers));
-  } catch (e) {
-    yield put(requestJwtElevateWithPinFailure(e));
+function* doJwtLogout() {
+  yield call(jwtApi.logout(jwtBearerToken()));
+  clearState();
+  removeJwtBearerToken();
+  removeLastAction();
+  window.successToast.text = 'Succesvol uitgelogd';
+  window.successToast.open();
+  yield put(selectPage('signin'));
+}
+
+export function* watchRequestJwtLogout401() {
+  yield takeLatest(REQUEST_JWT_LOGOUT_401, doJwtLogout401);
+}
+
+function* doJwtLogout401(action) {
+  removeJwtBearerToken();
+  if (action && action.lastActionBefore401) {
+    setLastAction(action.lastActionBefore401);
   }
-}
-
-export function* watchRequestJwtRenewWithPin() {
-  yield takeLatest(REQUEST_JWT_RENEW_WITH_PIN, fetchJwtRenewWithPin);
-}
-
-function* fetchJwtRenewWithPin(action) {
-  try {
-    const result = yield call(jwtApi.renewWithPin(action.pin, jwtBearerToken()));
-    yield put(requestJwtRenewWithPinSuccess(result.data, result.headers));
-  } catch (e) {
-    yield put(requestJwtRenewWithPinFailure(e));
-  }
-}
-
-export function* watchRequestJwtRefresh() {
-  yield takeLatest(REQUEST_JWT_REFRESH, fetchJwtRefresh);
-}
-
-function* fetchJwtRefresh() {
-  try {
-    const result = yield call(jwtApi.refresh(jwtBearerToken()));
-    yield put(requestJwtRefreshSuccess(result.data, result.headers));
-  } catch (e) {
-    yield put(requestJwtRefreshFailure(e));
-  }
+  window.clearErrorDialog();
+  window.errorText.innerHTML = `U heeft geen geldige sessie meer en zult opnieuw moeten inloggen.`;
+  window.errorDialog.open();
+  // Here we do a selectPageNoHistory, so that when the user logs in again, he is navigated to were he was.
+  yield put(selectPageNoHistory('signin'));
 }

@@ -1,14 +1,14 @@
 <div class="Wrapper">
   <div class="Inner">
-    <dom-if if="[[_hasBack(onBack)]]">
-      <template>
-        <div class="ButtonContainer">
-          <maki-button on-click="[[onBack]]" size="34" stroke="0" font-size="14" heading="Ga terug">
-            <maki-icon-back-arrow />
+    <div class="ButtonContainer">
+      <dom-if if="[[_hasBack(onBack)]]">
+        <template>
+          <maki-button on-click="[[onBack]]" size="30" stroke="0" font-size="16" heading="Stoppen">
+            <maki-icon-cross />
           </maki-button>
-        </div>
-      </template>
-    </dom-if>
+        </template>
+      </dom-if>
+    </div>
     <maki-header>[[heading]]</maki-header>
     <slot></slot>
   </div>

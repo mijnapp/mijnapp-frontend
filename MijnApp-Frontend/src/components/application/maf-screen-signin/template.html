@@ -1,44 +1,34 @@
 <div class="loginWrapper">
-  <div class="loginHeader">
-    <div class="loginTitle">Inloggen</div>
-    <img src="/assets/media/Inloggen.svg" class="loginImage"/>
+  <div>
+    <div class="loginTitle">MijnApp</div>
+    <img class="loginImage" src="/assets/media/Inloggen.svg" />
   </div>
   <div class="loginContent">
-    <div class="loginDigidButton" on-click="_signInWithDigiDFake">
-      <img src="/assets/logo-digid.svg" class="loginSelectButton noselect" />
-      <div>
-        <div class="loginDigidButtonHeader">FAKE Inloggen bij</div>
-        <div class="loginDigidButtonSubHeader">Mijn-app</div>
-      </div>
-    </div>
-
+    <dom-if if="{{hasFakeInlogEnabled}}">
+      <template>
+        <div class="loginDigidButton" on-click="_signInWithDigiDFake">
+          <div class="loginDigidButtonText">
+            <img src="/assets/logo-digid.svg" class="loginSelectButton noselect" />
+            <div class="loginDigidButtonHeader">Fake inloggen met DigiD</div>
+          </div>
+        </div>
+      </template>
+    </dom-if>
     <div class="loginDigidButton" on-click="_signInWithDigiD">
-      <img src="/assets/logo-digid.svg" class="loginSelectButton noselect" />
-      <div>
-        <div class="loginDigidButtonHeader">Inloggen bij</div>
-        <div class="loginDigidButtonSubHeader">Mijn-app</div>
+      <div class="loginDigidButtonText">
+        <img src="/assets/logo-digid.svg" class="loginSelectButton noselect" />
+        <div class="loginDigidButtonHeader">Inloggen met DigiD</div>
       </div>
     </div>
-
-
-    <!-- Login only by DigiD.
-  <span class="loginDivider"><u>of</u></span>
-  <paper-input value="{{username}}" label="E-mail" auto-validate type="email"
-               on-input="_onChangeHandler"></paper-input>
-  <paper-input value="{{password}}" label="Wachtwoord" type="password"
-               on-input="_onChangeHandler"></paper-input>
-  <div class="loginForgot">Wachtwoord vergeten?</div>-->
+    <div class="Info">
+      <div class="InfoText">Heeft u nog geen DigiD?</div>
+      <div class="InfoSubText">U kunt zelf uw DigiD aanvragen op <a href="http://www.digid.nl">www.digid.nl</a></div>
+    </div>
   </div>
   <dom-if if="[[_showLoginWarning(jwtError)]]">
     <template>
-      <div class="Error">Verkeerde combinatie van gebruikersnaam en wachtwoord</div>
+      <div class="Error">Er is iets verkeerd gegaan tijdens het inloggen</div>
+      <div class="Error">[[_showLoginWarning(jwtError)]]</div>
     </template>
   </dom-if>
-  <!--
-  <div class="loginBottomActions">
-  <div class="loginButtonContainer layout horizontal center-justified">
-    <div class$="loginButton {{_getClass(validated)}}" on-click="_signInHandler">Login</div>
-  </div>
-  <div class="loginCreate"><!-- DigiD aanvragen?</div></div>
-  -->
 </div>

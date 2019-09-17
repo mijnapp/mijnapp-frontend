@@ -1,22 +1,14 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element';
 import { connect } from 'pwa-helpers/connect-mixin';
 import { store } from '../../../../redux/store';
-
-import {
-  orderSaveAnswer,
-  orderClearAnswer,
-} from '../../../../redux/actions/order';
-
+import { orderSaveAnswer, orderClearAnswer, } from '../../../../redux/actions/order';
 import { JOURNEY_START } from '../../../../helpers/common';
-
 import css from './style.pcss';
 import template from './template.html';
 
 import '../../playback-screen-wrapper';
 
-export default class PlaybackScreenMultiple extends connect(store)(
-  PolymerElement
-) {
+export default class PlaybackScreenMultiple extends connect(store)(PolymerElement) {
   static get properties() {
     return {};
   }
@@ -44,7 +36,7 @@ export default class PlaybackScreenMultiple extends connect(store)(
   }
 
   _answerFromSelects(selects = []) {
-    let question = this.question;
+    const question = this.question;
     const getGoto = (index) =>
       question &&
       question.options &&
@@ -54,7 +46,7 @@ export default class PlaybackScreenMultiple extends connect(store)(
         : {};
     return {
       value: selects.map((i) => {
-        let opt = getGoto(i);
+        const opt = getGoto(i);
         return opt.value || opt.title;
       }),
       valueTitle: selects.map((i) => getGoto(i).title),
@@ -63,21 +55,21 @@ export default class PlaybackScreenMultiple extends connect(store)(
 
   _optionClick(e) {
     if (e && e.target && !isNaN(e.target.dataIndex)) {
-      let index = e.target.dataIndex;
-      let key = this.question.key || this.question.title;
-      let keyTitle = this.question.title;
+      const index = e.target.dataIndex;
+      const key = this.question.key || this.question.property;
+      const keyTitle = this.question.title;
       let selected = [];
       if (Array.isArray(this.selected) && this.selected.indexOf(index) > -1) {
         selected = this.selected.filter((i) => i !== index);
       } else {
         selected = [...(this.selected || []), index];
       }
-      let answer = this._answerFromSelects(selected);
+      const answer = this._answerFromSelects(selected);
       store.dispatch(
         orderSaveAnswer(
           key,
-          keyTitle,
           answer.value,
+          keyTitle,
           answer.valueTitle,
           selected
         )

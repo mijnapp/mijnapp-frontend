@@ -2,14 +2,25 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Configuration;
+using MijnApp_Backend.HttpClients;
 
 namespace MijnApp_Backend.Controllers
 {
     [Authorize]
     public class AddressController : Controller
     {
-        private const string URL_NoNumberAddition = "http://adressen.zaakonline.nl/adressen?postcode={0}&huisnummer={1}";
-        private const string URL_WithNumberAddition = "http://adressen.zaakonline.nl/adressen?postcode={0}&huisnummer={1}&huisnummertoevoeging={2}";
+        private readonly string _baseUri;
+        private const string NoNumberAddition = "{0}adressen?postcode={1}&huisnummer={2}";
+        private const string WithNumberAddition = "{0}adressen?postcode={1}&huisnummer={2}&huisnummertoevoeging={3}";
+
+        private readonly IServiceClient _serviceClient;
+
+        public AddressController(IConfiguration config, IServiceClient serviceClient)
+        {
+            _baseUri = config.GetValue<string>("Api:AddressUri");
+            _serviceClient = serviceClient;
+        }
 
         [HttpGet]
         [Route("address/{postalcode}/{number}/")]
@@ -32,20 +43,18 @@ namespace MijnApp_Backend.Controllers
                 return Json("");
 
             }
-            using (var httpClient = new HttpClient())
+
+            HttpResponseMessage response;
+            if (string.IsNullOrWhiteSpace(numberAddition))
             {
-                HttpResponseMessage response;
-                if (string.IsNullOrWhiteSpace(numberAddition))
-                {
-                    response = await httpClient.GetAsync(string.Format(URL_NoNumberAddition, postalcode, number));
-                }
-                else
-                {
-                    response = await httpClient.GetAsync(string.Format(URL_WithNumberAddition, postalcode, number, numberAddition));
-                }
-                var result = await response.Content.ReadAsStringAsync();
-                return Json(result);
+                response = await _serviceClient.GetAsync(string.Format(NoNumberAddition, _baseUri, postalcode, number));
             }
+            else
+            {
+                response = await _serviceClient.GetAsync(string.Format(WithNumberAddition, _baseUri, postalcode, number, numberAddition));
+            }
+            var result = await response.Content.ReadAsStringAsync();
+            return Json(result);
         }
     }
 }

@@ -1,7 +1,7 @@
 .Wrapper {
   width: 100%;
   height: 100%;
-  max-width: 800px;
+  max-width: var(--main-max-width);
   float: left;
 }
 .Options {
@@ -24,10 +24,10 @@
   text-align: left;
   padding: 17px 0 16px 22px;
   color: var(--palette-primary-main);
-  background-color: var(--palette-primary-contrastText);
   border-radius: 3px;
   position: relative;
   cursor: pointer;
+  background-color: var(--button-gray-background-color);
 }
 .Option:hover::after {
   content: ' ';

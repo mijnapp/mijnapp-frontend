@@ -11,7 +11,7 @@ import * as journeys from './journeys';
 import * as jwt from './jwt';
 import * as order from './order';
 import * as person from './person';
-import * as oauth from './oauth';
+import * as lastAction from './lastAction';
 
 export default combineReducers({
   ...address,
@@ -25,5 +25,5 @@ export default combineReducers({
   ...jwt,
   ...order,
   ...person,
-  ...oauth,
+  ...lastAction,
 });

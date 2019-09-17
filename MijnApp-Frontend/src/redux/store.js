@@ -4,28 +4,7 @@ import { loadState, saveState } from './saver';
 import createSagaMiddleware from 'redux-saga';
 import reducers from './reducers';
 import sagas from './sagas';
-import mijnAppConfiguration from "../config/config"
-
-const path = require('path');
-
 import { setJourneys } from './actions/journeys';
-
-export const BASE_URL_API = (() => {
-
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open('GET', 'config.json', false);
-  if (xmlhttp.overrideMimeType) {
-    xmlhttp.overrideMimeType('application\\json');
-  }
-  xmlhttp.send();
-  if (xmlhttp.status == 200) {
-    var configuration = JSON.parse(xmlhttp.responseText);
-    return configuration.BACKEND_URL;
-  }
-  else {
-    return 'https://localhost/MijnApp-Backend/';
-  }
-})();
 
 // Init middlewares.
 const loggerMiddleware = createLogger();
@@ -35,23 +14,24 @@ const sagaMiddleware = createSagaMiddleware();
 let composeEnhancers = compose;
 
 switch (window.location.hostname) {
-  case 'demo.mijn-app.io':
-    break;
-  default: {
-    composeEnhancers =
-      typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+  case 'localhost':
+    {
+      composeEnhancers = typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
         ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
           // Extension options
         })
         : compose;
-  }
+    }
+    break;
+  default:
+    break;
 }
 
 // Link middlewares
 let middlewares = null;
 
 switch (window.location.hostname) {
-  case 'demo.mijn-app.io':
+  case 'localhost':
     middlewares = applyMiddleware(sagaMiddleware, loggerMiddleware);
     break;
   default:
@@ -61,11 +41,11 @@ switch (window.location.hostname) {
 // Create store.
 export const store = createStore(
   reducers,
-  loadState(), // If there is local storage data, load it.
+  loadState(), // If there is storage data, load it.
   composeEnhancers(middlewares)
 );
 
-// This subscriber writes to local storage anytime the state updates.
+// This subscriber writes to storage anytime the state updates.
 store.subscribe(() => {
   saveState(store.getState());
 });
@@ -77,10 +57,12 @@ store.dispatch(
   setJourneys([
     {
       title: 'Ik heb een goed idee',
+      request_type_id: '06daeb7f-6503-4b8e-8aa1-5a5767b53b22',
       questions: [
         {
           id: '6abbb0e1-3ef5-4206-a2e3-aba72ad1259a',
           type: 'single',
+          property: 'anoniem',
           options: [
             {
               goto: 'f4efa6ca-158b-4184-958f-52ae8b47f561',
@@ -104,6 +86,7 @@ store.dispatch(
         {
           id: 'f4efa6ca-158b-4184-958f-52ae8b47f561',
           type: 'agree',
+          property: 'toestemming',
           options: null,
           title: 'Toestemming voor gebruik gegevens',
           subtitle:
@@ -114,6 +97,7 @@ store.dispatch(
         {
           id: 'b52cf9a7-30d1-4eb7-bf64-34f3a6380c11',
           type: 'text',
+          property: 'ideeomschrijving',
           options: null,
           title: 'Wat is jouw idee?',
           next: '12e51aa9-0a9b-4e74-a273-65e27763073c',
@@ -121,6 +105,7 @@ store.dispatch(
         {
           id: '12e51aa9-0a9b-4e74-a273-65e27763073c',
           type: 'radioButtons',
+          property: 'contact',
           options: [
             {
               goto: 'END',
@@ -140,6 +125,7 @@ store.dispatch(
         {
           id: 'e8877860-f3b2-46d2-a3b8-e0b70c93492b',
           type: 'text',
+          property: 'ideeomschrijving',
           options: null,
           title: 'Wat is jouw idee?',
           subtitle: '',
@@ -158,18 +144,21 @@ store.dispatch(
       },
     },
     {
-      title: 'Ik wil verhuizen',
+      title: 'Ik ga verhuizen',
+      request_type_id: 'fc79c4c9-b3b3-4258-bdbb-449262f3e5d7',
       questions: [
         {
           id: 'a7beef34-9aea-4891-971d-beb67b2e8010',
           type: 'address',
+          property: 'adress',
           title: 'Wat wordt je nieuwe adres?',
-          subtitle: 'bijv. Dorpstraat 10 1234 AB Eindhoven',
+          subtitle: 'Vul je postcode, huisnummer en eventueel toevoeging in van het nieuwe adres.',
           next: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb',
         },
         {
           id: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb',
           type: 'calendar',
+          property: 'ingangsdatum',
           options: null,
           title: 'Wanneer ga je verhuizen?',
           subtitle: 'kies een datum',
@@ -177,28 +166,18 @@ store.dispatch(
         },
         {
           id: '37e30b1f-fb51-4d49-8756-fa5d4d55829a',
-          type: 'multiple',
-          options: [
-            {
-              goto: null,
-              title: 'Evelien de Vries',
-              value: null,
-            },
-            {
-              goto: null,
-              title: 'Thomas de Vries',
-              value: null,
-            },
-          ],
+          type: 'personsMoving',
+          property: 'meeverhuizers',
           title: 'Met wie ga je verhuizen?',
           subtitle:
             'Er wordt een bericht gestuurd naar de persoon die meeverhuist ' +
-            '(onderstaande personen staan nu op hetzelfde adres als jij ' +
-            'ingeschreven)',
+              '(onderstaande personen staan nu op hetzelfde adres als jij ' +
+              'ingeschreven)',
           next: '21586109-ce3b-4091-8420-85f92c0a6c11',
         },
         {
           id: '21586109-ce3b-4091-8420-85f92c0a6c11',
+          property: 'eigenaar',
           type: 'single',
           options: [
             {
@@ -222,6 +201,7 @@ store.dispatch(
         {
           id: '10af45ba-b96c-44cc-865e-5f5342e0b793',
           type: 'agree',
+          property: 'toestemmingeigenaar',
           options: null,
           title: 'Is de eigenaar akkoord met inwoning?',
           subtitle:
@@ -230,100 +210,16 @@ store.dispatch(
         },
       ],
       overview: {
-        needed_documents: ['Geen'],
+        needed_documents: ['Geen documenten nodig'],
         send_to: [],
         steps: [
-          'Geef je nieuwe adres op.',
-          'Geef de datum op wanneer je gaat verhuizen.',
-          'Geef aan met wie je gaat verhuizen,',
-          'Geef de nieuwe woonsituatie aan.',
+          'Geef je nieuwe adres op',
+          'Geef de datum op wanneer je gaat verhuizen',
+          'Geef aan met wie je gaat verhuizen',
+          'Geef de nieuwe woonsituatie aan',
         ],
-        subtitle: 'Verhuizen binnen of naar Eindhoven',
+        subtitle: 'Verhuizen binnen of naar gemeente \'s-Hertogenbosch',
       },
     },
-    {
-      title: 'Ik wil verhuizen Eerst datum',
-      questions: [
-        {
-          id: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb',
-          type: 'calendar',
-          options: null,
-          title: 'Wanneer ga je verhuizen?',
-          subtitle: 'kies een datum',
-          next: 'a7beef34-9aea-4891-971d-beb67b2e8010',
-        },
-        {
-          id: 'a7beef34-9aea-4891-971d-beb67b2e8010',
-          type: 'address',
-          title: 'Wat wordt je nieuwe adres?',
-          subtitle: 'bijv. Dorpstraat 10 1234 AB Eindhoven',
-          next: '37e30b1f-fb51-4d49-8756-fa5d4d55829a',
-        },
-        {
-          id: '37e30b1f-fb51-4d49-8756-fa5d4d55829a',
-          type: 'multiple',
-          options: [
-            {
-              goto: null,
-              title: 'Evelien de Vries',
-              value: null,
-            },
-            {
-              goto: null,
-              title: 'Thomas de Vries',
-              value: null,
-            },
-          ],
-          title: 'Met wie ga je verhuizen?',
-          subtitle:
-            'Er wordt een bericht gestuurd naar de persoon die meeverhuist ' +
-            '(onderstaande personen staan nu op hetzelfde adres als jij ' +
-            'ingeschreven)',
-          next: '21586109-ce3b-4091-8420-85f92c0a6c11',
-        },
-        {
-          id: '21586109-ce3b-4091-8420-85f92c0a6c11',
-          type: 'single',
-          options: [
-            {
-              goto: 'END',
-              title: 'Ja',
-              value: null,
-            },
-            {
-              goto: 'END',
-              title: 'Nee, ik ga huren',
-              value: null,
-            },
-            {
-              goto: '10af45ba-b96c-44cc-865e-5f5342e0b793',
-              title: 'Nee, ik ga inwonen',
-              value: null,
-            },
-          ],
-          title: 'Ben of word je eigenaar van de woning?',
-        },
-        {
-          id: '10af45ba-b96c-44cc-865e-5f5342e0b793',
-          type: 'agree',
-          options: null,
-          title: 'Is de eigenaar akkoord met inwoning?',
-          subtitle:
-            'De eigenaar ontvangt een notificatie in MijnApp ter goedkeuring.',
-          next: 'END',
-        },
-      ],
-      overview: {
-        needed_documents: ['Geen'],
-        send_to: [],
-        steps: [
-          'Geef je nieuwe adres op.',
-          'Geef de datum op wanneer je gaat verhuizen.',
-          'Geef aan met wie je gaat verhuizen,',
-          'Geef de nieuwe woonsituatie aan.',
-        ],
-        subtitle: 'Verhuizen binnen of naar Eindhoven',
-      },
-    }
   ])
 );

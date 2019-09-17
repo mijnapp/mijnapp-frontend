@@ -7,3 +7,16 @@ master | [![Build Status](https://dev.azure.com/mijnapp/mijnapp-frontend/_apis/b
 # mijnapp-frontend
 
 https://mijn-app.io/inwoner/index.html
+
+# DigiD development
+To work with DigiD on your local machine you should do the following:
+
+1. Set up a reversed proxy for your local client running on localhost:3000.
+   You could do this for instance using ngrok. Download it and then run:
+   ngrok.exe http 3000
+
+2. Add the URL of the reversed proxy (for instance 'https://0db66292.ngrok.io') to the 'Origins' setting in appsettings.json of the BackEnd project
+
+3. Compile and run the BackEnd project
+
+4. Test the client by browsing to the URL of the reversed proxy

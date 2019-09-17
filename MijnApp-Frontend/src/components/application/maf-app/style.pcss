@@ -1,3 +1,15 @@
+:root{
+  --main-max-width: 800px;
+  --main-content-background-color: #ffffff;
+  --main-header-text-color: #19224C;
+  --button-gray-background-color: #F5F5F5;
+  --button-gray-background-color-hover: #F1F1F1;
+  --button-gray-background-color-hover-dark: #CCCCCC;
+  --icon-red-color: #F95F62;
+  --icon-color: #3192CF;
+  --icon-color-teal: #1EBDD3;
+  --icon-color-hover: #56A6D8;
+}
 :host {
   float: left;
 }
@@ -19,25 +31,34 @@
   left: 0;
   height: 57px;
   width: 100%;
-  background-color: var(--palette-background-paper);
-  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.11);
+  border-top: 1px solid var(--button-gray-background-color);
+  background-color: #edf2f9;
 }
 .TabSwitcherWrapper {
   width: 100%;
   height: 57px;
-  max-width: 800px;
+  max-width: var(--main-max-width);
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
+  background-color: var(--main-content-background-color);
 }
 .TabSwitcherTab {
   height: 100%;
   width: 20%;
   text-align: center;
   position: relative;
-  cursor: pointer;
-
-  --icon-color: teal;
+  cursor: pointer;  
+}
+.TabSwitcherTab:hover{
+  background-color: var(--button-gray-background-color-hover);
+}
+.NotAllowed {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+.NotAllowed:hover{
+  background-color: var(--main-content-background-color);
 }
 .TabSwitcherTabIcon {
   position: absolute;
@@ -74,4 +95,34 @@
   letter-spacing: -0.4px;
   text-align: center;
   color: var(--palette-text-disabled);
+}
+.TopBar {
+  position: fixed;
+  left: 0;
+  height: 62px;
+  width: 100%;
+  z-index: 100;
+  visibility: hidden;
+}
+.TopBarWrapper {
+  width: 100%;
+  height: 62px;
+  max-width: var(--main-max-width);
+  margin: 0 auto;
+  padding: 16px;
+  box-sizing: border-box;
+}
+.HamburgerMenuIcon {
+  z-index: 10;
+  float:right;
+  background-color: var(--button-gray-background-color);
+  width: 16px;
+  height: 16px;
+  border-radius: 15px;
+  padding: 7px;
+  cursor: pointer;
+  visibility: initial;
+}
+.HamburgerMenuIcon:hover {
+  background-color: var(--button-gray-background-color-hover-dark);
 }

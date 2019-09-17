@@ -40,7 +40,7 @@ export default class PlaybackScreenAgree extends connect(store)(
       } else if (this.question.title) {
         store.dispatch(
           orderSaveAnswer(
-            this.question.key || this.question.title,
+            this.question.key || this.question.property,
             true,
             this.question.title,
             'Ja'
@@ -52,7 +52,6 @@ export default class PlaybackScreenAgree extends connect(store)(
 
   _nextCallback(question) {
     return (next) => {
-      console.log(question, next);
       if (question && question.next) {
         next(question.next);
       }

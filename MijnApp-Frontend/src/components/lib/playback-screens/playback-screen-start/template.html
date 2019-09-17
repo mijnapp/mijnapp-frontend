@@ -1,10 +1,31 @@
 <div class="Wrapper">
   <div class="ScrollContainer">
     <div class="Scroller">
-      <div class="Back" on-click="_stop">Stoppen</div>
-      <div class="Title">[[_title(journey)]]</div>
-      <div class="Subtitle">[[_subtitle(journey)]]</div>
-      <div class="SectionTitle">Benodigde documenten</div>
+      <div class="TopbarButtonContainer">
+        <maki-button on-click="_stop" size="30" stroke="0" font-size="16" heading="Stoppen">
+          <maki-icon-cross />
+        </maki-button>
+      </div>
+      <div class="JourneyHeader">
+        <div class="JourneyIcon">
+          <dom-if if="{{show_journey_icon_truck}}">
+            <template>
+              <maki-icon-truck />
+            </template>
+          </dom-if>
+          <dom-if if="{{show_journey_icon_bulb}}">
+            <template>
+              <maki-icon-bulb />
+            </template>
+          </dom-if>
+        </div>
+        <div class="Title">[[_title(journey)]]</div>
+        <div class="Subtitle">[[_subtitle(journey)]]</div>
+      </div>
+      <div class="SectionTitle">
+        <maki-icon-edit-document></maki-icon-edit-document>
+        <div>Benodigde documenten</div>
+      </div>
       <div class="DotList">
         <dom-repeat items="[[_documents(journey)]]">
           <template>
@@ -15,12 +36,15 @@
           </template>
         </dom-repeat>
       </div>
-      <div class="SectionTitle">Deze stappen ga je doorlopen</div>
-      <div class="NumberedList">
+      <div class="SectionTitle">
+        <maki-icon-steps></maki-icon-steps>
+        <div>Deze stappen ga je doorlopen</div>
+      </div>
+      <div class="DotList">
         <dom-repeat items="[[_steps(journey)]]">
           <template>
-            <div class="NumberedListItem">
-              <div class="Number">[[_indexToCount(index)]]</div>
+            <div class="DotListItem">
+              <div class="Dot"></div>
               <div class="Text">[[item]]</div>
             </div>
           </template>
@@ -29,9 +53,8 @@
     </div>
   </div>
   <div class="ButtonContainer">
-    <maki-button highlight size="56" font-size="18" on-click="[[_start(journey)]]">
+    <maki-button highlight size="50" font-size="18" set-color-highlight="#3192CF"  on-click="[[_start(journey)]]">
       <div class="ButtonInner">
-        <div class="ButtonInnerLeft"><</div>
         <div class="ButtonInnerText">Starten</div>
         <div class="ButtonInnerRight">></div>
       </div>

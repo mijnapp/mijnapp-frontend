@@ -1,12 +1,19 @@
 ﻿using System;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using MijnApp_Backend.Helpers;
+using MijnApp_Backend.HttpClients;
+using MijnApp_Backend.Security;
 
 namespace MijnApp_Backend
 {
@@ -38,12 +45,27 @@ namespace MijnApp_Backend
                     };
                 });
 
+            services.AddHttpContextAccessor();
+            services.AddHttpClient<IDigidClient,DigidClient>();
+            services.AddHttpClient<IServiceClient, ServiceClient>(ConfigureServiceClient);
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        private void ConfigureServiceClient(IServiceProvider serviceProvider, HttpClient httpClient)
         {
+            var httpContextAccessor = serviceProvider.GetService<IHttpContextAccessor>();
+            var correlationId = JwtTokenProvider.GetCorrelationIdForLogging(httpContextAccessor.HttpContext.User);
+            httpClient.DefaultRequestHeaders.Add("MijnAppCorrelationId", correlationId);
+            httpClient.DefaultRequestHeaders.Accept.Clear();
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        }
+
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        {
+            loggerFactory.AddLog4Net(Configuration["Log4NetConfigFile:Name"]);
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -52,7 +74,7 @@ namespace MijnApp_Backend
             {
                 app.UseHsts();
             }
-            
+
             app.UseHttpsRedirection();
 
             var origins = Configuration.GetValue<string>("Origins").Split(';');
@@ -63,10 +85,15 @@ namespace MijnApp_Backend
                 builder.AllowAnyMethod();
                 builder.AllowCredentials();
             });
-
+            
             app.UseAuthentication();
 
-            //app.UseProlongSession();
+            app.UseExceptionLogging();
+            app.UseRequestResponseLogging();
+
+            //Comment this out for now, because we can't prolong the session since we are completely stateless (session-less)
+            //and don't have the necessary data to prolong the session.
+            //app.UseProlongSession(); 
 
             app.UseMvc();
         }

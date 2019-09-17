@@ -1,9 +1,13 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element';
 import { store } from '../../../redux/store';
-import {
-  selectPage,
-  selectPageNoHistory,
-} from '../../../redux/actions/application';
+
+import { selectPage, selectPageNoHistory } from '../../../redux/actions/application';
+import { setJourney } from '../../../redux/actions/journey';
+import { requestJwtLogout } from '../../../redux/actions/jwt';
+import { clearAddressData } from '../../../redux/actions/address';
+
+import { getJourneyId } from '../../../redux/helpers/journeys';
+
 import { connect } from 'pwa-helpers/connect-mixin';
 
 import css from './style.pcss';
@@ -22,10 +26,15 @@ import '../../lib/maki-icons/maki-icon-home';
 import '../../lib/maki-icons/maki-icon-search';
 import '../../lib/maki-icons/maki-icon-bell';
 import '../../lib/maki-icons/maki-icon-chat';
+import '../../lib/maki-icons/maki-icon-logout';
+import '../../lib/maki-icons/maki-icon-hamburger';
+import '../../lib/maki-icons/maki-icon-edit-document';
+import '../../lib/maki-icons/maki-icon-steps';
+import '../../lib/maki-icons/maki-icon-check';
+import '../../lib/maki-icons/maki-icon-attention';
 
 import { MakiTheme } from '../../lib/maki/maki-theme-provider';
 import { primaryPalette, secondaryPalette } from '../../helpers/palettes';
-import { requestOAuthHandle } from '../../../redux/actions/oauth';
 import { requestJwtTokenForDigidCgi } from '../../../redux/actions/jwt';
 
 export default class MafApp extends connect(store)(PolymerElement) {
@@ -46,18 +55,16 @@ export default class MafApp extends connect(store)(PolymerElement) {
     window.onpopstate = function(event) {
       store.dispatch(selectPageNoHistory(event.state));
     };
+
     if (window.location.pathname && window.location.pathname.length > 0) {
-      if (window.location.pathname.indexOf('oauth-itsme') > -1) {
-        this._handleOAuth();
-      }
       if (window.location.pathname.indexOf('digidcgifinished') > -1) {
         this._handleDigidCgi();
+      } else if (window.location.pathname.indexOf('startjourney') > -1) {
+        this._handleStartJourney();
+      } else {
+        const path = window.location.pathname.split(/[/-]/).filter((i) => i.length > 0);
+        store.dispatch(selectPageNoHistory(path[0]));
       }
-
-      const path = window.location.pathname
-        .split(/[/-]/)
-        .filter((i) => i.length > 0);
-      store.dispatch(selectPageNoHistory(path[0]));
     }
   }
 
@@ -94,28 +101,19 @@ export default class MafApp extends connect(store)(PolymerElement) {
 
     this.theme = new MakiTheme().set(theme);
 
-    var self = this;
+    // var self = this;
 
-    const f = () => {
-      setTimeout(function() {
-        self.theme = new MakiTheme();
-        setTimeout(function() {
-          self.theme = new MakiTheme().set(theme);
-          f();
-        }, 3000);
-      }, 1000);
-    };
+    // const f = () => {
+    //  setTimeout(function() {
+    //    self.theme = new MakiTheme();
+    //    setTimeout(function() {
+    //      self.theme = new MakiTheme().set(theme);
+    //      f();
+    //    }, 3000);
+    //  }, 1000);
+    // };
 
     // f();
-  }
-
-  _handleOAuth() {
-    const url = decodeURI(window.location.href);
-    const code = url.split('code=')[1].split('&')[0];
-    const stateRaw = url.split('state=')[1].split('}')[0] + '}';
-    const state = JSON.parse(stateRaw);
-
-    store.dispatch(requestOAuthHandle(code, state.StateToken, 'itsme'));
   }
 
   _handleDigidCgi() {
@@ -123,6 +121,32 @@ export default class MafApp extends connect(store)(PolymerElement) {
     const aselectCredentials = url.split('aselect_credentials=')[1].split('&')[0];
     const rid = url.split('rid=')[1].split('&')[0];
     store.dispatch(requestJwtTokenForDigidCgi(aselectCredentials, rid));
+  }
+
+  _handleStartJourney() {
+    const url = decodeURI(window.location.href);
+    const journeyToStart = url.split('name=')[1].split('&')[0];
+    var journeyIdToStart = getJourneyId(journeyToStart);
+
+    var foundJourneyToStart;
+
+    if (journeyIdToStart) {
+      var journeys = store.getState().journeys.data;
+
+      for (var counter = 0; counter < journeys.length; counter++) {
+        var journey = journeys[counter];
+        if (journey.request_type_id.toLowerCase() === journeyIdToStart.toLowerCase()) {
+          foundJourneyToStart = journey;
+          break;
+        }
+      }
+    }
+
+    if (foundJourneyToStart) {
+      store.dispatch(setJourney(foundJourneyToStart));
+      store.dispatch(selectPage('journey'));
+      store.dispatch(clearAddressData());
+    }
   }
 
   _goHome() {
@@ -133,13 +157,18 @@ export default class MafApp extends connect(store)(PolymerElement) {
     store.dispatch(selectPage('journeys'));
   }
 
+  _goLogout() {
+    store.dispatch(requestJwtLogout());
+  }
+
   _showTabs(page) {
     return page !== 'signin';
   }
 
   _nope() {
     const doPop = confirm(
-      'Deze functie komt binnenkort beschikbaar! Op dit moment wordt er hard gewerkt aan nieuwe functionaliteiten van MijnApp.\n\nHeb je feedback? Laat het ons weten via de website. Klik op \'OK\' om naar de website te gaan.'
+      'Deze functie komt binnenkort beschikbaar! Op dit moment wordt er hard gewerkt aan nieuwe functionaliteiten van MijnApp.\n\n' +
+      'Heb je feedback? Laat het ons weten via de website. Klik op \'OK\' om naar de website te gaan.'
     );
     if (doPop) {
       window.open('https://mijn-app.io/', '_blank');
@@ -150,7 +179,7 @@ export default class MafApp extends connect(store)(PolymerElement) {
     this.page = state.application.page;
     if (
       state.application.page != undefined &&
-      state.application.page == 'journeys' &&
+      state.application.page === 'journeys' &&
       this.shadowRoot != null
     ) {
       this.shadowRoot.querySelector('#journeyScreen').focusOnSearch();

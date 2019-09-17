@@ -6,22 +6,30 @@
 .Wrapper {
   box-sizing: border-box;
   width: 100%;
-  height: 100%;
-  max-width: 800px;
+  height: 100vh;
+  max-width: var(--main-max-width);
   float: left;
-  background-color: #FFF;
   padding: 0 0 118px 0;
   position: relative;
 }
-.ButtonContainer {
-  position: absolute;
-  bottom: 31px;
+.TopbarButtonContainer {
   width: 100%;
-  left: 0;
+  height: 62px;
+  max-width: var(--main-max-width);
+  padding: 16px 0px;
+  box-sizing: border-box;
+}
+.ButtonContainer {
+  position: fixed;
+  bottom: 57px;
+  width: 100%;
+  max-width: var(--main-max-width);
+  height: 62px;
+  padding: 6px 16px 0px 16px;
+  box-sizing: border-box;
+  background-color: #fff;
   display: flex;
-  align-items: center;
   justify-content: center;
-  background-color: #FFF;
 }
 .ButtonInner {
   display: flex;
@@ -47,9 +55,40 @@
   overflow-y: auto;
 }
 .Scroller {
-  padding: 49px 16px 0 16px;
+  padding:  0px 16px;
   position: relative;
 }
+.JourneyHeader {
+  background-color: var(--button-gray-background-color);
+  margin: 0 -16px;
+  padding: 10px 16px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.JourneyIcon {
+  --icon-color: #fff;
+  background-color: var(--icon-color-teal);
+  border-radius: 30px;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  align-self: center;
+}
+maki-icon-truck, maki-icon-bulb {
+  --icon-size: 40px;
+}
+maki-icon-steps, maki-icon-edit-document
+{
+  background-color: var(--button-gray-background-color);
+  border-radius: 15px;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  --icon-color: var(--icon-color-teal);
+  margin: 0px 10px 0px 0px;
+}
+
 .Title {
   font-family: var(--typography-fontFamily);
   font-size: 34px;
@@ -58,7 +97,7 @@
   font-stretch: normal;
   line-height: normal;
   letter-spacing: -0.3px;
-  text-align: left;
+  text-align: center;
   color: var(--palette-primary-main);
 }
 .Subtitle {
@@ -70,7 +109,7 @@
   font-stretch: normal;
   line-height: 1.64;
   letter-spacing: -0.3px;
-  text-align: left;
+  text-align: center;
   color: var(--palette-primary-main);
   margin-top: 7px;
 }
@@ -80,26 +119,29 @@
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
-  line-height: 1.28;
+  line-height: 30px;
   letter-spacing: -0.3px;
   text-align: left;
   color: var(--palette-primary-main);
-  margin: 20px 0 15px 0;
+  margin: 30px 0 15px 0;
+  display: flex;
+  justify-content: flext-start;
 }
 .DotList {}
 .DotListItem {
   display: flex;
   align-items: center;
   margin-bottom: 3px;
+  padding-left: 10px;
 }
 .DotListItem:last-of-type {
   margin: 0;
 }
 .DotListItem .Dot {
-  margin-right: 14px;
-  width: 7px;
-  height: 7px;
-  background-color: var(--palette-primary-main);
+  margin: 2px 23px 0px 0px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--icon-color-teal);
   border-radius: 4px;
 }
 .DotListItem .Text {
@@ -169,7 +211,9 @@
   cursor: pointer;
   color: var(--palette-primary-main);
 }
-
 .Back:hover {
   opacity: 0.4;
+}
+maki-icon-cross {
+  --icon-color:var(--icon-red-color);
 }

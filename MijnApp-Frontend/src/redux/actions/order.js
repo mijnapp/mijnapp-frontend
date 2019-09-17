@@ -22,6 +22,7 @@ export const orderNext = (question) => ({
   type: ORDER_NEXT,
   question,
 });
-
 export const ORDER_PREV = 'ORDER_PREV';
 export const orderPrev = () => ({ type: ORDER_PREV });
+export const ORDER_SKIP = 'ORDER_SKIP';
+export const orderSkip = (index) => ({ type: ORDER_SKIP, index });

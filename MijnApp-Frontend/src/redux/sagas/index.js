@@ -4,7 +4,10 @@ import { watchRequestAvgLog } from './avgLog';
 import { watchRequestAvgLogs } from './avgLogs';
 import { watchRequestContract } from './contract';
 import { watchRequestContracts } from './contracts';
-import { watchRequestPersonData } from './person';
+import {
+  watchRequestPersonData,
+  watchRequestPersonsMoving,
+} from './person';
 import {
   watchRequestJwtSigninFake,
   watchRequestJwtSignin,
@@ -12,22 +15,11 @@ import {
   watchJwtSigninSuccessFake,
   watchRequestJwtFromDigidCgi,
   watchRequestJwtFromDigidCgiSuccess,
-  watchRequestJwtElevateWithPin,
-  watchRequestJwtRenewWithPin,
-  watchRequestJwtRefresh,
+  watchRequestJwtLogout,
+  watchRequestJwtLogout401,
 } from './jwt';
-import {
-  watchRequestOrdersList,
-  watchRequestOrdersItem,
-  watchRequestOrdersSubmit,
-} from './orders';
-import { watchSelectPage } from './application';
-import {
-  watchRequestOAuthInit,
-  watchRequestOAuthInitSuccess,
-  watchRequestOAuthHandle,
-  watchRequestOAuthHandleSuccess,
-} from './oauth';
+import { watchRequestOrdersSubmit } from './orders';
+import { watchSelectPage, watchSelectPageNoHistory, watchNextPageAfterLogin } from './application';
 
 export default function* rootSaga() {
   yield all([
@@ -42,17 +34,13 @@ export default function* rootSaga() {
     watchJwtSigninSuccessFake(),
     watchRequestJwtFromDigidCgi(),
     watchRequestJwtFromDigidCgiSuccess(),
-    watchRequestJwtElevateWithPin(),
-    watchRequestJwtRenewWithPin(),
-    watchRequestJwtRefresh(),
+    watchRequestJwtLogout(),
+    watchRequestJwtLogout401(),
     watchSelectPage(),
+    watchSelectPageNoHistory(),
+    watchNextPageAfterLogin(),
     watchRequestPersonData(),
-    watchRequestOrdersList(),
-    watchRequestOrdersItem(),
+    watchRequestPersonsMoving(),
     watchRequestOrdersSubmit(),
-    watchRequestOAuthInit(),
-    watchRequestOAuthInitSuccess(),
-    watchRequestOAuthHandle(),
-    watchRequestOAuthHandleSuccess(),
   ]);
 }
