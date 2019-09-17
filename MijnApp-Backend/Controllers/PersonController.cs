@@ -33,64 +33,41 @@ namespace MijnApp_Backend.Controllers
         public async Task<IActionResult> GetPerson()
         {
             var bsn = _jwtTokenProvider.GetBsnFromClaims(User);
-            var response = await _serviceClient.GetAsync(string.Format(UrlGetByBsn, _baseUri, bsn));
-            var result = await response.Content.ReadAsStringAsync();
+            var url = string.Format(UrlGetByBsn, _baseUri, bsn);
+            var result = await CallApi(url);
             var person = JsonConvert.DeserializeObject(result, typeof(Persoon));
             return Json(person);
         }
-
-        //[HttpGet]
-        //[Route("personsMoving")]
-        //public async Task<IActionResult> GetPersonsMovingAsync()
-        //{
-        //    //Call Brp to get current address id
-        //    //var bsn = _jwtTokenProvider.GetBsnFromClaims(User);
-        //    var bsn = "900003509";
-        //    var response1 = await _serviceClient.GetAsync(string.Format(UrlGetByBsn, _baseUri, bsn));
-        //    var result1 = await response1.Content.ReadAsStringAsync();
-        //    var token = JObject.Parse(result1);
-        //    var bagId = (string)token.SelectToken("verblijfplaats.id");
-        //    var huisletter = (string)token.SelectToken("verblijfplaats.huisletter");
-        //    var huisnummer = (string)token.SelectToken("verblijfplaats.huisnummer");
-        //    var huisnummertoevoeging = (string)token.SelectToken("verblijfplaats.huisnummertoevoeging");
-        //    var postcode = (string)token.SelectToken("verblijfplaats.postcode");
-
-        //    var url = "http://brp.zaakonline.nl/ingeschrevenpersonen?familie_eerstegraad=" + bsn +
-        //              "&verblijfplaats__huisletter=" + huisletter +
-        //              "&verblijfplaats__huisnummer=" + huisnummer +
-        //              "&verblijfplaats__huisnummertoevoeging=" + huisnummertoevoeging +
-        //              "&verblijfplaats__postcode=" + postcode;
-        //    //Call Url for persons on address
-        //    var response = await _serviceClient.GetAsync(url);
-        //    var result = await response.Content.ReadAsStringAsync();
-
-        //    return Json(result);
-        //}
-
+        
         [HttpGet]
-        [Route("personsmoving")]
-        public async Task<IActionResult> GetPersonsMovingOldAsync()
+        [Route("familyfirstgrade")]
+        public async Task<IActionResult> GetPersonsMovingAsync()
         {
             //Call Brp to get current address id
             var bsn = _jwtTokenProvider.GetBsnFromClaims(User);
             var bagId = GetBagIdForPerson(bsn);
 
             //Call Url for persons on address
-            var response = await _serviceClient.GetAsync(string.Format(UrlGetPersonsOnAddress, _baseUri, bsn, bagId));
-            var result = await response.Content.ReadAsStringAsync();
+            var url = string.Format(UrlGetPersonsOnAddress, _baseUri, bsn, bagId);
+            var result = await CallApi(url);
             var token = JObject.Parse(result);
-            var embedded = (JObject)token.SelectToken("_embedded");
-            var list = (JArray)embedded.SelectToken("item");
+            var list = (JArray)token.SelectToken("_embedded.item");
             var personList = list.ToObject<List<Persoon>>();
             return Json(personList);
         }
 
         private async Task<string> GetBagIdForPerson(string bsn)
         {
-            var response = await _serviceClient.GetAsync(string.Format(UrlGetByBsn, _baseUri, bsn));
-            var result = await response.Content.ReadAsStringAsync();
+            var url = string.Format(UrlGetByBsn, _baseUri, bsn);
+            var result = await CallApi(url);
             var token = JObject.Parse(result);
             return (string)token.SelectToken("verblijfplaats.id");
+        }
+
+        private async Task<string> CallApi(string url)
+        {
+            var response = await _serviceClient.GetAsync(url);
+            return await response.Content.ReadAsStringAsync();
         }
     }
 }

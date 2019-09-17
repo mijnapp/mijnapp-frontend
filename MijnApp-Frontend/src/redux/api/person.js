@@ -14,7 +14,7 @@ export const personApi = {
     }
   },
   personsMoving: (token) => async () => {
-    const response = await axios.get(`/personsMoving`, {
+    const response = await axios.get(`/familyfirstgrade`, {
       baseURL: configuration.BASE_URL_API(),
       headers: { 'Authorization': 'Bearer ' + token }
     });
