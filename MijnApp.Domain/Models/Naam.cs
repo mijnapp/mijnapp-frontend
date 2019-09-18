@@ -7,9 +7,6 @@
         public string voorletters { get; set; }
         public string voornamen { get; set; }
         public string voorvoegsel { get; set; }
-
-        public string volledigenaam => string.IsNullOrWhiteSpace(voorvoegsel)
-            ? $"{voornamen} {geslachtsnaam}"
-            : $"{voornamen} {voorvoegsel} {geslachtsnaam}";
+        public string aanschrijfwijze { get; set; }
     }
 }
