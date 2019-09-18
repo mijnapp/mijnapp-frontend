@@ -78,7 +78,7 @@ store.dispatch(
           title: 'Wil je je idee anoniem indienen?',
           subtitle:
             'Bij anoniem indienen, kunnen we geen contact met je opnemen ' +
-            'bij vragen.',
+              'bij vragen.',
           optional: {
             goto: null,
           },
@@ -91,7 +91,7 @@ store.dispatch(
           title: 'Toestemming voor gebruik gegevens',
           subtitle:
             'Geef je toestemming om jouw voornaam, achternaam en adres mee ' +
-            'te sturen met jouw idee?',
+              'te sturen met jouw idee?',
           next: 'e8877860-f3b2-46d2-a3b8-e0b70c93492b',
         },
         {
@@ -120,7 +120,7 @@ store.dispatch(
           ],
           title:
             'Vind je het prettig dat er contact met je wordt opgenomen ' +
-            'over jouw idee?',
+              'over jouw idee?',
         },
         {
           id: 'e8877860-f3b2-46d2-a3b8-e0b70c93492b',
@@ -173,41 +173,41 @@ store.dispatch(
             'Er wordt een bericht gestuurd naar de persoon die meeverhuist ' +
               '(onderstaande personen staan nu op hetzelfde adres als jij ' +
               'ingeschreven)',
-          next: '21586109-ce3b-4091-8420-85f92c0a6c11',
+          next: 'END', // '21586109-ce3b-4091-8420-85f92c0a6c11',
         },
-        {
-          id: '21586109-ce3b-4091-8420-85f92c0a6c11',
-          property: 'eigenaar',
-          type: 'single',
-          options: [
-            {
-              goto: 'END',
-              title: 'Ja',
-              value: null,
-            },
-            {
-              goto: 'END',
-              title: 'Nee, ik ga huren',
-              value: null,
-            },
-            {
-              goto: '10af45ba-b96c-44cc-865e-5f5342e0b793',
-              title: 'Nee, ik ga inwonen',
-              value: null,
-            },
-          ],
-          title: 'Ben of word je eigenaar van de woning?',
-        },
-        {
-          id: '10af45ba-b96c-44cc-865e-5f5342e0b793',
-          type: 'agree',
-          property: 'toestemmingeigenaar',
-          options: null,
-          title: 'Is de eigenaar akkoord met inwoning?',
-          subtitle:
-            'De eigenaar ontvangt een notificatie in MijnApp ter goedkeuring.',
-          next: 'END',
-        },
+        //{
+        //  id: '21586109-ce3b-4091-8420-85f92c0a6c11',
+        //  property: 'eigenaar',
+        //  type: 'single',
+        //  options: [
+        //    {
+        //      goto: 'END',
+        //      title: 'Ja',
+        //      value: null,
+        //    },
+        //    {
+        //      goto: 'END',
+        //      title: 'Nee, ik ga huren',
+        //      value: null,
+        //    },
+        //    {
+        //      goto: '10af45ba-b96c-44cc-865e-5f5342e0b793',
+        //      title: 'Nee, ik ga inwonen',
+        //      value: null,
+        //    },
+        //  ],
+        //  title: 'Ben of word je eigenaar van de woning?',
+        //},
+        //{
+        //  id: '10af45ba-b96c-44cc-865e-5f5342e0b793',
+        //  type: 'agree',
+        //  property: 'toestemmingeigenaar',
+        //  options: null,
+        //  title: 'Is de eigenaar akkoord met inwoning?',
+        //  subtitle:
+        //    'De eigenaar ontvangt een notificatie in MijnApp ter goedkeuring.',
+        //  next: 'END',
+        //},
       ],
       overview: {
         needed_documents: ['Geen documenten nodig'],
