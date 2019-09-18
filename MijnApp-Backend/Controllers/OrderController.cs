@@ -99,6 +99,7 @@ namespace MijnApp_Backend.Controllers
             if (order.requestType == "fc79c4c9-b3b3-4258-bdbb-449262f3e5d7")
             {
                 request.properties.Add("persoon", bsn);
+                request.properties.Add("eigenaar", "geen idee");
             }
 
             return request;
