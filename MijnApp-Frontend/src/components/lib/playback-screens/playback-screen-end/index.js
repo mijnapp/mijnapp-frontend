@@ -51,7 +51,7 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
       if (Array.isArray(o.valueTitle)) {
         if (o.valueTitle.length > 0) {
           contentData.push({ text: o.keyTitle, style: 'question' });
-          contentData.push({ text: o.valueTitle.join(', '), style: 'answer' });
+          contentData.push({ text: o.valueTitle.join('\n'), style: 'answer' });
         }
       } else {
         contentData.push({ text: o.keyTitle, style: 'question' });
@@ -135,7 +135,7 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
     order.filter((o) => o.question && o.question !== 'END').forEach((o) => {
       if (Array.isArray(o.valueTitle)) {
         if (o.valueTitle.length > 0) {
-          returnable.push({ key: o.keyTitle, value: o.valueTitle.join(', ') });
+          returnable.push({ key: o.keyTitle, value: o.valueTitle.join('\n') });
         }
       } else {
         returnable.push({ key: o.keyTitle, value: o.valueTitle });
