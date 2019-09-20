@@ -14,6 +14,9 @@ import '../../lib/maki/maki-input';
 import '../../lib/maki-icons/maki-icon-truck';
 import '../../lib/maki-icons/maki-icon-bulb';
 
+var MobileDetect = require('mobile-detect');
+var detectMobile = new MobileDetect(window.navigator.userAgent);
+
 export default class MafScreenJourneys extends connect(store)(PolymerElement) {
   static get properties() {
     return {};
@@ -44,9 +47,11 @@ export default class MafScreenJourneys extends connect(store)(PolymerElement) {
   }
 
   focusOnSearch() {
-    this.shadowRoot.querySelector('maki-input').focus();
-    const makiInput = this.shadowRoot.querySelector('maki-input');
-    makiInput.shadowRoot.querySelector('.Input').focus();
+    if (!detectMobile.mobile()) {
+      this.shadowRoot.querySelector('maki-input').focus();
+      const makiInput = this.shadowRoot.querySelector('maki-input');
+      makiInput.shadowRoot.querySelector('.Input').focus();
+    }
   }
 
   stateChanged(state) {
