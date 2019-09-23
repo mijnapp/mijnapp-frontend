@@ -182,7 +182,7 @@ export default class MafApp extends connect(store)(PolymerElement) {
       state.application.page === 'journeys' &&
       this.shadowRoot != null
     ) {
-      //this.shadowRoot.querySelector('#journeyScreen').focusOnSearch();
+      this.shadowRoot.querySelector('#journeyScreen').focusOnSearch();
     }
   }
 }

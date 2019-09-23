@@ -24,6 +24,9 @@ import '../../lib/playback-screens/playback-screen-start';
 import '../../lib/playback-screens/playback-screen-text';
 import '../../lib/playback-screens/playback-screen-video';
 
+var MobileDetect = require('mobile-detect');
+var detectMobile = new MobileDetect(window.navigator.userAgent);
+
 export default class MafScreenJourney extends connect(store)(PolymerElement) {
   static get properties() {
     return {};
@@ -42,9 +45,11 @@ export default class MafScreenJourney extends connect(store)(PolymerElement) {
   }
 
   focusOnSearch() {
-    this.shadowRoot.querySelector('maki-input').focus();
-    const makiInput = this.shadowRoot.querySelector('maki-input');
-    makiInput.shadowRoot.querySelector('.Input').focus();
+    if (!detectMobile.mobile()) {
+      this.shadowRoot.querySelector('maki-input').focus();
+      const makiInput = this.shadowRoot.querySelector('maki-input');
+      makiInput.shadowRoot.querySelector('.Input').focus();
+    }
   }
 
   stateChanged(state) {
