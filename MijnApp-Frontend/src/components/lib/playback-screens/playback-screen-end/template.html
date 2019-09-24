@@ -54,7 +54,9 @@
           <dom-if if="{{order_status_send_ok}}">
             <template>
               <div class="JourneyProgressLine"></div>
-              <div class="JourneyProgressDotCheck"></div>
+              <div class="JourneyProgressDotCheck">
+                <maki-icon-check />
+              </div>
             </template>
           </dom-if>
           <dom-if if="{{!order_status_send_ok}}">
