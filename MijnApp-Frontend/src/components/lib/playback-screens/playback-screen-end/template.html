@@ -51,6 +51,18 @@
               </dom-if>
             </template>
           </dom-repeat>
+          <dom-if if="{{order_status_send_ok}}">
+            <template>
+              <div class="JourneyProgressLine"></div>
+              <div class="JourneyProgressDotCheck"></div>
+            </template>
+          </dom-if>
+          <dom-if if="{{!order_status_send_ok}}">
+            <template>
+              <div class="JourneyProgressLine"></div>
+              <div class="JourneyProgressDot"></div>
+            </template>
+          </dom-if>
         </div>
       </div>
       <div class="Title">{{order_end_title}}</div>

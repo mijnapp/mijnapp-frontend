@@ -36,17 +36,14 @@
               <dom-if if="{{isAnswered(current, index)}}">
                 <template>
                   <div class="JourneyProgressDotCheck">
-                    <maki-icon-check/>
+                    <maki-icon-check />
                   </div>
                 </template>
               </dom-if>
-              <dom-if if="{{isNotLastItem(current, index)}}">
-                <template>
-                  <div class="JourneyProgressLine"></div>
-                </template>
-              </dom-if>
+              <div class="JourneyProgressLine"></div>
             </template>
           </dom-repeat>
+            <div class="JourneyProgressDotEmpty"></div>
         </div>
       </div>
       <div class="Title">[[_title(question)]]</div>
