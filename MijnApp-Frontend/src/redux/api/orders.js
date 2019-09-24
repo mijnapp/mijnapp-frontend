@@ -9,7 +9,7 @@ export const ordersApi = {
         baseURL: configuration.BASE_URL_API(),
         headers: { 'Authorization': 'Bearer ' + token }
       });
-    if (response.statusText === 'OK' || response.status === 204) {
+    if (response.statusText === 'OK' || response.status === 200) {
       return { data: response.data };
     } else {
       throw response.status;

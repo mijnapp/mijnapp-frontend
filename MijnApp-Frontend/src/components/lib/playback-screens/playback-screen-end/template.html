@@ -63,9 +63,13 @@
           </div>
         </template>
       </dom-repeat>
-      <div class="DownloadButton">
-        <maki-button highlight set-color-highlight="#3192CF" stroke="0" size="50" font-size="18" on-click="_createPdf">Download overzicht</maki-button>
-      </div>
+      <dom-if if="{{order_status_send_ok}}">
+        <template>
+          <div class="DownloadButton">
+            <maki-button highlight set-color-highlight="#3192CF" stroke="0" size="50" font-size="18" on-click="_createPdf">Download overzicht</maki-button>
+          </div>
+        </template>
+      </dom-if>
     </div>
   </div>
   <dom-if if="{{order_status_send_ok}}">
