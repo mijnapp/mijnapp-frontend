@@ -155,10 +155,24 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
     return false;
   }
 
+  isNotLastItem(current, index) {
+    return this.journey.questions.length - 1 !== index;
+  }
+  isCurrentQuestion(current, index) {
+    return current === index;
+  }
+  isNotAnswered(current, index) {
+    return index > current;
+  }
+  isAnswered(current, index) {
+    return index < current;
+  }
+
   stateChanged(state) {
     this.journey = state.journey;
     this.current = state.order.current;
     this.id = this.current === JOURNEY_START ? JOURNEY_START : JOURNEY_END;
+    this.question = { type: 'end' };
     this.order = state.order.data;
     this.order_status_not_send = (state.order.order_status === ORDER_STATUS_NOT_SEND);
     this.order_status_sending = (state.order.order_status === ORDER_STATUS_SENDING);

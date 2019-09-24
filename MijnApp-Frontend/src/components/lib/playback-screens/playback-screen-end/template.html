@@ -24,6 +24,34 @@
           </dom-if>
         </div>
         <div class="JourneyTitle">[[_title(journey)]]</div>
+        <div class="JourneyProgress">
+          <dom-repeat items="{{journey.questions}}">
+            <template>
+              <dom-if if="{{isCurrentQuestion(current, index)}}">
+                <template>
+                  <div class="JourneyProgressDot"></div>
+                </template>
+              </dom-if>
+              <dom-if if="{{isNotAnswered(current, index)}}">
+                <template>
+                  <div class="JourneyProgressDotEmpty"></div>
+                </template>
+              </dom-if>
+              <dom-if if="{{isAnswered(current, index)}}">
+                <template>
+                  <div class="JourneyProgressDotCheck">
+                    <maki-icon-check />
+                  </div>
+                </template>
+              </dom-if>
+              <dom-if if="{{isNotLastItem(current, index)}}">
+                <template>
+                  <div class="JourneyProgressLine"></div>
+                </template>
+              </dom-if>
+            </template>
+          </dom-repeat>
+        </div>
       </div>
       <div class="Title">{{order_end_title}}</div>
       <div class="Subtitle">{{order_end_sub_title}}</div>
