@@ -40,26 +40,13 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
   }
 
   _createPdf() {
-    const documentTitle = `MijnApp ${this.journey.title}.pdf`;
+    const documentTitle = `Samenvatting van het verzoek.pdf`;
     const contentData = [];
-    contentData.push({ text: 'Overzicht van uw verzoek', style: 'header' });
-    contentData.push({ text: 'Het verzoek', style: 'subheader' });
-    contentData.push({ text: 'Type verzoek', style: 'question' });
-    contentData.push({ text: this.journey.title, style: 'answer' });
-    contentData.push({ text: 'Vragen en antwoorden', style: 'subheader' });
-    this.order.filter((o) => o.question && o.question !== 'END').forEach((o) => {
-      if (Array.isArray(o.valueTitle)) {
-        if (o.valueTitle.length > 0) {
-          contentData.push({ text: o.keyTitle, style: 'question' });
-          contentData.push({ text: o.valueTitle.join('\n'), style: 'answer' });
-        }
-      } else {
-        contentData.push({ text: o.keyTitle, style: 'question' });
-        contentData.push({ text: o.valueTitle, style: 'answer' });
-      }
-    });
-
+    contentData.push({ text: 'Samenvatting van het verzoek', style: 'header' });
     const today = new Date();
+    contentData.push({ text: `De volgende gegevens zijn op ${toDutchDate(today)} verzonden naar de gemeente` });
+    contentData.push(this.questionsToPdf());
+
     const docDefinition = {
       content: contentData,
       info: {
@@ -80,8 +67,8 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
             widths: ['*', 100],
             body: [
               [
-                { text: `Document gegenereerd op ${toDutchDate(today).toLowerCase()}` },
-                { text: `pagina ${currentPage.toString()} van ${pageCount}`, alignment: 'right' }
+                {},
+                { text: `pagina ${currentPage} van ${pageCount}`, alignment: 'right' }
               ]
             ]
           },
@@ -92,31 +79,51 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
       styles: {
         header: {
           margin: [0, 0, 0, 10],
-          fontSize: 26,
+          fontSize: 20,
           bold: true,
-          color: '#3192CF',
-        },
-        subheader: {
-          margin: [0, 0, 0, 10],
-          fontSize: 24,
-          italics: true,
-          color: '#3192CF',
         },
         question: {
           margin: [0, 0, 0, 10],
-          fontSize: 14,
-          color: '#283583',
-          italics: true,
+          fontSize: 11,
+          bold: true,
         },
         answer: {
           margin: [10, 0, 0, 15],
-          fontSize: 14,
+          fontSize: 11,
         }
       }
     };
 
     pdfMake.createPdf(docDefinition).download(documentTitle);
   }
+
+  questionsToPdf() {
+    const body = [];
+    this.order.filter((o) => o.question && o.question !== 'END').forEach((o) => {
+      const dataRow = [];
+      if (Array.isArray(o.valueTitle)) {
+        if (o.valueTitle.length > 0) {
+          dataRow.push({ text: o.keyTitle, style: 'question' });
+          dataRow.push({ text: o.valueTitle.join('\n'), style: 'answer' });
+        }
+      } else {
+        dataRow.push({ text: o.keyTitle, style: 'question' });
+        dataRow.push({ text: o.valueTitle, style: 'answer' });
+      }
+      body.push(dataRow);
+    });
+
+    return {
+      table: {
+        widths: ['*', '*'],
+        body: body,
+      },
+      layout: 'noBorders',
+      margin: [0, 40, 0, 0],
+    };
+  }
+
+
 
   _stop() {
     store.dispatch(selectPage('home'));
