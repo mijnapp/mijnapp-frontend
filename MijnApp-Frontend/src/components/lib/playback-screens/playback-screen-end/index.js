@@ -46,6 +46,8 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
     contentData.push({ text: `De volgende gegevens zijn op ${toDutchDate(this.orderDate)} verzonden naar de gemeente` });
     contentData.push(this.questionsToPdf());
 
+    const today = new Date();
+
     const docDefinition = {
       content: contentData,
       info: {
@@ -66,8 +68,8 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
             widths: ['*', 100],
             body: [
               [
-                {},
-                { text: `pagina ${currentPage} van ${pageCount}`, alignment: 'right' }
+                { text: `Document gegenereerd op ${toDutchDate(today).toLowerCase()}` },
+                { text: `pagina ${currentPage} van ${pageCount}`, alignment: 'right' },
               ]
             ]
           },
