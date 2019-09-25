@@ -142,6 +142,16 @@ store.dispatch(
         ],
         subtitle: 'Leuk dat je een goed idee hebt!',
       },
+      end: {
+        check: {
+          title: "Controleer je gegevens",
+          subtitle: "Controleer onderstaande gegevens goed en verzend het formulier.",
+        },
+        success: {
+          title: "Je idee is doorgegeven",
+          subtitle: "Het volgende idee is succesvol verzonden naar de gemeente.",
+        }
+      },
     },
     {
       title: 'Ik ga verhuizen',
@@ -219,6 +229,16 @@ store.dispatch(
           //'Geef de nieuwe woonsituatie aan',
         ],
         subtitle: 'Verhuizen binnen of naar gemeente \'s-Hertogenbosch',
+      },
+      end: {
+        check: {
+          title: "Controleer je gegevens",
+          subtitle: "Controleer onderstaande gegevens goed en verzend het formulier.",
+        },
+        success: {
+          title: "Je verhuizing is aangevraagd",
+          subtitle: "De volgende gegevens zijn succesvol verzonden naar de gemeente.",
+        }
       },
     },
   ])
