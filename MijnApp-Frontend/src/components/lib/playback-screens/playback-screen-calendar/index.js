@@ -31,7 +31,7 @@ export default class PlaybackScreenCalendar extends connect(store)(
 
   constructor() {
     super();
-    this.datepickerValueText = "";
+    this.datepickerValueText = '';
   }
 
   _title(question) {
@@ -40,18 +40,17 @@ export default class PlaybackScreenCalendar extends connect(store)(
 
   _datePickerValueChanged(data) {
     const question = this.question;
-    var date = fromDutchDateString(data);
+    if (data) {
+      this.datepickerValueText = moment(data, 'DD-MM-YYYY').format('D MMMM YYYY');
+    }
     store.dispatch(
       orderSaveAnswer(
         question.key || question.property,
         data,
         question.title,
-        toDutchDate(date)
+        this.datepickerValueText
       )
     );
-    if (data) {
-      this.datepickerValueText = moment(data, 'DD-MM-YYYY').format('D MMMM YYYY');
-    }
   }
 
   _getValue(order) {
