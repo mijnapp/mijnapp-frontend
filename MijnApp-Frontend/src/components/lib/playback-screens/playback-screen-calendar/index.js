@@ -3,6 +3,7 @@ import { connect } from 'pwa-helpers/connect-mixin';
 import { store } from '../../../../redux/store';
 import { orderSaveAnswer } from '../../../../redux/actions/order';
 import { JOURNEY_START } from '../../../../helpers/common';
+import { fromDutchDateString, toDutchDate } from '../../../helpers/dutchDate';
 
 import css from './style.pcss';
 import template from './template.html';
@@ -39,12 +40,13 @@ export default class PlaybackScreenCalendar extends connect(store)(
 
   _datePickerValueChanged(data) {
     const question = this.question;
+    var date = fromDutchDateString(data);
     store.dispatch(
       orderSaveAnswer(
         question.key || question.property,
         data,
         question.title,
-        data
+        toDutchDate(date)
       )
     );
     if (data) {
