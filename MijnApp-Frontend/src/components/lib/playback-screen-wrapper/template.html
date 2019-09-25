@@ -49,29 +49,29 @@
       <div class="Title">[[_title(question)]]</div>
       <div class="Subtitle">[[_subtitle(question)]]</div>
       <slot></slot>
-    </div>
-  </div>
-  <div class="ButtonContainer">
-    <maki-button class="PrevButton" stroke="0" size="50" font-size="18" set-color-main="#3192CF" on-click="_prev">
-      <div class="ButtonInner">
-        <div class="ButtonInnerLeft"><</div>
-        <div class="ButtonInnerText">Ga terug</div>
-      </div>
-    </maki-button>
-    <dom-if if="[[_showNext(noNext, disabled, skipCallback)]]">
-      <template>
-        <maki-button class="NextButton" disabled="[[disabled]]" highlight set-color-highlight="#3192CF" stroke="0" size="50" font-size="18" on-click="[[_next(nextCallback, disabled)]]">
+      <div class="ButtonContainer">
+        <maki-button class="PrevButton" stroke="0" size="50" font-size="18" set-color-main="#3192CF" on-click="_prev">
           <div class="ButtonInner">
-            <div class="ButtonInnerText">Ga verder</div>
-            <div class="ButtonInnerRight">></div>
+            <div class="ButtonInnerLeft"><</div>
+            <div class="ButtonInnerText">Ga terug</div>
           </div>
         </maki-button>
-      </template>
-    </dom-if>
-    <dom-if if="[[_showSkip(noNext, disabled, skipCallback)]]">
-      <template>
-        <maki-button class="SkipButton" set-color-main="#ffffff" stroke="1" text-color-main stroke="0" size="50" font-size="18" on-click="[[_skip(skipCallback)]]">Overslaan</maki-button>
-      </template>
-    </dom-if>
+        <dom-if if="[[_showNext(noNext, disabled, skipCallback)]]">
+          <template>
+            <maki-button class="NextButton" disabled="[[disabled]]" highlight set-color-highlight="#3192CF" stroke="0" size="50" font-size="18" on-click="[[_next(nextCallback, disabled)]]">
+              <div class="ButtonInner">
+                <div class="ButtonInnerText">Ga verder</div>
+                <div class="ButtonInnerRight">></div>
+              </div>
+            </maki-button>
+          </template>
+        </dom-if>
+        <dom-if if="[[_showSkip(noNext, disabled, skipCallback)]]">
+          <template>
+            <maki-button class="SkipButton" set-color-main="#ffffff" stroke="1" text-color-main stroke="0" size="50" font-size="18" on-click="[[_skip(skipCallback)]]">Overslaan</maki-button>
+          </template>
+        </dom-if>
+      </div>
+    </div>
   </div>
 </div>
