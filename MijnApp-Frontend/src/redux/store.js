@@ -216,7 +216,7 @@ store.dispatch(
           'Geef je nieuwe adres op',
           'Geef de datum op wanneer je gaat verhuizen',
           'Geef aan met wie je gaat verhuizen',
-          'Geef de nieuwe woonsituatie aan',
+          //'Geef de nieuwe woonsituatie aan',
         ],
         subtitle: 'Verhuizen binnen of naar gemeente \'s-Hertogenbosch',
       },
