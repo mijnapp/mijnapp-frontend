@@ -161,7 +161,7 @@ store.dispatch(
           property: 'ingangsdatum',
           options: null,
           title: 'Wanneer ga je verhuizen?',
-          subtitle: 'kies een datum',
+          subtitle: 'Kies je verhuisdatum in de onderstaande kalender.',
           next: '37e30b1f-fb51-4d49-8756-fa5d4d55829a',
         },
         {

@@ -6,6 +6,7 @@ import { JOURNEY_START } from '../../../../helpers/common';
 
 import css from './style.pcss';
 import template from './template.html';
+var moment = require('moment');
 
 import '../../playback-screen-wrapper';
 import '../../polymer-openajax-datepicker-master/polymer-openajax-datepicker';
@@ -29,6 +30,7 @@ export default class PlaybackScreenCalendar extends connect(store)(
 
   constructor() {
     super();
+    this.datepickerValueText = "";
   }
 
   _title(question) {
@@ -45,6 +47,9 @@ export default class PlaybackScreenCalendar extends connect(store)(
         data
       )
     );
+    if (data) {
+      this.datepickerValueText = moment(data, 'DD-MM-YYYY').format('D MMMM YYYY');
+    }
   }
 
   _getValue(order) {
