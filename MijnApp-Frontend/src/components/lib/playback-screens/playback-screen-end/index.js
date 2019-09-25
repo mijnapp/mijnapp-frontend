@@ -179,8 +179,8 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
     this.order_status_send_ok = (state.order.order_status === ORDER_STATUS_SEND_OK);
     this.order_status_send_failed = (state.order.order_status === ORDER_STATUS_SEND_FAILED);
     this.order_show_buttons = this.order_status_not_send || this.order_status_send_failed;
-    this.order_end_title = this.order_show_buttons ? "Controleer je gegevens" : "Verstuurde aanvraag";
-    this.order_end_sub_title = this.order_show_buttons ? "Controleer onderstaande gegevens goed en verzend het formulier." : "";
+    this.order_end_title = this.order_show_buttons ? "Controleer je gegevens" : "Je verhuizing is aangevraagd";
+    this.order_end_sub_title = this.order_show_buttons ? "Controleer onderstaande gegevens goed en verzend het formulier." : "De volgende gegevens zijn succesvol verzonden naar de gemeente.";
     this.order_reponse_data = this.order_status_send_ok ? state.order.response_data.href : '';
     if (this.journey.title === "Ik ga verhuizen") {
       this.show_journey_icon_truck = true;
