@@ -144,12 +144,12 @@ store.dispatch(
       },
       end: {
         check: {
-          title: "Controleer je gegevens",
-          subtitle: "Controleer onderstaande gegevens goed en verzend het formulier.",
+          title: 'Controleer je gegevens',
+          subtitle: 'Controleer onderstaande gegevens goed en verzend het formulier.',
         },
         success: {
-          title: "Je idee is doorgegeven",
-          subtitle: "Het volgende idee is succesvol verzonden naar de gemeente.",
+          title: 'Je idee is doorgegeven',
+          subtitle: 'Het volgende idee is succesvol verzonden naar de gemeente.',
         }
       },
     },
@@ -232,12 +232,12 @@ store.dispatch(
       },
       end: {
         check: {
-          title: "Controleer je gegevens",
-          subtitle: "Controleer onderstaande gegevens goed en verzend het formulier.",
+          title: 'Controleer je gegevens',
+          subtitle: 'Controleer onderstaande gegevens goed en verzend het formulier.',
         },
         success: {
-          title: "Je verhuizing is aangevraagd",
-          subtitle: "De volgende gegevens zijn succesvol verzonden naar de gemeente.",
+          title: 'Je verhuizing is aangevraagd',
+          subtitle: 'De volgende gegevens zijn succesvol verzonden naar de gemeente.',
         }
       },
     },
