@@ -43,8 +43,7 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
     const documentTitle = `Samenvatting van het verzoek.pdf`;
     const contentData = [];
     contentData.push({ text: 'Samenvatting van het verzoek', style: 'header' });
-    const today = new Date();
-    contentData.push({ text: `De volgende gegevens zijn op ${toDutchDate(today)} verzonden naar de gemeente` });
+    contentData.push({ text: `De volgende gegevens zijn op ${toDutchDate(this.orderDate)} verzonden naar de gemeente` });
     contentData.push(this.questionsToPdf());
 
     const docDefinition = {
@@ -196,6 +195,7 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
       this.show_journey_icon_truck = false;
       this.show_journey_icon_bulb = true;
     }
+    this.orderDate = state.order.orderDate;
   }
 }
 

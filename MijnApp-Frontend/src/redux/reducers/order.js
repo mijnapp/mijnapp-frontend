@@ -45,11 +45,11 @@ export const order = (state = { data: [], current: JOURNEY_START, skipList: [], 
         skipList: [...state.skipList, action.index],
       };
     case REQUEST_ORDERS_SUBMIT:
-      return { ...state, order_status: ORDER_STATUS_SENDING }
+      return { ...state, order_status: ORDER_STATUS_SENDING, orderDate: null }
     case REQUEST_ORDERS_SUBMIT_SUCCESS:
-      return { ...state, order_status: ORDER_STATUS_SEND_OK, response_data: action.data }
+      return { ...state, order_status: ORDER_STATUS_SEND_OK, response_data: action.data, orderDate: new Date() }
     case REQUEST_ORDERS_SUBMIT_FAILED:
-      return { ...state, order_status: ORDER_STATUS_SEND_FAILED }
+      return { ...state, order_status: ORDER_STATUS_SEND_FAILED, orderDate: null }
     default:
       return state;
   }
