@@ -4,13 +4,13 @@ import { store } from '../../../../redux/store';
 import { selectPage } from '../../../../redux/actions/application';
 import { requestOrdersSubmit } from '../../../../redux/actions/orders';
 import { orderPrev } from '../../../../redux/actions/order';
-import { toDutchDate } from '../../../helpers/dutchDate';
 import { JOURNEY_START, JOURNEY_END, ORDER_STATUS_SENDING, ORDER_STATUS_SEND_OK, ORDER_STATUS_NOT_SEND, ORDER_STATUS_SEND_FAILED } from '../../../../helpers/common';
 import css from './style.pcss';
 import template from './template.html';
 import '../../playback-screen-wrapper';
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
+var moment = require('moment');
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
@@ -24,6 +24,7 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
 
   constructor() {
     super();
+    moment.locale('nl');
   }
 
   _nextCallback(question) {
@@ -43,7 +44,7 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
     const documentTitle = `Samenvatting van het verzoek.pdf`;
     const contentData = [];
     contentData.push({ text: 'Samenvatting van het verzoek', style: 'header' });
-    contentData.push({ text: `De volgende gegevens zijn op ${toDutchDate(this.orderDate)} verzonden naar de gemeente` });
+    contentData.push({ text: `De volgende gegevens zijn op ${moment(this.orderDate).format('D MMMM YYYY')} verzonden naar de gemeente.` });
     contentData.push(this.questionsToPdf());
 
     const today = new Date();
@@ -68,7 +69,7 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
             widths: ['*', 100],
             body: [
               [
-                { text: `Document gegenereerd op ${toDutchDate(today).toLowerCase()}` },
+                { text: `Document gegenereerd op ${moment(today).format('D MMMM YYYY')}` },
                 { text: `pagina ${currentPage} van ${pageCount}`, alignment: 'right' },
               ]
             ]
@@ -123,8 +124,6 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
       margin: [0, 40, 0, 0],
     };
   }
-
-
 
   _stop() {
     store.dispatch(selectPage('home'));
