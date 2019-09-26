@@ -3,8 +3,6 @@ import { connect } from 'pwa-helpers/connect-mixin';
 import { store } from '../../../../redux/store';
 import { orderSaveAnswer } from '../../../../redux/actions/order';
 import { JOURNEY_START } from '../../../../helpers/common';
-import { fromDutchDateString, toDutchDate } from '../../../helpers/dutchDate';
-
 import css from './style.pcss';
 import template from './template.html';
 var moment = require('moment');
@@ -32,6 +30,7 @@ export default class PlaybackScreenCalendar extends connect(store)(
   constructor() {
     super();
     this.datepickerValueText = '';
+    moment.locale('nl');
   }
 
   _title(question) {
