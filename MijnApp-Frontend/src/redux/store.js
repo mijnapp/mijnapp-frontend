@@ -142,6 +142,16 @@ store.dispatch(
         ],
         subtitle: 'Leuk dat je een goed idee hebt!',
       },
+      end: {
+        check: {
+          title: 'Controleer je gegevens',
+          subtitle: 'Controleer onderstaande gegevens goed en verzend het formulier.',
+        },
+        success: {
+          title: 'Je idee is doorgegeven',
+          subtitle: 'Het volgende idee is succesvol verzonden naar de gemeente.',
+        }
+      },
     },
     {
       title: 'Ik ga verhuizen',
@@ -161,7 +171,7 @@ store.dispatch(
           property: 'ingangsdatum',
           options: null,
           title: 'Wanneer ga je verhuizen?',
-          subtitle: 'kies een datum',
+          subtitle: 'Kies je verhuisdatum in de onderstaande kalender.',
           next: '37e30b1f-fb51-4d49-8756-fa5d4d55829a',
         },
         {
@@ -216,9 +226,19 @@ store.dispatch(
           'Geef je nieuwe adres op',
           'Geef de datum op wanneer je gaat verhuizen',
           'Geef aan met wie je gaat verhuizen',
-          'Geef de nieuwe woonsituatie aan',
+          //'Geef de nieuwe woonsituatie aan',
         ],
         subtitle: 'Verhuizen binnen of naar gemeente \'s-Hertogenbosch',
+      },
+      end: {
+        check: {
+          title: 'Controleer je gegevens',
+          subtitle: 'Controleer onderstaande gegevens goed en verzend het formulier.',
+        },
+        success: {
+          title: 'Je verhuizing is aangevraagd',
+          subtitle: 'De volgende gegevens zijn succesvol verzonden naar de gemeente.',
+        }
       },
     },
   ])

@@ -293,8 +293,8 @@ export default class MakiButton extends PolymerElement {
     const fontSize = this.fontSize;
     const height = Math.floor(this.fontSize * 1.25);
     const vPad = (innerHeight - height) / 2;
-    let lPad = vPad * 1.75;
-    let rPad = vPad * 2;
+    let lPad = vPad * 1.2;
+    let rPad = vPad * 1.2;
     let width = 'auto';
 
     if (this.hasHeading(heading) || this.small) {

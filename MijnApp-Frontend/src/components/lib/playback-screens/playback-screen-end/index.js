@@ -4,13 +4,13 @@ import { store } from '../../../../redux/store';
 import { selectPage } from '../../../../redux/actions/application';
 import { requestOrdersSubmit } from '../../../../redux/actions/orders';
 import { orderPrev } from '../../../../redux/actions/order';
-import { toDutchDate } from '../../../helpers/dutchDate';
 import { JOURNEY_START, JOURNEY_END, ORDER_STATUS_SENDING, ORDER_STATUS_SEND_OK, ORDER_STATUS_NOT_SEND, ORDER_STATUS_SEND_FAILED } from '../../../../helpers/common';
 import css from './style.pcss';
 import template from './template.html';
 import '../../playback-screen-wrapper';
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
+var moment = require('moment');
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
@@ -24,6 +24,7 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
 
   constructor() {
     super();
+    moment.locale('nl');
   }
 
   _nextCallback(question) {
@@ -40,26 +41,14 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
   }
 
   _createPdf() {
-    const documentTitle = `MijnApp ${this.journey.title}.pdf`;
+    const documentTitle = `Samenvatting van het verzoek.pdf`;
     const contentData = [];
-    contentData.push({ text: 'Overzicht van uw verzoek', style: 'header' });
-    contentData.push({ text: 'Het verzoek', style: 'subheader' });
-    contentData.push({ text: 'Type verzoek', style: 'question' });
-    contentData.push({ text: this.journey.title, style: 'answer' });
-    contentData.push({ text: 'Vragen en antwoorden', style: 'subheader' });
-    this.order.filter((o) => o.question && o.question !== 'END').forEach((o) => {
-      if (Array.isArray(o.valueTitle)) {
-        if (o.valueTitle.length > 0) {
-          contentData.push({ text: o.keyTitle, style: 'question' });
-          contentData.push({ text: o.valueTitle.join('\n'), style: 'answer' });
-        }
-      } else {
-        contentData.push({ text: o.keyTitle, style: 'question' });
-        contentData.push({ text: o.valueTitle, style: 'answer' });
-      }
-    });
+    contentData.push({ text: 'Samenvatting van het verzoek', style: 'header' });
+    contentData.push({ text: `De volgende gegevens zijn op ${moment(this.orderDate).format('D MMMM YYYY')} verzonden naar de gemeente.` });
+    contentData.push(this.questionsToPdf());
 
     const today = new Date();
+
     const docDefinition = {
       content: contentData,
       info: {
@@ -80,8 +69,8 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
             widths: ['*', 100],
             body: [
               [
-                { text: `Document gegenereerd op ${toDutchDate(today).toLowerCase()}` },
-                { text: `pagina ${currentPage.toString()} van ${pageCount}`, alignment: 'right' }
+                { text: `Document gegenereerd op ${moment(today).format('D MMMM YYYY')}` },
+                { text: `pagina ${currentPage} van ${pageCount}`, alignment: 'right' },
               ]
             ]
           },
@@ -92,30 +81,48 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
       styles: {
         header: {
           margin: [0, 0, 0, 10],
-          fontSize: 26,
+          fontSize: 20,
           bold: true,
-          color: '#3192CF',
-        },
-        subheader: {
-          margin: [0, 0, 0, 10],
-          fontSize: 24,
-          italics: true,
-          color: '#3192CF',
         },
         question: {
           margin: [0, 0, 0, 10],
-          fontSize: 14,
-          color: '#283583',
-          italics: true,
+          fontSize: 11,
+          bold: true,
         },
         answer: {
           margin: [10, 0, 0, 15],
-          fontSize: 14,
+          fontSize: 11,
         }
       }
     };
 
     pdfMake.createPdf(docDefinition).download(documentTitle);
+  }
+
+  questionsToPdf() {
+    const body = [];
+    this.order.filter((o) => o.question && o.question !== 'END').forEach((o) => {
+      const dataRow = [];
+      if (Array.isArray(o.valueTitle)) {
+        if (o.valueTitle.length > 0) {
+          dataRow.push({ text: o.keyTitle, style: 'question' });
+          dataRow.push({ text: o.valueTitle.join('\n'), style: 'answer' });
+        }
+      } else {
+        dataRow.push({ text: o.keyTitle, style: 'question' });
+        dataRow.push({ text: o.valueTitle, style: 'answer' });
+      }
+      body.push(dataRow);
+    });
+
+    return {
+      table: {
+        widths: ['*', '*'],
+        body: body,
+      },
+      layout: 'noBorders',
+      margin: [0, 40, 0, 0],
+    };
   }
 
   _stop() {
@@ -155,17 +162,38 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
     return false;
   }
 
+  isNotLastItem(current, index) {
+    return this.journey.questions.length - 1 !== index;
+  }
+  isCurrentQuestion(current, index) {
+    return current === index;
+  }
+  isNotAnswered(current, index) {
+    return index > current;
+  }
+  isAnswered(current, index) {
+    return index < current;
+  }
+
   stateChanged(state) {
     this.journey = state.journey;
+
+    var checkTitle = this.journey.end ? this.journey.end.check ? this.journey.end.check.title : '' : '';
+    var checkSubTitle = this.journey.end ? this.journey.end.check ? this.journey.end.check.subtitle : '' : '';
+    var successTitle = this.journey.end ? this.journey.end.success ? this.journey.end.success.title : '' : '';
+    var successSubTitle = this.journey.end ? this.journey.end.success ? this.journey.end.success.subtitle : '' : '';
+
     this.current = state.order.current;
     this.id = this.current === JOURNEY_START ? JOURNEY_START : JOURNEY_END;
+    this.question = { type: 'end' };
     this.order = state.order.data;
     this.order_status_not_send = (state.order.order_status === ORDER_STATUS_NOT_SEND);
     this.order_status_sending = (state.order.order_status === ORDER_STATUS_SENDING);
     this.order_status_send_ok = (state.order.order_status === ORDER_STATUS_SEND_OK);
     this.order_status_send_failed = (state.order.order_status === ORDER_STATUS_SEND_FAILED);
     this.order_show_buttons = this.order_status_not_send || this.order_status_send_failed;
-    this.order_end_title = this.order_show_buttons ? "Controleer je gegevens" : "Verstuurde aanvraag";
+    this.order_end_title = this.order_show_buttons ? checkTitle : successTitle;
+    this.order_end_sub_title = this.order_show_buttons ? checkSubTitle : successSubTitle;
     this.order_reponse_data = this.order_status_send_ok ? state.order.response_data.href : '';
     if (this.journey.title === "Ik ga verhuizen") {
       this.show_journey_icon_truck = true;
@@ -174,6 +202,7 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
       this.show_journey_icon_truck = false;
       this.show_journey_icon_bulb = true;
     }
+    this.orderDate = state.order.orderDate;
   }
 }
 

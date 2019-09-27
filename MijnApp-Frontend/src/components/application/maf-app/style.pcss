@@ -9,6 +9,12 @@
   --icon-color: #3192CF;
   --icon-color-teal: #1EBDD3;
   --icon-color-hover: #56A6D8;
+  --main-font-header-size: 32px;
+  --main-font-subheader-size: 24px;
+  --main-font-text-size: 18px;
+  --main-font-medium-text-size: 16px;
+  --main-font-small-text-size: 14px;
+  --main-font-smallest-text-size: 13px;
 }
 :host {
   float: left;
@@ -87,7 +93,7 @@
 }
 .TabSwitcherTabTextInner {
   font-family: var(--typography-fontFamily);
-  font-size: 13px;
+  font-size: var(--main-font-smallest-text-size);
   font-weight: 500;
   font-style: normal;
   font-stretch: normal;
@@ -125,4 +131,9 @@
 }
 .HamburgerMenuIcon:hover {
   background-color: var(--button-gray-background-color-hover-dark);
+}
+
+@media only screen and (max-width: 600px) {
+  :root{    
+  }
 }

@@ -4,7 +4,7 @@
   max-width: var(--main-max-width);
   box-sizing: border-box;
   float: left;
-  padding: 0 0 120px 0;
+  padding: 0 0 57px 0;
 }
 .ScrollContainer {
   box-sizing: border-box;
@@ -12,6 +12,7 @@
   height: 100%;
   float: left;
   overflow-y: auto;
+  padding: 0 0 57px 0;
 }
 .Scroller {
   padding: 0px 16px;
@@ -24,12 +25,11 @@
   box-sizing: border-box;
 }
 .ButtonContainer {
-  position: fixed;
-  bottom: 57px;
   width: 100%;
   max-width: var(--main-max-width);
-  height: 62px;
-  padding: 6px 16px 0px 16px;
+  height: 50px;
+  margin-top: 16px;
+  margin-bottom: 8px;
   box-sizing: border-box;
   background-color: #fff;
 }
@@ -56,7 +56,7 @@
 .Title {
   margin-top: 16px;
   font-family: var(--typography-fontFamily);
-  font-size: 20px;
+  font-size: var(--main-font-subheader-size);
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
@@ -67,7 +67,7 @@
 }
 .Subtitle {
   font-family: var(--typography-fontFamily);
-  font-size: 16px;
+  font-size: var(--main-font-medium-text-size);
   font-style: italic;
   line-height: 1.28;
   letter-spacing: -0.4px;
@@ -82,7 +82,7 @@
   padding-left: 24px;
   opacity: 1;
   font-family: var(--typography-fontFamily);
-  font-size: 14px;
+  font-size: var(--main-font-small-text-size);
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
@@ -120,7 +120,7 @@ maki-icon-truck, maki-icon-bulb {
   --icon-size: 20px;
 }
 .JourneyTitle {
-  font-size: 16px;
+  font-size: var(--main-font-medium-text-size);
   text-align: center;
 }
 .JourneyProgress{

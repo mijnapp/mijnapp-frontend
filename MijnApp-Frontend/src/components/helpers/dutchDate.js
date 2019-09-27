@@ -19,6 +19,7 @@ const maand = (date, kort) => {
     'januari',
     'februari',
     'maart',
+    'april',
     'mei',
     'juni',
     'juli',
@@ -42,7 +43,7 @@ export const time = (date) => {
 
 export const toDutchDate = (date, kort) => {
   if (date && typeof date.getMonth === 'function') {
-    return `${dag(date, kort)} ${date.getDate()} ${maand(date, kort)}${
+    return `${date.getDate()} ${maand(date, kort)}${
       kort
         ? date.getFullYear() === new Date().getFullYear()
           ? ''
@@ -58,4 +59,12 @@ export const toDutchDateTime = (date, kort) => {
     return `${toDutchDate(date, kort)} ${time(date)}`;
   }
   return '';
+};
+
+export const fromDutchDateString = (dateString) => {
+  var day = parseInt(dateString.substring(0, 2));
+  var month = parseInt(dateString.substring(3, 5));
+  var year = parseInt(dateString.substring(6, 10));
+
+  return new Date(year, month - 1, day);
 };

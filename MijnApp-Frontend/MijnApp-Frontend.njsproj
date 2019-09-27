@@ -43,6 +43,7 @@
     <Folder Include="src\components\lib\maki-icons\maki-icon-truck\" />
     <Folder Include="src\components\lib\maki-icons\maki-icon-hamburger\" />
     <Folder Include="src\components\lib\maki-icons\maki-icon-logout\" />
+    <Folder Include="src\components\lib\maki-icons\maki-icon-confetti\" />
     <Folder Include="src\components\lib\playback-screens\playback-screen-persons-moving\" />
     <Folder Include="src\components\lib\polymer-openajax-datepicker-master\" />
     <Folder Include="src\assets\images\" />
@@ -298,6 +299,9 @@
     <Content Include="src\components\lib\maki-icons\maki-icon-bulb\index.js" />
     <Content Include="src\components\lib\maki-icons\maki-icon-bulb\style.pcss" />
     <Content Include="src\components\lib\maki-icons\maki-icon-bulb\template.html" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-confetti\index.js" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-confetti\style.pcss" />
+    <Content Include="src\components\lib\maki-icons\maki-icon-confetti\template.html" />
     <Content Include="src\components\lib\maki-icons\maki-icon-edit-document\index.js" />
     <Content Include="src\components\lib\maki-icons\maki-icon-edit-document\style.pcss" />
     <Content Include="src\components\lib\maki-icons\maki-icon-edit-document\template.html" />

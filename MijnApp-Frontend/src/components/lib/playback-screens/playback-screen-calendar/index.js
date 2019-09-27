@@ -3,9 +3,9 @@ import { connect } from 'pwa-helpers/connect-mixin';
 import { store } from '../../../../redux/store';
 import { orderSaveAnswer } from '../../../../redux/actions/order';
 import { JOURNEY_START } from '../../../../helpers/common';
-
 import css from './style.pcss';
 import template from './template.html';
+var moment = require('moment');
 
 import '../../playback-screen-wrapper';
 import '../../polymer-openajax-datepicker-master/polymer-openajax-datepicker';
@@ -29,6 +29,8 @@ export default class PlaybackScreenCalendar extends connect(store)(
 
   constructor() {
     super();
+    this.datepickerValueText = '';
+    moment.locale('nl');
   }
 
   _title(question) {
@@ -37,12 +39,15 @@ export default class PlaybackScreenCalendar extends connect(store)(
 
   _datePickerValueChanged(data) {
     const question = this.question;
+    if (data) {
+      this.datepickerValueText = moment(data, 'DD-MM-YYYY').format('D MMMM YYYY');
+    }
     store.dispatch(
       orderSaveAnswer(
         question.key || question.property,
         data,
         question.title,
-        data
+        this.datepickerValueText
       )
     );
   }

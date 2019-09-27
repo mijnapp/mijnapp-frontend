@@ -12,6 +12,7 @@
   --datepicker-cellempty-color: #fff;
   --datepicker-buttons-hover: rgba(0,0,0,.1);
   --datepicker-buttons-focus: rgba(0,0,0,.38);
+  --datepicker-font-color: var(--palette-primary-main);
 }
 
 .datepicker {
@@ -19,6 +20,7 @@
   margin-top: 10px;
   z-index: var(--datepicker-zindex);
   width: var(--datepicker-width);
+  color: var(--datepicker-font-color);
   background-color: var(--datepicker-background-color);
   border-radius: 3px;
   box-shadow: 0px 0px 2px rgba(0,0,0,.4);
@@ -38,10 +40,9 @@ div#bn_prev::before {
   content:"\003c";
   font-family: var(--typography-fontFamily);
   height: 24px;
-  font-size: 24px;
+  font-size: var(--main-font-subheader-size);
   font-weight: 500;
   font-style: normal;
-  color: var(--palette-primary-main);
   position: relative;
   top: 5px;
   left: 12px;
@@ -57,10 +58,9 @@ div#bn_next::before {
   content:"\003e";
   font-family: var(--typography-fontFamily);
   height: 24px;
-  font-size: 24px;
+  font-size: var(--main-font-subheader-size);
   font-weight: 500;
   font-style: normal;
-  color: var(--palette-primary-main);
   position: relative;
   top: 5px;
   left: 12px;
@@ -88,12 +88,12 @@ div#month {
   height: 24px;
   text-align: center;
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: var(--main-font-medium-text-size);
 }
 
 table#cal {
   width: 290px;
-  font-size: 1.2em;
+  font-size: var(--main-font-medium-text-size);
   text-align: center;
   border-collapse: seperate;
   table-layout: fixed;
@@ -136,9 +136,9 @@ table#cal td:hover {
 }
 
 table#cal td.focus {
-  background-color: var(--palette-secondary-main);
+  background-color: rgba(119, 211, 83, 0.32);
+  border-color: #77D353;
   border-radius: 20px;
-  color: #fff;
 }
 
 table#cal td.empty:hover, table#cal td.disabled:hover {
@@ -158,5 +158,4 @@ table#cal td.empty:hover, table#cal td.disabled:hover {
 
 abbr {
   text-decoration: none;
-  color: var(--datepicker-month-color);
 }
