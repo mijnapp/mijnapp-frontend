@@ -10,24 +10,30 @@ import {
   REQUEST_PERSONS_MOVING_SKIPQUESTION,
 } from '../actions/person';
 
-export const person = (state = { data: {}, movingPersonsStatus: CLEAR_PERSONS_MOVING, }, action) => {
+export const person = (state = { data: {}, status: CLEAR_PERSON_DATA, movingPersonsStatus: CLEAR_PERSONS_MOVING, }, action) => {
   switch (action.type) {
     case REQUEST_PERSON_DATA:
-      return state;
+      return {
+        ...state,
+        status: REQUEST_PERSON_DATA,
+      }
     case REQUEST_PERSON_DATA_SUCCESS:
       return {
         ...state,
         data: action.data,
         error: null,
+        status: REQUEST_PERSON_DATA_SUCCESS,
       };
     case REQUEST_PERSON_DATA_FAILURE:
       return {
         ...state,
         error: action.error,
+        status: REQUEST_PERSON_DATA_FAILURE,
       };
     case CLEAR_PERSON_DATA:
       return {
         data: {},
+        status: CLEAR_PERSON_DATA,
       };
     case REQUEST_PERSONS_MOVING:
       return {

@@ -4,6 +4,7 @@ import { store } from '../../../../redux/store';
 import { selectPage } from '../../../../redux/actions/application';
 import { requestOrdersSubmit } from '../../../../redux/actions/orders';
 import { orderPrev } from '../../../../redux/actions/order';
+import { requestPersonData, CLEAR_PERSON_DATA } from '../../../../redux/actions/person';
 import { JOURNEY_START, JOURNEY_END, ORDER_STATUS_SENDING, ORDER_STATUS_SEND_OK, ORDER_STATUS_NOT_SEND, ORDER_STATUS_SEND_FAILED } from '../../../../helpers/common';
 import css from './style.pcss';
 import template from './template.html';
@@ -100,7 +101,10 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
   }
 
   questionsToPdf() {
-    const body = [];
+    const body = [
+        [{ text: 'Indiener', style: 'question' },
+        { text: this.personData.naam.aanschrijfwijze, style: 'answer' }],
+    ];
     this.order.filter((o) => o.question && o.question !== 'END').forEach((o) => {
       const dataRow = [];
       if (Array.isArray(o.valueTitle)) {
@@ -203,6 +207,11 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
       this.show_journey_icon_bulb = true;
     }
     this.orderDate = state.order.orderDate;
+    if (state.person.status === undefined || state.person.status === CLEAR_PERSON_DATA) {
+      store.dispatch(requestPersonData());
+    } else {
+        this.personData = state.person.data;
+    }
   }
 }
 

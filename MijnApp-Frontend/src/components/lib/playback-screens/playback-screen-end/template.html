@@ -76,6 +76,10 @@
           </template>
       </dom-if>
       <div class="Subtitle">{{order_end_sub_title}}</div>
+      <div class="Answer">
+          <div class="AnswerLabel">Indiener</div>
+          <div class="AnswerAnswer">{{personData.naam.aanschrijfwijze}}</div>
+      </div>
       <dom-repeat items="[[_getOrderItems(order)]]">
           <template>
               <div class="Answer">
