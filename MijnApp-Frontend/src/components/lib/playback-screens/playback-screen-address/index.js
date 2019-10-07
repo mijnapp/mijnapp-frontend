@@ -20,6 +20,7 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
       addresses: Array,
       hasSearched: Boolean,
       hasValidPostalCodeAndNumber: Boolean,
+      searching: Boolean,
     };
   }
 
@@ -175,6 +176,7 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
     } else {
       this.addresses = state.address.data.filter(this.filterAddresses);
       this.hasSearched = true;
+      this.searching = state.address.searching;
     }
     if (state.address.reset) {
       this._reset();

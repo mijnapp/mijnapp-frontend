@@ -11,29 +11,38 @@
   <dom-if if="{{showApiResult(hasSearched, hasValidPostalCodeAndNumber)}}">
     <template>
       <div class="Title">Gevonden adressen</div>
-      <dom-if if="{{!addresses.length}}">
+      <dom-if if="{{searching}}">
         <template>
-          <div class="Subtitle">
-            <maki-icon-attention></maki-icon-attention>
-            <div class="SubtitleAttention">Het nieuwe adres is niet bekend bij de gemeente. Controleer de postcode, huisnummer en eventueel toevoeging en probeer opnieuw.</div>
-          </div>
+          <div class="Subtitle">Ophalen adressen voor {{postalCode}}, {{number}}{{numberAddition}}</div>
         </template>
       </dom-if>
-      <dom-if if="{{addresses.length}}">
+      <dom-if if="{{!searching}}">
         <template>
-          <div class="Subtitle">Staat uw adres niet in de lijst, controleer dan de ingevulde postcode, huisnummer en eventueel huisnummertoevoeging en probeer opnieuw.</div>
+          <dom-if if="{{!addresses.length}}">
+            <template>
+              <div class="Subtitle">
+                <maki-icon-attention></maki-icon-attention>
+                <div class="SubtitleAttention">Het nieuwe adres is niet bekend bij de gemeente. Controleer de postcode, huisnummer en eventueel toevoeging en probeer opnieuw.</div>
+              </div>
+            </template>
+          </dom-if>
+          <dom-if if="{{addresses.length}}">
+            <template>
+              <div class="Subtitle">Staat uw adres niet in de lijst, controleer dan de ingevulde postcode, huisnummer en eventueel huisnummertoevoeging en probeer opnieuw.</div>
+            </template>
+          </dom-if>
         </template>
       </dom-if>
+      <div class="Options">
+        <dom-repeat items="{{addresses}}">
+          <template>
+            <div class="Option" data-index="[[index]]" data-question="[[question]]" on-click="_optionClick">
+              <div class="OptionText">{{item.straat}} {{item.huisnummer}}{{item.huisnummertoevoeging}}, {{item.woonplaats}} {{item.postcode}}</div>
+              <div class="OptionCarrot">></div>
+            </div>
+          </template>
+        </dom-repeat>
+      </div>
     </template>
   </dom-if>
-  <div class="Options">
-    <dom-repeat items="{{addresses}}">
-      <template>
-        <div class="Option" data-index="[[index]]" data-question="[[question]]" on-click="_optionClick">
-          <div class="OptionText">{{item.straat}} {{item.huisnummer}}{{item.huisnummertoevoeging}}, {{item.woonplaats}} {{item.postcode}}</div>
-          <div class="OptionCarrot">></div>
-        </div>
-      </template>
-    </dom-repeat>
-  </div>
 </playback-screen-wrapper>
