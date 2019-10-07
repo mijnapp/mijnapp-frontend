@@ -225,7 +225,7 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
   _popHeader() {
     var thead = this.$grid.querySelector('thead');
     var weekday = 0;
-    var cellsHeader = '\t<tr id="row1">\n';
+    var cellsHeader = '\t<tr id="rowHeader">\n';
     // Insert the leading empty cells
     thead.innerHTML = '';
     for (; weekday < 7; weekday++) {
@@ -251,7 +251,7 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
     var $tbody = this.$grid.querySelector('tbody');
     var dayOfMonth = this.dateObj.date();
 
-    var gridCells = '\t<tr id="row1">\n';
+    var gridCells = '\t<tr id="row0">\n';
 
     // clear the grid
     $tbody.innerHTML = '';
