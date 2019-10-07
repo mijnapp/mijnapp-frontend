@@ -20,7 +20,7 @@ namespace MijnApp_Backend.Controllers
         private readonly string _baseUri;
         private readonly IServiceClient _serviceClient;
         private const string PostRequest = "{0}requests";
-        private const string RSIN_DEN_BOSCH = "1709124";
+        private const string TARGET_ORGANIZATION_DEN_BOSCH = "1709124";
 
         public OrderController(IConfiguration config, IServiceClient serviceClient)
         {
@@ -59,7 +59,7 @@ namespace MijnApp_Backend.Controllers
         /// <summary>
         /// Create an "request" (verzoek) to send to the API. It will fill in the properties based on the suplied order, and the user bsn.
         /// For the move request we add the person as an property as an exception.
-        /// The RSIN of municipality DenBosch is used for now. This will be the organization that will handle the request.
+        /// The target organization of municipality DenBosch is used for now. This will be the organization that will handle the request.
         /// </summary>
         /// <param name="order"></param>
         /// <param name="bsn"></param>
@@ -71,7 +71,7 @@ namespace MijnApp_Backend.Controllers
                 submitter_person = true,
                 cases = new string[0],
                 properties = new Dictionary<string, object>(),
-                rsin = RSIN_DEN_BOSCH,
+                target_organization = TARGET_ORGANIZATION_DEN_BOSCH,
                 request_type = "/request_types/" + order.requestType
             };
             foreach (var question in order.data.Where(q => q.question != "END"))
@@ -106,6 +106,7 @@ namespace MijnApp_Backend.Controllers
         }
     }
 
+    // ReSharper disable InconsistentNaming
     public class Order
     {
         public List<Question> data { get; set; }
@@ -124,7 +125,7 @@ namespace MijnApp_Backend.Controllers
     internal class Request
     {
         public string request_type { get; set; }
-        public string rsin { get; set; }
+        public string target_organization { get; set; }
         public string submitter { get; set; }
         public bool submitter_person { get; set; }
         public Dictionary<string,object> properties { get; set; }
@@ -153,4 +154,5 @@ namespace MijnApp_Backend.Controllers
     }
 
     */
+    // ReSharper restore InconsistentNaming
 }
