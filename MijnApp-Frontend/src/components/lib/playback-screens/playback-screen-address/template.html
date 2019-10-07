@@ -8,7 +8,7 @@
   <div class="Item">
     <maki-input id="numberAdditionInput" elevation="0" stroke="1" placeholder="Huisnummertoevoeging" value="{{numberAddition}}" input-callback="[[_inputNumberAdditionCallback()]]"></maki-input>
   </div>
-  <dom-if if="{{hasSearched}}">
+  <dom-if if="{{showApiResult(hasSearched, hasValidPostalCodeAndNumber)}}">
     <template>
       <div class="Title">Gevonden adressen</div>
       <dom-if if="{{!addresses.length}}">

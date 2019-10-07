@@ -22,6 +22,7 @@ export const address = (state = { data: {} }, action) => {
     case REQUEST_ADDRESS_DATA_FAILURE:
       return {
         ...state,
+        data: [],
         error: action.error,
         reset: false
       };
