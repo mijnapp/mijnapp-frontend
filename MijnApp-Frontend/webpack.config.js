@@ -8,6 +8,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackExcludeAssetsPlugin = require('html-webpack-exclude-assets-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
+const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 
 const pkg = require('./package.json');
 
@@ -125,6 +126,9 @@ const renderHtmlPlugins = () => [
 
 const sharedPlugins = [
   new webpack.DefinePlugin({ 'process.env': processEnv }),
+  new MomentLocalesPlugin({
+    localesToKeep: ['en', 'nl'],
+  }),
   ...renderHtmlPlugins(),
 ];
 const devPlugins = [new CopyWebpackPlugin(copyStatics.copyWebcomponents)];

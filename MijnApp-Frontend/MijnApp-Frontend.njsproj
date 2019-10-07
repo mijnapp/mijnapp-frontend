@@ -133,8 +133,6 @@
     <Folder Include="src\redux\helpers\" />
     <Folder Include="src\redux\reducers\" />
     <Folder Include="src\redux\sagas\" />
-    <Folder Include="test\" />
-    <Folder Include="test\suites\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".editorconfig" />
@@ -544,7 +542,6 @@
     <Content Include="src\redux\saver.js" />
     <Content Include="src\redux\store.js" />
     <Content Include="src\sw-loader.js" />
-    <Content Include="test\suites\sk-app.html" />
     <Content Include="wct.conf.js" />
     <Content Include="Web.config" />
     <Content Include="webpack.config.js" />
