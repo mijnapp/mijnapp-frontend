@@ -44,7 +44,7 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
     const documentTitle = `Samenvatting van het verzoek.pdf`;
     const contentData = [];
     contentData.push({ text: 'Samenvatting van het verzoek', style: 'header' });
-    contentData.push({ text: `De volgende gegevens zijn op ${moment(this.orderDate).format('D MMMM YYYY')} verzonden naar de gemeente.` });
+    contentData.push({ text: `De volgende gegevens zijn op ${moment(this.orderDate).format('D MMMM YYYY HH:mm:ss')} verzonden naar de gemeente.` });
     contentData.push(this.questionsToPdf());
 
     const today = new Date();
