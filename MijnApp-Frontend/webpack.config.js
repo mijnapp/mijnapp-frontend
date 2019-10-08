@@ -219,8 +219,9 @@ module.exports = {
     host: '0.0.0.0',
     historyApiFallback: true,
     disableHostCheck: true,
-    },
+  },
   optimization: {
+    namedChunks: true,
     splitChunks: {
       cacheGroups: {
         pdfmake: {
