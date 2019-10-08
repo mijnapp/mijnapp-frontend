@@ -167,13 +167,9 @@ export default class MafApp extends connect(store)(PolymerElement) {
   }
 
   _nope() {
-    const doPop = confirm(
-      'Deze functie komt binnenkort beschikbaar! Op dit moment wordt er hard gewerkt aan nieuwe functionaliteiten van MijnApp.\n\n' +
-      'Heb je feedback? Laat het ons weten via de website. Klik op \'OK\' om naar de website te gaan.'
+    alert(
+      'Deze functie komt binnenkort beschikbaar! Op dit moment wordt er hard gewerkt aan nieuwe functionaliteiten van MijnApp.'
     );
-    if (doPop) {
-      window.open('https://mijn-app.io/', '_blank');
-    }
   }
 
   stateChanged(state) {
