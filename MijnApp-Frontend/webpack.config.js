@@ -219,5 +219,17 @@ module.exports = {
     host: '0.0.0.0',
     historyApiFallback: true,
     disableHostCheck: true,
-  },
+    },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        pdfmake: {
+          test: /pdfmake/,
+          chunks: 'initial',
+          name: 'pdfmake',
+          enforce: true
+        },
+      }
+    }
+  }
 };

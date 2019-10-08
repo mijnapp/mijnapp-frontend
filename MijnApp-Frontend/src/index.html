@@ -223,31 +223,32 @@
 </head>
 
 <body>
-  <paper-toast id="successToast"></paper-toast>
-  <script>
-    successToast.horizontalAlign = "center";
-    successToast.verticalAlign = "top";
-  </script>
-  <paper-dialog id="warningDialog" modal class="dialog" style="display: none">
-    <div class="warningDialogHeader">
-      <maki-icon-attention></maki-icon-attention>
-      <div id="warningTitle"></div>
-    </div>
-    <p id="warningText" class="warningDialogText"></p>
-    <div class="buttonContainer">
-      <button class="btnLink" dialog-dismiss>Ga terug</button>
-      <button id="warningConfirmButton" class="btn" dialog-confirm>Doorgaan ></button>
-    </div>
-  </paper-dialog>
-  <paper-dialog id="errorDialog" modal class="dialog" style="display: none">
-    <div class="errorDialogHeader">Waarschuwing <span id="errorTitle"></span></div>
-    <p id="errorText" class="dialogText"></p>
-    <div class="buttonContainer">
-      <button class="btn" dialog-confirm>Sluiten</button>
-    </div>
-  </paper-dialog>
-  <maf-app></maf-app>
-  <script defer src="<%= htmlWebpackPlugin.options.paths.webcomponents %>"></script>
+<paper-toast id="successToast"></paper-toast>
+<script>
+  successToast.horizontalAlign = "center";
+  successToast.verticalAlign = "top";
+</script>
+<paper-dialog id="warningDialog" modal class="dialog" style="display: none">
+  <div class="warningDialogHeader">
+    <maki-icon-attention></maki-icon-attention>
+    <div id="warningTitle"></div>
+  </div>
+  <p id="warningText" class="warningDialogText"></p>
+  <div class="buttonContainer">
+    <button class="btnLink" dialog-dismiss>Ga terug</button>
+    <button id="warningConfirmButton" class="btn" dialog-confirm>Doorgaan ></button>
+  </div>
+</paper-dialog>
+<paper-dialog id="errorDialog" modal class="dialog" style="display: none">
+  <div class="errorDialogHeader">Waarschuwing <span id="errorTitle"></span></div>
+  <p id="errorText" class="dialogText"></p>
+  <div class="buttonContainer">
+    <button class="btn" dialog-confirm>Sluiten</button>
+  </div>
+</paper-dialog>
+<maf-app></maf-app>
+<script defer src="<%= htmlWebpackPlugin.options.paths.webcomponents %>"></script>
+<script src="pdfmake.bundle.js" async></script>
 </body>
 
 </html>
