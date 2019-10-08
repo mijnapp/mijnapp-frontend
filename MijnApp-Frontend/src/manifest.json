@@ -1,8 +1,8 @@
 {
   "name": "MijnApp",
   "short_name": "MijnApp",
-  "theme_color": "#ff6261",
-  "background_color": "#ff6261",
+  "theme_color": "#3192CF",
+  "background_color": "#3192CF",
   "display": "minimal-ui",
   "Scope": "/",
   "start_url": "/",
