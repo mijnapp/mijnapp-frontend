@@ -198,6 +198,8 @@
     <Content Include="dist\config.json" />
     <Content Include="dist\index.html" />
     <Content Include="dist\manifest.json" />
+    <Content Include="dist\pdfmake.bundle.js" />
+    <Content Include="dist\pdfmake.bundle.js.map" />
     <Content Include="dist\sw.js" />
     <Content Include="dist\vendor\bundles\webcomponents-ce.js" />
     <Content Include="dist\vendor\bundles\webcomponents-sd-ce-pf.js" />
