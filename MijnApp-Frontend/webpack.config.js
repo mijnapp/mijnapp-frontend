@@ -85,6 +85,11 @@ const copyStatics = {
       flatten: true,
     },
     {
+      from: resolve('./src/ienotsupported.html'),
+      to: OUTPUT_PATH,
+      flatten: true,
+    },
+    {
       from: resolve('./src/manifest.json'),
       to: OUTPUT_PATH,
       flatten: true,
