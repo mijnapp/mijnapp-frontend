@@ -491,6 +491,7 @@
     <Content Include="src\helpers\common.js" />
     <Content Include="src\helpers\palettes.js" />
     <Content Include="src\helpers\uuid.js" />
+    <Content Include="src\ienotsupported.html" />
     <Content Include="src\index.html" />
     <Content Include="src\index.js" />
     <Content Include="src\config\config.json" />

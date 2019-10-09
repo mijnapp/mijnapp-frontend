@@ -168,6 +168,11 @@
   <script>
     // Bunch of service worker stuff
     (function() {
+       if (userIsOnIE()) {
+         //We don't support Internet Explorer. Show a friendly message to the user
+         window.location = window.location.origin + '/ienotsupported.html';
+         return;
+      }
       if (!('serviceWorker' in navigator)) {
         console.log('Service worker is not supported');
         return;
@@ -217,6 +222,12 @@
 
     function clearErrorDialog() {
       window.errorText.innerHTML = "";
+    }
+
+    function userIsOnIE() {
+      var ua = window.navigator.userAgent;
+      var msie = ua.indexOf('MSIE ');
+      return (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./));
     }
 
   </script>
