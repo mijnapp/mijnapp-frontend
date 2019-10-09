@@ -91,7 +91,12 @@ const copyStatics = {
     },
     {
       from: resolve('./src/config/config.json'),
-      to: OUTPUT_PATH + "/config/",
+      to: OUTPUT_PATH + '/config/',
+      flatten: true,
+    },
+    {
+      from: resolve('./src/custom-sw.js'),
+      to: OUTPUT_PATH,
       flatten: true,
     },
   ],
@@ -139,10 +144,11 @@ const buildPlugins = [
   new GenerateSW({
     swDest: join(OUTPUT_PATH, 'sw.js'),
     skipWaiting: true,
+    importScripts: ['custom-sw.js'],
   }),
   new CleanWebpackPlugin({
     cleanOnceBeforeBuildPatterns: [OUTPUT_PATH],
-    verbose: true
+    verbose: true,
   }),
 ];
 
@@ -230,7 +236,7 @@ module.exports = {
           name: 'pdfmake',
           enforce: true
         },
-      }
-    }
-  }
+      },
+    },
+  },
 };
