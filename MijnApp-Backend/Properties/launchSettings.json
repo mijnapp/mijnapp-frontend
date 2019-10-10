@@ -30,6 +30,18 @@
       },
       "ancmHostingModel": "InProcess",
       "applicationUrl": "http://localhost/MijnApp-Backend"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/api/values",
+      "environmentVariables": {
+        "ASPNETCORE_URLS": "https://+:443;http://+:80",
+        "ASPNETCORE_HTTPS_PORT": "44398"
+      },
+      "httpPort": 44398,
+      "useSSL": true,
+      "sslPort": 44398
     }
   }
 }
