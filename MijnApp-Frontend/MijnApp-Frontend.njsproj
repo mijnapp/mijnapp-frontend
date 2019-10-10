@@ -35,6 +35,7 @@
     <Folder Include="dist\assets\fonts\" />
     <Folder Include="dist\assets\icons\" />
     <Folder Include="dist\assets\media\" />
+    <Folder Include="dist\config\" />
     <Folder Include="dist\vendor\" />
     <Folder Include="dist\vendor\bundles\" />
     <Folder Include="src\components\lib\maki-icons\maki-icon-attention\" />
@@ -200,6 +201,7 @@
     <Content Include="dist\assets\radio.svg" />
     <Content Include="dist\bundle.js" />
     <Content Include="dist\bundle.js.map" />
+    <Content Include="dist\config\config.json" />
     <Content Include="dist\index.html" />
     <Content Include="dist\manifest.json" />
     <Content Include="dist\pdfmake.bundle.js" />
