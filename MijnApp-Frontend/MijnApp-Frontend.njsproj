@@ -200,7 +200,6 @@
     <Content Include="dist\assets\radio.svg" />
     <Content Include="dist\bundle.js" />
     <Content Include="dist\bundle.js.map" />
-    <Content Include="dist\config.json" />
     <Content Include="dist\index.html" />
     <Content Include="dist\manifest.json" />
     <Content Include="dist\pdfmake.bundle.js" />
