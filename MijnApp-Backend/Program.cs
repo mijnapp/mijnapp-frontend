@@ -15,11 +15,11 @@ namespace MijnApp_Backend
             WebHost.CreateDefaultBuilder(args)
                 .ConfigureAppConfiguration((hostingContext, config) =>
                 {
-#if DEBUG
-                    var userSecretsId = "320e50fc-0267-417b-965b-f4c06031b254";
-                    var path = $@"C:\UserSecrets\{userSecretsId}\secrets.json";
-                    config.AddJsonFile(path);
-#endif
+//#if DEBUG
+//                    var userSecretsId = "320e50fc-0267-417b-965b-f4c06031b254";
+//                    var path = $@"C:\UserSecrets\{userSecretsId}\secrets.json";
+//                    config.AddJsonFile(path);
+//#endif
                 })
                 .UseStartup<Startup>();
     }
