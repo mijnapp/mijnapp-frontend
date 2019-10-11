@@ -214,6 +214,7 @@
     <Content Include="dist\vendor\webcomponents-bundle.js" />
     <Content Include="dist\vendor\webcomponents-loader.js" />
     <None Include="Dockerfile" />
+    <Content Include="docker command.txt" />
     <Content Include="LICENCE.md" />
     <Content Include="package.json" />
     <Content Include="postcss.config.js" />
