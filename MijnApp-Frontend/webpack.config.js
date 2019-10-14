@@ -18,7 +18,7 @@ const ENV = process.argv.find((arg) => arg.includes('NODE_ENV=production'))
 const IS_DEV_SERVER = process.argv.find((arg) =>
   arg.includes('webpack-dev-server')
 );
-const OUTPUT_PATH = IS_DEV_SERVER ? resolve('src') : resolve('dist');
+const OUTPUT_PATH = IS_DEV_SERVER ? resolve('src') : resolve('wwwroot');
 
 const processEnv = {
   NODE_ENV: JSON.stringify(ENV),

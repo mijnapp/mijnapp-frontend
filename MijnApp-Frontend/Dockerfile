@@ -1,15 +1,20 @@
-FROM ubuntu AS base
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.0-buster-slim AS base
+WORKDIR /app
 EXPOSE 80
 EXPOSE 443
-RUN apt-get update
-RUN apt-get install nginx -y
 
-FROM node
+FROM mcr.microsoft.com/dotnet/core/sdk:3.0-buster AS build
 WORKDIR /src
+COPY ["MijnApp-Frontend/MijnApp-Frontend.csproj", "MijnApp-Frontend/"]
+RUN dotnet restore "MijnApp-Frontend/MijnApp-Frontend.csproj"
 COPY . .
-RUN npm install
-RUN npm run build:prod
-COPY /dist /var/www/html/
+WORKDIR "/src/MijnApp-Frontend"
+RUN dotnet build "MijnApp-Frontend.csproj" -c Release -o /app/build
 
-FROM base
-CMD ["nginx","-g","daemon off;"]
+FROM build AS publish
+RUN dotnet publish "MijnApp-Frontend.csproj" -c Release -o /app/publish
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "MijnApp-Frontend.dll"]

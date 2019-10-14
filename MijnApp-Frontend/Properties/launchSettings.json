@@ -2,42 +2,38 @@
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
-    "iis": {
-      "applicationUrl": "https://localhost/MijnApp-Backend",
-      "sslPort": 0
+    "iisExpress": {
+      "applicationUrl": "http://localhost:63346",
+      "sslPort": 44315
     }
   },
-  "$schema": "http://json.schemastore.org/launchsettings.json",
   "profiles": {
-    "Local IIS": {
-      "commandName": "IIS",
+    "IIS Express": {
+      "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "api/values",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "ancmHostingModel": "InProcess",
-      "applicationUrl": "http://localhost/MijnApp-Backend"
+      }
     },
-    "MijnApp_Backend": {
+    "MijnApp_Frontend": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "https://localhost:5001;http://localhost:5000"
+      "applicationUrl": "https://localhost:3001;http://localhost:3000"
     },
     "Docker": {
       "commandName": "Docker",
       "launchBrowser": true,
-      "launchUrl": "{Scheme}://localhost:{ServicePort}/api/values",
+      "launchUrl": "{Scheme}://localhost:{ServicePort}",
       "environmentVariables": {
         "ASPNETCORE_URLS": "https://+:443;http://+:80",
-        "ASPNETCORE_HTTPS_PORT": "40443"
+        "ASPNETCORE_HTTPS_PORT": "60443"
       },
-      "httpPort": 40080,
+      "httpPort": 60080,
       "useSSL": true,
-      "sslPort": 40443
+      "sslPort": 60443
     }
   }
 }

@@ -1,0 +1,81 @@
+services:
+  mijnapp-backend:
+    build:
+      context: E:\Repos\MijnApp-Test\mijnapp-frontend
+      dockerfile: MijnApp-Backend/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: MijnApp-Backend
+      target: base
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTPS_PORT: '40443'
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages;/root/.nuget/fallbackpackages2
+      USER_SECRETS_ID: 320e50fc-0267-417b-965b-f4c06031b254
+    image: mijnappbackend:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages --additionalProbingPath
+        /root/.nuget/fallbackpackages2  "bin/Debug/netcoreapp2.2/MijnApp-Backend.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - published: 40080
+      target: 80
+    - published: 40443
+      target: 443
+    tty: true
+    volumes:
+    - E:\Repos\MijnApp-Test\mijnapp-frontend\MijnApp-Backend:/app:rw
+    - C:\Users\Erik Versteeg\vsdbg\vs2017u5:/remote_debugger:rw
+    - C:\Users\Erik Versteeg\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\Erik Versteeg\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Microsoft\Xamarin\NuGet:/root/.nuget/fallbackpackages:ro
+    - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages2:ro
+    - C:\Users\Erik Versteeg\.nuget\packages:/root/.nuget/packages:ro
+    - E:\Repos\MijnApp-Test\mijnapp-frontend:/src:rw
+  mijnapp-frontend:
+    build:
+      context: E:\Repos\MijnApp-Test\mijnapp-frontend
+      dockerfile: MijnApp-Frontend/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: MijnApp-Frontend
+      target: base
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTPS_PORT: '60443'
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages;/root/.nuget/fallbackpackages2
+    image: mijnappfrontend:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages --additionalProbingPath
+        /root/.nuget/fallbackpackages2  "bin/Debug/netcoreapp3.0/MijnApp-Frontend.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - published: 60080
+      target: 80
+    - published: 60443
+      target: 443
+    tty: true
+    volumes:
+    - E:\Repos\MijnApp-Test\mijnapp-frontend\MijnApp-Frontend:/app:rw
+    - C:\Users\Erik Versteeg\vsdbg\vs2017u5:/remote_debugger:rw
+    - C:\Users\Erik Versteeg\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\Erik Versteeg\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Microsoft\Xamarin\NuGet:/root/.nuget/fallbackpackages:ro
+    - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages2:ro
+    - C:\Users\Erik Versteeg\.nuget\packages:/root/.nuget/packages:ro
+    - E:\Repos\MijnApp-Test\mijnapp-frontend:/src:rw
+version: '3.4'
