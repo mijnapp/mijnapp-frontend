@@ -20,17 +20,17 @@ export default class MafScreenHome extends connect(store)(PolymerElement) {
         value: [
           {
             title: 'Basisgegevens',
-            asset: '/assets/media/Basisgegevens.svg',
+            asset: 'assets/media/Basisgegevens.svg',
             target: 'person-data',
           },
           {
             title: 'Machtigingen',
-            asset: '/assets/media/Machtigingen.svg',
+            asset: 'assets/media/Machtigingen.svg',
             target: 'avg-logs',
           },
           {
             title: 'Contracten',
-            asset: '/assets/media/Contracten.svg',
+            asset: 'assets/media/Contracten.svg',
             target: 'contracts',
           },
           // {
