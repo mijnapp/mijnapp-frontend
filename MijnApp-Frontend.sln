@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MijnApp-Frontend", "MijnApp-Frontend\MijnApp-Frontend.csproj", "{41811CDC-98EF-4BA5-A179-67780F575DD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MijnApp-Frontend", "MijnApp-Frontend\MijnApp-Frontend.csproj", "{41811CDC-98EF-4BA5-A179-67780F575DD5}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{3EB4E7FB-7B6C-4845-9F5B-7C2C8AF8DC3D}"
 EndProject
@@ -44,7 +44,6 @@ Global
 		{3EB4E7FB-7B6C-4845-9F5B-7C2C8AF8DC3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3EB4E7FB-7B6C-4845-9F5B-7C2C8AF8DC3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EB4E7FB-7B6C-4845-9F5B-7C2C8AF8DC3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3EB4E7FB-7B6C-4845-9F5B-7C2C8AF8DC3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
