@@ -196,11 +196,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets\\radio.svg"
   },
   {
-    "revision": "7c907afe11fb77acf167",
+    "revision": "c45516641cc8d2d34d15",
     "url": "bundle.js"
   },
   {
-    "revision": "b0c2dd72a13f5fdc31850720eb3dbb63",
+    "revision": "da02cd794aacb2fe3d5830870acd4c4e",
     "url": "config\\config.json"
   },
   {
