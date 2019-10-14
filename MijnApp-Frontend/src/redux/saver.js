@@ -14,6 +14,3 @@ export const loadState = () => {
     return undefined; // To use the defaults in the reducers
   }
 };
-export const clearState = () => {
-  window.sessionStorage.setItem(appStateStorageKey, '{}');
-};

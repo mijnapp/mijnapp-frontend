@@ -9,6 +9,7 @@ import {
   CLEAR_PERSONS_MOVING,
   REQUEST_PERSONS_MOVING_SKIPQUESTION,
 } from '../actions/person';
+import { REQUEST_JWT_LOGOUT_SUCCESS } from '../actions/jwt';
 
 export const person = (state = { data: {}, status: CLEAR_PERSON_DATA, movingPersonsStatus: CLEAR_PERSONS_MOVING, }, action) => {
   switch (action.type) {
@@ -66,6 +67,8 @@ export const person = (state = { data: {}, status: CLEAR_PERSON_DATA, movingPers
         movingPersonsStatus: REQUEST_PERSONS_MOVING_SUCCESS
       };
     }
+    case REQUEST_JWT_LOGOUT_SUCCESS:
+      return { data: {}, status: CLEAR_PERSON_DATA, movingPersonsStatus: CLEAR_PERSONS_MOVING, };
     default:
       return state;
   }

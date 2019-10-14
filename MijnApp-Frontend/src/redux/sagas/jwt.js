@@ -2,7 +2,6 @@ import { call, put, takeLatest } from 'redux-saga/effects';
 import { jwtApi } from '../api/jwt';
 import { jwtBearerToken, removeJwtBearerToken } from '../helpers/headers';
 import { selectPage, selectPageNoHistory, nextPageAfterLogin } from '../actions/application';
-import { clearState } from '../saver';
 import { setLastAction, removeLastAction } from '../helpers/lastAction';
 
 import {
@@ -17,6 +16,7 @@ import {
   REQUEST_JWT_SIGNIN_SUCCESS_FAKE,
   REQUEST_JWT_FOR_DIGIDCGI, REQUEST_JWT_FOR_DIGIDCGI_SUCCESS,
   requestJwtTokenForDigidSuccess, requestJwtTokenForDigidFailure,
+  requestJwtLogoutSuccess,
 } from '../actions/jwt';
 
 
@@ -89,7 +89,7 @@ export function* watchRequestJwtLogout() {
 
 function* doJwtLogout() {
   yield call(jwtApi.logout(jwtBearerToken()));
-  clearState();
+  yield put(requestJwtLogoutSuccess());
   removeJwtBearerToken();
   removeLastAction();
   window.successToast.text = 'Succesvol uitgelogd';

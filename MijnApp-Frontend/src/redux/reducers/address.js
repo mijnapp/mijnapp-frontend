@@ -4,6 +4,7 @@ import {
   REQUEST_ADDRESS_DATA_FAILURE,
   CLEAR_ADDRESS_DATA
 } from '../actions/address';
+import { REQUEST_JWT_LOGOUT_SUCCESS } from '../actions/jwt';
 
 export const address = (state = { data: {} }, action) => {
   switch (action.type) {
@@ -29,6 +30,7 @@ export const address = (state = { data: {} }, action) => {
         reset: false,
         searching: false,
       };
+    case REQUEST_JWT_LOGOUT_SUCCESS:
     case CLEAR_ADDRESS_DATA:
       return {
         data: [],
