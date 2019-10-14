@@ -19,8 +19,6 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
       numberAddition: String,
       addresses: Array,
       hasSearched: Boolean,
-      hasValidPostalCodeAndNumber: Boolean,
-      searching: Boolean,
     };
   }
 
@@ -61,26 +59,12 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
   }
 
   callApi() {
-    // Check on valid postalCode and number.
-    if (this.postalCode !== undefined &&
-      this.postalCode !== null &&
-      this.postalCode.length > 5 &&
-      this.number !== undefined &&
-      this.number !== null &&
-      this.number.length > 0) {
-      this.set('hasValidPostalCodeAndNumber', true);
-    } else {
-      this.set('hasValidPostalCodeAndNumber', false);
-    }
-    if (!this._isEmpty() && this.hasValidPostalCodeAndNumber) {
+    if (!this._isEmpty()) {
       store.dispatch(requestAddressData(this.postalCode, this.number, this.numberAddition));
+      this.hasSearched = true;
     } else {
       this.addresses = [];
     }
-  }
-
-  showApiResult(hasSearched, hasValidPostalCodeAndNumber) {
-    return hasSearched && hasValidPostalCodeAndNumber;
   }
 
   _saveWithoutCheck(question, address) {
@@ -175,8 +159,6 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
       this.addresses = [];
     } else {
       this.addresses = state.address.data.filter(this.filterAddresses);
-      this.hasSearched = true;
-      this.searching = state.address.searching;
     }
     if (state.address.reset) {
       this._reset();

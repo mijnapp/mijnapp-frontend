@@ -10,30 +10,25 @@ export const address = (state = { data: {} }, action) => {
     case REQUEST_ADDRESS_DATA:
       return {
         ...state,
-        reset: false,
-        searching: true,
+        reset: false
       };
     case REQUEST_ADDRESS_DATA_SUCCESS:
       return {
         ...state,
         data: action.data,
         error: null,
-        reset: false,
-        searching: false,
+        reset: false
       };
     case REQUEST_ADDRESS_DATA_FAILURE:
       return {
         ...state,
-        data: [],
         error: action.error,
-        reset: false,
-        searching: false,
+        reset: false
       };
     case CLEAR_ADDRESS_DATA:
       return {
         data: [],
-        reset: true,
-        searching: false,
+        reset: true
       };
     default:
       return state;

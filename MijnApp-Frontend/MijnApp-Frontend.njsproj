@@ -4,7 +4,6 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <Name>MijnApp-Frontend</Name>
     <RootNamespace>MijnApp-Frontend</RootNamespace>
-    <SaveNodeJsSettingsInProjectFile>True</SaveNodeJsSettingsInProjectFile>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -21,7 +20,7 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
     <NodejsPort>1337</NodejsPort>
-    <StartWebBrowser>True</StartWebBrowser>
+    <StartWebBrowser>true</StartWebBrowser>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,7 +34,6 @@
     <Folder Include="dist\assets\fonts\" />
     <Folder Include="dist\assets\icons\" />
     <Folder Include="dist\assets\media\" />
-    <Folder Include="dist\config\" />
     <Folder Include="dist\vendor\" />
     <Folder Include="dist\vendor\bundles\" />
     <Folder Include="src\components\lib\maki-icons\maki-icon-attention\" />
@@ -135,12 +133,10 @@
     <Folder Include="src\redux\helpers\" />
     <Folder Include="src\redux\reducers\" />
     <Folder Include="src\redux\sagas\" />
+    <Folder Include="test\" />
+    <Folder Include="test\suites\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include=".dockerignore">
-      <SubType>Content</SubType>
-      <DependentUpon>Dockerfile</DependentUpon>
-    </Content>
     <Content Include=".editorconfig" />
     <Content Include=".eslintrc.json" />
     <Content Include=".gitattributes" />
@@ -201,11 +197,9 @@
     <Content Include="dist\assets\radio.svg" />
     <Content Include="dist\bundle.js" />
     <Content Include="dist\bundle.js.map" />
-    <Content Include="dist\config\config.json" />
+    <Content Include="dist\config.json" />
     <Content Include="dist\index.html" />
     <Content Include="dist\manifest.json" />
-    <Content Include="dist\pdfmake.bundle.js" />
-    <Content Include="dist\pdfmake.bundle.js.map" />
     <Content Include="dist\sw.js" />
     <Content Include="dist\vendor\bundles\webcomponents-ce.js" />
     <Content Include="dist\vendor\bundles\webcomponents-sd-ce-pf.js" />
@@ -213,8 +207,6 @@
     <Content Include="dist\vendor\bundles\webcomponents-sd.js" />
     <Content Include="dist\vendor\webcomponents-bundle.js" />
     <Content Include="dist\vendor\webcomponents-loader.js" />
-    <None Include="Dockerfile" />
-    <Content Include="docker command.txt" />
     <Content Include="LICENCE.md" />
     <Content Include="package.json" />
     <Content Include="postcss.config.js" />
@@ -499,7 +491,6 @@
     <Content Include="src\helpers\common.js" />
     <Content Include="src\helpers\palettes.js" />
     <Content Include="src\helpers\uuid.js" />
-    <Content Include="src\ienotsupported.html" />
     <Content Include="src\index.html" />
     <Content Include="src\index.js" />
     <Content Include="src\config\config.json" />
@@ -552,8 +543,8 @@
     <Content Include="src\redux\sagas\person.js" />
     <Content Include="src\redux\saver.js" />
     <Content Include="src\redux\store.js" />
-    <Content Include="src\custom-sw.js" />
     <Content Include="src\sw-loader.js" />
+    <Content Include="test\suites\sk-app.html" />
     <Content Include="wct.conf.js" />
     <Content Include="Web.config" />
     <Content Include="webpack.config.js" />

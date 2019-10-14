@@ -1,14 +1,14 @@
 <div class="loginWrapper">
   <div>
     <div class="loginTitle">MijnApp</div>
-    <img class="loginImage" src="assets/media/Inloggen.svg" alt="background-logo" />
+    <img class="loginImage" src="/assets/media/Inloggen.svg" />
   </div>
   <div class="loginContent">
     <dom-if if="{{hasFakeInlogEnabled}}">
       <template>
         <div class="loginDigidButton" on-click="_signInWithDigiDFake">
           <div class="loginDigidButtonText">
-            <img src="assets/logo-digid.svg" class="loginSelectButton noselect" alt="digid-logo" />
+            <img src="/assets/logo-digid.svg" class="loginSelectButton noselect" />
             <div class="loginDigidButtonHeader">Fake inloggen met DigiD</div>
           </div>
         </div>
@@ -16,7 +16,7 @@
     </dom-if>
     <div class="loginDigidButton" on-click="_signInWithDigiD">
       <div class="loginDigidButtonText">
-        <img src="assets/logo-digid.svg" class="loginSelectButton noselect" alt="digid-logo"/>
+        <img src="/assets/logo-digid.svg" class="loginSelectButton noselect" />
         <div class="loginDigidButtonHeader">Inloggen met DigiD</div>
       </div>
     </div>

@@ -24,7 +24,7 @@
                 <rect id="Rectangle-10" fill="#FFFFFF" x="0" y="0" width="318" height="192" rx="7"></rect>
                 <rect id="Rectangle-12" fill="#1C254E" opacity="0.243191964" x="0" y="116" width="318" height="50"></rect>
                 <g id="Group" transform="translate(30.000000, 30.000000)">
-                    <rect id="Rectangle-6" fill="#3192CF" x="70" y="0" width="25" height="6" rx="3"></rect>
+                    <rect id="Rectangle-6" fill="#FF6261" x="70" y="0" width="25" height="6" rx="3"></rect>
                     <rect id="Rectangle-6" fill="#E8E9ED" x="0" y="16" width="110" height="6" rx="3"></rect>
                 </g>
             </g>

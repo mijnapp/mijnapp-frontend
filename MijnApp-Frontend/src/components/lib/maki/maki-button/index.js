@@ -13,7 +13,7 @@ export default class MakiButton extends PolymerElement {
       },
       setColorHighlight: {
         type: String,
-        value: '#3192CF',
+        value: '#ff6261',
         observer: '_colorChanged',
       },
       setColorDisabled: {

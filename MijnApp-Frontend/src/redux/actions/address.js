@@ -3,7 +3,7 @@ export const requestAddressData = (postalCode, number, numberAddition) => ({
   type: REQUEST_ADDRESS_DATA,
   postalCode,
   number,
-  numberAddition,
+  numberAddition
 });
 export const REQUEST_ADDRESS_DATA_SUCCESS = 'REQUEST_ADDRESS_DATA_SUCCESS';
 export const requestAddressSuccess = (data) => ({

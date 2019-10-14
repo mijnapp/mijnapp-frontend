@@ -8,6 +8,7 @@ import '@polymer/polymer/lib/elements/dom-repeat';
 import '@polymer/polymer/lib/elements/array-selector';
 import '@polymer/paper-dialog/paper-dialog.js';
 import '@polymer/paper-toast/paper-toast.js';
+
 import './components/application/maf-app';
 
 import { store } from './redux/store';
