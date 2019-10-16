@@ -5,11 +5,11 @@ services:
     image: ${DOCKER_REGISTRY-}mijnappbackend
     build:
       context: .
-      dockerfile: MijnApp-Backend/Dockerfile
+      dockerfile: MijnApp-Backend\Dockerfile
 
   mijnapp-frontend:
     image: ${DOCKER_REGISTRY-}mijnappfrontend
     build:
       context: .
-      dockerfile: MijnApp-Frontend/Dockerfile
+      dockerfile: MijnApp-Frontend\Dockerfile
 
