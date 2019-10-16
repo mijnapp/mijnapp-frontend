@@ -18,6 +18,7 @@ import {
   SET_QUESTION_OPTION_VALUE,
 } from '../actions/journey';
 import { isOptionsType, isDirectionalOptionsType } from '../../helpers/common';
+import { REQUEST_JWT_LOGOUT_SUCCESS } from '../actions/jwt';
 
 export const journey = (state = { title: '', questions: [] }, action) => {
   switch (action.type) {
@@ -87,6 +88,8 @@ export const journey = (state = { title: '', questions: [] }, action) => {
         };
       }
       return state;
+    case REQUEST_JWT_LOGOUT_SUCCESS:
+      return { title: '', questions: [] };
     case DELETE_QUESTION_PREFLIGHT:
     default:
       return {

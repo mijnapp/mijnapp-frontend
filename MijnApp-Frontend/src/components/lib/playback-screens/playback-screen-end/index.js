@@ -207,10 +207,11 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
       this.show_journey_icon_bulb = true;
     }
     this.orderDate = state.order.orderDate;
-    if (state.person.status === undefined || state.person.status === CLEAR_PERSON_DATA) {
+
+    if (this.id === JOURNEY_END && (state.person.status === undefined || state.person.status === CLEAR_PERSON_DATA)) {
       store.dispatch(requestPersonData());
     } else {
-        this.personData = state.person.data;
+      this.personData = state.person.data;
     }
   }
 }

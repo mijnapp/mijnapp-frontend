@@ -3,6 +3,7 @@ import {
   REQUEST_AVG_LOGS_SUCCESS,
   REQUEST_AVG_LOGS_FAILURE,
 } from '../actions/avgLogs';
+import { REQUEST_JWT_LOGOUT_SUCCESS } from '../actions/jwt';
 
 export const avgLogs = (state = { data: [] }, action) => {
   switch (action.type) {
@@ -16,6 +17,8 @@ export const avgLogs = (state = { data: [] }, action) => {
       };
     case REQUEST_AVG_LOGS_FAILURE:
       return { ...state, error: action.error };
+    case REQUEST_JWT_LOGOUT_SUCCESS:
+      return { data: [] };
     default:
       return state;
   }

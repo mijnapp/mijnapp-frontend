@@ -1,0 +1,14 @@
+-- dit stop de draaiende container genaamd mijnappfrontend
+docker stop mijnappfrontend
+
+
+-- dit verwijderd een niet draaiende container genaamd mijnappfrontend
+docker rm mijnappfrontend
+
+
+-- dit maakt een image mijnappfrontend
+docker build -t mijnappfrontend:dev .
+
+
+-- dit start een container voor de image mijnappfrontend
+docker run -d --name mijnappfrontend -p 3000:80 mijnappfrontend:dev 

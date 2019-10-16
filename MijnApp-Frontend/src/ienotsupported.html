@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="description" content="Dé app die digitale dienstverlening makkelijker, veiliger en overzichtelijker maakt.">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+
+  <title>MijnApp</title>
+
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-32x32.png">
+
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: calc(100% + 4 * (100vw - 600px) / 400);
+    }
+
+
+    body {
+      font-family: 'Lato', 'HK Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+      line-height: 1.25;
+      overflow: hidden;
+      text-rendering: geometricPrecision;
+      margin: 0;
+      height: 100%;
+      background-color: #edf2f9;
+      max-width: 800px;
+      float: left;
+    }
+
+    .ieAppWrapper {
+      width: 100vw;
+      height: 100vh;
+      overflow-y: auto
+    }
+
+    .ieApp {
+      width: 100vw;
+      min-height: calc(100vh - 57px);
+      margin-bottom: 57px;
+      height: calc(100vh - 57px);
+      float: left
+    }
+
+    .ieWrapper {
+      width: 100%;
+      height: 100vh;
+      max-width: 800px;
+      margin: 0 auto;
+      overflow-y: auto;
+      background-color: #fff;
+    }
+
+    .ieImage, .ieTitle {
+      width: 100%;
+      float: left
+    }
+
+    .ieTitle {
+      margin-top: 50px;
+      margin-bottom: 30px;
+      height: 41px;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 41px;
+      letter-spacing: -.3px;
+      text-align: center;
+      color: #19224c;
+    }
+
+    .ieContent {
+      margin: 0 10px;
+      width: calc(100% - 20px);
+      float: left
+    }
+
+    .ieInfo {
+      max-width: 410px;
+      margin: 20px auto
+    }
+
+    .ieInfoText {
+      font-weight: 700;
+      line-height: 30px
+    }
+
+    .ieInfoSubText, .ieInfoText {
+      font-size: 16px
+    }
+
+    .ieInfoSubText {
+      font-weight: 400;
+      line-height: 20px
+    }
+  </style>
+</head>
+
+<body>
+  <div class="ieAppWrapper">
+    <div class="ieApp">
+      <div class="ieWrapper">
+        <div>
+          <div class="ieTitle">MijnApp</div>
+          <img class="ieImage" src="assets/media/Inloggen.svg" alt="background-logo">
+        </div>
+        <div class="ieContent">
+          <div class="ieInfo">
+            <div class="ieInfoText">
+              Internet Explorer wordt niet ondersteund
+            </div>
+            <div class="ieInfoSubText">
+              Gebruikt u alstublieft een andere, meer moderne browser
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

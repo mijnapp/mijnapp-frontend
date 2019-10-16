@@ -18,6 +18,7 @@ namespace MijnApp_Backend.Controllers
     {
         private readonly JwtTokenProvider _jwtTokenProvider;
         private readonly string _baseUri;
+        private readonly string _processBaseUri;
         private readonly IServiceClient _serviceClient;
         private const string PostRequest = "{0}requests";
         private const string TARGET_ORGANIZATION_DEN_BOSCH = "1709124";
@@ -25,6 +26,7 @@ namespace MijnApp_Backend.Controllers
         public OrderController(IConfiguration config, IServiceClient serviceClient)
         {
             _baseUri = config.GetValue<string>("Api:OrderUri");
+            _processBaseUri = config.GetValue<string>("Api:ProcessUri");
             _serviceClient = serviceClient;
             _jwtTokenProvider = new JwtTokenProvider(config);
         }
@@ -72,7 +74,7 @@ namespace MijnApp_Backend.Controllers
                 cases = new string[0],
                 properties = new Dictionary<string, object>(),
                 target_organization = TARGET_ORGANIZATION_DEN_BOSCH,
-                request_type = "/request_types/" + order.requestType
+                request_type = _processBaseUri + "request_types/" + order.requestType
             };
             foreach (var question in order.data.Where(q => q.question != "END"))
             {
@@ -95,11 +97,12 @@ namespace MijnApp_Backend.Controllers
                 }
             }
 
-            //TODO: Add "Persoon" to verhuizen requestType Fixed id for now. Will need to be discussed with Conduction.
-            if (order.requestType == "fc79c4c9-b3b3-4258-bdbb-449262f3e5d7")
+            //TODO: Add some properties to verhuizen requestType on a fixed id for now. Will need to be discussed with Conduction.
+            if (order.requestType == "9d76fb58-0711-4437-acc4-9f4d9d403cdf")
             {
-                request.properties.Add("persoon", bsn);
-                request.properties.Add("eigenaar", "geen idee");
+                request.properties.Add("eigenaar", true);
+                request.properties.Add("ingangsdatum", "01-01-2000");
+                request.properties.Add("doorgeven_gegevens", false);
             }
 
             return request;

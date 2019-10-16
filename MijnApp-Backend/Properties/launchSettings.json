@@ -5,23 +5,11 @@
     "iis": {
       "applicationUrl": "https://localhost/MijnApp-Backend",
       "sslPort": 0
-    },
-    "iisExpress": {
-      "applicationUrl": "https://localhost:44397/",
-      "sslPort": 44397
     }
   },
   "$schema": "http://json.schemastore.org/launchsettings.json",
   "profiles": {
-    "IIS Express": {
-      "commandName": "IISExpress",
-      "launchBrowser": true,
-      "launchUrl": "api/values",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
-    },
-    "MijnApp_Backend": {
+    "Local IIS": {
       "commandName": "IIS",
       "launchBrowser": true,
       "launchUrl": "api/values",
@@ -30,6 +18,26 @@
       },
       "ancmHostingModel": "InProcess",
       "applicationUrl": "http://localhost/MijnApp-Backend"
+    },
+    "MijnApp_Backend": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:5001;http://localhost:5000"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://localhost:{ServicePort}/api/values",
+      "environmentVariables": {
+        "ASPNETCORE_URLS": "https://+:443;http://+:80",
+        "ASPNETCORE_HTTPS_PORT": "40443"
+      },
+      "httpPort": 40080,
+      "useSSL": true,
+      "sslPort": 40443
     }
   }
 }

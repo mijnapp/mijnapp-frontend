@@ -1,10 +1,6 @@
 /.vs
-/MijnApp.Domain/bin
-/MijnApp.Domain/obj
-/MijnApp-Backend/bin
-/MijnApp-Backend/obj
 *.user
-/MijnApp-Frontend/bin
-/MijnApp-Frontend/obj
 /MijnApp-Backend/Logs
 /GetEmulatorWorking
+[Bb]in
+[Oo]bj

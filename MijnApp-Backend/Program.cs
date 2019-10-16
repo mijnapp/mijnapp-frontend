@@ -18,7 +18,9 @@ namespace MijnApp_Backend
 #if DEBUG
                     var userSecretsId = "320e50fc-0267-417b-965b-f4c06031b254";
                     var path = $@"C:\UserSecrets\{userSecretsId}\secrets.json";
-                    config.AddJsonFile(path);
+                    if (System.IO.File.Exists(path)) { 
+                        config.AddJsonFile(path);
+                    }
 #endif
                 })
                 .UseStartup<Startup>();

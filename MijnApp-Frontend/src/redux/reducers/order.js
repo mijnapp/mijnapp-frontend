@@ -2,6 +2,7 @@ import { JOURNEY_START, ORDER_STATUS_SENDING, ORDER_STATUS_SEND_OK, ORDER_STATUS
 import { ORDER_SAVE_ANSWER, ORDER_CLEAR_ANSWER, ORDER_NEXT, ORDER_PREV, ORDER_SKIP } from '../actions/order';
 import { SET_JOURNEY } from '../actions/journey';
 import { REQUEST_ORDERS_SUBMIT, REQUEST_ORDERS_SUBMIT_SUCCESS, REQUEST_ORDERS_SUBMIT_FAILED } from '../actions/orders'
+import { REQUEST_JWT_LOGOUT_SUCCESS } from '../actions/jwt';
 
 export const order = (state = { data: [], current: JOURNEY_START, skipList: [], }, action) => {
   switch (action.type) {
@@ -50,6 +51,8 @@ export const order = (state = { data: [], current: JOURNEY_START, skipList: [], 
       return { ...state, order_status: ORDER_STATUS_SEND_OK, response_data: action.data, orderDate: new Date() }
     case REQUEST_ORDERS_SUBMIT_FAILED:
       return { ...state, order_status: ORDER_STATUS_SEND_FAILED, orderDate: null }
+    case REQUEST_JWT_LOGOUT_SUCCESS:
+      return { data: [], current: JOURNEY_START, skipList: [], };
     default:
       return state;
   }

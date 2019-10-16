@@ -4,6 +4,7 @@ import {
   REQUEST_CONTRACT_FAILURE,
   CLEAR_CONTRACT,
 } from '../actions/contract';
+import { REQUEST_JWT_LOGOUT_SUCCESS } from '../actions/jwt';
 
 export const contract = (state = { data: {} }, action) => {
   switch (action.type) {
@@ -17,6 +18,7 @@ export const contract = (state = { data: {} }, action) => {
       };
     case REQUEST_CONTRACT_FAILURE:
       return { ...state, error: action.error };
+    case REQUEST_JWT_LOGOUT_SUCCESS:
     case CLEAR_CONTRACT:
       return { data: {} };
     default:

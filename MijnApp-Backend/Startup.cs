@@ -49,6 +49,7 @@ namespace MijnApp_Backend
             services.AddHttpClient<IDigidClient,DigidClient>();
             services.AddHttpClient<IServiceClient, ServiceClient>(ConfigureServiceClient);
 
+            services.AddCors();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

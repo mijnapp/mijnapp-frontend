@@ -3,6 +3,7 @@ import {
   REQUEST_JWT_SIGNIN,
   REQUEST_JWT_LOGOUT,
   REQUEST_JWT_LOGOUT_401,
+  REQUEST_JWT_LOGOUT_SUCCESS,
   REQUEST_JWT_SIGNIN_SUCCESS_FAKE,
   REQUEST_JWT_SIGNIN_SUCCESS,
   REQUEST_JWT_SIGNIN_FAILURE,
@@ -45,6 +46,8 @@ export const jwt = (state = { data: {}, headers: {} }, action) => {
       };
     case REQUEST_JWT_FOR_DIGIDCGI_FAILURE:
       return { ...state, error: action.error };
+    case REQUEST_JWT_LOGOUT_SUCCESS:
+      return { data: {}, headers: {} };
     default:
       return state;
   }

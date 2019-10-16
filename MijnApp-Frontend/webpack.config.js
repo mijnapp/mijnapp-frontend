@@ -8,6 +8,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackExcludeAssetsPlugin = require('html-webpack-exclude-assets-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
+const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 
 const pkg = require('./package.json');
 
@@ -17,7 +18,7 @@ const ENV = process.argv.find((arg) => arg.includes('NODE_ENV=production'))
 const IS_DEV_SERVER = process.argv.find((arg) =>
   arg.includes('webpack-dev-server')
 );
-const OUTPUT_PATH = IS_DEV_SERVER ? resolve('src') : resolve('dist');
+const OUTPUT_PATH = IS_DEV_SERVER ? resolve('src') : resolve('wwwroot');
 
 const processEnv = {
   NODE_ENV: JSON.stringify(ENV),
@@ -84,13 +85,23 @@ const copyStatics = {
       flatten: true,
     },
     {
+      from: resolve('./src/ienotsupported.html'),
+      to: OUTPUT_PATH,
+      flatten: true,
+    },
+    {
       from: resolve('./src/manifest.json'),
       to: OUTPUT_PATH,
       flatten: true,
     },
     {
       from: resolve('./src/config/config.json'),
-      to: OUTPUT_PATH + "/config/",
+      to: OUTPUT_PATH + '/config/',
+      flatten: true,
+    },
+    {
+      from: resolve('./src/custom-sw.js'),
+      to: OUTPUT_PATH,
       flatten: true,
     },
   ],
@@ -125,6 +136,9 @@ const renderHtmlPlugins = () => [
 
 const sharedPlugins = [
   new webpack.DefinePlugin({ 'process.env': processEnv }),
+  new MomentLocalesPlugin({
+    localesToKeep: ['en', 'nl'],
+  }),
   ...renderHtmlPlugins(),
 ];
 const devPlugins = [new CopyWebpackPlugin(copyStatics.copyWebcomponents)];
@@ -135,10 +149,11 @@ const buildPlugins = [
   new GenerateSW({
     swDest: join(OUTPUT_PATH, 'sw.js'),
     skipWaiting: true,
+    importScripts: ['custom-sw.js'],
   }),
   new CleanWebpackPlugin({
     cleanOnceBeforeBuildPatterns: [OUTPUT_PATH],
-    verbose: true
+    verbose: true,
   }),
 ];
 
@@ -215,5 +230,18 @@ module.exports = {
     host: '0.0.0.0',
     historyApiFallback: true,
     disableHostCheck: true,
+  },
+  optimization: {
+    namedChunks: true,
+    splitChunks: {
+      cacheGroups: {
+        pdfmake: {
+          test: /pdfmake/,
+          chunks: 'initial',
+          name: 'pdfmake',
+          enforce: true
+        },
+      },
+    },
   },
 };
