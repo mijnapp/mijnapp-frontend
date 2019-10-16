@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using MijnApp_Backend.Helpers;
@@ -50,7 +51,7 @@ namespace MijnApp_Backend
             services.AddHttpClient<IServiceClient, ServiceClient>(ConfigureServiceClient);
 
             services.AddCors();
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
         }
 
         private void ConfigureServiceClient(IServiceProvider serviceProvider, HttpClient httpClient)
@@ -63,7 +64,7 @@ namespace MijnApp_Backend
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddLog4Net(Configuration["Log4NetConfigFile:Name"]);
 
@@ -77,6 +78,7 @@ namespace MijnApp_Backend
             }
 
             app.UseHttpsRedirection();
+            app.UseRouting();
 
             var origins = Configuration.GetValue<string>("Origins").Split(';');
             app.UseCors(builder =>
@@ -88,15 +90,15 @@ namespace MijnApp_Backend
             });
             
             app.UseAuthentication();
-
             app.UseExceptionLogging();
             app.UseRequestResponseLogging();
 
             //Comment this out for now, because we can't prolong the session since we are completely stateless (session-less)
             //and don't have the necessary data to prolong the session.
             //app.UseProlongSession(); 
-
-            app.UseMvc();
+            app.UseEndpoints(endpoints => {
+                endpoints.MapControllers();
+            });
         }
     }
 }

@@ -1,12 +1,12 @@
-﻿using System;
-using System.Threading.Tasks;
-using log4net;
+﻿using log4net;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using MijnApp_Backend.Helpers;
 using MijnApp_Backend.HttpClients;
 using MijnApp_Backend.Security;
+using System;
+using System.Threading.Tasks;
 
 namespace MijnApp_Backend.Controllers
 {
