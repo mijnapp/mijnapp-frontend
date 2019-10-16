@@ -49417,7 +49417,7 @@ function* setFakeJourneys() {
     }
   }, {
     title: 'Ik ga verhuizen',
-    request_type_id: 'fc79c4c9-b3b3-4258-bdbb-449262f3e5d7',
+    request_type_id: '9d76fb58-0711-4437-acc4-9f4d9d403cdf',
     questions: [{
       id: 'a7beef34-9aea-4891-971d-beb67b2e8010',
       type: 'address',
@@ -49428,7 +49428,7 @@ function* setFakeJourneys() {
     }, {
       id: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb',
       type: 'calendar',
-      property: 'ingangsdatum',
+      property: 'datum',
       options: null,
       title: 'Wanneer ga je verhuizen?',
       subtitle: 'Kies je verhuisdatum in de onderstaande kalender.',
@@ -49436,7 +49436,7 @@ function* setFakeJourneys() {
     }, {
       id: '37e30b1f-fb51-4d49-8756-fa5d4d55829a',
       type: 'personsMoving',
-      property: 'meeverhuizers',
+      property: 'wie',
       title: 'Met wie ga je verhuizen?',
       subtitle: 'Er wordt een bericht gestuurd naar de persoon die meeverhuist ' + '(onderstaande personen staan nu op hetzelfde adres als jij ' + 'ingeschreven)',
       next: 'END' // '21586109-ce3b-4091-8420-85f92c0a6c11',
