@@ -38781,7 +38781,7 @@ const connect = (store) => (baseElement) => class extends baseElement {
 /*!***********************************************************************!*\
   !*** ./node_modules/redux-saga/dist/redux-saga-core-npm-proxy.esm.js ***!
   \***********************************************************************/
-/*! exports provided: default, CANCEL, SAGA_LOCATION, buffers, detach, runSaga, END, isEnd, eventChannel, channel, multicastChannel, stdChannel */
+/*! exports provided: CANCEL, SAGA_LOCATION, buffers, detach, runSaga, END, isEnd, eventChannel, channel, multicastChannel, stdChannel, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -49280,7 +49280,6 @@ function* watchJwtSigninSuccessFake() {
 
 function onJwtSigninSuccess(action) {
   window.location = action.data.redirectTo;
-  setFakeJourneys();
 }
 
 function* onJwtSigninSuccessFake() {
@@ -49296,7 +49295,6 @@ function* fetchJwtFromDigidCgi(action) {
   try {
     const result = yield (0, _effects.call)(_jwt.jwtApi.getJwtForDigidCgi(action.aselectCredentials, action.rid));
     yield (0, _effects.put)((0, _jwt2.requestJwtTokenForDigidSuccess)(result.data, result.headers));
-    setFakeJourneys();
   } catch (e) {
     yield (0, _effects.put)((0, _jwt2.requestJwtTokenForDigidFailure)(e));
   }
@@ -49308,6 +49306,7 @@ function* watchRequestJwtFromDigidCgiSuccess() {
 
 function* onJwtFromDigidCgiSuccess() {
   yield (0, _effects.put)((0, _application.nextPageAfterLogin)());
+  yield setFakeJourneys();
 }
 
 function* watchRequestJwtLogout() {

@@ -57,7 +57,6 @@ export function* watchJwtSigninSuccessFake() {
 
 function onJwtSigninSuccess(action) {
   window.location = action.data.redirectTo;
-  setFakeJourneys();
 }
 
 function* onJwtSigninSuccessFake() {
@@ -73,7 +72,6 @@ function* fetchJwtFromDigidCgi(action) {
   try {
     const result = yield call(jwtApi.getJwtForDigidCgi(action.aselectCredentials, action.rid));
     yield put(requestJwtTokenForDigidSuccess(result.data, result.headers));
-    setFakeJourneys();
   } catch (e) {
     yield put(requestJwtTokenForDigidFailure(e));
   }
@@ -85,6 +83,7 @@ export function* watchRequestJwtFromDigidCgiSuccess() {
 
 function* onJwtFromDigidCgiSuccess() {
   yield put(nextPageAfterLogin());
+  yield setFakeJourneys();
 }
 
 export function* watchRequestJwtLogout() {
