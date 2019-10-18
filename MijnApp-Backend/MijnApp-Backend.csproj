@@ -6,7 +6,7 @@
     <RootNamespace>MijnApp_Backend</RootNamespace>
     <UserSecretsId>320e50fc-0267-417b-965b-f4c06031b254</UserSecretsId>
     <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
-    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
