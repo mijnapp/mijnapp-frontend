@@ -12,9 +12,3 @@ node_modules
 src/vendor/webcomponents-loader.js
 *.report.html
 bower_components
-
-# Legacy files #
-################
-legacy-polymer-2-version/bower_components/
-legacy-polymer-2-version/build/
-legacy-polymer-2-version/node_modules/
