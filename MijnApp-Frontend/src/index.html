@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 
 <head>
@@ -41,7 +41,10 @@
 
 <style>
     @import url('./assets/fonts/stylesheet.css');
-
+    :root {
+      --main-background-color: #EDF2F9;
+    }
+    
     * {
       box-sizing: border-box;
     }
@@ -59,7 +62,7 @@
       margin: 0;
       height: 100%;
       -webkit-tap-highlight-color: transparent;
-      background-color: #edf2f9;
+      background-color: var(--main-background-color);
     }
 
     .Loader {
@@ -126,7 +129,7 @@
       -ms-user-select: none;
       user-select: none;
       border: 1px solid transparent;
-      color: #fff;
+      color: #FFF;
       background-color: #3192CF;
       padding: 10px 25px;
       margin-right: 5px;
@@ -152,7 +155,7 @@
       user-select: none;
       border: 1px solid transparent;
       color: #3192CF;
-      background-color: #fff;
+      background-color: #FFF;
       padding: 10px 25px;
       border-radius: 3px;
       transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;

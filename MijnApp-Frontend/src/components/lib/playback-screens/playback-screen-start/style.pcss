@@ -16,7 +16,7 @@
   width: 100%;
   height: 62px;
   max-width: var(--main-max-width);
-  padding: 16px 0px;
+  padding: 16px 0;
   box-sizing: border-box;
 }
 .ButtonContainer {
@@ -26,7 +26,7 @@
   margin-bottom: 8px;
   height: 50px;
   box-sizing: border-box;
-  background-color: #fff;
+  background-color: var(--main-content-background-color);
   display: flex;
   justify-content: center;
 }
@@ -54,40 +54,42 @@
   overflow-y: auto;
 }
 .Scroller {
-  padding:  0px 16px;
+  padding: 0 16px;
   position: relative;
 }
 .JourneyHeader {
   background-color: var(--button-gray-background-color);
   margin: 0 -16px;
   padding: 10px 16px;
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .JourneyIcon {
-  --icon-color: #fff;
   background-color: var(--icon-color-teal);
   border-radius: 30px;
   width: 40px;
   height: 40px;
   padding: 10px;
   align-self: center;
+
+  --icon-color: var(--main-content-background-color);
 }
-maki-icon-truck, maki-icon-bulb {
+maki-icon-truck,
+maki-icon-bulb {
   --icon-size: 40px;
 }
-maki-icon-steps, maki-icon-edit-document
-{
+maki-icon-steps,
+maki-icon-edit-document {
   background-color: var(--button-gray-background-color);
   border-radius: 15px;
   width: 20px;
   height: 20px;
   padding: 5px;
-  --icon-color: var(--icon-color-teal);
-  margin: 0px 10px 0px 0px;
-}
+  margin: 0 10 0 0;
 
+  --icon-color: var(--icon-color-teal);
+}
 .Title {
   font-family: var(--typography-fontFamily);
   font-size: var(--main-font-header-size);
@@ -126,7 +128,6 @@ maki-icon-steps, maki-icon-edit-document
   display: flex;
   justify-content: flext-start;
 }
-.DotList {}
 .DotListItem {
   display: flex;
   align-items: center;
@@ -137,7 +138,7 @@ maki-icon-steps, maki-icon-edit-document
   margin: 0;
 }
 .DotListItem .Dot {
-  margin: 2px 23px 0px 0px;
+  margin: 2px 23px 0 0;
   width: 8px;
   height: 8px;
   background-color: var(--icon-color-teal);
@@ -155,7 +156,6 @@ maki-icon-steps, maki-icon-edit-document
   text-align: left;
   color: var(--palette-primary-main);
 }
-.NumberedList {}
 .NumberedListItem {
   display: flex;
   align-items: center;
@@ -214,5 +214,5 @@ maki-icon-steps, maki-icon-edit-document
   opacity: 0.4;
 }
 maki-icon-cross {
-  --icon-color:var(--icon-red-color);
+  --icon-color: var(--icon-red-color);
 }

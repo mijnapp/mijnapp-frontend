@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets\\back.svg"
   },
   {
-    "revision": "b9204b3e4f403d2f6b51d28fa057e2d7",
+    "revision": "73933527c2da171b31457eb8a6731f66",
     "url": "assets\\backWhite.svg"
   },
   {
@@ -196,11 +196,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets\\radio.svg"
   },
   {
-    "revision": "fc7d381c172a69f22de0",
+    "revision": "1c1e64c3054a08b84566",
     "url": "bundle.js"
   },
   {
-    "revision": "da02cd794aacb2fe3d5830870acd4c4e",
+    "revision": "e757e1f9d417ea0d0c78c0bc95d3a653",
     "url": "config\\config.json"
   },
   {
@@ -208,11 +208,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "custom-sw.js"
   },
   {
-    "revision": "d194eed6490a8584ce23654c15e3e037",
+    "revision": "bb66d207a7ba0a052c3896a6f554162f",
     "url": "ienotsupported.html"
   },
   {
-    "revision": "1ac441e86548b41a56f3de7729634908",
+    "revision": "bec803046120befab5977486976864de",
     "url": "index.html"
   },
   {
