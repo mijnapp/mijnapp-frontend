@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.0-bionic-slim AS base
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.0-bionic AS base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
