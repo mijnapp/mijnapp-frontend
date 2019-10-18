@@ -89,8 +89,8 @@ namespace MijnApp_Backend
                 builder.AllowCredentials();
             });
 
-            app.UseAuthorization();
             app.UseAuthentication();
+            app.UseAuthorization();
             app.UseExceptionLogging();
             app.UseRequestResponseLogging();
 
