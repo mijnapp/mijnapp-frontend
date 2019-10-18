@@ -41,7 +41,11 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="if EXIST &quot;C:\UserSecrets\320e50fc-0267-417b-965b-f4c06031b254\&quot; (&#xD;&#xA;xcopy &quot;%25USERPROFILE%25\AppData\Roaming\Microsoft\UserSecrets\320e50fc-0267-417b-965b-f4c06031b254\secrets.json&quot; &quot;C:\UserSecrets\320e50fc-0267-417b-965b-f4c06031b254\&quot; /Y&#xD;&#xA;)" />
+    <!-- Creating flavor property  -->
+    <CreateProperty Value="%(ConfigurationToBuild.FlavorToBuild)" >
+      <Output TaskParameter="Value" PropertyName="Flavor" />
+    </CreateProperty>
+    <Exec Condition="'$(Configuration)' == 'Debug'" Command="if EXIST &quot;C:\UserSecrets\320e50fc-0267-417b-965b-f4c06031b254\&quot; (&#xD;&#xA;xcopy &quot;%25USERPROFILE%25\AppData\Roaming\Microsoft\UserSecrets\320e50fc-0267-417b-965b-f4c06031b254\secrets.json&quot; &quot;C:\UserSecrets\320e50fc-0267-417b-965b-f4c06031b254\&quot; /Y&#xD;&#xA;)" />
   </Target>
 
 </Project>
