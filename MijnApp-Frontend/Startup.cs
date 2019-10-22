@@ -39,6 +39,7 @@ namespace MijnApp_Frontend
             app.UseDefaultFiles();
             
             app.UseStaticFiles();
+            app.UseStatusCodePagesWithReExecute("/");
             app.UseRouting();
             app.UseEndpoints(endpoints =>
             {
