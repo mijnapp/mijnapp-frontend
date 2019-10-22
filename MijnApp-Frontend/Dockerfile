@@ -4,7 +4,7 @@ EXPOSE 80
 EXPOSE 443
 
 FROM node
-WORKDIR /src
+WORKDIR /
 COPY . .
 RUN npm install
 RUN npm run build:prod
