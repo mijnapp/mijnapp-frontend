@@ -196,7 +196,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets\\radio.svg"
   },
   {
-    "revision": "7f0bb4be28fabca07068",
+    "revision": "95188e3dab0c604536f9",
     "url": "bundle.js"
   },
   {
@@ -208,7 +208,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "ienotsupported.html"
   },
   {
-    "revision": "bec803046120befab5977486976864de",
+    "revision": "8509f394942ae95ea3160d69c1f2c3b2",
     "url": "index.html"
   },
   {
