@@ -95,11 +95,6 @@ const copyStatics = {
       flatten: true,
     },
     {
-      from: resolve('./src/config/config.json'),
-      to: OUTPUT_PATH + '/config/',
-      flatten: true,
-    },
-    {
       from: resolve('./src/custom-sw.js'),
       to: OUTPUT_PATH,
       flatten: true,

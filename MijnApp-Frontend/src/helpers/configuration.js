@@ -17,7 +17,7 @@ class Configuration {
       return this._configuration;
     } else {
       var xmlhttp = new XMLHttpRequest();
-      xmlhttp.open('GET', 'config/config.json', false);
+        xmlhttp.open('GET', 'GetConfiguration', false);
       if (xmlhttp.overrideMimeType) {
         xmlhttp.overrideMimeType('application\\json');
       }

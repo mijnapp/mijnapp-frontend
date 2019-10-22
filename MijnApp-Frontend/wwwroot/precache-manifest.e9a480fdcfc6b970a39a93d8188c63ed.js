@@ -1,14 +1,14 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "70b3dcab6ca5705e2a6b662a807d0ee6",
+    "revision": "523947b14f00c3eca0dfd8072be50cff",
     "url": "assets\\AnimatedSkeleton.svg"
   },
   {
-    "revision": "dc26994cd376e4a2daa703b0c9245dff",
+    "revision": "36517d3a817c5451d1d35e6d4d47791b",
     "url": "assets\\back.svg"
   },
   {
-    "revision": "73933527c2da171b31457eb8a6731f66",
+    "revision": "9dc5176f085d44e77d1c131fcedf8bae",
     "url": "assets\\backWhite.svg"
   },
   {
@@ -104,7 +104,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets\\icons\\apple-touch-icon.png"
   },
   {
-    "revision": "9e74a4603ded83f123a0b1b1ea9ab92a",
+    "revision": "30e31efd77a6dee5beba32c20d37522e",
     "url": "assets\\icons\\browserconfig.xml"
   },
   {
@@ -152,7 +152,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets\\icons\\mstile-150x150.png"
   },
   {
-    "revision": "1405359f10118373dfa8a553f6ddb6be",
+    "revision": "8fa975f4477f238d81b18d928c8fafae",
     "url": "assets\\icons\\safari-pinned-tab.svg"
   },
   {
@@ -160,35 +160,35 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets\\logo-digid.svg"
   },
   {
-    "revision": "15020c0948f464f8306a7110ec574a8b",
+    "revision": "accca2d06653fc056189e7094920e892",
     "url": "assets\\logo-itsme.svg"
   },
   {
-    "revision": "47a8e4f6c36fb20500af0bc5542cc483",
+    "revision": "54d8358fb31ab5b83dab3df6098e9f35",
     "url": "assets\\logo.svg"
   },
   {
-    "revision": "a75df23d2248b9c7dbbe4ad6fc156081",
+    "revision": "b33867513827b2d0030596c39af93943",
     "url": "assets\\media\\Basisgegevens.svg"
   },
   {
-    "revision": "11cb25de7f70a6e6a0c7c586346af7de",
+    "revision": "0487f7ebf6ee72dd0f1aaf548073db98",
     "url": "assets\\media\\Contracten.svg"
   },
   {
-    "revision": "6383d468ba73ffca8be9b21fb8971262",
+    "revision": "03b340657802f55b685b1a233c930955",
     "url": "assets\\media\\Inloggen.svg"
   },
   {
-    "revision": "e4429f8ca9c8f176c8b8ef50b5b5da75",
+    "revision": "cade792da64d8cc533b815277ce3de06",
     "url": "assets\\media\\Machtigingen.svg"
   },
   {
-    "revision": "7232f9738f4317791b88434f9fc1b00d",
+    "revision": "cad288ba324c92bc86c6ddb47f6295a9",
     "url": "assets\\media\\Passen.svg"
   },
   {
-    "revision": "b8da05f1e9e0f6443c49d86d43e20ff8",
+    "revision": "756b1280cb315ffc1095e0ffcbc2370f",
     "url": "assets\\phone.svg"
   },
   {
@@ -196,12 +196,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets\\radio.svg"
   },
   {
-    "revision": "1c1e64c3054a08b84566",
+    "revision": "7f0bb4be28fabca07068",
     "url": "bundle.js"
-  },
-  {
-    "revision": "e757e1f9d417ea0d0c78c0bc95d3a653",
-    "url": "config\\config.json"
   },
   {
     "revision": "55b3f252a313d1d99684ad900643f5a2",
@@ -220,7 +216,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "manifest.json"
   },
   {
-    "revision": "2d3f9508158ba2f29ed8",
+    "revision": "fe8b79f7557a31979165",
     "url": "pdfmake.bundle.js"
   },
   {
