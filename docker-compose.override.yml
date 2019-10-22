@@ -2,6 +2,7 @@ version: '3.4'
 
 services:
   mijnapp-backend:
+    container_name: mijnapp-backend
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=https://+:443;http://+:80
@@ -14,6 +15,7 @@ services:
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
   mijnapp-frontend:
+    container_name: mijnapp-frontend
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=https://+:443;http://+:80
