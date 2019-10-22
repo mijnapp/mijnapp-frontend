@@ -1,0 +1,4 @@
+{
+  "BACKEND_URL": "https://localhost:5001",
+  "HAS_FAKE_INLOG_ENABLED": true
+}

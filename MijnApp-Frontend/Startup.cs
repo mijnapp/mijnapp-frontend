@@ -40,13 +40,6 @@ namespace MijnApp_Frontend
             
             app.UseStaticFiles();
             app.UseStatusCodePagesWithReExecute("/");
-            app.UseRouting();
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller}/{action=Index}/{id?}");
-            });
         }
     }
 }
