@@ -30,12 +30,7 @@ namespace MijnApp_Frontend
             }
 
             app.UseHttpsRedirection();
-
-            var fileServerOptions = new FileServerOptions();
-            fileServerOptions.DefaultFilesOptions.DefaultFileNames = new[] {"index.html"};
-            app.UseFileServer(fileServerOptions);
-
-            app.UseExceptionHandler("index.html");
+            app.UseStaticFiles();
         }
     }
 }
