@@ -4,9 +4,8 @@ EXPOSE 80
 EXPOSE 443
 
 FROM node
-WORKDIR /src
+WORKDIR /
 COPY . .
-WORKDIR /src/MijnApp-Frontend/
 RUN npm install
 RUN npm run build:prod
 
