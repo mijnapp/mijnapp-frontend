@@ -18,4 +18,5 @@ RUN dotnet publish "MijnApp-Backend.csproj" -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+RUN dotnet dev-certs https --trust
 ENTRYPOINT ["dotnet", "MijnApp-Backend.dll"]
