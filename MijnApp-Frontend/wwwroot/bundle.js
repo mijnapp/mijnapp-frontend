@@ -38586,7 +38586,7 @@ const connect = (store) => (baseElement) => class extends baseElement {
 /*!***********************************************************************!*\
   !*** ./node_modules/redux-saga/dist/redux-saga-core-npm-proxy.esm.js ***!
   \***********************************************************************/
-/*! exports provided: default, CANCEL, SAGA_LOCATION, buffers, detach, runSaga, END, isEnd, eventChannel, channel, multicastChannel, stdChannel */
+/*! exports provided: CANCEL, SAGA_LOCATION, buffers, detach, runSaga, END, isEnd, eventChannel, channel, multicastChannel, stdChannel, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -40971,7 +40971,8 @@ class MafScreenPersonData extends (0, _connectMixin.connect)(_store.store)(_poly
       personData: {
         type: Object,
         value: {}
-      }
+      },
+      searching: Boolean
     };
   }
 
@@ -40995,6 +40996,7 @@ class MafScreenPersonData extends (0, _connectMixin.connect)(_store.store)(_poly
   stateChanged(state) {
     if (state.person.data != undefined) {
       this.personData = state.person.data;
+      this.searching = state.person.searching;
     }
   }
 }
@@ -41022,7 +41024,7 @@ module.exports = ".Wrapper{width:100%;height:100vh;max-width:var(--main-max-widt
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\r\n    <maf-screen on-back=\"[[_onBack]]\" heading=\"[[personData.naam.aanschrijfwijze]]\">\r\n        <h2>Basisgegevens</h2>\r\n        <div class=\"ContractDataPoint\">\r\n            <div class=\"ContractDataPointLabel\">Naam</div>\r\n            <div class=\"ContractDataPointValue\">[[personData.naam.aanschrijfwijze]]</div>\r\n        </div>\r\n        <div class=\"ContractDataPoint\">\r\n            <div class=\"ContractDataPointLabel\">Geboortedatum</div>\r\n            <div class=\"ContractDataPointValue\">[[_normalDate(personData.geboorte.datum)]]</div>\r\n        </div>\r\n        <!--<div class=\"ContractDataPoint\">\r\n            <div class=\"ContractDataPointLabel\">Nationaliteit</div>\r\n            <div class=\"ContractDataPointValue\">[[personData.address.country]]</div>\r\n        </div>-->\r\n        <div class=\"ContractDataPoint\">\r\n            <div class=\"ContractDataPointLabel\">BSN</div>\r\n            <div class=\"ContractDataPointValue\">[[personData.burgerservicenummer]]</div>\r\n        </div>\r\n        <div class=\"ContractDataPoint\">\r\n            <div class=\"ContractDataPointLabel\">Adres</div>\r\n            <div class=\"ContractDataPointValue\">\r\n              [[personData.verblijfplaats.straatnaam]] [[personData.verblijfplaats.huisnummer]][[personData.verblijfplaats.huisnummertoevoeging]][[personData.verblijfplaats.huisletter]], [[personData.verblijfplaats.postcode]] [[personData.verblijfplaats.woonplaatsnaam]]\r\n            </div>\r\n        </div>\r\n        <!--<div class=\"ContractDataPoint\">\r\n            <div class=\"ContractDataPointLabel\">Telefoonnummer</div>\r\n            <div class=\"ContractDataPointValue\">[[personData.phone_number]]</div>\r\n        </div>\r\n        <div class=\"ContractDataPoint\">\r\n            <div class=\"ContractDataPointLabel\">Email</div>\r\n            <div class=\"ContractDataPointValue\">[[personData.email]]</div>\r\n        </div>-->\r\n    </maf-screen>\r\n</div>\r\n"
+module.exports = "<div class=\"Wrapper\">\r\n    \r\n    <dom-if if=\"{{searching}}\">\r\n        <template>\r\n            <maf-screen on-back=\"[[_onBack]]\" heading=\"Ophalen gegevens\">\r\n                <div class=\"Subtitle\">Uw gegevens worden opgehaald</div>\r\n            </maf-screen>\r\n        </template>\r\n    </dom-if>\r\n    <dom-if if=\"{{!searching}}\">\r\n        <template>\r\n            <maf-screen on-back=\"[[_onBack]]\" heading=\"[[personData.naam.aanschrijfwijze]]\">\r\n                <h2>Basisgegevens</h2>\r\n                <div class=\"ContractDataPoint\">\r\n                    <div class=\"ContractDataPointLabel\">Naam</div>\r\n                    <div class=\"ContractDataPointValue\">[[personData.naam.aanschrijfwijze]]</div>\r\n                </div>\r\n                <div class=\"ContractDataPoint\">\r\n                    <div class=\"ContractDataPointLabel\">Geboortedatum</div>\r\n                    <div class=\"ContractDataPointValue\">[[_normalDate(personData.geboorte.datum)]]</div>\r\n                </div>\r\n                <!--<div class=\"ContractDataPoint\">\r\n                    <div class=\"ContractDataPointLabel\">Nationaliteit</div>\r\n                    <div class=\"ContractDataPointValue\">[[personData.address.country]]</div>\r\n                </div>-->\r\n                <div class=\"ContractDataPoint\">\r\n                    <div class=\"ContractDataPointLabel\">BSN</div>\r\n                    <div class=\"ContractDataPointValue\">[[personData.burgerservicenummer]]</div>\r\n                </div>\r\n                <div class=\"ContractDataPoint\">\r\n                    <div class=\"ContractDataPointLabel\">Adres</div>\r\n                    <div class=\"ContractDataPointValue\">\r\n                        [[personData.verblijfplaats.straatnaam]] [[personData.verblijfplaats.huisnummer]][[personData.verblijfplaats.huisnummertoevoeging]][[personData.verblijfplaats.huisletter]], [[personData.verblijfplaats.postcode]] [[personData.verblijfplaats.woonplaatsnaam]]\r\n                    </div>\r\n                </div>\r\n                <!--<div class=\"ContractDataPoint\">\r\n                    <div class=\"ContractDataPointLabel\">Telefoonnummer</div>\r\n                    <div class=\"ContractDataPointValue\">[[personData.phone_number]]</div>\r\n                </div>\r\n                <div class=\"ContractDataPoint\">\r\n                    <div class=\"ContractDataPointLabel\">Email</div>\r\n                    <div class=\"ContractDataPointValue\">[[personData.email]]</div>\r\n                </div>-->\r\n            </maf-screen>\r\n        </template>\r\n    </dom-if>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -44681,7 +44683,7 @@ module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(quest
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
 var _polymerElement = __webpack_require__(/*! @polymer/polymer/polymer-element */ "./node_modules/@polymer/polymer/polymer-element.js");
@@ -44709,104 +44711,106 @@ __webpack_require__(/*! ../../playback-screen-wrapper */ "./src/components/lib/p
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class PlaybackScreenPersonsMoving extends (0, _connectMixin.connect)(_store.store)(_polymerElement.PolymerElement) {
-  static get properties() {
-    return {
-      persons: Array
-    };
-  }
-
-  static get template() {
-    return (0, _polymerElement.html)([`<style>${_style2.default}</style> ${_template2.default}`]);
-  }
-
-  constructor() {
-    super();
-    this.persons = [];
-  }
-
-  _isSelected(selected) {
-    return selected ? 'Circle selected' : 'Circle';
-  }
-
-  _optionClick(e) {
-    if (e && e.target && !isNaN(e.target.dataIndex)) {
-      const index = e.target.dataIndex;
-
-      this.set(`persons.${index}.selected`, !this.persons[index].selected);
-
-      const selectedPersons = this.persons.filter(function (item) {
-        return item.selected;
-      });
-      const ids = selectedPersons.map(function (item) {
-        return item.id;
-      });
-      const names = selectedPersons.map(function (item) {
-        return item.naam.aanschrijfwijze;
-      });
-
-      _store.store.dispatch((0, _order.orderSaveAnswer)(this.question.key || this.question.property, ids, this.question.fieldName, names));
-    }
-  }
-
-  _nextCallback(question) {
-    return next => {
-      if (question && question.next) {
-        next(question.next);
-      }
-    };
-  }
-
-  _skipCallback(question) {
-    if (question && question.optional && question.optional.goto) {
-      return skip => skip(question.optional.goto);
-    }
-    return null;
-  }
-
-  _getPersons() {
-    _store.store.dispatch((0, _person.requestPersonsMoving)());
-  }
-
-  _clearPersonData() {
-    _store.store.dispatch((0, _person.clearPersonsMoving)());
-  }
-
-  stateChanged(state) {
-    this.journey = state.journey;
-    this.current = state.order.current;
-    if (this.current === _common.JOURNEY_START) {
-      this.id = _common.JOURNEY_START;
-      this.order = {};
-    } else {
-      this.id = state.order.data[this.current].question;
-      this.order = state.order.data[this.current];
-    }
-    this.selected = this.order._tracker;
-    if (this.journey) {
-      this.question = (this.journey.questions || []).find(q => q.id === this.id);
-    }
-    if (!this.question) {
-      this.question = '';
+    static get properties() {
+        return {
+            persons: Array,
+            searchingMovingPersons: Boolean
+        };
     }
 
-    this.persons = state.person.movingPersons;
-    this.personsStatus = state.person.movingPersonsStatus;
-    this.isDisabled = this.personsStatus !== _person.REQUEST_PERSONS_MOVING_SUCCESS;
-    if (this.question.type === _common.QUESTION_TYPE_PERSONS_MOVING && this.personsStatus === _person.CLEAR_PERSONS_MOVING) {
-      this._getPersons();
+    static get template() {
+        return (0, _polymerElement.html)([`<style>${_style2.default}</style> ${_template2.default}`]);
     }
-    if (this.current === _common.JOURNEY_START && state.order.data.length === 0 && this.personsStatus !== _person.CLEAR_PERSONS_MOVING) {
-      this._clearPersonData();
+
+    constructor() {
+        super();
+        this.persons = [];
     }
-    if (this.question.type === _common.QUESTION_TYPE_PERSONS_MOVING && this.personsStatus === _person.REQUEST_PERSONS_MOVING_SKIPQUESTION) {
-      const self = this;
-      _store.store.dispatch({
-        action1: _store.store.dispatch((0, _person.requestPersonsMovingSkipQuestion)()),
-        action2: _store.store.dispatch((0, _order.orderSkip)(self.current)),
-        action3: _store.store.dispatch((0, _order.orderNext)(self.question.next))
-      });
+
+    _isSelected(selected) {
+        return selected ? 'Circle selected' : 'Circle';
     }
-  }
+
+    _optionClick(e) {
+        if (e && e.target && !isNaN(e.target.dataIndex)) {
+            const index = e.target.dataIndex;
+
+            this.set(`persons.${index}.selected`, !this.persons[index].selected);
+
+            const selectedPersons = this.persons.filter(function (item) {
+                return item.selected;
+            });
+            const ids = selectedPersons.map(function (item) {
+                return item.id;
+            });
+            const names = selectedPersons.map(function (item) {
+                return item.naam.aanschrijfwijze;
+            });
+
+            _store.store.dispatch((0, _order.orderSaveAnswer)(this.question.key || this.question.property, ids, this.question.fieldName, names));
+        }
+    }
+
+    _nextCallback(question) {
+        return next => {
+            if (question && question.next) {
+                next(question.next);
+            }
+        };
+    }
+
+    _skipCallback(question) {
+        if (question && question.optional && question.optional.goto) {
+            return skip => skip(question.optional.goto);
+        }
+        return null;
+    }
+
+    _getPersons() {
+        _store.store.dispatch((0, _person.requestPersonsMoving)());
+    }
+
+    _clearPersonData() {
+        _store.store.dispatch((0, _person.clearPersonsMoving)());
+    }
+
+    stateChanged(state) {
+        this.journey = state.journey;
+        this.current = state.order.current;
+        if (this.current === _common.JOURNEY_START) {
+            this.id = _common.JOURNEY_START;
+            this.order = {};
+        } else {
+            this.id = state.order.data[this.current].question;
+            this.order = state.order.data[this.current];
+        }
+        this.selected = this.order._tracker;
+        if (this.journey) {
+            this.question = (this.journey.questions || []).find(q => q.id === this.id);
+        }
+        if (!this.question) {
+            this.question = '';
+        }
+
+        this.persons = state.person.movingPersons;
+        this.personsStatus = state.person.movingPersonsStatus;
+        this.searchingMovingPersons = state.person.movingPersonsSearching;
+        this.isDisabled = this.personsStatus !== _person.REQUEST_PERSONS_MOVING_SUCCESS;
+        if (this.question.type === _common.QUESTION_TYPE_PERSONS_MOVING && this.personsStatus === _person.CLEAR_PERSONS_MOVING) {
+            this._getPersons();
+        }
+        if (this.current === _common.JOURNEY_START && state.order.data.length === 0 && this.personsStatus !== _person.CLEAR_PERSONS_MOVING) {
+            this._clearPersonData();
+        }
+        if (this.question.type === _common.QUESTION_TYPE_PERSONS_MOVING && this.personsStatus === _person.REQUEST_PERSONS_MOVING_SKIPQUESTION) {
+            const self = this;
+            _store.store.dispatch({
+                action1: _store.store.dispatch((0, _person.requestPersonsMovingSkipQuestion)()),
+                action2: _store.store.dispatch((0, _order.orderSkip)(self.current)),
+                action3: _store.store.dispatch((0, _order.orderNext)(self.question.next))
+            });
+        }
+    }
 }
 
 exports.default = PlaybackScreenPersonsMoving;
@@ -44832,7 +44836,7 @@ module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled$=\"{{isDisabled}}\">\r\n  <div class=\"Options\">\r\n    <dom-repeat items=\"[[persons]]\">\r\n      <template>\r\n        <div class=\"Option\" data-index=\"[[index]]\" on-click=\"_optionClick\">\r\n          [[item.naam.aanschrijfwijze]]\r\n          <div class$=\"{{_isSelected(item.selected)}}\"></div>\r\n        </div>\r\n      </template>\r\n    </dom-repeat>\r\n  </div>\r\n</playback-screen-wrapper>\r\n"
+module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled$=\"{{isDisabled}}\">\r\n    <dom-if if=\"{{searchingMovingPersons}}\">\r\n        <template>\r\n            <div class=\"Subtitle\">De mogelijke medeverhuizers worden opgehaald</div>\r\n        </template>\r\n    </dom-if>\r\n    <dom-if if=\"{{!searchingMovingPersons}}\">\r\n        <template>\r\n            <div class=\"Options\">\r\n                <dom-repeat items=\"[[persons]]\">\r\n                    <template>\r\n                        <div class=\"Option\" data-index=\"[[index]]\" on-click=\"_optionClick\">\r\n                            [[item.naam.aanschrijfwijze]]\r\n                            <div class$=\"{{_isSelected(item.selected)}}\"></div>\r\n                        </div>\r\n                    </template>\r\n                </dom-repeat>\r\n            </div>\r\n        </template>\r\n    </dom-if>\r\n</playback-screen-wrapper>\r\n"
 
 /***/ }),
 
@@ -47545,87 +47549,6 @@ const contractsApi = exports.contractsApi = {
 
 /***/ }),
 
-/***/ "./src/redux/api/jwt.js":
-/*!******************************!*\
-  !*** ./src/redux/api/jwt.js ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.jwtApi = undefined;
-
-var _axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-
-var _axios2 = _interopRequireDefault(_axios);
-
-var _configuration = __webpack_require__(/*! ../../helpers/configuration */ "./src/helpers/configuration.js");
-
-var _headers = __webpack_require__(/*! ../helpers/headers */ "./src/redux/helpers/headers.js");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-const jwtApi = exports.jwtApi = {
-  signinfake: () => async () => {
-    const response = await _axios2.default.post('/jwt/signinfake', null, {
-      baseURL: _configuration.configuration.BASE_URL_API()
-    });
-    if (response.statusText === 'OK' || response.status === 200) {
-      (0, _headers.setJwtBearerToken)(response.data.token);
-      delete response.data.token;
-      window.successToast.text = "Succesvol ingelogd";
-      window.successToast.open();
-      return { data: response.data, headers: response.headers };
-    } else {
-      throw response.status;
-    }
-  },
-  signin: () => async () => {
-    const response = await _axios2.default.get('/jwt/signin', {
-      params: {
-        frontEndRedirectTo: window.location.origin + '/digidcgifinished'
-      },
-      baseURL: _configuration.configuration.BASE_URL_API()
-    });
-    if (response.statusText === 'OK' || response.status === 200) {
-      return { data: response.data, headers: response.headers };
-    } else {
-      throw response.status;
-    }
-  },
-  getJwtForDigidCgi: (aselectCredentials, rid) => async () => {
-    const response = await _axios2.default.post('/jwt/getJwtForDigidCgi', null, {
-      baseURL: _configuration.configuration.BASE_URL_API(),
-      params: {
-        aselectCredentials: aselectCredentials,
-        rid: rid
-      }
-    });
-    if (response.statusText === 'OK' || response.status === 200) {
-      (0, _headers.setJwtBearerToken)(response.data.token);
-      delete response.data.token;
-      window.successToast.text = "Succesvol ingelogd";
-      window.successToast.open();
-      return { data: response.data, headers: response.headers };
-    } else {
-      throw response.status;
-    }
-  },
-  logout: token => async () => {
-    await _axios2.default.post('/jwt/signout', null, {
-      baseURL: _configuration.configuration.BASE_URL_API(),
-      headers: { 'Authorization': 'Bearer ' + token }
-    });
-  }
-};
-
-/***/ }),
-
 /***/ "./src/redux/api/orders.js":
 /*!*********************************!*\
   !*** ./src/redux/api/orders.js ***!
@@ -48605,7 +48528,7 @@ const item = (state = {
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 exports.person = undefined;
 
@@ -48614,60 +48537,69 @@ var _person = __webpack_require__(/*! ../actions/person */ "./src/redux/actions/
 var _jwt = __webpack_require__(/*! ../actions/jwt */ "./src/redux/actions/jwt.js");
 
 const person = exports.person = (state = { data: {}, status: _person.CLEAR_PERSON_DATA, movingPersonsStatus: _person.CLEAR_PERSONS_MOVING }, action) => {
-  switch (action.type) {
-    case _person.REQUEST_PERSON_DATA:
-      return Object.assign({}, state, {
-        status: _person.REQUEST_PERSON_DATA
-      });
-    case _person.REQUEST_PERSON_DATA_SUCCESS:
-      return Object.assign({}, state, {
-        data: action.data,
-        error: null,
-        status: _person.REQUEST_PERSON_DATA_SUCCESS
-      });
-    case _person.REQUEST_PERSON_DATA_FAILURE:
-      return Object.assign({}, state, {
-        error: action.error,
-        status: _person.REQUEST_PERSON_DATA_FAILURE
-      });
-    case _person.CLEAR_PERSON_DATA:
-      return {
-        data: {},
-        status: _person.CLEAR_PERSON_DATA
-      };
-    case _person.REQUEST_PERSONS_MOVING:
-      return Object.assign({}, state, {
-        movingPersonsStatus: _person.REQUEST_PERSONS_MOVING
-      });
-    case _person.REQUEST_PERSONS_MOVING_SUCCESS:
-      {
-        return Object.assign({}, state, {
-          movingPersons: action.data,
-          movingPersonsStatus: action.data.length === 0 ? _person.REQUEST_PERSONS_MOVING_SKIPQUESTION : _person.REQUEST_PERSONS_MOVING_SUCCESS,
-          error: null
-        });
-      }
-    case _person.REQUEST_PERSONS_MOVING_FAILURE:
-      return Object.assign({}, state, {
-        error: action.error,
-        movingPersonsStatus: _person.REQUEST_PERSONS_MOVING_FAILURE
-      });
-    case _person.CLEAR_PERSONS_MOVING:
-      return Object.assign({}, state, {
-        movingPersons: [],
-        movingPersonsStatus: _person.CLEAR_PERSONS_MOVING
-      });
-    case _person.REQUEST_PERSONS_MOVING_SKIPQUESTION:
-      {
-        return Object.assign({}, state, {
-          movingPersonsStatus: _person.REQUEST_PERSONS_MOVING_SUCCESS
-        });
-      }
-    case _jwt.REQUEST_JWT_LOGOUT_SUCCESS:
-      return { data: {}, status: _person.CLEAR_PERSON_DATA, movingPersonsStatus: _person.CLEAR_PERSONS_MOVING };
-    default:
-      return state;
-  }
+    switch (action.type) {
+        case _person.REQUEST_PERSON_DATA:
+            return Object.assign({}, state, {
+                searching: true,
+                status: _person.REQUEST_PERSON_DATA
+            });
+        case _person.REQUEST_PERSON_DATA_SUCCESS:
+            return Object.assign({}, state, {
+                searching: false,
+                data: action.data,
+                error: null,
+                status: _person.REQUEST_PERSON_DATA_SUCCESS
+            });
+        case _person.REQUEST_PERSON_DATA_FAILURE:
+            return Object.assign({}, state, {
+                searching: false,
+                error: action.error,
+                status: _person.REQUEST_PERSON_DATA_FAILURE
+            });
+        case _person.CLEAR_PERSON_DATA:
+            return {
+                data: {},
+                searching: false,
+                status: _person.CLEAR_PERSON_DATA
+            };
+        case _person.REQUEST_PERSONS_MOVING:
+            return Object.assign({}, state, {
+                movingPersonsSearching: true,
+                movingPersonsStatus: _person.REQUEST_PERSONS_MOVING
+            });
+        case _person.REQUEST_PERSONS_MOVING_SUCCESS:
+            {
+                return Object.assign({}, state, {
+                    movingPersons: action.data,
+                    movingPersonsSearching: false,
+                    movingPersonsStatus: action.data.length === 0 ? _person.REQUEST_PERSONS_MOVING_SKIPQUESTION : _person.REQUEST_PERSONS_MOVING_SUCCESS,
+                    error: null
+                });
+            }
+        case _person.REQUEST_PERSONS_MOVING_FAILURE:
+            return Object.assign({}, state, {
+                error: action.error,
+                movingPersonsSearching: false,
+                movingPersonsStatus: _person.REQUEST_PERSONS_MOVING_FAILURE
+            });
+        case _person.CLEAR_PERSONS_MOVING:
+            return Object.assign({}, state, {
+                movingPersons: [],
+                movingPersonsSearching: false,
+                movingPersonsStatus: _person.CLEAR_PERSONS_MOVING
+            });
+        case _person.REQUEST_PERSONS_MOVING_SKIPQUESTION:
+            {
+                return Object.assign({}, state, {
+                    movingPersonsSearching: false,
+                    movingPersonsStatus: _person.REQUEST_PERSONS_MOVING_SUCCESS
+                });
+            }
+        case _jwt.REQUEST_JWT_LOGOUT_SUCCESS:
+            return { data: {}, status: _person.CLEAR_PERSON_DATA, movingPersonsStatus: _person.CLEAR_PERSONS_MOVING };
+        default:
+            return state;
+    }
 };
 
 /***/ }),
@@ -49016,255 +48948,9 @@ function* rootSaga() {
   !*** ./src/redux/sagas/jwt.js ***!
   \********************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.watchRequestJwtSigninFake = watchRequestJwtSigninFake;
-exports.watchRequestJwtSignin = watchRequestJwtSignin;
-exports.watchJwtSigninSuccess = watchJwtSigninSuccess;
-exports.watchJwtSigninSuccessFake = watchJwtSigninSuccessFake;
-exports.watchRequestJwtFromDigidCgi = watchRequestJwtFromDigidCgi;
-exports.watchRequestJwtFromDigidCgiSuccess = watchRequestJwtFromDigidCgiSuccess;
-exports.watchRequestJwtLogout = watchRequestJwtLogout;
-exports.watchRequestJwtLogout401 = watchRequestJwtLogout401;
-
-var _effects = __webpack_require__(/*! redux-saga/effects */ "./node_modules/redux-saga/dist/redux-saga-effects-npm-proxy.esm.js");
-
-var _jwt = __webpack_require__(/*! ../api/jwt */ "./src/redux/api/jwt.js");
-
-var _headers = __webpack_require__(/*! ../helpers/headers */ "./src/redux/helpers/headers.js");
-
-var _application = __webpack_require__(/*! ../actions/application */ "./src/redux/actions/application.js");
-
-var _lastAction = __webpack_require__(/*! ../helpers/lastAction */ "./src/redux/helpers/lastAction.js");
-
-var _journeys = __webpack_require__(/*! ../actions/journeys */ "./src/redux/actions/journeys.js");
-
-var _jwt2 = __webpack_require__(/*! ../actions/jwt */ "./src/redux/actions/jwt.js");
-
-function* watchRequestJwtSigninFake() {
-  yield (0, _effects.takeLatest)(_jwt2.REQUEST_JWT_SIGNIN_FAKE, fetchJwtSigninFake);
-}
-
-function* fetchJwtSigninFake() {
-  try {
-    const result = yield (0, _effects.call)(_jwt.jwtApi.signinfake());
-    yield (0, _effects.put)((0, _jwt2.requestJwtSigninSuccessFake)(result.data, result.headers));
-  } catch (e) {
-    yield (0, _effects.put)((0, _jwt2.requestJwtSigninFailure)(e));
-  }
-}
-
-function* watchRequestJwtSignin() {
-  yield (0, _effects.takeLatest)(_jwt2.REQUEST_JWT_SIGNIN, fetchJwtSignin);
-}
-
-function* fetchJwtSignin() {
-  try {
-    const result = yield (0, _effects.call)(_jwt.jwtApi.signin());
-    yield (0, _effects.put)((0, _jwt2.requestJwtSigninSuccess)(result.data, result.headers));
-  } catch (e) {
-    yield (0, _effects.put)((0, _jwt2.requestJwtSigninFailure)(e));
-  }
-}
-
-function* watchJwtSigninSuccess() {
-  yield (0, _effects.takeLatest)(_jwt2.REQUEST_JWT_SIGNIN_SUCCESS, onJwtSigninSuccess);
-}
-
-function* watchJwtSigninSuccessFake() {
-  yield (0, _effects.takeLatest)(_jwt2.REQUEST_JWT_SIGNIN_SUCCESS_FAKE, onJwtSigninSuccessFake);
-}
-
-function onJwtSigninSuccess(action) {
-  window.location = action.data.redirectTo;
-}
-
-function* onJwtSigninSuccessFake() {
-  yield (0, _effects.put)((0, _application.nextPageAfterLogin)());
-  yield setFakeJourneys();
-}
-
-function* watchRequestJwtFromDigidCgi() {
-  yield (0, _effects.takeLatest)(_jwt2.REQUEST_JWT_FOR_DIGIDCGI, fetchJwtFromDigidCgi);
-}
-
-function* fetchJwtFromDigidCgi(action) {
-  try {
-    const result = yield (0, _effects.call)(_jwt.jwtApi.getJwtForDigidCgi(action.aselectCredentials, action.rid));
-    yield (0, _effects.put)((0, _jwt2.requestJwtTokenForDigidSuccess)(result.data, result.headers));
-  } catch (e) {
-    yield (0, _effects.put)((0, _jwt2.requestJwtTokenForDigidFailure)(e));
-  }
-}
-
-function* watchRequestJwtFromDigidCgiSuccess() {
-  yield (0, _effects.takeLatest)(_jwt2.REQUEST_JWT_FOR_DIGIDCGI_SUCCESS, onJwtFromDigidCgiSuccess);
-}
-
-function* onJwtFromDigidCgiSuccess() {
-  yield (0, _effects.put)((0, _application.nextPageAfterLogin)());
-  yield setFakeJourneys();
-}
-
-function* watchRequestJwtLogout() {
-  yield (0, _effects.takeLatest)(_jwt2.REQUEST_JWT_LOGOUT, doJwtLogout);
-}
-
-function* doJwtLogout() {
-  yield (0, _effects.call)(_jwt.jwtApi.logout((0, _headers.jwtBearerToken)()));
-  yield (0, _effects.put)((0, _jwt2.requestJwtLogoutSuccess)());
-  (0, _headers.removeJwtBearerToken)();
-  (0, _lastAction.removeLastAction)();
-  window.successToast.text = 'Succesvol uitgelogd';
-  window.successToast.open();
-  yield (0, _effects.put)((0, _application.selectPage)('signin'));
-}
-
-function* watchRequestJwtLogout401() {
-  yield (0, _effects.takeLatest)(_jwt2.REQUEST_JWT_LOGOUT_401, doJwtLogout401);
-}
-
-function* doJwtLogout401(action) {
-  (0, _headers.removeJwtBearerToken)();
-  if (action && action.lastActionBefore401) {
-    (0, _lastAction.setLastAction)(action.lastActionBefore401);
-  }
-  window.clearErrorDialog();
-  window.errorText.innerHTML = `U heeft geen geldige sessie meer en zult opnieuw moeten inloggen.`;
-  window.errorDialog.open();
-  // Here we do a selectPageNoHistory, so that when the user logs in again, he is navigated to were he was.
-  yield (0, _effects.put)((0, _application.selectPageNoHistory)('signin'));
-}
-
-function* setFakeJourneys() {
-  yield (0, _effects.put)((0, _journeys.setJourneys)([{
-    title: 'Ik heb een goed idee',
-    request_type_id: '06daeb7f-6503-4b8e-8aa1-5a5767b53b22',
-    questions: [{
-      id: '6abbb0e1-3ef5-4206-a2e3-aba72ad1259a',
-      type: 'single',
-      property: 'anoniem',
-      options: [{
-        goto: 'f4efa6ca-158b-4184-958f-52ae8b47f561',
-        title: 'Nee',
-        value: 'Nee'
-      }, {
-        goto: 'b52cf9a7-30d1-4eb7-bf64-34f3a6380c11',
-        title: 'Ja',
-        value: 'Ja'
-      }],
-      title: 'Wil je je idee anoniem indienen?',
-      subtitle: 'Bij anoniem indienen, kunnen we geen contact met je opnemen ' + 'bij vragen.',
-      optional: {
-        goto: null
-      }
-    }, {
-      id: 'f4efa6ca-158b-4184-958f-52ae8b47f561',
-      type: 'agree',
-      property: 'toestemming',
-      options: null,
-      title: 'Toestemming voor gebruik gegevens',
-      subtitle: 'Geef je toestemming om jouw voornaam, achternaam en adres mee ' + 'te sturen met jouw idee?',
-      next: 'e8877860-f3b2-46d2-a3b8-e0b70c93492b'
-    }, {
-      id: 'b52cf9a7-30d1-4eb7-bf64-34f3a6380c11',
-      type: 'text',
-      property: 'ideeomschrijving',
-      options: null,
-      title: 'Wat is jouw idee?',
-      next: '12e51aa9-0a9b-4e74-a273-65e27763073c'
-    }, {
-      id: '12e51aa9-0a9b-4e74-a273-65e27763073c',
-      type: 'radioButtons',
-      property: 'contact',
-      options: [{
-        goto: 'END',
-        title: 'Ja',
-        value: 'Ja'
-      }, {
-        goto: 'END',
-        title: 'Nee',
-        value: 'Nee'
-      }],
-      title: 'Vind je het prettig dat er contact met je wordt opgenomen ' + 'over jouw idee?'
-    }, {
-      id: 'e8877860-f3b2-46d2-a3b8-e0b70c93492b',
-      type: 'text',
-      property: 'ideeomschrijving',
-      options: null,
-      title: 'Wat is jouw idee?',
-      subtitle: '',
-      next: 'END'
-    }],
-    overview: {
-      needed_documents: ['Geen'],
-      send_to: [],
-      steps: ['Je geeft aan of je anoniem wilt blijven', 'Je geeft het onderwerp van je idee op', 'Je beschrijft het idee'],
-      subtitle: 'Leuk dat je een goed idee hebt!'
-    },
-    end: {
-      check: {
-        title: 'Controleer je gegevens',
-        subtitle: 'Controleer onderstaande gegevens goed en verzend het formulier.'
-      },
-      success: {
-        title: 'Je idee is doorgegeven',
-        subtitle: 'Het volgende idee is succesvol verzonden naar de gemeente.'
-      }
-    }
-  }, {
-    title: 'Ik ga verhuizen',
-    request_type_id: '9d76fb58-0711-4437-acc4-9f4d9d403cdf',
-    questions: [{
-      id: 'a7beef34-9aea-4891-971d-beb67b2e8010',
-      type: 'address',
-      property: 'adress',
-      title: 'Wat wordt je nieuwe adres?',
-      subtitle: 'Vul je postcode, huisnummer en eventuele toevoeging in van het nieuwe adres.',
-      fieldName: 'nieuw adres',
-      next: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb'
-    }, {
-      id: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb',
-      type: 'calendar',
-      property: 'datum',
-      options: null,
-      title: 'Wanneer ga je verhuizen?',
-      subtitle: 'Kies je verhuisdatum in de onderstaande kalender.',
-      fieldName: 'verhuisdatum',
-      next: '37e30b1f-fb51-4d49-8756-fa5d4d55829a'
-    }, {
-      id: '37e30b1f-fb51-4d49-8756-fa5d4d55829a',
-      type: 'personsMoving',
-      property: 'wie',
-      title: 'Met wie ga je verhuizen?',
-      subtitle: 'Er wordt een bericht gestuurd naar de persoon die meeverhuist ' + '(onderstaande personen staan nu op hetzelfde adres als jij ' + 'ingeschreven)',
-      fieldName: 'meeverhuizende personen',
-      next: 'END' // '21586109-ce3b-4091-8420-85f92c0a6c11',
-    }],
-    overview: {
-      needed_documents: ['Geen documenten nodig'],
-      send_to: [],
-      steps: ['Geef je nieuwe adres op', 'Geef de datum op wanneer je gaat verhuizen', 'Geef aan met wie je gaat verhuizen'],
-      subtitle: 'Verhuizen binnen of naar gemeente \'s-Hertogenbosch'
-    },
-    end: {
-      check: {
-        title: 'Controleer je gegevens',
-        subtitle: 'Controleer onderstaande gegevens goed en verzend het formulier.'
-      },
-      success: {
-        title: 'Je verhuizing is aangevraagd',
-        subtitle: 'De volgende gegevens zijn succesvol verzonden naar de gemeente.'
-      }
-    }
-  }]));
-}
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: E:/Repos/MijnApp-Frontend/MijnApp-Frontend/src/redux/sagas/jwt.js: Unexpected token, expected , (231:10)\n\n  229 |           fieldName: 'nieuw adres',\n  230 |           fieldIcon: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNjAgNjAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDYwIDYwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8cGF0aCBkPSJNMzAsMjZjMy44NiwwLDctMy4xNDEsNy03cy0zLjE0LTctNy03cy03LDMuMTQxLTcsN1MyNi4xNCwyNiwzMCwyNnogTTMwLDE0YzIuNzU3LDAsNSwyLjI0Myw1LDVzLTIuMjQzLDUtNSw1DQoJCXMtNS0yLjI0My01LTVTMjcuMjQzLDE0LDMwLDE0eiIvPg0KCTxwYXRoIGQ9Ik0yOS44MjMsNTQuNzU3TDQ1LjE2NCwzMi42YzUuNzU0LTcuNjcxLDQuOTIyLTIwLjI4LTEuNzgxLTI2Ljk4MkMzOS43NjEsMS45OTUsMzQuOTQ1LDAsMjkuODIzLDANCgkJcy05LjkzOCwxLjk5NS0xMy41Niw1LjYxN2MtNi43MDMsNi43MDItNy41MzUsMTkuMzExLTEuODA0LDI2Ljk1MkwyOS44MjMsNTQuNzU3eiBNMTcuNjc3LDcuMDMxQzIwLjkyMiwzLjc4NywyNS4yMzUsMiwyOS44MjMsMg0KCQlzOC45MDEsMS43ODcsMTIuMTQ2LDUuMDMxYzYuMDUsNi4wNDksNi43OTUsMTcuNDM3LDEuNTczLDI0LjM5OUwyOS44MjMsNTEuMjQzTDE2LjA4MiwzMS40DQoJCUMxMC44ODIsMjQuNDY4LDExLjYyOCwxMy4wOCwxNy42NzcsNy4wMzF6Ii8+DQoJPHBhdGggZD0iTTQyLjExNyw0My4wMDdjLTAuNTUtMC4wNjctMS4wNDYsMC4zMjctMS4xMSwwLjg3NnMwLjMyOCwxLjA0NiwwLjg3NiwxLjExQzUyLjM5OSw0Ni4yMzEsNTgsNDkuNTY3LDU4LDUxLjUNCgkJYzAsMi43MTQtMTAuNjUyLDYuNS0yOCw2LjVTMiw1NC4yMTQsMiw1MS41YzAtMS45MzMsNS42MDEtNS4yNjksMTYuMTE3LTYuNTA3YzAuNTQ4LTAuMDY0LDAuOTQtMC41NjIsMC44NzYtMS4xMQ0KCQljLTAuMDY1LTAuNTQ5LTAuNTYxLTAuOTQ1LTEuMTEtMC44NzZDNy4zNTQsNDQuMjQ3LDAsNDcuNzM5LDAsNTEuNUMwLDU1LjcyNCwxMC4zMDUsNjAsMzAsNjBzMzAtNC4yNzYsMzAtOC41DQoJCUM2MCw0Ny43MzksNTIuNjQ2LDQ0LjI0Nyw0Mi4xMTcsNDMuMDA3eiIvPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo='\n> 231 |           next: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb',\n      |           ^\n  232 |         },\n  233 |         {\n  234 |           id: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb',\n");
 
 /***/ }),
 
