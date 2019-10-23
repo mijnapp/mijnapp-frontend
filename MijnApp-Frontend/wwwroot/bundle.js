@@ -44187,12 +44187,15 @@ class PlaybackScreenEnd extends (0, _connectMixin.connect)(_store.store)(_polyme
   _getOrderItems(order) {
     const returnable = [];
     order.filter(o => o.question && o.question !== 'END').forEach(o => {
+      const question = this.questions.find(function (item) {
+        return item.id === o.question;
+      });
       if (Array.isArray(o.valueTitle)) {
         if (o.valueTitle.length > 0) {
-          returnable.push({ key: o.keyTitle, value: o.valueTitle.join('\n') });
+          returnable.push({ key: o.keyTitle, value: o.valueTitle.join('\n'), image: question.fieldIcon });
         }
       } else {
-        returnable.push({ key: o.keyTitle, value: o.valueTitle });
+        returnable.push({ key: o.keyTitle, value: o.valueTitle, image: question.fieldIcon });
       }
     });
     return returnable;
@@ -44233,6 +44236,7 @@ class PlaybackScreenEnd extends (0, _connectMixin.connect)(_store.store)(_polyme
     this.current = state.order.current;
     this.id = this.current === _common.JOURNEY_START ? _common.JOURNEY_START : _common.JOURNEY_END;
     this.question = { type: 'end' };
+    this.questions = state.journey.questions;
     this.order = state.order.data;
     this.order_status_not_send = state.order.order_status === _common.ORDER_STATUS_NOT_SEND;
     this.order_status_sending = state.order.order_status === _common.ORDER_STATUS_SENDING;
@@ -44282,7 +44286,7 @@ module.exports = ".Wrapper{height:100vh;float:left;padding:0 0 57px}.TopbarButto
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\r\n  <div class=\"ScrollContainer\">\r\n  <div class=\"Scroller\">\r\n      <div class=\"TopbarButtonContainer\">\r\n          <dom-if if=\"{{order_show_buttons}}\">\r\n              <template>\r\n                  <maki-button on-click=\"_stop\" size=\"30\" stroke=\"0\" font-size=\"16\" heading=\"Stoppen\">\r\n                      <maki-icon-cross />\r\n                  </maki-button>\r\n              </template>\r\n          </dom-if>\r\n      </div>\r\n      <div class=\"JourneyHeader\">\r\n          <div class=\"JourneyIcon\">\r\n              <dom-if if=\"{{show_journey_icon_truck}}\">\r\n                  <template>\r\n                      <maki-icon-truck />\r\n                  </template>\r\n              </dom-if>\r\n              <dom-if if=\"{{show_journey_icon_bulb}}\">\r\n                  <template>\r\n                      <maki-icon-bulb />\r\n                  </template>\r\n              </dom-if>\r\n          </div>\r\n          <div class=\"JourneyTitle\">[[_title(journey)]]</div>\r\n          <div class=\"JourneyProgress\">\r\n              <dom-repeat items=\"{{journey.questions}}\">\r\n                  <template>\r\n                      <dom-if if=\"{{isCurrentQuestion(current, index)}}\">\r\n                          <template>\r\n                              <div class=\"JourneyProgressDot\"></div>\r\n                          </template>\r\n                      </dom-if>\r\n                      <dom-if if=\"{{isNotAnswered(current, index)}}\">\r\n                          <template>\r\n                              <div class=\"JourneyProgressDotEmpty\"></div>\r\n                          </template>\r\n                      </dom-if>\r\n                      <dom-if if=\"{{isAnswered(current, index)}}\">\r\n                          <template>\r\n                              <div class=\"JourneyProgressDotCheck\">\r\n                                  <maki-icon-check />\r\n                              </div>\r\n                          </template>\r\n                      </dom-if>\r\n                      <dom-if if=\"{{isNotLastItem(current, index)}}\">\r\n                          <template>\r\n                              <div class=\"JourneyProgressLine\"></div>\r\n                          </template>\r\n                      </dom-if>\r\n                  </template>\r\n              </dom-repeat>\r\n              <dom-if if=\"{{order_status_send_ok}}\">\r\n                  <template>\r\n                      <div class=\"JourneyProgressLine\"></div>\r\n                      <div class=\"JourneyProgressDotCheck\">\r\n                          <maki-icon-check />\r\n                      </div>\r\n                  </template>\r\n              </dom-if>\r\n              <dom-if if=\"{{!order_status_send_ok}}\">\r\n                  <template>\r\n                      <div class=\"JourneyProgressLine\"></div>\r\n                      <div class=\"JourneyProgressDot\"></div>\r\n                  </template>\r\n              </dom-if>\r\n          </div>\r\n      </div>\r\n      <div class=\"Title\">{{order_end_title}}</div>\r\n      <dom-if if=\"{{order_status_send_ok}}\">\r\n          <template>\r\n              <div class=\"SuccessIcon\">\r\n                  <maki-icon-confetti />\r\n              </div>\r\n          </template>\r\n      </dom-if>\r\n      <div class=\"Subtitle\">{{order_end_sub_title}}</div>\r\n      <div class=\"Answer\">\r\n          <img style=\"width: 30px; height: 30px; float: left; margin: 10px 10px 0 0\" src=\"data:img/svg+xml;base64,PHN2ZyB2aWV3Qm94PSItNDIgMCA1MTIgNTEyLjAwMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJtMjEwLjM1MTU2MiAyNDYuNjMyODEyYzMzLjg4MjgxMyAwIDYzLjIxODc1LTEyLjE1MjM0MyA4Ny4xOTUzMTMtMzYuMTI4OTA2IDIzLjk2ODc1LTIzLjk3MjY1NiAzNi4xMjUtNTMuMzA0Njg3IDM2LjEyNS04Ny4xOTE0MDYgMC0zMy44NzUtMTIuMTUyMzQ0LTYzLjIxMDkzOC0zNi4xMjg5MDYtODcuMTkxNDA2LTIzLjk3NjU2My0yMy45Njg3NS01My4zMTI1LTM2LjEyMTA5NC04Ny4xOTE0MDctMzYuMTIxMDk0LTMzLjg4NjcxOCAwLTYzLjIxODc1IDEyLjE1MjM0NC04Ny4xOTE0MDYgMzYuMTI1cy0zNi4xMjg5MDYgNTMuMzA4NTk0LTM2LjEyODkwNiA4Ny4xODc1YzAgMzMuODg2NzE5IDEyLjE1NjI1IDYzLjIyMjY1NiAzNi4xMjg5MDYgODcuMTk1MzEyIDIzLjk4MDQ2OSAyMy45Njg3NSA1My4zMTY0MDYgMzYuMTI1IDg3LjE5MTQwNiAzNi4xMjV6bS02NS45NzI2NTYtMTg5LjI5Mjk2OGMxOC4zOTQ1MzItMTguMzk0NTMyIDM5Ljk3MjY1Ni0yNy4zMzU5MzggNjUuOTcyNjU2LTI3LjMzNTkzOCAyNS45OTYwOTQgMCA0Ny41NzgxMjYgOC45NDE0MDYgNjUuOTc2NTYzIDI3LjMzNTkzOCAxOC4zOTQ1MzEgMTguMzk4NDM3IDI3LjMzOTg0NCAzOS45ODA0NjggMjcuMzM5ODQ0IDY1Ljk3MjY1NiAwIDI2LTguOTQ1MzEzIDQ3LjU3ODEyNS0yNy4zMzk4NDQgNjUuOTc2NTYyLTE4LjM5ODQzNyAxOC4zOTg0MzgtMzkuOTgwNDY5IDI3LjMzOTg0NC02NS45NzY1NjMgMjcuMzM5ODQ0LTI1Ljk5MjE4NyAwLTQ3LjU3MDMxMi04Ljk0NTMxMi02NS45NzI2NTYtMjcuMzM5ODQ0LTE4LjM5ODQzNy0xOC4zOTQ1MzEtMjcuMzQzNzUtMzkuOTc2NTYyLTI3LjM0Mzc1LTY1Ljk3NjU2MiAwLTI1Ljk5MjE4OCA4Ljk0NTMxMy00Ny41NzQyMTkgMjcuMzQzNzUtNjUuOTcyNjU2em0wIDAiLz48cGF0aCBkPSJtNDI2LjEyODkwNiAzOTMuNzAzMTI1Yy0uNjkxNDA2LTkuOTc2NTYzLTIuMDg5ODQ0LTIwLjg1OTM3NS00LjE0ODQzNy0zMi4zNTE1NjMtMi4wNzgxMjUtMTEuNTc4MTI0LTQuNzUzOTA3LTIyLjUyMzQzNy03Ljk1NzAzMS0zMi41MjczNDMtMy4zMTI1LTEwLjMzOTg0NC03LjgwODU5NC0yMC41NTA3ODEtMTMuMzc1LTMwLjMzNTkzOC01Ljc2OTUzMi0xMC4xNTYyNS0xMi41NTA3ODItMTktMjAuMTYwMTU3LTI2LjI3NzM0My03Ljk1NzAzMS03LjYxMzI4Mi0xNy42OTkyMTktMTMuNzM0Mzc2LTI4Ljk2NDg0My0xOC4xOTkyMTktMTEuMjI2NTYzLTQuNDQxNDA3LTIzLjY2Nzk2OS02LjY5MTQwNy0zNi45NzY1NjMtNi42OTE0MDctNS4yMjY1NjMgMC0xMC4yODEyNSAyLjE0NDUzMi0yMC4wNDI5NjkgOC41LTYuMDA3ODEyIDMuOTE3OTY5LTEzLjAzNTE1NiA4LjQ0OTIxOS0yMC44Nzg5MDYgMTMuNDYwOTM4LTYuNzA3MDMxIDQuMjczNDM4LTE1Ljc5Mjk2OSA4LjI3NzM0NC0yNy4wMTU2MjUgMTEuOTAyMzQ0LTEwLjk0OTIxOSAzLjU0Mjk2OC0yMi4wNjY0MDYgNS4zMzk4NDQtMzMuMDQyOTY5IDUuMzM5ODQ0LTEwLjk2ODc1IDAtMjIuMDg1OTM3LTEuNzk2ODc2LTMzLjA0Mjk2OC01LjMzOTg0NC0xMS4yMTA5MzgtMy42MjEwOTQtMjAuMzAwNzgyLTcuNjI1LTI2Ljk5NjA5NC0xMS44OTg0MzgtNy43Njk1MzItNC45NjQ4NDQtMTQuODAwNzgyLTkuNDk2MDk0LTIwLjg5ODQzOC0xMy40Njg3NS05Ljc1MzkwNi02LjM1NTQ2OC0xNC44MDg1OTQtOC41LTIwLjAzNTE1Ni04LjUtMTMuMzEyNSAwLTI1Ljc1IDIuMjUzOTA2LTM2Ljk3MjY1NiA2LjY5OTIxOS0xMS4yNTc4MTMgNC40NTcwMzEtMjEuMDAzOTA2IDEwLjU3ODEyNS0yOC45Njg3NSAxOC4xOTkyMTktNy42MDkzNzUgNy4yODEyNS0xNC4zOTA2MjUgMTYuMTIxMDk0LTIwLjE1NjI1IDI2LjI3MzQzNy01LjU1ODU5NCA5Ljc4NTE1Ny0xMC4wNTg1OTQgMTkuOTkyMTg4LTEzLjM3MTA5NCAzMC4zMzk4NDQtMy4xOTkyMTkgMTAuMDAzOTA2LTUuODc1IDIwLjk0NTMxMy03Ljk1MzEyNSAzMi41MjM0MzctMi4wNjI1IDExLjQ3NjU2My0zLjQ1NzAzMSAyMi4zNjMyODItNC4xNDg0MzcgMzIuMzYzMjgyLS42Nzk2ODggOS43NzczNDQtMS4wMjM0MzggMTkuOTUzMTI1LTEuMDIzNDM4IDMwLjIzNDM3NSAwIDI2LjcyNjU2MiA4LjQ5NjA5NCA0OC4zNjMyODEgMjUuMjUgNjQuMzIwMzEyIDE2LjU0Njg3NSAxNS43NDYwOTQgMzguNDM3NSAyMy43MzA0NjkgNjUuMDY2NDA2IDIzLjczMDQ2OWgyNDYuNTMxMjVjMjYuNjIxMDk0IDAgNDguNTExNzE5LTcuOTg0Mzc1IDY1LjA2MjUtMjMuNzMwNDY5IDE2Ljc1NzgxMy0xNS45NDUzMTIgMjUuMjUzOTA2LTM3LjU4OTg0MyAyNS4yNTM5MDYtNjQuMzI0MjE5LS4wMDM5MDYtMTAuMzE2NDA2LS4zNTE1NjItMjAuNDkyMTg3LTEuMDM1MTU2LTMwLjI0MjE4N3ptLTQ0LjkwNjI1IDcyLjgyODEyNWMtMTAuOTMzNTk0IDEwLjQwNjI1LTI1LjQ0OTIxOCAxNS40NjQ4NDQtNDQuMzc4OTA2IDE1LjQ2NDg0NGgtMjQ2LjUyNzM0NGMtMTguOTMzNTk0IDAtMzMuNDQ5MjE4LTUuMDU4NTk0LTQ0LjM3ODkwNi0xNS40NjA5MzgtMTAuNzIyNjU2LTEwLjIwNzAzMS0xNS45MzM1OTQtMjQuMTQwNjI1LTE1LjkzMzU5NC00Mi41ODU5MzcgMC05LjU5Mzc1LjMxNjQwNi0xOS4wNjY0MDcuOTQ5MjE5LTI4LjE2MDE1Ny42MTcxODctOC45MjE4NzQgMS44Nzg5MDYtMTguNzIyNjU2IDMuNzUtMjkuMTM2NzE4IDEuODQ3NjU2LTEwLjI4NTE1NiA0LjE5OTIxOS0xOS45Mzc1IDYuOTk2MDk0LTI4LjY3NTc4MiAyLjY4MzU5My04LjM3ODkwNiA2LjM0Mzc1LTE2LjY3NTc4MSAxMC44ODI4MTItMjQuNjY3OTY4IDQuMzMyMDMxLTcuNjE3MTg4IDkuMzE2NDA3LTE0LjE1MjM0NCAxNC44MTY0MDctMTkuNDE3OTY5IDUuMTQ0NTMxLTQuOTI1NzgxIDExLjYyODkwNi04Ljk1NzAzMSAxOS4yNjk1MzEtMTEuOTgwNDY5IDcuMDY2NDA2LTIuNzk2ODc1IDE1LjAwNzgxMi00LjMyODEyNSAyMy42Mjg5MDYtNC41NTg1OTQgMS4wNTA3ODEuNTU4NTk0IDIuOTIxODc1IDEuNjI1IDUuOTUzMTI1IDMuNjAxNTYzIDYuMTY3OTY5IDQuMDE5NTMxIDEzLjI3NzM0NCA4LjYwNTQ2OSAyMS4xMzY3MTkgMTMuNjI1IDguODU5Mzc1IDUuNjQ4NDM3IDIwLjI3MzQzNyAxMC43NSAzMy45MTAxNTYgMTUuMTUyMzQ0IDEzLjk0MTQwNiA0LjUwNzgxMiAyOC4xNjAxNTYgNi43OTY4NzUgNDIuMjczNDM3IDYuNzk2ODc1IDE0LjExMzI4MiAwIDI4LjMzNTkzOC0yLjI4OTA2MyA0Mi4yNjk1MzItNi43OTI5NjkgMTMuNjQ4NDM3LTQuNDEwMTU2IDI1LjA1ODU5NC05LjUwNzgxMyAzMy45Mjk2ODctMTUuMTY0MDYzIDguMDQyOTY5LTUuMTQwNjI0IDE0Ljk1MzEyNS05LjU5Mzc1IDIxLjEyMTA5NC0xMy42MTcxODcgMy4wMzEyNS0xLjk3MjY1NiA0LjkwMjM0NC0zLjA0Mjk2OSA1Ljk1MzEyNS0zLjYwMTU2MyA4LjYyNS4yMzA0NjkgMTYuNTY2NDA2IDEuNzYxNzE5IDIzLjYzNjcxOSA0LjU1ODU5NCA3LjYzNjcxOSAzLjAyMzQzOCAxNC4xMjEwOTMgNy4wNTg1OTQgMTkuMjY1NjI1IDExLjk4MDQ2OSA1LjUgNS4yNjE3MTkgMTAuNDg0Mzc1IDExLjc5Njg3NSAxNC44MTY0MDYgMTkuNDIxODc1IDQuNTQyOTY5IDcuOTg4MjgxIDguMjA3MDMxIDE2LjI4OTA2MiAxMC44ODY3MTkgMjQuNjYwMTU2IDIuODAwNzgxIDguNzUgNS4xNTYyNSAxOC4zOTg0MzggNyAyOC42NzU3ODIgMS44NjcxODcgMTAuNDMzNTkzIDMuMTMyODEyIDIwLjIzODI4MSAzLjc1IDI5LjE0NDUzMXYuMDA3ODEyYy42MzY3MTkgOS4wNTg1OTQuOTU3MDMxIDE4LjUyNzM0NC45NjA5MzcgMjguMTQ4NDM4LS4wMDM5MDYgMTguNDQ5MjE5LTUuMjE0ODQ0IDMyLjM3ODkwNi0xNS45Mzc1IDQyLjU4MjAzMXptMCAwIi8+PC9zdmc+\"/>\r\n          <div class=\"AnswerLabel\">indiener</div>\r\n          <div class=\"AnswerAnswer\">{{personData.naam.aanschrijfwijze}}</div>\r\n      </div>\r\n      <dom-repeat items=\"[[_getOrderItems(order)]]\">\r\n          <template>\r\n              <div class=\"Answer\">\r\n                  <img style=\"width: 30px; height: 30px; float: left; margin: 10px 10px 0 0\" src=\"[[item.image]]\"/>\r\n                  <div class=\"AnswerLabel\">[[item.key]]</div>\r\n                  <div class=\"AnswerAnswer\">[[item.value]]</div>\r\n              </div>\r\n          </template>\r\n      </dom-repeat>\r\n      <dom-if if=\"{{order_status_send_ok}}\">\r\n        <template>\r\n          <div class=\"ButtonContainer\">\r\n            <maki-button stroke=\"0\" size=\"40\" font-size=\"16\" set-color-main=\"#3192CF\" on-click=\"_createPdf\">\r\n              <div class=\"ButtonInner\">\r\n                <div class=\"ButtonInnerTextDownload\">Download overzicht</div>\r\n              </div>\r\n            </maki-button>\r\n            <maki-button class=\"NextButton\" highlight set-color-highlight=\"#3192CF\" stroke=\"0\" size=\"40\" font-size=\"16\" on-click=\"_stop\">\r\n              <div class=\"ButtonInner\">\r\n                <div class=\"ButtonInnerText\">Sluiten</div>\r\n              </div>\r\n            </maki-button>\r\n          </div>\r\n        </template>\r\n      </dom-if>\r\n      <dom-if if=\"{{order_status_sending}}\">\r\n          <template>\r\n              <div class=\"RequestMessage\">Bezig met verzenden...</div>\r\n          </template>\r\n      </dom-if>\r\n      <dom-if if=\"{{order_status_send_failed}}\">\r\n          <template>\r\n              <div class=\"RequestMessage\">Er is een fout opgetreden bij het versturen van de aanvraag.</div>\r\n          </template>\r\n      </dom-if>\r\n      <dom-if if=\"{{order_show_buttons}}\">\r\n          <template>\r\n              <div class=\"ButtonContainer\">\r\n                  <maki-button class=\"PrevButton\" stroke=\"0\" size=\"40\" font-size=\"16\" set-color-main=\"#3192CF\" on-click=\"_prev\">\r\n                      <div class=\"ButtonInner\">\r\n                          <div class=\"ButtonInnerLeft\"><</div>\r\n                          <div class=\"ButtonInnerText\">Ga terug</div>\r\n                      </div>\r\n                  </maki-button>\r\n                  <maki-button class=\"NextButton\" disabled=\"[[disabled]]\" highlight set-color-highlight=\"#3192CF\" stroke=\"0\" size=\"40\" font-size=\"16\" on-click=\"[[_submit(order)]]\">\r\n                      <div class=\"ButtonInner\">\r\n                          <div class=\"ButtonInnerText\">Nu verzenden</div>\r\n                          <div class=\"ButtonInnerRight\">></div>\r\n                      </div>\r\n                  </maki-button>\r\n              </div>\r\n          </template>\r\n      </dom-if>\r\n  </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"Wrapper\">\r\n  <div class=\"ScrollContainer\">\r\n  <div class=\"Scroller\">\r\n      <div class=\"TopbarButtonContainer\">\r\n          <dom-if if=\"{{order_show_buttons}}\">\r\n              <template>\r\n                  <maki-button on-click=\"_stop\" size=\"30\" stroke=\"0\" font-size=\"16\" heading=\"Stoppen\">\r\n                      <maki-icon-cross />\r\n                  </maki-button>\r\n              </template>\r\n          </dom-if>\r\n      </div>\r\n      <div class=\"JourneyHeader\">\r\n          <div class=\"JourneyIcon\">\r\n              <dom-if if=\"{{show_journey_icon_truck}}\">\r\n                  <template>\r\n                      <maki-icon-truck />\r\n                  </template>\r\n              </dom-if>\r\n              <dom-if if=\"{{show_journey_icon_bulb}}\">\r\n                  <template>\r\n                      <maki-icon-bulb />\r\n                  </template>\r\n              </dom-if>\r\n          </div>\r\n          <div class=\"JourneyTitle\">[[_title(journey)]]</div>\r\n          <div class=\"JourneyProgress\">\r\n              <dom-repeat items=\"{{journey.questions}}\">\r\n                  <template>\r\n                      <dom-if if=\"{{isCurrentQuestion(current, index)}}\">\r\n                          <template>\r\n                              <div class=\"JourneyProgressDot\"></div>\r\n                          </template>\r\n                      </dom-if>\r\n                      <dom-if if=\"{{isNotAnswered(current, index)}}\">\r\n                          <template>\r\n                              <div class=\"JourneyProgressDotEmpty\"></div>\r\n                          </template>\r\n                      </dom-if>\r\n                      <dom-if if=\"{{isAnswered(current, index)}}\">\r\n                          <template>\r\n                              <div class=\"JourneyProgressDotCheck\">\r\n                                  <maki-icon-check />\r\n                              </div>\r\n                          </template>\r\n                      </dom-if>\r\n                      <dom-if if=\"{{isNotLastItem(current, index)}}\">\r\n                          <template>\r\n                              <div class=\"JourneyProgressLine\"></div>\r\n                          </template>\r\n                      </dom-if>\r\n                  </template>\r\n              </dom-repeat>\r\n              <dom-if if=\"{{order_status_send_ok}}\">\r\n                  <template>\r\n                      <div class=\"JourneyProgressLine\"></div>\r\n                      <div class=\"JourneyProgressDotCheck\">\r\n                          <maki-icon-check />\r\n                      </div>\r\n                  </template>\r\n              </dom-if>\r\n              <dom-if if=\"{{!order_status_send_ok}}\">\r\n                  <template>\r\n                      <div class=\"JourneyProgressLine\"></div>\r\n                      <div class=\"JourneyProgressDot\"></div>\r\n                  </template>\r\n              </dom-if>\r\n          </div>\r\n      </div>\r\n      <div class=\"Title\">{{order_end_title}}</div>\r\n      <dom-if if=\"{{order_status_send_ok}}\">\r\n          <template>\r\n              <div class=\"SuccessIcon\">\r\n                  <maki-icon-confetti />\r\n              </div>\r\n          </template>\r\n      </dom-if>\r\n      <div class=\"Subtitle\">{{order_end_sub_title}}</div>\r\n      <div class=\"Answer\">\r\n          <img style=\"width: 30px; height: 30px; float: left; margin: 10px 10px 0 0\" src=\"data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSItNDIgMCA1MTIgNTEyLjAwMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJtMjEwLjM1MTU2MiAyNDYuNjMyODEyYzMzLjg4MjgxMyAwIDYzLjIxODc1LTEyLjE1MjM0MyA4Ny4xOTUzMTMtMzYuMTI4OTA2IDIzLjk2ODc1LTIzLjk3MjY1NiAzNi4xMjUtNTMuMzA0Njg3IDM2LjEyNS04Ny4xOTE0MDYgMC0zMy44NzUtMTIuMTUyMzQ0LTYzLjIxMDkzOC0zNi4xMjg5MDYtODcuMTkxNDA2LTIzLjk3NjU2My0yMy45Njg3NS01My4zMTI1LTM2LjEyMTA5NC04Ny4xOTE0MDctMzYuMTIxMDk0LTMzLjg4NjcxOCAwLTYzLjIxODc1IDEyLjE1MjM0NC04Ny4xOTE0MDYgMzYuMTI1cy0zNi4xMjg5MDYgNTMuMzA4NTk0LTM2LjEyODkwNiA4Ny4xODc1YzAgMzMuODg2NzE5IDEyLjE1NjI1IDYzLjIyMjY1NiAzNi4xMjg5MDYgODcuMTk1MzEyIDIzLjk4MDQ2OSAyMy45Njg3NSA1My4zMTY0MDYgMzYuMTI1IDg3LjE5MTQwNiAzNi4xMjV6bS02NS45NzI2NTYtMTg5LjI5Mjk2OGMxOC4zOTQ1MzItMTguMzk0NTMyIDM5Ljk3MjY1Ni0yNy4zMzU5MzggNjUuOTcyNjU2LTI3LjMzNTkzOCAyNS45OTYwOTQgMCA0Ny41NzgxMjYgOC45NDE0MDYgNjUuOTc2NTYzIDI3LjMzNTkzOCAxOC4zOTQ1MzEgMTguMzk4NDM3IDI3LjMzOTg0NCAzOS45ODA0NjggMjcuMzM5ODQ0IDY1Ljk3MjY1NiAwIDI2LTguOTQ1MzEzIDQ3LjU3ODEyNS0yNy4zMzk4NDQgNjUuOTc2NTYyLTE4LjM5ODQzNyAxOC4zOTg0MzgtMzkuOTgwNDY5IDI3LjMzOTg0NC02NS45NzY1NjMgMjcuMzM5ODQ0LTI1Ljk5MjE4NyAwLTQ3LjU3MDMxMi04Ljk0NTMxMi02NS45NzI2NTYtMjcuMzM5ODQ0LTE4LjM5ODQzNy0xOC4zOTQ1MzEtMjcuMzQzNzUtMzkuOTc2NTYyLTI3LjM0Mzc1LTY1Ljk3NjU2MiAwLTI1Ljk5MjE4OCA4Ljk0NTMxMy00Ny41NzQyMTkgMjcuMzQzNzUtNjUuOTcyNjU2em0wIDAiLz48cGF0aCBkPSJtNDI2LjEyODkwNiAzOTMuNzAzMTI1Yy0uNjkxNDA2LTkuOTc2NTYzLTIuMDg5ODQ0LTIwLjg1OTM3NS00LjE0ODQzNy0zMi4zNTE1NjMtMi4wNzgxMjUtMTEuNTc4MTI0LTQuNzUzOTA3LTIyLjUyMzQzNy03Ljk1NzAzMS0zMi41MjczNDMtMy4zMTI1LTEwLjMzOTg0NC03LjgwODU5NC0yMC41NTA3ODEtMTMuMzc1LTMwLjMzNTkzOC01Ljc2OTUzMi0xMC4xNTYyNS0xMi41NTA3ODItMTktMjAuMTYwMTU3LTI2LjI3NzM0My03Ljk1NzAzMS03LjYxMzI4Mi0xNy42OTkyMTktMTMuNzM0Mzc2LTI4Ljk2NDg0My0xOC4xOTkyMTktMTEuMjI2NTYzLTQuNDQxNDA3LTIzLjY2Nzk2OS02LjY5MTQwNy0zNi45NzY1NjMtNi42OTE0MDctNS4yMjY1NjMgMC0xMC4yODEyNSAyLjE0NDUzMi0yMC4wNDI5NjkgOC41LTYuMDA3ODEyIDMuOTE3OTY5LTEzLjAzNTE1NiA4LjQ0OTIxOS0yMC44Nzg5MDYgMTMuNDYwOTM4LTYuNzA3MDMxIDQuMjczNDM4LTE1Ljc5Mjk2OSA4LjI3NzM0NC0yNy4wMTU2MjUgMTEuOTAyMzQ0LTEwLjk0OTIxOSAzLjU0Mjk2OC0yMi4wNjY0MDYgNS4zMzk4NDQtMzMuMDQyOTY5IDUuMzM5ODQ0LTEwLjk2ODc1IDAtMjIuMDg1OTM3LTEuNzk2ODc2LTMzLjA0Mjk2OC01LjMzOTg0NC0xMS4yMTA5MzgtMy42MjEwOTQtMjAuMzAwNzgyLTcuNjI1LTI2Ljk5NjA5NC0xMS44OTg0MzgtNy43Njk1MzItNC45NjQ4NDQtMTQuODAwNzgyLTkuNDk2MDk0LTIwLjg5ODQzOC0xMy40Njg3NS05Ljc1MzkwNi02LjM1NTQ2OC0xNC44MDg1OTQtOC41LTIwLjAzNTE1Ni04LjUtMTMuMzEyNSAwLTI1Ljc1IDIuMjUzOTA2LTM2Ljk3MjY1NiA2LjY5OTIxOS0xMS4yNTc4MTMgNC40NTcwMzEtMjEuMDAzOTA2IDEwLjU3ODEyNS0yOC45Njg3NSAxOC4xOTkyMTktNy42MDkzNzUgNy4yODEyNS0xNC4zOTA2MjUgMTYuMTIxMDk0LTIwLjE1NjI1IDI2LjI3MzQzNy01LjU1ODU5NCA5Ljc4NTE1Ny0xMC4wNTg1OTQgMTkuOTkyMTg4LTEzLjM3MTA5NCAzMC4zMzk4NDQtMy4xOTkyMTkgMTAuMDAzOTA2LTUuODc1IDIwLjk0NTMxMy03Ljk1MzEyNSAzMi41MjM0MzctMi4wNjI1IDExLjQ3NjU2My0zLjQ1NzAzMSAyMi4zNjMyODItNC4xNDg0MzcgMzIuMzYzMjgyLS42Nzk2ODggOS43NzczNDQtMS4wMjM0MzggMTkuOTUzMTI1LTEuMDIzNDM4IDMwLjIzNDM3NSAwIDI2LjcyNjU2MiA4LjQ5NjA5NCA0OC4zNjMyODEgMjUuMjUgNjQuMzIwMzEyIDE2LjU0Njg3NSAxNS43NDYwOTQgMzguNDM3NSAyMy43MzA0NjkgNjUuMDY2NDA2IDIzLjczMDQ2OWgyNDYuNTMxMjVjMjYuNjIxMDk0IDAgNDguNTExNzE5LTcuOTg0Mzc1IDY1LjA2MjUtMjMuNzMwNDY5IDE2Ljc1NzgxMy0xNS45NDUzMTIgMjUuMjUzOTA2LTM3LjU4OTg0MyAyNS4yNTM5MDYtNjQuMzI0MjE5LS4wMDM5MDYtMTAuMzE2NDA2LS4zNTE1NjItMjAuNDkyMTg3LTEuMDM1MTU2LTMwLjI0MjE4N3ptLTQ0LjkwNjI1IDcyLjgyODEyNWMtMTAuOTMzNTk0IDEwLjQwNjI1LTI1LjQ0OTIxOCAxNS40NjQ4NDQtNDQuMzc4OTA2IDE1LjQ2NDg0NGgtMjQ2LjUyNzM0NGMtMTguOTMzNTk0IDAtMzMuNDQ5MjE4LTUuMDU4NTk0LTQ0LjM3ODkwNi0xNS40NjA5MzgtMTAuNzIyNjU2LTEwLjIwNzAzMS0xNS45MzM1OTQtMjQuMTQwNjI1LTE1LjkzMzU5NC00Mi41ODU5MzcgMC05LjU5Mzc1LjMxNjQwNi0xOS4wNjY0MDcuOTQ5MjE5LTI4LjE2MDE1Ny42MTcxODctOC45MjE4NzQgMS44Nzg5MDYtMTguNzIyNjU2IDMuNzUtMjkuMTM2NzE4IDEuODQ3NjU2LTEwLjI4NTE1NiA0LjE5OTIxOS0xOS45Mzc1IDYuOTk2MDk0LTI4LjY3NTc4MiAyLjY4MzU5My04LjM3ODkwNiA2LjM0Mzc1LTE2LjY3NTc4MSAxMC44ODI4MTItMjQuNjY3OTY4IDQuMzMyMDMxLTcuNjE3MTg4IDkuMzE2NDA3LTE0LjE1MjM0NCAxNC44MTY0MDctMTkuNDE3OTY5IDUuMTQ0NTMxLTQuOTI1NzgxIDExLjYyODkwNi04Ljk1NzAzMSAxOS4yNjk1MzEtMTEuOTgwNDY5IDcuMDY2NDA2LTIuNzk2ODc1IDE1LjAwNzgxMi00LjMyODEyNSAyMy42Mjg5MDYtNC41NTg1OTQgMS4wNTA3ODEuNTU4NTk0IDIuOTIxODc1IDEuNjI1IDUuOTUzMTI1IDMuNjAxNTYzIDYuMTY3OTY5IDQuMDE5NTMxIDEzLjI3NzM0NCA4LjYwNTQ2OSAyMS4xMzY3MTkgMTMuNjI1IDguODU5Mzc1IDUuNjQ4NDM3IDIwLjI3MzQzNyAxMC43NSAzMy45MTAxNTYgMTUuMTUyMzQ0IDEzLjk0MTQwNiA0LjUwNzgxMiAyOC4xNjAxNTYgNi43OTY4NzUgNDIuMjczNDM3IDYuNzk2ODc1IDE0LjExMzI4MiAwIDI4LjMzNTkzOC0yLjI4OTA2MyA0Mi4yNjk1MzItNi43OTI5NjkgMTMuNjQ4NDM3LTQuNDEwMTU2IDI1LjA1ODU5NC05LjUwNzgxMyAzMy45Mjk2ODctMTUuMTY0MDYzIDguMDQyOTY5LTUuMTQwNjI0IDE0Ljk1MzEyNS05LjU5Mzc1IDIxLjEyMTA5NC0xMy42MTcxODcgMy4wMzEyNS0xLjk3MjY1NiA0LjkwMjM0NC0zLjA0Mjk2OSA1Ljk1MzEyNS0zLjYwMTU2MyA4LjYyNS4yMzA0NjkgMTYuNTY2NDA2IDEuNzYxNzE5IDIzLjYzNjcxOSA0LjU1ODU5NCA3LjYzNjcxOSAzLjAyMzQzOCAxNC4xMjEwOTMgNy4wNTg1OTQgMTkuMjY1NjI1IDExLjk4MDQ2OSA1LjUgNS4yNjE3MTkgMTAuNDg0Mzc1IDExLjc5Njg3NSAxNC44MTY0MDYgMTkuNDIxODc1IDQuNTQyOTY5IDcuOTg4MjgxIDguMjA3MDMxIDE2LjI4OTA2MiAxMC44ODY3MTkgMjQuNjYwMTU2IDIuODAwNzgxIDguNzUgNS4xNTYyNSAxOC4zOTg0MzggNyAyOC42NzU3ODIgMS44NjcxODcgMTAuNDMzNTkzIDMuMTMyODEyIDIwLjIzODI4MSAzLjc1IDI5LjE0NDUzMXYuMDA3ODEyYy42MzY3MTkgOS4wNTg1OTQuOTU3MDMxIDE4LjUyNzM0NC45NjA5MzcgMjguMTQ4NDM4LS4wMDM5MDYgMTguNDQ5MjE5LTUuMjE0ODQ0IDMyLjM3ODkwNi0xNS45Mzc1IDQyLjU4MjAzMXptMCAwIi8+PC9zdmc+\"/>\r\n          <div class=\"AnswerLabel\">indiener</div>\r\n          <div class=\"AnswerAnswer\">{{personData.naam.aanschrijfwijze}}</div>\r\n      </div>\r\n      <dom-repeat items=\"[[_getOrderItems(order)]]\">\r\n          <template>\r\n              <div class=\"Answer\">\r\n                  <img style=\"width: 30px; height: 30px; float: left; margin: 10px 10px 0 0\" src=\"[[item.image]]\"/>\r\n                  <div class=\"AnswerLabel\">[[item.key]]</div>\r\n                  <div class=\"AnswerAnswer\">[[item.value]]</div>\r\n              </div>\r\n          </template>\r\n      </dom-repeat>\r\n      <dom-if if=\"{{order_status_send_ok}}\">\r\n        <template>\r\n          <div class=\"ButtonContainer\">\r\n            <maki-button stroke=\"0\" size=\"40\" font-size=\"16\" set-color-main=\"#3192CF\" on-click=\"_createPdf\">\r\n              <div class=\"ButtonInner\">\r\n                <div class=\"ButtonInnerTextDownload\">Download overzicht</div>\r\n              </div>\r\n            </maki-button>\r\n            <maki-button class=\"NextButton\" highlight set-color-highlight=\"#3192CF\" stroke=\"0\" size=\"40\" font-size=\"16\" on-click=\"_stop\">\r\n              <div class=\"ButtonInner\">\r\n                <div class=\"ButtonInnerText\">Sluiten</div>\r\n              </div>\r\n            </maki-button>\r\n          </div>\r\n        </template>\r\n      </dom-if>\r\n      <dom-if if=\"{{order_status_sending}}\">\r\n          <template>\r\n              <div class=\"RequestMessage\">Bezig met verzenden...</div>\r\n          </template>\r\n      </dom-if>\r\n      <dom-if if=\"{{order_status_send_failed}}\">\r\n          <template>\r\n              <div class=\"RequestMessage\">Er is een fout opgetreden bij het versturen van de aanvraag.</div>\r\n          </template>\r\n      </dom-if>\r\n      <dom-if if=\"{{order_show_buttons}}\">\r\n          <template>\r\n              <div class=\"ButtonContainer\">\r\n                  <maki-button class=\"PrevButton\" stroke=\"0\" size=\"40\" font-size=\"16\" set-color-main=\"#3192CF\" on-click=\"_prev\">\r\n                      <div class=\"ButtonInner\">\r\n                          <div class=\"ButtonInnerLeft\"><</div>\r\n                          <div class=\"ButtonInnerText\">Ga terug</div>\r\n                      </div>\r\n                  </maki-button>\r\n                  <maki-button class=\"NextButton\" disabled=\"[[disabled]]\" highlight set-color-highlight=\"#3192CF\" stroke=\"0\" size=\"40\" font-size=\"16\" on-click=\"[[_submit(order)]]\">\r\n                      <div class=\"ButtonInner\">\r\n                          <div class=\"ButtonInnerText\">Nu verzenden</div>\r\n                          <div class=\"ButtonInnerRight\">></div>\r\n                      </div>\r\n                  </maki-button>\r\n              </div>\r\n          </template>\r\n      </dom-if>\r\n  </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -47549,6 +47553,87 @@ const contractsApi = exports.contractsApi = {
 
 /***/ }),
 
+/***/ "./src/redux/api/jwt.js":
+/*!******************************!*\
+  !*** ./src/redux/api/jwt.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.jwtApi = undefined;
+
+var _axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _configuration = __webpack_require__(/*! ../../helpers/configuration */ "./src/helpers/configuration.js");
+
+var _headers = __webpack_require__(/*! ../helpers/headers */ "./src/redux/helpers/headers.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const jwtApi = exports.jwtApi = {
+  signinfake: () => async () => {
+    const response = await _axios2.default.post('/jwt/signinfake', null, {
+      baseURL: _configuration.configuration.BASE_URL_API()
+    });
+    if (response.statusText === 'OK' || response.status === 200) {
+      (0, _headers.setJwtBearerToken)(response.data.token);
+      delete response.data.token;
+      window.successToast.text = "Succesvol ingelogd";
+      window.successToast.open();
+      return { data: response.data, headers: response.headers };
+    } else {
+      throw response.status;
+    }
+  },
+  signin: () => async () => {
+    const response = await _axios2.default.get('/jwt/signin', {
+      params: {
+        frontEndRedirectTo: window.location.origin + '/digidcgifinished'
+      },
+      baseURL: _configuration.configuration.BASE_URL_API()
+    });
+    if (response.statusText === 'OK' || response.status === 200) {
+      return { data: response.data, headers: response.headers };
+    } else {
+      throw response.status;
+    }
+  },
+  getJwtForDigidCgi: (aselectCredentials, rid) => async () => {
+    const response = await _axios2.default.post('/jwt/getJwtForDigidCgi', null, {
+      baseURL: _configuration.configuration.BASE_URL_API(),
+      params: {
+        aselectCredentials: aselectCredentials,
+        rid: rid
+      }
+    });
+    if (response.statusText === 'OK' || response.status === 200) {
+      (0, _headers.setJwtBearerToken)(response.data.token);
+      delete response.data.token;
+      window.successToast.text = "Succesvol ingelogd";
+      window.successToast.open();
+      return { data: response.data, headers: response.headers };
+    } else {
+      throw response.status;
+    }
+  },
+  logout: token => async () => {
+    await _axios2.default.post('/jwt/signout', null, {
+      baseURL: _configuration.configuration.BASE_URL_API(),
+      headers: { 'Authorization': 'Bearer ' + token }
+    });
+  }
+};
+
+/***/ }),
+
 /***/ "./src/redux/api/orders.js":
 /*!*********************************!*\
   !*** ./src/redux/api/orders.js ***!
@@ -48948,9 +49033,258 @@ function* rootSaga() {
   !*** ./src/redux/sagas/jwt.js ***!
   \********************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: E:/Repos/MijnApp-Frontend/MijnApp-Frontend/src/redux/sagas/jwt.js: Unexpected token, expected , (231:10)\n\n  229 |           fieldName: 'nieuw adres',\n  230 |           fieldIcon: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNjAgNjAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDYwIDYwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8cGF0aCBkPSJNMzAsMjZjMy44NiwwLDctMy4xNDEsNy03cy0zLjE0LTctNy03cy03LDMuMTQxLTcsN1MyNi4xNCwyNiwzMCwyNnogTTMwLDE0YzIuNzU3LDAsNSwyLjI0Myw1LDVzLTIuMjQzLDUtNSw1DQoJCXMtNS0yLjI0My01LTVTMjcuMjQzLDE0LDMwLDE0eiIvPg0KCTxwYXRoIGQ9Ik0yOS44MjMsNTQuNzU3TDQ1LjE2NCwzMi42YzUuNzU0LTcuNjcxLDQuOTIyLTIwLjI4LTEuNzgxLTI2Ljk4MkMzOS43NjEsMS45OTUsMzQuOTQ1LDAsMjkuODIzLDANCgkJcy05LjkzOCwxLjk5NS0xMy41Niw1LjYxN2MtNi43MDMsNi43MDItNy41MzUsMTkuMzExLTEuODA0LDI2Ljk1MkwyOS44MjMsNTQuNzU3eiBNMTcuNjc3LDcuMDMxQzIwLjkyMiwzLjc4NywyNS4yMzUsMiwyOS44MjMsMg0KCQlzOC45MDEsMS43ODcsMTIuMTQ2LDUuMDMxYzYuMDUsNi4wNDksNi43OTUsMTcuNDM3LDEuNTczLDI0LjM5OUwyOS44MjMsNTEuMjQzTDE2LjA4MiwzMS40DQoJCUMxMC44ODIsMjQuNDY4LDExLjYyOCwxMy4wOCwxNy42NzcsNy4wMzF6Ii8+DQoJPHBhdGggZD0iTTQyLjExNyw0My4wMDdjLTAuNTUtMC4wNjctMS4wNDYsMC4zMjctMS4xMSwwLjg3NnMwLjMyOCwxLjA0NiwwLjg3NiwxLjExQzUyLjM5OSw0Ni4yMzEsNTgsNDkuNTY3LDU4LDUxLjUNCgkJYzAsMi43MTQtMTAuNjUyLDYuNS0yOCw2LjVTMiw1NC4yMTQsMiw1MS41YzAtMS45MzMsNS42MDEtNS4yNjksMTYuMTE3LTYuNTA3YzAuNTQ4LTAuMDY0LDAuOTQtMC41NjIsMC44NzYtMS4xMQ0KCQljLTAuMDY1LTAuNTQ5LTAuNTYxLTAuOTQ1LTEuMTEtMC44NzZDNy4zNTQsNDQuMjQ3LDAsNDcuNzM5LDAsNTEuNUMwLDU1LjcyNCwxMC4zMDUsNjAsMzAsNjBzMzAtNC4yNzYsMzAtOC41DQoJCUM2MCw0Ny43MzksNTIuNjQ2LDQ0LjI0Nyw0Mi4xMTcsNDMuMDA3eiIvPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo='\n> 231 |           next: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb',\n      |           ^\n  232 |         },\n  233 |         {\n  234 |           id: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb',\n");
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.watchRequestJwtSigninFake = watchRequestJwtSigninFake;
+exports.watchRequestJwtSignin = watchRequestJwtSignin;
+exports.watchJwtSigninSuccess = watchJwtSigninSuccess;
+exports.watchJwtSigninSuccessFake = watchJwtSigninSuccessFake;
+exports.watchRequestJwtFromDigidCgi = watchRequestJwtFromDigidCgi;
+exports.watchRequestJwtFromDigidCgiSuccess = watchRequestJwtFromDigidCgiSuccess;
+exports.watchRequestJwtLogout = watchRequestJwtLogout;
+exports.watchRequestJwtLogout401 = watchRequestJwtLogout401;
+
+var _effects = __webpack_require__(/*! redux-saga/effects */ "./node_modules/redux-saga/dist/redux-saga-effects-npm-proxy.esm.js");
+
+var _jwt = __webpack_require__(/*! ../api/jwt */ "./src/redux/api/jwt.js");
+
+var _headers = __webpack_require__(/*! ../helpers/headers */ "./src/redux/helpers/headers.js");
+
+var _application = __webpack_require__(/*! ../actions/application */ "./src/redux/actions/application.js");
+
+var _lastAction = __webpack_require__(/*! ../helpers/lastAction */ "./src/redux/helpers/lastAction.js");
+
+var _journeys = __webpack_require__(/*! ../actions/journeys */ "./src/redux/actions/journeys.js");
+
+var _jwt2 = __webpack_require__(/*! ../actions/jwt */ "./src/redux/actions/jwt.js");
+
+function* watchRequestJwtSigninFake() {
+  yield (0, _effects.takeLatest)(_jwt2.REQUEST_JWT_SIGNIN_FAKE, fetchJwtSigninFake);
+}
+
+function* fetchJwtSigninFake() {
+  try {
+    const result = yield (0, _effects.call)(_jwt.jwtApi.signinfake());
+    yield (0, _effects.put)((0, _jwt2.requestJwtSigninSuccessFake)(result.data, result.headers));
+  } catch (e) {
+    yield (0, _effects.put)((0, _jwt2.requestJwtSigninFailure)(e));
+  }
+}
+
+function* watchRequestJwtSignin() {
+  yield (0, _effects.takeLatest)(_jwt2.REQUEST_JWT_SIGNIN, fetchJwtSignin);
+}
+
+function* fetchJwtSignin() {
+  try {
+    const result = yield (0, _effects.call)(_jwt.jwtApi.signin());
+    yield (0, _effects.put)((0, _jwt2.requestJwtSigninSuccess)(result.data, result.headers));
+  } catch (e) {
+    yield (0, _effects.put)((0, _jwt2.requestJwtSigninFailure)(e));
+  }
+}
+
+function* watchJwtSigninSuccess() {
+  yield (0, _effects.takeLatest)(_jwt2.REQUEST_JWT_SIGNIN_SUCCESS, onJwtSigninSuccess);
+}
+
+function* watchJwtSigninSuccessFake() {
+  yield (0, _effects.takeLatest)(_jwt2.REQUEST_JWT_SIGNIN_SUCCESS_FAKE, onJwtSigninSuccessFake);
+}
+
+function onJwtSigninSuccess(action) {
+  window.location = action.data.redirectTo;
+}
+
+function* onJwtSigninSuccessFake() {
+  yield (0, _effects.put)((0, _application.nextPageAfterLogin)());
+  yield setFakeJourneys();
+}
+
+function* watchRequestJwtFromDigidCgi() {
+  yield (0, _effects.takeLatest)(_jwt2.REQUEST_JWT_FOR_DIGIDCGI, fetchJwtFromDigidCgi);
+}
+
+function* fetchJwtFromDigidCgi(action) {
+  try {
+    const result = yield (0, _effects.call)(_jwt.jwtApi.getJwtForDigidCgi(action.aselectCredentials, action.rid));
+    yield (0, _effects.put)((0, _jwt2.requestJwtTokenForDigidSuccess)(result.data, result.headers));
+  } catch (e) {
+    yield (0, _effects.put)((0, _jwt2.requestJwtTokenForDigidFailure)(e));
+  }
+}
+
+function* watchRequestJwtFromDigidCgiSuccess() {
+  yield (0, _effects.takeLatest)(_jwt2.REQUEST_JWT_FOR_DIGIDCGI_SUCCESS, onJwtFromDigidCgiSuccess);
+}
+
+function* onJwtFromDigidCgiSuccess() {
+  yield (0, _effects.put)((0, _application.nextPageAfterLogin)());
+  yield setFakeJourneys();
+}
+
+function* watchRequestJwtLogout() {
+  yield (0, _effects.takeLatest)(_jwt2.REQUEST_JWT_LOGOUT, doJwtLogout);
+}
+
+function* doJwtLogout() {
+  yield (0, _effects.call)(_jwt.jwtApi.logout((0, _headers.jwtBearerToken)()));
+  yield (0, _effects.put)((0, _jwt2.requestJwtLogoutSuccess)());
+  (0, _headers.removeJwtBearerToken)();
+  (0, _lastAction.removeLastAction)();
+  window.successToast.text = 'Succesvol uitgelogd';
+  window.successToast.open();
+  yield (0, _effects.put)((0, _application.selectPage)('signin'));
+}
+
+function* watchRequestJwtLogout401() {
+  yield (0, _effects.takeLatest)(_jwt2.REQUEST_JWT_LOGOUT_401, doJwtLogout401);
+}
+
+function* doJwtLogout401(action) {
+  (0, _headers.removeJwtBearerToken)();
+  if (action && action.lastActionBefore401) {
+    (0, _lastAction.setLastAction)(action.lastActionBefore401);
+  }
+  window.clearErrorDialog();
+  window.errorText.innerHTML = `U heeft geen geldige sessie meer en zult opnieuw moeten inloggen.`;
+  window.errorDialog.open();
+  // Here we do a selectPageNoHistory, so that when the user logs in again, he is navigated to were he was.
+  yield (0, _effects.put)((0, _application.selectPageNoHistory)('signin'));
+}
+
+function* setFakeJourneys() {
+  yield (0, _effects.put)((0, _journeys.setJourneys)([{
+    title: 'Ik heb een goed idee',
+    request_type_id: '06daeb7f-6503-4b8e-8aa1-5a5767b53b22',
+    questions: [{
+      id: '6abbb0e1-3ef5-4206-a2e3-aba72ad1259a',
+      type: 'single',
+      property: 'anoniem',
+      options: [{
+        goto: 'f4efa6ca-158b-4184-958f-52ae8b47f561',
+        title: 'Nee',
+        value: 'Nee'
+      }, {
+        goto: 'b52cf9a7-30d1-4eb7-bf64-34f3a6380c11',
+        title: 'Ja',
+        value: 'Ja'
+      }],
+      title: 'Wil je je idee anoniem indienen?',
+      subtitle: 'Bij anoniem indienen, kunnen we geen contact met je opnemen ' + 'bij vragen.',
+      optional: {
+        goto: null
+      }
+    }, {
+      id: 'f4efa6ca-158b-4184-958f-52ae8b47f561',
+      type: 'agree',
+      property: 'toestemming',
+      options: null,
+      title: 'Toestemming voor gebruik gegevens',
+      subtitle: 'Geef je toestemming om jouw voornaam, achternaam en adres mee ' + 'te sturen met jouw idee?',
+      next: 'e8877860-f3b2-46d2-a3b8-e0b70c93492b'
+    }, {
+      id: 'b52cf9a7-30d1-4eb7-bf64-34f3a6380c11',
+      type: 'text',
+      property: 'ideeomschrijving',
+      options: null,
+      title: 'Wat is jouw idee?',
+      next: '12e51aa9-0a9b-4e74-a273-65e27763073c'
+    }, {
+      id: '12e51aa9-0a9b-4e74-a273-65e27763073c',
+      type: 'radioButtons',
+      property: 'contact',
+      options: [{
+        goto: 'END',
+        title: 'Ja',
+        value: 'Ja'
+      }, {
+        goto: 'END',
+        title: 'Nee',
+        value: 'Nee'
+      }],
+      title: 'Vind je het prettig dat er contact met je wordt opgenomen ' + 'over jouw idee?'
+    }, {
+      id: 'e8877860-f3b2-46d2-a3b8-e0b70c93492b',
+      type: 'text',
+      property: 'ideeomschrijving',
+      options: null,
+      title: 'Wat is jouw idee?',
+      subtitle: '',
+      next: 'END'
+    }],
+    overview: {
+      needed_documents: ['Geen'],
+      send_to: [],
+      steps: ['Je geeft aan of je anoniem wilt blijven', 'Je geeft het onderwerp van je idee op', 'Je beschrijft het idee'],
+      subtitle: 'Leuk dat je een goed idee hebt!'
+    },
+    end: {
+      check: {
+        title: 'Controleer je gegevens',
+        subtitle: 'Controleer onderstaande gegevens goed en verzend het formulier.'
+      },
+      success: {
+        title: 'Je idee is doorgegeven',
+        subtitle: 'Het volgende idee is succesvol verzonden naar de gemeente.'
+      }
+    }
+  }, {
+    title: 'Ik ga verhuizen',
+    request_type_id: '9d76fb58-0711-4437-acc4-9f4d9d403cdf',
+    questions: [{
+      id: 'a7beef34-9aea-4891-971d-beb67b2e8010',
+      type: 'address',
+      property: 'adress',
+      title: 'Wat wordt je nieuwe adres?',
+      subtitle: 'Vul je postcode, huisnummer en eventuele toevoeging in van het nieuwe adres.',
+      fieldName: 'nieuw adres',
+      fieldIcon: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNjAgNjAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDYwIDYwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8cGF0aCBkPSJNMzAsMjZjMy44NiwwLDctMy4xNDEsNy03cy0zLjE0LTctNy03cy03LDMuMTQxLTcsN1MyNi4xNCwyNiwzMCwyNnogTTMwLDE0YzIuNzU3LDAsNSwyLjI0Myw1LDVzLTIuMjQzLDUtNSw1DQoJCXMtNS0yLjI0My01LTVTMjcuMjQzLDE0LDMwLDE0eiIvPg0KCTxwYXRoIGQ9Ik0yOS44MjMsNTQuNzU3TDQ1LjE2NCwzMi42YzUuNzU0LTcuNjcxLDQuOTIyLTIwLjI4LTEuNzgxLTI2Ljk4MkMzOS43NjEsMS45OTUsMzQuOTQ1LDAsMjkuODIzLDANCgkJcy05LjkzOCwxLjk5NS0xMy41Niw1LjYxN2MtNi43MDMsNi43MDItNy41MzUsMTkuMzExLTEuODA0LDI2Ljk1MkwyOS44MjMsNTQuNzU3eiBNMTcuNjc3LDcuMDMxQzIwLjkyMiwzLjc4NywyNS4yMzUsMiwyOS44MjMsMg0KCQlzOC45MDEsMS43ODcsMTIuMTQ2LDUuMDMxYzYuMDUsNi4wNDksNi43OTUsMTcuNDM3LDEuNTczLDI0LjM5OUwyOS44MjMsNTEuMjQzTDE2LjA4MiwzMS40DQoJCUMxMC44ODIsMjQuNDY4LDExLjYyOCwxMy4wOCwxNy42NzcsNy4wMzF6Ii8+DQoJPHBhdGggZD0iTTQyLjExNyw0My4wMDdjLTAuNTUtMC4wNjctMS4wNDYsMC4zMjctMS4xMSwwLjg3NnMwLjMyOCwxLjA0NiwwLjg3NiwxLjExQzUyLjM5OSw0Ni4yMzEsNTgsNDkuNTY3LDU4LDUxLjUNCgkJYzAsMi43MTQtMTAuNjUyLDYuNS0yOCw2LjVTMiw1NC4yMTQsMiw1MS41YzAtMS45MzMsNS42MDEtNS4yNjksMTYuMTE3LTYuNTA3YzAuNTQ4LTAuMDY0LDAuOTQtMC41NjIsMC44NzYtMS4xMQ0KCQljLTAuMDY1LTAuNTQ5LTAuNTYxLTAuOTQ1LTEuMTEtMC44NzZDNy4zNTQsNDQuMjQ3LDAsNDcuNzM5LDAsNTEuNUMwLDU1LjcyNCwxMC4zMDUsNjAsMzAsNjBzMzAtNC4yNzYsMzAtOC41DQoJCUM2MCw0Ny43MzksNTIuNjQ2LDQ0LjI0Nyw0Mi4xMTcsNDMuMDA3eiIvPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=',
+      next: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb'
+    }, {
+      id: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb',
+      type: 'calendar',
+      property: 'datum',
+      options: null,
+      title: 'Wanneer ga je verhuizen?',
+      subtitle: 'Kies je verhuisdatum in de onderstaande kalender.',
+      fieldName: 'verhuisdatum',
+      fieldIcon: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNjAgNjAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDYwIDYwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8cGF0aCBkPSJNNTcsNGgtN1YxYzAtMC41NTMtMC40NDctMS0xLTFoLTdjLTAuNTUzLDAtMSwwLjQ0Ny0xLDF2M0gxOVYxYzAtMC41NTMtMC40NDctMS0xLTFoLTdjLTAuNTUzLDAtMSwwLjQ0Ny0xLDF2M0gzDQoJCUMyLjQ0Nyw0LDIsNC40NDcsMiw1djExdjQzYzAsMC41NTMsMC40NDcsMSwxLDFoNTRjMC41NTMsMCwxLTAuNDQ3LDEtMVYxNlY1QzU4LDQuNDQ3LDU3LjU1Myw0LDU3LDR6IE00MywyaDV2M3YzaC01VjVWMnogTTEyLDJoNQ0KCQl2M3YzaC01VjVWMnogTTQsNmg2djNjMCwwLjU1MywwLjQ0NywxLDEsMWg3YzAuNTUzLDAsMS0wLjQ0NywxLTFWNmgyMnYzYzAsMC41NTMsMC40NDcsMSwxLDFoN2MwLjU1MywwLDEtMC40NDcsMS0xVjZoNnY5SDRWNnoNCgkJIE00LDU4VjE3aDUydjQxSDR6Ii8+DQoJPHBhdGggZD0iTTM4LDIzaC03aC0yaC03aC0yaC05djl2MnY3djJ2OWg5aDJoN2gyaDdoMmg5di05di0ydi03di0ydi05aC05SDM4eiBNMzEsMjVoN3Y3aC03VjI1eiBNMzgsNDFoLTd2LTdoN1Y0MXogTTIyLDM0aDd2N2gtNw0KCQlWMzR6IE0yMiwyNWg3djdoLTdWMjV6IE0xMywyNWg3djdoLTdWMjV6IE0xMywzNGg3djdoLTdWMzR6IE0yMCw1MGgtN3YtN2g3VjUweiBNMjksNTBoLTd2LTdoN1Y1MHogTTM4LDUwaC03di03aDdWNTB6IE00Nyw1MGgtNw0KCQl2LTdoN1Y1MHogTTQ3LDQxaC03di03aDdWNDF6IE00NywyNXY3aC03di03SDQ3eiIvPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=',
+      next: '37e30b1f-fb51-4d49-8756-fa5d4d55829a'
+    }, {
+      id: '37e30b1f-fb51-4d49-8756-fa5d4d55829a',
+      type: 'personsMoving',
+      property: 'wie',
+      title: 'Met wie ga je verhuizen?',
+      subtitle: 'Er wordt een bericht gestuurd naar de persoon die meeverhuist ' + '(onderstaande personen staan nu op hetzelfde adres als jij ' + 'ingeschreven)',
+      fieldName: 'meeverhuizende personen',
+      fieldIcon: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTA1LjQgNTA1LjQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUwNS40IDUwNS40OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8Zz4NCgkJPHBhdGggZD0iTTQzNy4xLDIzMy40NWMxNC44LTEwLjQsMjQuNi0yNy43LDI0LjYtNDcuMmMwLTMxLjktMjUuOC01Ny43LTU3LjctNTcuN2MtMzEuOSwwLTU3LjcsMjUuOC01Ny43LDU3LjcNCgkJCWMwLDE5LjUsOS43LDM2LjgsMjQuNiw0Ny4yYy0xMi43LDQuNC0yNC4zLDExLjItMzQuMSwyMGMtMTMuNS0xMS41LTI5LjQtMjAuMy00Ni44LTI1LjVjMjEuMS0xMi44LDM1LjMtMzYuMSwzNS4zLTYyLjYNCgkJCWMwLTQwLjQtMzIuNy03My4xLTczLjEtNzMuMWMtNDAuNCwwLTczLjEsMzIuOC03My4xLDczLjFjMCwyNi41LDE0LjEsNDkuOCwzNS4zLDYyLjZjLTE3LjIsNS4yLTMyLjksMTMuOS00Ni4zLDI1LjINCgkJCWMtOS44LTguNi0yMS4yLTE1LjMtMzMuNy0xOS42YzE0LjgtMTAuNCwyNC42LTI3LjcsMjQuNi00Ny4yYzAtMzEuOS0yNS44LTU3LjctNTcuNy01Ny43cy01Ny43LDI1LjgtNTcuNyw1Ny43DQoJCQljMCwxOS41LDkuNywzNi44LDI0LjYsNDcuMkMyOC41LDI0Ny4yNSwwLDI4NC45NSwwLDMyOS4yNXY2LjZjMCwwLjIsMC4yLDAuNCwwLjQsMC40aDEyMi4zYy0wLjcsNS41LTEuMSwxMS4yLTEuMSwxNi45djYuOA0KCQkJYzAsMjkuNCwyMy44LDUzLjIsNTMuMiw1My4yaDE1NWMyOS40LDAsNTMuMi0yMy44LDUzLjItNTMuMnYtNi44YzAtNS43LTAuNC0xMS40LTEuMS0xNi45SDUwNWMwLjIsMCwwLjQtMC4yLDAuNC0wLjR2LTYuNg0KCQkJQzUwNS4yLDI4NC44NSw0NzYuOCwyNDcuMTUsNDM3LjEsMjMzLjQ1eiBNMzYyLjMsMTg2LjE1YzAtMjMsMTguNy00MS43LDQxLjctNDEuN3M0MS43LDE4LjcsNDEuNyw0MS43DQoJCQljMCwyMi43LTE4LjMsNDEuMi00MC45LDQxLjdjLTAuMywwLTAuNSwwLTAuOCwwcy0wLjUsMC0wLjgsMEMzODAuNSwyMjcuNDUsMzYyLjMsMjA4Ljk1LDM2Mi4zLDE4Ni4xNXogTTE5NC45LDE2NS4zNQ0KCQkJYzAtMzEuNSwyNS42LTU3LjEsNTcuMS01Ny4xczU3LjEsMjUuNiw1Ny4xLDU3LjFjMCwzMC40LTIzLjksNTUuMy01My44LDU3Yy0xLjEsMC0yLjIsMC0zLjMsMGMtMS4xLDAtMi4yLDAtMy4zLDANCgkJCUMyMTguOCwyMjAuNjUsMTk0LjksMTk1Ljc1LDE5NC45LDE2NS4zNXogTTU5LjMsMTg2LjE1YzAtMjMsMTguNy00MS43LDQxLjctNDEuN3M0MS43LDE4LjcsNDEuNyw0MS43YzAsMjIuNy0xOC4zLDQxLjItNDAuOSw0MS43DQoJCQljLTAuMywwLTAuNSwwLTAuOCwwcy0wLjUsMC0wLjgsMEM3Ny42LDIyNy40NSw1OS4zLDIwOC45NSw1OS4zLDE4Ni4xNXogTTEyNS41LDMyMC4xNUgxNi4yYzQuNS00Mi42LDQwLjUtNzYsODQuMi03Ni4zDQoJCQljMC4yLDAsMC40LDAsMC42LDBzMC40LDAsMC42LDBjMjAuOCwwLjEsMzkuOCw3LjgsNTQuNSwyMC4zQzE0MS43LDI3OS43NSwxMzEsMjk4Ljk1LDEyNS41LDMyMC4xNXogTTM2Ni44LDM1OS45NQ0KCQkJYzAsMjAuNS0xNi43LDM3LjItMzcuMiwzNy4yaC0xNTVjLTIwLjUsMC0zNy4yLTE2LjctMzcuMi0zNy4ydi02LjhjMC02Mi4xLDQ5LjYtMTEyLjksMTExLjMtMTE0LjdjMS4xLDAuMSwyLjMsMC4xLDMuNCwwLjENCgkJCXMyLjMsMCwzLjQtMC4xYzYxLjcsMS44LDExMS4zLDUyLjYsMTExLjMsMTE0LjdWMzU5Ljk1eiBNMzc4LjcsMzIwLjE1Yy01LjUtMjEuMS0xNi00MC0zMC4zLTU1LjZjMTQuOC0xMi44LDM0LTIwLjUsNTUtMjAuNw0KCQkJYzAuMiwwLDAuNCwwLDAuNiwwczAuNCwwLDAuNiwwYzQzLjcsMC4zLDc5LjcsMzMuNyw4NC4yLDc2LjNIMzc4Ljd6Ii8+DQoJPC9nPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=',
+      next: 'END' // '21586109-ce3b-4091-8420-85f92c0a6c11',
+    }],
+    overview: {
+      needed_documents: ['Geen documenten nodig'],
+      send_to: [],
+      steps: ['Geef je nieuwe adres op', 'Geef de datum op wanneer je gaat verhuizen', 'Geef aan met wie je gaat verhuizen'],
+      subtitle: 'Verhuizen binnen of naar gemeente \'s-Hertogenbosch'
+    },
+    end: {
+      check: {
+        title: 'Controleer je gegevens',
+        subtitle: 'Controleer onderstaande gegevens goed en verzend het formulier.'
+      },
+      success: {
+        title: 'Je verhuizing is aangevraagd',
+        subtitle: 'De volgende gegevens zijn succesvol verzonden naar de gemeente.'
+      }
+    }
+  }]));
+}
 
 /***/ }),
 

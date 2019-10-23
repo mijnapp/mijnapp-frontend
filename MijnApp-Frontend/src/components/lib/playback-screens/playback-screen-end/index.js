@@ -144,12 +144,13 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
   _getOrderItems(order) {
     const returnable = [];
     order.filter((o) => o.question && o.question !== 'END').forEach((o) => {
+      const question = this.questions.find(function(item) { return item.id === o.question; });
       if (Array.isArray(o.valueTitle)) {
         if (o.valueTitle.length > 0) {
-          returnable.push({ key: o.keyTitle, value: o.valueTitle.join('\n') });
+          returnable.push({ key: o.keyTitle, value: o.valueTitle.join('\n'), image: question.fieldIcon });
         }
       } else {
-        returnable.push({ key: o.keyTitle, value: o.valueTitle });
+        returnable.push({ key: o.keyTitle, value: o.valueTitle, image: question.fieldIcon });
       }
     });
     return returnable;
@@ -190,6 +191,7 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
     this.current = state.order.current;
     this.id = this.current === JOURNEY_START ? JOURNEY_START : JOURNEY_END;
     this.question = { type: 'end' };
+    this.questions = state.journey.questions;
     this.order = state.order.data;
     this.order_status_not_send = (state.order.order_status === ORDER_STATUS_NOT_SEND);
     this.order_status_sending = (state.order.order_status === ORDER_STATUS_SENDING);
