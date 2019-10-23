@@ -1,5 +1,8 @@
+using System.IO;
+using System.Linq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -32,6 +35,7 @@ namespace MijnApp_Frontend
             else
             {
                 app.UseHsts();
+                ConfigureFrontend();
             }
 
             app.UseHttpsRedirection();
@@ -40,6 +44,22 @@ namespace MijnApp_Frontend
             
             app.UseStaticFiles();
             app.UseStatusCodePagesWithReExecute("/");
+        }
+
+        private void ConfigureFrontend()
+        {
+            const string configFileLocation = @"config/config.json";
+
+            if (File.Exists(configFileLocation))
+            {
+                var sectionSafeToSend = Configuration.GetSection("PublicSettings");
+                var dictionary = sectionSafeToSend.GetChildren().ToDictionary(k => k.Key, v => v.Value);
+                var jsonResult = new JsonResult(dictionary);
+
+                var configFile = File.CreateText(configFileLocation);
+                configFile.Write(jsonResult);
+                configFile.Close();
+            }
         }
     }
 }
