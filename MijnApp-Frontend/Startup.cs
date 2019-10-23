@@ -1,6 +1,8 @@
 using System;
 using System.IO;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -38,10 +40,20 @@ namespace MijnApp_Frontend
             }
             app.UseHttpsRedirection();
 
-            app.UseStatusCodePagesWithRedirects("/index.html");
             app.UseDefaultFiles();
+            app.UseStatusCodePages(HandleStatusCodePages);
+
             app.UseStaticFiles();
         }
+
+
+        private Task HandleStatusCodePages(StatusCodeContext arg)
+        {
+            arg.HttpContext.Request.Path = "/index.html";
+
+            return Task.FromResult(0);
+        }
+
 
         private void ConfigureFrontend()
         {
