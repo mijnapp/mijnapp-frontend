@@ -49,7 +49,7 @@ namespace MijnApp_Frontend
 
         private void ConfigureFrontend()
         {
-            const string configFileLocation = @"config/config.json";
+            const string configFileLocation = @"wwwroot/config/config.json";
 
             var pathToConfigFile = Path.Combine(Environment.CurrentDirectory, configFileLocation);
 
