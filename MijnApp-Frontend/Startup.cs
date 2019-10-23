@@ -56,11 +56,17 @@ namespace MijnApp_Frontend
             if (File.Exists(pathToConfigFile))
             {
                 var sectionSafeToSend = Configuration.GetSection("PublicSettings");
-                var dictionary = sectionSafeToSend.GetChildren().ToDictionary(k => k.Key, v => v.Value);
-                var jsonResult = new JsonResult(dictionary);
+
+                var configAsString = "{";
+                foreach (var child in sectionSafeToSend.GetChildren())
+                {
+                    configAsString += Environment.NewLine + $@"  ""{child.Key}"": ""{child.Value}"",";
+                }
+                configAsString = configAsString.Substring(0, configAsString.Length - 1);
+                configAsString += Environment.NewLine + "}";
 
                 var configFile = File.CreateText(pathToConfigFile);
-                configFile.Write(jsonResult);
+                configFile.Write(configAsString);
                 configFile.Close();
             }
         }
