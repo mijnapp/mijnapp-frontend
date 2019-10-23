@@ -38,7 +38,7 @@ namespace MijnApp_Frontend
             }
             app.UseHttpsRedirection();
 
-            app.UseStatusCodePagesWithReExecute("/index.html");
+            app.UseStatusCodePagesWithRedirects("/index.html");
             app.UseDefaultFiles();
             app.UseStaticFiles();
         }
