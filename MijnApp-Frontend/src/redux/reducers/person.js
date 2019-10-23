@@ -16,11 +16,13 @@ export const person = (state = { data: {}, status: CLEAR_PERSON_DATA, movingPers
         case REQUEST_PERSON_DATA:
             return {
                 ...state,
+                searching: true,
                 status: REQUEST_PERSON_DATA,
             }
         case REQUEST_PERSON_DATA_SUCCESS:
             return {
                 ...state,
+                searching: false,
                 data: action.data,
                 error: null,
                 status: REQUEST_PERSON_DATA_SUCCESS,
@@ -28,12 +30,14 @@ export const person = (state = { data: {}, status: CLEAR_PERSON_DATA, movingPers
         case REQUEST_PERSON_DATA_FAILURE:
             return {
                 ...state,
+                searching: false,
                 error: action.error,
                 status: REQUEST_PERSON_DATA_FAILURE,
             };
         case CLEAR_PERSON_DATA:
             return {
                 data: {},
+                searching: false,
                 status: CLEAR_PERSON_DATA,
             };
         case REQUEST_PERSONS_MOVING:
