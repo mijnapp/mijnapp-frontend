@@ -48,7 +48,7 @@ export default class PlaybackScreenVideo extends connect(store)(
             question.key || question.property,
             question.options[index].value || question.options[index].title,
             question.title,
-            question.options[index].title
+            question.options[index].fieldName
           )
         );
         store.dispatch(orderNext(question.options[index].goto));

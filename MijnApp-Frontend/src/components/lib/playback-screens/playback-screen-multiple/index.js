@@ -57,7 +57,7 @@ export default class PlaybackScreenMultiple extends connect(store)(PolymerElemen
     if (e && e.target && !isNaN(e.target.dataIndex)) {
       const index = e.target.dataIndex;
       const key = this.question.key || this.question.property;
-      const keyTitle = this.question.title;
+      const keyTitle = this.question.fieldName;
       let selected = [];
       if (Array.isArray(this.selected) && this.selected.indexOf(index) > -1) {
         selected = this.selected.filter((i) => i !== index);

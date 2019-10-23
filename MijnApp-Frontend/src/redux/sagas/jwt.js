@@ -226,6 +226,7 @@ function* setFakeJourneys() {
           property: 'adress',
           title: 'Wat wordt je nieuwe adres?',
           subtitle: 'Vul je postcode, huisnummer en eventuele toevoeging in van het nieuwe adres.',
+          fieldName: 'nieuw adres',
           next: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb',
         },
         {
@@ -235,6 +236,7 @@ function* setFakeJourneys() {
           options: null,
           title: 'Wanneer ga je verhuizen?',
           subtitle: 'Kies je verhuisdatum in de onderstaande kalender.',
+          fieldName: 'verhuisdatum',
           next: '37e30b1f-fb51-4d49-8756-fa5d4d55829a',
         },
         {
@@ -246,6 +248,7 @@ function* setFakeJourneys() {
             'Er wordt een bericht gestuurd naar de persoon die meeverhuist ' +
             '(onderstaande personen staan nu op hetzelfde adres als jij ' +
             'ingeschreven)',
+          fieldName: 'meeverhuizende personen',
           next: 'END', // '21586109-ce3b-4091-8420-85f92c0a6c11',
         },
         //{

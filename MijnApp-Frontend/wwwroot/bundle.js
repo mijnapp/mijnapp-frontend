@@ -43625,7 +43625,7 @@ class PlaybackScreenAddress extends (0, _connectMixin.connect)(_store.store)(_po
   }
 
   _saveWithoutCheck(question, address) {
-    _store.store.dispatch((0, _order.orderSaveAnswer)(question.key || question.property, address.id, question.title, `${address.straat} ${address.huisnummer}${address.huisnummertoevoeging ? address.huisnummertoevoeging : ''}, ${address.woonplaats} ${address.postcode}`));
+    _store.store.dispatch((0, _order.orderSaveAnswer)(question.key || question.property, address.id, question.fieldName, `${address.straat} ${address.huisnummer}${address.huisnummertoevoeging ? address.huisnummertoevoeging : ''}, ${address.woonplaats} ${address.postcode}`));
     _store.store.dispatch((0, _order.orderNext)(question.next));
   }
 
@@ -43798,7 +43798,7 @@ class PlaybackScreenAgree extends (0, _connectMixin.connect)(_store.store)(_poly
       if (this.order.value) {
         _store.store.dispatch((0, _order.orderClearAnswer)());
       } else if (this.question.title) {
-        _store.store.dispatch((0, _order.orderSaveAnswer)(this.question.key || this.question.property, true, this.question.title, 'Ja'));
+        _store.store.dispatch((0, _order.orderSaveAnswer)(this.question.key || this.question.property, true, this.question.fieldName, 'Ja'));
       }
     }
   }
@@ -43934,7 +43934,7 @@ class PlaybackScreenCalendar extends (0, _connectMixin.connect)(_store.store)(_p
     if (data) {
       this.datepickerValueText = moment(data, 'DD-MM-YYYY').format('D MMMM YYYY');
     }
-    _store.store.dispatch((0, _order.orderSaveAnswer)(question.key || question.property, data, question.title, this.datepickerValueText));
+    _store.store.dispatch((0, _order.orderSaveAnswer)(question.key || question.property, data, question.fieldName, this.datepickerValueText));
   }
 
   _getValue(order) {
@@ -44280,7 +44280,7 @@ module.exports = ".Wrapper{height:100vh;float:left;padding:0 0 57px}.TopbarButto
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\r\n  <div class=\"ScrollContainer\">\r\n  <div class=\"Scroller\">\r\n      <div class=\"TopbarButtonContainer\">\r\n          <dom-if if=\"{{order_show_buttons}}\">\r\n              <template>\r\n                  <maki-button on-click=\"_stop\" size=\"30\" stroke=\"0\" font-size=\"16\" heading=\"Stoppen\">\r\n                      <maki-icon-cross />\r\n                  </maki-button>\r\n              </template>\r\n          </dom-if>\r\n      </div>\r\n      <div class=\"JourneyHeader\">\r\n          <div class=\"JourneyIcon\">\r\n              <dom-if if=\"{{show_journey_icon_truck}}\">\r\n                  <template>\r\n                      <maki-icon-truck />\r\n                  </template>\r\n              </dom-if>\r\n              <dom-if if=\"{{show_journey_icon_bulb}}\">\r\n                  <template>\r\n                      <maki-icon-bulb />\r\n                  </template>\r\n              </dom-if>\r\n          </div>\r\n          <div class=\"JourneyTitle\">[[_title(journey)]]</div>\r\n          <div class=\"JourneyProgress\">\r\n              <dom-repeat items=\"{{journey.questions}}\">\r\n                  <template>\r\n                      <dom-if if=\"{{isCurrentQuestion(current, index)}}\">\r\n                          <template>\r\n                              <div class=\"JourneyProgressDot\"></div>\r\n                          </template>\r\n                      </dom-if>\r\n                      <dom-if if=\"{{isNotAnswered(current, index)}}\">\r\n                          <template>\r\n                              <div class=\"JourneyProgressDotEmpty\"></div>\r\n                          </template>\r\n                      </dom-if>\r\n                      <dom-if if=\"{{isAnswered(current, index)}}\">\r\n                          <template>\r\n                              <div class=\"JourneyProgressDotCheck\">\r\n                                  <maki-icon-check />\r\n                              </div>\r\n                          </template>\r\n                      </dom-if>\r\n                      <dom-if if=\"{{isNotLastItem(current, index)}}\">\r\n                          <template>\r\n                              <div class=\"JourneyProgressLine\"></div>\r\n                          </template>\r\n                      </dom-if>\r\n                  </template>\r\n              </dom-repeat>\r\n              <dom-if if=\"{{order_status_send_ok}}\">\r\n                  <template>\r\n                      <div class=\"JourneyProgressLine\"></div>\r\n                      <div class=\"JourneyProgressDotCheck\">\r\n                          <maki-icon-check />\r\n                      </div>\r\n                  </template>\r\n              </dom-if>\r\n              <dom-if if=\"{{!order_status_send_ok}}\">\r\n                  <template>\r\n                      <div class=\"JourneyProgressLine\"></div>\r\n                      <div class=\"JourneyProgressDot\"></div>\r\n                  </template>\r\n              </dom-if>\r\n          </div>\r\n      </div>\r\n      <div class=\"Title\">{{order_end_title}}</div>\r\n      <dom-if if=\"{{order_status_send_ok}}\">\r\n          <template>\r\n              <div class=\"SuccessIcon\">\r\n                  <maki-icon-confetti />\r\n              </div>\r\n          </template>\r\n      </dom-if>\r\n      <div class=\"Subtitle\">{{order_end_sub_title}}</div>\r\n      <div class=\"Answer\">\r\n          <div class=\"AnswerLabel\">Indiener</div>\r\n          <div class=\"AnswerAnswer\">{{personData.naam.aanschrijfwijze}}</div>\r\n      </div>\r\n      <dom-repeat items=\"[[_getOrderItems(order)]]\">\r\n          <template>\r\n              <div class=\"Answer\">\r\n                  <div class=\"AnswerLabel\">[[item.key]]</div>\r\n                  <div class=\"AnswerAnswer\">[[item.value]]</div>\r\n              </div>\r\n          </template>\r\n      </dom-repeat>\r\n      <dom-if if=\"{{order_status_send_ok}}\">\r\n        <template>\r\n          <div class=\"ButtonContainer\">\r\n            <maki-button stroke=\"0\" size=\"40\" font-size=\"16\" set-color-main=\"#3192CF\" on-click=\"_createPdf\">\r\n              <div class=\"ButtonInner\">\r\n                <div class=\"ButtonInnerTextDownload\">Download overzicht</div>\r\n              </div>\r\n            </maki-button>\r\n            <maki-button class=\"NextButton\" highlight set-color-highlight=\"#3192CF\" stroke=\"0\" size=\"40\" font-size=\"16\" on-click=\"_stop\">\r\n              <div class=\"ButtonInner\">\r\n                <div class=\"ButtonInnerText\">Sluiten</div>\r\n              </div>\r\n            </maki-button>\r\n          </div>\r\n        </template>\r\n      </dom-if>\r\n      <dom-if if=\"{{order_status_sending}}\">\r\n          <template>\r\n              <div class=\"RequestMessage\">Bezig met verzenden...</div>\r\n          </template>\r\n      </dom-if>\r\n      <dom-if if=\"{{order_status_send_failed}}\">\r\n          <template>\r\n              <div class=\"RequestMessage\">Er is een fout opgetreden bij het versturen van de aanvraag.</div>\r\n          </template>\r\n      </dom-if>\r\n      <dom-if if=\"{{order_show_buttons}}\">\r\n          <template>\r\n              <div class=\"ButtonContainer\">\r\n                  <maki-button class=\"PrevButton\" stroke=\"0\" size=\"40\" font-size=\"16\" set-color-main=\"#3192CF\" on-click=\"_prev\">\r\n                      <div class=\"ButtonInner\">\r\n                          <div class=\"ButtonInnerLeft\"><</div>\r\n                          <div class=\"ButtonInnerText\">Ga terug</div>\r\n                      </div>\r\n                  </maki-button>\r\n                  <maki-button class=\"NextButton\" disabled=\"[[disabled]]\" highlight set-color-highlight=\"#3192CF\" stroke=\"0\" size=\"40\" font-size=\"16\" on-click=\"[[_submit(order)]]\">\r\n                      <div class=\"ButtonInner\">\r\n                          <div class=\"ButtonInnerText\">Nu verzenden</div>\r\n                          <div class=\"ButtonInnerRight\">></div>\r\n                      </div>\r\n                  </maki-button>\r\n              </div>\r\n          </template>\r\n      </dom-if>\r\n  </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"Wrapper\">\r\n  <div class=\"ScrollContainer\">\r\n  <div class=\"Scroller\">\r\n      <div class=\"TopbarButtonContainer\">\r\n          <dom-if if=\"{{order_show_buttons}}\">\r\n              <template>\r\n                  <maki-button on-click=\"_stop\" size=\"30\" stroke=\"0\" font-size=\"16\" heading=\"Stoppen\">\r\n                      <maki-icon-cross />\r\n                  </maki-button>\r\n              </template>\r\n          </dom-if>\r\n      </div>\r\n      <div class=\"JourneyHeader\">\r\n          <div class=\"JourneyIcon\">\r\n              <dom-if if=\"{{show_journey_icon_truck}}\">\r\n                  <template>\r\n                      <maki-icon-truck />\r\n                  </template>\r\n              </dom-if>\r\n              <dom-if if=\"{{show_journey_icon_bulb}}\">\r\n                  <template>\r\n                      <maki-icon-bulb />\r\n                  </template>\r\n              </dom-if>\r\n          </div>\r\n          <div class=\"JourneyTitle\">[[_title(journey)]]</div>\r\n          <div class=\"JourneyProgress\">\r\n              <dom-repeat items=\"{{journey.questions}}\">\r\n                  <template>\r\n                      <dom-if if=\"{{isCurrentQuestion(current, index)}}\">\r\n                          <template>\r\n                              <div class=\"JourneyProgressDot\"></div>\r\n                          </template>\r\n                      </dom-if>\r\n                      <dom-if if=\"{{isNotAnswered(current, index)}}\">\r\n                          <template>\r\n                              <div class=\"JourneyProgressDotEmpty\"></div>\r\n                          </template>\r\n                      </dom-if>\r\n                      <dom-if if=\"{{isAnswered(current, index)}}\">\r\n                          <template>\r\n                              <div class=\"JourneyProgressDotCheck\">\r\n                                  <maki-icon-check />\r\n                              </div>\r\n                          </template>\r\n                      </dom-if>\r\n                      <dom-if if=\"{{isNotLastItem(current, index)}}\">\r\n                          <template>\r\n                              <div class=\"JourneyProgressLine\"></div>\r\n                          </template>\r\n                      </dom-if>\r\n                  </template>\r\n              </dom-repeat>\r\n              <dom-if if=\"{{order_status_send_ok}}\">\r\n                  <template>\r\n                      <div class=\"JourneyProgressLine\"></div>\r\n                      <div class=\"JourneyProgressDotCheck\">\r\n                          <maki-icon-check />\r\n                      </div>\r\n                  </template>\r\n              </dom-if>\r\n              <dom-if if=\"{{!order_status_send_ok}}\">\r\n                  <template>\r\n                      <div class=\"JourneyProgressLine\"></div>\r\n                      <div class=\"JourneyProgressDot\"></div>\r\n                  </template>\r\n              </dom-if>\r\n          </div>\r\n      </div>\r\n      <div class=\"Title\">{{order_end_title}}</div>\r\n      <dom-if if=\"{{order_status_send_ok}}\">\r\n          <template>\r\n              <div class=\"SuccessIcon\">\r\n                  <maki-icon-confetti />\r\n              </div>\r\n          </template>\r\n      </dom-if>\r\n      <div class=\"Subtitle\">{{order_end_sub_title}}</div>\r\n      <div class=\"Answer\">\r\n          <div class=\"AnswerLabel\">indiener</div>\r\n          <div class=\"AnswerAnswer\">{{personData.naam.aanschrijfwijze}}</div>\r\n      </div>\r\n      <dom-repeat items=\"[[_getOrderItems(order)]]\">\r\n          <template>\r\n              <div class=\"Answer\">\r\n                  <div class=\"AnswerLabel\">[[item.key]]</div>\r\n                  <div class=\"AnswerAnswer\">[[item.value]]</div>\r\n              </div>\r\n          </template>\r\n      </dom-repeat>\r\n      <dom-if if=\"{{order_status_send_ok}}\">\r\n        <template>\r\n          <div class=\"ButtonContainer\">\r\n            <maki-button stroke=\"0\" size=\"40\" font-size=\"16\" set-color-main=\"#3192CF\" on-click=\"_createPdf\">\r\n              <div class=\"ButtonInner\">\r\n                <div class=\"ButtonInnerTextDownload\">Download overzicht</div>\r\n              </div>\r\n            </maki-button>\r\n            <maki-button class=\"NextButton\" highlight set-color-highlight=\"#3192CF\" stroke=\"0\" size=\"40\" font-size=\"16\" on-click=\"_stop\">\r\n              <div class=\"ButtonInner\">\r\n                <div class=\"ButtonInnerText\">Sluiten</div>\r\n              </div>\r\n            </maki-button>\r\n          </div>\r\n        </template>\r\n      </dom-if>\r\n      <dom-if if=\"{{order_status_sending}}\">\r\n          <template>\r\n              <div class=\"RequestMessage\">Bezig met verzenden...</div>\r\n          </template>\r\n      </dom-if>\r\n      <dom-if if=\"{{order_status_send_failed}}\">\r\n          <template>\r\n              <div class=\"RequestMessage\">Er is een fout opgetreden bij het versturen van de aanvraag.</div>\r\n          </template>\r\n      </dom-if>\r\n      <dom-if if=\"{{order_show_buttons}}\">\r\n          <template>\r\n              <div class=\"ButtonContainer\">\r\n                  <maki-button class=\"PrevButton\" stroke=\"0\" size=\"40\" font-size=\"16\" set-color-main=\"#3192CF\" on-click=\"_prev\">\r\n                      <div class=\"ButtonInner\">\r\n                          <div class=\"ButtonInnerLeft\"><</div>\r\n                          <div class=\"ButtonInnerText\">Ga terug</div>\r\n                      </div>\r\n                  </maki-button>\r\n                  <maki-button class=\"NextButton\" disabled=\"[[disabled]]\" highlight set-color-highlight=\"#3192CF\" stroke=\"0\" size=\"40\" font-size=\"16\" on-click=\"[[_submit(order)]]\">\r\n                      <div class=\"ButtonInner\">\r\n                          <div class=\"ButtonInnerText\">Nu verzenden</div>\r\n                          <div class=\"ButtonInnerRight\">></div>\r\n                      </div>\r\n                  </maki-button>\r\n              </div>\r\n          </template>\r\n      </dom-if>\r\n  </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -44452,8 +44452,8 @@ class PlaybackScreenMultipleText extends (0, _connectMixin.connect)(_store.store
   }
 
   _inputCallback(question, index, order) {
-    const key = question && question.options && Array.isArray(question.options) ? question.options.map(i => i.value || i.title || 'Naamloos veld') : [];
-    const keyTitle = question && question.options && Array.isArray(question.options) ? question.options.map(i => `${question.title || 'Naamloze vraag'}: ${i.title || 'Naamloos veld'}`) : [];
+    const key = question && question.options && Array.isArray(question.options) ? question.options.map(i => i.value || i.fieldName || 'Naamloos veld') : [];
+    const keyTitle = question && question.options && Array.isArray(question.options) ? question.options.map(i => `${question.fieldName || 'Naamloze vraag'}: ${i.fieldName || 'Naamloos veld'}`) : [];
     return data => {
       _store.store.dispatch((0, _order.orderSaveAnswer)(key, order.value && Array.isArray(order.value) ? order.value.map((o, i) => i === index ? data : o) : key.map((o, i) => i === index ? data : ''), keyTitle, order.value && Array.isArray(order.value) ? order.value.map((o, i) => i === index ? data : o) : key.map((o, i) => i === index ? data : '')));
     };
@@ -44597,7 +44597,7 @@ class PlaybackScreenMultiple extends (0, _connectMixin.connect)(_store.store)(_p
     if (e && e.target && !isNaN(e.target.dataIndex)) {
       const index = e.target.dataIndex;
       const key = this.question.key || this.question.property;
-      const keyTitle = this.question.title;
+      const keyTitle = this.question.fieldName;
       let selected = [];
       if (Array.isArray(this.selected) && this.selected.indexOf(index) > -1) {
         selected = this.selected.filter(i => i !== index);
@@ -44744,7 +44744,7 @@ class PlaybackScreenPersonsMoving extends (0, _connectMixin.connect)(_store.stor
         return item.naam.aanschrijfwijze;
       });
 
-      _store.store.dispatch((0, _order.orderSaveAnswer)(this.question.key || this.question.property, ids, this.question.title, names));
+      _store.store.dispatch((0, _order.orderSaveAnswer)(this.question.key || this.question.property, ids, this.question.fieldName, names));
     }
   }
 
@@ -44900,9 +44900,9 @@ class PlaybackScreenRadioButtons extends (0, _connectMixin.connect)(_store.store
         _store.store.dispatch((0, _order.orderClearAnswer)());
       } else {
         const key = this.question.key || this.question.property;
-        const keyTitle = this.question.title;
+        const keyTitle = this.question.fieldName;
         const value = this.question.options[index].value || this.question.options[index].title;
-        const valueTitle = this.question.options[index].title;
+        const valueTitle = this.question.options[index].fieldName;
         _store.store.dispatch((0, _order.orderSaveAnswer)(key, value, keyTitle, valueTitle, index));
       }
     }
@@ -45027,7 +45027,7 @@ class PlaybackScreenSingle extends (0, _connectMixin.connect)(_store.store)(_pol
       const question = e.target.dataQuestion;
       const index = e.target.dataIndex;
       if (question && question.options && Array.isArray(question.options) && question.options.length > index && question.options[index] && question.options[index].goto) {
-        _store.store.dispatch((0, _order.orderSaveAnswer)(question.key || question.property, question.options[index].value || question.options[index].title, question.title, question.options[index].title));
+        _store.store.dispatch((0, _order.orderSaveAnswer)(question.key || question.property, question.options[index].value || question.options[index].title, question.fieldName, question.options[index].title));
         _store.store.dispatch((0, _order.orderNext)(question.options[index].goto));
       }
     }
@@ -45269,7 +45269,7 @@ class PlaybackScreenText extends (0, _connectMixin.connect)(_store.store)(_polym
 
   _inputCallback(question) {
     return data => {
-      _store.store.dispatch((0, _order.orderSaveAnswer)(question.key || question.property, data, question.title, data));
+      _store.store.dispatch((0, _order.orderSaveAnswer)(question.key || question.property, data, question.fieldName, data));
     };
   }
 
@@ -45396,7 +45396,7 @@ class PlaybackScreenVideo extends (0, _connectMixin.connect)(_store.store)(_poly
       const question = e.target.dataQuestion;
       const index = e.target.dataIndex;
       if (question && question.options && Array.isArray(question.options) && question.options.length > index && question.options[index] && question.options[index].goto) {
-        _store.store.dispatch((0, _order.orderSaveAnswer)(question.key || question.property, question.options[index].value || question.options[index].title, question.title, question.options[index].title));
+        _store.store.dispatch((0, _order.orderSaveAnswer)(question.key || question.property, question.options[index].value || question.options[index].title, question.title, question.options[index].fieldName));
         _store.store.dispatch((0, _order.orderNext)(question.options[index].goto));
       }
     }
@@ -49227,6 +49227,7 @@ function* setFakeJourneys() {
       property: 'adress',
       title: 'Wat wordt je nieuwe adres?',
       subtitle: 'Vul je postcode, huisnummer en eventuele toevoeging in van het nieuwe adres.',
+      fieldName: 'nieuw adres',
       next: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb'
     }, {
       id: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb',
@@ -49235,6 +49236,7 @@ function* setFakeJourneys() {
       options: null,
       title: 'Wanneer ga je verhuizen?',
       subtitle: 'Kies je verhuisdatum in de onderstaande kalender.',
+      fieldName: 'verhuisdatum',
       next: '37e30b1f-fb51-4d49-8756-fa5d4d55829a'
     }, {
       id: '37e30b1f-fb51-4d49-8756-fa5d4d55829a',
@@ -49242,6 +49244,7 @@ function* setFakeJourneys() {
       property: 'wie',
       title: 'Met wie ga je verhuizen?',
       subtitle: 'Er wordt een bericht gestuurd naar de persoon die meeverhuist ' + '(onderstaande personen staan nu op hetzelfde adres als jij ' + 'ingeschreven)',
+      fieldName: 'meeverhuizende personen',
       next: 'END' // '21586109-ce3b-4091-8420-85f92c0a6c11',
     }],
     overview: {
