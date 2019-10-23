@@ -42,7 +42,7 @@ namespace MijnApp_Frontend
             app.UseDefaultFiles();
             
             app.UseStaticFiles();
-            app.UseStatusCodePagesWithReExecute("/");
+            app.UseStatusCodePagesWithReExecute("/index.html");
         }
 
         private void ConfigureFrontend()
