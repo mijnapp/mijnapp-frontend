@@ -36,13 +36,11 @@ namespace MijnApp_Frontend
                 app.UseHsts();
                 ConfigureFrontend();
             }
-
             app.UseHttpsRedirection();
 
-            app.UseDefaultFiles();
-            
-            app.UseStaticFiles();
             app.UseStatusCodePagesWithReExecute("/index.html");
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
         }
 
         private void ConfigureFrontend()
