@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Linq;
 using Microsoft.AspNetCore.Builder;
@@ -50,13 +51,15 @@ namespace MijnApp_Frontend
         {
             const string configFileLocation = @"config/config.json";
 
-            if (File.Exists(configFileLocation))
+            var pathToConfigFile = Path.Combine(Environment.CurrentDirectory, configFileLocation);
+
+            if (File.Exists(pathToConfigFile))
             {
                 var sectionSafeToSend = Configuration.GetSection("PublicSettings");
                 var dictionary = sectionSafeToSend.GetChildren().ToDictionary(k => k.Key, v => v.Value);
                 var jsonResult = new JsonResult(dictionary);
 
-                var configFile = File.CreateText(configFileLocation);
+                var configFile = File.CreateText(pathToConfigFile);
                 configFile.Write(jsonResult);
                 configFile.Close();
             }
