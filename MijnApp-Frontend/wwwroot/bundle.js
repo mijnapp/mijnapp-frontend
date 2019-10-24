@@ -44098,9 +44098,9 @@ class PlaybackScreenEnd extends (0, _connectMixin.connect)(_store.store)(_polyme
   }
 
   _createPdf() {
-    const documentTitle = `Samenvatting van het verzoek.pdf`;
+    const documentTitle = this.order_end_title;
     const contentData = [];
-    contentData.push({ text: 'Samenvatting van het verzoek', style: 'header' });
+    contentData.push({ text: this.order_end_title, style: 'header' });
     contentData.push({ text: `De volgende gegevens zijn op ${moment(this.orderDate).format('D MMMM YYYY HH:mm:ss')} verzonden naar de gemeente.` });
     contentData.push(this.questionsToPdf());
 
