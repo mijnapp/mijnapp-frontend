@@ -146,7 +146,7 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
   }
 
   _title(journey) {
-    return journey && journey.title ? journey.title : 'Naamloze klantvraag';
+    return journey && journey.title ? journey.title : 'Naamloos';
   }
 
   _getOrderItems(order) {

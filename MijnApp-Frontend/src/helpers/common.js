@@ -32,7 +32,7 @@ export const typeToDisplayName = (type) => {
     case QUESTION_TYPE_DOCUMENTS:
       return 'Documenten';
     case QUESTION_TYPE_END:
-      return 'Einde klantvraag';
+      return 'Eind';
     case QUESTION_TYPE_LOCATION:
       return 'Locatie';
     case QUESTION_TYPE_MULTIPLE:

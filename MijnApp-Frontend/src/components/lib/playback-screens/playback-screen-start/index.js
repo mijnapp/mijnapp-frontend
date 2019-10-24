@@ -28,7 +28,7 @@ export default class PlaybackScreenStart extends connect(store)(
   }
 
   _title(journey) {
-    return journey && journey.title ? journey.title : 'Naamloze klantvraag';
+    return journey && journey.title ? journey.title : 'Naamloos';
   }
 
   _subtitle(journey) {
