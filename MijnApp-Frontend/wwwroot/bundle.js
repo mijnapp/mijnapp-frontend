@@ -44750,18 +44750,31 @@ class PlaybackScreenPersonsMoving extends (0, _connectMixin.connect)(_store.stor
 
             this.set(`persons.${index}.selected`, !this.persons[index].selected);
 
-            const selectedPersons = this.persons.filter(function (item) {
-                return item.selected;
-            });
-            const ids = selectedPersons.map(function (item) {
-                return item.id;
-            });
-            const names = selectedPersons.map(function (item) {
-                return item.naam.aanschrijfwijze;
-            });
-
-            _store.store.dispatch((0, _order.orderSaveAnswer)(this.question.key || this.question.property, ids, this.question.fieldName, names));
+            this.saveSelectedPersons();
         }
+    }
+
+    selectAllPersons() {
+        for (let i = 0; i < this.persons.length; i++) {
+            this.set(`persons.${i}.selected`, true);
+        }
+        this.saveSelectedPersons();
+    }
+
+    saveSelectedPersons() {
+        const self = this;
+
+        const selectedPersons = self.persons.filter(function (item) {
+            return item.selected;
+        });
+        const ids = selectedPersons.map(function (item) {
+            return item.id;
+        });
+        const names = selectedPersons.map(function (item) {
+            return item.naam.aanschrijfwijze;
+        });
+        _store.store.dispatch((0, _person.requestPersonsMovingSelectAll)());
+        _store.store.dispatch((0, _order.orderSaveAnswer)(self.question.key || self.question.property, ids, self.question.fieldName, names));
     }
 
     _nextCallback(question) {
@@ -44822,6 +44835,9 @@ class PlaybackScreenPersonsMoving extends (0, _connectMixin.connect)(_store.stor
                 action2: _store.store.dispatch((0, _order.orderSkip)(self.current)),
                 action3: _store.store.dispatch((0, _order.orderNext)(self.question.next))
             });
+        }
+        if (this.question.type === _common.QUESTION_TYPE_PERSONS_MOVING && this.personsStatus === _person.REQUEST_PERSONS_MOVING_SELECT_ALL) {
+            this.selectAllPersons();
         }
     }
 }
@@ -47417,6 +47433,9 @@ const clearPersonsMoving = exports.clearPersonsMoving = () => ({ type: CLEAR_PER
 const REQUEST_PERSONS_MOVING_SKIPQUESTION = exports.REQUEST_PERSONS_MOVING_SKIPQUESTION = 'REQUEST_PERSONS_MOVING_SKIPQUESTION';
 const requestPersonsMovingSkipQuestion = exports.requestPersonsMovingSkipQuestion = () => ({ type: REQUEST_PERSONS_MOVING_SKIPQUESTION });
 
+const REQUEST_PERSONS_MOVING_SELECT_ALL = exports.REQUEST_PERSONS_MOVING_SELECT_ALL = 'REQUEST_PERSONS_MOVING_SELECT_ALL';
+const requestPersonsMovingSelectAll = exports.requestPersonsMovingSelectAll = () => ({ type: REQUEST_PERSONS_MOVING_SELECT_ALL });
+
 /***/ }),
 
 /***/ "./src/redux/api/address.js":
@@ -48666,7 +48685,7 @@ const person = exports.person = (state = { data: {}, status: _person.CLEAR_PERSO
                 return Object.assign({}, state, {
                     movingPersons: action.data,
                     movingPersonsSearching: false,
-                    movingPersonsStatus: action.data.length === 1 ? _person.REQUEST_PERSONS_MOVING_SKIPQUESTION : _person.REQUEST_PERSONS_MOVING_SUCCESS,
+                    movingPersonsStatus: action.data.length === 1 ? _person.REQUEST_PERSONS_MOVING_SKIPQUESTION : _person.REQUEST_PERSONS_MOVING_SELECT_ALL,
                     error: null
                 });
             }
@@ -48683,12 +48702,15 @@ const person = exports.person = (state = { data: {}, status: _person.CLEAR_PERSO
                 movingPersonsStatus: _person.CLEAR_PERSONS_MOVING
             });
         case _person.REQUEST_PERSONS_MOVING_SKIPQUESTION:
-            {
-                return Object.assign({}, state, {
-                    movingPersonsSearching: false,
-                    movingPersonsStatus: _person.REQUEST_PERSONS_MOVING_SUCCESS
-                });
-            }
+            return Object.assign({}, state, {
+                movingPersonsSearching: false,
+                movingPersonsStatus: _person.REQUEST_PERSONS_MOVING_SUCCESS
+            });
+        case _person.REQUEST_PERSONS_MOVING_SELECT_ALL:
+            return Object.assign({}, state, {
+                movingPersonsSearching: false,
+                movingPersonsStatus: _person.REQUEST_PERSONS_MOVING_SUCCESS
+            });
         case _jwt.REQUEST_JWT_LOGOUT_SUCCESS:
             return { data: {}, status: _person.CLEAR_PERSON_DATA, movingPersonsStatus: _person.CLEAR_PERSONS_MOVING };
         default:

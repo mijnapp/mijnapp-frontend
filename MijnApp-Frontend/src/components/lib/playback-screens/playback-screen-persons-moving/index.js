@@ -9,6 +9,8 @@ import {
     REQUEST_PERSONS_MOVING_SUCCESS,
     REQUEST_PERSONS_MOVING_SKIPQUESTION,
     requestPersonsMovingSkipQuestion,
+    REQUEST_PERSONS_MOVING_SELECT_ALL,
+    requestPersonsMovingSelectAll,
 } from '../../../../redux/actions/person';
 import { JOURNEY_START, QUESTION_TYPE_PERSONS_MOVING, } from '../../../../helpers/common';
 import css from './style.pcss';
@@ -45,19 +47,25 @@ export default class PlaybackScreenPersonsMoving extends connect(store)(PolymerE
 
             this.set(`persons.${index}.selected`, !this.persons[index].selected);
 
-            const selectedPersons = this.persons.filter(function (item) { return item.selected; });
-            const ids = selectedPersons.map(function (item) { return item.id; });
-            const names = selectedPersons.map(function (item) { return item.naam.aanschrijfwijze; });
-
-            store.dispatch(
-                orderSaveAnswer(
-                    this.question.key || this.question.property,
-                    ids,
-                    this.question.fieldName,
-                    names,
-                )
-            );
+            this.saveSelectedPersons();
         }
+    }
+
+    selectAllPersons() {
+        for (let i = 0; i < this.persons.length; i++) {
+            this.set(`persons.${i}.selected`, true);
+        }
+        this.saveSelectedPersons();
+    }
+
+    saveSelectedPersons() {
+        const self = this;
+
+        const selectedPersons = self.persons.filter(function (item) { return item.selected; });
+        const ids = selectedPersons.map(function (item) { return item.id; });
+        const names = selectedPersons.map(function (item) { return item.naam.aanschrijfwijze; });
+        store.dispatch(requestPersonsMovingSelectAll());
+        store.dispatch(orderSaveAnswer(self.question.key || self.question.property, ids, self.question.fieldName, names));
     }
 
     _nextCallback(question) {
@@ -120,6 +128,9 @@ export default class PlaybackScreenPersonsMoving extends connect(store)(PolymerE
                 action2: store.dispatch(orderSkip(self.current)),
                 action3: store.dispatch(orderNext(self.question.next)),
             });
+        }
+        if (this.question.type === QUESTION_TYPE_PERSONS_MOVING && this.personsStatus === REQUEST_PERSONS_MOVING_SELECT_ALL) {
+            this.selectAllPersons();
         }
     }
 }

@@ -35,3 +35,6 @@ export const clearPersonsMoving = () => ({ type: CLEAR_PERSONS_MOVING });
 
 export const REQUEST_PERSONS_MOVING_SKIPQUESTION = 'REQUEST_PERSONS_MOVING_SKIPQUESTION';
 export const requestPersonsMovingSkipQuestion = () => ({ type: REQUEST_PERSONS_MOVING_SKIPQUESTION });
+
+export const REQUEST_PERSONS_MOVING_SELECT_ALL = 'REQUEST_PERSONS_MOVING_SELECT_ALL';
+export const requestPersonsMovingSelectAll = () => ({ type: REQUEST_PERSONS_MOVING_SELECT_ALL });

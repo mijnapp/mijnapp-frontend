@@ -8,6 +8,7 @@ import {
     REQUEST_PERSONS_MOVING_FAILURE,
     CLEAR_PERSONS_MOVING,
     REQUEST_PERSONS_MOVING_SKIPQUESTION,
+    REQUEST_PERSONS_MOVING_SELECT_ALL,
 } from '../actions/person';
 import { REQUEST_JWT_LOGOUT_SUCCESS } from '../actions/jwt';
 
@@ -51,7 +52,7 @@ export const person = (state = { data: {}, status: CLEAR_PERSON_DATA, movingPers
                 ...state,
                 movingPersons: action.data,
                 movingPersonsSearching: false,
-                movingPersonsStatus: action.data.length === 1 ? REQUEST_PERSONS_MOVING_SKIPQUESTION : REQUEST_PERSONS_MOVING_SUCCESS,
+                movingPersonsStatus: action.data.length === 1 ? REQUEST_PERSONS_MOVING_SKIPQUESTION : REQUEST_PERSONS_MOVING_SELECT_ALL,
                 error: null,
             };
         }
@@ -69,13 +70,18 @@ export const person = (state = { data: {}, status: CLEAR_PERSON_DATA, movingPers
                 movingPersonsSearching: false,
                 movingPersonsStatus: CLEAR_PERSONS_MOVING,
             };
-        case REQUEST_PERSONS_MOVING_SKIPQUESTION: {
+        case REQUEST_PERSONS_MOVING_SKIPQUESTION:
             return {
                 ...state,
                 movingPersonsSearching: false,
                 movingPersonsStatus: REQUEST_PERSONS_MOVING_SUCCESS
             };
-        }
+        case REQUEST_PERSONS_MOVING_SELECT_ALL:
+            return {
+                ...state,
+                movingPersonsSearching: false,
+                movingPersonsStatus: REQUEST_PERSONS_MOVING_SUCCESS
+            };
         case REQUEST_JWT_LOGOUT_SUCCESS:
             return { data: {}, status: CLEAR_PERSON_DATA, movingPersonsStatus: CLEAR_PERSONS_MOVING, };
         default:
