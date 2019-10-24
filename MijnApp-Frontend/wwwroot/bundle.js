@@ -48666,7 +48666,7 @@ const person = exports.person = (state = { data: {}, status: _person.CLEAR_PERSO
                 return Object.assign({}, state, {
                     movingPersons: action.data,
                     movingPersonsSearching: false,
-                    movingPersonsStatus: action.data.length === 0 ? _person.REQUEST_PERSONS_MOVING_SKIPQUESTION : _person.REQUEST_PERSONS_MOVING_SUCCESS,
+                    movingPersonsStatus: action.data.length === 1 ? _person.REQUEST_PERSONS_MOVING_SKIPQUESTION : _person.REQUEST_PERSONS_MOVING_SUCCESS,
                     error: null
                 });
             }

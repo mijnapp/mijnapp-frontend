@@ -45,7 +45,7 @@ export default class PlaybackScreenPersonsMoving extends connect(store)(PolymerE
 
             this.set(`persons.${index}.selected`, !this.persons[index].selected);
 
-            const selectedPersons = this.persons.filter(function (item) { return item.selected });
+            const selectedPersons = this.persons.filter(function (item) { return item.selected; });
             const ids = selectedPersons.map(function (item) { return item.id; });
             const names = selectedPersons.map(function (item) { return item.naam.aanschrijfwijze; });
 
@@ -120,7 +120,6 @@ export default class PlaybackScreenPersonsMoving extends connect(store)(PolymerE
                 action2: store.dispatch(orderSkip(self.current)),
                 action3: store.dispatch(orderNext(self.question.next)),
             });
-
         }
     }
 }

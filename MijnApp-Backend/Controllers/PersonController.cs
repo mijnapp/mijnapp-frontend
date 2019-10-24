@@ -41,16 +41,17 @@ namespace MijnApp_Backend.Controllers
         public async Task<IActionResult> GetPersonsMovingAsync()
         {
             //Call Brp to get current address id
-            var bagId = GetBagIdForPerson();
-
+            var person = await GetPersonFromApi();
 
             var bsn = _jwtTokenProvider.GetBsnFromClaims(User);
+            var bagId = person.verblijfplaats.id;
             //Call Url for persons on address
             var url = string.Format(UrlGetPersonsOnAddress, _baseUri, bsn, bagId);
             var result = await CallApi(url);
             var token = JObject.Parse(result);
             var list = (JArray)token.SelectToken("_embedded.item");
             var personList = list.ToObject<List<Persoon>>();
+            personList.Insert(0, person);
             return Json(personList);
         }
 

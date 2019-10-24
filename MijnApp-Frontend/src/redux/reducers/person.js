@@ -51,7 +51,7 @@ export const person = (state = { data: {}, status: CLEAR_PERSON_DATA, movingPers
                 ...state,
                 movingPersons: action.data,
                 movingPersonsSearching: false,
-                movingPersonsStatus: action.data.length === 0 ? REQUEST_PERSONS_MOVING_SKIPQUESTION : REQUEST_PERSONS_MOVING_SUCCESS,
+                movingPersonsStatus: action.data.length === 1 ? REQUEST_PERSONS_MOVING_SKIPQUESTION : REQUEST_PERSONS_MOVING_SUCCESS,
                 error: null,
             };
         }
