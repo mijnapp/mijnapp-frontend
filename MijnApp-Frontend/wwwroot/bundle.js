@@ -44093,6 +44093,10 @@ class PlaybackScreenEnd extends (0, _connectMixin.connect)(_store.store)(_polyme
     return () => _store.store.dispatch((0, _orders.requestOrdersSubmit)({ data: order, requestType: this.journey.request_type_id }));
   }
 
+  dataUrlToSvg(dataURI) {
+    return atob(dataURI.replace(/data:image\/svg\+xml;base64,/, ''));
+  }
+
   _createPdf() {
     const documentTitle = `Samenvatting van het verzoek.pdf`;
     const contentData = [];
