@@ -214,13 +214,13 @@ function* setFakeJourneys() {
         success: {
           title: 'Je idee is doorgegeven',
           subtitle: 'Het volgende idee is succesvol verzonden naar de gemeente.',
-        }
+        },
       },
     },
     {
       title: 'Ik ga verhuizen',
       request_type_id: '9d76fb58-0711-4437-acc4-9f4d9d403cdf',
-      preconditions: 'Om een verhuizing door te kunnen geven moet je minimaal 16 jaar oud zijn',
+      preconditions: 'Een verhuizing kan alleen worden doorgegeven door personen vanaf 16 jaar. Raadpleeg je ouder, voogd of verzorger.',
       questions: [
         {
           id: 'a7beef34-9aea-4891-971d-beb67b2e8010',
