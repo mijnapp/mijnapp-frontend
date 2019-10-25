@@ -151,7 +151,7 @@ export default class MafApp extends connect(store)(PolymerElement) {
   }
 
   _goHome() {
-    store.dispatch(selectPage('home'));
+      store.dispatch(selectPage('home'));
   }
 
   _goJourneys() {

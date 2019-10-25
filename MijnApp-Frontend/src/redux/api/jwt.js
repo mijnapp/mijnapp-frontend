@@ -14,7 +14,7 @@ export const jwtApi = {
     if (response.statusText === 'OK' || response.status === 200) {
       setJwtBearerToken(response.data.token);
       delete response.data.token;
-      window.successToast.text = "Succesvol ingelogd";
+      window.successToast.text = 'Succesvol ingelogd';
       window.successToast.open();
       return { data: response.data, headers: response.headers };
     } else {
@@ -52,7 +52,7 @@ export const jwtApi = {
     if (response.statusText === 'OK' || response.status === 200) {
       setJwtBearerToken(response.data.token);
       delete response.data.token;
-      window.successToast.text = "Succesvol ingelogd";
+      window.successToast.text = 'Succesvol ingelogd';
       window.successToast.open();
       return { data: response.data, headers: response.headers };
     } else {

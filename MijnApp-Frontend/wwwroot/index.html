@@ -264,6 +264,15 @@
             Zet javascript aan in uw browser om <strong>MijnApp</strong> te gebruiken.
         </div>
     </noscript>
+    <custom-style>
+        <style is="custom-style">
+            #successToast {
+                --paper-toast-background-color: var(--paper-green-400);
+                --paper-toast-color: var(--palette-primary-contrastText);
+                font-size: 20px;
+            }
+        </style>
+    </custom-style>
     <paper-toast id="successToast"></paper-toast>
     <script>
         successToast.horizontalAlign = "center";

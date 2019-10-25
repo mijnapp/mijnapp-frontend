@@ -47618,7 +47618,7 @@ const jwtApi = exports.jwtApi = {
     if (response.statusText === 'OK' || response.status === 200) {
       (0, _headers.setJwtBearerToken)(response.data.token);
       delete response.data.token;
-      window.successToast.text = "Succesvol ingelogd";
+      window.successToast.text = 'Succesvol ingelogd';
       window.successToast.open();
       return { data: response.data, headers: response.headers };
     } else {
@@ -47649,7 +47649,7 @@ const jwtApi = exports.jwtApi = {
     if (response.statusText === 'OK' || response.status === 200) {
       (0, _headers.setJwtBearerToken)(response.data.token);
       delete response.data.token;
-      window.successToast.text = "Succesvol ingelogd";
+      window.successToast.text = 'Succesvol ingelogd';
       window.successToast.open();
       return { data: response.data, headers: response.headers };
     } else {
