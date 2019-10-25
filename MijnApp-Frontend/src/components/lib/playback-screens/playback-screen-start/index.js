@@ -12,7 +12,10 @@ export default class PlaybackScreenStart extends connect(store)(
   PolymerElement
 ) {
   static get properties() {
-    return {};
+    return {
+      preconditionsFullFilled: Boolean,
+      preconditionsBeingChecked: Boolean,
+    };
   }
 
   static get template() {
@@ -81,6 +84,8 @@ export default class PlaybackScreenStart extends connect(store)(
 
   stateChanged(state) {
     this.journey = state.journey;
+    this.preconditionsFullFilled = state.journey.preconditionsFullFilled;
+    this.preconditionsBeingChecked = state.journey.preconditionsBeingChecked;
     this.id =
       state.order.current === JOURNEY_START
         ? JOURNEY_START

@@ -51,21 +51,29 @@
                 </dom-repeat>
             </div>
         </div>
-        Egbert: {{preconditionsFullFilled}}
-      <div class="ButtonContainer">
-          <maki-button highlight size="40" font-size="16" set-color-highlight="#3192CF" disabled="{{!preconditionsFullFilled || preconditionsFullFilled === undefined
-        }}" on-click="[[_start(journey)]]">
-        <div class="ButtonInner">
-            <div class="ButtonInnerText">Starten</div>
-            <div class="ButtonInnerRight">></div>
+        <div class="ButtonContainer">
+            <maki-button highlight size="40" font-size="16" set-color-highlight="#3192CF" disabled="{{!preconditionsFullFilled}}" on-click="[[_start(journey)]]">
+                <div class="ButtonInner">
+                    <div class="ButtonInnerText">Starten</div>
+                    <div class="ButtonInnerRight">></div>
+                </div>
+            </maki-button>
         </div>
-        </maki-button>
-    </div>
-      <dom-if if="{{preconditionsFullFilled === false && preconditionsFullFilled != undefined}}">
-          <template>
-              <div class="Title">Dit proces kan helaas niet gestart worden</div>
-              <div class="Subtitle">{{journey.preconditions}}</div>
-          </template>
-      </dom-if>
+        <dom-if if="{{!preconditionsFullFilled}}">
+            <template>
+                <dom-if if="{{!preconditionsBeingChecked}}">
+                    <template>
+                    <div class="Title">Dit proces kan helaas niet gestart worden</div>
+                        <div class="Subtitle">{{journey.preconditions}}</div>
+                    </template>
+                </dom-if>
+            </template>
+        </dom-if>
+        <dom-if if="{{preconditionsBeingChecked}}">
+            <template>
+                <div class="Title">Randwoorwaarden</div>
+                <div class="Subtitle">De randvoorwaarden voor het starten van dit proces worden gecontroleerd</div>
+            </template>
+        </dom-if>
   </div>
 </div>

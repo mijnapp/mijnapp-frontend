@@ -30,6 +30,7 @@ export const journey = (state = { title: '', questions: [] }, action) => {
       if (action.journey.preconditionsFullFilled) {
           delete action.journey.preconditionsFullFilled;
       }
+      action.journey.preconditionsBeingChecked = true;
       return action.journey;
     }
     case ADD_QUESTION:
@@ -46,11 +47,13 @@ export const journey = (state = { title: '', questions: [] }, action) => {
       return {
         ...state,
         preconditionsFullFilled: action.data !== undefined ? action.data.preconditionsFullFilled : false,
+        preconditionsBeingChecked: false,
       };
     case REQUEST_CHECK_PRECONDITIONS_FAILURE:
       return {
          ...state,
          preconditionsFullFilled: false,
+         preconditionsBeingChecked: false,
       };
     case ADD_LINK_TO_QUESTION_NEXT:
     case ADD_LINK_TO_QUESTION_SKIP:
