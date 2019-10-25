@@ -26,26 +26,16 @@
                 <maki-icon-edit-document></maki-icon-edit-document>
                 <div>Benodigde documenten</div>
             </div>
-            <dom-if if="{{_hasDocuments(journey)}}" class="DotList">
-                <template>
-                    <dom-repeat items="[[_documents(journey)]]">
-                        <template>
-                            <div class="DotListItem">
-                                <div class="Dot"></div>
-                                <div class="Text">[[item]]</div>
-                            </div>
-                        </template>
-                    </dom-repeat>
-                </template>
-            </dom-if>
-            <dom-if if="{{!_hasDocuments(journey)}}" class="DotList">
-                <template>
-                    <div class="DotListItem">
-                        <div class="NoItems"></div>
-                        <div class="Text">Geen documenten nodig</div>
-                    </div>
-                </template>
-            </dom-if>
+            <div class="DotList">
+                <dom-repeat items="[[_documents(journey)]]">
+                    <template>
+                        <div class="DotListItem">
+                            <div class="Dot"></div>
+                            <div class="Text">[[item]]</div>
+                        </div>
+                    </template>
+                </dom-repeat>
+            </div>
             <div class="SectionTitle">
                 <maki-icon-steps></maki-icon-steps>
                 <div>Deze stappen ga je doorlopen</div>
@@ -61,13 +51,21 @@
                 </dom-repeat>
             </div>
         </div>
-        <div class="ButtonContainer">
-            <maki-button highlight size="40" font-size="16" set-color-highlight="#3192CF" on-click="[[_start(journey)]]">
-                <div class="ButtonInner">
-                    <div class="ButtonInnerText">Starten</div>
-                    <div class="ButtonInnerRight">></div>
-                </div>
-            </maki-button>
+        Egbert: {{preconditionsFullFilled}}
+      <div class="ButtonContainer">
+          <maki-button highlight size="40" font-size="16" set-color-highlight="#3192CF" disabled="{{!preconditionsFullFilled || preconditionsFullFilled === undefined
+        }}" on-click="[[_start(journey)]]">
+        <div class="ButtonInner">
+            <div class="ButtonInnerText">Starten</div>
+            <div class="ButtonInnerRight">></div>
         </div>
+        </maki-button>
     </div>
+      <dom-if if="{{preconditionsFullFilled === false && preconditionsFullFilled != undefined}}">
+          <template>
+              <div class="Title">Dit proces kan helaas niet gestart worden</div>
+              <div class="Subtitle">{{journey.preconditions}}</div>
+          </template>
+      </dom-if>
+  </div>
 </div>

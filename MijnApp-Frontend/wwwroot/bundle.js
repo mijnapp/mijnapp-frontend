@@ -45245,7 +45245,7 @@ module.exports = ":host{width:100%;height:100%;float:left}.Wrapper{height:100vh;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\r\n    <div class=\"ScrollContainer\">\r\n        <div class=\"Scroller\">\r\n            <div class=\"TopbarButtonContainer\">\r\n                <maki-button on-click=\"_stop\" size=\"30\" stroke=\"0\" font-size=\"16\" heading=\"Stoppen\">\r\n                    <maki-icon-cross />\r\n                </maki-button>\r\n            </div>\r\n            <div class=\"JourneyHeader\">\r\n                <div class=\"JourneyIcon\">\r\n                    <dom-if if=\"{{show_journey_icon_truck}}\">\r\n                        <template>\r\n                            <maki-icon-truck />\r\n                        </template>\r\n                    </dom-if>\r\n                    <dom-if if=\"{{show_journey_icon_bulb}}\">\r\n                        <template>\r\n                            <maki-icon-bulb />\r\n                        </template>\r\n                    </dom-if>\r\n                </div>\r\n                <div class=\"Title\">[[_title(journey)]]</div>\r\n                <div class=\"Subtitle\">[[_subtitle(journey)]]</div>\r\n            </div>\r\n            <div class=\"SectionTitle\">\r\n                <maki-icon-edit-document></maki-icon-edit-document>\r\n                <div>Benodigde documenten</div>\r\n            </div>\r\n            <dom-if if=\"{{_hasDocuments(journey)}}\" class=\"DotList\">\r\n                <template>\r\n                    <dom-repeat items=\"[[_documents(journey)]]\">\r\n                        <template>\r\n                            <div class=\"DotListItem\">\r\n                                <div class=\"Dot\"></div>\r\n                                <div class=\"Text\">[[item]]</div>\r\n                            </div>\r\n                        </template>\r\n                    </dom-repeat>\r\n                </template>\r\n            </dom-if>\r\n            <dom-if if=\"{{!_hasDocuments(journey)}}\" class=\"DotList\">\r\n                <template>\r\n                    <div class=\"DotListItem\">\r\n                        <div class=\"NoItems\"></div>\r\n                        <div class=\"Text\">Geen documenten nodig</div>\r\n                    </div>\r\n                </template>\r\n            </dom-if>\r\n            <div class=\"SectionTitle\">\r\n                <maki-icon-steps></maki-icon-steps>\r\n                <div>Deze stappen ga je doorlopen</div>\r\n            </div>\r\n            <div class=\"DotList\">\r\n                <dom-repeat items=\"[[_steps(journey)]]\">\r\n                    <template>\r\n                        <div class=\"DotListItem\">\r\n                            <div class=\"Dot\"></div>\r\n                            <div class=\"Text\">[[item]]</div>\r\n                        </div>\r\n                    </template>\r\n                </dom-repeat>\r\n            </div>\r\n        </div>\r\n        <div class=\"ButtonContainer\">\r\n            <maki-button highlight size=\"40\" font-size=\"16\" set-color-highlight=\"#3192CF\" on-click=\"[[_start(journey)]]\">\r\n                <div class=\"ButtonInner\">\r\n                    <div class=\"ButtonInnerText\">Starten</div>\r\n                    <div class=\"ButtonInnerRight\">></div>\r\n                </div>\r\n            </maki-button>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
+module.exports = "<div class=\"Wrapper\">\r\n  <div class=\"ScrollContainer\">\r\n    <div class=\"Scroller\">\r\n      <div class=\"TopbarButtonContainer\">\r\n        <maki-button on-click=\"_stop\" size=\"30\" stroke=\"0\" font-size=\"16\" heading=\"Stoppen\">\r\n          <maki-icon-cross />\r\n        </maki-button>\r\n      </div>\r\n      <div class=\"JourneyHeader\">\r\n        <div class=\"JourneyIcon\">\r\n          <dom-if if=\"{{show_journey_icon_truck}}\">\r\n            <template>\r\n              <maki-icon-truck />\r\n            </template>\r\n          </dom-if>\r\n          <dom-if if=\"{{show_journey_icon_bulb}}\">\r\n            <template>\r\n              <maki-icon-bulb />\r\n            </template>\r\n          </dom-if>\r\n        </div>\r\n        <div class=\"Title\">[[_title(journey)]]</div>\r\n        <div class=\"Subtitle\">[[_subtitle(journey)]]</div>\r\n      </div>\r\n      <div class=\"SectionTitle\">\r\n        <maki-icon-edit-document></maki-icon-edit-document>\r\n        <div>Benodigde documenten</div>\r\n      </div>\r\n      <div class=\"DotList\">\r\n        <dom-repeat items=\"[[_documents(journey)]]\">\r\n          <template>\r\n            <div class=\"DotListItem\">\r\n              <div class=\"Dot\"></div>\r\n              <div class=\"Text\">[[item]]</div>\r\n            </div>\r\n          </template>\r\n        </dom-repeat>\r\n      </div>\r\n      <div class=\"SectionTitle\">\r\n        <maki-icon-steps></maki-icon-steps>\r\n        <div>Deze stappen ga je doorlopen</div>\r\n      </div>\r\n      <div class=\"DotList\">\r\n        <dom-repeat items=\"[[_steps(journey)]]\">\r\n          <template>\r\n            <div class=\"DotListItem\">\r\n              <div class=\"Dot\"></div>\r\n              <div class=\"Text\">[[item]]</div>\r\n            </div>\r\n          </template>\r\n        </dom-repeat>\r\n      </div>\r\n    </div>\r\n      <div class=\"ButtonContainer\">\r\n          <maki-button highlight size=\"40\" font-size=\"16\" set-color-highlight=\"#3192CF\" disabled=\"{{!preconditionsFullFilled || preconditionsFullFilled === undefined}}\" on-click=\"[[_start(journey)]]\">\r\n              <div class=\"ButtonInner\">\r\n                  <div class=\"ButtonInnerText\">Starten</div>\r\n                  <div class=\"ButtonInnerRight\">></div>\r\n              </div>\r\n          </maki-button>\r\n      </div>\r\n      <dom-if if=\"{{!preconditionsFullFilled}}\">\r\n          <template>\r\n              <div class=\"Title\">Dit proces kan helaas niet gestart worden</div>\r\n              <div class=\"Subtitle\">{{journey.preconditions}}</div>\r\n          </template>\r\n      </dom-if>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -47221,6 +47221,16 @@ const addEndToQuestionOption = exports.addEndToQuestionOption = (id, option) => 
   option
 });
 
+const REQUEST_CHECK_PRECONDITIONS_SUCCESS = exports.REQUEST_CHECK_PRECONDITIONS_SUCCESS = 'REQUEST_CHECK_PRECONDITIONS_SUCCESS';
+const requestCheckPreconditionsSuccess = exports.requestCheckPreconditionsSuccess = () => ({
+  type: REQUEST_CHECK_PRECONDITIONS_SUCCESS
+});
+
+const REQUEST_CHECK_PRECONDITIONS_FAILURE = exports.REQUEST_CHECK_PRECONDITIONS_FAILURE = 'REQUEST_CHECK_PRECONDITIONS_FAILURE';
+const requestCheckPreconditionsFailure = exports.requestCheckPreconditionsFailure = () => ({
+  type: REQUEST_CHECK_PRECONDITIONS_SUCCESS
+});
+
 /***/ }),
 
 /***/ "./src/redux/actions/journeys.js":
@@ -47574,6 +47584,48 @@ const contractsApi = exports.contractsApi = {
     const response = await _axios2.default.get(`/contracts/${id}`, {
       baseURL: _configuration.configuration.BASE_URL_API(),
       headers: { 'Authorization': 'Bearer ' + token }
+    });
+    if (response.statusText === 'OK' || response.status === 200) {
+      return { data: response.data };
+    } else {
+      throw response.status;
+    }
+  }
+};
+
+/***/ }),
+
+/***/ "./src/redux/api/journey.js":
+/*!**********************************!*\
+  !*** ./src/redux/api/journey.js ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.journeyApi = undefined;
+
+var _axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _configuration = __webpack_require__(/*! ../../helpers/configuration */ "./src/helpers/configuration.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const journeyApi = exports.journeyApi = {
+  checkPreconditions: (journeyId, token) => async () => {
+    const response = await _axios2.default.get('/journey/checkPreconditions', {
+      baseURL: _configuration.configuration.BASE_URL_API(),
+      headers: { 'Authorization': 'Bearer ' + token },
+      params: {
+        journeyId: journeyId
+      }
     });
     if (response.statusText === 'OK' || response.status === 200) {
       return { data: response.data };
@@ -48231,7 +48283,15 @@ var _jwt = __webpack_require__(/*! ../actions/jwt */ "./src/redux/actions/jwt.js
 const journey = exports.journey = (state = { title: '', questions: [] }, action) => {
   switch (action.type) {
     case _journey.SET_JOURNEY:
-      return action.journey;
+      {
+        if (state.preconditionsFullFilled) {
+          delete state.preconditionsFullFilled;
+        }
+        if (action.journey.preconditionsFullFilled) {
+          delete action.journey.preconditionsFullFilled;
+        }
+        return action.journey;
+      }
     case _journey.ADD_QUESTION:
       return Object.assign({}, state, {
         questions: [...state.questions, action.question]
@@ -48239,6 +48299,14 @@ const journey = exports.journey = (state = { title: '', questions: [] }, action)
     case _journey.SET_TITLE:
       return Object.assign({}, state, {
         title: action.title
+      });
+    case _journey.REQUEST_CHECK_PRECONDITIONS_SUCCESS:
+      return Object.assign({}, state, {
+        preconditionsFullFilled: action.failed
+      });
+    case _journey.REQUEST_CHECK_PRECONDITIONS_FAILURE:
+      return Object.assign({}, state, {
+        preconditionsFullFilled: false
       });
     case _journey.ADD_LINK_TO_QUESTION_NEXT:
     case _journey.ADD_LINK_TO_QUESTION_SKIP:
@@ -49058,7 +49126,54 @@ var _orders = __webpack_require__(/*! ./orders */ "./src/redux/sagas/orders.js")
 var _application = __webpack_require__(/*! ./application */ "./src/redux/sagas/application.js");
 
 function* rootSaga() {
-  yield (0, _effects.all)([(0, _address.watchRequestAddressData)(), (0, _avgLog.watchRequestAvgLog)(), (0, _avgLogs.watchRequestAvgLogs)(), (0, _contract.watchRequestContract)(), (0, _contracts.watchRequestContracts)(), (0, _jwt.watchRequestJwtSigninFake)(), (0, _jwt.watchRequestJwtSignin)(), (0, _jwt.watchJwtSigninSuccess)(), (0, _jwt.watchJwtSigninSuccessFake)(), (0, _jwt.watchRequestJwtFromDigidCgi)(), (0, _jwt.watchRequestJwtFromDigidCgiSuccess)(), (0, _jwt.watchRequestJwtLogout)(), (0, _jwt.watchRequestJwtLogout401)(), (0, _application.watchSelectPage)(), (0, _application.watchSelectPageNoHistory)(), (0, _application.watchNextPageAfterLogin)(), (0, _person.watchRequestPersonData)(), (0, _person.watchRequestPersonsMoving)(), (0, _orders.watchRequestOrdersSubmit)()]);
+  yield (0, _effects.all)([(0, _address.watchRequestAddressData)(), (0, _avgLog.watchRequestAvgLog)(), (0, _avgLogs.watchRequestAvgLogs)(), (0, _contract.watchRequestContract)(), (0, _contracts.watchRequestContracts)(), (0, _jwt.watchRequestJwtSigninFake)(), (0, _jwt.watchRequestJwtSignin)(), (0, _jwt.watchJwtSigninSuccess)(), (0, _jwt.watchJwtSigninSuccessFake)(), (0, _jwt.watchRequestJwtFromDigidCgi)(), (0, _jwt.watchRequestJwtFromDigidCgiSuccess)(), (0, _jwt.watchRequestJwtLogout)(), (0, _jwt.watchRequestJwtLogout401)(), (0, _application.watchSelectPage)(), (0, _application.watchSelectPageNoHistory)(), (0, _application.watchNextPageAfterLogin)(), (0, _person.watchRequestPersonData)(), (0, _person.watchRequestPersonsMoving)(), (0, _orders.watchRequestOrdersSubmit)(), (0, _journey.watchRequestJourneySet)()]);
+}
+
+/***/ }),
+
+/***/ "./src/redux/sagas/journey.js":
+/*!************************************!*\
+  !*** ./src/redux/sagas/journey.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.watchDeleteQuestionPreflight = watchDeleteQuestionPreflight;
+exports.watchRequestJourneySet = watchRequestJourneySet;
+
+var _effects = __webpack_require__(/*! redux-saga/effects */ "./node_modules/redux-saga/dist/redux-saga-effects-npm-proxy.esm.js");
+
+var _journey = __webpack_require__(/*! ../actions/journey */ "./src/redux/actions/journey.js");
+
+var _journey2 = __webpack_require__(/*! ../api/journey */ "./src/redux/api/journey.js");
+
+var _headers = __webpack_require__(/*! ../helpers/headers */ "./src/redux/helpers/headers.js");
+
+function* watchDeleteQuestionPreflight() {
+  yield (0, _effects.takeLatest)(_journey.DELETE_QUESTION_PREFLIGHT, deleteQuestionPreflightCheck);
+}
+
+function* deleteQuestionPreflightCheck(action) {
+  // Removed contents, because it doesn't seem to be used
+}
+
+function* watchRequestJourneySet() {
+  yield (0, _effects.takeLatest)(_journey.SET_JOURNEY, checkPreconditions);
+}
+
+function* checkPreconditions(action) {
+  try {
+    const result = yield (0, _effects.call)(_journey2.journeyApi.checkPreconditions(action.journey.request_type_id, (0, _headers.jwtBearerToken)()));
+    yield (0, _effects.put)((0, _journey.requestCheckPreconditionsSuccess)(result.data, result.headers));
+  } catch (e) {
+    yield (0, _effects.put)((0, _journey.requestCheckPreconditionsFailure)(e));
+  }
 }
 
 /***/ }),

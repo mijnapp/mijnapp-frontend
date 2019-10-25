@@ -139,3 +139,14 @@ export const addEndToQuestionOption = (id, option) => ({
   link: 'END',
   option,
 });
+
+export const REQUEST_CHECK_PRECONDITIONS_SUCCESS = 'REQUEST_CHECK_PRECONDITIONS_SUCCESS';
+export const requestCheckPreconditionsSuccess = (data) => ({
+  type: REQUEST_CHECK_PRECONDITIONS_SUCCESS,
+  data: data,
+});
+
+export const REQUEST_CHECK_PRECONDITIONS_FAILURE = 'REQUEST_CHECK_PRECONDITIONS_FAILURE';
+export const requestCheckPreconditionsFailure = () => ({
+  type: REQUEST_CHECK_PRECONDITIONS_SUCCESS,
+});
