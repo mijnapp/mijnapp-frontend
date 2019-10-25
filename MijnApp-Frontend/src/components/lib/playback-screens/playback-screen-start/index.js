@@ -68,6 +68,7 @@ export default class PlaybackScreenStart extends connect(store)(
 
   _start(journey) {
     return () => {
+      if (!this.preconditionsFullFilled) return;
       if (
         journey &&
         journey.questions &&

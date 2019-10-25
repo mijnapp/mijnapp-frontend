@@ -45194,6 +45194,7 @@ class PlaybackScreenStart extends (0, _connectMixin.connect)(_store.store)(_poly
 
   _start(journey) {
     return () => {
+      if (!this.preconditionsFullFilled) return;
       if (journey && journey.questions && Array.isArray(journey.questions) && journey.questions.length > 0 && journey.questions[0].id) {
         _store.store.dispatch((0, _order.orderNext)(journey.questions[0].id));
       } else {
@@ -49359,6 +49360,7 @@ function* setFakeJourneys() {
   yield (0, _effects.put)((0, _journeys.setJourneys)([{
     title: 'Ik heb een goed idee',
     request_type_id: '06daeb7f-6503-4b8e-8aa1-5a5767b53b22',
+    preconditions: '',
     questions: [{
       id: '6abbb0e1-3ef5-4206-a2e3-aba72ad1259a',
       type: 'single',
@@ -49434,6 +49436,7 @@ function* setFakeJourneys() {
   }, {
     title: 'Ik ga verhuizen',
     request_type_id: '9d76fb58-0711-4437-acc4-9f4d9d403cdf',
+    preconditions: 'Om een verhuizing door te kunnen geven moet je minimaal 16 jaar oud zijn',
     questions: [{
       id: 'a7beef34-9aea-4891-971d-beb67b2e8010',
       type: 'address',
