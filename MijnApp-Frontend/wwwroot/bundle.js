@@ -46684,7 +46684,7 @@ module.exports = ".Wrapper{width:100%;float:left}.Inner{width:calc(100% - 32px);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\r\n  <div class=\"Inner\">\r\n    <div class=\"ButtonContainer\">\r\n      <dom-if if=\"[[_hasBack(onBack)]]\">\r\n        <template>\r\n          <maki-button on-click=\"[[onBack]]\" size=\"30\" stroke=\"0\" font-size=\"16\" set-color-main=\"#3192CF\" heading=\"Ga terug\">\r\n              <div class=\"BackButton\"><</div>\r\n          </maki-button>\r\n        </template>\r\n      </dom-if>\r\n    </div>\r\n    <maki-header>[[heading]]</maki-header>\r\n    <slot></slot>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"Wrapper\">\r\n    <div class=\"Inner\">\r\n        <dom-if if=\"[[_hasBack(onBack)]]\">\r\n            <template>\r\n                <div class=\"ButtonContainer\">\r\n                    <maki-button on-click=\"[[onBack]]\" size=\"30\" stroke=\"0\" font-size=\"16\" set-color-main=\"#3192CF\" heading=\"Ga terug\">\r\n                        <div class=\"BackButton\"><</div>\r\n                    </maki-button>\r\n                </div>\r\n            </template>\r\n        </dom-if>\r\n        <maki-header>[[heading]]</maki-header>\r\n        <slot></slot>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
