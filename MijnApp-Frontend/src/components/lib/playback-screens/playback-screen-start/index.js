@@ -50,6 +50,10 @@ export default class PlaybackScreenStart extends connect(store)(
       : [];
   }
 
+  _hasDocuments(journey) {
+    return this._documents(journey).length > 0;
+  }
+    
   _steps(journey) {
     return journey &&
       journey.overview &&
@@ -93,7 +97,7 @@ export default class PlaybackScreenStart extends connect(store)(
     if (!this.question) {
       this.question = '';
     }
-    if (this.journey.title === "Ik ga verhuizen") {
+    if (this.journey.title === 'Ik ga verhuizen') {
       this.show_journey_icon_truck = true;
       this.show_journey_icon_bulb = false;
     } else {

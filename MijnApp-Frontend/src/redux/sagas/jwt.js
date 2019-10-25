@@ -289,7 +289,7 @@ function* setFakeJourneys() {
         //},
       ],
       overview: {
-        needed_documents: ['Geen documenten nodig'],
+        needed_documents: [],
         send_to: [],
         steps: [
           'Geef je nieuwe adres op',
