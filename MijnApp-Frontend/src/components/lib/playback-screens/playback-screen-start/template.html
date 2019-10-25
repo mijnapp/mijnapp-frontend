@@ -26,16 +26,26 @@
                 <maki-icon-edit-document></maki-icon-edit-document>
                 <div>Benodigde documenten</div>
             </div>
-            <div class="DotList">
-                <dom-repeat items="[[_documents(journey)]]">
-                    <template>
-                        <div class="DotListItem">
-                            <div class="Dot"></div>
-                            <div class="Text">[[item]]</div>
-                        </div>
-                    </template>
-                </dom-repeat>
-            </div>
+            <dom-if if="{{_hasDocuments(journey)}}" class="DotList">
+                <template>
+                    <dom-repeat items="[[_documents(journey)]]">
+                        <template>
+                            <div class="DotListItem">
+                                <div class="Dot"></div>
+                                <div class="Text">[[item]]</div>
+                            </div>
+                        </template>
+                    </dom-repeat>
+                </template>
+            </dom-if>
+            <dom-if if="{{!_hasDocuments(journey)}}" class="DotList">
+                <template>
+                    <div class="DotListItem">
+                        <div class="NoItems"></div>
+                        <div class="Text">Geen documenten nodig</div>
+                    </div>
+                </template>
+            </dom-if>
             <div class="SectionTitle">
                 <maki-icon-steps></maki-icon-steps>
                 <div>Deze stappen ga je doorlopen</div>
