@@ -47601,6 +47601,45 @@ const contractsApi = exports.contractsApi = {
 
 /***/ }),
 
+/***/ "./src/redux/api/journey.js":
+/*!**********************************!*\
+  !*** ./src/redux/api/journey.js ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.journeyApi = undefined;
+
+var _axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _configuration = __webpack_require__(/*! ../../helpers/configuration */ "./src/helpers/configuration.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const journeyApi = exports.journeyApi = {
+  checkPreconditions: (journeyId, token) => async () => {
+    const response = await _axios2.default.get('/journey/' + journeyId + '/checkPreconditions', {
+      baseURL: _configuration.configuration.BASE_URL_API(),
+      headers: { 'Authorization': 'Bearer ' + token }
+    });
+    if (response.statusText === 'OK' || response.status === 200) {
+      return { data: response.data };
+    } else {
+      throw response.status;
+    }
+  }
+};
+
+/***/ }),
+
 /***/ "./src/redux/api/jwt.js":
 /*!******************************!*\
   !*** ./src/redux/api/jwt.js ***!
@@ -48265,12 +48304,12 @@ const journey = exports.journey = (state = { title: '', questions: [] }, action)
       return Object.assign({}, state, {
         title: action.title
       });
-    case REQUEST_CHECK_PRECONDITIONS_SUCCESS:
+    case _journey.REQUEST_CHECK_PRECONDITIONS_SUCCESS:
       return Object.assign({}, state, {
         preconditionsFullFilled: action.data !== undefined ? action.data.preconditionsFullFilled : false,
         preconditionsBeingChecked: false
       });
-    case REQUEST_CHECK_PRECONDITIONS_FAILURE:
+    case _journey.REQUEST_CHECK_PRECONDITIONS_FAILURE:
       return Object.assign({}, state, {
         preconditionsFullFilled: false,
         preconditionsBeingChecked: false
@@ -49084,6 +49123,8 @@ var _contract = __webpack_require__(/*! ./contract */ "./src/redux/sagas/contrac
 
 var _contracts = __webpack_require__(/*! ./contracts */ "./src/redux/sagas/contracts.js");
 
+var _journey = __webpack_require__(/*! ./journey */ "./src/redux/sagas/journey.js");
+
 var _person = __webpack_require__(/*! ./person */ "./src/redux/sagas/person.js");
 
 var _jwt = __webpack_require__(/*! ./jwt */ "./src/redux/sagas/jwt.js");
@@ -49093,7 +49134,92 @@ var _orders = __webpack_require__(/*! ./orders */ "./src/redux/sagas/orders.js")
 var _application = __webpack_require__(/*! ./application */ "./src/redux/sagas/application.js");
 
 function* rootSaga() {
-  yield (0, _effects.all)([(0, _address.watchRequestAddressData)(), (0, _avgLog.watchRequestAvgLog)(), (0, _avgLogs.watchRequestAvgLogs)(), (0, _contract.watchRequestContract)(), (0, _contracts.watchRequestContracts)(), (0, _jwt.watchRequestJwtSigninFake)(), (0, _jwt.watchRequestJwtSignin)(), (0, _jwt.watchJwtSigninSuccess)(), (0, _jwt.watchJwtSigninSuccessFake)(), (0, _jwt.watchRequestJwtFromDigidCgi)(), (0, _jwt.watchRequestJwtFromDigidCgiSuccess)(), (0, _jwt.watchRequestJwtLogout)(), (0, _jwt.watchRequestJwtLogout401)(), (0, _application.watchSelectPage)(), (0, _application.watchSelectPageNoHistory)(), (0, _application.watchNextPageAfterLogin)(), (0, _person.watchRequestPersonData)(), (0, _person.watchRequestPersonsMoving)(), (0, _orders.watchRequestOrdersSubmit)()]);
+  yield (0, _effects.all)([(0, _address.watchRequestAddressData)(), (0, _avgLog.watchRequestAvgLog)(), (0, _avgLogs.watchRequestAvgLogs)(), (0, _contract.watchRequestContract)(), (0, _contracts.watchRequestContracts)(), (0, _jwt.watchRequestJwtSigninFake)(), (0, _jwt.watchRequestJwtSignin)(), (0, _jwt.watchJwtSigninSuccess)(), (0, _jwt.watchJwtSigninSuccessFake)(), (0, _jwt.watchRequestJwtFromDigidCgi)(), (0, _jwt.watchRequestJwtFromDigidCgiSuccess)(), (0, _jwt.watchRequestJwtLogout)(), (0, _jwt.watchRequestJwtLogout401)(), (0, _application.watchSelectPage)(), (0, _application.watchSelectPageNoHistory)(), (0, _application.watchNextPageAfterLogin)(), (0, _person.watchRequestPersonData)(), (0, _person.watchRequestPersonsMoving)(), (0, _orders.watchRequestOrdersSubmit)(), (0, _journey.watchSetJourney)()]);
+}
+
+/***/ }),
+
+/***/ "./src/redux/sagas/journey.js":
+/*!************************************!*\
+  !*** ./src/redux/sagas/journey.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.watchDeleteQuestionPreflight = watchDeleteQuestionPreflight;
+exports.watchSetQuestionType = watchSetQuestionType;
+exports.watchSetJourney = watchSetJourney;
+
+var _effects = __webpack_require__(/*! redux-saga/effects */ "./node_modules/redux-saga/dist/redux-saga-effects-npm-proxy.esm.js");
+
+var _journey = __webpack_require__(/*! ../actions/journey */ "./src/redux/actions/journey.js");
+
+var _journey2 = __webpack_require__(/*! ../api/journey */ "./src/redux/api/journey.js");
+
+var _headers = __webpack_require__(/*! ../helpers/headers */ "./src/redux/helpers/headers.js");
+
+var _common = __webpack_require__(/*! ../../helpers/common */ "./src/helpers/common.js");
+
+function* watchDeleteQuestionPreflight() {
+  yield (0, _effects.takeLatest)(_journey.DELETE_QUESTION_PREFLIGHT, deleteQuestionPreflightCheck);
+}
+
+function* deleteQuestionPreflightCheck(action) {
+  if (action && action.id) {
+    yield (0, _effects.put)(uiDeleteDialogOpen());
+    if (action.id === 'START') {
+      yield (0, _effects.put)(uiDeleteDialogSetStart());
+    } else {
+      const state = store.getState();
+      if (state && state.journey && state.journey.questions && Array.isArray(state.journey.questions) && state.journey.questions.length > 0) {
+        const q = state.journey.questions.find(i => i.id === action.id);
+        if (q) {
+          let found = q && q.options && Array.isArray(q.options) && q.options.length > 0 ? q.options.map(o => o && o.goto ? o.goto : null) : [];
+          found.push(q.next || null);
+          found.push(q.optional && q.optional.goto ? q.optional.goto : null);
+          found = found.filter(i => !!i).filter((item, index, arr) => arr.indexOf(item) === index);
+          if (found.length === 0) {
+            yield (0, _effects.put)(uiDeleteDialogSetAutoResolve(action.id, null));
+          } else if (found.length === 1) {
+            yield (0, _effects.put)(uiDeleteDialogSetAutoResolve(action.id, found[0]));
+          } else {
+            yield (0, _effects.put)(uiDeleteDialogSetManualResolve(action.id, found));
+          }
+        }
+      }
+    }
+  }
+}
+
+function* watchSetQuestionType() {
+  yield (0, _effects.takeLatest)(_journey.SET_QUESTION_TYPE, setQuestionTypeChecks);
+}
+
+function* setQuestionTypeChecks(action) {
+  if (action.questionType === _common.QUESTION_TYPE_END) {
+    yield (0, _effects.put)(uiSidePanelClose());
+    yield (0, _effects.put)(uiDeselectQuestion());
+    yield (0, _effects.put)((0, _journey.deleteQuestion)(action.id, _common.JOURNEY_END));
+  }
+}
+
+function* watchSetJourney() {
+  yield (0, _effects.takeLatest)(_journey.SET_JOURNEY, checkPreconditions);
+}
+
+function* checkPreconditions(action) {
+  try {
+    const result = yield (0, _effects.call)(_journey2.journeyApi.checkPreconditions(action.journey.request_type_id, (0, _headers.jwtBearerToken)()));
+    yield (0, _effects.put)((0, _journey.requestCheckPreconditionsSuccess)(result.data));
+  } catch (e) {
+    yield (0, _effects.put)((0, _journey.requestCheckPreconditionsFailure)(e));
+  }
 }
 
 /***/ }),

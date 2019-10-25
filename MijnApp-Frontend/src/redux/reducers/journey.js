@@ -16,6 +16,8 @@ import {
   SET_QUESTION_OPTION_GOTO,
   SET_QUESTION_OPTION_TITLE,
   SET_QUESTION_OPTION_VALUE,
+  REQUEST_CHECK_PRECONDITIONS_SUCCESS,
+  REQUEST_CHECK_PRECONDITIONS_FAILURE
 } from '../actions/journey';
 import { isOptionsType, isDirectionalOptionsType } from '../../helpers/common';
 import { REQUEST_JWT_LOGOUT_SUCCESS } from '../actions/jwt';

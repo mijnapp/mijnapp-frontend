@@ -2,6 +2,8 @@ import { takeLatest, put, call } from 'redux-saga/effects';
 import { DELETE_QUESTION_PREFLIGHT, SET_JOURNEY, requestCheckPreconditionsSuccess, requestCheckPreconditionsFailure } from '../actions/journey';
 import { journeyApi } from '../api/journey';
 import { jwtBearerToken } from '../helpers/headers';
+import { SET_QUESTION_TYPE, deleteQuestion } from '../actions/journey';
+import { JOURNEY_END, QUESTION_TYPE_END } from '../../helpers/common';
 
 export function* watchDeleteQuestionPreflight() {
   yield takeLatest(DELETE_QUESTION_PREFLIGHT, deleteQuestionPreflightCheck);
@@ -49,16 +51,23 @@ export function* watchSetQuestionType() {
   yield takeLatest(SET_QUESTION_TYPE, setQuestionTypeChecks);
 }
 
+function* setQuestionTypeChecks(action) {
+  if (action.questionType === QUESTION_TYPE_END) {
+    yield put(uiSidePanelClose());
+    yield put(uiDeselectQuestion());
+    yield put(deleteQuestion(action.id, JOURNEY_END));
+  }
+}
+
+export function* watchSetJourney() {
+  yield takeLatest(SET_JOURNEY, checkPreconditions);
+}
+
 function* checkPreconditions(action) {
   try {
     const result = yield call(journeyApi.checkPreconditions(action.journey.request_type_id, jwtBearerToken()));
     yield put(requestCheckPreconditionsSuccess(result.data));
   } catch (e) {
     yield put(requestCheckPreconditionsFailure(e));
-function* setQuestionTypeChecks(action) {
-  if (action.questionType === QUESTION_TYPE_END) {
-    yield put(uiSidePanelClose());
-    yield put(uiDeselectQuestion());
-    yield put(deleteQuestion(action.id, JOURNEY_END));
   }
 }
