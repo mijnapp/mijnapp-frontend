@@ -39934,8 +39934,8 @@ class MafApp extends (0, _connectMixin.connect)(_store.store)(_polymerElement.Po
       } else if (window.location.pathname.indexOf('startjourney') > -1) {
         this._handleStartJourney();
       } else {
-        const path = window.location.pathname.split(/[/-]/).filter(i => i.length > 0);
-        _store.store.dispatch((0, _application.selectPageNoHistory)(path[0]));
+        const path = window.location.pathname.charAt(0) === '/' ? window.location.pathname.substring(1) : window.location.pathname;
+        _store.store.dispatch((0, _application.selectPageNoHistory)(path));
       }
     }
   }
@@ -40673,7 +40673,7 @@ module.exports = ".Wrapper{height:100vh;max-width:var(--main-max-width);margin:0
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\r\n  <div class=\"ScrollContainer\">\r\n    <maf-screen heading=\"Mijn dashboard\">\r\n      <div class=\"SearchWrapper\" on-click=\"_goJourneys\">\r\n        <maki-input elevation=\"0\" stroke=\"1\" placeholder=\"Wat wil je regelen?\"></maki-input>\r\n      </div>\r\n      <div class=\"TilesWrapper\">\r\n        <div class=\"TilesTitle\">\r\n          Mijn gegevens\r\n        </div>\r\n        <div class=\"Tiles\">\r\n          <dom-repeat items=\"{{tiles}}\" as=\"tile\">\r\n            <template>\r\n              <div class=\"Tile\" on-click=\"_clickHandler\">\r\n                <div class=\"TileMedia\">\r\n                  <div class=\"TileMediaInner\">\r\n                    <img src=\"[[tile.asset]]\" />\r\n                  </div>\r\n                </div>\r\n                <div class=\"TileTitle\">[[tile.title]]</div>\r\n              </div>\r\n            </template>\r\n          </dom-repeat>\r\n          <div class=\"Tile NotAllowed\" on-click=\"_clickHandler\">\r\n            <div class=\" TileMedia \">\r\n              <div class=\"TileMediaInner \">\r\n                <img src=\"assets/media/Passen.svg \" />\r\n              </div>\r\n            </div>\r\n            <div class=\"TileTitle \">Passen</div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </maf-screen>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"Wrapper\">\r\n  <div class=\"ScrollContainer\">\r\n    <maf-screen heading=\"Mijn dashboard\">\r\n      <div class=\"SearchWrapper\" on-click=\"_goJourneys\">\r\n        <maki-input elevation=\"0\" stroke=\"1\" placeholder=\"Wat wil je regelen?\"></maki-input>\r\n      </div>\r\n      <div class=\"TilesWrapper\">\r\n        <div class=\"TilesTitle\">\r\n          Mijn gegevens\r\n        </div>\r\n        <div class=\"Tiles\">\r\n          <dom-repeat items=\"{{tiles}}\" as=\"tile\">\r\n            <template>\r\n              <div class=\"Tile\" on-click=\"_clickHandler\">\r\n                <div class=\"TileMedia\">\r\n                  <div class=\"TileMediaInner\">\r\n                    <img alt=\"[[tile.title]]\" src=\"[[tile.asset]]\" />\r\n                  </div>\r\n                </div>\r\n                <div class=\"TileTitle\">[[tile.title]]</div>\r\n              </div>\r\n            </template>\r\n          </dom-repeat>\r\n          <div class=\"Tile NotAllowed\" on-click=\"_clickHandler\">\r\n            <div class=\" TileMedia \">\r\n              <div class=\"TileMediaInner \">\r\n                <img src=\"assets/media/Passen.svg \" />\r\n              </div>\r\n            </div>\r\n            <div class=\"TileTitle \">Passen</div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </maf-screen>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -46937,12 +46937,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 const SELECT_PAGE = exports.SELECT_PAGE = 'SELECT_PAGE';
-const selectPage = exports.selectPage = page => ({ type: SELECT_PAGE, page });
+const selectPage = exports.selectPage = page => ({ type: SELECT_PAGE, page: page });
 
 const SELECT_PAGE_NO_HISTORY = exports.SELECT_PAGE_NO_HISTORY = 'SELECT_PAGE_NO_HISTORY';
 const selectPageNoHistory = exports.selectPageNoHistory = page => ({
   type: SELECT_PAGE_NO_HISTORY,
-  page
+  page: page
 });
 
 const NEXT_PAGE_AFTER_LOGIN = exports.NEXT_PAGE_AFTER_LOGIN = 'NEXT_PAGE_AFTER_LOGIN';

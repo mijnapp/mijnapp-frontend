@@ -63,8 +63,8 @@ export default class MafApp extends connect(store)(PolymerElement) {
       } else if (window.location.pathname.indexOf('startjourney') > -1) {
         this._handleStartJourney();
       } else {
-        const path = window.location.pathname.split(/[/-]/).filter((i) => i.length > 0);
-        store.dispatch(selectPageNoHistory(path[0]));
+        const path = window.location.pathname.charAt(0) === '/' ? window.location.pathname.substring(1) : window.location.pathname;
+        store.dispatch(selectPageNoHistory(path));
       }
     }
   }
