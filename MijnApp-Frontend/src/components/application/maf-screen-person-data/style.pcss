@@ -15,11 +15,14 @@
   color: var(--palette-primary-main);
   font-style: italic;
 }
+.ContractDataPointContainer {
+  display: flex;
+  flex-direction: column;
+}
 .ContractDataPoint {
   font-family: var(--typography-fontFamily);
   padding: 10px 0 13px 0;
   border-bottom: 1px solid #EFF1F3;
-  position: relative;
 }
 .ContractDataPointLabel {
   opacity: 0.4;
@@ -33,7 +36,6 @@
   color: var(--main-header-text-color);
 }
 .ContractDataPointValue {
-  height: 23px;
   font-size: var(--main-font-text-size);
   font-weight: 600;
   font-style: normal;
@@ -82,14 +84,4 @@
 }
 .ContractDataPointSubSubValueValue {
   font-weight: 400;
-}
-.Logo {
-  height: 30px;
-  width: 30px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-  position: absolute;
-  top: 2px;
-  right: 0;
 }

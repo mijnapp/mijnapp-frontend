@@ -196,7 +196,7 @@ export default class MafApp extends connect(store)(PolymerElement) {
         request_type_id: '06daeb7f-6503-4b8e-8aa1-5a5767b53b22',
         preconditions: '',
         overview: {
-          needed_documents: ['Geen'],
+          needed_documents: [],
           send_to: [],
           steps: [
             'Je geeft aan of je anoniem wilt blijven',
