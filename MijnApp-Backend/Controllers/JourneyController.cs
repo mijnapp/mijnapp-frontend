@@ -63,7 +63,8 @@ namespace MijnApp_Backend.Controllers
                 return age >= 16;
             }
 
-            return false;
+            //TODO - For now return true. If not we can't start any journeys anymore
+            return true;
         }
     }
 }
