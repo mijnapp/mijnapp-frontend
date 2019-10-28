@@ -40989,6 +40989,9 @@ class MafScreenPersonData extends (0, _connectMixin.connect)(_store.store)(_poly
   }
 
   _normalDate(date) {
+    if (date === null) {
+      return 'Onbekend';
+    }
     date = new Date(date);
     return (0, _dutchDate.toDutchDate)(date);
   }
