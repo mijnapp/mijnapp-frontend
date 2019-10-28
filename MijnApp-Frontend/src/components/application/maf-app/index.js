@@ -190,7 +190,6 @@ export default class MafApp extends connect(store)(PolymerElement) {
   }
 
   setFakeJourneys() {
-    debugger;
     store.dispatch(setJourneys([
       {
         title: 'Ik heb een goed idee',

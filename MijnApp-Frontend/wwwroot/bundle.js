@@ -40055,7 +40055,6 @@ class MafApp extends (0, _connectMixin.connect)(_store.store)(_polymerElement.Po
   }
 
   setFakeJourneys() {
-    debugger;
     _store.store.dispatch((0, _journeys.setJourneys)([{
       title: 'Ik heb een goed idee',
       request_type_id: '06daeb7f-6503-4b8e-8aa1-5a5767b53b22',
