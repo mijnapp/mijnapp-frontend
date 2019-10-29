@@ -2,16 +2,17 @@
   display: block;
   width: 100%;
   min-height: 300px;
+
   --datepicker-background-color: #FFF;
-  --datepicker-month-color: rgba(0,0,0,.38);
+  --datepicker-month-color: rgba(0, 0, 0, 0.38);
   --datepicker-width: 294px;
   --datepicker-zindex: 1000;
-  --datepicker-cells-color: #ddd;
-  --datepicker-hover-color: rgba(0,0,0,.04);
-  --datepicker-selected-color: rgba(0,0,0,.04);
+  --datepicker-cells-color: #DDD;
+  --datepicker-hover-color: rgba(0, 0, 0, 0.04);
+  --datepicker-selected-color: rgba(0, 0, 0, 0.04);
   --datepicker-cellempty-color: #FFF;
-  --datepicker-buttons-hover: rgba(0,0,0,.1);
-  --datepicker-buttons-focus: rgba(0,0,0,.38);
+  --datepicker-buttons-hover: rgba(0, 0, 0, 0.1);
+  --datepicker-buttons-focus: rgba(0, 0, 0, 0.38);
   --datepicker-font-color: var(--palette-primary-main);
 }
 
@@ -23,7 +24,7 @@
   color: var(--datepicker-font-color);
   background-color: var(--datepicker-background-color);
   border-radius: 3px;
-  box-shadow: 0px 0px 2px rgba(0,0,0,.4);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
 }
 
 div#month-wrap {
@@ -37,7 +38,7 @@ div#bn_prev {
 }
 
 div#bn_prev::before {
-  content:"\003c";
+  content: '\003c';
   font-family: var(--typography-fontFamily);
   height: 24px;
   font-size: var(--main-font-subheader-size);
@@ -55,7 +56,7 @@ div#bn_next {
 }
 
 div#bn_next::before {
-  content:"\003e";
+  content: '\003e';
   font-family: var(--typography-fontFamily);
   height: 24px;
   font-size: var(--main-font-subheader-size);
@@ -105,11 +106,11 @@ table#cal td {
   width: 38px;
   height: 38px;
   padding: 0;
-  border: 1px solid rgba(0,0,0,0);
+  border: 1px solid rgba(0, 0, 0, 0);
 }
 
 table#cal thead th {
-  border-bottom: 1px solid rgba(0,0,0,.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   margin-bottom: 2px;
 }
 
@@ -119,14 +120,15 @@ table#cal td {
 
 table#cal td.today {
   border-radius: 20px;
-  border: 1px solid rgba(0,0,0,.12);
+  border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 table#cal td.disabled {
   color: #999;
 }
 
-table#cal td.empty, table#cal td.disabled {
+table#cal td.empty,
+table#cal td.disabled {
   background-color: var(--datepicker-cellempty-color);
 }
 
@@ -141,7 +143,8 @@ table#cal td.focus {
   border-radius: 20px;
 }
 
-table#cal td.empty:hover, table#cal td.disabled:hover {
+table#cal td.empty:hover,
+table#cal td.disabled:hover {
   background-color: var(--datepicker-cellempty-color);
   cursor: default;
 }
@@ -152,7 +155,7 @@ table#cal td.empty:hover, table#cal td.disabled:hover {
   top: -100em;
 }
 
-[aria-hidden="true"] {
+[aria-hidden='true'] {
   display: none;
 }
 

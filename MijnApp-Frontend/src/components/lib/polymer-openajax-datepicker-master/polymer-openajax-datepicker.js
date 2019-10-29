@@ -2,7 +2,7 @@ import { PolymerElement, html } from '@polymer/polymer/polymer-element';
 import { connect } from 'pwa-helpers/connect-mixin';
 import { store } from '../../../redux/store';
 var moment = require('moment');
-import css from './polymer-openajax-datepicker-styles.html';
+import css from './polymer-openajax-datepicker-styles.pcss';
 import template from './polymer-openajax-datepicker.html';
 
 /* eslint-disable class-methods-use-this */
