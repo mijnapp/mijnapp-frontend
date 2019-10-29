@@ -48653,16 +48653,12 @@ exports.journeys = undefined;
 
 var _journeys = __webpack_require__(/*! ../actions/journeys */ "./src/redux/actions/journeys.js");
 
-var _jwt = __webpack_require__(/*! ../actions/jwt */ "./src/redux/actions/jwt.js");
-
 const journeys = exports.journeys = (state = { data: [] }, action) => {
   switch (action.type) {
     case _journeys.SET_JOURNEYS:
       return Object.assign({}, state, {
         data: action.data
       });
-    case _jwt.REQUEST_JWT_LOGOUT_SUCCESS:
-      return { data: [] };
     default:
       return state;
   }
