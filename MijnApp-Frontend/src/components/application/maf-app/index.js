@@ -172,6 +172,10 @@ export default class MafApp extends connect(store)(PolymerElement) {
     return page !== 'signin';
   }
 
+  _isActive(pageName, page) {
+    return pageName === page ? ' TabSwitcherTabActive' : '';
+  }
+
   _nope() {
     alert(
       'Deze functie komt binnenkort beschikbaar! Op dit moment wordt er hard gewerkt aan nieuwe functionaliteiten van MijnApp.'

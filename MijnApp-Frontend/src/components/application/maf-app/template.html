@@ -28,7 +28,7 @@
       <template>
         <div class="TabSwitcher">
           <div class="TabSwitcherWrapper">
-            <div class="TabSwitcherTab" on-click="_goHome">
+            <div class$="TabSwitcherTab[[_isActive('home', page)]]" on-click="_goHome">
               <div class="TabSwitcherTabIcon">
                 <maki-icon-home></maki-icon-home>
               </div>
@@ -38,7 +38,7 @@
                 </div>
               </div>
             </div>
-            <div class="TabSwitcherTab" on-click="_goJourneys">
+            <div class$="TabSwitcherTab[[_isActive('journeys', page)]]" on-click="_goJourneys">
               <div class="TabSwitcherTabIcon">
                 <maki-icon-search></maki-icon-search>
               </div>
