@@ -4,7 +4,7 @@ import { watchRequestAvgLog } from './avgLog';
 import { watchRequestAvgLogs } from './avgLogs';
 import { watchRequestContract } from './contract';
 import { watchRequestContracts } from './contracts';
-import { watchSetJourney } from './journey';
+import { watchCheckPreconditions } from './journey';
 import {
   watchRequestPersonData,
   watchRequestPersonsMoving,
@@ -43,6 +43,6 @@ export default function* rootSaga() {
     watchRequestPersonData(),
     watchRequestPersonsMoving(),
     watchRequestOrdersSubmit(),
-    watchSetJourney(),
+    watchCheckPreconditions(),
   ]);
 }

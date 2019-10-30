@@ -1,5 +1,6 @@
 import { takeLatest, put, call } from 'redux-saga/effects';
-import { DELETE_QUESTION_PREFLIGHT, SET_JOURNEY, requestCheckPreconditionsSuccess, requestCheckPreconditionsFailure } from '../actions/journey';
+import { store } from '../store';
+import { DELETE_QUESTION_PREFLIGHT, CHECK_PRECONDITIONS, requestCheckPreconditionsSuccess, requestCheckPreconditionsFailure } from '../actions/journey';
 import { journeyApi } from '../api/journey';
 import { jwtBearerToken } from '../helpers/headers';
 import { SET_QUESTION_TYPE, deleteQuestion } from '../actions/journey';
@@ -59,13 +60,14 @@ function* setQuestionTypeChecks(action) {
   }
 }
 
-export function* watchSetJourney() {
-  yield takeLatest(SET_JOURNEY, checkPreconditions);
+export function* watchCheckPreconditions() {
+  yield takeLatest(CHECK_PRECONDITIONS, checkPreconditions);
 }
 
-function* checkPreconditions(action) {
+function* checkPreconditions() {
+  var state = store.getState();
   try {
-    const result = yield call(journeyApi.checkPreconditions(action.journey.request_type_id, jwtBearerToken()));
+    const result = yield call(journeyApi.checkPreconditions(state.journey.request_type_id, jwtBearerToken()));
     yield put(requestCheckPreconditionsSuccess(result.data));
   } catch (e) {
     yield put(requestCheckPreconditionsFailure(e));
