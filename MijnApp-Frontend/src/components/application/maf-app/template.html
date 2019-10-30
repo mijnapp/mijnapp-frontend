@@ -1,6 +1,6 @@
 <maki-theme-provider theme="[[theme]]">
   <div class="AppWrapper">
-    <dom-if if="[[_showTabs(page)]]">
+    <!--<dom-if if="[[_showTabs(page)]]">
       <template>
         <div class="TopBar">
           <div class="TopBarWrapper">
@@ -10,7 +10,7 @@
           </div>
         </div>
       </template>
-    </dom-if>
+    </dom-if>-->
     <div class="App">
       <iron-pages selected="[[page]]" attr-for-selected="page" fallback-selection="view404">
         <maf-screen-avg-log page="avg-log"></maf-screen-avg-log>
@@ -28,7 +28,7 @@
       <template>
         <div class="TabSwitcher">
           <div class="TabSwitcherWrapper">
-            <div class="TabSwitcherTab" on-click="_goHome">
+            <div class$="TabSwitcherTab[[_isActive('home', page)]]" on-click="_goHome">
               <div class="TabSwitcherTabIcon">
                 <maki-icon-home></maki-icon-home>
               </div>
@@ -38,13 +38,13 @@
                 </div>
               </div>
             </div>
-            <div class="TabSwitcherTab" on-click="_goJourneys">
+            <div class$="TabSwitcherTab[[_isActive('journeys', page)]]" on-click="_goJourneys">
               <div class="TabSwitcherTabIcon">
                 <maki-icon-search></maki-icon-search>
               </div>
               <div class="TabSwitcherTabText">
                 <div class="TabSwitcherTabTextInner">
-                  Klantvragen
+                  Zoeken
                 </div>
               </div>
             </div>

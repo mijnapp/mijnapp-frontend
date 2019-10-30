@@ -2,13 +2,13 @@ version: '3.4'
 
 services:
   mijnapp-backend:
-    image: ${DOCKER_REGISTRY-}mijnappbackend
+    image: ${DOCKER_REGISTRY-}mijnappbackend_${BRANCH_NAME}
     build:
       context: .
       dockerfile: MijnApp-Backend/Dockerfile
 
   mijnapp-frontend:
-    image: ${DOCKER_REGISTRY-}mijnappfrontend
+    image: ${DOCKER_REGISTRY-}mijnappfrontend_${BRANCH_NAME}
     build:
       context: .
       dockerfile: MijnApp-Frontend/Dockerfile

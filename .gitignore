@@ -1,6 +1,7 @@
 /.vs
 *.user
 /MijnApp-Backend/Logs
+/MijnApp-Backend/web.config
 /GetEmulatorWorking
 [Bb]in
 [Oo]bj

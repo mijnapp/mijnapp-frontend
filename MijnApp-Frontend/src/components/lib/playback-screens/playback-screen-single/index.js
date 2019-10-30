@@ -47,7 +47,7 @@ export default class PlaybackScreenSingle extends connect(store)(
           orderSaveAnswer(
             question.key || question.property,
             question.options[index].value || question.options[index].title,
-            question.title,
+            question.fieldName,
             question.options[index].title
           )
         );

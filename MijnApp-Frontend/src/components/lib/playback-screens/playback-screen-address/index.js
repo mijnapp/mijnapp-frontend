@@ -88,7 +88,7 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
       orderSaveAnswer(
         question.key || question.property,
         address.id,
-        question.title,
+        question.fieldName,
         `${address.straat} ${address.huisnummer}${address.huisnummertoevoeging ? address.huisnummertoevoeging : ''}, ${address.woonplaats} ${address.postcode}`
       )
     );
@@ -102,11 +102,11 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
       const index = e.currentTarget.dataIndex;
       const address = this.addresses[index];
       if (address.woonplaats !== '\'s-Hertogenbosch') {
-        window.clearWarningDialog();
-        window.warningTitle.innerHTML = 'Let op!';
-        window.warningText.innerHTML = 'Het nieuwe adres dat je opgeeft ligt niet in de gemeente \'s-Hertogenbosch.';
-        window.warningConfirmButton.onclick = function() {self._saveWithoutCheck(question, address);};
-        window.warningDialog.open();
+        window.clearErrorDialog();
+        window.errorTitle.innerHTML = 'Let op!';
+        window.errorText.innerHTML = 'Het nieuwe adres dat je opgeeft ligt niet in de gemeente \'s-Hertogenbosch. Kies op de gemeentekeuze pagina (<a href="https://www.burgerberichten.nl/gemeenten/verhuizen">https://www.burgerberichten.nl/gemeenten/verhuizen</a>) de gemeente van uw nieuwe adres.';
+        window.errorButton.innerHTML = 'Ga terug';
+        window.errorDialog.open();
       } else {
         self._saveWithoutCheck(question, address);
       }

@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets\\back.svg"
   },
   {
-    "revision": "79ba6438314e334906c0515148e49605",
+    "revision": "9dc5176f085d44e77d1c131fcedf8bae",
     "url": "assets\\backWhite.svg"
   },
   {
@@ -160,10 +160,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets\\logo-digid.svg"
   },
   {
-    "revision": "accca2d06653fc056189e7094920e892",
-    "url": "assets\\logo-itsme.svg"
-  },
-  {
     "revision": "54d8358fb31ab5b83dab3df6098e9f35",
     "url": "assets\\logo.svg"
   },
@@ -196,7 +192,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets\\radio.svg"
   },
   {
-    "revision": "c45516641cc8d2d34d15",
+    "revision": "7b48b2c3f65ff8362f72",
     "url": "bundle.js"
   },
   {
@@ -208,11 +204,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "custom-sw.js"
   },
   {
-    "revision": "d194eed6490a8584ce23654c15e3e037",
+    "revision": "bb66d207a7ba0a052c3896a6f554162f",
     "url": "ienotsupported.html"
   },
   {
-    "revision": "1ac441e86548b41a56f3de7729634908",
+    "revision": "90d20b5c4f512c5836d5fee5dd15cba7",
     "url": "index.html"
   },
   {
@@ -220,7 +216,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "manifest.json"
   },
   {
-    "revision": "a488e339df010895d90a",
+    "revision": "fe8b79f7557a31979165",
     "url": "pdfmake.bundle.js"
   },
   {

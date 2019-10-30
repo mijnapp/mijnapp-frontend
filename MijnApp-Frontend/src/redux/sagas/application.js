@@ -2,6 +2,7 @@ import { call, put, takeLatest } from 'redux-saga/effects';
 import { SELECT_PAGE, SELECT_PAGE_NO_HISTORY, NEXT_PAGE_AFTER_LOGIN, selectPage, selectPageNoHistory } from '../actions/application';
 import { store } from '../store';
 import { clearContract } from '../actions/contract';
+import { checkPreconditions } from '../actions/journey';
 import { jwtBearerTokenExists } from '../helpers/headers';
 import { setLastPage, getLastPage, removeLastPage } from '../helpers/lastPage';
 import { getLastAction, removeLastAction } from '../helpers/lastAction';
@@ -22,6 +23,10 @@ function* pageSelected(action) {
     (state && state.contract && state.contract.data && state.contract.data.id)
   ) {
     yield put(clearContract());
+  }
+
+  if (action.page === 'journey') {
+    yield put(checkPreconditions());
   }
 }
 

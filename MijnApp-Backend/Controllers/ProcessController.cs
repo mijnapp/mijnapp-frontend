@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using MijnApp_Backend.HttpClients;
+using System.Threading.Tasks;
 
 namespace MijnApp_Backend.Controllers
 {
@@ -9,8 +9,8 @@ namespace MijnApp_Backend.Controllers
     public class ProcessController : Controller
     {
         private readonly string _baseUri;
-        private const string UrlGetAll = "{0}processes";
-        private const string UrlGetById = "{0}processes/{1}";
+        private const string UrlGetAll = "{0}process_types";
+        private const string UrlGetById = "{0}process_types/{1}";
 
         private readonly IServiceClient _serviceClient;
 

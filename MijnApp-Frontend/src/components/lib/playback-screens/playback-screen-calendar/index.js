@@ -46,7 +46,7 @@ export default class PlaybackScreenCalendar extends connect(store)(
       orderSaveAnswer(
         question.key || question.property,
         data,
-        question.title,
+        question.fieldName,
         this.datepickerValueText
       )
     );

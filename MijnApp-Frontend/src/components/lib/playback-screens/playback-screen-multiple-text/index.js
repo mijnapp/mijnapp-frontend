@@ -42,12 +42,12 @@ export default class PlaybackScreenMultipleText extends connect(store)(
 
   _inputCallback(question, index, order) {
     const key = question && question.options && Array.isArray(question.options)
-      ? question.options.map((i) => i.value || i.title || 'Naamloos veld')
+      ? question.options.map((i) => i.value || i.fieldName || 'Naamloos veld')
       : [];
     const keyTitle = question && question.options && Array.isArray(question.options)
       ? question.options.map(
         (i) =>
-        `${question.title || 'Naamloze vraag'}: ${i.title ||
+        `${question.fieldName || 'Naamloze vraag'}: ${i.fieldName ||
         'Naamloos veld'}`
       )
       : [];

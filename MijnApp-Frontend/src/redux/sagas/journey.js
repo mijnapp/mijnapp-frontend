@@ -1,14 +1,8 @@
-import { takeLatest, put } from 'redux-saga/effects';
-import { DELETE_QUESTION_PREFLIGHT } from '../actions/journey';
+import { takeLatest, put, call } from 'redux-saga/effects';
 import { store } from '../store';
-import {
-  uiSidePanelClose,
-  uiDeselectQuestion,
-  uiDeleteDialogOpen,
-  uiDeleteDialogSetStart,
-  uiDeleteDialogSetAutoResolve,
-  uiDeleteDialogSetManualResolve,
-} from '../actions/journeyUi';
+import { DELETE_QUESTION_PREFLIGHT, CHECK_PRECONDITIONS, requestCheckPreconditionsSuccess, requestCheckPreconditionsFailure } from '../actions/journey';
+import { journeyApi } from '../api/journey';
+import { jwtBearerToken } from '../helpers/headers';
 import { SET_QUESTION_TYPE, deleteQuestion } from '../actions/journey';
 import { JOURNEY_END, QUESTION_TYPE_END } from '../../helpers/common';
 
@@ -63,5 +57,19 @@ function* setQuestionTypeChecks(action) {
     yield put(uiSidePanelClose());
     yield put(uiDeselectQuestion());
     yield put(deleteQuestion(action.id, JOURNEY_END));
+  }
+}
+
+export function* watchCheckPreconditions() {
+  yield takeLatest(CHECK_PRECONDITIONS, checkPreconditions);
+}
+
+function* checkPreconditions() {
+  var state = store.getState();
+  try {
+    const result = yield call(journeyApi.checkPreconditions(state.journey.request_type_id, jwtBearerToken()));
+    yield put(requestCheckPreconditionsSuccess(result.data));
+  } catch (e) {
+    yield put(requestCheckPreconditionsFailure(e));
   }
 }

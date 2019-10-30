@@ -1,15 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using MijnApp_Backend.HttpClients;
+using MijnApp_Backend.Security;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using Newtonsoft.Json;
-using MijnApp_Backend.HttpClients;
-using MijnApp_Backend.Security;
 
 namespace MijnApp_Backend.Controllers
 {
@@ -21,7 +21,7 @@ namespace MijnApp_Backend.Controllers
         private readonly string _processBaseUri;
         private readonly IServiceClient _serviceClient;
         private const string PostRequest = "{0}requests";
-        private const string TARGET_ORGANIZATION_DEN_BOSCH = "1709124";
+        private const string TargetOrganizationDenBosch = "1709124";
 
         public OrderController(IConfiguration config, IServiceClient serviceClient)
         {
@@ -67,13 +67,15 @@ namespace MijnApp_Backend.Controllers
         /// <param name="bsn"></param>
         private Request CreateRequestData(Order order, string bsn)
         {
+            var submitter = new Submitter { person = bsn };
+            var organization = new Organization {rsin = TargetOrganizationDenBosch };
+
             var request = new Request
             {
-                submitter = bsn,
-                submitter_person = true,
-                cases = new string[0],
+                submitters = new [] { submitter },
+                request_cases = new string[0],
                 properties = new Dictionary<string, object>(),
-                target_organization = TARGET_ORGANIZATION_DEN_BOSCH,
+                organizations = new [] { organization },
                 request_type = _processBaseUri + "request_types/" + order.requestType
             };
             foreach (var question in order.data.Where(q => q.question != "END"))
@@ -128,11 +130,20 @@ namespace MijnApp_Backend.Controllers
     internal class Request
     {
         public string request_type { get; set; }
-        public string target_organization { get; set; }
-        public string submitter { get; set; }
-        public bool submitter_person { get; set; }
+        public Organization[] organizations { get; set; }
+        public Submitter[] submitters { get; set; }
         public Dictionary<string,object> properties { get; set; }
-        public string[] cases { get; set; }
+        public string[] request_cases { get; set; }
+    }
+
+    internal class Organization
+    {
+        public string rsin { get; set; }
+    }
+
+    internal class Submitter
+    {
+        public string person { get; set; }
     }
 
     /*

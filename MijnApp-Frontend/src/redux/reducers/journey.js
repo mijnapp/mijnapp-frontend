@@ -16,6 +16,8 @@ import {
   SET_QUESTION_OPTION_GOTO,
   SET_QUESTION_OPTION_TITLE,
   SET_QUESTION_OPTION_VALUE,
+  REQUEST_CHECK_PRECONDITIONS_SUCCESS,
+  REQUEST_CHECK_PRECONDITIONS_FAILURE
 } from '../actions/journey';
 import { isOptionsType, isDirectionalOptionsType } from '../../helpers/common';
 import { REQUEST_JWT_LOGOUT_SUCCESS } from '../actions/jwt';
@@ -23,7 +25,16 @@ import { REQUEST_JWT_LOGOUT_SUCCESS } from '../actions/jwt';
 export const journey = (state = { title: '', questions: [] }, action) => {
   switch (action.type) {
     case SET_JOURNEY:
+    {
+      if (state.preconditionsFullFilled) {
+          delete state.preconditionsFullFilled;
+      }
+      if (action.journey.preconditionsFullFilled) {
+          delete action.journey.preconditionsFullFilled;
+      }
+      action.journey.preconditionsBeingChecked = true;
       return action.journey;
+    }
     case ADD_QUESTION:
       return {
         ...state,
@@ -33,6 +44,18 @@ export const journey = (state = { title: '', questions: [] }, action) => {
       return {
         ...state,
         title: action.title,
+      };
+    case REQUEST_CHECK_PRECONDITIONS_SUCCESS:
+      return {
+        ...state,
+        preconditionsFullFilled: action.data !== undefined ? action.data.preconditionsFullFilled : false,
+        preconditionsBeingChecked: false,
+      };
+    case REQUEST_CHECK_PRECONDITIONS_FAILURE:
+      return {
+         ...state,
+         preconditionsFullFilled: false,
+         preconditionsBeingChecked: false,
       };
     case ADD_LINK_TO_QUESTION_NEXT:
     case ADD_LINK_TO_QUESTION_SKIP:

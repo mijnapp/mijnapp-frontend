@@ -24779,69 +24779,44 @@ const Base = Object(_lib_legacy_legacy_element_mixin_js__WEBPACK_IMPORTED_MODULE
 
 /***/ }),
 
-/***/ "./node_modules/@redux-saga/core/dist/chunk-e922c950.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/@redux-saga/core/dist/chunk-e922c950.js ***!
-  \**************************************************************/
-/*! exports provided: a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, _, $, a0, a1, a2, a3, a4, a5, a6, a7 */
+/***/ "./node_modules/@redux-saga/core/dist/io-427945dd.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/@redux-saga/core/dist/io-427945dd.js ***!
+  \***********************************************************/
+/*! exports provided: $, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, _, a, a0, a1, a2, a3, a4, a5, a6, a7, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return kTrue; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return expanding; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return check; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return none; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return once; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return remove; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return internalErr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return TAKE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return PUT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return ALL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return RACE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return CALL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return CPS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return FORK; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return JOIN; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return CANCEL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return SELECT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return ACTION_CHANNEL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return CANCELLED; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return FLUSH; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "u", function() { return GET_CONTEXT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "v", function() { return SET_CONTEXT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "w", function() { return getMetaInfo; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "x", function() { return noop; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "y", function() { return createAllStyleChildCallbacks; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "z", function() { return createEmptyArray; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "A", function() { return assignWithSymbols; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "B", function() { return makeIterator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "C", function() { return shouldComplete; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "D", function() { return flatMap; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "E", function() { return getLocation; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "F", function() { return createSetContextWarning; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "G", function() { return asyncIteratorSymbol; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H", function() { return shouldCancel; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "I", function() { return shouldTerminate; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "J", function() { return logError; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "K", function() { return wrapSagaDispatch; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "L", function() { return identity; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "M", function() { return take; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "N", function() { return fork; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "O", function() { return cancel; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "P", function() { return call; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Q", function() { return actionChannel; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "R", function() { return sliding; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "S", function() { return delay; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "T", function() { return race; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "U", function() { return buffers; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "V", function() { return detach; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "$", function() { return apply; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "A", function() { return ALL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "B", function() { return logError; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "C", function() { return CALL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "D", function() { return wrapSagaDispatch; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "E", function() { return identity; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "F", function() { return FORK; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "G", function() { return GET_CONTEXT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H", function() { return buffers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "I", function() { return detach; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "J", function() { return JOIN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "K", function() { return take; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "L", function() { return fork; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "M", function() { return cancel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "N", function() { return call; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "O", function() { return actionChannel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "P", function() { return PUT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Q", function() { return sliding; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "R", function() { return RACE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "S", function() { return SELECT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "T", function() { return TAKE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "U", function() { return delay; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "V", function() { return race; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "W", function() { return effectTypes; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "X", function() { return takeMaybe; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Y", function() { return put; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Z", function() { return putResolve; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_", function() { return all; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "$", function() { return apply; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CPS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a0", function() { return cps; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a1", function() { return spawn; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a2", function() { return join; });
@@ -24850,6 +24825,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a5", function() { return flush; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a6", function() { return getContext; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a7", function() { return setContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return CANCEL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return check; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return ACTION_CHANNEL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return expanding; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return CANCELLED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return FLUSH; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return SET_CONTEXT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return internalErr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return getMetaInfo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return kTrue; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return createAllStyleChildCallbacks; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return createEmptyArray; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return none; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return once; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return assignWithSymbols; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return makeIterator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return remove; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return shouldComplete; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return noop; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "u", function() { return flatMap; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "v", function() { return getLocation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "w", function() { return createSetContextWarning; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "x", function() { return asyncIteratorSymbol; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "y", function() { return shouldCancel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "z", function() { return shouldTerminate; });
 /* harmony import */ var _redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @redux-saga/symbols */ "./node_modules/@redux-saga/symbols/dist/redux-saga-symbols.esm.js");
 /* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
 /* harmony import */ var _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @redux-saga/is */ "./node_modules/@redux-saga/is/dist/redux-saga-is.esm.js");
@@ -24867,7 +24867,18 @@ var konst = function konst(v) {
 var kTrue =
 /*#__PURE__*/
 konst(true);
+
 var noop = function noop() {};
+
+if ( true && typeof Proxy !== 'undefined') {
+  noop =
+  /*#__PURE__*/
+  new Proxy(noop, {
+    set: function set() {
+      throw internalErr('There was an attempt to assign a property to internal `noop` function.');
+    }
+  });
+}
 var identity = function identity(v) {
   return v;
 };
@@ -25198,7 +25209,7 @@ var effectTypes = /*#__PURE__*/Object.freeze({
   SET_CONTEXT: SET_CONTEXT
 });
 
-var TEST_HINT = '\n(HINT: if you are getting this errors in tests, consider using createMockTask from @redux-saga/testing-utils)';
+var TEST_HINT = '\n(HINT: if you are getting these errors in tests, consider using createMockTask from @redux-saga/testing-utils)';
 
 var makeEffect = function makeEffect(type, payload) {
   var _ref;
@@ -25528,17 +25539,17 @@ call.bind(null, _redux_saga_delay_p__WEBPACK_IMPORTED_MODULE_3__["default"]);
 /*!*******************************************************************!*\
   !*** ./node_modules/@redux-saga/core/dist/redux-saga-core.esm.js ***!
   \*******************************************************************/
-/*! exports provided: CANCEL, SAGA_LOCATION, buffers, detach, default, runSaga, END, isEnd, eventChannel, channel, multicastChannel, stdChannel */
+/*! exports provided: CANCEL, SAGA_LOCATION, buffers, detach, default, END, channel, eventChannel, isEnd, multicastChannel, runSaga, stdChannel */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "runSaga", function() { return runSaga; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "END", function() { return END; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isEnd", function() { return isEnd; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "eventChannel", function() { return eventChannel; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "channel", function() { return channel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "eventChannel", function() { return eventChannel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isEnd", function() { return isEnd; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "multicastChannel", function() { return multicastChannel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "runSaga", function() { return runSaga; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stdChannel", function() { return stdChannel; });
 /* harmony import */ var _redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @redux-saga/symbols */ "./node_modules/@redux-saga/symbols/dist/redux-saga-symbols.esm.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CANCEL", function() { return _redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__["CANCEL"]; });
@@ -25548,10 +25559,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
 /* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
 /* harmony import */ var _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @redux-saga/is */ "./node_modules/@redux-saga/is/dist/redux-saga-is.esm.js");
-/* harmony import */ var _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./chunk-e922c950.js */ "./node_modules/@redux-saga/core/dist/chunk-e922c950.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "buffers", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["U"]; });
+/* harmony import */ var _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./io-427945dd.js */ "./node_modules/@redux-saga/core/dist/io-427945dd.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "buffers", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["H"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "detach", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["V"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "detach", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["I"]; });
 
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _redux_saga_deferred__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @redux-saga/deferred */ "./node_modules/@redux-saga/deferred/dist/redux-saga-deferred.esm.js");
@@ -25669,7 +25680,7 @@ var symbol = function symbol(pattern) {
   };
 };
 var wildcard = function wildcard() {
-  return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["a"];
+  return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["k"];
 };
 function matcher(pattern) {
   // prettier-ignore
@@ -25693,30 +25704,30 @@ var INVALID_BUFFER = 'invalid buffer passed to channel factory function';
 var UNDEFINED_INPUT_ERROR = "Saga or channel was provided with an undefined action\nHints:\n  - check that your Action Creator returns a non-undefined value\n  - if the Saga was started using runSaga, check that your subscribe source provides the action to its listeners";
 function channel(buffer$1) {
   if (buffer$1 === void 0) {
-    buffer$1 = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["b"])();
+    buffer$1 = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["e"])();
   }
 
   var closed = false;
   var takers = [];
 
   if (true) {
-    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(buffer$1, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["buffer"], INVALID_BUFFER);
+    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(buffer$1, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["buffer"], INVALID_BUFFER);
   }
 
   function checkForbiddenStates() {
     if (closed && takers.length) {
-      throw Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["g"])(CLOSED_CHANNEL_WITH_TAKERS);
+      throw Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["i"])(CLOSED_CHANNEL_WITH_TAKERS);
     }
 
     if (takers.length && !buffer$1.isEmpty()) {
-      throw Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["g"])('Cannot have pending takers with non empty buffer');
+      throw Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["i"])('Cannot have pending takers with non empty buffer');
     }
   }
 
   function put(input) {
     if (true) {
       checkForbiddenStates();
-      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(input, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["notUndef"], UNDEFINED_INPUT_ERROR);
+      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(input, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["notUndef"], UNDEFINED_INPUT_ERROR);
     }
 
     if (closed) {
@@ -25734,7 +25745,7 @@ function channel(buffer$1) {
   function take(cb) {
     if (true) {
       checkForbiddenStates();
-      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(cb, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], "channel.take's callback must be a function");
+      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(cb, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], "channel.take's callback must be a function");
     }
 
     if (closed && buffer$1.isEmpty()) {
@@ -25745,7 +25756,7 @@ function channel(buffer$1) {
       takers.push(cb);
 
       cb.cancel = function () {
-        Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["f"])(takers, cb);
+        Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["r"])(takers, cb);
       };
     }
   }
@@ -25753,7 +25764,7 @@ function channel(buffer$1) {
   function flush(cb) {
     if (true) {
       checkForbiddenStates();
-      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(cb, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], "channel.flush' callback must be a function");
+      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(cb, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], "channel.flush' callback must be a function");
     }
 
     if (closed && buffer$1.isEmpty()) {
@@ -25792,7 +25803,7 @@ function channel(buffer$1) {
 }
 function eventChannel(subscribe, buffer) {
   if (buffer === void 0) {
-    buffer = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["d"])();
+    buffer = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["n"])();
   }
 
   var closed = false;
@@ -25823,10 +25834,10 @@ function eventChannel(subscribe, buffer) {
   });
 
   if (true) {
-    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(unsubscribe, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'in eventChannel: subscribe should return a function to unsubscribe');
+    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(unsubscribe, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'in eventChannel: subscribe should return a function to unsubscribe');
   }
 
-  unsubscribe = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["e"])(unsubscribe);
+  unsubscribe = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["o"])(unsubscribe);
 
   if (closed) {
     unsubscribe();
@@ -25847,7 +25858,7 @@ function multicastChannel() {
 
   function checkForbiddenStates() {
     if (closed && nextTakers.length) {
-      throw Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["g"])(CLOSED_CHANNEL_WITH_TAKERS);
+      throw Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["i"])(CLOSED_CHANNEL_WITH_TAKERS);
     }
   }
 
@@ -25875,7 +25886,7 @@ function multicastChannel() {
   return _ref = {}, _ref[_redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__["MULTICAST"]] = true, _ref.put = function put(input) {
     if (true) {
       checkForbiddenStates();
-      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(input, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["notUndef"], UNDEFINED_INPUT_ERROR);
+      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(input, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["notUndef"], UNDEFINED_INPUT_ERROR);
     }
 
     if (closed) {
@@ -25914,9 +25925,9 @@ function multicastChannel() {
     cb[_redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__["MATCH"]] = matcher;
     ensureCanMutateNextTakers();
     nextTakers.push(cb);
-    cb.cancel = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["e"])(function () {
+    cb.cancel = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["o"])(function () {
       ensureCanMutateNextTakers();
-      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["f"])(nextTakers, cb);
+      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["r"])(nextTakers, cb);
     });
   }, _ref.close = close, _ref;
 }
@@ -25956,7 +25967,7 @@ function resolvePromise(promise, cb) {
 }
 
 var current = 0;
-var nextEffectId = (function () {
+var nextSagaId = (function () {
   return ++current;
 });
 
@@ -25969,7 +25980,7 @@ function getIteratorMetaInfo(iterator, fn) {
     };
   }
 
-  return Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["w"])(fn);
+  return Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["j"])(fn);
 }
 
 function createTaskIterator(_ref) {
@@ -26003,11 +26014,11 @@ function createTaskIterator(_ref) {
       }
     };
 
-    return Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["B"])(next);
+    return Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["q"])(next);
   } catch (err) {
     // do not bubble up synchronous failures for detached forks
     // instead create a failed task. See #152 and #441
-    return Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["B"])(function () {
+    return Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["q"])(function () {
       throw err;
     });
   }
@@ -26088,7 +26099,7 @@ function runCallEffect(env, _ref4, cb, _ref5) {
 
     if (Object(_redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["iterator"])(result)) {
       // resolve iterator
-      proc(env, result, task.context, current, Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["w"])(fn),
+      proc(env, result, task.context, current, Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["j"])(fn),
       /* isRoot */
       false, cb);
       return;
@@ -26140,7 +26151,7 @@ function runForkEffect(env, _ref7, cb, _ref8) {
   });
   var meta = getIteratorMetaInfo(taskIterator, fn);
   immediately(function () {
-    var child = proc(env, taskIterator, parent.context, current, meta, detached, _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"]);
+    var child = proc(env, taskIterator, parent.context, current, meta, detached, undefined);
 
     if (detached) {
       cb(child);
@@ -26168,7 +26179,7 @@ function runJoinEffect(env, taskOrTasks, cb, _ref9) {
       };
 
       cb.cancel = function () {
-        if (taskToJoin.isRunning()) Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["f"])(taskToJoin.joiners, joiner);
+        if (taskToJoin.isRunning()) Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["r"])(taskToJoin.joiners, joiner);
       };
 
       taskToJoin.joiners.push(joiner);
@@ -26187,7 +26198,7 @@ function runJoinEffect(env, taskOrTasks, cb, _ref9) {
       return;
     }
 
-    var childCallbacks = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["y"])(taskOrTasks, cb);
+    var childCallbacks = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["l"])(taskOrTasks, cb);
     taskOrTasks.forEach(function (t, i) {
       joinSingleTask(t, childCallbacks[i]);
     });
@@ -26226,7 +26237,7 @@ function runAllEffect(env, effects, cb, _ref11) {
     return;
   }
 
-  var childCallbacks = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["y"])(effects, cb);
+  var childCallbacks = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["l"])(effects, cb);
   keys.forEach(function (key) {
     digestEffect(effects[key], effectId, childCallbacks[key], key);
   });
@@ -26236,7 +26247,7 @@ function runRaceEffect(env, effects, cb, _ref12) {
   var digestEffect = _ref12.digestEffect;
   var effectId = current;
   var keys = Object.keys(effects);
-  var response = Object(_redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["array"])(effects) ? Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["z"])(keys.length) : {};
+  var response = Object(_redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["array"])(effects) ? Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["m"])(keys.length) : {};
   var childCbs = {};
   var completed = false;
   keys.forEach(function (key) {
@@ -26245,7 +26256,7 @@ function runRaceEffect(env, effects, cb, _ref12) {
         return;
       }
 
-      if (isErr || Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["C"])(res)) {
+      if (isErr || Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["s"])(res)) {
         // Race Auto cancellation
         cb.cancel();
         cb(res, isErr);
@@ -26257,7 +26268,7 @@ function runRaceEffect(env, effects, cb, _ref12) {
       }
     };
 
-    chCbAtKey.cancel = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
+    chCbAtKey.cancel = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
     childCbs[key] = chCbAtKey;
   });
 
@@ -26333,11 +26344,11 @@ function runGetContextEffect(env, prop, cb, _ref16) {
 
 function runSetContextEffect(env, props, cb, _ref17) {
   var task = _ref17.task;
-  Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["A"])(task.context, props);
+  Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["p"])(task.context, props);
   cb();
 }
 
-var effectRunnerMap = (_effectRunnerMap = {}, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["h"]] = runTakeEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["i"]] = runPutEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["j"]] = runAllEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["k"]] = runRaceEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["l"]] = runCallEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["m"]] = runCPSEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["n"]] = runForkEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["o"]] = runJoinEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["p"]] = runCancelEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["q"]] = runSelectEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["r"]] = runChannelEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["s"]] = runCancelledEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["t"]] = runFlushEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["u"]] = runGetContextEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["v"]] = runSetContextEffect, _effectRunnerMap);
+var effectRunnerMap = (_effectRunnerMap = {}, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["T"]] = runTakeEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["P"]] = runPutEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["A"]] = runAllEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["R"]] = runRaceEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["C"]] = runCallEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["a"]] = runCPSEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["F"]] = runForkEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["J"]] = runJoinEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["b"]] = runCancelEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["S"]] = runSelectEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["d"]] = runChannelEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["f"]] = runCancelledEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["g"]] = runFlushEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["G"]] = runGetContextEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["h"]] = runSetContextEffect, _effectRunnerMap);
 
 /**
  Used to track a parent task and its forks
@@ -26379,8 +26390,8 @@ function forkQueue(mainTask, onAbort, cont) {
         return;
       }
 
-      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["f"])(tasks, task);
-      task.cont = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
+      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["r"])(tasks, task);
+      task.cont = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
 
       if (isErr) {
         abort(res);
@@ -26404,7 +26415,7 @@ function forkQueue(mainTask, onAbort, cont) {
 
     completed = true;
     tasks.forEach(function (t) {
-      t.cont = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
+      t.cont = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
       t.cancel();
     });
     tasks = [];
@@ -26425,7 +26436,7 @@ function formatLocation(fileName, lineNumber) {
 }
 
 function effectLocationAsString(effect) {
-  var location = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["E"])(effect);
+  var location = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["v"])(effect);
 
   if (location) {
     var code = location.code,
@@ -26450,7 +26461,7 @@ function sagaLocationAsString(sagaMeta) {
 }
 
 function cancelledTasksAsString(sagaStack) {
-  var cancelledTasks = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["D"])(function (i) {
+  var cancelledTasks = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["u"])(function (i) {
     return i.cancelledTasks;
   }, sagaStack);
 
@@ -26499,6 +26510,10 @@ var toString = function toString() {
 
 function newTask(env, mainTask, parentContext, parentEffectId, meta, isRoot, cont) {
   var _task;
+
+  if (cont === void 0) {
+    cont = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
+  }
 
   var status = RUNNING;
   var taskResult;
@@ -26572,10 +26587,10 @@ function newTask(env, mainTask, parentContext, parentEffectId, meta, isRoot, con
 
   function setContext(props) {
     if (true) {
-      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(props, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["object"], Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["F"])('task', props));
+      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(props, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["object"], Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["w"])('task', props));
     }
 
-    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["A"])(context, props);
+    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["p"])(context, props);
   }
 
   function toPromise() {
@@ -26609,7 +26624,7 @@ function newTask(env, mainTask, parentContext, parentEffectId, meta, isRoot, con
 }
 
 function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont) {
-  if ( true && iterator$1[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["G"]]) {
+  if ( true && iterator$1[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["x"]]) {
     throw new Error("redux-saga doesn't support async generators, please use only regular ones");
   }
 
@@ -26620,28 +26635,27 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
     on it. It allows propagating cancellation to child effects
   **/
 
-  next.cancel = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
+  next.cancel = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
   /** Creates a main task to track the main flow */
 
   var mainTask = {
     meta: meta,
     cancel: cancelMain,
     status: RUNNING
-    /**
-     Creates a new task descriptor for this generator.
-     A task is the aggregation of it's mainTask and all it's forked tasks.
-     **/
-
   };
+  /**
+   Creates a new task descriptor for this generator.
+   A task is the aggregation of it's mainTask and all it's forked tasks.
+   **/
+
   var task = newTask(env, mainTask, parentContext, parentEffectId, meta, isRoot, cont);
   var executingContext = {
     task: task,
     digestEffect: digestEffect
-    /**
-      cancellation of the main task. We'll simply resume the Generator with a TASK_CANCEL
-    **/
-
   };
+  /**
+    cancellation of the main task. We'll simply resume the Generator with a TASK_CANCEL
+  **/
 
   function cancelMain() {
     if (mainTask.status === RUNNING) {
@@ -26655,7 +26669,10 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
   **/
 
 
-  cont.cancel = task.cancel; // kicks up the generator
+  if (cont) {
+    cont.cancel = task.cancel;
+  } // kicks up the generator
+
 
   next(); // then return the task descriptor to the caller
 
@@ -26678,7 +26695,7 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
         result = iterator$1.throw(arg); // user handled the error, we can clear bookkept values
 
         clear();
-      } else if (Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["H"])(arg)) {
+      } else if (Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["y"])(arg)) {
         /**
           getting TASK_CANCEL automatically cancels the main task
           We can get this value here
@@ -26700,7 +26717,7 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
           done: true,
           value: _redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__["TASK_CANCEL"]
         };
-      } else if (Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["I"])(arg)) {
+      } else if (Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["z"])(arg)) {
         // We get TERMINATE flag, i.e. by taking from a channel that ended using `take` (and not `takem` used to trap End of channels)
         result = Object(_redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"])(iterator$1.return) ? iterator$1.return() : {
           done: true
@@ -26765,7 +26782,7 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
       label = '';
     }
 
-    var effectId = nextEffectId();
+    var effectId = nextSagaId();
     env.sagaMonitor && env.sagaMonitor.effectTriggered({
       effectId: effectId,
       parentEffectId: parentEffectId,
@@ -26786,7 +26803,7 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
       }
 
       effectSettled = true;
-      cb.cancel = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"]; // defensive measure
+      cb.cancel = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"]; // defensive measure
 
       if (env.sagaMonitor) {
         if (isErr) {
@@ -26804,7 +26821,7 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
     } // tracks down the current cancel
 
 
-    currCb.cancel = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"]; // setup cancellation logic on the parent cb
+    currCb.cancel = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"]; // setup cancellation logic on the parent cb
 
     cb.cancel = function () {
       // prevents cancelling an already completed effect
@@ -26815,7 +26832,7 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
       effectSettled = true;
       currCb.cancel(); // propagates cancel downward
 
-      currCb.cancel = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"]; // defensive measure
+      currCb.cancel = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"]; // defensive measure
 
       env.sagaMonitor && env.sagaMonitor.effectCancelled(effectId);
     };
@@ -26836,32 +26853,32 @@ function runSaga(_ref, saga) {
       sagaMonitor = _ref.sagaMonitor,
       effectMiddlewares = _ref.effectMiddlewares,
       _ref$onError = _ref.onError,
-      onError = _ref$onError === void 0 ? _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["J"] : _ref$onError;
+      onError = _ref$onError === void 0 ? _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["B"] : _ref$onError;
+
+  if (true) {
+    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(saga, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], NON_GENERATOR_ERR);
+  }
 
   for (var _len = arguments.length, args = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
     args[_key - 2] = arguments[_key];
   }
 
-  if (true) {
-    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(saga, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], NON_GENERATOR_ERR);
-  }
-
   var iterator$1 = saga.apply(void 0, args);
 
   if (true) {
-    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(iterator$1, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["iterator"], NON_GENERATOR_ERR);
+    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(iterator$1, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["iterator"], NON_GENERATOR_ERR);
   }
 
-  var effectId = nextEffectId();
+  var effectId = nextSagaId();
 
   if (sagaMonitor) {
     // monitors are expected to have a certain interface, let's fill-in any missing ones
-    sagaMonitor.rootSagaStarted = sagaMonitor.rootSagaStarted || _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
-    sagaMonitor.effectTriggered = sagaMonitor.effectTriggered || _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
-    sagaMonitor.effectResolved = sagaMonitor.effectResolved || _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
-    sagaMonitor.effectRejected = sagaMonitor.effectRejected || _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
-    sagaMonitor.effectCancelled = sagaMonitor.effectCancelled || _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
-    sagaMonitor.actionDispatched = sagaMonitor.actionDispatched || _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
+    sagaMonitor.rootSagaStarted = sagaMonitor.rootSagaStarted || _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
+    sagaMonitor.effectTriggered = sagaMonitor.effectTriggered || _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
+    sagaMonitor.effectResolved = sagaMonitor.effectResolved || _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
+    sagaMonitor.effectRejected = sagaMonitor.effectRejected || _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
+    sagaMonitor.effectCancelled = sagaMonitor.effectCancelled || _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
+    sagaMonitor.actionDispatched = sagaMonitor.actionDispatched || _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
     sagaMonitor.rootSagaStarted({
       effectId: effectId,
       saga: saga,
@@ -26871,22 +26888,22 @@ function runSaga(_ref, saga) {
 
   if (true) {
     if (Object(_redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["notUndef"])(dispatch)) {
-      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(dispatch, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'dispatch must be a function');
+      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(dispatch, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'dispatch must be a function');
     }
 
     if (Object(_redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["notUndef"])(getState)) {
-      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(getState, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'getState must be a function');
+      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(getState, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'getState must be a function');
     }
 
     if (Object(_redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["notUndef"])(effectMiddlewares)) {
       var MIDDLEWARE_TYPE_ERROR = 'effectMiddlewares must be an array of functions';
-      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(effectMiddlewares, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["array"], MIDDLEWARE_TYPE_ERROR);
+      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(effectMiddlewares, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["array"], MIDDLEWARE_TYPE_ERROR);
       effectMiddlewares.forEach(function (effectMiddleware) {
-        return Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(effectMiddleware, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], MIDDLEWARE_TYPE_ERROR);
+        return Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(effectMiddleware, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], MIDDLEWARE_TYPE_ERROR);
       });
     }
 
-    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(onError, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'onError passed to the redux-saga is not a function!');
+    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(onError, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'onError passed to the redux-saga is not a function!');
   }
 
   var finalizeRunEffect;
@@ -26904,21 +26921,21 @@ function runSaga(_ref, saga) {
       };
     };
   } else {
-    finalizeRunEffect = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["L"];
+    finalizeRunEffect = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["E"];
   }
 
   var env = {
     channel: channel,
-    dispatch: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["K"])(dispatch),
+    dispatch: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["D"])(dispatch),
     getState: getState,
     sagaMonitor: sagaMonitor,
     onError: onError,
     finalizeRunEffect: finalizeRunEffect
   };
   return immediately(function () {
-    var task = proc(env, iterator$1, context, effectId, Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["w"])(saga),
+    var task = proc(env, iterator$1, context, effectId, Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["j"])(saga),
     /* isRoot */
-    true, _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"]);
+    true, undefined);
 
     if (sagaMonitor) {
       sagaMonitor.effectResolved(effectId, task);
@@ -26944,7 +26961,7 @@ function sagaMiddlewareFactory(_ref) {
   var boundRunSaga;
 
   if (true) {
-    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(channel, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["channel"], 'options.channel passed to the Saga middleware is not a channel');
+    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(channel, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["channel"], 'options.channel passed to the Saga middleware is not a channel');
   }
 
   function sagaMiddleware(_ref3) {
@@ -26981,10 +26998,10 @@ function sagaMiddlewareFactory(_ref) {
 
   sagaMiddleware.setContext = function (props) {
     if (true) {
-      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(props, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["object"], Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["F"])('sagaMiddleware', props));
+      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(props, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["object"], Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["w"])('sagaMiddleware', props));
     }
 
-    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["A"])(context, props);
+    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["p"])(context, props);
   };
 
   return sagaMiddleware;
@@ -27000,7 +27017,7 @@ function sagaMiddlewareFactory(_ref) {
 /*!**********************************************************************!*\
   !*** ./node_modules/@redux-saga/core/dist/redux-saga-effects.esm.js ***!
   \**********************************************************************/
-/*! exports provided: effectTypes, take, takeMaybe, put, putResolve, all, race, call, apply, cps, fork, spawn, join, cancel, select, actionChannel, cancelled, flush, getContext, setContext, delay, debounce, retry, takeEvery, takeLatest, takeLeading, throttle */
+/*! exports provided: actionChannel, all, apply, call, cancel, cancelled, cps, delay, effectTypes, flush, fork, getContext, join, put, putResolve, race, select, setContext, spawn, take, takeMaybe, debounce, retry, takeEvery, takeLatest, takeLeading, throttle */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -27014,48 +27031,48 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @redux-saga/symbols */ "./node_modules/@redux-saga/symbols/dist/redux-saga-symbols.esm.js");
 /* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
 /* harmony import */ var _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @redux-saga/is */ "./node_modules/@redux-saga/is/dist/redux-saga-is.esm.js");
-/* harmony import */ var _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./chunk-e922c950.js */ "./node_modules/@redux-saga/core/dist/chunk-e922c950.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "effectTypes", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["W"]; });
+/* harmony import */ var _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./io-427945dd.js */ "./node_modules/@redux-saga/core/dist/io-427945dd.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "actionChannel", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["O"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "take", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["M"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "all", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["_"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "takeMaybe", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["X"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "apply", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["$"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "put", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["Y"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "call", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["N"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "putResolve", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["Z"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancel", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["M"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "all", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["_"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancelled", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a4"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "race", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["T"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cps", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a0"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "call", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["P"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "delay", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["U"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "apply", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["$"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "effectTypes", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["W"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cps", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a0"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "flush", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a5"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "fork", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "fork", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "spawn", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a1"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getContext", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a6"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "join", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a2"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "join", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a2"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancel", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["O"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "put", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["Y"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "select", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a3"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "putResolve", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["Z"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "actionChannel", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["Q"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "race", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["V"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancelled", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a4"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "select", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a3"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "flush", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a5"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "setContext", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a7"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getContext", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a6"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "spawn", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a1"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "setContext", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a7"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "take", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["K"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "delay", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["S"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "takeMaybe", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["X"]; });
 
 /* harmony import */ var _redux_saga_delay_p__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @redux-saga/delay-p */ "./node_modules/@redux-saga/delay-p/dist/redux-saga-delay-p.esm.js");
 
@@ -27113,7 +27130,7 @@ function fsmIterator(fsm, startState, name) {
     }
   }
 
-  return Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["B"])(next, function (error) {
+  return Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["q"])(next, function (error) {
     return next(null, error);
   }, name);
 }
@@ -27125,13 +27142,13 @@ function takeEvery(patternOrChannel, worker) {
 
   var yTake = {
     done: false,
-    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["M"])(patternOrChannel)
+    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["K"])(patternOrChannel)
   };
 
   var yFork = function yFork(ac) {
     return {
       done: false,
-      value: _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [worker].concat(args, [ac]))
+      value: _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [worker].concat(args, [ac]))
     };
   };
 
@@ -27164,20 +27181,20 @@ function takeLatest(patternOrChannel, worker) {
 
   var yTake = {
     done: false,
-    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["M"])(patternOrChannel)
+    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["K"])(patternOrChannel)
   };
 
   var yFork = function yFork(ac) {
     return {
       done: false,
-      value: _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [worker].concat(args, [ac]))
+      value: _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [worker].concat(args, [ac]))
     };
   };
 
   var yCancel = function yCancel(task) {
     return {
       done: false,
-      value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["O"])(task)
+      value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["M"])(task)
     };
   };
 
@@ -27226,13 +27243,13 @@ function takeLeading(patternOrChannel, worker) {
 
   var yTake = {
     done: false,
-    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["M"])(patternOrChannel)
+    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["K"])(patternOrChannel)
   };
 
   var yCall = function yCall(ac) {
     return {
       done: false,
-      value: _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["P"].apply(void 0, [worker].concat(args, [ac]))
+      value: _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [worker].concat(args, [ac]))
     };
   };
 
@@ -27267,26 +27284,26 @@ function throttle(delayLength, pattern, worker) {
   var action, channel;
   var yActionChannel = {
     done: false,
-    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["Q"])(pattern, Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["R"])(1))
+    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["O"])(pattern, Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["Q"])(1))
   };
 
   var yTake = function yTake() {
     return {
       done: false,
-      value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["M"])(channel)
+      value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["K"])(channel)
     };
   };
 
   var yFork = function yFork(ac) {
     return {
       done: false,
-      value: _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [worker].concat(args, [ac]))
+      value: _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [worker].concat(args, [ac]))
     };
   };
 
   var yDelay = {
     done: false,
-    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["S"])(delayLength)
+    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["U"])(delayLength)
   };
 
   var setAction = function setAction(ac) {
@@ -27336,11 +27353,11 @@ function retry(maxTries, delayLength, fn) {
 
   var yCall = {
     done: false,
-    value: _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["P"].apply(void 0, [fn].concat(args))
+    value: _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [fn].concat(args))
   };
   var yDelay = {
     done: false,
-    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["S"])(delayLength)
+    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["U"])(delayLength)
   };
   return fsmIterator({
     q1: function q1() {
@@ -27378,20 +27395,20 @@ function debounceHelper(delayLength, patternOrChannel, worker) {
   var action, raceOutput;
   var yTake = {
     done: false,
-    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["M"])(patternOrChannel)
+    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["K"])(patternOrChannel)
   };
   var yRace = {
     done: false,
-    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["T"])({
-      action: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["M"])(patternOrChannel),
-      debounce: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["S"])(delayLength)
+    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["V"])({
+      action: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["K"])(patternOrChannel),
+      debounce: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["U"])(delayLength)
     })
   };
 
   var yFork = function yFork(ac) {
     return {
       done: false,
-      value: _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [worker].concat(args, [ac]))
+      value: _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [worker].concat(args, [ac]))
     };
   };
 
@@ -27439,8 +27456,8 @@ function debounceHelper(delayLength, patternOrChannel, worker) {
 }
 
 var validateTakeEffect = function validateTakeEffect(fn, patternOrChannel, worker) {
-  Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["c"])(patternOrChannel, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], fn.name + " requires a pattern or channel");
-  Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["c"])(worker, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], fn.name + " requires a saga parameter");
+  Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["c"])(patternOrChannel, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], fn.name + " requires a pattern or channel");
+  Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["c"])(worker, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], fn.name + " requires a saga parameter");
 };
 
 function takeEvery$1(patternOrChannel, worker) {
@@ -27452,7 +27469,7 @@ function takeEvery$1(patternOrChannel, worker) {
     args[_key - 2] = arguments[_key];
   }
 
-  return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [takeEvery, patternOrChannel, worker].concat(args));
+  return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [takeEvery, patternOrChannel, worker].concat(args));
 }
 function takeLatest$1(patternOrChannel, worker) {
   if (true) {
@@ -27463,7 +27480,7 @@ function takeLatest$1(patternOrChannel, worker) {
     args[_key2 - 2] = arguments[_key2];
   }
 
-  return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [takeLatest, patternOrChannel, worker].concat(args));
+  return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [takeLatest, patternOrChannel, worker].concat(args));
 }
 function takeLeading$1(patternOrChannel, worker) {
   if (true) {
@@ -27474,33 +27491,33 @@ function takeLeading$1(patternOrChannel, worker) {
     args[_key3 - 2] = arguments[_key3];
   }
 
-  return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [takeLeading, patternOrChannel, worker].concat(args));
+  return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [takeLeading, patternOrChannel, worker].concat(args));
 }
 function throttle$1(ms, pattern, worker) {
   if (true) {
-    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["c"])(pattern, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], 'throttle requires a pattern');
-    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["c"])(worker, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], 'throttle requires a saga parameter');
+    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["c"])(pattern, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], 'throttle requires a pattern');
+    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["c"])(worker, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], 'throttle requires a saga parameter');
   }
 
   for (var _len4 = arguments.length, args = new Array(_len4 > 3 ? _len4 - 3 : 0), _key4 = 3; _key4 < _len4; _key4++) {
     args[_key4 - 3] = arguments[_key4];
   }
 
-  return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [throttle, ms, pattern, worker].concat(args));
+  return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [throttle, ms, pattern, worker].concat(args));
 }
 function retry$1(maxTries, delayLength, worker) {
   for (var _len5 = arguments.length, args = new Array(_len5 > 3 ? _len5 - 3 : 0), _key5 = 3; _key5 < _len5; _key5++) {
     args[_key5 - 3] = arguments[_key5];
   }
 
-  return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["P"].apply(void 0, [retry, maxTries, delayLength, worker].concat(args));
+  return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [retry, maxTries, delayLength, worker].concat(args));
 }
 function debounce(delayLength, pattern, worker) {
   for (var _len6 = arguments.length, args = new Array(_len6 > 3 ? _len6 - 3 : 0), _key6 = 3; _key6 < _len6; _key6++) {
     args[_key6 - 3] = arguments[_key6];
   }
 
-  return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [debounceHelper, delayLength, pattern, worker].concat(args));
+  return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [debounceHelper, delayLength, pattern, worker].concat(args));
 }
 
 
@@ -27580,31 +27597,31 @@ function delayP(ms, val) {
 /*!***************************************************************!*\
   !*** ./node_modules/@redux-saga/is/dist/redux-saga-is.esm.js ***!
   \***************************************************************/
-/*! exports provided: undef, notUndef, func, number, string, array, object, promise, iterator, iterable, task, sagaAction, observable, buffer, pattern, channel, stringableFunc, symbol, multicast, effect */
+/*! exports provided: array, buffer, channel, effect, func, iterable, iterator, multicast, notUndef, number, object, observable, pattern, promise, sagaAction, string, stringableFunc, symbol, task, undef */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "undef", function() { return undef; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "notUndef", function() { return notUndef; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "func", function() { return func; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "number", function() { return number; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "string", function() { return string; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "array", function() { return array; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "object", function() { return object; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "promise", function() { return promise; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "iterator", function() { return iterator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "iterable", function() { return iterable; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "task", function() { return task; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sagaAction", function() { return sagaAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "observable", function() { return observable; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buffer", function() { return buffer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pattern", function() { return pattern; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "channel", function() { return channel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "effect", function() { return effect; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "func", function() { return func; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "iterable", function() { return iterable; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "iterator", function() { return iterator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "multicast", function() { return multicast; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "notUndef", function() { return notUndef; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "number", function() { return number; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "object", function() { return object; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "observable", function() { return observable; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pattern", function() { return pattern; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "promise", function() { return promise; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sagaAction", function() { return sagaAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "string", function() { return string; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stringableFunc", function() { return stringableFunc; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "symbol", function() { return symbol; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "multicast", function() { return multicast; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "effect", function() { return effect; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "task", function() { return task; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "undef", function() { return undef; });
 /* harmony import */ var _redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @redux-saga/symbols */ "./node_modules/@redux-saga/symbols/dist/redux-saga-symbols.esm.js");
 
 
@@ -27676,7 +27693,7 @@ var effect = function effect(eff) {
 /*!*************************************************************************!*\
   !*** ./node_modules/@redux-saga/symbols/dist/redux-saga-symbols.esm.js ***!
   \*************************************************************************/
-/*! exports provided: CANCEL, CHANNEL_END_TYPE, IO, MATCH, MULTICAST, SAGA_ACTION, SELF_CANCELLATION, TASK, TASK_CANCEL, TERMINATE, SAGA_LOCATION */
+/*! exports provided: CANCEL, CHANNEL_END_TYPE, IO, MATCH, MULTICAST, SAGA_ACTION, SAGA_LOCATION, SELF_CANCELLATION, TASK, TASK_CANCEL, TERMINATE */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -27687,11 +27704,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MATCH", function() { return MATCH; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MULTICAST", function() { return MULTICAST; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SAGA_ACTION", function() { return SAGA_ACTION; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SAGA_LOCATION", function() { return SAGA_LOCATION; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SELF_CANCELLATION", function() { return SELF_CANCELLATION; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TASK", function() { return TASK; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TASK_CANCEL", function() { return TASK_CANCEL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TERMINATE", function() { return TERMINATE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SAGA_LOCATION", function() { return SAGA_LOCATION; });
 var createSymbol = function createSymbol(name) {
   return "@@redux-saga/" + name;
 };
@@ -30999,7 +31016,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../process/browser.js */ "./node_modules/process/browser.js?f28c")))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../process/browser.js */ "./node_modules/process/browser.js")))
 
 /***/ }),
 
@@ -31445,7 +31462,7 @@ module.exports = function spread(callback) {
 
 
 var bind = __webpack_require__(/*! ./helpers/bind */ "./node_modules/axios/lib/helpers/bind.js");
-var isBuffer = __webpack_require__(/*! is-buffer */ "./node_modules/axios/node_modules/is-buffer/index.js");
+var isBuffer = __webpack_require__(/*! is-buffer */ "./node_modules/is-buffer/index.js");
 
 /*global toString:true*/
 
@@ -31780,10 +31797,10 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/axios/node_modules/is-buffer/index.js":
-/*!************************************************************!*\
-  !*** ./node_modules/axios/node_modules/is-buffer/index.js ***!
-  \************************************************************/
+/***/ "./node_modules/is-buffer/index.js":
+/*!*****************************************!*\
+  !*** ./node_modules/is-buffer/index.js ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -37553,9 +37570,9 @@ webpackContext.id = "./node_modules/moment/locale sync recursive (nl(\\.js)?)$";
 /***/ }),
 
 /***/ "./node_modules/node-libs-browser/node_modules/inherits/inherits_browser.js":
-/*!****************************************************************************************************************************!*\
-  !*** C:/Ontwik/mijnapp-frontend/MijnApp-Frontend/node_modules/node-libs-browser/node_modules/inherits/inherits_browser.js ***!
-  \****************************************************************************************************************************/
+/*!**********************************************************************************!*\
+  !*** ./node_modules/node-libs-browser/node_modules/inherits/inherits_browser.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -37587,9 +37604,9 @@ if (typeof Object.create === 'function') {
 /***/ }),
 
 /***/ "./node_modules/node-libs-browser/node_modules/util/support/isBufferBrowser.js":
-/*!*******************************************************************************************************************************!*\
-  !*** C:/Ontwik/mijnapp-frontend/MijnApp-Frontend/node_modules/node-libs-browser/node_modules/util/support/isBufferBrowser.js ***!
-  \*******************************************************************************************************************************/
+/*!*************************************************************************************!*\
+  !*** ./node_modules/node-libs-browser/node_modules/util/support/isBufferBrowser.js ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -37603,9 +37620,9 @@ module.exports = function isBuffer(arg) {
 /***/ }),
 
 /***/ "./node_modules/node-libs-browser/node_modules/util/util.js":
-/*!************************************************************************************************************!*\
-  !*** C:/Ontwik/mijnapp-frontend/MijnApp-Frontend/node_modules/node-libs-browser/node_modules/util/util.js ***!
-  \************************************************************************************************************/
+/*!******************************************************************!*\
+  !*** ./node_modules/node-libs-browser/node_modules/util/util.js ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -38313,206 +38330,11 @@ function callbackify(original) {
 }
 exports.callbackify = callbackify;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../process/browser.js */ "./node_modules/process/browser.js?ee10")))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../process/browser.js */ "./node_modules/process/browser.js")))
 
 /***/ }),
 
-/***/ "./node_modules/process/browser.js?ee10":
-/*!***********************************************************************************!*\
-  !*** C:/Ontwik/mijnapp-frontend/MijnApp-Frontend/node_modules/process/browser.js ***!
-  \***********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// shim for using process in browser
-var process = module.exports = {};
-
-// cached from whatever global is present so that test runners that stub it
-// don't break things.  But we need to wrap it in a try catch in case it is
-// wrapped in strict mode code which doesn't define any globals.  It's inside a
-// function because try/catches deoptimize in certain engines.
-
-var cachedSetTimeout;
-var cachedClearTimeout;
-
-function defaultSetTimout() {
-    throw new Error('setTimeout has not been defined');
-}
-function defaultClearTimeout () {
-    throw new Error('clearTimeout has not been defined');
-}
-(function () {
-    try {
-        if (typeof setTimeout === 'function') {
-            cachedSetTimeout = setTimeout;
-        } else {
-            cachedSetTimeout = defaultSetTimout;
-        }
-    } catch (e) {
-        cachedSetTimeout = defaultSetTimout;
-    }
-    try {
-        if (typeof clearTimeout === 'function') {
-            cachedClearTimeout = clearTimeout;
-        } else {
-            cachedClearTimeout = defaultClearTimeout;
-        }
-    } catch (e) {
-        cachedClearTimeout = defaultClearTimeout;
-    }
-} ())
-function runTimeout(fun) {
-    if (cachedSetTimeout === setTimeout) {
-        //normal enviroments in sane situations
-        return setTimeout(fun, 0);
-    }
-    // if setTimeout wasn't available but was latter defined
-    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
-        cachedSetTimeout = setTimeout;
-        return setTimeout(fun, 0);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedSetTimeout(fun, 0);
-    } catch(e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
-            return cachedSetTimeout.call(null, fun, 0);
-        } catch(e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
-            return cachedSetTimeout.call(this, fun, 0);
-        }
-    }
-
-
-}
-function runClearTimeout(marker) {
-    if (cachedClearTimeout === clearTimeout) {
-        //normal enviroments in sane situations
-        return clearTimeout(marker);
-    }
-    // if clearTimeout wasn't available but was latter defined
-    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
-        cachedClearTimeout = clearTimeout;
-        return clearTimeout(marker);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedClearTimeout(marker);
-    } catch (e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
-            return cachedClearTimeout.call(null, marker);
-        } catch (e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
-            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
-            return cachedClearTimeout.call(this, marker);
-        }
-    }
-
-
-
-}
-var queue = [];
-var draining = false;
-var currentQueue;
-var queueIndex = -1;
-
-function cleanUpNextTick() {
-    if (!draining || !currentQueue) {
-        return;
-    }
-    draining = false;
-    if (currentQueue.length) {
-        queue = currentQueue.concat(queue);
-    } else {
-        queueIndex = -1;
-    }
-    if (queue.length) {
-        drainQueue();
-    }
-}
-
-function drainQueue() {
-    if (draining) {
-        return;
-    }
-    var timeout = runTimeout(cleanUpNextTick);
-    draining = true;
-
-    var len = queue.length;
-    while(len) {
-        currentQueue = queue;
-        queue = [];
-        while (++queueIndex < len) {
-            if (currentQueue) {
-                currentQueue[queueIndex].run();
-            }
-        }
-        queueIndex = -1;
-        len = queue.length;
-    }
-    currentQueue = null;
-    draining = false;
-    runClearTimeout(timeout);
-}
-
-process.nextTick = function (fun) {
-    var args = new Array(arguments.length - 1);
-    if (arguments.length > 1) {
-        for (var i = 1; i < arguments.length; i++) {
-            args[i - 1] = arguments[i];
-        }
-    }
-    queue.push(new Item(fun, args));
-    if (queue.length === 1 && !draining) {
-        runTimeout(drainQueue);
-    }
-};
-
-// v8 likes predictible objects
-function Item(fun, array) {
-    this.fun = fun;
-    this.array = array;
-}
-Item.prototype.run = function () {
-    this.fun.apply(null, this.array);
-};
-process.title = 'browser';
-process.browser = true;
-process.env = {};
-process.argv = [];
-process.version = ''; // empty string to avoid regexp issues
-process.versions = {};
-
-function noop() {}
-
-process.on = noop;
-process.addListener = noop;
-process.once = noop;
-process.off = noop;
-process.removeListener = noop;
-process.removeAllListeners = noop;
-process.emit = noop;
-process.prependListener = noop;
-process.prependOnceListener = noop;
-
-process.listeners = function (name) { return [] }
-
-process.binding = function (name) {
-    throw new Error('process.binding is not supported');
-};
-
-process.cwd = function () { return '/' };
-process.chdir = function (dir) {
-    throw new Error('process.chdir is not supported');
-};
-process.umask = function() { return 0; };
-
-
-/***/ }),
-
-/***/ "./node_modules/process/browser.js?f28c":
+/***/ "./node_modules/process/browser.js":
 /*!*****************************************!*\
   !*** ./node_modules/process/browser.js ***!
   \*****************************************/
@@ -38781,7 +38603,7 @@ const connect = (store) => (baseElement) => class extends baseElement {
 /*!***********************************************************************!*\
   !*** ./node_modules/redux-saga/dist/redux-saga-core-npm-proxy.esm.js ***!
   \***********************************************************************/
-/*! exports provided: CANCEL, SAGA_LOCATION, buffers, detach, runSaga, END, isEnd, eventChannel, channel, multicastChannel, stdChannel, default */
+/*! exports provided: CANCEL, SAGA_LOCATION, buffers, detach, END, channel, eventChannel, isEnd, multicastChannel, runSaga, stdChannel, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -38795,17 +38617,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "detach", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["detach"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "runSaga", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["runSaga"]; });
-
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "END", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["END"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isEnd", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["isEnd"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "eventChannel", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["eventChannel"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "channel", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["channel"]; });
 
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "eventChannel", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["eventChannel"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isEnd", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["isEnd"]; });
+
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "multicastChannel", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["multicastChannel"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "runSaga", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["runSaga"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "stdChannel", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["stdChannel"]; });
 
@@ -38823,53 +38645,53 @@ __webpack_require__.r(__webpack_exports__);
 /*!**************************************************************************!*\
   !*** ./node_modules/redux-saga/dist/redux-saga-effects-npm-proxy.esm.js ***!
   \**************************************************************************/
-/*! exports provided: effectTypes, take, takeMaybe, put, putResolve, all, race, call, apply, cps, fork, spawn, join, cancel, select, actionChannel, cancelled, flush, getContext, setContext, delay, debounce, retry, takeEvery, takeLatest, takeLeading, throttle */
+/*! exports provided: actionChannel, all, apply, call, cancel, cancelled, cps, delay, effectTypes, flush, fork, getContext, join, put, putResolve, race, select, setContext, spawn, take, takeMaybe, debounce, retry, takeEvery, takeLatest, takeLeading, throttle */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @redux-saga/core/effects */ "./node_modules/@redux-saga/core/dist/redux-saga-effects.esm.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "actionChannel", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["actionChannel"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "all", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["all"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "apply", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["apply"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "call", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["call"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancel", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["cancel"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancelled", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["cancelled"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cps", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["cps"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "delay", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["delay"]; });
+
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "effectTypes", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["effectTypes"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "take", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["take"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "flush", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["flush"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "takeMaybe", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["takeMaybe"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "fork", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["fork"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getContext", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["getContext"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "join", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["join"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "put", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["put"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "putResolve", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["putResolve"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "all", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["all"]; });
-
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "race", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["race"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "call", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["call"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "apply", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["apply"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cps", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["cps"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "fork", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["fork"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "spawn", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["spawn"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "join", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["join"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancel", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["cancel"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "select", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["select"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "actionChannel", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["actionChannel"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancelled", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["cancelled"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "flush", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["flush"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getContext", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["getContext"]; });
-
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "setContext", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["setContext"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "delay", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["delay"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "spawn", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["spawn"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "take", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["take"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "takeMaybe", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["takeMaybe"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "debounce", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["debounce"]; });
 
@@ -39763,7 +39585,7 @@ if ( true && typeof isCrushed.name === 'string' && isCrushed.name !== 'isCrushed
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../process/browser.js */ "./node_modules/process/browser.js?f28c")))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../process/browser.js */ "./node_modules/process/browser.js")))
 
 /***/ }),
 
@@ -39920,9 +39742,9 @@ module.exports = function() {
 /***/ }),
 
 /***/ "./node_modules/webpack/buildin/global.js":
-/*!************************************************!*\
-  !*** ./node_modules/webpack/buildin/global.js ***!
-  \************************************************/
+/*!***********************************!*\
+  !*** (webpack)/buildin/global.js ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -39951,9 +39773,9 @@ module.exports = g;
 /***/ }),
 
 /***/ "./node_modules/webpack/buildin/harmony-module.js":
-/*!********************************************************!*\
-  !*** ./node_modules/webpack/buildin/harmony-module.js ***!
-  \********************************************************/
+/*!*******************************************!*\
+  !*** (webpack)/buildin/harmony-module.js ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -39986,9 +39808,9 @@ module.exports = function(originalModule) {
 /***/ }),
 
 /***/ "./node_modules/webpack/buildin/module.js":
-/*!************************************************!*\
-  !*** ./node_modules/webpack/buildin/module.js ***!
-  \************************************************/
+/*!***********************************!*\
+  !*** (webpack)/buildin/module.js ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -40044,7 +39866,9 @@ var _jwt = __webpack_require__(/*! ../../../redux/actions/jwt */ "./src/redux/ac
 
 var _address = __webpack_require__(/*! ../../../redux/actions/address */ "./src/redux/actions/address.js");
 
-var _journeys = __webpack_require__(/*! ../../../redux/helpers/journeys */ "./src/redux/helpers/journeys.js");
+var _journeys = __webpack_require__(/*! ../../../redux/actions/journeys */ "./src/redux/actions/journeys.js");
+
+var _journeys2 = __webpack_require__(/*! ../../../redux/helpers/journeys */ "./src/redux/helpers/journeys.js");
 
 var _connectMixin = __webpack_require__(/*! pwa-helpers/connect-mixin */ "./node_modules/pwa-helpers/connect-mixin.js");
 
@@ -40119,6 +39943,10 @@ class MafApp extends (0, _connectMixin.connect)(_store.store)(_polymerElement.Po
 
   constructor() {
     super();
+
+    // Temporary until we have a service to retrieve the possible journeys
+    this.setFakeJourneys();
+
     window.onpopstate = function (event) {
       _store.store.dispatch((0, _application.selectPageNoHistory)(event.state));
     };
@@ -40129,14 +39957,15 @@ class MafApp extends (0, _connectMixin.connect)(_store.store)(_polymerElement.Po
       } else if (window.location.pathname.indexOf('startjourney') > -1) {
         this._handleStartJourney();
       } else {
-        const path = window.location.pathname.split(/[/-]/).filter(i => i.length > 0);
-        _store.store.dispatch((0, _application.selectPageNoHistory)(path[0]));
+        const path = window.location.pathname.charAt(0) === '/' ? window.location.pathname.substring(1) : window.location.pathname;
+        _store.store.dispatch((0, _application.selectPageNoHistory)(path));
       }
     }
   }
 
   ready() {
     super.ready();
+
     // Check for userLogin dirty
     setTimeout(() => {
       if (_store.store.getState().jwt.data.user === undefined) {
@@ -40192,7 +40021,7 @@ class MafApp extends (0, _connectMixin.connect)(_store.store)(_polymerElement.Po
   _handleStartJourney() {
     const url = decodeURI(window.location.href);
     const journeyToStart = url.split('name=')[1].split('&')[0];
-    var journeyIdToStart = (0, _journeys.getJourneyId)(journeyToStart);
+    var journeyIdToStart = (0, _journeys2.getJourneyId)(journeyToStart);
 
     var foundJourneyToStart;
 
@@ -40231,6 +40060,10 @@ class MafApp extends (0, _connectMixin.connect)(_store.store)(_polymerElement.Po
     return page !== 'signin';
   }
 
+  _isActive(pageName, page) {
+    return pageName === page ? ' TabSwitcherTabActive' : '';
+  }
+
   _nope() {
     alert('Deze functie komt binnenkort beschikbaar! Op dit moment wordt er hard gewerkt aan nieuwe functionaliteiten van MijnApp.');
   }
@@ -40240,6 +40073,135 @@ class MafApp extends (0, _connectMixin.connect)(_store.store)(_polymerElement.Po
     if (state.application.page != undefined && state.application.page === 'journeys' && this.shadowRoot != null) {
       this.shadowRoot.querySelector('#journeyScreen').focusOnSearch();
     }
+  }
+
+  setFakeJourneys() {
+    _store.store.dispatch((0, _journeys.setJourneys)([{
+      title: 'Ik heb een goed idee',
+      request_type_id: '06daeb7f-6503-4b8e-8aa1-5a5767b53b22',
+      preconditions: '',
+      overview: {
+        needed_documents: [],
+        send_to: [],
+        steps: ['Je geeft aan of je anoniem wilt blijven', 'Je geeft het onderwerp van je idee op', 'Je beschrijft het idee'],
+        subtitle: 'Leuk dat je een goed idee hebt!'
+      },
+      questions: [{
+        id: '6abbb0e1-3ef5-4206-a2e3-aba72ad1259a',
+        type: 'single',
+        property: 'anoniem',
+        options: [{
+          goto: 'f4efa6ca-158b-4184-958f-52ae8b47f561',
+          title: 'Nee',
+          value: 'Nee'
+        }, {
+          goto: 'b52cf9a7-30d1-4eb7-bf64-34f3a6380c11',
+          title: 'Ja',
+          value: 'Ja'
+        }],
+        title: 'Wil je je idee anoniem indienen?',
+        subtitle: 'Bij anoniem indienen, kunnen we geen contact met je opnemen ' + 'bij vragen.',
+        optional: {
+          goto: null
+        }
+      }, {
+        id: 'f4efa6ca-158b-4184-958f-52ae8b47f561',
+        type: 'agree',
+        property: 'toestemming',
+        options: null,
+        title: 'Toestemming voor gebruik gegevens',
+        subtitle: 'Geef je toestemming om jouw voornaam, achternaam en adres mee ' + 'te sturen met jouw idee?',
+        next: 'e8877860-f3b2-46d2-a3b8-e0b70c93492b'
+      }, {
+        id: 'b52cf9a7-30d1-4eb7-bf64-34f3a6380c11',
+        type: 'text',
+        property: 'ideeomschrijving',
+        options: null,
+        title: 'Wat is jouw idee?',
+        next: '12e51aa9-0a9b-4e74-a273-65e27763073c'
+      }, {
+        id: '12e51aa9-0a9b-4e74-a273-65e27763073c',
+        type: 'radioButtons',
+        property: 'contact',
+        options: [{
+          goto: 'END',
+          title: 'Ja',
+          value: 'Ja'
+        }, {
+          goto: 'END',
+          title: 'Nee',
+          value: 'Nee'
+        }],
+        title: 'Vind je het prettig dat er contact met je wordt opgenomen ' + 'over jouw idee?'
+      }, {
+        id: 'e8877860-f3b2-46d2-a3b8-e0b70c93492b',
+        type: 'text',
+        property: 'ideeomschrijving',
+        options: null,
+        title: 'Wat is jouw idee?',
+        subtitle: '',
+        next: 'END'
+      }],
+      end: {
+        check: {
+          title: 'Controleer je gegevens',
+          subtitle: 'Controleer onderstaande gegevens goed en verzend het formulier.'
+        },
+        success: {
+          title: 'Je idee is doorgegeven',
+          subtitle: 'Het volgende idee is succesvol verzonden naar de gemeente.'
+        }
+      }
+    }, {
+      title: 'Ik ga verhuizen',
+      request_type_id: '9d76fb58-0711-4437-acc4-9f4d9d403cdf',
+      preconditions: 'Een verhuizing kan alleen worden doorgegeven door personen vanaf 16 jaar. Raadpleeg je ouder, voogd of verzorger.',
+      questions: [{
+        id: 'a7beef34-9aea-4891-971d-beb67b2e8010',
+        type: 'address',
+        property: 'adress',
+        title: 'Wat wordt je nieuwe adres?',
+        subtitle: 'Vul je postcode, huisnummer en eventuele toevoeging in van het nieuwe adres.',
+        fieldName: 'nieuw adres',
+        fieldIcon: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNjAgNjAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDYwIDYwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8cGF0aCBkPSJNMzAsMjZjMy44NiwwLDctMy4xNDEsNy03cy0zLjE0LTctNy03cy03LDMuMTQxLTcsN1MyNi4xNCwyNiwzMCwyNnogTTMwLDE0YzIuNzU3LDAsNSwyLjI0Myw1LDVzLTIuMjQzLDUtNSw1DQoJCXMtNS0yLjI0My01LTVTMjcuMjQzLDE0LDMwLDE0eiIvPg0KCTxwYXRoIGQ9Ik0yOS44MjMsNTQuNzU3TDQ1LjE2NCwzMi42YzUuNzU0LTcuNjcxLDQuOTIyLTIwLjI4LTEuNzgxLTI2Ljk4MkMzOS43NjEsMS45OTUsMzQuOTQ1LDAsMjkuODIzLDANCgkJcy05LjkzOCwxLjk5NS0xMy41Niw1LjYxN2MtNi43MDMsNi43MDItNy41MzUsMTkuMzExLTEuODA0LDI2Ljk1MkwyOS44MjMsNTQuNzU3eiBNMTcuNjc3LDcuMDMxQzIwLjkyMiwzLjc4NywyNS4yMzUsMiwyOS44MjMsMg0KCQlzOC45MDEsMS43ODcsMTIuMTQ2LDUuMDMxYzYuMDUsNi4wNDksNi43OTUsMTcuNDM3LDEuNTczLDI0LjM5OUwyOS44MjMsNTEuMjQzTDE2LjA4MiwzMS40DQoJCUMxMC44ODIsMjQuNDY4LDExLjYyOCwxMy4wOCwxNy42NzcsNy4wMzF6Ii8+DQoJPHBhdGggZD0iTTQyLjExNyw0My4wMDdjLTAuNTUtMC4wNjctMS4wNDYsMC4zMjctMS4xMSwwLjg3NnMwLjMyOCwxLjA0NiwwLjg3NiwxLjExQzUyLjM5OSw0Ni4yMzEsNTgsNDkuNTY3LDU4LDUxLjUNCgkJYzAsMi43MTQtMTAuNjUyLDYuNS0yOCw2LjVTMiw1NC4yMTQsMiw1MS41YzAtMS45MzMsNS42MDEtNS4yNjksMTYuMTE3LTYuNTA3YzAuNTQ4LTAuMDY0LDAuOTQtMC41NjIsMC44NzYtMS4xMQ0KCQljLTAuMDY1LTAuNTQ5LTAuNTYxLTAuOTQ1LTEuMTEtMC44NzZDNy4zNTQsNDQuMjQ3LDAsNDcuNzM5LDAsNTEuNUMwLDU1LjcyNCwxMC4zMDUsNjAsMzAsNjBzMzAtNC4yNzYsMzAtOC41DQoJCUM2MCw0Ny43MzksNTIuNjQ2LDQ0LjI0Nyw0Mi4xMTcsNDMuMDA3eiIvPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=',
+        next: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb'
+      }, {
+        id: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb',
+        type: 'calendar',
+        property: 'datum',
+        options: null,
+        title: 'Wanneer ga je verhuizen?',
+        subtitle: 'Kies je verhuisdatum in de onderstaande kalender.',
+        fieldName: 'verhuisdatum',
+        fieldIcon: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNjAgNjAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDYwIDYwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8cGF0aCBkPSJNNTcsNGgtN1YxYzAtMC41NTMtMC40NDctMS0xLTFoLTdjLTAuNTUzLDAtMSwwLjQ0Ny0xLDF2M0gxOVYxYzAtMC41NTMtMC40NDctMS0xLTFoLTdjLTAuNTUzLDAtMSwwLjQ0Ny0xLDF2M0gzDQoJCUMyLjQ0Nyw0LDIsNC40NDcsMiw1djExdjQzYzAsMC41NTMsMC40NDcsMSwxLDFoNTRjMC41NTMsMCwxLTAuNDQ3LDEtMVYxNlY1QzU4LDQuNDQ3LDU3LjU1Myw0LDU3LDR6IE00MywyaDV2M3YzaC01VjVWMnogTTEyLDJoNQ0KCQl2M3YzaC01VjVWMnogTTQsNmg2djNjMCwwLjU1MywwLjQ0NywxLDEsMWg3YzAuNTUzLDAsMS0wLjQ0NywxLTFWNmgyMnYzYzAsMC41NTMsMC40NDcsMSwxLDFoN2MwLjU1MywwLDEtMC40NDcsMS0xVjZoNnY5SDRWNnoNCgkJIE00LDU4VjE3aDUydjQxSDR6Ii8+DQoJPHBhdGggZD0iTTM4LDIzaC03aC0yaC03aC0yaC05djl2MnY3djJ2OWg5aDJoN2gyaDdoMmg5di05di0ydi03di0ydi05aC05SDM4eiBNMzEsMjVoN3Y3aC03VjI1eiBNMzgsNDFoLTd2LTdoN1Y0MXogTTIyLDM0aDd2N2gtNw0KCQlWMzR6IE0yMiwyNWg3djdoLTdWMjV6IE0xMywyNWg3djdoLTdWMjV6IE0xMywzNGg3djdoLTdWMzR6IE0yMCw1MGgtN3YtN2g3VjUweiBNMjksNTBoLTd2LTdoN1Y1MHogTTM4LDUwaC03di03aDdWNTB6IE00Nyw1MGgtNw0KCQl2LTdoN1Y1MHogTTQ3LDQxaC03di03aDdWNDF6IE00NywyNXY3aC03di03SDQ3eiIvPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=',
+        next: '37e30b1f-fb51-4d49-8756-fa5d4d55829a'
+      }, {
+        id: '37e30b1f-fb51-4d49-8756-fa5d4d55829a',
+        type: 'personsMoving',
+        property: 'wie',
+        title: 'Met wie ga je verhuizen?',
+        subtitle: 'Er wordt een bericht gestuurd naar de persoon die meeverhuist ' + '(onderstaande personen staan nu op hetzelfde adres als jij ' + 'ingeschreven)',
+        fieldName: 'meeverhuizende personen',
+        fieldIcon: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTA1LjQgNTA1LjQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUwNS40IDUwNS40OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8Zz4NCgkJPHBhdGggZD0iTTQzNy4xLDIzMy40NWMxNC44LTEwLjQsMjQuNi0yNy43LDI0LjYtNDcuMmMwLTMxLjktMjUuOC01Ny43LTU3LjctNTcuN2MtMzEuOSwwLTU3LjcsMjUuOC01Ny43LDU3LjcNCgkJCWMwLDE5LjUsOS43LDM2LjgsMjQuNiw0Ny4yYy0xMi43LDQuNC0yNC4zLDExLjItMzQuMSwyMGMtMTMuNS0xMS41LTI5LjQtMjAuMy00Ni44LTI1LjVjMjEuMS0xMi44LDM1LjMtMzYuMSwzNS4zLTYyLjYNCgkJCWMwLTQwLjQtMzIuNy03My4xLTczLjEtNzMuMWMtNDAuNCwwLTczLjEsMzIuOC03My4xLDczLjFjMCwyNi41LDE0LjEsNDkuOCwzNS4zLDYyLjZjLTE3LjIsNS4yLTMyLjksMTMuOS00Ni4zLDI1LjINCgkJCWMtOS44LTguNi0yMS4yLTE1LjMtMzMuNy0xOS42YzE0LjgtMTAuNCwyNC42LTI3LjcsMjQuNi00Ny4yYzAtMzEuOS0yNS44LTU3LjctNTcuNy01Ny43cy01Ny43LDI1LjgtNTcuNyw1Ny43DQoJCQljMCwxOS41LDkuNywzNi44LDI0LjYsNDcuMkMyOC41LDI0Ny4yNSwwLDI4NC45NSwwLDMyOS4yNXY2LjZjMCwwLjIsMC4yLDAuNCwwLjQsMC40aDEyMi4zYy0wLjcsNS41LTEuMSwxMS4yLTEuMSwxNi45djYuOA0KCQkJYzAsMjkuNCwyMy44LDUzLjIsNTMuMiw1My4yaDE1NWMyOS40LDAsNTMuMi0yMy44LDUzLjItNTMuMnYtNi44YzAtNS43LTAuNC0xMS40LTEuMS0xNi45SDUwNWMwLjIsMCwwLjQtMC4yLDAuNC0wLjR2LTYuNg0KCQkJQzUwNS4yLDI4NC44NSw0NzYuOCwyNDcuMTUsNDM3LjEsMjMzLjQ1eiBNMzYyLjMsMTg2LjE1YzAtMjMsMTguNy00MS43LDQxLjctNDEuN3M0MS43LDE4LjcsNDEuNyw0MS43DQoJCQljMCwyMi43LTE4LjMsNDEuMi00MC45LDQxLjdjLTAuMywwLTAuNSwwLTAuOCwwcy0wLjUsMC0wLjgsMEMzODAuNSwyMjcuNDUsMzYyLjMsMjA4Ljk1LDM2Mi4zLDE4Ni4xNXogTTE5NC45LDE2NS4zNQ0KCQkJYzAtMzEuNSwyNS42LTU3LjEsNTcuMS01Ny4xczU3LjEsMjUuNiw1Ny4xLDU3LjFjMCwzMC40LTIzLjksNTUuMy01My44LDU3Yy0xLjEsMC0yLjIsMC0zLjMsMGMtMS4xLDAtMi4yLDAtMy4zLDANCgkJCUMyMTguOCwyMjAuNjUsMTk0LjksMTk1Ljc1LDE5NC45LDE2NS4zNXogTTU5LjMsMTg2LjE1YzAtMjMsMTguNy00MS43LDQxLjctNDEuN3M0MS43LDE4LjcsNDEuNyw0MS43YzAsMjIuNy0xOC4zLDQxLjItNDAuOSw0MS43DQoJCQljLTAuMywwLTAuNSwwLTAuOCwwcy0wLjUsMC0wLjgsMEM3Ny42LDIyNy40NSw1OS4zLDIwOC45NSw1OS4zLDE4Ni4xNXogTTEyNS41LDMyMC4xNUgxNi4yYzQuNS00Mi42LDQwLjUtNzYsODQuMi03Ni4zDQoJCQljMC4yLDAsMC40LDAsMC42LDBzMC40LDAsMC42LDBjMjAuOCwwLjEsMzkuOCw3LjgsNTQuNSwyMC4zQzE0MS43LDI3OS43NSwxMzEsMjk4Ljk1LDEyNS41LDMyMC4xNXogTTM2Ni44LDM1OS45NQ0KCQkJYzAsMjAuNS0xNi43LDM3LjItMzcuMiwzNy4yaC0xNTVjLTIwLjUsMC0zNy4yLTE2LjctMzcuMi0zNy4ydi02LjhjMC02Mi4xLDQ5LjYtMTEyLjksMTExLjMtMTE0LjdjMS4xLDAuMSwyLjMsMC4xLDMuNCwwLjENCgkJCXMyLjMsMCwzLjQtMC4xYzYxLjcsMS44LDExMS4zLDUyLjYsMTExLjMsMTE0LjdWMzU5Ljk1eiBNMzc4LjcsMzIwLjE1Yy01LjUtMjEuMS0xNi00MC0zMC4zLTU1LjZjMTQuOC0xMi44LDM0LTIwLjUsNTUtMjAuNw0KCQkJYzAuMiwwLDAuNCwwLDAuNiwwczAuNCwwLDAuNiwwYzQzLjcsMC4zLDc5LjcsMzMuNyw4NC4yLDc2LjNIMzc4Ljd6Ii8+DQoJPC9nPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=',
+        next: 'END' // '21586109-ce3b-4091-8420-85f92c0a6c11',
+      }],
+      overview: {
+        needed_documents: [],
+        send_to: [],
+        steps: ['Geef je nieuwe adres op', 'Geef de datum op wanneer je gaat verhuizen', 'Geef aan met wie je gaat verhuizen'],
+        subtitle: 'Verhuizen binnen of naar gemeente \'s-Hertogenbosch'
+      },
+      end: {
+        check: {
+          title: 'Controleer je gegevens',
+          subtitle: 'Controleer onderstaande gegevens goed en verzend het formulier.'
+        },
+        success: {
+          title: 'Je verhuizing is aangevraagd',
+          subtitle: 'De volgende gegevens zijn succesvol verzonden naar de gemeente.'
+        }
+      }
+    }]));
   }
 }
 
@@ -40255,7 +40217,7 @@ window.customElements.define('maf-app', MafApp);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":root{--main-max-width:800px;--main-content-background-color:#fff;--main-header-text-color:#19224c;--button-gray-background-color:#f5f5f5;--button-gray-background-color-hover:#f1f1f1;--button-gray-background-color-hover-dark:#ccc;--icon-red-color:#f95f62;--icon-color:#3192cf;--icon-color-teal:#1ebdd3;--icon-color-hover:#56a6d8;--main-font-header-size:32px;--main-font-subheader-size:24px;--main-font-text-size:18px;--main-font-medium-text-size:16px;--main-font-small-text-size:14px;--main-font-smallest-text-size:13px}:host{float:left}.AppWrapper{width:100vw;height:100vh;overflow-y:auto}.App{width:100vw;min-height:calc(100vh - 57px);margin-bottom:57px;height:calc(100vh - 57px);float:left}.TabSwitcher{position:fixed;bottom:0;left:0;height:57px;width:100%;border-top:1px solid var(--button-gray-background-color);background-color:#edf2f9}.TabSwitcherWrapper{width:100%;height:57px;max-width:var(--main-max-width);margin:0 auto;display:flex;justify-content:space-around;background-color:var(--main-content-background-color)}.TabSwitcherTab{height:100%;width:20%;text-align:center;position:relative;cursor:pointer}.TabSwitcherTab:hover{background-color:var(--button-gray-background-color-hover)}.NotAllowed{opacity:.25;cursor:not-allowed}.NotAllowed:hover{background-color:var(--main-content-background-color)}.TabSwitcherTabIcon{position:absolute;top:10px;width:100%;height:20px;display:flex;justify-content:center;align-items:center}.TabSwitcherTabIcon ::slotted(svg){fill:var(--icon-color);stroke:var(--icon-color);width:100%;height:100%}.TabSwitcherTabText{height:27px;width:100%;position:absolute;left:0;bottom:0;display:flex;justify-content:center;align-items:center}.TabSwitcherTabTextInner{font-family:var(--typography-fontFamily);font-size:var(--main-font-smallest-text-size);font-weight:500;font-style:normal;font-stretch:normal;line-height:1;letter-spacing:-.4px;text-align:center;color:var(--palette-text-disabled)}.TopBar{position:fixed;left:0;height:62px;width:100%;z-index:100;visibility:hidden}.TopBarWrapper{width:100%;height:62px;max-width:var(--main-max-width);margin:0 auto;padding:16px;box-sizing:border-box}.HamburgerMenuIcon{z-index:10;float:right;background-color:var(--button-gray-background-color);width:16px;height:16px;border-radius:15px;padding:7px;cursor:pointer;visibility:initial}.HamburgerMenuIcon:hover{background-color:var(--button-gray-background-color-hover-dark)}"
+module.exports = ":root{--main-max-width:800px;--main-content-background-color:#fff;--main-header-text-color:#19224c;--button-gray-background-color:#f5f5f5;--button-gray-background-color-hover:#f1f1f1;--button-gray-background-color-hover-dark:#ccc;--icon-red-color:#f95f62;--icon-color:#3192cf;--icon-color-teal:#1ebdd3;--icon-color-hover:#56a6d8;--main-font-header-size:32px;--main-font-subheader-size:24px;--main-font-text-size:18px;--main-font-medium-text-size:16px;--main-font-small-text-size:14px;--main-font-smallest-text-size:13px}:host{float:left}.AppWrapper{width:100vw;height:100vh;overflow-y:auto}.App{width:100vw;min-height:calc(100vh - 57px);margin-bottom:57px;height:calc(100vh - 57px);float:left}.TabSwitcher{position:fixed;bottom:0;left:0;height:57px;width:100%;border-top:1px solid var(--button-gray-background-color);background-color:var(--main-background-color)}.TabSwitcherWrapper{width:100%;height:57px;max-width:var(--main-max-width);margin:0 auto;display:flex;justify-content:space-around;background-color:var(--main-content-background-color)}.TabSwitcherTab{height:100%;width:20%;text-align:center;position:relative;cursor:pointer}.TabSwitcherTab:hover{background-color:var(--button-gray-background-color-hover)}.TabSwitcherTabActive{background-color:var(--button-gray-background-color-hover)}.NotAllowed{opacity:.25;cursor:not-allowed}.NotAllowed:hover{background-color:var(--main-content-background-color)}.TabSwitcherTabIcon{position:absolute;top:10px;width:100%;height:20px;display:flex;justify-content:center;align-items:center}.TabSwitcherTabIcon ::slotted(svg){fill:var(--icon-color);stroke:var(--icon-color);width:100%;height:100%}.TabSwitcherTabText{height:27px;width:100%;position:absolute;left:0;bottom:0;display:flex;justify-content:center;align-items:center}.TabSwitcherTabTextInner{font-family:var(--typography-fontFamily);font-size:var(--main-font-smallest-text-size);font-weight:500;font-style:normal;font-stretch:normal;line-height:1;letter-spacing:-.4px;text-align:center;color:var(--palette-text-disabled)}.TopBar{position:fixed;left:0;height:62px;width:100%;z-index:100;visibility:hidden}.TopBarWrapper{width:100%;height:62px;max-width:var(--main-max-width);margin:0 auto;padding:16px;box-sizing:border-box}.HamburgerMenuIcon{z-index:10;float:right;background-color:var(--button-gray-background-color);width:16px;height:16px;border-radius:15px;padding:7px;cursor:pointer;visibility:initial}.HamburgerMenuIcon:hover{background-color:var(--button-gray-background-color-hover-dark)}"
 
 /***/ }),
 
@@ -40266,7 +40228,7 @@ module.exports = ":root{--main-max-width:800px;--main-content-background-color:#
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<maki-theme-provider theme=\"[[theme]]\">\r\n  <div class=\"AppWrapper\">\r\n    <dom-if if=\"[[_showTabs(page)]]\">\r\n      <template>\r\n        <div class=\"TopBar\">\r\n          <div class=\"TopBarWrapper\">\r\n            <div class=\"HamburgerMenuIcon\">\r\n              <maki-icon-hamburger></maki-icon-hamburger>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </template>\r\n    </dom-if>\r\n    <div class=\"App\">\r\n      <iron-pages selected=\"[[page]]\" attr-for-selected=\"page\" fallback-selection=\"view404\">\r\n        <maf-screen-avg-log page=\"avg-log\"></maf-screen-avg-log>\r\n        <maf-screen-avg-logs page=\"avg-logs\"></maf-screen-avg-logs>\r\n        <maf-screen-contract page=\"contract\"></maf-screen-contract>\r\n        <maf-screen-contracts page=\"contracts\"></maf-screen-contracts>\r\n        <maf-screen-home page=\"home\"></maf-screen-home>\r\n        <maf-screen-journey page=\"journey\"></maf-screen-journey>\r\n        <maf-screen-journeys id=\"journeyScreen\" page=\"journeys\"></maf-screen-journeys>\r\n        <maf-screen-signin page=\"signin\"></maf-screen-signin>\r\n        <maf-screen-person-data page=\"person-data\"></maf-screen-person-data>\r\n      </iron-pages>\r\n    </div>\r\n    <dom-if if=\"[[_showTabs(page)]]\">\r\n      <template>\r\n        <div class=\"TabSwitcher\">\r\n          <div class=\"TabSwitcherWrapper\">\r\n            <div class=\"TabSwitcherTab\" on-click=\"_goHome\">\r\n              <div class=\"TabSwitcherTabIcon\">\r\n                <maki-icon-home></maki-icon-home>\r\n              </div>\r\n              <div class=\"TabSwitcherTabText\">\r\n                <div class=\"TabSwitcherTabTextInner\">\r\n                  Home\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"TabSwitcherTab\" on-click=\"_goJourneys\">\r\n              <div class=\"TabSwitcherTabIcon\">\r\n                <maki-icon-search></maki-icon-search>\r\n              </div>\r\n              <div class=\"TabSwitcherTabText\">\r\n                <div class=\"TabSwitcherTabTextInner\">\r\n                  Klantvragen\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"TabSwitcherTab NotAllowed\" on-click=\"_nope\">\r\n              <div class=\"TabSwitcherTabIcon\">\r\n                <maki-icon-bell></maki-icon-bell>\r\n              </div>\r\n              <div class=\"TabSwitcherTabText\">\r\n                <div class=\"TabSwitcherTabTextInner\">\r\n                  Notificaties\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"TabSwitcherTab NotAllowed\" on-click=\"_nope\">\r\n              <div class=\"TabSwitcherTabIcon\">\r\n                <maki-icon-chat></maki-icon-chat>\r\n              </div>\r\n              <div class=\"TabSwitcherTabText\">\r\n                <div class=\"TabSwitcherTabTextInner\">\r\n                  Chatten\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"TabSwitcherTab\" on-click=\"_goLogout\">\r\n              <div class=\"TabSwitcherTabIcon\">\r\n                <maki-icon-logout></maki-icon-logout>\r\n              </div>\r\n              <div class=\"TabSwitcherTabText\">\r\n                <div class=\"TabSwitcherTabTextInner\">\r\n                  Uitloggen\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </template>\r\n    </dom-if>\r\n  </div>\r\n</maki-theme-provider>\r\n"
+module.exports = "<maki-theme-provider theme=\"[[theme]]\">\r\n  <div class=\"AppWrapper\">\r\n    <!--<dom-if if=\"[[_showTabs(page)]]\">\r\n      <template>\r\n        <div class=\"TopBar\">\r\n          <div class=\"TopBarWrapper\">\r\n            <div class=\"HamburgerMenuIcon\">\r\n              <maki-icon-hamburger></maki-icon-hamburger>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </template>\r\n    </dom-if>-->\r\n    <div class=\"App\">\r\n      <iron-pages selected=\"[[page]]\" attr-for-selected=\"page\" fallback-selection=\"view404\">\r\n        <maf-screen-avg-log page=\"avg-log\"></maf-screen-avg-log>\r\n        <maf-screen-avg-logs page=\"avg-logs\"></maf-screen-avg-logs>\r\n        <maf-screen-contract page=\"contract\"></maf-screen-contract>\r\n        <maf-screen-contracts page=\"contracts\"></maf-screen-contracts>\r\n        <maf-screen-home page=\"home\"></maf-screen-home>\r\n        <maf-screen-journey page=\"journey\"></maf-screen-journey>\r\n        <maf-screen-journeys id=\"journeyScreen\" page=\"journeys\"></maf-screen-journeys>\r\n        <maf-screen-signin page=\"signin\"></maf-screen-signin>\r\n        <maf-screen-person-data page=\"person-data\"></maf-screen-person-data>\r\n      </iron-pages>\r\n    </div>\r\n    <dom-if if=\"[[_showTabs(page)]]\">\r\n      <template>\r\n        <div class=\"TabSwitcher\">\r\n          <div class=\"TabSwitcherWrapper\">\r\n            <div class$=\"TabSwitcherTab[[_isActive('home', page)]]\" on-click=\"_goHome\">\r\n              <div class=\"TabSwitcherTabIcon\">\r\n                <maki-icon-home></maki-icon-home>\r\n              </div>\r\n              <div class=\"TabSwitcherTabText\">\r\n                <div class=\"TabSwitcherTabTextInner\">\r\n                  Home\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class$=\"TabSwitcherTab[[_isActive('journeys', page)]]\" on-click=\"_goJourneys\">\r\n              <div class=\"TabSwitcherTabIcon\">\r\n                <maki-icon-search></maki-icon-search>\r\n              </div>\r\n              <div class=\"TabSwitcherTabText\">\r\n                <div class=\"TabSwitcherTabTextInner\">\r\n                  Zoeken\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"TabSwitcherTab NotAllowed\" on-click=\"_nope\">\r\n              <div class=\"TabSwitcherTabIcon\">\r\n                <maki-icon-bell></maki-icon-bell>\r\n              </div>\r\n              <div class=\"TabSwitcherTabText\">\r\n                <div class=\"TabSwitcherTabTextInner\">\r\n                  Notificaties\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"TabSwitcherTab NotAllowed\" on-click=\"_nope\">\r\n              <div class=\"TabSwitcherTabIcon\">\r\n                <maki-icon-chat></maki-icon-chat>\r\n              </div>\r\n              <div class=\"TabSwitcherTabText\">\r\n                <div class=\"TabSwitcherTabTextInner\">\r\n                  Chatten\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"TabSwitcherTab\" on-click=\"_goLogout\">\r\n              <div class=\"TabSwitcherTabIcon\">\r\n                <maki-icon-logout></maki-icon-logout>\r\n              </div>\r\n              <div class=\"TabSwitcherTabText\">\r\n                <div class=\"TabSwitcherTabTextInner\">\r\n                  Uitloggen\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </template>\r\n    </dom-if>\r\n  </div>\r\n</maki-theme-provider>\r\n"
 
 /***/ }),
 
@@ -40857,7 +40819,7 @@ window.customElements.define('maf-screen-home', MafScreenHome);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".Wrapper{height:100vh;max-width:var(--main-max-width);margin:0 auto;background-color:var(--main-content-background-color);padding:0 0 57px}.ScrollContainer,.Wrapper{width:100%;box-sizing:border-box}.ScrollContainer{height:100%;float:left;overflow-y:auto}.SearchWrapper{margin:13px 0 19px;float:left;width:100%}.TilesWrapper{margin-top:13px;float:left;width:100%}.TilesTitle{height:29px;font-family:var(--typography-fontFamily);font-size:var(--main-font-subheader-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:0;text-align:left;color:var(--palette-primary-main);margin-bottom:7px}.Tiles{display:grid;grid-template-columns:auto auto;grid-template-rows:auto auto;grid-column-gap:16px;grid-row-gap:16px}.Tile{margin:10px 0;width:80%;cursor:pointer}.Tile:hover .TileMedia{box-shadow:0 0 5px 1px rgba(30,189,211,.4)}@media (min-width:600px){.Tile{width:60%}}.TileMedia{width:100%;height:0;padding-bottom:100%;position:relative;border-radius:3px}.TileMediaInner{position:absolute;top:0;left:0}.TileMediaInner,.TileMediaInner img{width:100%;height:100%}.TileTitle{height:23px;font-family:var(--typography-fontFamily);font-size:var(--main-font-text-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:1.28;letter-spacing:-.3px;text-align:left;color:var(--palette-primary-main);margin-top:15px}.NotAllowed{opacity:.25;cursor:not-allowed}.NotAllowed:hover .TileMedia{box-shadow:none}@-webkit-keyframes fadein{0%{bottom:0;opacity:0}to{bottom:70px;opacity:1}}@keyframes fadein{0%{bottom:0;opacity:0}to{bottom:70px;opacity:1}}@-webkit-keyframes fadeout{0%{bottom:70px;opacity:1}to{bottom:0;opacity:0}}@keyframes fadeout{0%{bottom:70px;opacity:1}to{bottom:0;opacity:0}}"
+module.exports = ".Wrapper{height:100vh;max-width:var(--main-max-width);margin:0 auto;background-color:var(--main-content-background-color);padding:0 0 57px}.ScrollContainer,.Wrapper{width:100%;box-sizing:border-box}.ScrollContainer{height:100%;padding-bottom:75px;float:left;overflow-y:auto}.SearchWrapper{margin:13px 0 19px;float:left;width:100%}.FakeInput{opacity:1;color:var(--shaded-color-main);font-style:italic;margin:0;padding:.84em .84em calc(.84em - 2px);width:calc(100% - 1.68em);border:1px solid hsla(0,0%,49%,.4);border-radius:3px;font-size:18px}.FakeInput:hover{box-shadow:0 0 5px 1px rgba(30,189,211,.4)}.TilesWrapper{margin-top:13px;float:left;width:100%}.TilesTitle{height:29px;font-family:var(--typography-fontFamily);font-size:var(--main-font-subheader-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:0;text-align:left;color:var(--palette-primary-main);margin-bottom:7px}.Tiles{display:grid;grid-template-columns:auto auto;grid-template-rows:auto auto;grid-column-gap:16px;grid-row-gap:16px}.Tile{margin:10px 0;width:80%;cursor:pointer}.Tile:hover .TileMedia{box-shadow:0 0 5px 1px rgba(30,189,211,.4)}@media (min-width:600px){.Tile{width:60%}}.TileMedia{width:100%;height:0;padding-bottom:100%;position:relative;border-radius:3px}.TileMediaInner{position:absolute;top:0;left:0}.TileMediaInner,.TileMediaInner img{width:100%;height:100%}.TileTitle{height:23px;font-family:var(--typography-fontFamily);font-size:var(--main-font-text-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:1.28;letter-spacing:-.3px;text-align:left;color:var(--palette-primary-main);margin-top:15px}.NotAllowed{opacity:.25;cursor:not-allowed}.NotAllowed:hover .TileMedia{box-shadow:none}@-webkit-keyframes fadein{0%{bottom:0;opacity:0}to{bottom:70px;opacity:1}}@keyframes fadein{0%{bottom:0;opacity:0}to{bottom:70px;opacity:1}}@-webkit-keyframes fadeout{0%{bottom:70px;opacity:1}to{bottom:0;opacity:0}}@keyframes fadeout{0%{bottom:70px;opacity:1}to{bottom:0;opacity:0}}"
 
 /***/ }),
 
@@ -40868,7 +40830,7 @@ module.exports = ".Wrapper{height:100vh;max-width:var(--main-max-width);margin:0
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\r\n  <div class=\"ScrollContainer\">\r\n    <maf-screen heading=\"Mijn dashboard\">\r\n      <div class=\"SearchWrapper\" on-click=\"_goJourneys\">\r\n        <maki-input elevation=\"0\" stroke=\"1\" placeholder=\"Wat wil je regelen?\"></maki-input>\r\n      </div>\r\n      <div class=\"TilesWrapper\">\r\n        <div class=\"TilesTitle\">\r\n          Mijn gegevens\r\n        </div>\r\n        <div class=\"Tiles\">\r\n          <dom-repeat items=\"{{tiles}}\" as=\"tile\">\r\n            <template>\r\n              <div class=\"Tile\" on-click=\"_clickHandler\">\r\n                <div class=\"TileMedia\">\r\n                  <div class=\"TileMediaInner\">\r\n                    <img src=\"[[tile.asset]]\" />\r\n                  </div>\r\n                </div>\r\n                <div class=\"TileTitle\">[[tile.title]]</div>\r\n              </div>\r\n            </template>\r\n          </dom-repeat>\r\n          <div class=\"Tile NotAllowed\" on-click=\"_clickHandler\">\r\n            <div class=\" TileMedia \">\r\n              <div class=\"TileMediaInner \">\r\n                <img src=\"assets/media/Passen.svg \" />\r\n              </div>\r\n            </div>\r\n            <div class=\"TileTitle \">Passen</div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </maf-screen>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"Wrapper\">\r\n  <div class=\"ScrollContainer\">\r\n    <maf-screen heading=\"Mijn dashboard\">\r\n        <div class=\"SearchWrapper\">\r\n            <input class=\"FakeInput\" placeholder=\"Wat wil je regelen?\" type=\"text\" on-click=\"_goJourneys\"></input>\r\n        </div>\r\n      <div class=\"TilesWrapper\">\r\n        <div class=\"TilesTitle\">\r\n          Mijn gegevens\r\n        </div>\r\n        <div class=\"Tiles\">\r\n          <dom-repeat items=\"{{tiles}}\" as=\"tile\">\r\n            <template>\r\n              <div class=\"Tile\" on-click=\"_clickHandler\">\r\n                <div class=\"TileMedia\">\r\n                  <div class=\"TileMediaInner\">\r\n                    <img alt=\"[[tile.title]]\" src=\"[[tile.asset]]\" />\r\n                  </div>\r\n                </div>\r\n                <div class=\"TileTitle\">[[tile.title]]</div>\r\n              </div>\r\n            </template>\r\n          </dom-repeat>\r\n          <div class=\"Tile NotAllowed\" on-click=\"_clickHandler\">\r\n            <div class=\" TileMedia \">\r\n              <div class=\"TileMediaInner \">\r\n                <img src=\"assets/media/Passen.svg \" />\r\n              </div>\r\n            </div>\r\n            <div class=\"TileTitle \">Passen</div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </maf-screen>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -41109,7 +41071,7 @@ window.customElements.define('maf-screen-journeys', MafScreenJourneys);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".Wrapper{height:100vh;max-width:var(--main-max-width);margin:0 auto;background-color:var(--main-content-background-color);padding:0 0 57px}.ScrollContainer,.Wrapper{width:100%;box-sizing:border-box}.ScrollContainer{height:100%;float:left;overflow-y:auto}.SearchWrapper{margin:13px 0 19px;float:left;width:100%}.Head{height:29px;font-size:var(--main-font-subheader-size);font-weight:700;line-height:normal;letter-spacing:0;color:var(--main-header-text-color);color:#19224c;margin:25px 0 10px}.Head,.Title{font-family:var(--typography-fontFamily);font-style:normal;font-stretch:normal}.Title{font-size:var(--main-font-text-size);font-weight:600;line-height:30px;text-align:left;color:var(--main-header-text-color);padding:22px 0;border-bottom:1px solid #eff1f3;position:relative;cursor:pointer;display:flex;justify-content:flex-start}.Title:after{content:\">\";transform:scaleY(1.5);color:var(--palette-secondary-main);position:absolute;right:26px}.Title:hover{background-color:var(--button-gray-background-color-hover)}maki-icon-bulb,maki-icon-truck{--icon-color:var(--icon-color-teal);background-color:var(--button-gray-background-color);border-radius:15px;width:20px;height:20px;padding:5px;margin:0 10px}"
+module.exports = ".Wrapper{height:100vh;max-width:var(--main-max-width);margin:0 auto;background-color:var(--main-content-background-color);padding:0 0 57px}.ScrollContainer,.Wrapper{width:100%;box-sizing:border-box}.ScrollContainer{height:100%;float:left;overflow-y:auto;padding-bottom:75px}.SearchWrapper{margin:13px 0 19px;float:left;width:100%}.Head{height:29px;font-size:var(--main-font-subheader-size);font-weight:700;line-height:normal;letter-spacing:0;color:var(--main-header-text-color);color:#19224c;margin:25px 0 10px}.Head,.Title{font-family:var(--typography-fontFamily);font-style:normal;font-stretch:normal}.Title{font-size:var(--main-font-text-size);font-weight:600;line-height:30px;text-align:left;color:var(--main-header-text-color);padding:22px 0;border-bottom:1px solid #eff1f3;position:relative;cursor:pointer;display:flex;justify-content:flex-start}.Title:after{content:\">\";transform:scaleY(1.5);color:var(--palette-secondary-main);position:absolute;right:26px}.Title:hover{background-color:var(--button-gray-background-color-hover)}maki-icon-bulb,maki-icon-truck{background-color:var(--button-gray-background-color);border-radius:15px;width:20px;height:20px;padding:5px;margin:0 10px;box-sizing:content-box;--icon-color:var(--icon-color-teal)}"
 
 /***/ }),
 
@@ -41120,7 +41082,7 @@ module.exports = ".Wrapper{height:100vh;max-width:var(--main-max-width);margin:0
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\r\n  <div class=\"ScrollContainer\">\r\n    <maf-screen on-back=\"[[_onBack]]\" heading=\"Klantvragen\">\r\n      <div class=\"SearchWrapper\">\r\n        <maki-input elevation=\"0\" stroke=\"1\" placeholder=\"Wat wil je regelen?\"></maki-input>\r\n        <div class=\"Head\">Suggesties</div>\r\n        <div class=\"Title\" on-click=\"_selectJourneyA\">\r\n          <maki-icon-bulb></maki-icon-bulb>\r\n          <div class=\"TitleText\">Ik heb een goed idee</div>\r\n        </div>\r\n        <div class=\"Title\" on-click=\"_selectJourneyB\">\r\n          <maki-icon-truck></maki-icon-truck>\r\n          <div class=\"TitleText\">Ik ga verhuizen</div>\r\n        </div>\r\n      </div>\r\n    </maf-screen>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"Wrapper\">\r\n  <div class=\"ScrollContainer\">\r\n    <maf-screen on-back=\"[[_onBack]]\" heading=\"Zoeken\">\r\n      <div class=\"SearchWrapper\">\r\n        <maki-input elevation=\"0\" stroke=\"1\" placeholder=\"Wat wil je regelen?\"></maki-input>\r\n        <div class=\"Head\">Suggesties</div>\r\n        <div class=\"Title\" on-click=\"_selectJourneyB\">\r\n          <maki-icon-truck></maki-icon-truck>\r\n          <div class=\"TitleText\">Ik ga verhuizen</div>\r\n        </div>\r\n        <div class=\"Title\" on-click=\"_selectJourneyA\">\r\n          <maki-icon-bulb></maki-icon-bulb>\r\n          <div class=\"TitleText\">Ik heb een goed idee</div>\r\n        </div>\r\n      </div>\r\n    </maf-screen>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -41166,7 +41128,8 @@ class MafScreenPersonData extends (0, _connectMixin.connect)(_store.store)(_poly
       personData: {
         type: Object,
         value: {}
-      }
+      },
+      searching: Boolean
     };
   }
 
@@ -41183,6 +41146,9 @@ class MafScreenPersonData extends (0, _connectMixin.connect)(_store.store)(_poly
   }
 
   _normalDate(date) {
+    if (date === null) {
+      return 'Onbekend';
+    }
     date = new Date(date);
     return (0, _dutchDate.toDutchDate)(date);
   }
@@ -41190,6 +41156,7 @@ class MafScreenPersonData extends (0, _connectMixin.connect)(_store.store)(_poly
   stateChanged(state) {
     if (state.person.data != undefined) {
       this.personData = state.person.data;
+      this.searching = state.person.searching;
     }
   }
 }
@@ -41206,7 +41173,7 @@ window.customElements.define('maf-screen-person-data', MafScreenPersonData);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".Wrapper{width:100%;height:100vh;max-width:var(--main-max-width);margin:0 auto;background-color:var(--main-content-background-color)}.SubHeading{font-size:var(--main-font-subheader-size);color:var(--palette-secondary-main);font-weight:500}.Description{font-size:var(--main-font-text-size);color:var(--palette-primary-main);font-style:italic}.ContractDataPoint{font-family:var(--typography-fontFamily);padding:10px 0 13px;border-bottom:1px solid #eff1f3;position:relative}.ContractDataPointLabel{opacity:.4;font-size:var(--main-font-text-size);font-weight:500;font-style:normal;font-stretch:normal;line-height:1.44;letter-spacing:-.3px;text-align:left;color:var(--main-header-text-color)}.ContractDataPointValue{font-size:var(--main-font-text-size);font-weight:600}.ContractDataPointSubValue,.ContractDataPointValue{height:23px;font-style:normal;font-stretch:normal;line-height:1.28;letter-spacing:-.4px;text-align:left;color:var(--main-header-text-color)}.ContractDataPointSubValue{font-size:var(--main-font-medium-text-size);width:100%;display:flex;justify-content:space-between}.ContractDataPointSubValueKey{font-weight:600}.ContractDataPointSubValueValue{font-weight:500}.ContractDataPointSubSubValue{height:23px;font-size:var(--main-font-small-text-size);font-style:normal;font-stretch:normal;line-height:1.28;letter-spacing:-.4px;text-align:left;color:var(--main-header-text-color);width:100%;display:flex;justify-content:space-between}.ContractDataPointSubSubValueKey{font-weight:500;margin-left:16px}.ContractDataPointSubSubValueValue{font-weight:400}.Logo{height:30px;width:30px;background-size:contain;background-repeat:no-repeat;background-position:50%;position:absolute;top:2px;right:0}"
+module.exports = ".Wrapper{height:100vh;max-width:var(--main-max-width);margin:0 auto;background-color:var(--main-content-background-color);padding:0 0 57px}.ScrollContainer,.Wrapper{width:100%;box-sizing:border-box}.ScrollContainer{height:100%;padding-bottom:75px;float:left;overflow-y:auto}.SubHeading{font-size:var(--main-font-subheader-size);color:var(--palette-secondary-main);font-weight:500}.Description{font-size:var(--main-font-text-size);color:var(--palette-primary-main);font-style:italic}.ContractDataPointContainer{display:flex;flex-direction:column}.ContractDataPoint{font-family:var(--typography-fontFamily);padding:10px 0 13px;border-bottom:1px solid #eff1f3}.ContractDataPointLabel{opacity:.4;font-size:var(--main-font-text-size);font-weight:500;font-style:normal;font-stretch:normal;line-height:1.44;letter-spacing:-.3px;text-align:left;color:var(--main-header-text-color)}.ContractDataPointValue{font-size:var(--main-font-text-size);font-weight:600}.ContractDataPointSubValue,.ContractDataPointValue{font-style:normal;font-stretch:normal;line-height:1.28;letter-spacing:-.4px;text-align:left;color:var(--main-header-text-color)}.ContractDataPointSubValue{height:23px;font-size:var(--main-font-medium-text-size);width:100%;display:flex;justify-content:space-between}.ContractDataPointSubValueKey{font-weight:600}.ContractDataPointSubValueValue{font-weight:500}.ContractDataPointSubSubValue{height:23px;font-size:var(--main-font-small-text-size);font-style:normal;font-stretch:normal;line-height:1.28;letter-spacing:-.4px;text-align:left;color:var(--main-header-text-color);width:100%;display:flex;justify-content:space-between}.ContractDataPointSubSubValueKey{font-weight:500;margin-left:16px}.ContractDataPointSubSubValueValue{font-weight:400}"
 
 /***/ }),
 
@@ -41217,7 +41184,7 @@ module.exports = ".Wrapper{width:100%;height:100vh;max-width:var(--main-max-widt
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\r\n    <maf-screen on-back=\"[[_onBack]]\" heading=\"[[personData.naam.aanschrijfwijze]]\">\r\n        <h2>Basisgegevens</h2>\r\n        <div class=\"ContractDataPoint\">\r\n            <div class=\"ContractDataPointLabel\">Naam</div>\r\n            <div class=\"ContractDataPointValue\">[[personData.naam.aanschrijfwijze]]</div>\r\n        </div>\r\n        <div class=\"ContractDataPoint\">\r\n            <div class=\"ContractDataPointLabel\">Geboortedatum</div>\r\n            <div class=\"ContractDataPointValue\">[[_normalDate(personData.geboorte.datum)]]</div>\r\n        </div>\r\n        <!--<div class=\"ContractDataPoint\">\r\n            <div class=\"ContractDataPointLabel\">Nationaliteit</div>\r\n            <div class=\"ContractDataPointValue\">[[personData.address.country]]</div>\r\n        </div>-->\r\n        <div class=\"ContractDataPoint\">\r\n            <div class=\"ContractDataPointLabel\">BSN</div>\r\n            <div class=\"ContractDataPointValue\">[[personData.burgerservicenummer]]</div>\r\n        </div>\r\n        <div class=\"ContractDataPoint\">\r\n            <div class=\"ContractDataPointLabel\">Adres</div>\r\n            <div class=\"ContractDataPointValue\">\r\n              [[personData.verblijfplaats.straatnaam]] [[personData.verblijfplaats.huisnummer]][[personData.verblijfplaats.huisnummertoevoeging]][[personData.verblijfplaats.huisletter]], [[personData.verblijfplaats.postcode]] [[personData.verblijfplaats.woonplaatsnaam]]\r\n            </div>\r\n        </div>\r\n        <!--<div class=\"ContractDataPoint\">\r\n            <div class=\"ContractDataPointLabel\">Telefoonnummer</div>\r\n            <div class=\"ContractDataPointValue\">[[personData.phone_number]]</div>\r\n        </div>\r\n        <div class=\"ContractDataPoint\">\r\n            <div class=\"ContractDataPointLabel\">Email</div>\r\n            <div class=\"ContractDataPointValue\">[[personData.email]]</div>\r\n        </div>-->\r\n    </maf-screen>\r\n</div>\r\n"
+module.exports = "<div class=\"Wrapper\">\r\n    <div class=\"ScrollContainer\">\r\n        <dom-if if=\"{{searching}}\">\r\n            <template>\r\n                <maf-screen on-back=\"[[_onBack]]\" heading=\"Ophalen gegevens\">\r\n                    <div class=\"Subtitle\">Uw gegevens worden opgehaald</div>\r\n                </maf-screen>\r\n            </template>\r\n        </dom-if>\r\n        <dom-if if=\"{{!searching}}\">\r\n            <template>\r\n                <maf-screen on-back=\"[[_onBack]]\" heading=\"[[personData.naam.aanschrijfwijze]]\">\r\n                    <h2>Basisgegevens</h2>\r\n                    <div class=\"ContractDataPointContainer\">\r\n                        <div class=\"ContractDataPoint\">\r\n                            <div class=\"ContractDataPointLabel\">Naam</div>\r\n                            <div class=\"ContractDataPointValue\">[[personData.naam.aanschrijfwijze]]</div>\r\n                        </div>\r\n                        <div class=\"ContractDataPoint\">\r\n                            <div class=\"ContractDataPointLabel\">Geboortedatum</div>\r\n                            <div class=\"ContractDataPointValue\">[[_normalDate(personData.geboorte.datum)]]</div>\r\n                        </div>\r\n                        <!--<div class=\"ContractDataPoint\">\r\n                            <div class=\"ContractDataPointLabel\">Nationaliteit</div>\r\n                            <div class=\"ContractDataPointValue\">[[personData.address.country]]</div>\r\n                        </div>-->\r\n                        <div class=\"ContractDataPoint\">\r\n                            <div class=\"ContractDataPointLabel\">BSN</div>\r\n                            <div class=\"ContractDataPointValue\">[[personData.burgerservicenummer]]</div>\r\n                        </div>\r\n                        <div class=\"ContractDataPoint\">\r\n                            <div class=\"ContractDataPointLabel\">Adres</div>\r\n                            <div class=\"ContractDataPointValue\">\r\n                                [[personData.verblijfplaats.straatnaam]] [[personData.verblijfplaats.huisnummer]][[personData.verblijfplaats.huisnummertoevoeging]][[personData.verblijfplaats.huisletter]], [[personData.verblijfplaats.postcode]] [[personData.verblijfplaats.woonplaatsnaam]]\r\n                            </div>\r\n                        </div>\r\n                        <!--<div class=\"ContractDataPoint\">\r\n                            <div class=\"ContractDataPointLabel\">Telefoonnummer</div>\r\n                            <div class=\"ContractDataPointValue\">[[personData.phone_number]]</div>\r\n                        </div>\r\n                        <div class=\"ContractDataPoint\">\r\n                            <div class=\"ContractDataPointLabel\">Email</div>\r\n                            <div class=\"ContractDataPointValue\">[[personData.email]]</div>\r\n                        </div>-->\r\n                    </div>\r\n                </maf-screen>\r\n            </template>\r\n        </dom-if>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -41305,7 +41272,7 @@ window.customElements.define('maf-screen-signin', MafScreenSignin);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".loginWrapper{width:100%;height:100vh;max-width:var(--main-max-width);margin:0 auto;overflow-y:auto;background-color:var(--main-content-background-color)}.loginImage,.loginTitle{width:100%;float:left}.loginTitle{margin-top:50px;margin-bottom:30px;height:41px;font-family:var(--typography-fontFamily);font-size:var(--main-font-header-size);font-weight:700;line-height:41px;letter-spacing:-.3px;text-align:center;color:var(--main-header-text-color)}.loginContent{margin:0 10px;width:calc(100% - 20px);float:left}.loginDigidButton{max-width:410px;margin:10px auto;background-color:var(--button-gray-background-color);padding:10px;display:flex;justify-content:space-between;cursor:pointer}.loginDigidButton:hover{background-color:var(--button-gray-background-color-hover)}.loginDigidButtonText{display:flex;justify-content:flex-start}.loginSelectButton{width:40px;height:40px;background-size:40px 40px;margin-right:10px}.loginDigidButtonHeader{font-size:var(--main-font-text-size);line-height:40px;font-weight:700}.loginDigidButton:after{content:\">\";font-size:var(--main-font-text-size);font-weight:600;transform:scaleY(1.8);color:var(--palette-secondary-main);line-height:40px}.Error{color:red;width:100%;text-align:center}.Info{max-width:410px;margin:20px auto}.InfoText{font-weight:700;line-height:30px}.InfoSubText,.InfoText{font-size:var(--main-font-medium-text-size)}.InfoSubText{font-weight:400;line-height:20px}"
+module.exports = ".loginWrapper{height:100vh;max-width:var(--main-max-width);margin:0 auto;background-color:var(--main-content-background-color)}.loginWrapper,.ScrollContainer{width:100%;box-sizing:border-box}.ScrollContainer{height:100%;float:left;overflow-y:auto}.loginImage,.loginTitle{width:100%;float:left}.loginTitle{margin-top:50px;margin-bottom:30px;height:41px;font-family:var(--typography-fontFamily);font-size:var(--main-font-header-size);font-weight:700;line-height:41px;letter-spacing:-.3px;text-align:center;color:var(--main-header-text-color)}@media (max-height:510px){.loginTitle{margin-top:20px;margin-bottom:10px}}.loginContent{margin:0 10px;width:calc(100% - 20px);float:left}.loginDigidButton{max-width:410px;margin:10px auto;background-color:var(--button-gray-background-color);padding:10px;display:flex;justify-content:space-between;cursor:pointer}.loginDigidButton:hover{background-color:var(--button-gray-background-color-hover)}.loginDigidButtonText{display:flex;justify-content:flex-start}.loginSelectButton{width:40px;height:40px;background-size:40px 40px;margin-right:10px}.loginDigidButtonHeader{font-size:var(--main-font-text-size);line-height:40px;font-weight:700}.loginDigidButton:after{content:\">\";font-size:var(--main-font-text-size);font-weight:600;transform:scaleY(1.8);color:var(--palette-secondary-main);line-height:40px}.Error{color:red;width:100%;text-align:center}.Info{max-width:410px;margin:20px auto 40px}.InfoText{font-weight:700;line-height:30px}.InfoSubText,.InfoText{font-size:var(--main-font-medium-text-size)}.InfoSubText{font-weight:400;line-height:20px}"
 
 /***/ }),
 
@@ -41316,7 +41283,7 @@ module.exports = ".loginWrapper{width:100%;height:100vh;max-width:var(--main-max
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"loginWrapper\">\r\n  <div>\r\n    <div class=\"loginTitle\">MijnApp</div>\r\n    <img class=\"loginImage\" src=\"assets/media/Inloggen.svg\" alt=\"background-logo\" />\r\n  </div>\r\n  <div class=\"loginContent\">\r\n    <dom-if if=\"{{hasFakeInlogEnabled}}\">\r\n      <template>\r\n        <div class=\"loginDigidButton\" on-click=\"_signInWithDigiDFake\">\r\n          <div class=\"loginDigidButtonText\">\r\n            <img src=\"assets/logo-digid.svg\" class=\"loginSelectButton noselect\" alt=\"digid-logo\" />\r\n            <div class=\"loginDigidButtonHeader\">Fake inloggen met DigiD</div>\r\n          </div>\r\n        </div>\r\n      </template>\r\n    </dom-if>\r\n    <div class=\"loginDigidButton\" on-click=\"_signInWithDigiD\">\r\n      <div class=\"loginDigidButtonText\">\r\n        <img src=\"assets/logo-digid.svg\" class=\"loginSelectButton noselect\" alt=\"digid-logo\"/>\r\n        <div class=\"loginDigidButtonHeader\">Inloggen met DigiD</div>\r\n      </div>\r\n    </div>\r\n    <div class=\"Info\">\r\n      <div class=\"InfoText\">Heeft u nog geen DigiD?</div>\r\n      <div class=\"InfoSubText\">U kunt zelf uw DigiD aanvragen op <a href=\"http://www.digid.nl\">www.digid.nl</a></div>\r\n    </div>\r\n  </div>\r\n  <dom-if if=\"[[_showLoginWarning(jwtError)]]\">\r\n    <template>\r\n      <div class=\"Error\">Er is iets verkeerd gegaan tijdens het inloggen</div>\r\n      <div class=\"Error\">[[_showLoginWarning(jwtError)]]</div>\r\n    </template>\r\n  </dom-if>\r\n</div>\r\n"
+module.exports = "<div class=\"loginWrapper\">\r\n    <div class=\"ScrollContainer\">\r\n        <div>\r\n            <div class=\"loginTitle\">MijnApp</div>\r\n            <img class=\"loginImage\" src=\"assets/media/Inloggen.svg\" alt=\"background-logo\" />\r\n        </div>\r\n        <div class=\"loginContent\">\r\n            <dom-if if=\"{{hasFakeInlogEnabled}}\">\r\n                <template>\r\n                    <div class=\"loginDigidButton\" on-click=\"_signInWithDigiDFake\">\r\n                        <div class=\"loginDigidButtonText\">\r\n                            <img src=\"assets/logo-digid.svg\" class=\"loginSelectButton noselect\" alt=\"digid-logo\" />\r\n                            <div class=\"loginDigidButtonHeader\">Test inloggen met DigiD</div>\r\n                        </div>\r\n                    </div>\r\n                </template>\r\n            </dom-if>\r\n            <div class=\"loginDigidButton\" on-click=\"_signInWithDigiD\">\r\n                <div class=\"loginDigidButtonText\">\r\n                    <img src=\"assets/logo-digid.svg\" class=\"loginSelectButton noselect\" alt=\"digid-logo\" />\r\n                    <div class=\"loginDigidButtonHeader\">Inloggen met DigiD</div>\r\n                </div>\r\n            </div>\r\n            <div class=\"Info\">\r\n                <div class=\"InfoText\">Heeft u nog geen DigiD?</div>\r\n                <div class=\"InfoSubText\">Vraag uw DigiD aan op <a href=\"http://www.digid.nl\">www.digid.nl.</a></div>\r\n            </div>\r\n        </div>\r\n        <dom-if if=\"[[_showLoginWarning(jwtError)]]\">\r\n            <template>\r\n                <div class=\"Error\">Er is iets verkeerd gegaan tijdens het inloggen</div>\r\n                <div class=\"Error\">[[_showLoginWarning(jwtError)]]</div>\r\n            </template>\r\n        </dom-if>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -41403,8 +41370,8 @@ const secondaryPalette = exports.secondaryPalette = {
   700: '#ff504f',
   800: '#ff4645',
   900: '#ff3433',
-  A100: '#ffffff',
-  A200: '#ffffff',
+  A100: '#FFFFFF',
+  A200: '#FFFFFF',
   A400: '#ffdede',
   A700: '#ffc5c4',
   darkText: [50, 100, 200, 300, 400, 'A100', 'A200', 'A400', 'A700']
@@ -41844,7 +41811,7 @@ module.exports = ":host{display:inline-flex}svg{fill:var(--icon-color);stroke:va
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\r\n<svg xmlns:osb=\"http://www.openswatchbook.org/uri/2009/osb\"\r\n     xmlns:dc=\"http://purl.org/dc/elements/1.1/\"\r\n     xmlns:cc=\"http://creativecommons.org/ns#\"\r\n     xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\r\n     xmlns:svg=\"http://www.w3.org/2000/svg\"\r\n     xmlns=\"http://www.w3.org/2000/svg\"\r\n     xmlns:sodipodi=\"http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd\"\r\n     xmlns:inkscape=\"http://www.inkscape.org/namespaces/inkscape\"\r\n     width=\"100\"\r\n     height=\"100\"\r\n     viewBox=\"0 0 366.636 366.636\"\r\n     version=\"1.1\"\r\n     id=\"svg3749\">\r\n  <defs id=\"defs3753\">\r\n    <linearGradient id=\"linearGradient4595\"\r\n                    osb:paint=\"solid\">\r\n      <stop style=\"stop-color:#000000;stop-opacity:1;\"\r\n            offset=\"0\"\r\n            id=\"stop4593\" />\r\n    </linearGradient>\r\n  </defs>\r\n  <sodipodi:namedview pagecolor=\"#ffffff\"\r\n                      bordercolor=\"#666666\"\r\n                      borderopacity=\"1\"\r\n                      objecttolerance=\"10\"\r\n                      gridtolerance=\"10\"\r\n                      guidetolerance=\"10\"\r\n                      inkscape:pageopacity=\"0\"\r\n                      inkscape:pageshadow=\"2\"\r\n                      inkscape:window-width=\"1920\"\r\n                      inkscape:window-height=\"1017\"\r\n                      id=\"namedview3751\"\r\n                      showgrid=\"false\"\r\n                      inkscape:zoom=\"8.48\"\r\n                      inkscape:cx=\"-24.536589\"\r\n                      inkscape:cy=\"32.793446\"\r\n                      inkscape:window-x=\"1912\"\r\n                      inkscape:window-y=\"-8\"\r\n                      inkscape:window-maximized=\"1\"\r\n                      inkscape:current-layer=\"svg3749\" />\r\n  <g id=\"g3747\"\r\n     transform=\"matrix(0.63020894,0,0,0.70541494,64.258455,45.689107)\">\r\n    <g id=\"g3727\">\r\n      <polygon style=\"fill:#ffb819\"\r\n               points=\"7.261,366.636 230.796,262.472 109.313,142.129 \"\r\n               id=\"polygon3713\" />\r\n      <circle style=\"fill:#ffd26c\"\r\n              cx=\"139.46001\"\r\n              cy=\"232.5\"\r\n              r=\"27.121\"\r\n              id=\"circle3715\" />\r\n      <path style=\"fill:#ffd26c\"\r\n            d=\"m 64.791,240.073 c 7.507,0.439 15.158,-2.219 20.866,-7.982 10.454,-10.552 10.455,-27.525 0.076,-38.087 z\"\r\n            id=\"path3717\"\r\n            inkscape:connector-curvature=\"0\" />\r\n      <path style=\"fill:#ffd26c\"\r\n            d=\"m 34.985,337.966 c -5.319,5.371 -7.93,12.403 -7.847,19.408 l 44.797,-20.876 c -10.697,-9.221 -26.859,-8.718 -36.95,1.468 z\"\r\n            id=\"path3719\"\r\n            inkscape:connector-curvature=\"0\" />\r\n      <path style=\"fill:#ffd26c\"\r\n            d=\"m 142.845,283.129 c -6.434,6.495 -8.903,15.423 -7.436,23.792 l 47.484,-22.127 c -0.534,-0.634 -1.093,-1.252 -1.693,-1.846 -10.641,-10.541 -27.813,-10.46 -38.355,0.181 z\"\r\n            id=\"path3721\"\r\n            inkscape:connector-curvature=\"0\" />\r\n      <circle style=\"fill:#ffd26c\"\r\n              cx=\"77.177002\"\r\n              cy=\"286.45099\"\r\n              r=\"27.121\"\r\n              id=\"circle3723\" />\r\n      <polygon style=\"fill:#004d7a\"\r\n               points=\"202.305,275.748 230.796,262.472 109.313,142.129 96.306,170.743 \"\r\n               id=\"polygon3725\" />\r\n    </g>\r\n    <circle style=\"fill:#00bcb4\"\r\n            cx=\"135\"\r\n            cy=\"86.679001\"\r\n            r=\"18.497\"\r\n            id=\"circle3729\" />\r\n    <circle style=\"fill:#00bcb4\"\r\n            cx=\"276.53\"\r\n            cy=\"235.558\"\r\n            r=\"18.497\"\r\n            id=\"circle3731\" />\r\n    <circle style=\"fill:#ffb819\"\r\n            cx=\"316.73999\"\r\n            cy=\"153.03799\"\r\n            r=\"18.497\"\r\n            id=\"circle3733\" />\r\n    <circle style=\"fill:#ffb819\"\r\n            cx=\"176.10201\"\r\n            cy=\"18.497\"\r\n            r=\"18.497\"\r\n            id=\"circle3735\" />\r\n    <circle style=\"fill:#d85c72\"\r\n            cx=\"228.315\"\r\n            cy=\"181.41901\"\r\n            r=\"18.497\"\r\n            id=\"circle3737\" />\r\n    <circle style=\"fill:#d85c72\"\r\n            cx=\"239.536\"\r\n            cy=\"74.686996\"\r\n            r=\"18.497\"\r\n            id=\"circle3739\" />\r\n    <circle style=\"fill:#d85c72\"\r\n            cx=\"334.38501\"\r\n            cy=\"83.179001\"\r\n            r=\"18.497\"\r\n            id=\"circle3741\" />\r\n    <path style=\"fill:#00bcb4\"\r\n          d=\"m 133.624,143.693 c -3.767,0 -6.819,-3.053 -6.819,-6.819 0,-3.766 3.052,-6.819 6.819,-6.819 25.377,0 46.024,-20.646 46.024,-46.024 0,-32.898 26.764,-59.662 59.662,-59.662 32.897,0 59.661,26.764 59.661,59.662 0,3.766 -3.053,6.818 -6.818,6.818 -3.765,0 -6.818,-3.052 -6.818,-6.818 0,-25.378 -20.647,-46.024 -46.024,-46.024 -25.378,0 -46.024,20.646 -46.024,46.024 -0.002,32.898 -26.767,59.662 -59.663,59.662 z\"\r\n          id=\"path3743\"\r\n          inkscape:connector-curvature=\"0\" />\r\n    <path style=\"fill:#ffb819\"\r\n          d=\"m 312.259,210.037 c -25.978,0 -47.115,-21.136 -47.115,-47.115 0,-18.459 -15.019,-33.479 -33.478,-33.479 -18.46,0 -33.479,15.019 -33.479,33.479 0,3.766 -3.053,6.818 -6.817,6.818 -3.767,0 -6.819,-3.052 -6.819,-6.818 0,-25.979 21.136,-47.115 47.115,-47.115 25.979,0 47.115,21.136 47.115,47.115 0,18.46 15.018,33.478 33.478,33.478 18.46,0 33.478,-15.018 33.478,-33.478 0,-3.766 3.054,-6.818 6.82,-6.818 3.764,0 6.817,3.052 6.817,6.818 10e-4,25.979 -21.135,47.115 -47.115,47.115 z\"\r\n          id=\"path3745\"\r\n          inkscape:connector-curvature=\"0\" />\r\n  </g>\r\n  <ellipse id=\"path3757\"\r\n           style=\"fill:#00e6ff;fill-opacity:0.10050252;stroke:none;stroke-width:9.35468674\"\r\n           ry=\"180.30095\"\r\n           rx=\"179.84981\"\r\n           cy=\"211.30388\"\r\n           cx=\"153.12321\"\r\n           transform=\"matrix(0.98797061,-0.15464175,0.15570718,0.98780326,0,0)\" />\r\n</svg>\r\n"
+module.exports = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\r\n<svg xmlns:osb=\"http://www.openswatchbook.org/uri/2009/osb\"\r\n     xmlns:dc=\"http://purl.org/dc/elements/1.1/\"\r\n     xmlns:cc=\"http://creativecommons.org/ns#\"\r\n     xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\r\n     xmlns:svg=\"http://www.w3.org/2000/svg\"\r\n     xmlns=\"http://www.w3.org/2000/svg\"\r\n     xmlns:sodipodi=\"http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd\"\r\n     xmlns:inkscape=\"http://www.inkscape.org/namespaces/inkscape\"\r\n     width=\"100\"\r\n     height=\"100\"\r\n     viewBox=\"0 0 366.636 366.636\"\r\n     version=\"1.1\"\r\n     id=\"svg3749\">\r\n  <defs id=\"defs3753\">\r\n    <linearGradient id=\"linearGradient4595\"\r\n                    osb:paint=\"solid\">\r\n      <stop style=\"stop-color:#000000;stop-opacity:1;\"\r\n            offset=\"0\"\r\n            id=\"stop4593\" />\r\n    </linearGradient>\r\n  </defs>\r\n  <sodipodi:namedview pagecolor=\"#FFFFFF\"\r\n                      bordercolor=\"#666666\"\r\n                      borderopacity=\"1\"\r\n                      objecttolerance=\"10\"\r\n                      gridtolerance=\"10\"\r\n                      guidetolerance=\"10\"\r\n                      inkscape:pageopacity=\"0\"\r\n                      inkscape:pageshadow=\"2\"\r\n                      inkscape:window-width=\"1920\"\r\n                      inkscape:window-height=\"1017\"\r\n                      id=\"namedview3751\"\r\n                      showgrid=\"false\"\r\n                      inkscape:zoom=\"8.48\"\r\n                      inkscape:cx=\"-24.536589\"\r\n                      inkscape:cy=\"32.793446\"\r\n                      inkscape:window-x=\"1912\"\r\n                      inkscape:window-y=\"-8\"\r\n                      inkscape:window-maximized=\"1\"\r\n                      inkscape:current-layer=\"svg3749\" />\r\n  <g id=\"g3747\"\r\n     transform=\"matrix(0.63020894,0,0,0.70541494,64.258455,45.689107)\">\r\n    <g id=\"g3727\">\r\n      <polygon style=\"fill:#ffb819\"\r\n               points=\"7.261,366.636 230.796,262.472 109.313,142.129 \"\r\n               id=\"polygon3713\" />\r\n      <circle style=\"fill:#ffd26c\"\r\n              cx=\"139.46001\"\r\n              cy=\"232.5\"\r\n              r=\"27.121\"\r\n              id=\"circle3715\" />\r\n      <path style=\"fill:#ffd26c\"\r\n            d=\"m 64.791,240.073 c 7.507,0.439 15.158,-2.219 20.866,-7.982 10.454,-10.552 10.455,-27.525 0.076,-38.087 z\"\r\n            id=\"path3717\"\r\n            inkscape:connector-curvature=\"0\" />\r\n      <path style=\"fill:#ffd26c\"\r\n            d=\"m 34.985,337.966 c -5.319,5.371 -7.93,12.403 -7.847,19.408 l 44.797,-20.876 c -10.697,-9.221 -26.859,-8.718 -36.95,1.468 z\"\r\n            id=\"path3719\"\r\n            inkscape:connector-curvature=\"0\" />\r\n      <path style=\"fill:#ffd26c\"\r\n            d=\"m 142.845,283.129 c -6.434,6.495 -8.903,15.423 -7.436,23.792 l 47.484,-22.127 c -0.534,-0.634 -1.093,-1.252 -1.693,-1.846 -10.641,-10.541 -27.813,-10.46 -38.355,0.181 z\"\r\n            id=\"path3721\"\r\n            inkscape:connector-curvature=\"0\" />\r\n      <circle style=\"fill:#ffd26c\"\r\n              cx=\"77.177002\"\r\n              cy=\"286.45099\"\r\n              r=\"27.121\"\r\n              id=\"circle3723\" />\r\n      <polygon style=\"fill:#004d7a\"\r\n               points=\"202.305,275.748 230.796,262.472 109.313,142.129 96.306,170.743 \"\r\n               id=\"polygon3725\" />\r\n    </g>\r\n    <circle style=\"fill:#00bcb4\"\r\n            cx=\"135\"\r\n            cy=\"86.679001\"\r\n            r=\"18.497\"\r\n            id=\"circle3729\" />\r\n    <circle style=\"fill:#00bcb4\"\r\n            cx=\"276.53\"\r\n            cy=\"235.558\"\r\n            r=\"18.497\"\r\n            id=\"circle3731\" />\r\n    <circle style=\"fill:#ffb819\"\r\n            cx=\"316.73999\"\r\n            cy=\"153.03799\"\r\n            r=\"18.497\"\r\n            id=\"circle3733\" />\r\n    <circle style=\"fill:#ffb819\"\r\n            cx=\"176.10201\"\r\n            cy=\"18.497\"\r\n            r=\"18.497\"\r\n            id=\"circle3735\" />\r\n    <circle style=\"fill:#d85c72\"\r\n            cx=\"228.315\"\r\n            cy=\"181.41901\"\r\n            r=\"18.497\"\r\n            id=\"circle3737\" />\r\n    <circle style=\"fill:#d85c72\"\r\n            cx=\"239.536\"\r\n            cy=\"74.686996\"\r\n            r=\"18.497\"\r\n            id=\"circle3739\" />\r\n    <circle style=\"fill:#d85c72\"\r\n            cx=\"334.38501\"\r\n            cy=\"83.179001\"\r\n            r=\"18.497\"\r\n            id=\"circle3741\" />\r\n    <path style=\"fill:#00bcb4\"\r\n          d=\"m 133.624,143.693 c -3.767,0 -6.819,-3.053 -6.819,-6.819 0,-3.766 3.052,-6.819 6.819,-6.819 25.377,0 46.024,-20.646 46.024,-46.024 0,-32.898 26.764,-59.662 59.662,-59.662 32.897,0 59.661,26.764 59.661,59.662 0,3.766 -3.053,6.818 -6.818,6.818 -3.765,0 -6.818,-3.052 -6.818,-6.818 0,-25.378 -20.647,-46.024 -46.024,-46.024 -25.378,0 -46.024,20.646 -46.024,46.024 -0.002,32.898 -26.767,59.662 -59.663,59.662 z\"\r\n          id=\"path3743\"\r\n          inkscape:connector-curvature=\"0\" />\r\n    <path style=\"fill:#ffb819\"\r\n          d=\"m 312.259,210.037 c -25.978,0 -47.115,-21.136 -47.115,-47.115 0,-18.459 -15.019,-33.479 -33.478,-33.479 -18.46,0 -33.479,15.019 -33.479,33.479 0,3.766 -3.053,6.818 -6.817,6.818 -3.767,0 -6.819,-3.052 -6.819,-6.818 0,-25.979 21.136,-47.115 47.115,-47.115 25.979,0 47.115,21.136 47.115,47.115 0,18.46 15.018,33.478 33.478,33.478 18.46,0 33.478,-15.018 33.478,-33.478 0,-3.766 3.054,-6.818 6.82,-6.818 3.764,0 6.817,3.052 6.817,6.818 10e-4,25.979 -21.135,47.115 -47.115,47.115 z\"\r\n          id=\"path3745\"\r\n          inkscape:connector-curvature=\"0\" />\r\n  </g>\r\n  <ellipse id=\"path3757\"\r\n           style=\"fill:#00e6ff;fill-opacity:0.10050252;stroke:none;stroke-width:9.35468674\"\r\n           ry=\"180.30095\"\r\n           rx=\"179.84981\"\r\n           cy=\"211.30388\"\r\n           cx=\"153.12321\"\r\n           transform=\"matrix(0.98797061,-0.15464175,0.15570718,0.98780326,0,0)\" />\r\n</svg>\r\n"
 
 /***/ }),
 
@@ -42753,7 +42720,7 @@ window.customElements.define('maki-button', MakiButton);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".Button{float:left;--icon-color:var(--main-color);display:inline-block;margin-left:15px;font-family:HK Grotesk,sans-serif;color:var(--main-color);cursor:pointer;position:relative;overflow:hidden;border-radius:3px;border:1px solid var(--main-color)}:host(:first-child) .Button{margin-left:0!important}.Button .Inner{font-weight:500;font-style:normal;font-stretch:normal;letter-spacing:-.1px}.Button:hover .Inner{background-color:hsla(0,0%,74.9%,.18)}.Button.highlight:hover .Inner{background-color:hsla(0,0%,100%,.18)}.Button.disabled:hover .Inner{background-color:hsla(0,0%,74.9%,0)}.Button.noBorder{border:0}.Button.italic .Inner{font-style:italic}.Button.small .HeadingAsProp{position:absolute;color:#fff;background-color:var(--main-color);top:150%;left:0;white-space:nowrap;font-size:var(--main-font-small-text-size);line-height:19px;padding:3px 15px;border-radius:3px;margin-top:5px}.Button.small.disabled .HeadingAsProp{background-color:var(--disabled-color)}.Button.bubbleColorMain .HeadingAsProp{background-color:var(--main-color)}.Button.bubbleColorDisabled .HeadingAsProp{background-color:var(--disabled-color)}.Button.bubbleColorHighlight .HeadingAsProp{background-color:var(--highlight-color)}.HeadingAsProp.After{width:0;height:0}.Button.small .HeadingAsProp .After{content:\"\";position:absolute;left:calc(50% - 5px);top:-5px;width:10px;height:5px;background-size:contain;background-repeat:no-repeat}.Button.highlight{background-color:var(--highlight-color);border-color:var(--highlight-color);color:#fff;--icon-color:#fff}.Button.white{background-color:#fff;border-color:var(--disabled-color);color:var(--main-color);--icon-color:var(--highlight-color)}.Button.white:hover{border-color:var(--main-color)}.Button.disabled:hover{border-color:var(--disabled-color)}.Button.disabled{cursor:default;background-color:hsla(0,0%,49.8%,0);border-color:var(--disabled-color);color:var(--disabled-color);--icon-color:var(--disabled-color)}.Button.highlight.disabled{background-color:var(--disabled-color);color:#fff;--icon-color:#fff}.Button.textColorMain{color:var(--main-color)}.Button.textColorDisabled{color:var(--disabled-color)}.Button.textColorHighlight{color:var(--highlight-color)}.Button.icon .Child{position:absolute;display:flex;justify-content:center;align-items:center}.Button.iconColorMain .Child{--icon-color:var(--main-color)}.Button.iconColorDisabled .Child{--icon-color:var(--disabled-color)}.Button.iconColorHighlight .Child{--icon-color:var(--highlight-color)}.Child ::slotted(svg){width:18px;height:18px;fill:var(--icon-color);stroke:var(--icon-color)}"
+module.exports = ".Button{float:left;--icon-color:var(--main-color);display:inline-block;margin-left:15px;font-family:HK Grotesk,sans-serif;color:var(--main-color);cursor:pointer;position:relative;overflow:hidden;border-radius:3px;border:1px solid var(--main-color)}:host(:first-child) .Button{margin-left:0!important}.Button .Inner{font-weight:500;font-style:normal;font-stretch:normal;letter-spacing:-.1px;box-sizing:content-box}.Button:hover .Inner{background-color:hsla(0,0%,74.9%,.18)}.Button.highlight:hover .Inner{background-color:hsla(0,0%,100%,.18)}.Button.disabled:hover .Inner{background-color:hsla(0,0%,74.9%,0)}.Button.noBorder{border:0}.Button.italic .Inner{font-style:italic}.Button.small .HeadingAsProp{position:absolute;color:#fff;background-color:var(--main-color);top:150%;left:0;white-space:nowrap;font-size:var(--main-font-small-text-size);line-height:19px;padding:3px 15px;border-radius:3px;margin-top:5px}.Button.small.disabled .HeadingAsProp{background-color:var(--disabled-color)}.Button.bubbleColorMain .HeadingAsProp{background-color:var(--main-color)}.Button.bubbleColorDisabled .HeadingAsProp{background-color:var(--disabled-color)}.Button.bubbleColorHighlight .HeadingAsProp{background-color:var(--highlight-color)}.HeadingAsProp.After{width:0;height:0}.Button.small .HeadingAsProp .After{content:\"\";position:absolute;left:calc(50% - 5px);top:-5px;width:10px;height:5px;background-size:contain;background-repeat:no-repeat}.Button.highlight{background-color:var(--highlight-color);border-color:var(--highlight-color);color:#fff;--icon-color:#fff}.Button.white{background-color:#fff;border-color:var(--disabled-color);color:var(--main-color);--icon-color:var(--highlight-color)}.Button.white:hover{border-color:var(--main-color)}.Button.disabled:hover{border-color:var(--disabled-color)}.Button.disabled{cursor:default;background-color:hsla(0,0%,49.8%,0);border-color:var(--disabled-color);color:var(--disabled-color);--icon-color:var(--disabled-color)}.Button.highlight.disabled{background-color:var(--disabled-color);color:#fff;--icon-color:#fff}.Button.textColorMain{color:var(--main-color)}.Button.textColorDisabled{color:var(--disabled-color)}.Button.textColorHighlight{color:var(--highlight-color)}.Button.icon .Child{position:absolute;display:flex;justify-content:center;align-items:center}.Button.iconColorMain .Child{--icon-color:var(--main-color)}.Button.iconColorDisabled .Child{--icon-color:var(--disabled-color)}.Button.iconColorHighlight .Child{--icon-color:var(--highlight-color)}.Child ::slotted(svg){width:18px;height:18px;fill:var(--icon-color);stroke:var(--icon-color)}"
 
 /***/ }),
 
@@ -42991,7 +42958,7 @@ window.customElements.define('maki-input', MakiInput);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host{font-size:var(--typography-fontSize)}input::-webkit-inner-spin-button,input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}input[type=number]{-moz-appearance:textfield}.Icon{position:absolute;top:0;left:0;height:20px;width:20px}.Icon ::slotted(svg){--icon-color:var(--shaded-icon-main)}.Icon.iconLeft{float:left}.Icon.iconRight{float:right}.Input{margin:0;padding:.84em .84em calc(.84em - 2px);width:calc(100% - 1.68em);border:0;background-color:transparent;outline:none;font-size:var(--main-font-text-size);font-family:inherit;line-height:1.28;color:var(--shaded-color-main)}.Input:focus{outline:none;box-shadow:none}.Input:hover{box-shadow:0 0 5px 1px rgba(30,189,211,.4)}.Input.focussed{box-shadow:0 0 5px 1px rgba(30,189,211,.6)}.Input::-webkit-input-placeholder{opacity:.6;color:var(--shaded-color-main);font-style:italic}.Input::-moz-placeholder{opacity:.6;color:var(--shaded-color-main);font-style:italic}.Input::-ms-input-placeholder{opacity:.6;color:var(--shaded-color-main);font-style:italic}.Input::placeholder{opacity:.6;color:var(--shaded-color-main);font-style:italic}.Highlight{height:2px;width:100%;position:relative}.HighlightExpander{height:2px;transform:scaleX(0);transition:transform var(--transitions-duration-shorter) var(--transitions-easing-easeOut)}.HighlightExpander,.HighlightHover{width:100%;background-color:var(--shaded-accent-main);position:absolute;top:0;left:0}.HighlightHover{height:1px;opacity:0;transition:opacity var(--transitions-duration-shorter) var(--transitions-easing-easeInOut)}.HighlightAlways{width:100%;height:1px;position:absolute;bottom:0;left:0;background-color:var(--shaded-accent-main);opacity:.5}.Wrapper:hover .HighlightHover{opacity:.5}.Highlight.focussed .HighlightExpander{transform:scale(1)}"
+module.exports = ":host{font-size:var(--typography-fontSize)}input::-webkit-inner-spin-button,input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}input[type=number]{-moz-appearance:textfield}.Icon{position:absolute;top:0;left:0;height:20px;width:20px}.Icon ::slotted(svg){--icon-color:var(--shaded-icon-main)}.Icon.iconLeft{float:left}.Icon.iconRight{float:right}.Input{margin:0;padding:.84em .84em calc(.84em - 2px);width:calc(100% - 1.68em);border:0;background-color:transparent;outline:none;font-size:var(--main-font-text-size);font-family:inherit;line-height:1.28;color:var(--shaded-color-main)}.Input:focus{outline:none;box-shadow:none}.Input:hover{box-shadow:0 0 5px 1px rgba(30,189,211,.4)}.Input.focussed{-webkit-appearance:none;box-shadow:0 0 5px 1px rgba(30,189,211,.6)}.Input::-webkit-input-placeholder{opacity:.6;color:var(--shaded-color-main);font-style:italic}.Input::-moz-placeholder{opacity:.6;color:var(--shaded-color-main);font-style:italic}.Input::-ms-input-placeholder{opacity:.6;color:var(--shaded-color-main);font-style:italic}.Input::placeholder{opacity:.6;color:var(--shaded-color-main);font-style:italic}.Highlight{height:2px;width:100%;position:relative}.HighlightExpander{height:2px;transform:scaleX(0);transition:transform var(--transitions-duration-shorter) var(--transitions-easing-easeOut)}.HighlightExpander,.HighlightHover{width:100%;background-color:var(--shaded-accent-main);position:absolute;top:0;left:0}.HighlightHover{height:1px;opacity:0;transition:opacity var(--transitions-duration-shorter) var(--transitions-easing-easeInOut)}.HighlightAlways{width:100%;height:1px;position:absolute;bottom:0;left:0;background-color:var(--shaded-accent-main);opacity:.5}.Wrapper:hover .HighlightHover{opacity:.5}.Highlight.focussed .HighlightExpander{transform:scale(1)}"
 
 /***/ }),
 
@@ -43700,7 +43667,7 @@ window.customElements.define('playback-screen-wrapper', PlaybackScreenWrapper);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".Wrapper{height:100vh;max-width:var(--main-max-width)}.ScrollContainer,.Wrapper{width:100%;box-sizing:border-box;float:left;padding:0 0 57px}.ScrollContainer{height:100%;overflow-y:auto}.Scroller{padding:0 16px}.TopbarButtonContainer{height:62px;padding:16px 0}.ButtonContainer,.TopbarButtonContainer{width:100%;max-width:var(--main-max-width);box-sizing:border-box}.ButtonContainer{height:50px;margin-top:16px;margin-bottom:8px;background-color:#fff}.PrevButton{float:left}.NextButton,.SkipButton{float:right}.ButtonInner{display:flex}.ButtonInnerLeft,.ButtonInnerRight{display:inline-block;opacity:1;transform:scale(.7,1.2)}.ButtonInnerText{display:inline-block;padding:0 8px}.Title{margin-top:16px;font-size:var(--main-font-subheader-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.3px}.Subtitle,.Title{font-family:var(--typography-fontFamily);text-align:left;color:var(--palette-primary-main)}.Subtitle{font-size:var(--main-font-medium-text-size);font-style:italic;line-height:1.28;letter-spacing:-.4px;margin:7px 0 16px}.Back{background-image:url(/assets/backWhite.svg);background-repeat:no-repeat;background-position:0;padding-left:24px;opacity:1;font-family:var(--typography-fontFamily);font-size:var(--main-font-small-text-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:2.4;height:34px;letter-spacing:-.2px;text-align:left;cursor:pointer;color:var(--palette-primary-contrastText)}.Back:hover{opacity:.4}maki-icon-cross{--icon-color:var(--icon-red-color)}.JourneyHeader{background-color:var(--button-gray-background-color);margin:0 -16px;padding:16px;display:flex;flex-direction:column;justify-content:center}.JourneyIcon{--icon-color:#fff;background-color:var(--icon-color-teal);border-radius:30px;width:20px;height:20px;padding:10px;align-self:center}maki-icon-bulb,maki-icon-truck{--icon-size:20px}.JourneyTitle{font-size:var(--main-font-medium-text-size);text-align:center}.JourneyProgress{height:30px;width:100%;display:flex;justify-content:center}.JourneyProgressDotEmpty{margin:7px;width:12px;height:12px;background-color:#fff;border-radius:8px;border:2px solid var(--icon-color)}.JourneyProgressDot{width:16px;height:16px;border-radius:8px}.JourneyProgressDot,.JourneyProgressDotCheck{margin:7px;background-color:var(--icon-color)}.JourneyProgressDotCheck{width:12px;height:12px;border-radius:8px;border:2px solid var(--icon-color);display:flex}maki-icon-check{--icon-color:#fff;margin:3px 0 3px 1px}.JourneyProgressLine{margin:14px 0;width:40px;height:2px;background-color:var(--icon-color);border-radius:1px}"
+module.exports = ".Wrapper{height:100vh;max-width:var(--main-max-width);padding:0 0 57px}.ScrollContainer,.Wrapper{width:100%;box-sizing:border-box;float:left}.ScrollContainer{height:100%;overflow-y:auto;padding-bottom:75px}.Scroller{padding:0 16px}.TopbarButtonContainer{height:62px;padding:16px 0}.ButtonContainer,.TopbarButtonContainer{width:100%;max-width:var(--main-max-width);box-sizing:border-box}.ButtonContainer{height:50px;margin-top:16px;margin-bottom:8px;background-color:var(--main-content-background-color)}.PrevButton{float:left}.NextButton,.SkipButton{float:right}.ButtonInner{display:flex}.ButtonInnerLeft,.ButtonInnerRight{display:inline-block;opacity:1;transform:scale(.7,1.2)}.ButtonInnerText{display:inline-block;padding:0 8px}.Title{margin-top:16px;font-size:var(--main-font-subheader-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.3px}.Subtitle,.Title{font-family:var(--typography-fontFamily);text-align:left;color:var(--palette-primary-main)}.Subtitle{font-size:var(--main-font-medium-text-size);font-style:italic;line-height:1.28;letter-spacing:-.4px;margin:7px 0 16px}maki-icon-cross{--icon-color:var(--icon-red-color)}.JourneyHeader{background-color:var(--button-gray-background-color);margin:0 -16px;padding:16px;display:flex;flex-direction:column;justify-content:center}.JourneyIcon{background-color:var(--icon-color-teal);border-radius:30px;width:20px;height:20px;padding:10px;align-self:center;box-sizing:content-box;--icon-color:var(--main-content-background-color)}maki-icon-bulb,maki-icon-truck{--icon-size:20px}.JourneyTitle{font-size:var(--main-font-medium-text-size);text-align:center}.JourneyProgress{height:30px;width:100%;display:flex;justify-content:center}.JourneyProgressDotEmpty{margin:7px;width:12px;height:12px;background-color:var(--main-content-background-color);border-radius:8px;border:2px solid var(--icon-color);box-sizing:content-box}.JourneyProgressDot{width:16px;height:16px;border-radius:8px}.JourneyProgressDot,.JourneyProgressDotCheck{margin:7px;background-color:var(--icon-color)}.JourneyProgressDotCheck{width:12px;height:12px;border-radius:8px;border:2px solid var(--icon-color);display:flex;box-sizing:content-box}maki-icon-check{margin:3px 0 3px 1px;box-sizing:content-box;--icon-color:var(--main-content-background-color)}.JourneyProgressLine{margin:14px 0;width:40px;height:2px;background-color:var(--icon-color);border-radius:1px}"
 
 /***/ }),
 
@@ -43711,7 +43678,7 @@ module.exports = ".Wrapper{height:100vh;max-width:var(--main-max-width)}.ScrollC
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\r\n  <div class=\"ScrollContainer\">\r\n    <div class=\"Scroller\">\r\n      <div class=\"TopbarButtonContainer\">\r\n        <maki-button on-click=\"_stop\" size=\"30\" stroke=\"0\" font-size=\"16\" heading=\"Stoppen\">\r\n          <maki-icon-cross />\r\n        </maki-button>\r\n      </div>\r\n      <div class=\"JourneyHeader\">\r\n        <div class=\"JourneyIcon\">\r\n          <dom-if if=\"{{show_journey_icon_truck}}\">\r\n            <template>\r\n              <maki-icon-truck />\r\n            </template>\r\n          </dom-if>\r\n          <dom-if if=\"{{show_journey_icon_bulb}}\">\r\n            <template>\r\n              <maki-icon-bulb />\r\n            </template>\r\n          </dom-if>\r\n        </div>\r\n        <div class=\"JourneyTitle\">[[_title(journey)]]</div>\r\n        <div class=\"JourneyProgress\">\r\n          <dom-repeat items=\"{{journey.questions}}\">\r\n            <template>\r\n              <dom-if if=\"{{isCurrentQuestion(current, index)}}\">\r\n                <template>\r\n                  <div class=\"JourneyProgressDot\"></div>\r\n                </template>\r\n              </dom-if>\r\n              <dom-if if=\"{{isNotAnswered(current, index)}}\">\r\n                <template>\r\n                  <div class=\"JourneyProgressDotEmpty\"></div>\r\n                </template>\r\n              </dom-if>\r\n              <dom-if if=\"{{isAnswered(current, index)}}\">\r\n                <template>\r\n                  <div class=\"JourneyProgressDotCheck\">\r\n                    <maki-icon-check />\r\n                  </div>\r\n                </template>\r\n              </dom-if>\r\n              <div class=\"JourneyProgressLine\"></div>\r\n            </template>\r\n          </dom-repeat>\r\n            <div class=\"JourneyProgressDotEmpty\"></div>\r\n        </div>\r\n      </div>\r\n      <div class=\"Title\">[[_title(question)]]</div>\r\n      <div class=\"Subtitle\">[[_subtitle(question)]]</div>\r\n      <slot></slot>\r\n      <div class=\"ButtonContainer\">\r\n        <maki-button class=\"PrevButton\" stroke=\"0\" size=\"40\" font-size=\"16\" set-color-main=\"#3192CF\" on-click=\"_prev\">\r\n          <div class=\"ButtonInner\">\r\n            <div class=\"ButtonInnerLeft\"><</div>\r\n            <div class=\"ButtonInnerText\">Ga terug</div>\r\n          </div>\r\n        </maki-button>\r\n        <dom-if if=\"[[_showNext(noNext, disabled, skipCallback)]]\">\r\n          <template>\r\n            <maki-button class=\"NextButton\" disabled=\"[[disabled]]\" highlight set-color-highlight=\"#3192CF\" stroke=\"0\" size=\"40\" font-size=\"16\" on-click=\"[[_next(nextCallback, disabled)]]\">\r\n              <div class=\"ButtonInner\">\r\n                <div class=\"ButtonInnerText\">Ga verder</div>\r\n                <div class=\"ButtonInnerRight\">></div>\r\n              </div>\r\n            </maki-button>\r\n          </template>\r\n        </dom-if>\r\n        <dom-if if=\"[[_showSkip(noNext, disabled, skipCallback)]]\">\r\n          <template>\r\n            <maki-button class=\"SkipButton\" set-color-main=\"#ffffff\" stroke=\"1\" text-color-main stroke=\"0\" size=\"40\" font-size=\"16\" on-click=\"[[_skip(skipCallback)]]\">Overslaan</maki-button>\r\n          </template>\r\n        </dom-if>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"Wrapper\">\r\n  <div class=\"ScrollContainer\">\r\n    <div class=\"Scroller\">\r\n      <div class=\"TopbarButtonContainer\">\r\n        <maki-button on-click=\"_stop\" size=\"30\" stroke=\"0\" font-size=\"16\" heading=\"Stoppen\">\r\n          <maki-icon-cross />\r\n        </maki-button>\r\n      </div>\r\n      <div class=\"JourneyHeader\">\r\n        <div class=\"JourneyIcon\">\r\n          <dom-if if=\"{{show_journey_icon_truck}}\">\r\n            <template>\r\n              <maki-icon-truck />\r\n            </template>\r\n          </dom-if>\r\n          <dom-if if=\"{{show_journey_icon_bulb}}\">\r\n            <template>\r\n              <maki-icon-bulb />\r\n            </template>\r\n          </dom-if>\r\n        </div>\r\n        <div class=\"JourneyTitle\">[[_title(journey)]]</div>\r\n        <div class=\"JourneyProgress\">\r\n          <dom-repeat items=\"{{journey.questions}}\">\r\n            <template>\r\n              <dom-if if=\"{{isCurrentQuestion(current, index)}}\">\r\n                <template>\r\n                  <div class=\"JourneyProgressDot\"></div>\r\n                </template>\r\n              </dom-if>\r\n              <dom-if if=\"{{isNotAnswered(current, index)}}\">\r\n                <template>\r\n                  <div class=\"JourneyProgressDotEmpty\"></div>\r\n                </template>\r\n              </dom-if>\r\n              <dom-if if=\"{{isAnswered(current, index)}}\">\r\n                <template>\r\n                  <div class=\"JourneyProgressDotCheck\">\r\n                    <maki-icon-check />\r\n                  </div>\r\n                </template>\r\n              </dom-if>\r\n              <div class=\"JourneyProgressLine\"></div>\r\n            </template>\r\n          </dom-repeat>\r\n            <div class=\"JourneyProgressDotEmpty\"></div>\r\n        </div>\r\n      </div>\r\n      <div class=\"Title\">[[_title(question)]]</div>\r\n      <div class=\"Subtitle\">[[_subtitle(question)]]</div>\r\n      <slot></slot>\r\n      <div class=\"ButtonContainer\">\r\n        <maki-button class=\"PrevButton\" stroke=\"0\" size=\"40\" font-size=\"16\" set-color-main=\"#3192CF\" on-click=\"_prev\">\r\n          <div class=\"ButtonInner\">\r\n            <div class=\"ButtonInnerLeft\"><</div>\r\n            <div class=\"ButtonInnerText\">Ga terug</div>\r\n          </div>\r\n        </maki-button>\r\n        <dom-if if=\"[[_showNext(noNext, disabled, skipCallback)]]\">\r\n          <template>\r\n            <maki-button class=\"NextButton\" disabled=\"[[disabled]]\" highlight set-color-highlight=\"#3192CF\" stroke=\"0\" size=\"40\" font-size=\"16\" on-click=\"[[_next(nextCallback, disabled)]]\">\r\n              <div class=\"ButtonInner\">\r\n                <div class=\"ButtonInnerText\">Ga verder</div>\r\n                <div class=\"ButtonInnerRight\">></div>\r\n              </div>\r\n            </maki-button>\r\n          </template>\r\n        </dom-if>\r\n        <dom-if if=\"[[_showSkip(noNext, disabled, skipCallback)]]\">\r\n          <template>\r\n            <maki-button class=\"SkipButton\" set-color-main=\"#FFFFFF\" stroke=\"1\" text-color-main stroke=\"0\" size=\"40\" font-size=\"16\" on-click=\"[[_skip(skipCallback)]]\">Overslaan</maki-button>\r\n          </template>\r\n        </dom-if>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -43820,7 +43787,7 @@ class PlaybackScreenAddress extends (0, _connectMixin.connect)(_store.store)(_po
   }
 
   _saveWithoutCheck(question, address) {
-    _store.store.dispatch((0, _order.orderSaveAnswer)(question.key || question.property, address.id, question.title, `${address.straat} ${address.huisnummer}${address.huisnummertoevoeging ? address.huisnummertoevoeging : ''}, ${address.woonplaats} ${address.postcode}`));
+    _store.store.dispatch((0, _order.orderSaveAnswer)(question.key || question.property, address.id, question.fieldName, `${address.straat} ${address.huisnummer}${address.huisnummertoevoeging ? address.huisnummertoevoeging : ''}, ${address.woonplaats} ${address.postcode}`));
     _store.store.dispatch((0, _order.orderNext)(question.next));
   }
 
@@ -43831,13 +43798,11 @@ class PlaybackScreenAddress extends (0, _connectMixin.connect)(_store.store)(_po
       const index = e.currentTarget.dataIndex;
       const address = this.addresses[index];
       if (address.woonplaats !== '\'s-Hertogenbosch') {
-        window.clearWarningDialog();
-        window.warningTitle.innerHTML = 'Let op!';
-        window.warningText.innerHTML = 'Het nieuwe adres dat je opgeeft ligt niet in de gemeente \'s-Hertogenbosch.';
-        window.warningConfirmButton.onclick = function () {
-          self._saveWithoutCheck(question, address);
-        };
-        window.warningDialog.open();
+        window.clearErrorDialog();
+        window.errorTitle.innerHTML = 'Let op!';
+        window.errorText.innerHTML = 'Het nieuwe adres dat je opgeeft ligt niet in de gemeente \'s-Hertogenbosch. Kies op de gemeentekeuze pagina (<a href="https://www.burgerberichten.nl/gemeenten/verhuizen">https://www.burgerberichten.nl/gemeenten/verhuizen</a>) de gemeente van uw nieuwe adres.';
+        window.errorButton.innerHTML = 'Ga terug';
+        window.errorDialog.open();
       } else {
         self._saveWithoutCheck(question, address);
       }
@@ -43922,7 +43887,7 @@ window.customElements.define('playback-screen-address', PlaybackScreenAddress);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".Wrapper{width:100%;height:100%;float:left}.Item{margin:5px 0}.Options{display:flex;flex-direction:column;margin-bottom:16px}.Option{border-radius:3px;padding:8px;color:#fff;background-color:var(--icon-color);font-family:var(--typography-fontFamily);font-size:var(--main-font-text-size);margin-top:5px;cursor:pointer;display:flex;flex-direction:row;align-items:center;justify-content:space-between}.Option:hover{background-color:var(--icon-color-hover);color:var(--palette-primary-contrastText)}.OptionText{width:90%}.OptionCarrot{font-size:var(--main-font-text-size)}.Title{margin-top:32px;font-size:var(--main-font-text-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.3px}.Subtitle,.Title{font-family:var(--typography-fontFamily);text-align:left;color:var(--palette-primary-main)}.Subtitle{font-size:var(--main-font-medium-text-size);font-style:italic;line-height:1.28;letter-spacing:-.4px;margin:7px 0 16px;display:flex}.SubtitleAttention{padding:10px}maki-icon-attention{--icon-color:var(--icon-red-color);--icon-size:40px;padding:10px}"
+module.exports = ".Wrapper{width:100%;height:100%;float:left}.Item{margin:5px 0}.Options{display:flex;flex-direction:column;margin-bottom:16px}.Option{border-radius:3px;padding:8px;color:var(--main-content-background-color);background-color:var(--icon-color);font-family:var(--typography-fontFamily);font-size:var(--main-font-text-size);margin-top:5px;cursor:pointer;display:flex;flex-direction:row;align-items:center;justify-content:space-between}.Option:hover{background-color:var(--icon-color-hover);color:var(--palette-primary-contrastText)}.OptionText{width:90%}.OptionCarrot{font-size:var(--main-font-text-size)}.Title{margin-top:32px;font-size:var(--main-font-text-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.3px}.Subtitle,.Title{font-family:var(--typography-fontFamily);text-align:left;color:var(--palette-primary-main)}.Subtitle{font-size:var(--main-font-medium-text-size);font-style:italic;line-height:1.28;letter-spacing:-.4px;margin:7px 0 16px;display:flex}.SubtitleAttention{padding:10px}maki-icon-attention{padding:10px;--icon-color:var(--icon-red-color);--icon-size:40px}"
 
 /***/ }),
 
@@ -43995,7 +43960,7 @@ class PlaybackScreenAgree extends (0, _connectMixin.connect)(_store.store)(_poly
       if (this.order.value) {
         _store.store.dispatch((0, _order.orderClearAnswer)());
       } else if (this.question.title) {
-        _store.store.dispatch((0, _order.orderSaveAnswer)(this.question.key || this.question.property, true, this.question.title, 'Ja'));
+        _store.store.dispatch((0, _order.orderSaveAnswer)(this.question.key || this.question.property, true, this.question.fieldName, 'Ja'));
       }
     }
   }
@@ -44131,7 +44096,7 @@ class PlaybackScreenCalendar extends (0, _connectMixin.connect)(_store.store)(_p
     if (data) {
       this.datepickerValueText = moment(data, 'DD-MM-YYYY').format('D MMMM YYYY');
     }
-    _store.store.dispatch((0, _order.orderSaveAnswer)(question.key || question.property, data, question.title, this.datepickerValueText));
+    _store.store.dispatch((0, _order.orderSaveAnswer)(question.key || question.property, data, question.fieldName, this.datepickerValueText));
   }
 
   _getValue(order) {
@@ -44288,10 +44253,14 @@ class PlaybackScreenEnd extends (0, _connectMixin.connect)(_store.store)(_polyme
     return () => _store.store.dispatch((0, _orders.requestOrdersSubmit)({ data: order, requestType: this.journey.request_type_id }));
   }
 
+  dataUrlToSvg(dataURI) {
+    return atob(dataURI.replace(/data:image\/svg\+xml;base64,/, ''));
+  }
+
   _createPdf() {
-    const documentTitle = `Samenvatting van het verzoek.pdf`;
+    const documentTitle = this.order_end_title;
     const contentData = [];
-    contentData.push({ text: 'Samenvatting van het verzoek', style: 'header' });
+    contentData.push({ text: this.order_end_title, style: 'header' });
     contentData.push({ text: `De volgende gegevens zijn op ${moment(this.orderDate).format('D MMMM YYYY HH:mm:ss')} verzonden naar de gemeente.` });
     contentData.push(this.questionsToPdf());
 
@@ -44342,15 +44311,20 @@ class PlaybackScreenEnd extends (0, _connectMixin.connect)(_store.store)(_polyme
   }
 
   questionsToPdf() {
-    const body = [[{ text: 'Indiener', style: 'question' }, { text: this.personData.naam.aanschrijfwijze, style: 'answer' }]];
+    const body = [[{ width: 15, height: 15, svg: this.dataUrlToSvg('PHN2ZyBoZWlnaHQ9IjQ4MHB0IiB2aWV3Qm94PSIwIDAgNDgwIDQ4MCIgd2lkdGg9IjQ4MHB0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im0yNDAgMGMtMTMyLjU0Njg3NSAwLTI0MCAxMDcuNDUzMTI1LTI0MCAyNDBzMTA3LjQ1MzEyNSAyNDAgMjQwIDI0MGM3LjIzMDQ2OSAwIDE0LjQzMzU5NC0uMzI0MjE5IDIxLjYwMTU2Mi0uOTY4NzUgNi42NjQwNjMtLjU5NzY1NiAxMy4yNjk1MzItMS41MTE3MTkgMTkuODI0MjE5LTIuNjU2MjVsMi41MTk1MzEtLjQ0NTMxMmMxMjEuODYzMjgyLTIyLjc0MjE4OCAyMDYuMzU5Mzc2LTEzNC41NTA3ODIgMTk0Ljk2MDkzOC0yNTcuOTk2MDk0LTExLjM5ODQzOC0xMjMuNDQ1MzEzLTExNC45Mzc1LTIxNy44OTQ1MzE1LTIzOC45MDYyNS0yMTcuOTMzNTk0em0tMTkuMjgxMjUgNDYzLjE1MjM0NGgtLjU2NjQwNmMtNi4yMjI2NTYtLjU1MDc4Mi0xMi4zOTg0MzgtMS4zODI4MTMtMTguNTE5NTMyLTIuNDQ5MjE5LS4zNTE1NjItLjA2MjUtLjcwMzEyNC0uMTAxNTYzLTEuMDQ2ODc0LS4xNjc5NjktNS45ODQzNzYtMS4wNzAzMTItMTEuOTA2MjUtMi4zOTg0MzctMTcuNzY5NTMyLTMuOTQ5MjE4bC0xLjQxNzk2OC0uMzYzMjgyYy01LjcxODc1LTEuNTUwNzgxLTExLjM3NS0zLjM1MTU2Mi0xNi45NDkyMTktNS4zNTE1NjItLjU3ODEyNS0uMjA3MDMyLTEuMTYwMTU3LS4zOTA2MjUtMS43MzgyODEtLjYwNTQ2OS01LjQ2NDg0NC0yLjAwNzgxMy0xMC44MzIwMzItNC4yNTc4MTMtMTYuMTE3MTg4LTYuNjkxNDA2LS42NTYyNS0uMjkyOTY5LTEuMzEyNS0uNTc0MjE5LTEuOTY4NzUtLjg4NjcxOS01LjE4MzU5NC0yLjM5ODQzOC0xMC4yNjU2MjUtNS4xMDE1NjItMTUuMjUtNy45NDUzMTItLjcwMzEyNS0uMzk4NDM4LTEuNDE0MDYyLS43OTY4NzYtMi4xMTcxODgtMS4xOTE0MDctNC45MDYyNS0yLjg2MzI4MS05LjY5OTIxOC01LjkzMzU5My0xNC40MDIzNDMtOS4xNzU3ODEtLjcxMDkzOC0uNDk2MDk0LTEuNDI5Njg4LS45NzY1NjItMi4xMzY3MTktMS40NzI2NTYtNC42MjEwOTQtMy4yNzczNDQtOS4xMjUtNi43NTc4MTMtMTMuNTExNzE5LTEwLjM5ODQzOGwtMS4yMDcwMzEtMS4wNTQ2ODd2LTY3LjQ0OTIxOWMuMDU4NTk0LTQ4LjU3ODEyNSAzOS40MjE4NzUtODcuOTQxNDA2IDg4LTg4aDExMmM0OC41NzgxMjUuMDU4NTk0IDg3Ljk0MTQwNiAzOS40MjE4NzUgODggODh2NjcuNDU3MDMxbC0xLjA2MjUuODg2NzE5Yy00LjQ3MjY1NiAzLjczNDM3NS05LjA2MjUgNy4yNjU2MjUtMTMuNzc3MzQ0IDEwLjYwMTU2Mi0uNjI1LjQzNzUtMS4yNTc4MTIuODU1NDY5LTEuODc4OTA2IDEuMjg1MTU3LTQuNzU3ODEyIDMuMzA0Njg3LTkuNjMyODEyIDYuNDE0MDYyLTE0LjYyNSA5LjMzNTkzNy0uNjI1LjM2MzI4Mi0xLjI2NTYyNS43MDcwMzItMS44ODY3MTkgMS4wNjY0MDYtNS4wNTg1OTMgMi44Nzg5MDctMTAuMjAzMTI1IDUuNTk3NjU3LTE1LjQ0OTIxOSA4LjA0Njg3Ni0uNjAxNTYyLjI4MTI1LTEuMjA3MDMxLjU0Mjk2OC0xLjgxNjQwNi44MDA3ODEtNS4zMjgxMjUgMi40NTcwMzEtMTAuNzQyMTg3IDQuNzE4NzUtMTYuMjQ2MDk0IDYuNzQyMTg3LS41NDY4NzQuMjAzMTI1LTEuMDk3NjU2LjM3ODkwNi0xLjYwMTU2Mi41NzAzMTMtNS42MDE1NjIgMi4wMDc4MTItMTEuMjgxMjUgMy44MjQyMTktMTcuMDMxMjUgNS4zODI4MTJsLTEuMzc4OTA2LjM0Mzc1Yy01Ljg3MTA5NCAxLjU1MDc4MS0xMS43OTY4NzUgMi44ODY3MTktMTcuNzg5MDYzIDMuOTYwOTM4LS4zNDM3NS4wNjI1LS42ODc1LjEwNTQ2OS0xLjAzMTI1LjE2MDE1Ni02LjEyODkwNiAxLjA3MDMxMy0xMi4zMTI1IDEuOTAyMzQ0LTE4LjUzOTA2MiAyLjQ1NzAzMWgtLjU2NjQwN2MtNi4zOTg0MzcuNTUwNzgyLTEyLjgwMDc4MS44NDc2NTYtMTkuMjgxMjUuODQ3NjU2LTYuNDgwNDY4IDAtMTIuOTMzNTkzLS4yNDIxODctMTkuMzIwMzEyLS43OTI5Njh6bTE3OS4yODEyNS02Ni41MjczNDR2LTUyLjYyNWMtLjA2NjQwNi01Ny40MTAxNTYtNDYuNTg5ODQ0LTEwMy45MzM1OTQtMTA0LTEwNGgtMTEyYy01Ny40MTAxNTYuMDY2NDA2LTEwMy45MzM1OTQgNDYuNTg5ODQ0LTEwNCAxMDR2NTIuNjE3MTg4Yy04Ni4xNjQwNjItODcuOTQxNDA3LTg1LjIwMzEyNS0yMjguOTM3NSAyLjE0ODQzOC0zMTUuNjk5MjE5IDg3LjM1MTU2Mi04Ni43NTc4MTMgMjI4LjM1MTU2Mi04Ni43NTc4MTMgMzE1LjcwMzEyNCAwIDg3LjM1MTU2MyA4Ni43NjE3MTkgODguMzEyNSAyMjcuNzU3ODEyIDIuMTQ4NDM4IDMxNS42OTkyMTl6bTAgMCIvPjxwYXRoIGQ9Im0yNDAgNjRjLTQ0LjE4MzU5NCAwLTgwIDM1LjgxNjQwNi04MCA4MHMzNS44MTY0MDYgODAgODAgODAgODAtMzUuODE2NDA2IDgwLTgwYy0uMDQ2ODc1LTQ0LjE2NDA2Mi0zNS44MzU5MzgtNzkuOTUzMTI1LTgwLTgwem0wIDE0NGMtMzUuMzQ3NjU2IDAtNjQtMjguNjUyMzQ0LTY0LTY0czI4LjY1MjM0NC02NCA2NC02NCA2NCAyOC42NTIzNDQgNjQgNjRjLS4wMzkwNjIgMzUuMzI4MTI1LTI4LjY3MTg3NSA2My45NjA5MzgtNjQgNjR6bTAgMCIvPjwvc3ZnPg==') }, { text: 'indiener', style: 'question' }, { text: this.personData.naam.aanschrijfwijze, style: 'answer' }]];
     this.order.filter(o => o.question && o.question !== 'END').forEach(o => {
       const dataRow = [];
+      const question = this.questions.find(function (item) {
+        return item.id === o.question;
+      });
       if (Array.isArray(o.valueTitle)) {
         if (o.valueTitle.length > 0) {
+          dataRow.push({ svg: this.dataUrlToSvg(question.fieldIcon), width: 15, height: 15 });
           dataRow.push({ text: o.keyTitle, style: 'question' });
           dataRow.push({ text: o.valueTitle.join('\n'), style: 'answer' });
         }
       } else {
+        dataRow.push({ svg: this.dataUrlToSvg(question.fieldIcon), width: 15, height: 15 });
         dataRow.push({ text: o.keyTitle, style: 'question' });
         dataRow.push({ text: o.valueTitle, style: 'answer' });
       }
@@ -44359,7 +44333,7 @@ class PlaybackScreenEnd extends (0, _connectMixin.connect)(_store.store)(_polyme
 
     return {
       table: {
-        widths: ['*', '*'],
+        widths: [20, '*', '*'],
         body: body
       },
       layout: 'noBorders',
@@ -44376,18 +44350,21 @@ class PlaybackScreenEnd extends (0, _connectMixin.connect)(_store.store)(_polyme
   }
 
   _title(journey) {
-    return journey && journey.title ? journey.title : 'Naamloze klantvraag';
+    return journey && journey.title ? journey.title : 'Naamloos';
   }
 
   _getOrderItems(order) {
     const returnable = [];
     order.filter(o => o.question && o.question !== 'END').forEach(o => {
+      const question = this.questions.find(function (item) {
+        return item.id === o.question;
+      });
       if (Array.isArray(o.valueTitle)) {
         if (o.valueTitle.length > 0) {
-          returnable.push({ key: o.keyTitle, value: o.valueTitle.join('\n') });
+          returnable.push({ key: o.keyTitle, value: o.valueTitle.join('\n'), image: question.fieldIcon });
         }
       } else {
-        returnable.push({ key: o.keyTitle, value: o.valueTitle });
+        returnable.push({ key: o.keyTitle, value: o.valueTitle, image: question.fieldIcon });
       }
     });
     return returnable;
@@ -44428,6 +44405,7 @@ class PlaybackScreenEnd extends (0, _connectMixin.connect)(_store.store)(_polyme
     this.current = state.order.current;
     this.id = this.current === _common.JOURNEY_START ? _common.JOURNEY_START : _common.JOURNEY_END;
     this.question = { type: 'end' };
+    this.questions = state.journey.questions;
     this.order = state.order.data;
     this.order_status_not_send = state.order.order_status === _common.ORDER_STATUS_NOT_SEND;
     this.order_status_sending = state.order.order_status === _common.ORDER_STATUS_SENDING;
@@ -44466,7 +44444,7 @@ window.customElements.define('playback-screen-end', PlaybackScreenEnd);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".Wrapper{height:100vh;float:left;padding:0 0 57px}.TopbarButtonContainer,.Wrapper{width:100%;max-width:var(--main-max-width);box-sizing:border-box}.TopbarButtonContainer{height:62px;padding:16px 0}.ScrollContainer{box-sizing:border-box;width:100%;height:100%;float:left;overflow-y:auto}.Scroller{padding:0 16px}.ButtonContainer{width:100%;max-width:var(--main-max-width);height:50px;margin-top:16px;margin-bottom:8px;box-sizing:border-box;background-color:#fff}.Back{background-image:url(/assets/backWhite.svg);background-repeat:no-repeat;background-position:0;padding-left:24px;opacity:1;font-family:var(--typography-fontFamily);font-size:var(--main-font-small-text-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:2.4;height:34px;letter-spacing:-.2px;text-align:left;cursor:pointer;color:var(--palette-primary-main)}.Back:hover{opacity:.4}.PrevButton{float:left}.NextButton,.SkipButton{float:right}.ButtonInner{display:flex}.ButtonInnerLeft,.ButtonInnerRight{display:inline-block;opacity:1;transform:scale(.7,1.2)}.ButtonInnerText{display:inline-block;padding:0 8px}.ButtonInnerTextDownload{display:inline-block;padding:0 3px}.Title{margin-top:16px;font-size:var(--main-font-subheader-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.3px}.Subtitle,.Title{font-family:var(--typography-fontFamily);text-align:left;color:var(--palette-primary-main)}.Subtitle{font-size:var(--main-font-medium-text-size);font-style:italic;line-height:1.28;letter-spacing:-.4px;margin:7px 0 16px}.Answer{padding:10px 0}.AnswerLabel{font-weight:700;letter-spacing:-.2px;margin-bottom:3px}.AnswerAnswer,.AnswerLabel{font-family:var(--typography-fontFamily);font-size:var(--main-font-medium-text-size);font-style:normal;font-stretch:normal;text-align:left;color:var(--palette-primary-main)}.AnswerAnswer{font-weight:400;letter-spacing:-.3px;white-space:pre}.RequestMessage{font-family:var(--typography-fontFamily);font-size:var(--main-font-text-size);font-weight:700;color:var(--palette-primary-main);text-align:center;line-height:56px}.RequestMessageBox{width:100%;display:flex;justify-content:center}.RequestSubMessage{font-family:var(--typography-fontFamily);font-size:var(--main-font-small-text-size);font-weight:700;color:var(--palette-primary-main);text-align:center;line-height:20px}maki-icon-cross{--icon-color:var(--icon-red-color)}.JourneyHeader{background-color:var(--button-gray-background-color);margin:0 -16px;padding:16px;display:flex;flex-direction:column;justify-content:center}.JourneyIcon{--icon-color:#fff;background-color:var(--icon-color-teal);border-radius:30px;width:20px;height:20px;padding:10px;align-self:center}.JourneyTitle{font-size:var(--main-font-medium-text-size);text-align:center}maki-icon-bulb,maki-icon-truck{--icon-size:20px}.DownloadButton{margin:16px 0;display:inline-block}.JourneyProgress{height:30px;width:100%;display:flex;justify-content:center}.JourneyProgressDotEmpty{margin:7px;width:12px;height:12px;background-color:#fff;border-radius:8px;border:2px solid var(--icon-color)}.JourneyProgressDot{width:16px;height:16px;border-radius:8px}.JourneyProgressDot,.JourneyProgressDotCheck{margin:7px;background-color:var(--icon-color)}.JourneyProgressDotCheck{width:12px;height:12px;border-radius:8px;border:2px solid var(--icon-color);display:flex}maki-icon-check{--icon-color:#fff;margin:3px 0 3px 1px}.JourneyProgressLine{margin:14px 0;width:40px;height:2px;background-color:var(--icon-color);border-radius:1px}.SuccessIcon{margin-top:15px;text-align:center}"
+module.exports = ".Wrapper{height:100vh;float:left;padding:0 0 57px}.TopbarButtonContainer,.Wrapper{width:100%;max-width:var(--main-max-width);box-sizing:border-box}.TopbarButtonContainer{height:62px;padding:16px 0}.ScrollContainer{box-sizing:border-box;width:100%;height:100%;float:left;overflow-y:auto;padding-bottom:75px}.Scroller{padding:0 16px}.ButtonContainer{width:100%;max-width:var(--main-max-width);height:50px;margin-top:16px;margin-bottom:8px;box-sizing:border-box;background-color:var(--main-content-background-color)}.PrevButton{float:left}.NextButton,.SkipButton{float:right}.ButtonInner{display:flex}.ButtonInnerLeft,.ButtonInnerRight{display:inline-block;opacity:1;transform:scale(.7,1.2)}.ButtonInnerText{display:inline-block;padding:0 8px}.ButtonInnerTextDownload{display:inline-block;padding:0 3px}.Title{margin-top:16px;font-size:var(--main-font-subheader-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.3px}.Subtitle,.Title{font-family:var(--typography-fontFamily);text-align:left;color:var(--palette-primary-main)}.Subtitle{font-size:var(--main-font-medium-text-size);font-style:italic;line-height:1.28;letter-spacing:-.4px;margin:7px 0 16px}.Answer{padding:10px 0}.AnswerLabel{font-weight:700;letter-spacing:-.2px;margin-bottom:3px}.AnswerAnswer,.AnswerLabel{font-family:var(--typography-fontFamily);font-size:var(--main-font-medium-text-size);font-style:normal;font-stretch:normal;text-align:left;color:var(--palette-primary-main);margin-left:40px}.AnswerAnswer{font-weight:400;letter-spacing:-.3px;white-space:pre-line}.RequestMessage{font-family:var(--typography-fontFamily);font-size:var(--main-font-text-size);font-weight:700;color:var(--palette-primary-main);text-align:center;line-height:56px}.RequestMessageBox{width:100%;display:flex;justify-content:center}.RequestSubMessage{font-family:var(--typography-fontFamily);font-size:var(--main-font-small-text-size);font-weight:700;color:var(--palette-primary-main);text-align:center;line-height:20px}maki-icon-cross{--icon-color:var(--icon-red-color)}.JourneyHeader{background-color:var(--button-gray-background-color);margin:0 -16px;padding:16px;display:flex;flex-direction:column;justify-content:center}.JourneyIcon{background-color:var(--icon-color-teal);border-radius:30px;width:20px;height:20px;padding:10px;align-self:center;box-sizing:content-box;--icon-color:var(--main-content-background-color)}.JourneyTitle{font-size:var(--main-font-medium-text-size);text-align:center}maki-icon-bulb,maki-icon-truck{--icon-size:20px}.DownloadButton{margin:16px 0;display:inline-block}.JourneyProgress{height:30px;width:100%;display:flex;justify-content:center}.JourneyProgressDotEmpty{margin:7px;width:12px;height:12px;background-color:var(--main-content-background-color);border-radius:8px;border:2px solid var(--icon-color);box-sizing:content-box}.JourneyProgressDot{width:16px;height:16px;border-radius:8px}.JourneyProgressDot,.JourneyProgressDotCheck{margin:7px;background-color:var(--icon-color)}.JourneyProgressDotCheck{width:12px;height:12px;border-radius:8px;border:2px solid var(--icon-color);display:flex;box-sizing:content-box}maki-icon-check{margin:3px 0 3px 1px;--icon-color:var(--main-content-background-color)}.JourneyProgressLine{margin:14px 0;width:40px;height:2px;background-color:var(--icon-color);border-radius:1px}.SuccessIcon{margin-top:15px;text-align:center}.SuccessIconImage{margin:auto;width:100px;height:100px;background-image:url(assets/radio.svg);background-repeat:no-repeat;background-position:50%;background-size:contain}.Image{width:30px;height:30px;float:left;margin:10px 10px 0 0}"
 
 /***/ }),
 
@@ -44477,7 +44455,7 @@ module.exports = ".Wrapper{height:100vh;float:left;padding:0 0 57px}.TopbarButto
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\r\n  <div class=\"ScrollContainer\">\r\n  <div class=\"Scroller\">\r\n      <div class=\"TopbarButtonContainer\">\r\n          <dom-if if=\"{{order_show_buttons}}\">\r\n              <template>\r\n                  <maki-button on-click=\"_stop\" size=\"30\" stroke=\"0\" font-size=\"16\" heading=\"Stoppen\">\r\n                      <maki-icon-cross />\r\n                  </maki-button>\r\n              </template>\r\n          </dom-if>\r\n      </div>\r\n      <div class=\"JourneyHeader\">\r\n          <div class=\"JourneyIcon\">\r\n              <dom-if if=\"{{show_journey_icon_truck}}\">\r\n                  <template>\r\n                      <maki-icon-truck />\r\n                  </template>\r\n              </dom-if>\r\n              <dom-if if=\"{{show_journey_icon_bulb}}\">\r\n                  <template>\r\n                      <maki-icon-bulb />\r\n                  </template>\r\n              </dom-if>\r\n          </div>\r\n          <div class=\"JourneyTitle\">[[_title(journey)]]</div>\r\n          <div class=\"JourneyProgress\">\r\n              <dom-repeat items=\"{{journey.questions}}\">\r\n                  <template>\r\n                      <dom-if if=\"{{isCurrentQuestion(current, index)}}\">\r\n                          <template>\r\n                              <div class=\"JourneyProgressDot\"></div>\r\n                          </template>\r\n                      </dom-if>\r\n                      <dom-if if=\"{{isNotAnswered(current, index)}}\">\r\n                          <template>\r\n                              <div class=\"JourneyProgressDotEmpty\"></div>\r\n                          </template>\r\n                      </dom-if>\r\n                      <dom-if if=\"{{isAnswered(current, index)}}\">\r\n                          <template>\r\n                              <div class=\"JourneyProgressDotCheck\">\r\n                                  <maki-icon-check />\r\n                              </div>\r\n                          </template>\r\n                      </dom-if>\r\n                      <dom-if if=\"{{isNotLastItem(current, index)}}\">\r\n                          <template>\r\n                              <div class=\"JourneyProgressLine\"></div>\r\n                          </template>\r\n                      </dom-if>\r\n                  </template>\r\n              </dom-repeat>\r\n              <dom-if if=\"{{order_status_send_ok}}\">\r\n                  <template>\r\n                      <div class=\"JourneyProgressLine\"></div>\r\n                      <div class=\"JourneyProgressDotCheck\">\r\n                          <maki-icon-check />\r\n                      </div>\r\n                  </template>\r\n              </dom-if>\r\n              <dom-if if=\"{{!order_status_send_ok}}\">\r\n                  <template>\r\n                      <div class=\"JourneyProgressLine\"></div>\r\n                      <div class=\"JourneyProgressDot\"></div>\r\n                  </template>\r\n              </dom-if>\r\n          </div>\r\n      </div>\r\n      <div class=\"Title\">{{order_end_title}}</div>\r\n      <dom-if if=\"{{order_status_send_ok}}\">\r\n          <template>\r\n              <div class=\"SuccessIcon\">\r\n                  <maki-icon-confetti />\r\n              </div>\r\n          </template>\r\n      </dom-if>\r\n      <div class=\"Subtitle\">{{order_end_sub_title}}</div>\r\n      <div class=\"Answer\">\r\n          <div class=\"AnswerLabel\">Indiener</div>\r\n          <div class=\"AnswerAnswer\">{{personData.naam.aanschrijfwijze}}</div>\r\n      </div>\r\n      <dom-repeat items=\"[[_getOrderItems(order)]]\">\r\n          <template>\r\n              <div class=\"Answer\">\r\n                  <div class=\"AnswerLabel\">[[item.key]]</div>\r\n                  <div class=\"AnswerAnswer\">[[item.value]]</div>\r\n              </div>\r\n          </template>\r\n      </dom-repeat>\r\n      <dom-if if=\"{{order_status_send_ok}}\">\r\n        <template>\r\n          <div class=\"ButtonContainer\">\r\n            <maki-button stroke=\"0\" size=\"40\" font-size=\"16\" set-color-main=\"#3192CF\" on-click=\"_createPdf\">\r\n              <div class=\"ButtonInner\">\r\n                <div class=\"ButtonInnerTextDownload\">Download overzicht</div>\r\n              </div>\r\n            </maki-button>\r\n            <maki-button class=\"NextButton\" highlight set-color-highlight=\"#3192CF\" stroke=\"0\" size=\"40\" font-size=\"16\" on-click=\"_stop\">\r\n              <div class=\"ButtonInner\">\r\n                <div class=\"ButtonInnerText\">Sluiten</div>\r\n              </div>\r\n            </maki-button>\r\n          </div>\r\n        </template>\r\n      </dom-if>\r\n      <dom-if if=\"{{order_status_sending}}\">\r\n          <template>\r\n              <div class=\"RequestMessage\">Bezig met verzenden...</div>\r\n          </template>\r\n      </dom-if>\r\n      <dom-if if=\"{{order_status_send_failed}}\">\r\n          <template>\r\n              <div class=\"RequestMessage\">Er is een fout opgetreden bij het versturen van de aanvraag.</div>\r\n          </template>\r\n      </dom-if>\r\n      <dom-if if=\"{{order_show_buttons}}\">\r\n          <template>\r\n              <div class=\"ButtonContainer\">\r\n                  <maki-button class=\"PrevButton\" stroke=\"0\" size=\"40\" font-size=\"16\" set-color-main=\"#3192CF\" on-click=\"_prev\">\r\n                      <div class=\"ButtonInner\">\r\n                          <div class=\"ButtonInnerLeft\"><</div>\r\n                          <div class=\"ButtonInnerText\">Ga terug</div>\r\n                      </div>\r\n                  </maki-button>\r\n                  <maki-button class=\"NextButton\" disabled=\"[[disabled]]\" highlight set-color-highlight=\"#3192CF\" stroke=\"0\" size=\"40\" font-size=\"16\" on-click=\"[[_submit(order)]]\">\r\n                      <div class=\"ButtonInner\">\r\n                          <div class=\"ButtonInnerText\">Nu verzenden</div>\r\n                          <div class=\"ButtonInnerRight\">></div>\r\n                      </div>\r\n                  </maki-button>\r\n              </div>\r\n          </template>\r\n      </dom-if>\r\n  </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"Wrapper\">\r\n    <div class=\"ScrollContainer\">\r\n        <div class=\"Scroller\">\r\n            <div class=\"TopbarButtonContainer\">\r\n                <dom-if if=\"{{order_show_buttons}}\">\r\n                    <template>\r\n                        <maki-button on-click=\"_stop\" size=\"30\" stroke=\"0\" font-size=\"16\" heading=\"Stoppen\">\r\n                            <maki-icon-cross />\r\n                        </maki-button>\r\n                    </template>\r\n                </dom-if>\r\n            </div>\r\n            <div class=\"JourneyHeader\">\r\n                <div class=\"JourneyIcon\">\r\n                    <dom-if if=\"{{show_journey_icon_truck}}\">\r\n                        <template>\r\n                            <maki-icon-truck />\r\n                        </template>\r\n                    </dom-if>\r\n                    <dom-if if=\"{{show_journey_icon_bulb}}\">\r\n                        <template>\r\n                            <maki-icon-bulb />\r\n                        </template>\r\n                    </dom-if>\r\n                </div>\r\n                <div class=\"JourneyTitle\">[[_title(journey)]]</div>\r\n                <div class=\"JourneyProgress\">\r\n                    <dom-repeat items=\"{{journey.questions}}\">\r\n                        <template>\r\n                            <dom-if if=\"{{isCurrentQuestion(current, index)}}\">\r\n                                <template>\r\n                                    <div class=\"JourneyProgressDot\"></div>\r\n                                </template>\r\n                            </dom-if>\r\n                            <dom-if if=\"{{isNotAnswered(current, index)}}\">\r\n                                <template>\r\n                                    <div class=\"JourneyProgressDotEmpty\"></div>\r\n                                </template>\r\n                            </dom-if>\r\n                            <dom-if if=\"{{isAnswered(current, index)}}\">\r\n                                <template>\r\n                                    <div class=\"JourneyProgressDotCheck\">\r\n                                        <maki-icon-check />\r\n                                    </div>\r\n                                </template>\r\n                            </dom-if>\r\n                            <dom-if if=\"{{isNotLastItem(current, index)}}\">\r\n                                <template>\r\n                                    <div class=\"JourneyProgressLine\"></div>\r\n                                </template>\r\n                            </dom-if>\r\n                        </template>\r\n                    </dom-repeat>\r\n                    <dom-if if=\"{{order_status_send_ok}}\">\r\n                        <template>\r\n                            <div class=\"JourneyProgressLine\"></div>\r\n                            <div class=\"JourneyProgressDotCheck\">\r\n                                <maki-icon-check />\r\n                            </div>\r\n                        </template>\r\n                    </dom-if>\r\n                    <dom-if if=\"{{!order_status_send_ok}}\">\r\n                        <template>\r\n                            <div class=\"JourneyProgressLine\"></div>\r\n                            <div class=\"JourneyProgressDot\"></div>\r\n                        </template>\r\n                    </dom-if>\r\n                </div>\r\n            </div>\r\n            <div class=\"Title\">{{order_end_title}}</div>\r\n            <dom-if if=\"{{order_status_send_ok}}\">\r\n                <template>\r\n                    <div class=\"SuccessIcon\">\r\n                        <div class=\"SuccessIconImage\"></div>\r\n                    </div>\r\n                </template>\r\n            </dom-if>\r\n            <div class=\"Subtitle\">{{order_end_sub_title}}</div>\r\n            <div class=\"Answer\">\r\n                <img class=\"Image\" src=\"data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjQ4MHB0IiB2aWV3Qm94PSIwIDAgNDgwIDQ4MCIgd2lkdGg9IjQ4MHB0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im0yNDAgMGMtMTMyLjU0Njg3NSAwLTI0MCAxMDcuNDUzMTI1LTI0MCAyNDBzMTA3LjQ1MzEyNSAyNDAgMjQwIDI0MGM3LjIzMDQ2OSAwIDE0LjQzMzU5NC0uMzI0MjE5IDIxLjYwMTU2Mi0uOTY4NzUgNi42NjQwNjMtLjU5NzY1NiAxMy4yNjk1MzItMS41MTE3MTkgMTkuODI0MjE5LTIuNjU2MjVsMi41MTk1MzEtLjQ0NTMxMmMxMjEuODYzMjgyLTIyLjc0MjE4OCAyMDYuMzU5Mzc2LTEzNC41NTA3ODIgMTk0Ljk2MDkzOC0yNTcuOTk2MDk0LTExLjM5ODQzOC0xMjMuNDQ1MzEzLTExNC45Mzc1LTIxNy44OTQ1MzE1LTIzOC45MDYyNS0yMTcuOTMzNTk0em0tMTkuMjgxMjUgNDYzLjE1MjM0NGgtLjU2NjQwNmMtNi4yMjI2NTYtLjU1MDc4Mi0xMi4zOTg0MzgtMS4zODI4MTMtMTguNTE5NTMyLTIuNDQ5MjE5LS4zNTE1NjItLjA2MjUtLjcwMzEyNC0uMTAxNTYzLTEuMDQ2ODc0LS4xNjc5NjktNS45ODQzNzYtMS4wNzAzMTItMTEuOTA2MjUtMi4zOTg0MzctMTcuNzY5NTMyLTMuOTQ5MjE4bC0xLjQxNzk2OC0uMzYzMjgyYy01LjcxODc1LTEuNTUwNzgxLTExLjM3NS0zLjM1MTU2Mi0xNi45NDkyMTktNS4zNTE1NjItLjU3ODEyNS0uMjA3MDMyLTEuMTYwMTU3LS4zOTA2MjUtMS43MzgyODEtLjYwNTQ2OS01LjQ2NDg0NC0yLjAwNzgxMy0xMC44MzIwMzItNC4yNTc4MTMtMTYuMTE3MTg4LTYuNjkxNDA2LS42NTYyNS0uMjkyOTY5LTEuMzEyNS0uNTc0MjE5LTEuOTY4NzUtLjg4NjcxOS01LjE4MzU5NC0yLjM5ODQzOC0xMC4yNjU2MjUtNS4xMDE1NjItMTUuMjUtNy45NDUzMTItLjcwMzEyNS0uMzk4NDM4LTEuNDE0MDYyLS43OTY4NzYtMi4xMTcxODgtMS4xOTE0MDctNC45MDYyNS0yLjg2MzI4MS05LjY5OTIxOC01LjkzMzU5My0xNC40MDIzNDMtOS4xNzU3ODEtLjcxMDkzOC0uNDk2MDk0LTEuNDI5Njg4LS45NzY1NjItMi4xMzY3MTktMS40NzI2NTYtNC42MjEwOTQtMy4yNzczNDQtOS4xMjUtNi43NTc4MTMtMTMuNTExNzE5LTEwLjM5ODQzOGwtMS4yMDcwMzEtMS4wNTQ2ODd2LTY3LjQ0OTIxOWMuMDU4NTk0LTQ4LjU3ODEyNSAzOS40MjE4NzUtODcuOTQxNDA2IDg4LTg4aDExMmM0OC41NzgxMjUuMDU4NTk0IDg3Ljk0MTQwNiAzOS40MjE4NzUgODggODh2NjcuNDU3MDMxbC0xLjA2MjUuODg2NzE5Yy00LjQ3MjY1NiAzLjczNDM3NS05LjA2MjUgNy4yNjU2MjUtMTMuNzc3MzQ0IDEwLjYwMTU2Mi0uNjI1LjQzNzUtMS4yNTc4MTIuODU1NDY5LTEuODc4OTA2IDEuMjg1MTU3LTQuNzU3ODEyIDMuMzA0Njg3LTkuNjMyODEyIDYuNDE0MDYyLTE0LjYyNSA5LjMzNTkzNy0uNjI1LjM2MzI4Mi0xLjI2NTYyNS43MDcwMzItMS44ODY3MTkgMS4wNjY0MDYtNS4wNTg1OTMgMi44Nzg5MDctMTAuMjAzMTI1IDUuNTk3NjU3LTE1LjQ0OTIxOSA4LjA0Njg3Ni0uNjAxNTYyLjI4MTI1LTEuMjA3MDMxLjU0Mjk2OC0xLjgxNjQwNi44MDA3ODEtNS4zMjgxMjUgMi40NTcwMzEtMTAuNzQyMTg3IDQuNzE4NzUtMTYuMjQ2MDk0IDYuNzQyMTg3LS41NDY4NzQuMjAzMTI1LTEuMDk3NjU2LjM3ODkwNi0xLjYwMTU2Mi41NzAzMTMtNS42MDE1NjIgMi4wMDc4MTItMTEuMjgxMjUgMy44MjQyMTktMTcuMDMxMjUgNS4zODI4MTJsLTEuMzc4OTA2LjM0Mzc1Yy01Ljg3MTA5NCAxLjU1MDc4MS0xMS43OTY4NzUgMi44ODY3MTktMTcuNzg5MDYzIDMuOTYwOTM4LS4zNDM3NS4wNjI1LS42ODc1LjEwNTQ2OS0xLjAzMTI1LjE2MDE1Ni02LjEyODkwNiAxLjA3MDMxMy0xMi4zMTI1IDEuOTAyMzQ0LTE4LjUzOTA2MiAyLjQ1NzAzMWgtLjU2NjQwN2MtNi4zOTg0MzcuNTUwNzgyLTEyLjgwMDc4MS44NDc2NTYtMTkuMjgxMjUuODQ3NjU2LTYuNDgwNDY4IDAtMTIuOTMzNTkzLS4yNDIxODctMTkuMzIwMzEyLS43OTI5Njh6bTE3OS4yODEyNS02Ni41MjczNDR2LTUyLjYyNWMtLjA2NjQwNi01Ny40MTAxNTYtNDYuNTg5ODQ0LTEwMy45MzM1OTQtMTA0LTEwNGgtMTEyYy01Ny40MTAxNTYuMDY2NDA2LTEwMy45MzM1OTQgNDYuNTg5ODQ0LTEwNCAxMDR2NTIuNjE3MTg4Yy04Ni4xNjQwNjItODcuOTQxNDA3LTg1LjIwMzEyNS0yMjguOTM3NSAyLjE0ODQzOC0zMTUuNjk5MjE5IDg3LjM1MTU2Mi04Ni43NTc4MTMgMjI4LjM1MTU2Mi04Ni43NTc4MTMgMzE1LjcwMzEyNCAwIDg3LjM1MTU2MyA4Ni43NjE3MTkgODguMzEyNSAyMjcuNzU3ODEyIDIuMTQ4NDM4IDMxNS42OTkyMTl6bTAgMCIvPjxwYXRoIGQ9Im0yNDAgNjRjLTQ0LjE4MzU5NCAwLTgwIDM1LjgxNjQwNi04MCA4MHMzNS44MTY0MDYgODAgODAgODAgODAtMzUuODE2NDA2IDgwLTgwYy0uMDQ2ODc1LTQ0LjE2NDA2Mi0zNS44MzU5MzgtNzkuOTUzMTI1LTgwLTgwem0wIDE0NGMtMzUuMzQ3NjU2IDAtNjQtMjguNjUyMzQ0LTY0LTY0czI4LjY1MjM0NC02NCA2NC02NCA2NCAyOC42NTIzNDQgNjQgNjRjLS4wMzkwNjIgMzUuMzI4MTI1LTI4LjY3MTg3NSA2My45NjA5MzgtNjQgNjR6bTAgMCIvPjwvc3ZnPg==\"/>\r\n                <div class=\"AnswerLabel\">indiener</div>\r\n                <div class=\"AnswerAnswer\">{{personData.naam.aanschrijfwijze}}</div>\r\n            </div>\r\n            <dom-repeat items=\"[[_getOrderItems(order)]]\">\r\n                <template>\r\n                    <div class=\"Answer\">\r\n                        <img class=\"Image\" src=\"[[item.image]]\"/>\r\n                        <div class=\"AnswerLabel\">[[item.key]]</div>\r\n                        <div class=\"AnswerAnswer\">[[item.value]]</div>\r\n                    </div>\r\n                </template>\r\n            </dom-repeat>\r\n            <dom-if if=\"{{order_status_send_ok}}\">\r\n                <template>\r\n                    <div class=\"ButtonContainer\">\r\n                        <maki-button stroke=\"0\" size=\"40\" font-size=\"16\" set-color-main=\"#3192CF\" on-click=\"_createPdf\">\r\n                            <div class=\"ButtonInner\">\r\n                                <div class=\"ButtonInnerTextDownload\">Download overzicht</div>\r\n                            </div>\r\n                        </maki-button>\r\n                        <maki-button class=\"NextButton\" highlight set-color-highlight=\"#3192CF\" stroke=\"0\" size=\"40\" font-size=\"16\" on-click=\"_stop\">\r\n                            <div class=\"ButtonInner\">\r\n                                <div class=\"ButtonInnerText\">Sluiten</div>\r\n                            </div>\r\n                        </maki-button>\r\n                    </div>\r\n                </template>\r\n            </dom-if>\r\n            <dom-if if=\"{{order_status_sending}}\">\r\n                <template>\r\n                    <div class=\"RequestMessage\">Bezig met verzenden...</div>\r\n                </template>\r\n            </dom-if>\r\n            <dom-if if=\"{{order_status_send_failed}}\">\r\n                <template>\r\n                    <div class=\"RequestMessage\">Er is een fout opgetreden bij het versturen van de aanvraag.</div>\r\n                </template>\r\n            </dom-if>\r\n            <dom-if if=\"{{order_show_buttons}}\">\r\n                <template>\r\n                    <div class=\"ButtonContainer\">\r\n                        <maki-button class=\"PrevButton\" stroke=\"0\" size=\"40\" font-size=\"16\" set-color-main=\"#3192CF\" on-click=\"_prev\">\r\n                            <div class=\"ButtonInner\">\r\n                                <div class=\"ButtonInnerLeft\"><</div>\r\n                                <div class=\"ButtonInnerText\">Ga terug</div>\r\n                            </div>\r\n                        </maki-button>\r\n                        <maki-button class=\"NextButton\" disabled=\"[[disabled]]\" highlight set-color-highlight=\"#3192CF\" stroke=\"0\" size=\"40\" font-size=\"16\" on-click=\"[[_submit(order)]]\">\r\n                            <div class=\"ButtonInner\">\r\n                                <div class=\"ButtonInnerText\">Nu verzenden</div>\r\n                                <div class=\"ButtonInnerRight\">></div>\r\n                            </div>\r\n                        </maki-button>\r\n                    </div>\r\n                </template>\r\n            </dom-if>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -44649,8 +44627,8 @@ class PlaybackScreenMultipleText extends (0, _connectMixin.connect)(_store.store
   }
 
   _inputCallback(question, index, order) {
-    const key = question && question.options && Array.isArray(question.options) ? question.options.map(i => i.value || i.title || 'Naamloos veld') : [];
-    const keyTitle = question && question.options && Array.isArray(question.options) ? question.options.map(i => `${question.title || 'Naamloze vraag'}: ${i.title || 'Naamloos veld'}`) : [];
+    const key = question && question.options && Array.isArray(question.options) ? question.options.map(i => i.value || i.fieldName || 'Naamloos veld') : [];
+    const keyTitle = question && question.options && Array.isArray(question.options) ? question.options.map(i => `${question.fieldName || 'Naamloze vraag'}: ${i.fieldName || 'Naamloos veld'}`) : [];
     return data => {
       _store.store.dispatch((0, _order.orderSaveAnswer)(key, order.value && Array.isArray(order.value) ? order.value.map((o, i) => i === index ? data : o) : key.map((o, i) => i === index ? data : ''), keyTitle, order.value && Array.isArray(order.value) ? order.value.map((o, i) => i === index ? data : o) : key.map((o, i) => i === index ? data : '')));
     };
@@ -44794,7 +44772,7 @@ class PlaybackScreenMultiple extends (0, _connectMixin.connect)(_store.store)(_p
     if (e && e.target && !isNaN(e.target.dataIndex)) {
       const index = e.target.dataIndex;
       const key = this.question.key || this.question.property;
-      const keyTitle = this.question.title;
+      const keyTitle = this.question.fieldName;
       let selected = [];
       if (Array.isArray(this.selected) && this.selected.indexOf(index) > -1) {
         selected = this.selected.filter(i => i !== index);
@@ -44878,7 +44856,7 @@ module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(quest
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
 var _polymerElement = __webpack_require__(/*! @polymer/polymer/polymer-element */ "./node_modules/@polymer/polymer/polymer-element.js");
@@ -44906,104 +44884,122 @@ __webpack_require__(/*! ../../playback-screen-wrapper */ "./src/components/lib/p
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class PlaybackScreenPersonsMoving extends (0, _connectMixin.connect)(_store.store)(_polymerElement.PolymerElement) {
-  static get properties() {
-    return {
-      persons: Array
-    };
-  }
-
-  static get template() {
-    return (0, _polymerElement.html)([`<style>${_style2.default}</style> ${_template2.default}`]);
-  }
-
-  constructor() {
-    super();
-    this.persons = [];
-  }
-
-  _isSelected(selected) {
-    return selected ? 'Circle selected' : 'Circle';
-  }
-
-  _optionClick(e) {
-    if (e && e.target && !isNaN(e.target.dataIndex)) {
-      const index = e.target.dataIndex;
-
-      this.set(`persons.${index}.selected`, !this.persons[index].selected);
-
-      const selectedPersons = this.persons.filter(function (item) {
-        return item.selected;
-      });
-      const ids = selectedPersons.map(function (item) {
-        return item.id;
-      });
-      const names = selectedPersons.map(function (item) {
-        return item.naam.aanschrijfwijze;
-      });
-
-      _store.store.dispatch((0, _order.orderSaveAnswer)(this.question.key || this.question.property, ids, this.question.title, names));
-    }
-  }
-
-  _nextCallback(question) {
-    return next => {
-      if (question && question.next) {
-        next(question.next);
-      }
-    };
-  }
-
-  _skipCallback(question) {
-    if (question && question.optional && question.optional.goto) {
-      return skip => skip(question.optional.goto);
-    }
-    return null;
-  }
-
-  _getPersons() {
-    _store.store.dispatch((0, _person.requestPersonsMoving)());
-  }
-
-  _clearPersonData() {
-    _store.store.dispatch((0, _person.clearPersonsMoving)());
-  }
-
-  stateChanged(state) {
-    this.journey = state.journey;
-    this.current = state.order.current;
-    if (this.current === _common.JOURNEY_START) {
-      this.id = _common.JOURNEY_START;
-      this.order = {};
-    } else {
-      this.id = state.order.data[this.current].question;
-      this.order = state.order.data[this.current];
-    }
-    this.selected = this.order._tracker;
-    if (this.journey) {
-      this.question = (this.journey.questions || []).find(q => q.id === this.id);
-    }
-    if (!this.question) {
-      this.question = '';
+    static get properties() {
+        return {
+            persons: Array,
+            searchingMovingPersons: Boolean
+        };
     }
 
-    this.persons = state.person.movingPersons;
-    this.personsStatus = state.person.movingPersonsStatus;
-    this.isDisabled = this.personsStatus !== _person.REQUEST_PERSONS_MOVING_SUCCESS;
-    if (this.question.type === _common.QUESTION_TYPE_PERSONS_MOVING && this.personsStatus === _person.CLEAR_PERSONS_MOVING) {
-      this._getPersons();
+    static get template() {
+        return (0, _polymerElement.html)([`<style>${_style2.default}</style> ${_template2.default}`]);
     }
-    if (this.current === _common.JOURNEY_START && state.order.data.length === 0 && this.personsStatus !== _person.CLEAR_PERSONS_MOVING) {
-      this._clearPersonData();
+
+    constructor() {
+        super();
+        this.persons = [];
     }
-    if (this.question.type === _common.QUESTION_TYPE_PERSONS_MOVING && this.personsStatus === _person.REQUEST_PERSONS_MOVING_SKIPQUESTION) {
-      const self = this;
-      _store.store.dispatch({
-        action1: _store.store.dispatch((0, _person.requestPersonsMovingSkipQuestion)()),
-        action2: _store.store.dispatch((0, _order.orderSkip)(self.current)),
-        action3: _store.store.dispatch((0, _order.orderNext)(self.question.next))
-      });
+
+    _isSelected(selected) {
+        return selected ? 'Circle selected' : 'Circle';
     }
-  }
+
+    _optionClick(e) {
+        if (e && e.target && !isNaN(e.target.dataIndex)) {
+            const index = e.target.dataIndex;
+
+            this.set(`persons.${index}.selected`, !this.persons[index].selected);
+
+            this.saveSelectedPersons();
+        }
+    }
+
+    selectAllPersons() {
+        for (let i = 0; i < this.persons.length; i++) {
+            this.set(`persons.${i}.selected`, true);
+        }
+        this.saveSelectedPersons();
+    }
+
+    saveSelectedPersons() {
+        const self = this;
+
+        const selectedPersons = self.persons.filter(function (item) {
+            return item.selected;
+        });
+        const ids = selectedPersons.map(function (item) {
+            return item.id;
+        });
+        const names = selectedPersons.map(function (item) {
+            return item.naam.aanschrijfwijze;
+        });
+        _store.store.dispatch((0, _person.requestPersonsMovingSelectAll)());
+        _store.store.dispatch((0, _order.orderSaveAnswer)(self.question.key || self.question.property, ids, self.question.fieldName, names));
+    }
+
+    _nextCallback(question) {
+        return next => {
+            if (question && question.next) {
+                next(question.next);
+            }
+        };
+    }
+
+    _skipCallback(question) {
+        if (question && question.optional && question.optional.goto) {
+            return skip => skip(question.optional.goto);
+        }
+        return null;
+    }
+
+    _getPersons() {
+        _store.store.dispatch((0, _person.requestPersonsMoving)());
+    }
+
+    _clearPersonData() {
+        _store.store.dispatch((0, _person.clearPersonsMoving)());
+    }
+
+    stateChanged(state) {
+        this.journey = state.journey;
+        this.current = state.order.current;
+        if (this.current === _common.JOURNEY_START) {
+            this.id = _common.JOURNEY_START;
+            this.order = {};
+        } else {
+            this.id = state.order.data[this.current].question;
+            this.order = state.order.data[this.current];
+        }
+        this.selected = this.order._tracker;
+        if (this.journey) {
+            this.question = (this.journey.questions || []).find(q => q.id === this.id);
+        }
+        if (!this.question) {
+            this.question = '';
+        }
+
+        this.persons = state.person.movingPersons;
+        this.personsStatus = state.person.movingPersonsStatus;
+        this.searchingMovingPersons = state.person.movingPersonsSearching;
+        this.isDisabled = this.personsStatus !== _person.REQUEST_PERSONS_MOVING_SUCCESS;
+        if (this.question.type === _common.QUESTION_TYPE_PERSONS_MOVING && this.personsStatus === _person.CLEAR_PERSONS_MOVING) {
+            this._getPersons();
+        }
+        if (this.current === _common.JOURNEY_START && state.order.data.length === 0 && this.personsStatus !== _person.CLEAR_PERSONS_MOVING) {
+            this._clearPersonData();
+        }
+        if (this.question.type === _common.QUESTION_TYPE_PERSONS_MOVING && this.personsStatus === _person.REQUEST_PERSONS_MOVING_SKIPQUESTION) {
+            const self = this;
+            _store.store.dispatch({
+                action1: _store.store.dispatch((0, _person.requestPersonsMovingSkipQuestion)()),
+                action2: _store.store.dispatch((0, _order.orderSkip)(self.current)),
+                action3: _store.store.dispatch((0, _order.orderNext)(self.question.next))
+            });
+        }
+        if (this.question.type === _common.QUESTION_TYPE_PERSONS_MOVING && this.personsStatus === _person.REQUEST_PERSONS_MOVING_SELECT_ALL) {
+            this.selectAllPersons();
+        }
+    }
 }
 
 exports.default = PlaybackScreenPersonsMoving;
@@ -45018,7 +45014,7 @@ window.customElements.define('playback-screen-persons-moving', PlaybackScreenPer
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width);float:left}.Options{width:100%;display:inline-block}.Option{margin:5px 0;font-family:var(--typography-fontFamily);float:left;box-sizing:border-box;width:100%;height:56px;font-size:var(--main-font-text-size);font-weight:500;font-style:normal;font-stretch:normal;line-height:1.28;letter-spacing:-.3px;text-align:left;padding:17px 0 16px 22px;color:var(--palette-primary-main);background-color:var(--button-gray-background-color);border-radius:3px;position:relative;cursor:pointer}.Option:hover:after{content:\" \";width:100%;height:100%;position:absolute;top:0;left:0;background-color:var(--palette-action-hover)}.Circle{width:20px;height:20px;border:1px solid var(--palette-primary-main);border-radius:5px;position:absolute;top:17px;right:15px}.Circle.selected{width:22px;height:22px;border:0;background-image:url(assets/checkBox.svg);background-repeat:no-repeat;background-position:50%;background-size:contain}"
+module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width);float:left}.Options{width:100%;display:inline-block}.Option{margin:5px 0;font-family:var(--typography-fontFamily);float:left;box-sizing:border-box;width:100%;height:56px;font-size:var(--main-font-text-size);font-weight:500;font-style:normal;font-stretch:normal;line-height:1.28;letter-spacing:-.3px;text-align:left;padding:17px 0 16px 22px;color:var(--palette-primary-main);background-color:var(--button-gray-background-color);border-radius:3px;position:relative;cursor:pointer}.Option:hover:after{content:\" \";width:100%;height:100%;position:absolute;top:0;left:0;background-color:var(--palette-action-hover)}.Circle{pointer-events:none;width:20px;height:20px;border:1px solid var(--palette-primary-main);border-radius:5px;position:absolute;top:17px;right:15px}.Circle.selected{pointer-events:none;width:22px;height:22px;border:0;background-image:url(assets/checkBox.svg);background-repeat:no-repeat;background-position:50%;background-size:contain}"
 
 /***/ }),
 
@@ -45029,7 +45025,7 @@ module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled$=\"{{isDisabled}}\">\r\n  <div class=\"Options\">\r\n    <dom-repeat items=\"[[persons]]\">\r\n      <template>\r\n        <div class=\"Option\" data-index=\"[[index]]\" on-click=\"_optionClick\">\r\n          [[item.naam.aanschrijfwijze]]\r\n          <div class$=\"{{_isSelected(item.selected)}}\"></div>\r\n        </div>\r\n      </template>\r\n    </dom-repeat>\r\n  </div>\r\n</playback-screen-wrapper>\r\n"
+module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled$=\"{{isDisabled}}\">\r\n    <dom-if if=\"{{searchingMovingPersons}}\">\r\n        <template>\r\n            <div class=\"Subtitle\">De mogelijke medeverhuizers worden opgehaald</div>\r\n        </template>\r\n    </dom-if>\r\n    <dom-if if=\"{{!searchingMovingPersons}}\">\r\n        <template>\r\n            <div class=\"Options\">\r\n                <dom-repeat items=\"[[persons]]\">\r\n                    <template>\r\n                        <div class=\"Option\" data-index=\"[[index]]\" on-click=\"_optionClick\">\r\n                            [[item.naam.aanschrijfwijze]]\r\n                            <div class$=\"{{_isSelected(item.selected)}}\"></div>\r\n                        </div>\r\n                    </template>\r\n                </dom-repeat>\r\n            </div>\r\n        </template>\r\n    </dom-if>\r\n</playback-screen-wrapper>\r\n"
 
 /***/ }),
 
@@ -45097,9 +45093,9 @@ class PlaybackScreenRadioButtons extends (0, _connectMixin.connect)(_store.store
         _store.store.dispatch((0, _order.orderClearAnswer)());
       } else {
         const key = this.question.key || this.question.property;
-        const keyTitle = this.question.title;
+        const keyTitle = this.question.fieldName;
         const value = this.question.options[index].value || this.question.options[index].title;
-        const valueTitle = this.question.options[index].title;
+        const valueTitle = this.question.options[index].fieldName;
         _store.store.dispatch((0, _order.orderSaveAnswer)(key, value, keyTitle, valueTitle, index));
       }
     }
@@ -45224,7 +45220,7 @@ class PlaybackScreenSingle extends (0, _connectMixin.connect)(_store.store)(_pol
       const question = e.target.dataQuestion;
       const index = e.target.dataIndex;
       if (question && question.options && Array.isArray(question.options) && question.options.length > index && question.options[index] && question.options[index].goto) {
-        _store.store.dispatch((0, _order.orderSaveAnswer)(question.key || question.property, question.options[index].value || question.options[index].title, question.title, question.options[index].title));
+        _store.store.dispatch((0, _order.orderSaveAnswer)(question.key || question.property, question.options[index].value || question.options[index].title, question.fieldName, question.options[index].title));
         _store.store.dispatch((0, _order.orderNext)(question.options[index].goto));
       }
     }
@@ -45261,7 +45257,7 @@ window.customElements.define('playback-screen-single', PlaybackScreenSingle);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width);float:left}.Options{margin-top:25px;width:100%}.Option{margin:5px 0;font-family:var(--typography-fontFamily);float:left;box-sizing:border-box;width:100%;height:56px;font-size:var(--main-font-text-size);font-weight:500;font-style:normal;font-stretch:normal;line-height:1.28;letter-spacing:-.3px;text-align:left;padding:17px 0 16px 22px;color:var(--palette-primary-main);background-color:var(--palette-primary-contrastText);border-radius:3px;position:relative;cursor:pointer;border-bottom:1px solid #eff1f3}.Option:hover:after{content:\" \";width:100%;height:100%;position:absolute;top:0;left:0;background-color:var(--palette-action-hover)}.Option:before{content:\">\";font-family:var(--typography-fontFamily);height:23px;font-size:var(--main-font-text-size);font-weight:500;font-style:normal;font-stretch:normal;line-height:1.28;letter-spacing:-.3px;text-align:left;color:var(--palette-primary-main);position:absolute;top:17px;right:22px;transform:scale(.75,1.5)}"
+module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width);float:left}.Options{margin-top:25px;width:100%}.Option{margin:5px 0;font-family:var(--typography-fontFamily);float:left;box-sizing:border-box;width:100%;height:56px;font-size:var(--main-font-text-size);font-weight:500;font-style:normal;font-stretch:normal;line-height:1.28;letter-spacing:-.3px;text-align:left;padding:17px 0 16px 22px;color:var(--palette-primary-main);background-color:var(--palette-primary-contrastText);border-radius:3px;position:relative;cursor:pointer;border-bottom:1px solid #dff1f3}.Option:hover:after{content:\" \";width:100%;height:100%;position:absolute;top:0;left:0;background-color:var(--palette-action-hover)}.Option:before{content:\">\";font-family:var(--typography-fontFamily);height:23px;font-size:var(--main-font-text-size);font-weight:500;font-style:normal;font-stretch:normal;line-height:1.28;letter-spacing:-.3px;text-align:left;color:var(--palette-primary-main);position:absolute;top:17px;right:22px;transform:scale(.75,1.5)}"
 
 /***/ }),
 
@@ -45314,7 +45310,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 class PlaybackScreenStart extends (0, _connectMixin.connect)(_store.store)(_polymerElement.PolymerElement) {
   static get properties() {
-    return {};
+    return {
+      preconditionsFullFilled: Boolean,
+      preconditionsBeingChecked: Boolean
+    };
   }
 
   static get template() {
@@ -45330,7 +45329,7 @@ class PlaybackScreenStart extends (0, _connectMixin.connect)(_store.store)(_poly
   }
 
   _title(journey) {
-    return journey && journey.title ? journey.title : 'Naamloze klantvraag';
+    return journey && journey.title ? journey.title : 'Naamloos';
   }
 
   _subtitle(journey) {
@@ -45345,12 +45344,17 @@ class PlaybackScreenStart extends (0, _connectMixin.connect)(_store.store)(_poly
     return journey && journey.overview && journey.overview.needed_documents && Array.isArray(journey.overview.needed_documents) ? journey.overview.needed_documents : [];
   }
 
+  _hasDocuments(journey) {
+    return this._documents(journey).length > 0;
+  }
+
   _steps(journey) {
     return journey && journey.overview && journey.overview.steps && Array.isArray(journey.overview.steps) ? journey.overview.steps : [];
   }
 
   _start(journey) {
     return () => {
+      if (!this.preconditionsFullFilled) return;
       if (journey && journey.questions && Array.isArray(journey.questions) && journey.questions.length > 0 && journey.questions[0].id) {
         _store.store.dispatch((0, _order.orderNext)(journey.questions[0].id));
       } else {
@@ -45361,6 +45365,8 @@ class PlaybackScreenStart extends (0, _connectMixin.connect)(_store.store)(_poly
 
   stateChanged(state) {
     this.journey = state.journey;
+    this.preconditionsFullFilled = state.journey.preconditionsFullFilled;
+    this.preconditionsBeingChecked = state.journey.preconditionsBeingChecked;
     this.id = state.order.current === _common.JOURNEY_START ? _common.JOURNEY_START : state.order.data[state.order.current].question;
     if (this.id === _common.JOURNEY_START) {
       this.question = { type: 'start' };
@@ -45372,7 +45378,7 @@ class PlaybackScreenStart extends (0, _connectMixin.connect)(_store.store)(_poly
     if (!this.question) {
       this.question = '';
     }
-    if (this.journey.title === "Ik ga verhuizen") {
+    if (this.journey.title === 'Ik ga verhuizen') {
       this.show_journey_icon_truck = true;
       this.show_journey_icon_bulb = false;
     } else {
@@ -45394,7 +45400,7 @@ window.customElements.define('playback-screen-start', PlaybackScreenStart);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host{width:100%;height:100%;float:left}.Wrapper{height:100vh;float:left;padding:0 0 57px;position:relative}.TopbarButtonContainer,.Wrapper{box-sizing:border-box;width:100%;max-width:var(--main-max-width)}.TopbarButtonContainer{height:62px;padding:16px 0}.ButtonContainer{width:100%;max-width:var(--main-max-width);margin-top:30px;margin-bottom:8px;height:50px;box-sizing:border-box;background-color:#fff;display:flex;justify-content:center}.ButtonInner{display:flex}.ButtonInnerLeft,.ButtonInnerRight{display:inline-block;opacity:0;transform:scale(.7,1.2)}.ButtonInnerText{display:inline-block;padding:0 35px}.ButtonInnerRight{opacity:1}.ScrollContainer{box-sizing:border-box;width:100%;height:100%;float:left;overflow-y:auto}.Scroller{padding:0 16px;position:relative}.JourneyHeader{background-color:var(--button-gray-background-color);margin:0 -16px;padding:10px 16px;display:flex;flex-direction:column;justify-content:center}.JourneyIcon{--icon-color:#fff;background-color:var(--icon-color-teal);border-radius:30px;width:40px;height:40px;padding:10px;align-self:center}maki-icon-bulb,maki-icon-truck{--icon-size:40px}maki-icon-edit-document,maki-icon-steps{background-color:var(--button-gray-background-color);border-radius:15px;width:20px;height:20px;padding:5px;--icon-color:var(--icon-color-teal);margin:0 10px 0 0}.Title{font-size:var(--main-font-header-size);font-weight:700;line-height:normal}.Subtitle,.Title{font-family:var(--typography-fontFamily);font-style:normal;font-stretch:normal;letter-spacing:-.3px;text-align:center;color:var(--palette-primary-main)}.Subtitle{opacity:.7;font-size:var(--main-font-small-text-size);font-weight:500;line-height:1.64;margin-top:7px}.SectionTitle{font-family:var(--typography-fontFamily);font-size:var(--main-font-text-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:30px;letter-spacing:-.3px;text-align:left;color:var(--palette-primary-main);margin:30px 0 15px;display:flex;justify-content:flext-start}.DotListItem{display:flex;align-items:center;margin-bottom:3px;padding-left:10px}.DotListItem:last-of-type{margin:0}.DotListItem .Dot{margin:2px 23px 0 0;width:8px;height:8px;background-color:var(--icon-color-teal);border-radius:4px}.DotListItem .Text{font-family:var(--typography-fontFamily);width:calc(100% - 21px);font-size:var(--main-font-small-text-size);font-weight:500;font-style:normal;font-stretch:normal;line-height:1.64;letter-spacing:-.3px;text-align:left;color:var(--palette-primary-main)}.NumberedListItem{display:flex;align-items:center;margin-bottom:10px}.NumberedListItem:last-of-type{margin:0}.NumberedListItem .Number{margin-right:9px;width:18px;height:18px;background-color:var(--palette-primary-main);color:var(--palette-primary-contrastText);border-radius:9px;font-family:var(--typography-fontFamily);font-size:var(--main-font-smallest-text-size);font-weight:700;font-style:normal;font-stretch:normal;letter-spacing:normal;line-height:18px;text-align:center}.NumberedListItem .Text{opacity:.7;font-weight:500;line-height:1.64;letter-spacing:-.3px}.Back,.NumberedListItem .Text{font-family:var(--typography-fontFamily);font-size:var(--main-font-small-text-size);font-style:normal;font-stretch:normal;text-align:left;color:var(--palette-primary-main)}.Back{background-image:url(/assets/back.svg);background-repeat:no-repeat;background-position:0;padding-left:24px;opacity:1;font-weight:700;line-height:2.4;height:34px;letter-spacing:-.2px;cursor:pointer}.Back:hover{opacity:.4}maki-icon-cross{--icon-color:var(--icon-red-color)}"
+module.exports = ":host{width:100%;height:100%;float:left}.Wrapper{height:100vh;float:left;padding:0 0 57px;position:relative}.TopbarButtonContainer,.Wrapper{box-sizing:border-box;width:100%;max-width:var(--main-max-width)}.TopbarButtonContainer{height:62px;padding:16px 0}.ButtonContainer{width:100%;max-width:var(--main-max-width);margin-top:30px;margin-bottom:8px;height:50px;box-sizing:border-box;background-color:var(--main-content-background-color);display:flex;justify-content:center}.ButtonInner{display:flex}.ButtonInnerLeft,.ButtonInnerRight{display:inline-block;opacity:0;transform:scale(.7,1.2)}.ButtonInnerText{display:inline-block;padding:0 35px}.ButtonInnerRight{opacity:1}.ScrollContainer{box-sizing:border-box;width:100%;height:100%;float:left;overflow-y:auto;padding-bottom:75px}.Scroller{padding:0 16px;position:relative}.JourneyHeader{background-color:var(--button-gray-background-color);margin:0 -16px;padding:10px 16px;display:flex;flex-direction:column;justify-content:center}.JourneyIcon{background-color:var(--icon-color-teal);border-radius:30px;width:40px;height:40px;padding:10px;align-self:center;box-sizing:content-box;--icon-color:var(--main-content-background-color)}maki-icon-bulb,maki-icon-truck{--icon-size:40px}maki-icon-edit-document,maki-icon-steps{background-color:var(--button-gray-background-color);border-radius:15px;width:20px;height:20px;padding:5px;margin:0 10px 0 0;box-sizing:content-box;--icon-color:var(--icon-color-teal)}.Title{font-size:var(--main-font-header-size);font-weight:700;line-height:normal}.Subtitle,.Title{font-family:var(--typography-fontFamily);font-style:normal;font-stretch:normal;letter-spacing:-.3px;text-align:center;color:var(--palette-primary-main)}.Subtitle{opacity:.7;font-size:var(--main-font-small-text-size);font-weight:500;line-height:1.64;margin-top:7px}.SectionTitle{font-family:var(--typography-fontFamily);font-size:var(--main-font-text-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:30px;letter-spacing:-.3px;text-align:left;color:var(--palette-primary-main);margin:30px 0 15px;display:flex;justify-content:flext-start}.DotListItem{display:flex;align-items:center;margin-bottom:3px;padding-left:10px}.DotListItem:last-of-type{margin:0}.DotListItem .Dot{margin:2px 23px 0 0;width:8px;height:8px;background-color:var(--icon-color-teal);border-radius:4px}.NoItems{width:15px;height:15px;margin:2px 19px 0 -3px;border:0;background-image:url(assets/radio.svg);background-repeat:no-repeat;background-position:50%;background-size:contain}.DotListItem .Text{font-family:var(--typography-fontFamily);width:calc(100% - 21px);font-size:var(--main-font-small-text-size);font-weight:500;font-style:normal;font-stretch:normal;line-height:1.64;letter-spacing:-.3px;text-align:left;color:var(--palette-primary-main)}.NumberedListItem{display:flex;align-items:center;margin-bottom:10px}.NumberedListItem:last-of-type{margin:0}.NumberedListItem .Number{margin-right:9px;width:18px;height:18px;background-color:var(--palette-primary-main);color:var(--palette-primary-contrastText);border-radius:9px;font-size:var(--main-font-smallest-text-size);font-weight:700;letter-spacing:normal;line-height:18px;text-align:center}.NumberedListItem .Number,.NumberedListItem .Text{font-family:var(--typography-fontFamily);font-style:normal;font-stretch:normal}.NumberedListItem .Text{opacity:.7;font-size:var(--main-font-small-text-size);font-weight:500;line-height:1.64;letter-spacing:-.3px;text-align:left;color:var(--palette-primary-main)}maki-icon-cross{--icon-color:var(--icon-red-color)}"
 
 /***/ }),
 
@@ -45405,7 +45411,7 @@ module.exports = ":host{width:100%;height:100%;float:left}.Wrapper{height:100vh;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\r\n  <div class=\"ScrollContainer\">\r\n    <div class=\"Scroller\">\r\n      <div class=\"TopbarButtonContainer\">\r\n        <maki-button on-click=\"_stop\" size=\"30\" stroke=\"0\" font-size=\"16\" heading=\"Stoppen\">\r\n          <maki-icon-cross />\r\n        </maki-button>\r\n      </div>\r\n      <div class=\"JourneyHeader\">\r\n        <div class=\"JourneyIcon\">\r\n          <dom-if if=\"{{show_journey_icon_truck}}\">\r\n            <template>\r\n              <maki-icon-truck />\r\n            </template>\r\n          </dom-if>\r\n          <dom-if if=\"{{show_journey_icon_bulb}}\">\r\n            <template>\r\n              <maki-icon-bulb />\r\n            </template>\r\n          </dom-if>\r\n        </div>\r\n        <div class=\"Title\">[[_title(journey)]]</div>\r\n        <div class=\"Subtitle\">[[_subtitle(journey)]]</div>\r\n      </div>\r\n      <div class=\"SectionTitle\">\r\n        <maki-icon-edit-document></maki-icon-edit-document>\r\n        <div>Benodigde documenten</div>\r\n      </div>\r\n      <div class=\"DotList\">\r\n        <dom-repeat items=\"[[_documents(journey)]]\">\r\n          <template>\r\n            <div class=\"DotListItem\">\r\n              <div class=\"Dot\"></div>\r\n              <div class=\"Text\">[[item]]</div>\r\n            </div>\r\n          </template>\r\n        </dom-repeat>\r\n      </div>\r\n      <div class=\"SectionTitle\">\r\n        <maki-icon-steps></maki-icon-steps>\r\n        <div>Deze stappen ga je doorlopen</div>\r\n      </div>\r\n      <div class=\"DotList\">\r\n        <dom-repeat items=\"[[_steps(journey)]]\">\r\n          <template>\r\n            <div class=\"DotListItem\">\r\n              <div class=\"Dot\"></div>\r\n              <div class=\"Text\">[[item]]</div>\r\n            </div>\r\n          </template>\r\n        </dom-repeat>\r\n      </div>\r\n    </div>\r\n    <div class=\"ButtonContainer\">\r\n      <maki-button highlight size=\"40\" font-size=\"16\" set-color-highlight=\"#3192CF\"  on-click=\"[[_start(journey)]]\">\r\n        <div class=\"ButtonInner\">\r\n          <div class=\"ButtonInnerText\">Starten</div>\r\n          <div class=\"ButtonInnerRight\">></div>\r\n        </div>\r\n      </maki-button>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"Wrapper\">\r\n    <div class=\"ScrollContainer\">\r\n        <div class=\"Scroller\">\r\n            <div class=\"TopbarButtonContainer\">\r\n                <maki-button on-click=\"_stop\" size=\"30\" stroke=\"0\" font-size=\"16\" heading=\"Stoppen\">\r\n                    <maki-icon-cross />\r\n                </maki-button>\r\n            </div>\r\n            <div class=\"JourneyHeader\">\r\n                <div class=\"JourneyIcon\">\r\n                    <dom-if if=\"{{show_journey_icon_truck}}\">\r\n                        <template>\r\n                            <maki-icon-truck />\r\n                        </template>\r\n                    </dom-if>\r\n                    <dom-if if=\"{{show_journey_icon_bulb}}\">\r\n                        <template>\r\n                            <maki-icon-bulb />\r\n                        </template>\r\n                    </dom-if>\r\n                </div>\r\n                <div class=\"Title\">[[_title(journey)]]</div>\r\n                <div class=\"Subtitle\">[[_subtitle(journey)]]</div>\r\n            </div>\r\n            <div class=\"SectionTitle\">\r\n                <maki-icon-edit-document></maki-icon-edit-document>\r\n                <div>Benodigde documenten</div>\r\n            </div>\r\n            <dom-if if=\"{{_hasDocuments(journey)}}\" class=\"DotList\">\r\n                <template>\r\n                    <dom-repeat items=\"[[_documents(journey)]]\">\r\n                        <template>\r\n                            <div class=\"DotListItem\">\r\n                                <div class=\"Dot\"></div>\r\n                                <div class=\"Text\">[[item]]</div>\r\n                            </div>\r\n                        </template>\r\n                    </dom-repeat>\r\n                </template>\r\n            </dom-if>\r\n            <dom-if if=\"{{!_hasDocuments(journey)}}\" class=\"DotList\">\r\n                <template>\r\n                    <div class=\"DotListItem\">\r\n                        <div class=\"NoItems\"></div>\r\n                        <div class=\"Text\">Geen documenten nodig</div>\r\n                    </div>\r\n                </template>\r\n            </dom-if>\r\n            <div class=\"SectionTitle\">\r\n                <maki-icon-steps></maki-icon-steps>\r\n                <div>Deze stappen ga je doorlopen</div>\r\n            </div>\r\n            <div class=\"DotList\">\r\n                <dom-repeat items=\"[[_steps(journey)]]\">\r\n                    <template>\r\n                        <div class=\"DotListItem\">\r\n                            <div class=\"Dot\"></div>\r\n                            <div class=\"Text\">[[item]]</div>\r\n                        </div>\r\n                    </template>\r\n                </dom-repeat>\r\n            </div>\r\n        </div>\r\n        <div class=\"ButtonContainer\">\r\n            <maki-button highlight size=\"40\" font-size=\"16\" set-color-highlight=\"#3192CF\" disabled=\"{{!preconditionsFullFilled}}\" on-click=\"[[_start(journey)]]\">\r\n                <div class=\"ButtonInner\">\r\n                    <div class=\"ButtonInnerText\">Starten</div>\r\n                    <div class=\"ButtonInnerRight\">></div>\r\n                </div>\r\n            </maki-button>\r\n        </div>\r\n        <dom-if if=\"{{!preconditionsFullFilled}}\">\r\n            <template>\r\n                <dom-if if=\"{{!preconditionsBeingChecked}}\">\r\n                    <template>\r\n                    <div class=\"Title\">Dit proces kan helaas niet gestart worden</div>\r\n                        <div class=\"Subtitle\">{{journey.preconditions}}</div>\r\n                    </template>\r\n                </dom-if>\r\n            </template>\r\n        </dom-if>\r\n        <dom-if if=\"{{preconditionsBeingChecked}}\">\r\n            <template>\r\n                <div class=\"Title\">Randvoorwaarden</div>\r\n                <div class=\"Subtitle\">De randvoorwaarden voor het starten van dit proces worden gecontroleerd</div>\r\n            </template>\r\n        </dom-if>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -45466,7 +45472,7 @@ class PlaybackScreenText extends (0, _connectMixin.connect)(_store.store)(_polym
 
   _inputCallback(question) {
     return data => {
-      _store.store.dispatch((0, _order.orderSaveAnswer)(question.key || question.property, data, question.title, data));
+      _store.store.dispatch((0, _order.orderSaveAnswer)(question.key || question.property, data, question.fieldName, data));
     };
   }
 
@@ -45593,7 +45599,7 @@ class PlaybackScreenVideo extends (0, _connectMixin.connect)(_store.store)(_poly
       const question = e.target.dataQuestion;
       const index = e.target.dataIndex;
       if (question && question.options && Array.isArray(question.options) && question.options.length > index && question.options[index] && question.options[index].goto) {
-        _store.store.dispatch((0, _order.orderSaveAnswer)(question.key || question.property, question.options[index].value || question.options[index].title, question.title, question.options[index].title));
+        _store.store.dispatch((0, _order.orderSaveAnswer)(question.key || question.property, question.options[index].value || question.options[index].title, question.title, question.options[index].fieldName));
         _store.store.dispatch((0, _order.orderNext)(question.options[index].goto));
       }
     }
@@ -45645,14 +45651,14 @@ module.exports = "<playback-screen-wrapper skip-callback=\"[[_skipCallback(quest
 
 /***/ }),
 
-/***/ "./src/components/lib/polymer-openajax-datepicker-master/polymer-openajax-datepicker-styles.html":
+/***/ "./src/components/lib/polymer-openajax-datepicker-master/polymer-openajax-datepicker-styles.pcss":
 /*!*******************************************************************************************************!*\
-  !*** ./src/components/lib/polymer-openajax-datepicker-master/polymer-openajax-datepicker-styles.html ***!
+  !*** ./src/components/lib/polymer-openajax-datepicker-master/polymer-openajax-datepicker-styles.pcss ***!
   \*******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host {\r\n  display: block;\r\n  width: 100%;\r\n  min-height: 300px;\r\n  --datepicker-background-color: #fff;\r\n  --datepicker-month-color: rgba(0,0,0,.38);\r\n  --datepicker-width: 294px;\r\n  --datepicker-zindex: 1000;\r\n  --datepicker-cells-color: #ddd;\r\n  --datepicker-hover-color: rgba(0,0,0,.04);\r\n  --datepicker-selected-color: rgba(0,0,0,.04);\r\n  --datepicker-cellempty-color: #fff;\r\n  --datepicker-buttons-hover: rgba(0,0,0,.1);\r\n  --datepicker-buttons-focus: rgba(0,0,0,.38);\r\n  --datepicker-font-color: var(--palette-primary-main);\r\n}\r\n\r\n.datepicker {\r\n  padding: 2px;\r\n  margin-top: 10px;\r\n  z-index: var(--datepicker-zindex);\r\n  width: var(--datepicker-width);\r\n  color: var(--datepicker-font-color);\r\n  background-color: var(--datepicker-background-color);\r\n  border-radius: 3px;\r\n  box-shadow: 0px 0px 2px rgba(0,0,0,.4);\r\n}\r\n\r\ndiv#month-wrap {\r\n  height: 30px;\r\n}\r\n\r\ndiv#bn_prev {\r\n  float: left;\r\n  width: 40px;\r\n  height: 40px;\r\n}\r\n\r\ndiv#bn_prev::before {\r\n  content:\"\\003c\";\r\n  font-family: var(--typography-fontFamily);\r\n  height: 24px;\r\n  font-size: var(--main-font-subheader-size);\r\n  font-weight: 500;\r\n  font-style: normal;\r\n  position: relative;\r\n  top: 5px;\r\n  left: 12px;\r\n}\r\n\r\ndiv#bn_next {\r\n  float: right;\r\n  width: 40px;\r\n  height: 40px;\r\n}\r\n\r\ndiv#bn_next::before {\r\n  content:\"\\003e\";\r\n  font-family: var(--typography-fontFamily);\r\n  height: 24px;\r\n  font-size: var(--main-font-subheader-size);\r\n  font-weight: 500;\r\n  font-style: normal;\r\n  position: relative;\r\n  top: 5px;\r\n  left: 12px;\r\n}\r\n\r\n\r\ndiv#bn_prev:hover,\r\ndiv#bn_prev:focus,\r\ndiv#bn_next:hover,\r\ndiv#bn_next:focus {\r\n  background-color: var(--datepicker-buttons-hover);\r\n  border-radius: 20px;\r\n  outline: none;\r\n}\r\n\r\nimg.bn_img {\r\n  margin: 0;\r\n  padding: 2px;\r\n}\r\n\r\ndiv#month {\r\n  float: left;\r\n  padding-top: 6px;\r\n  width: 199px;\r\n  height: 24px;\r\n  text-align: center;\r\n  font-weight: bold;\r\n  font-size: var(--main-font-medium-text-size);\r\n}\r\n\r\ntable#cal {\r\n  width: 290px;\r\n  font-size: var(--main-font-medium-text-size);\r\n  text-align: center;\r\n  border-collapse: seperate;\r\n  table-layout: fixed;\r\n  outline: none;\r\n}\r\n\r\ntable#cal th,\r\ntable#cal td {\r\n  width: 38px;\r\n  height: 38px;\r\n  padding: 0;\r\n  border: 1px solid rgba(0,0,0,0);\r\n}\r\n\r\ntable#cal thead th {\r\n  border-bottom: 1px solid rgba(0,0,0,.12);\r\n  margin-bottom: 2px;\r\n}\r\n\r\ntable#cal td {\r\n  cursor: pointer;\r\n}\r\n\r\ntable#cal td.today {\r\n  border-radius: 20px;\r\n  border: 1px solid rgba(0,0,0,.12);\r\n}\r\n\r\ntable#cal td.disabled {\r\n  color: #999;\r\n}\r\n\r\ntable#cal td.empty, table#cal td.disabled {\r\n  background-color: var(--datepicker-cellempty-color);\r\n}\r\n\r\ntable#cal td:hover {\r\n  background-color: var(--datepicker-hover-color);\r\n  border-radius: 20px;\r\n}\r\n\r\ntable#cal td.focus {\r\n  background-color: rgba(119, 211, 83, 0.32);\r\n  border-color: #77D353;\r\n  border-radius: 20px;\r\n}\r\n\r\ntable#cal td.empty:hover, table#cal td.disabled:hover {\r\n  background-color: var(--datepicker-cellempty-color);\r\n  cursor: default;\r\n}\r\n\r\n.offscreen {\r\n  position: absolute;\r\n  left: -200em;\r\n  top: -100em;\r\n}\r\n\r\n[aria-hidden=\"true\"] {\r\n  display: none;\r\n}\r\n\r\nabbr {\r\n  text-decoration: none;\r\n}\r\n"
+module.exports = ":host{display:block;width:100%;min-height:300px;--datepicker-background-color:#fff;--datepicker-month-color:rgba(0,0,0,0.38);--datepicker-width:294px;--datepicker-zindex:1000;--datepicker-cells-color:#ddd;--datepicker-hover-color:rgba(0,0,0,0.04);--datepicker-selected-color:rgba(0,0,0,0.04);--datepicker-cellempty-color:#fff;--datepicker-buttons-hover:rgba(0,0,0,0.1);--datepicker-buttons-focus:rgba(0,0,0,0.38);--datepicker-font-color:var(--palette-primary-main)}.datepicker{padding:2px;margin-top:10px;z-index:var(--datepicker-zindex);width:var(--datepicker-width);color:var(--datepicker-font-color);background-color:var(--datepicker-background-color);border-radius:3px;box-shadow:0 0 2px rgba(0,0,0,.4)}div#month-wrap{height:30px}div#bn_prev{float:left;width:40px;height:40px}div#bn_prev:before{content:\"\\003c\";font-family:var(--typography-fontFamily);height:24px;font-size:var(--main-font-subheader-size);font-weight:500;font-style:normal;position:relative;top:5px;left:12px}div#bn_next{float:right;width:40px;height:40px}div#bn_next:before{content:\"\\003e\";font-family:var(--typography-fontFamily);height:24px;font-size:var(--main-font-subheader-size);font-weight:500;font-style:normal;position:relative;top:5px;left:12px}div#bn_next:focus,div#bn_next:hover,div#bn_prev:focus,div#bn_prev:hover{background-color:var(--datepicker-buttons-hover);border-radius:20px;outline:none}img.bn_img{margin:0;padding:2px}div#month{float:left;padding-top:6px;width:199px;height:24px;font-weight:700}div#month,table#cal{text-align:center;font-size:var(--main-font-medium-text-size)}table#cal{width:290px;border-collapse:seperate;table-layout:fixed;outline:none}table#cal td,table#cal th{width:38px;height:38px;padding:0;border:1px solid transparent}table#cal thead th{border-bottom:1px solid rgba(0,0,0,.12);margin-bottom:2px}table#cal td{cursor:pointer}table#cal td.today{border-radius:20px;border:1px solid rgba(0,0,0,.12)}table#cal td.disabled{color:#999}table#cal td.disabled,table#cal td.empty{background-color:var(--datepicker-cellempty-color)}table#cal td:hover{background-color:var(--datepicker-hover-color);border-radius:20px}table#cal td.focus{background-color:rgba(119,211,83,.32);border-color:#77d353;border-radius:20px}table#cal td.disabled:hover,table#cal td.empty:hover{background-color:var(--datepicker-cellempty-color);cursor:default}.offscreen{position:absolute;left:-200em;top:-100em}[aria-hidden=true]{display:none}abbr{text-decoration:none}"
 
 /***/ }),
 
@@ -45687,7 +45693,7 @@ var _connectMixin = __webpack_require__(/*! pwa-helpers/connect-mixin */ "./node
 
 var _store = __webpack_require__(/*! ../../../redux/store */ "./src/redux/store.js");
 
-var _polymerOpenajaxDatepickerStyles = __webpack_require__(/*! ./polymer-openajax-datepicker-styles.html */ "./src/components/lib/polymer-openajax-datepicker-master/polymer-openajax-datepicker-styles.html");
+var _polymerOpenajaxDatepickerStyles = __webpack_require__(/*! ./polymer-openajax-datepicker-styles.pcss */ "./src/components/lib/polymer-openajax-datepicker-master/polymer-openajax-datepicker-styles.pcss");
 
 var _polymerOpenajaxDatepickerStyles2 = _interopRequireDefault(_polymerOpenajaxDatepickerStyles);
 
@@ -46833,7 +46839,7 @@ window.customElements.define('maf-screen', MafScreen);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".Wrapper{width:100%;float:left}.Inner{width:calc(100% - 32px);padding:0 16px}.ButtonContainer{width:100%;height:62px;max-width:var(--main-max-width);padding:16px 0;box-sizing:border-box}maki-icon-cross{--icon-color:var(--icon-red-color)}"
+module.exports = ".Wrapper{width:100%;float:left}.Inner{width:calc(100% - 32px);padding:0 16px}.ButtonContainer{width:100%;height:62px;max-width:var(--main-max-width);padding:16px 0;box-sizing:border-box}.BackButton{display:inline-block;opacity:1;transform:scale(.7,1.2)}"
 
 /***/ }),
 
@@ -46844,7 +46850,7 @@ module.exports = ".Wrapper{width:100%;float:left}.Inner{width:calc(100% - 32px);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\r\n  <div class=\"Inner\">\r\n    <div class=\"ButtonContainer\">\r\n      <dom-if if=\"[[_hasBack(onBack)]]\">\r\n        <template>\r\n          <maki-button on-click=\"[[onBack]]\" size=\"30\" stroke=\"0\" font-size=\"16\" heading=\"Stoppen\">\r\n            <maki-icon-cross />\r\n          </maki-button>\r\n        </template>\r\n      </dom-if>\r\n    </div>\r\n    <maki-header>[[heading]]</maki-header>\r\n    <slot></slot>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"Wrapper\">\r\n    <div class=\"Inner\">\r\n        <dom-if if=\"[[_hasBack(onBack)]]\">\r\n            <template>\r\n                <div class=\"ButtonContainer\">\r\n                    <maki-button on-click=\"[[onBack]]\" size=\"30\" stroke=\"0\" font-size=\"16\" set-color-main=\"#3192CF\" heading=\"Ga terug\">\r\n                        <div class=\"BackButton\"><</div>\r\n                    </maki-button>\r\n                </div>\r\n            </template>\r\n        </dom-if>\r\n        <maki-header>[[heading]]</maki-header>\r\n        <slot></slot>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -46895,7 +46901,7 @@ const typeToDisplayName = exports.typeToDisplayName = type => {
     case QUESTION_TYPE_DOCUMENTS:
       return 'Documenten';
     case QUESTION_TYPE_END:
-      return 'Einde klantvraag';
+      return 'Eind';
     case QUESTION_TYPE_LOCATION:
       return 'Locatie';
     case QUESTION_TYPE_MULTIPLE:
@@ -47097,12 +47103,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 const SELECT_PAGE = exports.SELECT_PAGE = 'SELECT_PAGE';
-const selectPage = exports.selectPage = page => ({ type: SELECT_PAGE, page });
+const selectPage = exports.selectPage = page => ({ type: SELECT_PAGE, page: page });
 
 const SELECT_PAGE_NO_HISTORY = exports.SELECT_PAGE_NO_HISTORY = 'SELECT_PAGE_NO_HISTORY';
 const selectPageNoHistory = exports.selectPageNoHistory = page => ({
   type: SELECT_PAGE_NO_HISTORY,
-  page
+  page: page
 });
 
 const NEXT_PAGE_AFTER_LOGIN = exports.NEXT_PAGE_AFTER_LOGIN = 'NEXT_PAGE_AFTER_LOGIN';
@@ -47381,6 +47387,17 @@ const addEndToQuestionOption = exports.addEndToQuestionOption = (id, option) => 
   option
 });
 
+const REQUEST_CHECK_PRECONDITIONS_SUCCESS = exports.REQUEST_CHECK_PRECONDITIONS_SUCCESS = 'REQUEST_CHECK_PRECONDITIONS_SUCCESS';
+const requestCheckPreconditionsSuccess = exports.requestCheckPreconditionsSuccess = data => ({
+  type: REQUEST_CHECK_PRECONDITIONS_SUCCESS,
+  data: data
+});
+
+const REQUEST_CHECK_PRECONDITIONS_FAILURE = exports.REQUEST_CHECK_PRECONDITIONS_FAILURE = 'REQUEST_CHECK_PRECONDITIONS_FAILURE';
+const requestCheckPreconditionsFailure = exports.requestCheckPreconditionsFailure = () => ({
+  type: REQUEST_CHECK_PRECONDITIONS_SUCCESS
+});
+
 /***/ }),
 
 /***/ "./src/redux/actions/journeys.js":
@@ -47597,6 +47614,9 @@ const clearPersonsMoving = exports.clearPersonsMoving = () => ({ type: CLEAR_PER
 const REQUEST_PERSONS_MOVING_SKIPQUESTION = exports.REQUEST_PERSONS_MOVING_SKIPQUESTION = 'REQUEST_PERSONS_MOVING_SKIPQUESTION';
 const requestPersonsMovingSkipQuestion = exports.requestPersonsMovingSkipQuestion = () => ({ type: REQUEST_PERSONS_MOVING_SKIPQUESTION });
 
+const REQUEST_PERSONS_MOVING_SELECT_ALL = exports.REQUEST_PERSONS_MOVING_SELECT_ALL = 'REQUEST_PERSONS_MOVING_SELECT_ALL';
+const requestPersonsMovingSelectAll = exports.requestPersonsMovingSelectAll = () => ({ type: REQUEST_PERSONS_MOVING_SELECT_ALL });
+
 /***/ }),
 
 /***/ "./src/redux/api/address.js":
@@ -47742,6 +47762,45 @@ const contractsApi = exports.contractsApi = {
 
 /***/ }),
 
+/***/ "./src/redux/api/journey.js":
+/*!**********************************!*\
+  !*** ./src/redux/api/journey.js ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.journeyApi = undefined;
+
+var _axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _configuration = __webpack_require__(/*! ../../helpers/configuration */ "./src/helpers/configuration.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const journeyApi = exports.journeyApi = {
+  checkPreconditions: (journeyId, token) => async () => {
+    const response = await _axios2.default.get('/journey/' + journeyId + '/checkPreconditions', {
+      baseURL: _configuration.configuration.BASE_URL_API(),
+      headers: { 'Authorization': 'Bearer ' + token }
+    });
+    if (response.statusText === 'OK' || response.status === 200) {
+      return { data: response.data };
+    } else {
+      throw response.status;
+    }
+  }
+};
+
+/***/ }),
+
 /***/ "./src/redux/api/jwt.js":
 /*!******************************!*\
   !*** ./src/redux/api/jwt.js ***!
@@ -47775,7 +47834,7 @@ const jwtApi = exports.jwtApi = {
     if (response.statusText === 'OK' || response.status === 200) {
       (0, _headers.setJwtBearerToken)(response.data.token);
       delete response.data.token;
-      window.successToast.text = "Succesvol ingelogd";
+      window.successToast.text = 'Succesvol ingelogd';
       window.successToast.open();
       return { data: response.data, headers: response.headers };
     } else {
@@ -47806,7 +47865,7 @@ const jwtApi = exports.jwtApi = {
     if (response.statusText === 'OK' || response.status === 200) {
       (0, _headers.setJwtBearerToken)(response.data.token);
       delete response.data.token;
-      window.successToast.text = "Succesvol ingelogd";
+      window.successToast.text = 'Succesvol ingelogd';
       window.successToast.open();
       return { data: response.data, headers: response.headers };
     } else {
@@ -47965,7 +48024,7 @@ const journeyVerhuizen = 'verhuizen';
 
 const knownJourneys = [{
   name: journeyVerhuizen,
-  id: 'fc79c4c9-b3b3-4258-bdbb-449262f3e5d7'
+  id: '9d76fb58-0711-4437-acc4-9f4d9d403cdf'
 }];
 
 const getJourneyId = exports.getJourneyId = journeyName => {
@@ -48388,7 +48447,16 @@ var _jwt = __webpack_require__(/*! ../actions/jwt */ "./src/redux/actions/jwt.js
 const journey = exports.journey = (state = { title: '', questions: [] }, action) => {
   switch (action.type) {
     case _journey.SET_JOURNEY:
-      return action.journey;
+      {
+        if (state.preconditionsFullFilled) {
+          delete state.preconditionsFullFilled;
+        }
+        if (action.journey.preconditionsFullFilled) {
+          delete action.journey.preconditionsFullFilled;
+        }
+        action.journey.preconditionsBeingChecked = true;
+        return action.journey;
+      }
     case _journey.ADD_QUESTION:
       return Object.assign({}, state, {
         questions: [...state.questions, action.question]
@@ -48396,6 +48464,16 @@ const journey = exports.journey = (state = { title: '', questions: [] }, action)
     case _journey.SET_TITLE:
       return Object.assign({}, state, {
         title: action.title
+      });
+    case _journey.REQUEST_CHECK_PRECONDITIONS_SUCCESS:
+      return Object.assign({}, state, {
+        preconditionsFullFilled: action.data !== undefined ? action.data.preconditionsFullFilled : false,
+        preconditionsBeingChecked: false
+      });
+    case _journey.REQUEST_CHECK_PRECONDITIONS_FAILURE:
+      return Object.assign({}, state, {
+        preconditionsFullFilled: false,
+        preconditionsBeingChecked: false
       });
     case _journey.ADD_LINK_TO_QUESTION_NEXT:
     case _journey.ADD_LINK_TO_QUESTION_SKIP:
@@ -48575,16 +48653,12 @@ exports.journeys = undefined;
 
 var _journeys = __webpack_require__(/*! ../actions/journeys */ "./src/redux/actions/journeys.js");
 
-var _jwt = __webpack_require__(/*! ../actions/jwt */ "./src/redux/actions/jwt.js");
-
 const journeys = exports.journeys = (state = { data: [] }, action) => {
   switch (action.type) {
     case _journeys.SET_JOURNEYS:
       return Object.assign({}, state, {
         data: action.data
       });
-    case _jwt.REQUEST_JWT_LOGOUT_SUCCESS:
-      return { data: [] };
     default:
       return state;
   }
@@ -48802,7 +48876,7 @@ const item = (state = {
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 exports.person = undefined;
 
@@ -48811,60 +48885,72 @@ var _person = __webpack_require__(/*! ../actions/person */ "./src/redux/actions/
 var _jwt = __webpack_require__(/*! ../actions/jwt */ "./src/redux/actions/jwt.js");
 
 const person = exports.person = (state = { data: {}, status: _person.CLEAR_PERSON_DATA, movingPersonsStatus: _person.CLEAR_PERSONS_MOVING }, action) => {
-  switch (action.type) {
-    case _person.REQUEST_PERSON_DATA:
-      return Object.assign({}, state, {
-        status: _person.REQUEST_PERSON_DATA
-      });
-    case _person.REQUEST_PERSON_DATA_SUCCESS:
-      return Object.assign({}, state, {
-        data: action.data,
-        error: null,
-        status: _person.REQUEST_PERSON_DATA_SUCCESS
-      });
-    case _person.REQUEST_PERSON_DATA_FAILURE:
-      return Object.assign({}, state, {
-        error: action.error,
-        status: _person.REQUEST_PERSON_DATA_FAILURE
-      });
-    case _person.CLEAR_PERSON_DATA:
-      return {
-        data: {},
-        status: _person.CLEAR_PERSON_DATA
-      };
-    case _person.REQUEST_PERSONS_MOVING:
-      return Object.assign({}, state, {
-        movingPersonsStatus: _person.REQUEST_PERSONS_MOVING
-      });
-    case _person.REQUEST_PERSONS_MOVING_SUCCESS:
-      {
-        return Object.assign({}, state, {
-          movingPersons: action.data,
-          movingPersonsStatus: action.data.length === 0 ? _person.REQUEST_PERSONS_MOVING_SKIPQUESTION : _person.REQUEST_PERSONS_MOVING_SUCCESS,
-          error: null
-        });
-      }
-    case _person.REQUEST_PERSONS_MOVING_FAILURE:
-      return Object.assign({}, state, {
-        error: action.error,
-        movingPersonsStatus: _person.REQUEST_PERSONS_MOVING_FAILURE
-      });
-    case _person.CLEAR_PERSONS_MOVING:
-      return Object.assign({}, state, {
-        movingPersons: [],
-        movingPersonsStatus: _person.CLEAR_PERSONS_MOVING
-      });
-    case _person.REQUEST_PERSONS_MOVING_SKIPQUESTION:
-      {
-        return Object.assign({}, state, {
-          movingPersonsStatus: _person.REQUEST_PERSONS_MOVING_SUCCESS
-        });
-      }
-    case _jwt.REQUEST_JWT_LOGOUT_SUCCESS:
-      return { data: {}, status: _person.CLEAR_PERSON_DATA, movingPersonsStatus: _person.CLEAR_PERSONS_MOVING };
-    default:
-      return state;
-  }
+    switch (action.type) {
+        case _person.REQUEST_PERSON_DATA:
+            return Object.assign({}, state, {
+                searching: true,
+                status: _person.REQUEST_PERSON_DATA
+            });
+        case _person.REQUEST_PERSON_DATA_SUCCESS:
+            return Object.assign({}, state, {
+                searching: false,
+                data: action.data,
+                error: null,
+                status: _person.REQUEST_PERSON_DATA_SUCCESS
+            });
+        case _person.REQUEST_PERSON_DATA_FAILURE:
+            return Object.assign({}, state, {
+                searching: false,
+                error: action.error,
+                status: _person.REQUEST_PERSON_DATA_FAILURE
+            });
+        case _person.CLEAR_PERSON_DATA:
+            return {
+                data: {},
+                searching: false,
+                status: _person.CLEAR_PERSON_DATA
+            };
+        case _person.REQUEST_PERSONS_MOVING:
+            return Object.assign({}, state, {
+                movingPersonsSearching: true,
+                movingPersonsStatus: _person.REQUEST_PERSONS_MOVING
+            });
+        case _person.REQUEST_PERSONS_MOVING_SUCCESS:
+            {
+                return Object.assign({}, state, {
+                    movingPersons: action.data,
+                    movingPersonsSearching: false,
+                    movingPersonsStatus: action.data.length === 1 ? _person.REQUEST_PERSONS_MOVING_SKIPQUESTION : _person.REQUEST_PERSONS_MOVING_SELECT_ALL,
+                    error: null
+                });
+            }
+        case _person.REQUEST_PERSONS_MOVING_FAILURE:
+            return Object.assign({}, state, {
+                error: action.error,
+                movingPersonsSearching: false,
+                movingPersonsStatus: _person.REQUEST_PERSONS_MOVING_FAILURE
+            });
+        case _person.CLEAR_PERSONS_MOVING:
+            return Object.assign({}, state, {
+                movingPersons: [],
+                movingPersonsSearching: false,
+                movingPersonsStatus: _person.CLEAR_PERSONS_MOVING
+            });
+        case _person.REQUEST_PERSONS_MOVING_SKIPQUESTION:
+            return Object.assign({}, state, {
+                movingPersonsSearching: false,
+                movingPersonsStatus: _person.REQUEST_PERSONS_MOVING_SUCCESS
+            });
+        case _person.REQUEST_PERSONS_MOVING_SELECT_ALL:
+            return Object.assign({}, state, {
+                movingPersonsSearching: false,
+                movingPersonsStatus: _person.REQUEST_PERSONS_MOVING_SUCCESS
+            });
+        case _jwt.REQUEST_JWT_LOGOUT_SUCCESS:
+            return { data: {}, status: _person.CLEAR_PERSON_DATA, movingPersonsStatus: _person.CLEAR_PERSONS_MOVING };
+        default:
+            return state;
+    }
 };
 
 /***/ }),
@@ -49194,6 +49280,8 @@ var _contract = __webpack_require__(/*! ./contract */ "./src/redux/sagas/contrac
 
 var _contracts = __webpack_require__(/*! ./contracts */ "./src/redux/sagas/contracts.js");
 
+var _journey = __webpack_require__(/*! ./journey */ "./src/redux/sagas/journey.js");
+
 var _person = __webpack_require__(/*! ./person */ "./src/redux/sagas/person.js");
 
 var _jwt = __webpack_require__(/*! ./jwt */ "./src/redux/sagas/jwt.js");
@@ -49203,7 +49291,92 @@ var _orders = __webpack_require__(/*! ./orders */ "./src/redux/sagas/orders.js")
 var _application = __webpack_require__(/*! ./application */ "./src/redux/sagas/application.js");
 
 function* rootSaga() {
-  yield (0, _effects.all)([(0, _address.watchRequestAddressData)(), (0, _avgLog.watchRequestAvgLog)(), (0, _avgLogs.watchRequestAvgLogs)(), (0, _contract.watchRequestContract)(), (0, _contracts.watchRequestContracts)(), (0, _jwt.watchRequestJwtSigninFake)(), (0, _jwt.watchRequestJwtSignin)(), (0, _jwt.watchJwtSigninSuccess)(), (0, _jwt.watchJwtSigninSuccessFake)(), (0, _jwt.watchRequestJwtFromDigidCgi)(), (0, _jwt.watchRequestJwtFromDigidCgiSuccess)(), (0, _jwt.watchRequestJwtLogout)(), (0, _jwt.watchRequestJwtLogout401)(), (0, _application.watchSelectPage)(), (0, _application.watchSelectPageNoHistory)(), (0, _application.watchNextPageAfterLogin)(), (0, _person.watchRequestPersonData)(), (0, _person.watchRequestPersonsMoving)(), (0, _orders.watchRequestOrdersSubmit)()]);
+  yield (0, _effects.all)([(0, _address.watchRequestAddressData)(), (0, _avgLog.watchRequestAvgLog)(), (0, _avgLogs.watchRequestAvgLogs)(), (0, _contract.watchRequestContract)(), (0, _contracts.watchRequestContracts)(), (0, _jwt.watchRequestJwtSigninFake)(), (0, _jwt.watchRequestJwtSignin)(), (0, _jwt.watchJwtSigninSuccess)(), (0, _jwt.watchJwtSigninSuccessFake)(), (0, _jwt.watchRequestJwtFromDigidCgi)(), (0, _jwt.watchRequestJwtFromDigidCgiSuccess)(), (0, _jwt.watchRequestJwtLogout)(), (0, _jwt.watchRequestJwtLogout401)(), (0, _application.watchSelectPage)(), (0, _application.watchSelectPageNoHistory)(), (0, _application.watchNextPageAfterLogin)(), (0, _person.watchRequestPersonData)(), (0, _person.watchRequestPersonsMoving)(), (0, _orders.watchRequestOrdersSubmit)(), (0, _journey.watchSetJourney)()]);
+}
+
+/***/ }),
+
+/***/ "./src/redux/sagas/journey.js":
+/*!************************************!*\
+  !*** ./src/redux/sagas/journey.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.watchDeleteQuestionPreflight = watchDeleteQuestionPreflight;
+exports.watchSetQuestionType = watchSetQuestionType;
+exports.watchSetJourney = watchSetJourney;
+
+var _effects = __webpack_require__(/*! redux-saga/effects */ "./node_modules/redux-saga/dist/redux-saga-effects-npm-proxy.esm.js");
+
+var _journey = __webpack_require__(/*! ../actions/journey */ "./src/redux/actions/journey.js");
+
+var _journey2 = __webpack_require__(/*! ../api/journey */ "./src/redux/api/journey.js");
+
+var _headers = __webpack_require__(/*! ../helpers/headers */ "./src/redux/helpers/headers.js");
+
+var _common = __webpack_require__(/*! ../../helpers/common */ "./src/helpers/common.js");
+
+function* watchDeleteQuestionPreflight() {
+  yield (0, _effects.takeLatest)(_journey.DELETE_QUESTION_PREFLIGHT, deleteQuestionPreflightCheck);
+}
+
+function* deleteQuestionPreflightCheck(action) {
+  if (action && action.id) {
+    yield (0, _effects.put)(uiDeleteDialogOpen());
+    if (action.id === 'START') {
+      yield (0, _effects.put)(uiDeleteDialogSetStart());
+    } else {
+      const state = store.getState();
+      if (state && state.journey && state.journey.questions && Array.isArray(state.journey.questions) && state.journey.questions.length > 0) {
+        const q = state.journey.questions.find(i => i.id === action.id);
+        if (q) {
+          let found = q && q.options && Array.isArray(q.options) && q.options.length > 0 ? q.options.map(o => o && o.goto ? o.goto : null) : [];
+          found.push(q.next || null);
+          found.push(q.optional && q.optional.goto ? q.optional.goto : null);
+          found = found.filter(i => !!i).filter((item, index, arr) => arr.indexOf(item) === index);
+          if (found.length === 0) {
+            yield (0, _effects.put)(uiDeleteDialogSetAutoResolve(action.id, null));
+          } else if (found.length === 1) {
+            yield (0, _effects.put)(uiDeleteDialogSetAutoResolve(action.id, found[0]));
+          } else {
+            yield (0, _effects.put)(uiDeleteDialogSetManualResolve(action.id, found));
+          }
+        }
+      }
+    }
+  }
+}
+
+function* watchSetQuestionType() {
+  yield (0, _effects.takeLatest)(_journey.SET_QUESTION_TYPE, setQuestionTypeChecks);
+}
+
+function* setQuestionTypeChecks(action) {
+  if (action.questionType === _common.QUESTION_TYPE_END) {
+    yield (0, _effects.put)(uiSidePanelClose());
+    yield (0, _effects.put)(uiDeselectQuestion());
+    yield (0, _effects.put)((0, _journey.deleteQuestion)(action.id, _common.JOURNEY_END));
+  }
+}
+
+function* watchSetJourney() {
+  yield (0, _effects.takeLatest)(_journey.SET_JOURNEY, checkPreconditions);
+}
+
+function* checkPreconditions(action) {
+  try {
+    const result = yield (0, _effects.call)(_journey2.journeyApi.checkPreconditions(action.journey.request_type_id, (0, _headers.jwtBearerToken)()));
+    yield (0, _effects.put)((0, _journey.requestCheckPreconditionsSuccess)(result.data));
+  } catch (e) {
+    yield (0, _effects.put)((0, _journey.requestCheckPreconditionsFailure)(e));
+  }
 }
 
 /***/ }),
@@ -49239,8 +49412,6 @@ var _headers = __webpack_require__(/*! ../helpers/headers */ "./src/redux/helper
 var _application = __webpack_require__(/*! ../actions/application */ "./src/redux/actions/application.js");
 
 var _lastAction = __webpack_require__(/*! ../helpers/lastAction */ "./src/redux/helpers/lastAction.js");
-
-var _journeys = __webpack_require__(/*! ../actions/journeys */ "./src/redux/actions/journeys.js");
 
 var _jwt2 = __webpack_require__(/*! ../actions/jwt */ "./src/redux/actions/jwt.js");
 
@@ -49284,7 +49455,6 @@ function onJwtSigninSuccess(action) {
 
 function* onJwtSigninSuccessFake() {
   yield (0, _effects.put)((0, _application.nextPageAfterLogin)());
-  yield setFakeJourneys();
 }
 
 function* watchRequestJwtFromDigidCgi() {
@@ -49306,7 +49476,6 @@ function* watchRequestJwtFromDigidCgiSuccess() {
 
 function* onJwtFromDigidCgiSuccess() {
   yield (0, _effects.put)((0, _application.nextPageAfterLogin)());
-  yield setFakeJourneys();
 }
 
 function* watchRequestJwtLogout() {
@@ -49337,127 +49506,6 @@ function* doJwtLogout401(action) {
   window.errorDialog.open();
   // Here we do a selectPageNoHistory, so that when the user logs in again, he is navigated to were he was.
   yield (0, _effects.put)((0, _application.selectPageNoHistory)('signin'));
-}
-
-function* setFakeJourneys() {
-  yield (0, _effects.put)((0, _journeys.setJourneys)([{
-    title: 'Ik heb een goed idee',
-    request_type_id: '06daeb7f-6503-4b8e-8aa1-5a5767b53b22',
-    questions: [{
-      id: '6abbb0e1-3ef5-4206-a2e3-aba72ad1259a',
-      type: 'single',
-      property: 'anoniem',
-      options: [{
-        goto: 'f4efa6ca-158b-4184-958f-52ae8b47f561',
-        title: 'Nee',
-        value: 'Nee'
-      }, {
-        goto: 'b52cf9a7-30d1-4eb7-bf64-34f3a6380c11',
-        title: 'Ja',
-        value: 'Ja'
-      }],
-      title: 'Wil je je idee anoniem indienen?',
-      subtitle: 'Bij anoniem indienen, kunnen we geen contact met je opnemen ' + 'bij vragen.',
-      optional: {
-        goto: null
-      }
-    }, {
-      id: 'f4efa6ca-158b-4184-958f-52ae8b47f561',
-      type: 'agree',
-      property: 'toestemming',
-      options: null,
-      title: 'Toestemming voor gebruik gegevens',
-      subtitle: 'Geef je toestemming om jouw voornaam, achternaam en adres mee ' + 'te sturen met jouw idee?',
-      next: 'e8877860-f3b2-46d2-a3b8-e0b70c93492b'
-    }, {
-      id: 'b52cf9a7-30d1-4eb7-bf64-34f3a6380c11',
-      type: 'text',
-      property: 'ideeomschrijving',
-      options: null,
-      title: 'Wat is jouw idee?',
-      next: '12e51aa9-0a9b-4e74-a273-65e27763073c'
-    }, {
-      id: '12e51aa9-0a9b-4e74-a273-65e27763073c',
-      type: 'radioButtons',
-      property: 'contact',
-      options: [{
-        goto: 'END',
-        title: 'Ja',
-        value: 'Ja'
-      }, {
-        goto: 'END',
-        title: 'Nee',
-        value: 'Nee'
-      }],
-      title: 'Vind je het prettig dat er contact met je wordt opgenomen ' + 'over jouw idee?'
-    }, {
-      id: 'e8877860-f3b2-46d2-a3b8-e0b70c93492b',
-      type: 'text',
-      property: 'ideeomschrijving',
-      options: null,
-      title: 'Wat is jouw idee?',
-      subtitle: '',
-      next: 'END'
-    }],
-    overview: {
-      needed_documents: ['Geen'],
-      send_to: [],
-      steps: ['Je geeft aan of je anoniem wilt blijven', 'Je geeft het onderwerp van je idee op', 'Je beschrijft het idee'],
-      subtitle: 'Leuk dat je een goed idee hebt!'
-    },
-    end: {
-      check: {
-        title: 'Controleer je gegevens',
-        subtitle: 'Controleer onderstaande gegevens goed en verzend het formulier.'
-      },
-      success: {
-        title: 'Je idee is doorgegeven',
-        subtitle: 'Het volgende idee is succesvol verzonden naar de gemeente.'
-      }
-    }
-  }, {
-    title: 'Ik ga verhuizen',
-    request_type_id: '9d76fb58-0711-4437-acc4-9f4d9d403cdf',
-    questions: [{
-      id: 'a7beef34-9aea-4891-971d-beb67b2e8010',
-      type: 'address',
-      property: 'adress',
-      title: 'Wat wordt je nieuwe adres?',
-      subtitle: 'Vul je postcode, huisnummer en eventueel toevoeging in van het nieuwe adres.',
-      next: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb'
-    }, {
-      id: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb',
-      type: 'calendar',
-      property: 'datum',
-      options: null,
-      title: 'Wanneer ga je verhuizen?',
-      subtitle: 'Kies je verhuisdatum in de onderstaande kalender.',
-      next: '37e30b1f-fb51-4d49-8756-fa5d4d55829a'
-    }, {
-      id: '37e30b1f-fb51-4d49-8756-fa5d4d55829a',
-      type: 'personsMoving',
-      property: 'wie',
-      title: 'Met wie ga je verhuizen?',
-      subtitle: 'Er wordt een bericht gestuurd naar de persoon die meeverhuist ' + '(onderstaande personen staan nu op hetzelfde adres als jij ' + 'ingeschreven)',
-      next: 'END' // '21586109-ce3b-4091-8420-85f92c0a6c11',
-    }],
-    overview: {
-      needed_documents: ['Geen documenten nodig'],
-      send_to: [],
-      steps: ['Geef je nieuwe adres op', 'Geef de datum op wanneer je gaat verhuizen', 'Geef aan met wie je gaat verhuizen'],
-      subtitle: 'Verhuizen binnen of naar gemeente \'s-Hertogenbosch'
-    },
-    end: {
-      check: {
-        title: 'Controleer je gegevens',
-        subtitle: 'Controleer onderstaande gegevens goed en verzend het formulier.'
-      },
-      success: {
-        title: 'Je verhuizing is aangevraagd',
-        subtitle: 'De volgende gegevens zijn succesvol verzonden naar de gemeente.'
-      }
-    }
-  }]));
 }
 
 /***/ }),

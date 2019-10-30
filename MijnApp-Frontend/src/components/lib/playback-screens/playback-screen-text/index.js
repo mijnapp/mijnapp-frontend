@@ -35,7 +35,7 @@ export default class PlaybackScreenText extends connect(store)(PolymerElement) {
         orderSaveAnswer(
           question.key || question.property,
           data,
-          question.title,
+          question.fieldName,
           data
         )
       );

@@ -12,7 +12,10 @@ export default class PlaybackScreenStart extends connect(store)(
   PolymerElement
 ) {
   static get properties() {
-    return {};
+    return {
+      preconditionsFullFilled: Boolean,
+      preconditionsBeingChecked: Boolean,
+    };
   }
 
   static get template() {
@@ -28,7 +31,7 @@ export default class PlaybackScreenStart extends connect(store)(
   }
 
   _title(journey) {
-    return journey && journey.title ? journey.title : 'Naamloze klantvraag';
+    return journey && journey.title ? journey.title : 'Naamloos';
   }
 
   _subtitle(journey) {
@@ -50,6 +53,10 @@ export default class PlaybackScreenStart extends connect(store)(
       : [];
   }
 
+  _hasDocuments(journey) {
+    return this._documents(journey).length > 0;
+  }
+    
   _steps(journey) {
     return journey &&
       journey.overview &&
@@ -61,6 +68,7 @@ export default class PlaybackScreenStart extends connect(store)(
 
   _start(journey) {
     return () => {
+      if (!this.preconditionsFullFilled) return;
       if (
         journey &&
         journey.questions &&
@@ -77,6 +85,8 @@ export default class PlaybackScreenStart extends connect(store)(
 
   stateChanged(state) {
     this.journey = state.journey;
+    this.preconditionsFullFilled = state.journey.preconditionsFullFilled;
+    this.preconditionsBeingChecked = state.journey.preconditionsBeingChecked;
     this.id =
       state.order.current === JOURNEY_START
         ? JOURNEY_START
@@ -93,7 +103,7 @@ export default class PlaybackScreenStart extends connect(store)(
     if (!this.question) {
       this.question = '';
     }
-    if (this.journey.title === "Ik ga verhuizen") {
+    if (this.journey.title === 'Ik ga verhuizen') {
       this.show_journey_icon_truck = true;
       this.show_journey_icon_bulb = false;
     } else {

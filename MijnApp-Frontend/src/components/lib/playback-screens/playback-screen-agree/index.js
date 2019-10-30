@@ -42,7 +42,7 @@ export default class PlaybackScreenAgree extends connect(store)(
           orderSaveAnswer(
             this.question.key || this.question.property,
             true,
-            this.question.title,
+            this.question.fieldName,
             'Ja'
           )
         );

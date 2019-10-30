@@ -1,17 +1,15 @@
 :host {
   font-size: var(--typography-fontSize);
 }
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
-    -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 input[type=number] {
-    -moz-appearance:textfield; /* Firefox */
+  -moz-appearance: textfield; /* Firefox */
 }
-
 .Icon {
   position: absolute;
   top: 0;
@@ -38,23 +36,24 @@ input[type=number] {
   font-size: var(--main-font-text-size);
   font-family: inherit;
   line-height: 1.28;
-  color: var(--shaded-color-main);  
+  color: var(--shaded-color-main);
 }
 .Input:focus {
   outline: none;
   box-shadow: none;
 }
 .Input:hover {
-  box-shadow: 0px 0px 5px 1px rgba(30,189,211,0.4);
+  box-shadow: 0 0 5px 1px rgba(30, 189, 211, 0.4);
 }
 .Input.focussed {
-  box-shadow: 0px 0px 5px 1px rgba(30,189,211,0.6);
+  -webkit-appearance: none;
+  -webkit-box-shadow: 0 0 5px 1px rgba(30, 189, 211, 0.6);
+  box-shadow: 0 0 5px 1px rgba(30, 189, 211, 0.6);
 }
-
 .Input::placeholder {
   opacity: 0.6;
   color: var(--shaded-color-main);
-  font-style: italic;  
+  font-style: italic;
 }
 .Highlight {
   height: 2px;
@@ -66,8 +65,7 @@ input[type=number] {
   height: 2px;
   transform: scale(0, 1);
   background-color: var(--shaded-accent-main);
-  transition: transform var(--transitions-duration-shorter)
-    var(--transitions-easing-easeOut);
+  transition: transform var(--transitions-duration-shorter) var(--transitions-easing-easeOut);
   position: absolute;
   top: 0;
   left: 0;
@@ -77,8 +75,7 @@ input[type=number] {
   height: 1px;
   background-color: var(--shaded-accent-main);
   opacity: 0;
-  transition: opacity var(--transitions-duration-shorter)
-    var(--transitions-easing-easeInOut);
+  transition: opacity var(--transitions-duration-shorter) var(--transitions-easing-easeInOut);
   position: absolute;
   top: 0;
   left: 0;

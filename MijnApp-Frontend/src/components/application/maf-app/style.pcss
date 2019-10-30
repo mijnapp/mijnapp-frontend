@@ -1,10 +1,10 @@
-:root{
+:root {
   --main-max-width: 800px;
-  --main-content-background-color: #ffffff;
+  --main-content-background-color: #FFF;
   --main-header-text-color: #19224C;
   --button-gray-background-color: #F5F5F5;
   --button-gray-background-color-hover: #F1F1F1;
-  --button-gray-background-color-hover-dark: #CCCCCC;
+  --button-gray-background-color-hover-dark: #CCC;
   --icon-red-color: #F95F62;
   --icon-color: #3192CF;
   --icon-color-teal: #1EBDD3;
@@ -38,7 +38,7 @@
   height: 57px;
   width: 100%;
   border-top: 1px solid var(--button-gray-background-color);
-  background-color: #edf2f9;
+  background-color: var(--main-background-color);
 }
 .TabSwitcherWrapper {
   width: 100%;
@@ -54,16 +54,19 @@
   width: 20%;
   text-align: center;
   position: relative;
-  cursor: pointer;  
+  cursor: pointer;
 }
-.TabSwitcherTab:hover{
+.TabSwitcherTab:hover {
+  background-color: var(--button-gray-background-color-hover);
+}
+.TabSwitcherTabActive {
   background-color: var(--button-gray-background-color-hover);
 }
 .NotAllowed {
   opacity: 0.25;
   cursor: not-allowed;
 }
-.NotAllowed:hover{
+.NotAllowed:hover {
   background-color: var(--main-content-background-color);
 }
 .TabSwitcherTabIcon {
@@ -120,7 +123,7 @@
 }
 .HamburgerMenuIcon {
   z-index: 10;
-  float:right;
+  float: right;
   background-color: var(--button-gray-background-color);
   width: 16px;
   height: 16px;
@@ -131,9 +134,4 @@
 }
 .HamburgerMenuIcon:hover {
   background-color: var(--button-gray-background-color-hover-dark);
-}
-
-@media only screen and (max-width: 600px) {
-  :root{    
-  }
 }

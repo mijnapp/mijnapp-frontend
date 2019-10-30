@@ -1,12 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Net.Http;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using MijnApp_Backend.HttpClients;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace MijnApp_Backend.Controllers
 {
+    [Route("address")]
     [Authorize]
     public class AddressController : Controller
     {
@@ -23,14 +24,14 @@ namespace MijnApp_Backend.Controllers
         }
 
         [HttpGet]
-        [Route("address/{postalcode}/{number}/")]
+        [Route("{postalcode}/{number}/")]
         public async Task<IActionResult> GetAddressAsync(string postalcode, string number)
         {
             return await CallAddressApiAsync(postalcode, number, null);
         }
 
         [HttpGet]
-        [Route("address/{postalcode}/{number}/{numberAddition}")]
+        [Route("{postalcode}/{number}/{numberAddition}")]
         public async Task<IActionResult> GetAddressFullAsync(string postalcode, string number, string numberAddition)
         {
             return await CallAddressApiAsync(postalcode, number, numberAddition);

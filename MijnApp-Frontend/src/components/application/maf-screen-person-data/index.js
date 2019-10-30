@@ -17,6 +17,7 @@ export default class MafScreenPersonData extends connect(store)(
         type: Object,
         value: {},
       },
+      searching: Boolean,
     };
   }
 
@@ -33,6 +34,9 @@ export default class MafScreenPersonData extends connect(store)(
   }
 
   _normalDate(date) {
+    if (date === null) {
+      return 'Onbekend';
+    }
     date = new Date(date);
     return toDutchDate(date);
   }
@@ -40,6 +44,7 @@ export default class MafScreenPersonData extends connect(store)(
   stateChanged(state) {
     if (state.person.data != undefined) {
       this.personData = state.person.data;
+      this.searching = state.person.searching;
     }
   }
 }

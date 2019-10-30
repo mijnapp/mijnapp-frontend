@@ -1,4 +1,3 @@
-:host {}
 .Wrapper {
   width: 100%;
   height: 100vh;
@@ -14,6 +13,7 @@
   height: 100%;
   float: left;
   overflow-y: auto;
+  padding-bottom: 75px;
 }
 .SearchWrapper {
   margin: 13px 0 19px 0;
@@ -56,24 +56,28 @@
   position: absolute;
   right: 26px;
 }
-.Title:hover{
+.Title:hover {
   background-color: var(--button-gray-background-color-hover);
 }
 maki-icon-truck {
-  --icon-color: var(--icon-color-teal);
   background-color: var(--button-gray-background-color);
   border-radius: 15px;
   width: 20px;
   height: 20px;
   padding: 5px;
-  margin: 0px 10px;
+  margin: 0 10px;
+  box-sizing: content-box;
+
+  --icon-color: var(--icon-color-teal);
 }
 maki-icon-bulb {
-  --icon-color: var(--icon-color-teal);
   background-color: var(--button-gray-background-color);
   border-radius: 15px;
   width: 20px;
   height: 20px;
   padding: 5px;
-  margin: 0px 10px;
+  margin: 0 10px;
+  box-sizing: content-box;
+
+  --icon-color: var(--icon-color-teal);
 }

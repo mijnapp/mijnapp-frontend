@@ -1,9 +1,9 @@
 <div class="Wrapper">
   <div class="ScrollContainer">
     <maf-screen heading="Mijn dashboard">
-      <div class="SearchWrapper" on-click="_goJourneys">
-        <maki-input elevation="0" stroke="1" placeholder="Wat wil je regelen?"></maki-input>
-      </div>
+        <div class="SearchWrapper">
+            <input class="FakeInput" placeholder="Wat wil je regelen?" type="text" on-click="_goJourneys"></input>
+        </div>
       <div class="TilesWrapper">
         <div class="TilesTitle">
           Mijn gegevens
@@ -14,7 +14,7 @@
               <div class="Tile" on-click="_clickHandler">
                 <div class="TileMedia">
                   <div class="TileMediaInner">
-                    <img src="[[tile.asset]]" />
+                    <img alt="[[tile.title]]" src="[[tile.asset]]" />
                   </div>
                 </div>
                 <div class="TileTitle">[[tile.title]]</div>

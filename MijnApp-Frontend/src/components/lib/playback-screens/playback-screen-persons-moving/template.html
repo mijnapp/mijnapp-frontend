@@ -1,12 +1,21 @@
 <playback-screen-wrapper next-callback="[[_nextCallback(question)]]" skip-callback="[[_skipCallback(question)]]" disabled$="{{isDisabled}}">
-  <div class="Options">
-    <dom-repeat items="[[persons]]">
-      <template>
-        <div class="Option" data-index="[[index]]" on-click="_optionClick">
-          [[item.naam.aanschrijfwijze]]
-          <div class$="{{_isSelected(item.selected)}}"></div>
-        </div>
-      </template>
-    </dom-repeat>
-  </div>
+    <dom-if if="{{searchingMovingPersons}}">
+        <template>
+            <div class="Subtitle">De mogelijke medeverhuizers worden opgehaald</div>
+        </template>
+    </dom-if>
+    <dom-if if="{{!searchingMovingPersons}}">
+        <template>
+            <div class="Options">
+                <dom-repeat items="[[persons]]">
+                    <template>
+                        <div class="Option" data-index="[[index]]" on-click="_optionClick">
+                            [[item.naam.aanschrijfwijze]]
+                            <div class$="{{_isSelected(item.selected)}}"></div>
+                        </div>
+                    </template>
+                </dom-repeat>
+            </div>
+        </template>
+    </dom-if>
 </playback-screen-wrapper>

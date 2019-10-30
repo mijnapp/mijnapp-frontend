@@ -3,7 +3,7 @@ const journeyVerhuizen = 'verhuizen';
 const knownJourneys = [
   {
     name: journeyVerhuizen,
-    id: 'fc79c4c9-b3b3-4258-bdbb-449262f3e5d7',
+    id: '9d76fb58-0711-4437-acc4-9f4d9d403cdf',
   }];
 
 export const getJourneyId = (journeyName) => {

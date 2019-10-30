@@ -9,19 +9,7 @@
     "build": "webpack --config webpack.config.js --mode=development --watch --env.NODE_ENV=development",
     "build:prod": "webpack --env.NODE_ENV=production --optimize-minimize",
     "dev": "webpack-dev-server --hot --inline",
-    "pretest": "npm run build",
-    "skiptest": "npm run lint && npm run test:lighthouse",
-    "test": "echo 'fix me'",
-    "selenium": "wct --npm",
-    "skiptest:lighthouse": "concurrently --kill-others \"http-server dist\" \"lighthouse --view http://localhost:8080\" ",
-    "test:lighthouse": "echo 'fix me'",
-    "skiptest:travis": "npm run pretest && npm run lint",
-    "test:travis": "echo 'fix me'",
-    "skipclean:lighthouse": "rm *.report.html",
-    "clean:lighthouse": "echo 'fix me'",
-    "lint": "eslint src/**/*.js && stylelint src/components/**/*.pcss",
-    "release": "standard-version",
-    "start": "npm run build && http-server dist"
+    "release": "standard-version"
   },
   "engines": {
     "node": ">= 8.0 <= 10"
