@@ -64,7 +64,7 @@ namespace MijnApp_Backend.Controllers
             }
 
             //TODO - For now return true. If not we can't start any journeys anymore
-            return true;
+            return false;
         }
     }
 }
