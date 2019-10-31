@@ -41,19 +41,10 @@ namespace MijnApp_Frontend
             app.UseHttpsRedirection();
 
             app.UseDefaultFiles();
-            app.UseStatusCodePages(HandleStatusCodePages);
-
             app.UseStaticFiles();
+            app.UseStatusCodePagesWithReExecute("/index.html");
+
         }
-
-
-        private Task HandleStatusCodePages(StatusCodeContext arg)
-        {
-            arg.HttpContext.Request.Path = "/index.html";
-
-            return Task.FromResult(0);
-        }
-
 
         private void ConfigureFrontend()
         {
