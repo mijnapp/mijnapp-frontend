@@ -61,19 +61,23 @@
                 </dom-repeat>
             </div>
         </div>
-        <div class="ButtonContainer">
-            <maki-button highlight size="40" font-size="16" set-color-highlight="#3192CF" disabled="{{!preconditionsFullFilled}}" on-click="[[_start(journey)]]">
-                <div class="ButtonInner">
-                    <div class="ButtonInnerText">Starten</div>
-                    <div class="ButtonInnerRight">></div>
+        <dom-if if="{{preconditionsFullFilled}}">
+            <template>
+                <div class="ButtonContainer">
+                    <maki-button highlight size="40" font-size="16" set-color-highlight="#3192CF" on-click="[[_start(journey)]]">
+                        <div class="ButtonInner">
+                            <div class="ButtonInnerText">Starten</div>
+                            <div class="ButtonInnerRight">></div>
+                        </div>
+                    </maki-button>
                 </div>
-            </maki-button>
-        </div>
+            </template>
+        </dom-if>
         <dom-if if="{{!preconditionsFullFilled}}">
             <template>
                 <dom-if if="{{!preconditionsBeingChecked}}">
                     <template>
-                    <div class="Title">Dit proces kan helaas niet gestart worden</div>
+                        <div class="Title">Dit proces kan niet worden gestart.</div>
                         <div class="Subtitle">{{journey.preconditions}}</div>
                     </template>
                 </dom-if>
@@ -81,9 +85,8 @@
         </dom-if>
         <dom-if if="{{preconditionsBeingChecked}}">
             <template>
-                <div class="Title">Randvoorwaarden</div>
-                <div class="Subtitle">De randvoorwaarden voor het starten van dit proces worden gecontroleerd</div>
+                <div class="Subtitle">De randvoorwaarden voor het starten van dit proces worden gecontroleerd.</div>
             </template>
         </dom-if>
-  </div>
+    </div>
 </div>
