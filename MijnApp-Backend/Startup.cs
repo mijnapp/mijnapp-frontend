@@ -58,7 +58,7 @@ namespace MijnApp_Backend
         {
             var httpContextAccessor = serviceProvider.GetService<IHttpContextAccessor>();
             var correlationId = JwtTokenProvider.GetCorrelationIdForLogging(httpContextAccessor.HttpContext.User);
-            httpClient.DefaultRequestHeaders.Add("MijnAppCorrelationId", correlationId);
+            httpClient.DefaultRequestHeaders.Add("X-NLX-Logrecord-ID", correlationId);
             httpClient.DefaultRequestHeaders.Accept.Clear();
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
