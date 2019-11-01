@@ -47659,6 +47659,8 @@ var _configuration = __webpack_require__(/*! ../../helpers/configuration */ "./s
 
 var _util = __webpack_require__(/*! util */ "./node_modules/node-libs-browser/node_modules/util/util.js");
 
+var _headers = __webpack_require__(/*! ../helpers/headers */ "./src/redux/helpers/headers.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const addressApi = exports.addressApi = {
@@ -47667,7 +47669,10 @@ const addressApi = exports.addressApi = {
 
     const response = await _axios2.default.get(url, {
       baseURL: _configuration.configuration.BASE_URL_API(),
-      headers: { 'Authorization': 'Bearer ' + token }
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'X-NLX-Request-Process-Id': (0, _headers.getProcessId)()
+      }
     });
     if (response.statusText === 'OK' || response.status === 200) {
       return { data: response.data };
@@ -47700,13 +47705,18 @@ var _axios2 = _interopRequireDefault(_axios);
 
 var _configuration = __webpack_require__(/*! ../../helpers/configuration */ "./src/helpers/configuration.js");
 
+var _headers = __webpack_require__(/*! ../helpers/headers */ "./src/redux/helpers/headers.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const avgLogsApi = exports.avgLogsApi = {
   avgLogs: token => async () => {
     const response = await _axios2.default.get('/avglogs', {
       baseURL: _configuration.configuration.BASE_URL_API(),
-      headers: { 'Authorization': 'Bearer ' + token }
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'X-NLX-Request-Process-Id': (0, _headers.getProcessId)()
+      }
     });
     if (response.statusText === 'OK' || response.status === 200) {
       return { data: response.data };
@@ -47717,7 +47727,10 @@ const avgLogsApi = exports.avgLogsApi = {
   avgLog: (id, token) => async () => {
     const response = await _axios2.default.get(`/avglogs/${id}`, {
       baseURL: _configuration.configuration.BASE_URL_API(),
-      headers: { 'Authorization': 'Bearer ' + token }
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'X-NLX-Request-Process-Id': (0, _headers.getProcessId)()
+      }
     });
     if (response.statusText === 'OK' || response.status === 200) {
       return { data: response.data };
@@ -47750,13 +47763,18 @@ var _axios2 = _interopRequireDefault(_axios);
 
 var _configuration = __webpack_require__(/*! ../../helpers/configuration */ "./src/helpers/configuration.js");
 
+var _headers = __webpack_require__(/*! ../helpers/headers */ "./src/redux/helpers/headers.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const contractsApi = exports.contractsApi = {
   contracts: token => async () => {
     const response = await _axios2.default.get('/contracts', {
       baseURL: _configuration.configuration.BASE_URL_API(),
-      headers: { 'Authorization': 'Bearer ' + token }
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'X-NLX-Request-Process-Id': (0, _headers.getProcessId)()
+      }
     });
     if (response.statusText === 'OK' || response.status === 200) {
       return { data: response.data };
@@ -47767,7 +47785,10 @@ const contractsApi = exports.contractsApi = {
   contract: (id, token) => async () => {
     const response = await _axios2.default.get(`/contracts/${id}`, {
       baseURL: _configuration.configuration.BASE_URL_API(),
-      headers: { 'Authorization': 'Bearer ' + token }
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'X-NLX-Request-Process-Id': (0, _headers.getProcessId)()
+      }
     });
     if (response.statusText === 'OK' || response.status === 200) {
       return { data: response.data };
@@ -47800,13 +47821,18 @@ var _axios2 = _interopRequireDefault(_axios);
 
 var _configuration = __webpack_require__(/*! ../../helpers/configuration */ "./src/helpers/configuration.js");
 
+var _headers = __webpack_require__(/*! ../helpers/headers */ "./src/redux/helpers/headers.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const journeyApi = exports.journeyApi = {
   checkPreconditions: (journeyId, token) => async () => {
     const response = await _axios2.default.get('/journey/' + journeyId + '/checkPreconditions', {
       baseURL: _configuration.configuration.BASE_URL_API(),
-      headers: { 'Authorization': 'Bearer ' + token }
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'X-NLX-Request-Process-Id': (0, _headers.getProcessId)()
+      }
     });
     if (response.statusText === 'OK' || response.status === 200) {
       return { data: response.data };
@@ -47920,13 +47946,18 @@ var _axios2 = _interopRequireDefault(_axios);
 
 var _configuration = __webpack_require__(/*! ../../helpers/configuration */ "./src/helpers/configuration.js");
 
+var _headers = __webpack_require__(/*! ../helpers/headers */ "./src/redux/helpers/headers.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const ordersApi = exports.ordersApi = {
   submit: (data, token) => async () => {
     const response = await _axios2.default.post('/order', data, {
       baseURL: _configuration.configuration.BASE_URL_API(),
-      headers: { 'Authorization': 'Bearer ' + token }
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'X-NLX-Request-Process-Id': (0, _headers.getProcessId)()
+      }
     });
     if (response.statusText === 'OK' || response.status === 200) {
       return { data: response.data };
@@ -47959,13 +47990,18 @@ var _axios2 = _interopRequireDefault(_axios);
 
 var _configuration = __webpack_require__(/*! ../../helpers/configuration */ "./src/helpers/configuration.js");
 
+var _headers = __webpack_require__(/*! ../helpers/headers */ "./src/redux/helpers/headers.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const personApi = exports.personApi = {
   person: token => async () => {
     const response = await _axios2.default.get(`/person`, {
       baseURL: _configuration.configuration.BASE_URL_API(),
-      headers: { 'Authorization': 'Bearer ' + token }
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'X-NLX-Request-Process-Id': (0, _headers.getProcessId)()
+      }
     });
     if (response.statusText === 'OK' || response.status === 200) {
       return { data: response.data };
@@ -47976,7 +48012,10 @@ const personApi = exports.personApi = {
   personsMoving: token => async () => {
     const response = await _axios2.default.get(`/familyfirstgrade`, {
       baseURL: _configuration.configuration.BASE_URL_API(),
-      headers: { 'Authorization': 'Bearer ' + token }
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'X-NLX-Request-Process-Id': (0, _headers.getProcessId)()
+      }
     });
     if (response.statusText === 'OK' || response.status === 200) {
       return { data: response.data };
@@ -48001,6 +48040,10 @@ const personApi = exports.personApi = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.getProcessId = exports.jwtBearerTokenExists = exports.jwtBearerToken = exports.removeJwtBearerToken = exports.setJwtBearerToken = undefined;
+
+var _store = __webpack_require__(/*! ../store */ "./src/redux/store.js");
+
 const tokenStorageKey = 'mijnApp-JwtToken';
 
 const setJwtBearerToken = exports.setJwtBearerToken = jwtToken => {
@@ -48020,6 +48063,14 @@ const jwtBearerTokenExists = exports.jwtBearerTokenExists = () => {
   const jwtToken = window.sessionStorage.getItem(tokenStorageKey);
 
   return jwtToken ? true : false;
+};
+
+const getProcessId = exports.getProcessId = () => {
+  var journey = _store.store.getState().journey;
+  if (journey !== undefined && journey !== null && journey.request_type_id !== undefined && journey.request_type_id !== null) {
+    return journey.request_type_id;
+  }
+  return '';
 };
 
 /***/ }),
