@@ -43,8 +43,12 @@ namespace MijnApp_Frontend
 
             app.UseDefaultFiles();
             app.UseStaticFiles();
-            app.UseStatusCodePagesWithRedirects("/index.html");
-            app.UseStatusCodePagesWithReExecute("/index.html");
+
+            app.Run(async (context) =>
+            {
+                context.Response.ContentType = "text/html";
+                await context.Response.SendFileAsync(Path.Combine(env.WebRootPath, "index.html"));
+            });
         }
 
         private void ConfigureFrontend()
