@@ -24779,44 +24779,69 @@ const Base = Object(_lib_legacy_legacy_element_mixin_js__WEBPACK_IMPORTED_MODULE
 
 /***/ }),
 
-/***/ "./node_modules/@redux-saga/core/dist/io-427945dd.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/@redux-saga/core/dist/io-427945dd.js ***!
-  \***********************************************************/
-/*! exports provided: $, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, _, a, a0, a1, a2, a3, a4, a5, a6, a7, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z */
+/***/ "./node_modules/@redux-saga/core/dist/chunk-e922c950.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@redux-saga/core/dist/chunk-e922c950.js ***!
+  \**************************************************************/
+/*! exports provided: a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, _, $, a0, a1, a2, a3, a4, a5, a6, a7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "$", function() { return apply; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "A", function() { return ALL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "B", function() { return logError; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "C", function() { return CALL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "D", function() { return wrapSagaDispatch; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "E", function() { return identity; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "F", function() { return FORK; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "G", function() { return GET_CONTEXT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H", function() { return buffers; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "I", function() { return detach; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "J", function() { return JOIN; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "K", function() { return take; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "L", function() { return fork; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "M", function() { return cancel; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "N", function() { return call; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "O", function() { return actionChannel; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "P", function() { return PUT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Q", function() { return sliding; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "R", function() { return RACE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "S", function() { return SELECT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "T", function() { return TAKE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "U", function() { return delay; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "V", function() { return race; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return kTrue; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return expanding; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return check; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return none; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return once; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return remove; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return internalErr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return TAKE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return PUT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return ALL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return RACE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return CALL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return CPS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return FORK; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return JOIN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return CANCEL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return SELECT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return ACTION_CHANNEL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return CANCELLED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return FLUSH; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "u", function() { return GET_CONTEXT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "v", function() { return SET_CONTEXT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "w", function() { return getMetaInfo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "x", function() { return noop; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "y", function() { return createAllStyleChildCallbacks; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "z", function() { return createEmptyArray; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "A", function() { return assignWithSymbols; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "B", function() { return makeIterator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "C", function() { return shouldComplete; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "D", function() { return flatMap; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "E", function() { return getLocation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "F", function() { return createSetContextWarning; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "G", function() { return asyncIteratorSymbol; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H", function() { return shouldCancel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "I", function() { return shouldTerminate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "J", function() { return logError; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "K", function() { return wrapSagaDispatch; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "L", function() { return identity; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "M", function() { return take; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "N", function() { return fork; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "O", function() { return cancel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "P", function() { return call; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Q", function() { return actionChannel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "R", function() { return sliding; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "S", function() { return delay; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "T", function() { return race; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "U", function() { return buffers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "V", function() { return detach; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "W", function() { return effectTypes; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "X", function() { return takeMaybe; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Y", function() { return put; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Z", function() { return putResolve; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_", function() { return all; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CPS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "$", function() { return apply; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a0", function() { return cps; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a1", function() { return spawn; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a2", function() { return join; });
@@ -24825,31 +24850,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a5", function() { return flush; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a6", function() { return getContext; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a7", function() { return setContext; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return CANCEL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return check; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return ACTION_CHANNEL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return expanding; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return CANCELLED; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return FLUSH; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return SET_CONTEXT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return internalErr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return getMetaInfo; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return kTrue; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return createAllStyleChildCallbacks; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return createEmptyArray; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return none; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return once; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return assignWithSymbols; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return makeIterator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return remove; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return shouldComplete; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return noop; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "u", function() { return flatMap; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "v", function() { return getLocation; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "w", function() { return createSetContextWarning; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "x", function() { return asyncIteratorSymbol; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "y", function() { return shouldCancel; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "z", function() { return shouldTerminate; });
 /* harmony import */ var _redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @redux-saga/symbols */ "./node_modules/@redux-saga/symbols/dist/redux-saga-symbols.esm.js");
 /* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
 /* harmony import */ var _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @redux-saga/is */ "./node_modules/@redux-saga/is/dist/redux-saga-is.esm.js");
@@ -24867,18 +24867,7 @@ var konst = function konst(v) {
 var kTrue =
 /*#__PURE__*/
 konst(true);
-
 var noop = function noop() {};
-
-if ( true && typeof Proxy !== 'undefined') {
-  noop =
-  /*#__PURE__*/
-  new Proxy(noop, {
-    set: function set() {
-      throw internalErr('There was an attempt to assign a property to internal `noop` function.');
-    }
-  });
-}
 var identity = function identity(v) {
   return v;
 };
@@ -25209,7 +25198,7 @@ var effectTypes = /*#__PURE__*/Object.freeze({
   SET_CONTEXT: SET_CONTEXT
 });
 
-var TEST_HINT = '\n(HINT: if you are getting these errors in tests, consider using createMockTask from @redux-saga/testing-utils)';
+var TEST_HINT = '\n(HINT: if you are getting this errors in tests, consider using createMockTask from @redux-saga/testing-utils)';
 
 var makeEffect = function makeEffect(type, payload) {
   var _ref;
@@ -25539,17 +25528,17 @@ call.bind(null, _redux_saga_delay_p__WEBPACK_IMPORTED_MODULE_3__["default"]);
 /*!*******************************************************************!*\
   !*** ./node_modules/@redux-saga/core/dist/redux-saga-core.esm.js ***!
   \*******************************************************************/
-/*! exports provided: CANCEL, SAGA_LOCATION, buffers, detach, default, END, channel, eventChannel, isEnd, multicastChannel, runSaga, stdChannel */
+/*! exports provided: CANCEL, SAGA_LOCATION, buffers, detach, default, runSaga, END, isEnd, eventChannel, channel, multicastChannel, stdChannel */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "END", function() { return END; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "channel", function() { return channel; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "eventChannel", function() { return eventChannel; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isEnd", function() { return isEnd; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "multicastChannel", function() { return multicastChannel; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "runSaga", function() { return runSaga; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "END", function() { return END; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isEnd", function() { return isEnd; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "eventChannel", function() { return eventChannel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "channel", function() { return channel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "multicastChannel", function() { return multicastChannel; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stdChannel", function() { return stdChannel; });
 /* harmony import */ var _redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @redux-saga/symbols */ "./node_modules/@redux-saga/symbols/dist/redux-saga-symbols.esm.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CANCEL", function() { return _redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__["CANCEL"]; });
@@ -25559,10 +25548,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
 /* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
 /* harmony import */ var _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @redux-saga/is */ "./node_modules/@redux-saga/is/dist/redux-saga-is.esm.js");
-/* harmony import */ var _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./io-427945dd.js */ "./node_modules/@redux-saga/core/dist/io-427945dd.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "buffers", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["H"]; });
+/* harmony import */ var _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./chunk-e922c950.js */ "./node_modules/@redux-saga/core/dist/chunk-e922c950.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "buffers", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["U"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "detach", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["I"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "detach", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["V"]; });
 
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _redux_saga_deferred__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @redux-saga/deferred */ "./node_modules/@redux-saga/deferred/dist/redux-saga-deferred.esm.js");
@@ -25680,7 +25669,7 @@ var symbol = function symbol(pattern) {
   };
 };
 var wildcard = function wildcard() {
-  return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["k"];
+  return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["a"];
 };
 function matcher(pattern) {
   // prettier-ignore
@@ -25704,30 +25693,30 @@ var INVALID_BUFFER = 'invalid buffer passed to channel factory function';
 var UNDEFINED_INPUT_ERROR = "Saga or channel was provided with an undefined action\nHints:\n  - check that your Action Creator returns a non-undefined value\n  - if the Saga was started using runSaga, check that your subscribe source provides the action to its listeners";
 function channel(buffer$1) {
   if (buffer$1 === void 0) {
-    buffer$1 = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["e"])();
+    buffer$1 = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["b"])();
   }
 
   var closed = false;
   var takers = [];
 
   if (true) {
-    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(buffer$1, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["buffer"], INVALID_BUFFER);
+    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(buffer$1, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["buffer"], INVALID_BUFFER);
   }
 
   function checkForbiddenStates() {
     if (closed && takers.length) {
-      throw Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["i"])(CLOSED_CHANNEL_WITH_TAKERS);
+      throw Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["g"])(CLOSED_CHANNEL_WITH_TAKERS);
     }
 
     if (takers.length && !buffer$1.isEmpty()) {
-      throw Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["i"])('Cannot have pending takers with non empty buffer');
+      throw Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["g"])('Cannot have pending takers with non empty buffer');
     }
   }
 
   function put(input) {
     if (true) {
       checkForbiddenStates();
-      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(input, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["notUndef"], UNDEFINED_INPUT_ERROR);
+      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(input, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["notUndef"], UNDEFINED_INPUT_ERROR);
     }
 
     if (closed) {
@@ -25745,7 +25734,7 @@ function channel(buffer$1) {
   function take(cb) {
     if (true) {
       checkForbiddenStates();
-      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(cb, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], "channel.take's callback must be a function");
+      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(cb, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], "channel.take's callback must be a function");
     }
 
     if (closed && buffer$1.isEmpty()) {
@@ -25756,7 +25745,7 @@ function channel(buffer$1) {
       takers.push(cb);
 
       cb.cancel = function () {
-        Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["r"])(takers, cb);
+        Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["f"])(takers, cb);
       };
     }
   }
@@ -25764,7 +25753,7 @@ function channel(buffer$1) {
   function flush(cb) {
     if (true) {
       checkForbiddenStates();
-      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(cb, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], "channel.flush' callback must be a function");
+      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(cb, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], "channel.flush' callback must be a function");
     }
 
     if (closed && buffer$1.isEmpty()) {
@@ -25803,7 +25792,7 @@ function channel(buffer$1) {
 }
 function eventChannel(subscribe, buffer) {
   if (buffer === void 0) {
-    buffer = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["n"])();
+    buffer = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["d"])();
   }
 
   var closed = false;
@@ -25834,10 +25823,10 @@ function eventChannel(subscribe, buffer) {
   });
 
   if (true) {
-    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(unsubscribe, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'in eventChannel: subscribe should return a function to unsubscribe');
+    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(unsubscribe, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'in eventChannel: subscribe should return a function to unsubscribe');
   }
 
-  unsubscribe = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["o"])(unsubscribe);
+  unsubscribe = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["e"])(unsubscribe);
 
   if (closed) {
     unsubscribe();
@@ -25858,7 +25847,7 @@ function multicastChannel() {
 
   function checkForbiddenStates() {
     if (closed && nextTakers.length) {
-      throw Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["i"])(CLOSED_CHANNEL_WITH_TAKERS);
+      throw Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["g"])(CLOSED_CHANNEL_WITH_TAKERS);
     }
   }
 
@@ -25886,7 +25875,7 @@ function multicastChannel() {
   return _ref = {}, _ref[_redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__["MULTICAST"]] = true, _ref.put = function put(input) {
     if (true) {
       checkForbiddenStates();
-      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(input, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["notUndef"], UNDEFINED_INPUT_ERROR);
+      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(input, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["notUndef"], UNDEFINED_INPUT_ERROR);
     }
 
     if (closed) {
@@ -25925,9 +25914,9 @@ function multicastChannel() {
     cb[_redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__["MATCH"]] = matcher;
     ensureCanMutateNextTakers();
     nextTakers.push(cb);
-    cb.cancel = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["o"])(function () {
+    cb.cancel = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["e"])(function () {
       ensureCanMutateNextTakers();
-      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["r"])(nextTakers, cb);
+      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["f"])(nextTakers, cb);
     });
   }, _ref.close = close, _ref;
 }
@@ -25967,7 +25956,7 @@ function resolvePromise(promise, cb) {
 }
 
 var current = 0;
-var nextSagaId = (function () {
+var nextEffectId = (function () {
   return ++current;
 });
 
@@ -25980,7 +25969,7 @@ function getIteratorMetaInfo(iterator, fn) {
     };
   }
 
-  return Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["j"])(fn);
+  return Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["w"])(fn);
 }
 
 function createTaskIterator(_ref) {
@@ -26014,11 +26003,11 @@ function createTaskIterator(_ref) {
       }
     };
 
-    return Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["q"])(next);
+    return Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["B"])(next);
   } catch (err) {
     // do not bubble up synchronous failures for detached forks
     // instead create a failed task. See #152 and #441
-    return Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["q"])(function () {
+    return Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["B"])(function () {
       throw err;
     });
   }
@@ -26099,7 +26088,7 @@ function runCallEffect(env, _ref4, cb, _ref5) {
 
     if (Object(_redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["iterator"])(result)) {
       // resolve iterator
-      proc(env, result, task.context, current, Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["j"])(fn),
+      proc(env, result, task.context, current, Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["w"])(fn),
       /* isRoot */
       false, cb);
       return;
@@ -26151,7 +26140,7 @@ function runForkEffect(env, _ref7, cb, _ref8) {
   });
   var meta = getIteratorMetaInfo(taskIterator, fn);
   immediately(function () {
-    var child = proc(env, taskIterator, parent.context, current, meta, detached, undefined);
+    var child = proc(env, taskIterator, parent.context, current, meta, detached, _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"]);
 
     if (detached) {
       cb(child);
@@ -26179,7 +26168,7 @@ function runJoinEffect(env, taskOrTasks, cb, _ref9) {
       };
 
       cb.cancel = function () {
-        if (taskToJoin.isRunning()) Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["r"])(taskToJoin.joiners, joiner);
+        if (taskToJoin.isRunning()) Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["f"])(taskToJoin.joiners, joiner);
       };
 
       taskToJoin.joiners.push(joiner);
@@ -26198,7 +26187,7 @@ function runJoinEffect(env, taskOrTasks, cb, _ref9) {
       return;
     }
 
-    var childCallbacks = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["l"])(taskOrTasks, cb);
+    var childCallbacks = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["y"])(taskOrTasks, cb);
     taskOrTasks.forEach(function (t, i) {
       joinSingleTask(t, childCallbacks[i]);
     });
@@ -26237,7 +26226,7 @@ function runAllEffect(env, effects, cb, _ref11) {
     return;
   }
 
-  var childCallbacks = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["l"])(effects, cb);
+  var childCallbacks = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["y"])(effects, cb);
   keys.forEach(function (key) {
     digestEffect(effects[key], effectId, childCallbacks[key], key);
   });
@@ -26247,7 +26236,7 @@ function runRaceEffect(env, effects, cb, _ref12) {
   var digestEffect = _ref12.digestEffect;
   var effectId = current;
   var keys = Object.keys(effects);
-  var response = Object(_redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["array"])(effects) ? Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["m"])(keys.length) : {};
+  var response = Object(_redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["array"])(effects) ? Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["z"])(keys.length) : {};
   var childCbs = {};
   var completed = false;
   keys.forEach(function (key) {
@@ -26256,7 +26245,7 @@ function runRaceEffect(env, effects, cb, _ref12) {
         return;
       }
 
-      if (isErr || Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["s"])(res)) {
+      if (isErr || Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["C"])(res)) {
         // Race Auto cancellation
         cb.cancel();
         cb(res, isErr);
@@ -26268,7 +26257,7 @@ function runRaceEffect(env, effects, cb, _ref12) {
       }
     };
 
-    chCbAtKey.cancel = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
+    chCbAtKey.cancel = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
     childCbs[key] = chCbAtKey;
   });
 
@@ -26344,11 +26333,11 @@ function runGetContextEffect(env, prop, cb, _ref16) {
 
 function runSetContextEffect(env, props, cb, _ref17) {
   var task = _ref17.task;
-  Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["p"])(task.context, props);
+  Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["A"])(task.context, props);
   cb();
 }
 
-var effectRunnerMap = (_effectRunnerMap = {}, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["T"]] = runTakeEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["P"]] = runPutEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["A"]] = runAllEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["R"]] = runRaceEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["C"]] = runCallEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["a"]] = runCPSEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["F"]] = runForkEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["J"]] = runJoinEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["b"]] = runCancelEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["S"]] = runSelectEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["d"]] = runChannelEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["f"]] = runCancelledEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["g"]] = runFlushEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["G"]] = runGetContextEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["h"]] = runSetContextEffect, _effectRunnerMap);
+var effectRunnerMap = (_effectRunnerMap = {}, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["h"]] = runTakeEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["i"]] = runPutEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["j"]] = runAllEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["k"]] = runRaceEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["l"]] = runCallEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["m"]] = runCPSEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["n"]] = runForkEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["o"]] = runJoinEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["p"]] = runCancelEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["q"]] = runSelectEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["r"]] = runChannelEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["s"]] = runCancelledEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["t"]] = runFlushEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["u"]] = runGetContextEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["v"]] = runSetContextEffect, _effectRunnerMap);
 
 /**
  Used to track a parent task and its forks
@@ -26390,8 +26379,8 @@ function forkQueue(mainTask, onAbort, cont) {
         return;
       }
 
-      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["r"])(tasks, task);
-      task.cont = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
+      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["f"])(tasks, task);
+      task.cont = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
 
       if (isErr) {
         abort(res);
@@ -26415,7 +26404,7 @@ function forkQueue(mainTask, onAbort, cont) {
 
     completed = true;
     tasks.forEach(function (t) {
-      t.cont = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
+      t.cont = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
       t.cancel();
     });
     tasks = [];
@@ -26436,7 +26425,7 @@ function formatLocation(fileName, lineNumber) {
 }
 
 function effectLocationAsString(effect) {
-  var location = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["v"])(effect);
+  var location = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["E"])(effect);
 
   if (location) {
     var code = location.code,
@@ -26461,7 +26450,7 @@ function sagaLocationAsString(sagaMeta) {
 }
 
 function cancelledTasksAsString(sagaStack) {
-  var cancelledTasks = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["u"])(function (i) {
+  var cancelledTasks = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["D"])(function (i) {
     return i.cancelledTasks;
   }, sagaStack);
 
@@ -26510,10 +26499,6 @@ var toString = function toString() {
 
 function newTask(env, mainTask, parentContext, parentEffectId, meta, isRoot, cont) {
   var _task;
-
-  if (cont === void 0) {
-    cont = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
-  }
 
   var status = RUNNING;
   var taskResult;
@@ -26587,10 +26572,10 @@ function newTask(env, mainTask, parentContext, parentEffectId, meta, isRoot, con
 
   function setContext(props) {
     if (true) {
-      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(props, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["object"], Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["w"])('task', props));
+      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(props, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["object"], Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["F"])('task', props));
     }
 
-    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["p"])(context, props);
+    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["A"])(context, props);
   }
 
   function toPromise() {
@@ -26624,7 +26609,7 @@ function newTask(env, mainTask, parentContext, parentEffectId, meta, isRoot, con
 }
 
 function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont) {
-  if ( true && iterator$1[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["x"]]) {
+  if ( true && iterator$1[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["G"]]) {
     throw new Error("redux-saga doesn't support async generators, please use only regular ones");
   }
 
@@ -26635,27 +26620,28 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
     on it. It allows propagating cancellation to child effects
   **/
 
-  next.cancel = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
+  next.cancel = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
   /** Creates a main task to track the main flow */
 
   var mainTask = {
     meta: meta,
     cancel: cancelMain,
     status: RUNNING
-  };
-  /**
-   Creates a new task descriptor for this generator.
-   A task is the aggregation of it's mainTask and all it's forked tasks.
-   **/
+    /**
+     Creates a new task descriptor for this generator.
+     A task is the aggregation of it's mainTask and all it's forked tasks.
+     **/
 
+  };
   var task = newTask(env, mainTask, parentContext, parentEffectId, meta, isRoot, cont);
   var executingContext = {
     task: task,
     digestEffect: digestEffect
+    /**
+      cancellation of the main task. We'll simply resume the Generator with a TASK_CANCEL
+    **/
+
   };
-  /**
-    cancellation of the main task. We'll simply resume the Generator with a TASK_CANCEL
-  **/
 
   function cancelMain() {
     if (mainTask.status === RUNNING) {
@@ -26669,10 +26655,7 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
   **/
 
 
-  if (cont) {
-    cont.cancel = task.cancel;
-  } // kicks up the generator
-
+  cont.cancel = task.cancel; // kicks up the generator
 
   next(); // then return the task descriptor to the caller
 
@@ -26695,7 +26678,7 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
         result = iterator$1.throw(arg); // user handled the error, we can clear bookkept values
 
         clear();
-      } else if (Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["y"])(arg)) {
+      } else if (Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["H"])(arg)) {
         /**
           getting TASK_CANCEL automatically cancels the main task
           We can get this value here
@@ -26717,7 +26700,7 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
           done: true,
           value: _redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__["TASK_CANCEL"]
         };
-      } else if (Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["z"])(arg)) {
+      } else if (Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["I"])(arg)) {
         // We get TERMINATE flag, i.e. by taking from a channel that ended using `take` (and not `takem` used to trap End of channels)
         result = Object(_redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"])(iterator$1.return) ? iterator$1.return() : {
           done: true
@@ -26782,7 +26765,7 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
       label = '';
     }
 
-    var effectId = nextSagaId();
+    var effectId = nextEffectId();
     env.sagaMonitor && env.sagaMonitor.effectTriggered({
       effectId: effectId,
       parentEffectId: parentEffectId,
@@ -26803,7 +26786,7 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
       }
 
       effectSettled = true;
-      cb.cancel = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"]; // defensive measure
+      cb.cancel = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"]; // defensive measure
 
       if (env.sagaMonitor) {
         if (isErr) {
@@ -26821,7 +26804,7 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
     } // tracks down the current cancel
 
 
-    currCb.cancel = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"]; // setup cancellation logic on the parent cb
+    currCb.cancel = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"]; // setup cancellation logic on the parent cb
 
     cb.cancel = function () {
       // prevents cancelling an already completed effect
@@ -26832,7 +26815,7 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
       effectSettled = true;
       currCb.cancel(); // propagates cancel downward
 
-      currCb.cancel = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"]; // defensive measure
+      currCb.cancel = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"]; // defensive measure
 
       env.sagaMonitor && env.sagaMonitor.effectCancelled(effectId);
     };
@@ -26853,32 +26836,32 @@ function runSaga(_ref, saga) {
       sagaMonitor = _ref.sagaMonitor,
       effectMiddlewares = _ref.effectMiddlewares,
       _ref$onError = _ref.onError,
-      onError = _ref$onError === void 0 ? _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["B"] : _ref$onError;
-
-  if (true) {
-    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(saga, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], NON_GENERATOR_ERR);
-  }
+      onError = _ref$onError === void 0 ? _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["J"] : _ref$onError;
 
   for (var _len = arguments.length, args = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
     args[_key - 2] = arguments[_key];
   }
 
+  if (true) {
+    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(saga, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], NON_GENERATOR_ERR);
+  }
+
   var iterator$1 = saga.apply(void 0, args);
 
   if (true) {
-    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(iterator$1, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["iterator"], NON_GENERATOR_ERR);
+    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(iterator$1, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["iterator"], NON_GENERATOR_ERR);
   }
 
-  var effectId = nextSagaId();
+  var effectId = nextEffectId();
 
   if (sagaMonitor) {
     // monitors are expected to have a certain interface, let's fill-in any missing ones
-    sagaMonitor.rootSagaStarted = sagaMonitor.rootSagaStarted || _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
-    sagaMonitor.effectTriggered = sagaMonitor.effectTriggered || _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
-    sagaMonitor.effectResolved = sagaMonitor.effectResolved || _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
-    sagaMonitor.effectRejected = sagaMonitor.effectRejected || _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
-    sagaMonitor.effectCancelled = sagaMonitor.effectCancelled || _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
-    sagaMonitor.actionDispatched = sagaMonitor.actionDispatched || _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
+    sagaMonitor.rootSagaStarted = sagaMonitor.rootSagaStarted || _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
+    sagaMonitor.effectTriggered = sagaMonitor.effectTriggered || _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
+    sagaMonitor.effectResolved = sagaMonitor.effectResolved || _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
+    sagaMonitor.effectRejected = sagaMonitor.effectRejected || _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
+    sagaMonitor.effectCancelled = sagaMonitor.effectCancelled || _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
+    sagaMonitor.actionDispatched = sagaMonitor.actionDispatched || _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
     sagaMonitor.rootSagaStarted({
       effectId: effectId,
       saga: saga,
@@ -26888,22 +26871,22 @@ function runSaga(_ref, saga) {
 
   if (true) {
     if (Object(_redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["notUndef"])(dispatch)) {
-      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(dispatch, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'dispatch must be a function');
+      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(dispatch, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'dispatch must be a function');
     }
 
     if (Object(_redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["notUndef"])(getState)) {
-      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(getState, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'getState must be a function');
+      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(getState, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'getState must be a function');
     }
 
     if (Object(_redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["notUndef"])(effectMiddlewares)) {
       var MIDDLEWARE_TYPE_ERROR = 'effectMiddlewares must be an array of functions';
-      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(effectMiddlewares, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["array"], MIDDLEWARE_TYPE_ERROR);
+      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(effectMiddlewares, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["array"], MIDDLEWARE_TYPE_ERROR);
       effectMiddlewares.forEach(function (effectMiddleware) {
-        return Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(effectMiddleware, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], MIDDLEWARE_TYPE_ERROR);
+        return Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(effectMiddleware, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], MIDDLEWARE_TYPE_ERROR);
       });
     }
 
-    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(onError, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'onError passed to the redux-saga is not a function!');
+    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(onError, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'onError passed to the redux-saga is not a function!');
   }
 
   var finalizeRunEffect;
@@ -26921,21 +26904,21 @@ function runSaga(_ref, saga) {
       };
     };
   } else {
-    finalizeRunEffect = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["E"];
+    finalizeRunEffect = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["L"];
   }
 
   var env = {
     channel: channel,
-    dispatch: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["D"])(dispatch),
+    dispatch: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["K"])(dispatch),
     getState: getState,
     sagaMonitor: sagaMonitor,
     onError: onError,
     finalizeRunEffect: finalizeRunEffect
   };
   return immediately(function () {
-    var task = proc(env, iterator$1, context, effectId, Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["j"])(saga),
+    var task = proc(env, iterator$1, context, effectId, Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["w"])(saga),
     /* isRoot */
-    true, undefined);
+    true, _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"]);
 
     if (sagaMonitor) {
       sagaMonitor.effectResolved(effectId, task);
@@ -26961,7 +26944,7 @@ function sagaMiddlewareFactory(_ref) {
   var boundRunSaga;
 
   if (true) {
-    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(channel, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["channel"], 'options.channel passed to the Saga middleware is not a channel');
+    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(channel, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["channel"], 'options.channel passed to the Saga middleware is not a channel');
   }
 
   function sagaMiddleware(_ref3) {
@@ -26998,10 +26981,10 @@ function sagaMiddlewareFactory(_ref) {
 
   sagaMiddleware.setContext = function (props) {
     if (true) {
-      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(props, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["object"], Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["w"])('sagaMiddleware', props));
+      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(props, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["object"], Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["F"])('sagaMiddleware', props));
     }
 
-    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["p"])(context, props);
+    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["A"])(context, props);
   };
 
   return sagaMiddleware;
@@ -27017,7 +27000,7 @@ function sagaMiddlewareFactory(_ref) {
 /*!**********************************************************************!*\
   !*** ./node_modules/@redux-saga/core/dist/redux-saga-effects.esm.js ***!
   \**********************************************************************/
-/*! exports provided: actionChannel, all, apply, call, cancel, cancelled, cps, delay, effectTypes, flush, fork, getContext, join, put, putResolve, race, select, setContext, spawn, take, takeMaybe, debounce, retry, takeEvery, takeLatest, takeLeading, throttle */
+/*! exports provided: effectTypes, take, takeMaybe, put, putResolve, all, race, call, apply, cps, fork, spawn, join, cancel, select, actionChannel, cancelled, flush, getContext, setContext, delay, debounce, retry, takeEvery, takeLatest, takeLeading, throttle */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -27031,48 +27014,48 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @redux-saga/symbols */ "./node_modules/@redux-saga/symbols/dist/redux-saga-symbols.esm.js");
 /* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
 /* harmony import */ var _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @redux-saga/is */ "./node_modules/@redux-saga/is/dist/redux-saga-is.esm.js");
-/* harmony import */ var _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./io-427945dd.js */ "./node_modules/@redux-saga/core/dist/io-427945dd.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "actionChannel", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["O"]; });
+/* harmony import */ var _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./chunk-e922c950.js */ "./node_modules/@redux-saga/core/dist/chunk-e922c950.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "effectTypes", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["W"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "all", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["_"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "take", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["M"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "apply", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["$"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "takeMaybe", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["X"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "call", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["N"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "put", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["Y"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancel", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["M"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "putResolve", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["Z"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancelled", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a4"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "all", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["_"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cps", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a0"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "race", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["T"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "delay", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["U"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "call", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["P"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "effectTypes", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["W"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "apply", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["$"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "flush", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a5"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cps", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a0"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "fork", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "fork", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getContext", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a6"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "spawn", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a1"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "join", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a2"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "join", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a2"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "put", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["Y"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancel", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["O"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "putResolve", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["Z"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "select", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a3"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "race", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["V"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "actionChannel", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["Q"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "select", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a3"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancelled", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a4"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "setContext", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a7"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "flush", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a5"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "spawn", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a1"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getContext", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a6"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "take", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["K"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "setContext", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a7"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "takeMaybe", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["X"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "delay", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["S"]; });
 
 /* harmony import */ var _redux_saga_delay_p__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @redux-saga/delay-p */ "./node_modules/@redux-saga/delay-p/dist/redux-saga-delay-p.esm.js");
 
@@ -27130,7 +27113,7 @@ function fsmIterator(fsm, startState, name) {
     }
   }
 
-  return Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["q"])(next, function (error) {
+  return Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["B"])(next, function (error) {
     return next(null, error);
   }, name);
 }
@@ -27142,13 +27125,13 @@ function takeEvery(patternOrChannel, worker) {
 
   var yTake = {
     done: false,
-    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["K"])(patternOrChannel)
+    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["M"])(patternOrChannel)
   };
 
   var yFork = function yFork(ac) {
     return {
       done: false,
-      value: _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [worker].concat(args, [ac]))
+      value: _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [worker].concat(args, [ac]))
     };
   };
 
@@ -27181,20 +27164,20 @@ function takeLatest(patternOrChannel, worker) {
 
   var yTake = {
     done: false,
-    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["K"])(patternOrChannel)
+    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["M"])(patternOrChannel)
   };
 
   var yFork = function yFork(ac) {
     return {
       done: false,
-      value: _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [worker].concat(args, [ac]))
+      value: _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [worker].concat(args, [ac]))
     };
   };
 
   var yCancel = function yCancel(task) {
     return {
       done: false,
-      value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["M"])(task)
+      value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["O"])(task)
     };
   };
 
@@ -27243,13 +27226,13 @@ function takeLeading(patternOrChannel, worker) {
 
   var yTake = {
     done: false,
-    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["K"])(patternOrChannel)
+    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["M"])(patternOrChannel)
   };
 
   var yCall = function yCall(ac) {
     return {
       done: false,
-      value: _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [worker].concat(args, [ac]))
+      value: _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["P"].apply(void 0, [worker].concat(args, [ac]))
     };
   };
 
@@ -27284,26 +27267,26 @@ function throttle(delayLength, pattern, worker) {
   var action, channel;
   var yActionChannel = {
     done: false,
-    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["O"])(pattern, Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["Q"])(1))
+    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["Q"])(pattern, Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["R"])(1))
   };
 
   var yTake = function yTake() {
     return {
       done: false,
-      value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["K"])(channel)
+      value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["M"])(channel)
     };
   };
 
   var yFork = function yFork(ac) {
     return {
       done: false,
-      value: _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [worker].concat(args, [ac]))
+      value: _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [worker].concat(args, [ac]))
     };
   };
 
   var yDelay = {
     done: false,
-    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["U"])(delayLength)
+    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["S"])(delayLength)
   };
 
   var setAction = function setAction(ac) {
@@ -27353,11 +27336,11 @@ function retry(maxTries, delayLength, fn) {
 
   var yCall = {
     done: false,
-    value: _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [fn].concat(args))
+    value: _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["P"].apply(void 0, [fn].concat(args))
   };
   var yDelay = {
     done: false,
-    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["U"])(delayLength)
+    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["S"])(delayLength)
   };
   return fsmIterator({
     q1: function q1() {
@@ -27395,20 +27378,20 @@ function debounceHelper(delayLength, patternOrChannel, worker) {
   var action, raceOutput;
   var yTake = {
     done: false,
-    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["K"])(patternOrChannel)
+    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["M"])(patternOrChannel)
   };
   var yRace = {
     done: false,
-    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["V"])({
-      action: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["K"])(patternOrChannel),
-      debounce: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["U"])(delayLength)
+    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["T"])({
+      action: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["M"])(patternOrChannel),
+      debounce: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["S"])(delayLength)
     })
   };
 
   var yFork = function yFork(ac) {
     return {
       done: false,
-      value: _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [worker].concat(args, [ac]))
+      value: _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [worker].concat(args, [ac]))
     };
   };
 
@@ -27456,8 +27439,8 @@ function debounceHelper(delayLength, patternOrChannel, worker) {
 }
 
 var validateTakeEffect = function validateTakeEffect(fn, patternOrChannel, worker) {
-  Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["c"])(patternOrChannel, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], fn.name + " requires a pattern or channel");
-  Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["c"])(worker, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], fn.name + " requires a saga parameter");
+  Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["c"])(patternOrChannel, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], fn.name + " requires a pattern or channel");
+  Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["c"])(worker, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], fn.name + " requires a saga parameter");
 };
 
 function takeEvery$1(patternOrChannel, worker) {
@@ -27469,7 +27452,7 @@ function takeEvery$1(patternOrChannel, worker) {
     args[_key - 2] = arguments[_key];
   }
 
-  return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [takeEvery, patternOrChannel, worker].concat(args));
+  return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [takeEvery, patternOrChannel, worker].concat(args));
 }
 function takeLatest$1(patternOrChannel, worker) {
   if (true) {
@@ -27480,7 +27463,7 @@ function takeLatest$1(patternOrChannel, worker) {
     args[_key2 - 2] = arguments[_key2];
   }
 
-  return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [takeLatest, patternOrChannel, worker].concat(args));
+  return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [takeLatest, patternOrChannel, worker].concat(args));
 }
 function takeLeading$1(patternOrChannel, worker) {
   if (true) {
@@ -27491,33 +27474,33 @@ function takeLeading$1(patternOrChannel, worker) {
     args[_key3 - 2] = arguments[_key3];
   }
 
-  return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [takeLeading, patternOrChannel, worker].concat(args));
+  return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [takeLeading, patternOrChannel, worker].concat(args));
 }
 function throttle$1(ms, pattern, worker) {
   if (true) {
-    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["c"])(pattern, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], 'throttle requires a pattern');
-    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["c"])(worker, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], 'throttle requires a saga parameter');
+    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["c"])(pattern, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], 'throttle requires a pattern');
+    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["c"])(worker, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], 'throttle requires a saga parameter');
   }
 
   for (var _len4 = arguments.length, args = new Array(_len4 > 3 ? _len4 - 3 : 0), _key4 = 3; _key4 < _len4; _key4++) {
     args[_key4 - 3] = arguments[_key4];
   }
 
-  return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [throttle, ms, pattern, worker].concat(args));
+  return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [throttle, ms, pattern, worker].concat(args));
 }
 function retry$1(maxTries, delayLength, worker) {
   for (var _len5 = arguments.length, args = new Array(_len5 > 3 ? _len5 - 3 : 0), _key5 = 3; _key5 < _len5; _key5++) {
     args[_key5 - 3] = arguments[_key5];
   }
 
-  return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [retry, maxTries, delayLength, worker].concat(args));
+  return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["P"].apply(void 0, [retry, maxTries, delayLength, worker].concat(args));
 }
 function debounce(delayLength, pattern, worker) {
   for (var _len6 = arguments.length, args = new Array(_len6 > 3 ? _len6 - 3 : 0), _key6 = 3; _key6 < _len6; _key6++) {
     args[_key6 - 3] = arguments[_key6];
   }
 
-  return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [debounceHelper, delayLength, pattern, worker].concat(args));
+  return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [debounceHelper, delayLength, pattern, worker].concat(args));
 }
 
 
@@ -27597,31 +27580,31 @@ function delayP(ms, val) {
 /*!***************************************************************!*\
   !*** ./node_modules/@redux-saga/is/dist/redux-saga-is.esm.js ***!
   \***************************************************************/
-/*! exports provided: array, buffer, channel, effect, func, iterable, iterator, multicast, notUndef, number, object, observable, pattern, promise, sagaAction, string, stringableFunc, symbol, task, undef */
+/*! exports provided: undef, notUndef, func, number, string, array, object, promise, iterator, iterable, task, sagaAction, observable, buffer, pattern, channel, stringableFunc, symbol, multicast, effect */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "array", function() { return array; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buffer", function() { return buffer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "channel", function() { return channel; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "effect", function() { return effect; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "func", function() { return func; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "iterable", function() { return iterable; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "iterator", function() { return iterator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "multicast", function() { return multicast; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "undef", function() { return undef; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "notUndef", function() { return notUndef; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "func", function() { return func; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "number", function() { return number; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "object", function() { return object; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "observable", function() { return observable; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pattern", function() { return pattern; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "promise", function() { return promise; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sagaAction", function() { return sagaAction; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "string", function() { return string; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "array", function() { return array; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "object", function() { return object; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "promise", function() { return promise; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "iterator", function() { return iterator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "iterable", function() { return iterable; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "task", function() { return task; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sagaAction", function() { return sagaAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "observable", function() { return observable; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buffer", function() { return buffer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pattern", function() { return pattern; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "channel", function() { return channel; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stringableFunc", function() { return stringableFunc; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "symbol", function() { return symbol; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "task", function() { return task; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "undef", function() { return undef; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "multicast", function() { return multicast; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "effect", function() { return effect; });
 /* harmony import */ var _redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @redux-saga/symbols */ "./node_modules/@redux-saga/symbols/dist/redux-saga-symbols.esm.js");
 
 
@@ -27693,7 +27676,7 @@ var effect = function effect(eff) {
 /*!*************************************************************************!*\
   !*** ./node_modules/@redux-saga/symbols/dist/redux-saga-symbols.esm.js ***!
   \*************************************************************************/
-/*! exports provided: CANCEL, CHANNEL_END_TYPE, IO, MATCH, MULTICAST, SAGA_ACTION, SAGA_LOCATION, SELF_CANCELLATION, TASK, TASK_CANCEL, TERMINATE */
+/*! exports provided: CANCEL, CHANNEL_END_TYPE, IO, MATCH, MULTICAST, SAGA_ACTION, SELF_CANCELLATION, TASK, TASK_CANCEL, TERMINATE, SAGA_LOCATION */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -27704,11 +27687,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MATCH", function() { return MATCH; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MULTICAST", function() { return MULTICAST; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SAGA_ACTION", function() { return SAGA_ACTION; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SAGA_LOCATION", function() { return SAGA_LOCATION; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SELF_CANCELLATION", function() { return SELF_CANCELLATION; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TASK", function() { return TASK; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TASK_CANCEL", function() { return TASK_CANCEL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TERMINATE", function() { return TERMINATE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SAGA_LOCATION", function() { return SAGA_LOCATION; });
 var createSymbol = function createSymbol(name) {
   return "@@redux-saga/" + name;
 };
@@ -31462,7 +31445,7 @@ module.exports = function spread(callback) {
 
 
 var bind = __webpack_require__(/*! ./helpers/bind */ "./node_modules/axios/lib/helpers/bind.js");
-var isBuffer = __webpack_require__(/*! is-buffer */ "./node_modules/is-buffer/index.js");
+var isBuffer = __webpack_require__(/*! is-buffer */ "./node_modules/axios/node_modules/is-buffer/index.js");
 
 /*global toString:true*/
 
@@ -31797,10 +31780,10 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/is-buffer/index.js":
-/*!*****************************************!*\
-  !*** ./node_modules/is-buffer/index.js ***!
-  \*****************************************/
+/***/ "./node_modules/axios/node_modules/is-buffer/index.js":
+/*!************************************************************!*\
+  !*** ./node_modules/axios/node_modules/is-buffer/index.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -38603,7 +38586,7 @@ const connect = (store) => (baseElement) => class extends baseElement {
 /*!***********************************************************************!*\
   !*** ./node_modules/redux-saga/dist/redux-saga-core-npm-proxy.esm.js ***!
   \***********************************************************************/
-/*! exports provided: CANCEL, SAGA_LOCATION, buffers, detach, END, channel, eventChannel, isEnd, multicastChannel, runSaga, stdChannel, default */
+/*! exports provided: CANCEL, SAGA_LOCATION, buffers, detach, runSaga, END, isEnd, eventChannel, channel, multicastChannel, stdChannel, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -38617,17 +38600,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "detach", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["detach"]; });
 
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "runSaga", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["runSaga"]; });
+
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "END", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["END"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "channel", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["channel"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "eventChannel", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["eventChannel"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isEnd", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["isEnd"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "multicastChannel", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["multicastChannel"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "eventChannel", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["eventChannel"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "runSaga", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["runSaga"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "channel", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["channel"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "multicastChannel", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["multicastChannel"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "stdChannel", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["stdChannel"]; });
 
@@ -38645,53 +38628,53 @@ __webpack_require__.r(__webpack_exports__);
 /*!**************************************************************************!*\
   !*** ./node_modules/redux-saga/dist/redux-saga-effects-npm-proxy.esm.js ***!
   \**************************************************************************/
-/*! exports provided: actionChannel, all, apply, call, cancel, cancelled, cps, delay, effectTypes, flush, fork, getContext, join, put, putResolve, race, select, setContext, spawn, take, takeMaybe, debounce, retry, takeEvery, takeLatest, takeLeading, throttle */
+/*! exports provided: effectTypes, take, takeMaybe, put, putResolve, all, race, call, apply, cps, fork, spawn, join, cancel, select, actionChannel, cancelled, flush, getContext, setContext, delay, debounce, retry, takeEvery, takeLatest, takeLeading, throttle */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @redux-saga/core/effects */ "./node_modules/@redux-saga/core/dist/redux-saga-effects.esm.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "actionChannel", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["actionChannel"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "all", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["all"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "apply", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["apply"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "call", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["call"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancel", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["cancel"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancelled", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["cancelled"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cps", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["cps"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "delay", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["delay"]; });
-
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "effectTypes", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["effectTypes"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "flush", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["flush"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "take", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["take"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "fork", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["fork"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getContext", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["getContext"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "join", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["join"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "takeMaybe", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["takeMaybe"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "put", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["put"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "putResolve", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["putResolve"]; });
 
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "all", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["all"]; });
+
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "race", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["race"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "select", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["select"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "call", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["call"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "setContext", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["setContext"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "apply", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["apply"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cps", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["cps"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "fork", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["fork"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "spawn", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["spawn"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "take", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["take"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "join", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["join"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "takeMaybe", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["takeMaybe"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancel", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["cancel"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "select", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["select"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "actionChannel", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["actionChannel"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancelled", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["cancelled"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "flush", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["flush"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getContext", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["getContext"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "setContext", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["setContext"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "delay", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["delay"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "debounce", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["debounce"]; });
 
@@ -40354,7 +40337,7 @@ module.exports = ".Wrapper{width:100%;max-width:var(--main-max-width);margin:0 a
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\n  <maf-screen heading=\"[[avgLog.procesOmschrijving]]\" on-back=\"[[_backToAvgLogs]]\">\n    <div class=\"SubHeading\">[[_capitalize(avgLog.opgevraagdeElementen)]]</div>\n    <div class=\"Description\">[[_capitalize(avgLog.omschrijving)]]</div>\n    <dom-repeat items=\"[[_mapObjToArr(avgLog)]]\">\n      <template>\n        <div class=\"AvgLogDataPoint\">\n          <div class=\"AvgLogDataPointLabel\">[[item.key]]</div>\n          <dom-if if=\"[[item.value]]\">\n            <template>\n              <div class=\"AvgLogDataPointValue\">[[item.value]]</div>\n            </template>\n          </dom-if>\n          <dom-if if=\"[[item.values]]\">\n            <template>\n              <dom-repeat items=\"[[item.values]]\" as=\"value\">\n                <template>\n                  <dom-if if=\"[[_isSame(value.key, 'Logo')]]\">\n                    <template>\n                      <div class=\"Logo\" style=\"[[_getLogoStyle(value.value)]]\"></div>\n                    </template>\n                  </dom-if>\n                  <dom-if if=\"[[_isNotSame(value.key, 'Logo')]]\">\n                    <template>\n                      <div class=\"AvgLogDataPointSubValue\">\n                        <div class=\"AvgLogDataPointSubValueKey\">[[value.key]]</div>\n                        <dom-if if=\"[[value.value]]\">\n                          <template>\n                            <div class=\"AvgLogDataPointSubValueValue\">[[value.value]]</div>\n                          </template>\n                        </dom-if>\n                      </div>\n                    </template>\n                  </dom-if>\n                  <dom-if if=\"[[value.values]]\">\n                    <template>\n                      <dom-repeat items=\"[[value.values]]\" as=\"final\">\n                        <template>\n                          <dom-if if=\"[[_isSame(final.key, 'Logo')]]\">\n                            <template>\n                              <div class=\"Logo\" style=\"[[_getLogoStyle(final.value)]]\"></div>\n                            </template>\n                          </dom-if>\n                          <dom-if if=\"[[_isNotSame(final.key, 'Logo')]]\">\n                            <template>\n                              <dom-if if=\"[[final.value]]\">\n                                <template>\n                                  <div class=\"AvgLogDataPointSubSubValue\">\n                                    <div class=\"AvgLogDataPointSubSubValueKey\">[[final.key]]</div>\n                                    <div class=\"AvgLogDataPointSubSubValueValue\">[[final.value]]</div>\n                                  </div>\n                                </template>\n                              </dom-if>\n                            </template>\n                          </dom-if>\n                        </template>\n                      </dom-repeat>\n                    </template>\n                  </dom-if>\n                </template>\n              </dom-repeat>\n            </template>\n          </dom-if>\n        </div>\n      </template>\n    </dom-repeat>\n  </maf-screen>\n</div>\n"
+module.exports = "<div class=\"Wrapper\">\r\n  <maf-screen heading=\"[[avgLog.procesOmschrijving]]\" on-back=\"[[_backToAvgLogs]]\">\r\n    <div class=\"SubHeading\">[[_capitalize(avgLog.opgevraagdeElementen)]]</div>\r\n    <div class=\"Description\">[[_capitalize(avgLog.omschrijving)]]</div>\r\n    <dom-repeat items=\"[[_mapObjToArr(avgLog)]]\">\r\n      <template>\r\n        <div class=\"AvgLogDataPoint\">\r\n          <div class=\"AvgLogDataPointLabel\">[[item.key]]</div>\r\n          <dom-if if=\"[[item.value]]\">\r\n            <template>\r\n              <div class=\"AvgLogDataPointValue\">[[item.value]]</div>\r\n            </template>\r\n          </dom-if>\r\n          <dom-if if=\"[[item.values]]\">\r\n            <template>\r\n              <dom-repeat items=\"[[item.values]]\" as=\"value\">\r\n                <template>\r\n                  <dom-if if=\"[[_isSame(value.key, 'Logo')]]\">\r\n                    <template>\r\n                      <div class=\"Logo\" style=\"[[_getLogoStyle(value.value)]]\"></div>\r\n                    </template>\r\n                  </dom-if>\r\n                  <dom-if if=\"[[_isNotSame(value.key, 'Logo')]]\">\r\n                    <template>\r\n                      <div class=\"AvgLogDataPointSubValue\">\r\n                        <div class=\"AvgLogDataPointSubValueKey\">[[value.key]]</div>\r\n                        <dom-if if=\"[[value.value]]\">\r\n                          <template>\r\n                            <div class=\"AvgLogDataPointSubValueValue\">[[value.value]]</div>\r\n                          </template>\r\n                        </dom-if>\r\n                      </div>\r\n                    </template>\r\n                  </dom-if>\r\n                  <dom-if if=\"[[value.values]]\">\r\n                    <template>\r\n                      <dom-repeat items=\"[[value.values]]\" as=\"final\">\r\n                        <template>\r\n                          <dom-if if=\"[[_isSame(final.key, 'Logo')]]\">\r\n                            <template>\r\n                              <div class=\"Logo\" style=\"[[_getLogoStyle(final.value)]]\"></div>\r\n                            </template>\r\n                          </dom-if>\r\n                          <dom-if if=\"[[_isNotSame(final.key, 'Logo')]]\">\r\n                            <template>\r\n                              <dom-if if=\"[[final.value]]\">\r\n                                <template>\r\n                                  <div class=\"AvgLogDataPointSubSubValue\">\r\n                                    <div class=\"AvgLogDataPointSubSubValueKey\">[[final.key]]</div>\r\n                                    <div class=\"AvgLogDataPointSubSubValueValue\">[[final.value]]</div>\r\n                                  </div>\r\n                                </template>\r\n                              </dom-if>\r\n                            </template>\r\n                          </dom-if>\r\n                        </template>\r\n                      </dom-repeat>\r\n                    </template>\r\n                  </dom-if>\r\n                </template>\r\n              </dom-repeat>\r\n            </template>\r\n          </dom-if>\r\n        </div>\r\n      </template>\r\n    </dom-repeat>\r\n  </maf-screen>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -40471,7 +40454,7 @@ module.exports = ".Wrapper{width:100%;max-width:var(--main-max-width);margin:0 a
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\n  <maf-screen on-back=\"[[_onBack]]\" heading=\"Mijn machtigingen\">\n    <div class=\"Cards\">\n      <dom-repeat items=\"{{cards}}\" as=\"card\">\n        <template>\n          <div class=\"Card\">\n            <div class=\"CardHead\">[[card.procesOmschrijving]]</div>\n            <dom-if if=\"[[_isSet(card.omschrijving)]]\">\n              <template>\n                <div class=\"CardDataPoint\">\n                  <div class=\"CardDataPointLabel\">[[card.omschrijving]]</div>\n                </div>\n              </template>\n            </dom-if>\n            <div class=\"CardDataPoint\">\n              <div class=\"CardDataPointLabel\">Verwerker Organisatie\n              </div>\n              <div class=\"CardDataPointValue\">[[card.verwerkerOrganisatie.handelsnaam]]</div>\n            </div>\n            <dom-repeat items=\"[[_mapObjToArr(card)]]\" as=\"point\" index-as=\"point_no\">\n              <template>\n                <div class=\"CardDataPoint\">\n                  <div class=\"CardDataPointLabel\">[[point.key]]</div>\n                  <div class=\"CardDataPointValue\">[[point.value]]</div>\n                </div>\n              </template>\n            </dom-repeat>\n            <div class=\"CardMoreButton\" on-click=\"_clickHandler\">Bekijk alle gegevens</div>\n          </div>\n        </template>\n      </dom-repeat>\n    </div>\n  </maf-screen>\n</div>"
+module.exports = "<div class=\"Wrapper\">\r\n  <maf-screen on-back=\"[[_onBack]]\" heading=\"Mijn machtigingen\">\r\n    <div class=\"Cards\">\r\n      <dom-repeat items=\"{{cards}}\" as=\"card\">\r\n        <template>\r\n          <div class=\"Card\">\r\n            <div class=\"CardHead\">[[card.procesOmschrijving]]</div>\r\n            <dom-if if=\"[[_isSet(card.omschrijving)]]\">\r\n              <template>\r\n                <div class=\"CardDataPoint\">\r\n                  <div class=\"CardDataPointLabel\">[[card.omschrijving]]</div>\r\n                </div>\r\n              </template>\r\n            </dom-if>\r\n            <div class=\"CardDataPoint\">\r\n              <div class=\"CardDataPointLabel\">Verwerker Organisatie\r\n              </div>\r\n              <div class=\"CardDataPointValue\">[[card.verwerkerOrganisatie.handelsnaam]]</div>\r\n            </div>\r\n            <dom-repeat items=\"[[_mapObjToArr(card)]]\" as=\"point\" index-as=\"point_no\">\r\n              <template>\r\n                <div class=\"CardDataPoint\">\r\n                  <div class=\"CardDataPointLabel\">[[point.key]]</div>\r\n                  <div class=\"CardDataPointValue\">[[point.value]]</div>\r\n                </div>\r\n              </template>\r\n            </dom-repeat>\r\n            <div class=\"CardMoreButton\" on-click=\"_clickHandler\">Bekijk alle gegevens</div>\r\n          </div>\r\n        </template>\r\n      </dom-repeat>\r\n    </div>\r\n  </maf-screen>\r\n</div>"
 
 /***/ }),
 
@@ -40584,7 +40567,7 @@ module.exports = ".Wrapper{width:100%;max-width:var(--main-max-width);margin:0 a
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\n  <maf-screen heading=\"[[contract.titel]]\" on-back=\"[[_backToContracts]]\">\n    <div class=\"SubHeading\">[[contract.type]]</div>\n    <div class=\"Description\">[[contract.omschrijving]]</div>\n    <dom-repeat items=\"[[_mapObjToArr(contract)]]\">\n      <template>\n        <div class=\"ContractDataPoint\">\n          <div class=\"ContractDataPointLabel\">[[item.key]]</div>\n          <dom-if if=\"[[item.value]]\">\n            <template>\n              <div class=\"ContractDataPointValue\">[[item.value]]</div>\n            </template>\n          </dom-if>\n          <dom-if if=\"[[item.values]]\">\n            <template>\n              <dom-repeat items=\"[[item.values]]\" as=\"value\">\n                <template>\n                  <dom-if if=\"[[_isSame(value.key, 'Logo')]]\">\n                    <template>\n                      <div class=\"Logo\" style=\"[[_getLogoStyle(value.value)]]\"></div>\n                    </template>\n                  </dom-if>\n                  <dom-if if=\"[[_isNotSame(value.key, 'Logo')]]\">\n                    <template>\n                      <div class=\"ContractDataPointSubValue\">\n                        <div class=\"ContractDataPointSubValueKey\">[[value.key]]</div>\n                        <dom-if if=\"[[value.value]]\">\n                          <template>\n                            <div class=\"ContractDataPointSubValueValue\">[[value.value]]</div>\n                          </template>\n                        </dom-if>\n                      </div>\n                    </template>\n                  </dom-if>\n                  <dom-if if=\"[[value.values]]\">\n                    <template>\n                      <dom-repeat items=\"[[value.values]]\" as=\"final\">\n                        <template>\n                          <dom-if if=\"[[_isSame(final.key, 'Logo')]]\">\n                            <template>\n                              <div class=\"Logo\" style=\"[[_getLogoStyle(final.value)]]\"></div>\n                            </template>\n                          </dom-if>\n                          <dom-if if=\"[[_isNotSame(final.key, 'Logo')]]\">\n                            <template>\n                              <dom-if if=\"[[final.value]]\">\n                                <template>\n                                  <div class=\"ContractDataPointSubSubValue\">\n                                    <div class=\"ContractDataPointSubSubValueKey\">[[final.key]]</div>\n                                    <div class=\"ContractDataPointSubSubValueValue\">[[final.value]]</div>\n                                  </div>\n                                </template>\n                              </dom-if>\n                            </template>\n                          </dom-if>\n                        </template>\n                      </dom-repeat>\n                    </template>\n                  </dom-if>\n                </template>\n              </dom-repeat>\n            </template>\n          </dom-if>\n        </div>\n      </template>\n    </dom-repeat>\n  </maf-screen>\n</div>\n"
+module.exports = "<div class=\"Wrapper\">\r\n  <maf-screen heading=\"[[contract.titel]]\" on-back=\"[[_backToContracts]]\">\r\n    <div class=\"SubHeading\">[[contract.type]]</div>\r\n    <div class=\"Description\">[[contract.omschrijving]]</div>\r\n    <dom-repeat items=\"[[_mapObjToArr(contract)]]\">\r\n      <template>\r\n        <div class=\"ContractDataPoint\">\r\n          <div class=\"ContractDataPointLabel\">[[item.key]]</div>\r\n          <dom-if if=\"[[item.value]]\">\r\n            <template>\r\n              <div class=\"ContractDataPointValue\">[[item.value]]</div>\r\n            </template>\r\n          </dom-if>\r\n          <dom-if if=\"[[item.values]]\">\r\n            <template>\r\n              <dom-repeat items=\"[[item.values]]\" as=\"value\">\r\n                <template>\r\n                  <dom-if if=\"[[_isSame(value.key, 'Logo')]]\">\r\n                    <template>\r\n                      <div class=\"Logo\" style=\"[[_getLogoStyle(value.value)]]\"></div>\r\n                    </template>\r\n                  </dom-if>\r\n                  <dom-if if=\"[[_isNotSame(value.key, 'Logo')]]\">\r\n                    <template>\r\n                      <div class=\"ContractDataPointSubValue\">\r\n                        <div class=\"ContractDataPointSubValueKey\">[[value.key]]</div>\r\n                        <dom-if if=\"[[value.value]]\">\r\n                          <template>\r\n                            <div class=\"ContractDataPointSubValueValue\">[[value.value]]</div>\r\n                          </template>\r\n                        </dom-if>\r\n                      </div>\r\n                    </template>\r\n                  </dom-if>\r\n                  <dom-if if=\"[[value.values]]\">\r\n                    <template>\r\n                      <dom-repeat items=\"[[value.values]]\" as=\"final\">\r\n                        <template>\r\n                          <dom-if if=\"[[_isSame(final.key, 'Logo')]]\">\r\n                            <template>\r\n                              <div class=\"Logo\" style=\"[[_getLogoStyle(final.value)]]\"></div>\r\n                            </template>\r\n                          </dom-if>\r\n                          <dom-if if=\"[[_isNotSame(final.key, 'Logo')]]\">\r\n                            <template>\r\n                              <dom-if if=\"[[final.value]]\">\r\n                                <template>\r\n                                  <div class=\"ContractDataPointSubSubValue\">\r\n                                    <div class=\"ContractDataPointSubSubValueKey\">[[final.key]]</div>\r\n                                    <div class=\"ContractDataPointSubSubValueValue\">[[final.value]]</div>\r\n                                  </div>\r\n                                </template>\r\n                              </dom-if>\r\n                            </template>\r\n                          </dom-if>\r\n                        </template>\r\n                      </dom-repeat>\r\n                    </template>\r\n                  </dom-if>\r\n                </template>\r\n              </dom-repeat>\r\n            </template>\r\n          </dom-if>\r\n        </div>\r\n      </template>\r\n    </dom-repeat>\r\n  </maf-screen>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -40692,7 +40675,7 @@ module.exports = ".Wrapper{width:100%;max-width:var(--main-max-width);margin:0 a
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\n  <maf-screen on-back=\"[[_onBack]]\" heading=\"Mijn contracten\">\n    <div class=\"Cards\">\n      <dom-repeat items=\"{{cards}}\" as=\"card\">\n        <template>\n          <div class=\"Card\">\n            <div class=\"CardHead\">[[card.titel]]</div>\n            <dom-if if=\"[[_isSet(card.omschrijving)]]\">\n              <template>\n                <div class=\"CardDataPoint\">\n                  <div class=\"CardDataPointLabel\">[[card.omschrijving]]</div>\n                </div>\n              </template>\n            </dom-if>\n            <dom-repeat items=\"[[_mapObjToArr(card)]]\" as=\"point\" index-as=\"point_no\">\n              <template>\n                <div class=\"CardDataPoint\">\n                  <div class=\"CardDataPointLabel\">[[point.key]]</div>\n                  <div class=\"CardDataPointValue\">[[point.value]]</div>\n                </div>\n              </template>\n            </dom-repeat>\n            <div class=\"CardDataPoint\">\n              <div class=\"CardDataPointLabel\">Organisatie</div>\n              <div class=\"CardDataPointValue\">[[card.organisatie.handelsnaam]]</div>\n            </div>\n            <div class=\"CardMoreButton\" on-click=\"_clickHandler\">Bekijk alle gegevens</div>\n          </div>\n        </template>\n      </dom-repeat>\n    </div>\n  </maf-screen>\n</div>"
+module.exports = "<div class=\"Wrapper\">\r\n  <maf-screen on-back=\"[[_onBack]]\" heading=\"Mijn contracten\">\r\n    <div class=\"Cards\">\r\n      <dom-repeat items=\"{{cards}}\" as=\"card\">\r\n        <template>\r\n          <div class=\"Card\">\r\n            <div class=\"CardHead\">[[card.titel]]</div>\r\n            <dom-if if=\"[[_isSet(card.omschrijving)]]\">\r\n              <template>\r\n                <div class=\"CardDataPoint\">\r\n                  <div class=\"CardDataPointLabel\">[[card.omschrijving]]</div>\r\n                </div>\r\n              </template>\r\n            </dom-if>\r\n            <dom-repeat items=\"[[_mapObjToArr(card)]]\" as=\"point\" index-as=\"point_no\">\r\n              <template>\r\n                <div class=\"CardDataPoint\">\r\n                  <div class=\"CardDataPointLabel\">[[point.key]]</div>\r\n                  <div class=\"CardDataPointValue\">[[point.value]]</div>\r\n                </div>\r\n              </template>\r\n            </dom-repeat>\r\n            <div class=\"CardDataPoint\">\r\n              <div class=\"CardDataPointLabel\">Organisatie</div>\r\n              <div class=\"CardDataPointValue\">[[card.organisatie.handelsnaam]]</div>\r\n            </div>\r\n            <div class=\"CardMoreButton\" on-click=\"_clickHandler\">Bekijk alle gegevens</div>\r\n          </div>\r\n        </template>\r\n      </dom-repeat>\r\n    </div>\r\n  </maf-screen>\r\n</div>"
 
 /***/ }),
 
@@ -41543,7 +41526,7 @@ module.exports = ":host{display:inline-flex}svg{fill:var(--icon-color);stroke:va
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"22\" height=\"22\" viewBox=\"0 0 22 22\">\n    <path fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M21 16H1a3 3 0 0 0 3-3V8a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0h3.46z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"22\" height=\"22\" viewBox=\"0 0 22 22\">\r\n    <path fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M21 16H1a3 3 0 0 0 3-3V8a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0h3.46z\"/>\r\n</svg>\r\n"
 
 /***/ }),
 
@@ -41677,7 +41660,7 @@ module.exports = ":host{display:inline-flex}svg{fill:var(--icon-color);stroke:va
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\">\n    <path fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M19 9.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L1 19l1.9-5.7A8.38 8.38 0 0 1 2 9.5a8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\">\r\n    <path fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M19 9.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L1 19l1.9-5.7A8.38 8.38 0 0 1 2 9.5a8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z\"/>\r\n</svg>\r\n"
 
 /***/ }),
 
@@ -41744,7 +41727,7 @@ module.exports = ":host{display:inline-flex}svg{fill:var(--icon-color);stroke:va
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"9\" height=\"7\" viewBox=\"0 0 9 7\">\n    <path fill-rule=\"evenodd\" stroke-width=\".8\" d=\"M4.147 6.123a.289.289 0 0 1-.415.01L1.086 3.524a.29.29 0 1 1 .407-.412L3.926 5.51l4.106-4.417a.29.29 0 1 1 .424.394L4.147 6.123z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"9\" height=\"7\" viewBox=\"0 0 9 7\">\r\n    <path fill-rule=\"evenodd\" stroke-width=\".8\" d=\"M4.147 6.123a.289.289 0 0 1-.415.01L1.086 3.524a.29.29 0 1 1 .407-.412L3.926 5.51l4.106-4.417a.29.29 0 1 1 .424.394L4.147 6.123z\"/>\r\n</svg>\r\n"
 
 /***/ }),
 
@@ -42079,7 +42062,7 @@ module.exports = ":host{display:inline-flex}svg{fill:var(--icon-color);stroke:va
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"22\" viewBox=\"0 0 20 22\">\n    <g fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\">\n        <path d=\"M1 8l9-7 9 7v11a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8z\"/>\n        <path d=\"M7 21V11h6v10\"/>\n    </g>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"22\" viewBox=\"0 0 20 22\">\r\n    <g fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\">\r\n        <path d=\"M1 8l9-7 9 7v11a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8z\"/>\r\n        <path d=\"M7 21V11h6v10\"/>\r\n    </g>\r\n</svg>\r\n"
 
 /***/ }),
 
@@ -42213,7 +42196,7 @@ module.exports = ":host{display:inline-flex}svg{fill:var(--icon-color);stroke:va
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 17 17\">\n    <g fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" transform=\"translate(1 1)\">\n        <circle cx=\"6.5\" cy=\"6.5\" r=\"6.5\"/>\n        <path d=\"M15 15l-4-4\"/>\n    </g>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 17 17\">\r\n    <g fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" transform=\"translate(1 1)\">\r\n        <circle cx=\"6.5\" cy=\"6.5\" r=\"6.5\"/>\r\n        <path d=\"M15 15l-4-4\"/>\r\n    </g>\r\n</svg>\r\n"
 
 /***/ }),
 
@@ -42731,7 +42714,7 @@ module.exports = ".Button{float:left;--icon-color:var(--main-color);display:inli
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class$=\"Button[[isHighlight(highlight)]][[isIcon(small, heading)]][[isItalic(italic)]][[isSmall(small)]][[isWhite(white)]][[isDisabled(disabled)]][[colorBooleans(iconColorMain, iconColorDisabled, iconColorHighlight, textColorMain, textColorDisabled, textColorHighlight, bubbleColorMain, bubbleColorDisabled, bubbleColorHighlight)]]\" style$=\"[[getElevation(elevation)]] [[_wrapperSize(size)]]\" on-click=\"clickHandler\">\n  <div class=\"Inner\" style$=\"[[_buttonSize(size, heading)]]\">\n    <dom-if if=[[hasHeading(heading)]]>\n      <template>\n        <span class=\"HeadingAsProp\" style$=\"[[_hoverStyle]]\">\n          [[heading]]\n          <span class=\"After\" />\n        </span>\n      </template>\n    </dom-if>\n    <div class=\"Child\" style$=\"[[_iconSize(size, heading)]]\">\n      <slot></slot>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class$=\"Button[[isHighlight(highlight)]][[isIcon(small, heading)]][[isItalic(italic)]][[isSmall(small)]][[isWhite(white)]][[isDisabled(disabled)]][[colorBooleans(iconColorMain, iconColorDisabled, iconColorHighlight, textColorMain, textColorDisabled, textColorHighlight, bubbleColorMain, bubbleColorDisabled, bubbleColorHighlight)]]\" style$=\"[[getElevation(elevation)]] [[_wrapperSize(size)]]\" on-click=\"clickHandler\">\r\n  <div class=\"Inner\" style$=\"[[_buttonSize(size, heading)]]\">\r\n    <dom-if if=[[hasHeading(heading)]]>\r\n      <template>\r\n        <span class=\"HeadingAsProp\" style$=\"[[_hoverStyle]]\">\r\n          [[heading]]\r\n          <span class=\"After\" />\r\n        </span>\r\n      </template>\r\n    </dom-if>\r\n    <div class=\"Child\" style$=\"[[_iconSize(size, heading)]]\">\r\n      <slot></slot>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -42798,7 +42781,7 @@ module.exports = ".Header{font-family:var(--typography-fontFamily);font-size:var
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Header\"><slot></slot></div>\n"
+module.exports = "<div class=\"Header\"><slot></slot></div>\r\n"
 
 /***/ }),
 
@@ -43068,7 +43051,7 @@ module.exports = ".Paper{border:0 solid var(--palette-primary-light)}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Paper\" style$=\"[[_borderStyle(stroke)]] [[_roundingStyle(rounding)]] [[_elevationStyle(elevation)]]\">\n  <slot></slot>\n</div>\n"
+module.exports = "<div class=\"Paper\" style$=\"[[_borderStyle(stroke)]] [[_roundingStyle(rounding)]] [[_elevationStyle(elevation)]]\">\r\n  <slot></slot>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -43248,7 +43231,7 @@ module.exports = ".Shaded{background-color:var(--palette-background-paper);--sha
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<maki-paper elevation=\"[[elevation]]\" rounding=\"[[rounding]]\" stroke=\"[[stroke]]\" >\n  <div class$=\"Shaded[[_isTransparent(transparent)]][[_isPrimary(primary)]][[_isSecondary(secondary)]][[_isError(error)]][[_isDisabled(disabled)]][[_isAccentPrimary(accentPrimary)]][[_isAccentSecondary(accentSecondary)]][[_isAccentError(accentError)]][[_isAccentDisabled(accentDisabled)]][[_isIconPrimary(iconPrimary)]][[_isIconSecondary(iconSecondary)]][[_isIconError(iconError)]][[_isIconDisabled(iconDisabled)]][[_isFill(fill)]]\"><slot></slot></div>\n</maki-paper>\n"
+module.exports = "<maki-paper elevation=\"[[elevation]]\" rounding=\"[[rounding]]\" stroke=\"[[stroke]]\" >\r\n  <div class$=\"Shaded[[_isTransparent(transparent)]][[_isPrimary(primary)]][[_isSecondary(secondary)]][[_isError(error)]][[_isDisabled(disabled)]][[_isAccentPrimary(accentPrimary)]][[_isAccentSecondary(accentSecondary)]][[_isAccentError(accentError)]][[_isAccentDisabled(accentDisabled)]][[_isIconPrimary(iconPrimary)]][[_isIconSecondary(iconSecondary)]][[_isIconError(iconError)]][[_isIconDisabled(iconDisabled)]][[_isFill(fill)]]\"><slot></slot></div>\r\n</maki-paper>\r\n"
 
 /***/ }),
 
@@ -43507,7 +43490,7 @@ module.exports = ".Theme{font-family:var(--typography-fontSize);font-size:var(--
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Theme\"><slot></slot></div>\n"
+module.exports = "<div class=\"Theme\"><slot></slot></div>\r\n"
 
 /***/ }),
 
@@ -43787,7 +43770,7 @@ class PlaybackScreenAddress extends (0, _connectMixin.connect)(_store.store)(_po
   }
 
   _saveWithoutCheck(question, address) {
-    _store.store.dispatch((0, _order.orderSaveAnswer)(question.key || question.property, address.id, question.fieldName, `${address.straat} ${address.huisnummer}${address.huisnummertoevoeging ? address.huisnummertoevoeging : ''}, ${address.woonplaats} ${address.postcode}`));
+    _store.store.dispatch((0, _order.orderSaveAnswer)(question.key || question.property, address.id, question.fieldName, `${address.straat} ${address.huisnummer} ${address.huisnummertoevoeging ? address.huisnummertoevoeging : ''}, ${address.woonplaats} ${address.postcode}`));
     _store.store.dispatch((0, _order.orderNext)(question.next));
   }
 
@@ -43797,7 +43780,7 @@ class PlaybackScreenAddress extends (0, _connectMixin.connect)(_store.store)(_po
       const question = e.currentTarget.dataQuestion;
       const index = e.currentTarget.dataIndex;
       const address = this.addresses[index];
-      if (address.woonplaats !== '\'s-Hertogenbosch') {
+      if (address.woonplaats !== '\'s-Hertogenbosch' && address.woonplaats !== 'Rosmalen' && address.woonplaats !== 'Nuland' && address.woonplaats !== 'Vinkel') {
         window.clearErrorDialog();
         window.errorTitle.innerHTML = 'Let op!';
         window.errorText.innerHTML = 'Het nieuwe adres dat je opgeeft ligt niet in de gemeente \'s-Hertogenbosch. Kies op de gemeentekeuze pagina (<a href="https://www.burgerberichten.nl/gemeenten/verhuizen">https://www.burgerberichten.nl/gemeenten/verhuizen</a>) de gemeente van uw nieuwe adres.';
@@ -43898,7 +43881,7 @@ module.exports = ".Wrapper{width:100%;height:100%;float:left}.Item{margin:5px 0}
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<playback-screen-wrapper skip-callback=\"[[_skipCallback(question)]]\" no-next>\r\n  <div class=\"Item\">\r\n    <maki-input id=\"postalCodeInput\" elevation=\"0\" stroke=\"1\" placeholder=\"Postcode\" maxlength=\"6\" value=\"{{postalCode}}\" input-callback=\"[[_inputPostalCodeCallback()]]\" />\r\n  </div>\r\n  <div class=\"Item\">\r\n    <maki-input id=\"numberInput\" elevation=\"0\" stroke=\"1\" placeholder=\"Huisnummer\" value=\"{{number}}\" input-callback=\"[[_inputNumberCallback()]]\" type=\"number\"></maki-input>\r\n  </div>\r\n  <div class=\"Item\">\r\n    <maki-input id=\"numberAdditionInput\" elevation=\"0\" stroke=\"1\" placeholder=\"Huisnummertoevoeging\" value=\"{{numberAddition}}\" input-callback=\"[[_inputNumberAdditionCallback()]]\"></maki-input>\r\n  </div>\r\n  <dom-if if=\"{{showApiResult(hasSearched, hasValidPostalCodeAndNumber)}}\">\r\n    <template>\r\n      <div class=\"Title\">Gevonden adressen</div>\r\n      <dom-if if=\"{{searching}}\">\r\n        <template>\r\n          <div class=\"Subtitle\">Ophalen adressen voor {{postalCode}}, {{number}}{{numberAddition}}</div>\r\n        </template>\r\n      </dom-if>\r\n      <dom-if if=\"{{!searching}}\">\r\n        <template>\r\n          <dom-if if=\"{{!addresses.length}}\">\r\n            <template>\r\n              <div class=\"Subtitle\">\r\n                <maki-icon-attention></maki-icon-attention>\r\n                <div class=\"SubtitleAttention\">Het nieuwe adres is niet bekend bij de gemeente. Controleer de postcode, huisnummer en eventueel toevoeging en probeer opnieuw.</div>\r\n              </div>\r\n            </template>\r\n          </dom-if>\r\n          <dom-if if=\"{{addresses.length}}\">\r\n            <template>\r\n              <div class=\"Subtitle\">Staat uw adres niet in de lijst, controleer dan de ingevulde postcode, huisnummer en eventueel huisnummertoevoeging en probeer opnieuw.</div>\r\n            </template>\r\n          </dom-if>\r\n        </template>\r\n      </dom-if>\r\n      <div class=\"Options\">\r\n        <dom-repeat items=\"{{addresses}}\">\r\n          <template>\r\n            <div class=\"Option\" data-index=\"[[index]]\" data-question=\"[[question]]\" on-click=\"_optionClick\">\r\n              <div class=\"OptionText\">{{item.straat}} {{item.huisnummer}}{{item.huisnummertoevoeging}}, {{item.woonplaats}} {{item.postcode}}</div>\r\n              <div class=\"OptionCarrot\">></div>\r\n            </div>\r\n          </template>\r\n        </dom-repeat>\r\n      </div>\r\n    </template>\r\n  </dom-if>\r\n</playback-screen-wrapper>\r\n"
+module.exports = "<playback-screen-wrapper skip-callback=\"[[_skipCallback(question)]]\" no-next>\r\n  <div class=\"Item\">\r\n    <maki-input id=\"postalCodeInput\" elevation=\"0\" stroke=\"1\" placeholder=\"Postcode\" maxlength=\"6\" value=\"{{postalCode}}\" input-callback=\"[[_inputPostalCodeCallback()]]\" />\r\n  </div>\r\n  <div class=\"Item\">\r\n    <maki-input id=\"numberInput\" elevation=\"0\" stroke=\"1\" placeholder=\"Huisnummer\" value=\"{{number}}\" input-callback=\"[[_inputNumberCallback()]]\" type=\"number\"></maki-input>\r\n  </div>\r\n  <div class=\"Item\">\r\n    <maki-input id=\"numberAdditionInput\" elevation=\"0\" stroke=\"1\" placeholder=\"Huisnummertoevoeging\" value=\"{{numberAddition}}\" input-callback=\"[[_inputNumberAdditionCallback()]]\"></maki-input>\r\n  </div>\r\n  <dom-if if=\"{{showApiResult(hasSearched, hasValidPostalCodeAndNumber)}}\">\r\n    <template>\r\n      <div class=\"Title\">Gevonden adressen</div>\r\n      <dom-if if=\"{{searching}}\">\r\n        <template>\r\n          <div class=\"Subtitle\">Ophalen adressen voor {{postalCode}}, {{number}}{{numberAddition}}</div>\r\n        </template>\r\n      </dom-if>\r\n      <dom-if if=\"{{!searching}}\">\r\n        <template>\r\n          <dom-if if=\"{{!addresses.length}}\">\r\n            <template>\r\n              <div class=\"Subtitle\">\r\n                <maki-icon-attention></maki-icon-attention>\r\n                <div class=\"SubtitleAttention\">Het nieuwe adres is niet bekend bij de gemeente. Controleer de postcode, huisnummer en eventueel toevoeging en probeer opnieuw.</div>\r\n              </div>\r\n            </template>\r\n          </dom-if>\r\n          <dom-if if=\"{{addresses.length}}\">\r\n            <template>\r\n              <div class=\"Subtitle\">Staat uw adres niet in de lijst, controleer dan de ingevulde postcode, huisnummer en eventueel huisnummertoevoeging en probeer opnieuw.</div>\r\n            </template>\r\n          </dom-if>\r\n        </template>\r\n      </dom-if>\r\n      <div class=\"Options\">\r\n        <dom-repeat items=\"{{addresses}}\">\r\n          <template>\r\n            <div class=\"Option\" data-index=\"[[index]]\" data-question=\"[[question]]\" on-click=\"_optionClick\">\r\n              <div class=\"OptionText\">{{item.straat}} {{item.huisnummer}} {{item.huisnummertoevoeging}}, {{item.woonplaats}} {{item.postcode}}</div>\r\n              <div class=\"OptionCarrot\">></div>\r\n            </div>\r\n          </template>\r\n        </dom-repeat>\r\n      </div>\r\n    </template>\r\n  </dom-if>\r\n</playback-screen-wrapper>\r\n"
 
 /***/ }),
 
@@ -44022,7 +44005,7 @@ module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled=\"[[_isDisabled(order)]]\">\n  <div class=\"Options\">\n    <div class=\"Option\" on-click=\"_optionClick\">\n      Ja\n      <div class$=\"Circle[[_isSelected(order)]]\"></div>\n    </div>\n  </div>\n</playback-screen-wrapper>\n"
+module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled=\"[[_isDisabled(order)]]\">\r\n  <div class=\"Options\">\r\n    <div class=\"Option\" on-click=\"_optionClick\">\r\n      Ja\r\n      <div class$=\"Circle[[_isSelected(order)]]\"></div>\r\n    </div>\r\n  </div>\r\n</playback-screen-wrapper>\r\n"
 
 /***/ }),
 
@@ -44563,7 +44546,7 @@ module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<playback-screen-wrapper no-next>\n  Type niet gespecificeerd\n</playback-screen-wrapper>\n"
+module.exports = "<playback-screen-wrapper no-next>\r\n  Type niet gespecificeerd\r\n</playback-screen-wrapper>\r\n"
 
 /***/ }),
 
@@ -44695,7 +44678,7 @@ module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled=\"[[_isDisabled(order)]]\">\n  <dom-repeat items=\"[[_items(question)]]\">\n    <template>\n      <div class=\"Item\">\n        <maki-input elevation=\"0\" rounding=\"0\" fill secondary placeholder=\"[[_itemTitle(item.title)]]\" value=\"[[_getValue(order, index)]]\" input-callback=\"[[_inputCallback(question, index, order)]]\"></maki-input>\n      </div>\n    </template>\n  </dom-repeat>\n</playback-screen-wrapper>\n"
+module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled=\"[[_isDisabled(order)]]\">\r\n  <dom-repeat items=\"[[_items(question)]]\">\r\n    <template>\r\n      <div class=\"Item\">\r\n        <maki-input elevation=\"0\" rounding=\"0\" fill secondary placeholder=\"[[_itemTitle(item.title)]]\" value=\"[[_getValue(order, index)]]\" input-callback=\"[[_inputCallback(question, index, order)]]\"></maki-input>\r\n      </div>\r\n    </template>\r\n  </dom-repeat>\r\n</playback-screen-wrapper>\r\n"
 
 /***/ }),
 
@@ -44841,7 +44824,7 @@ module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled=\"[[_isDisabled()]]\">\n  <div class=\"Options\">\n    <dom-repeat items=\"[[_optionNames(question)]]\">\n      <template>\n        <div class=\"Option\" data-index=\"[[index]]\" on-click=\"_optionClick\">\n          [[item]]\n          <div class$=\"Circle[[_isSelected(index, selected)]]\"></div>\n        </div>\n      </template>\n    </dom-repeat>\n  </div>\n</playback-screen-wrapper>\n"
+module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled=\"[[_isDisabled()]]\">\r\n  <div class=\"Options\">\r\n    <dom-repeat items=\"[[_optionNames(question)]]\">\r\n      <template>\r\n        <div class=\"Option\" data-index=\"[[index]]\" on-click=\"_optionClick\">\r\n          [[item]]\r\n          <div class$=\"Circle[[_isSelected(index, selected)]]\"></div>\r\n        </div>\r\n      </template>\r\n    </dom-repeat>\r\n  </div>\r\n</playback-screen-wrapper>\r\n"
 
 /***/ }),
 
@@ -45158,7 +45141,7 @@ module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question, selected)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled=\"[[_isDisabled(order, question, selected)]]\">\n  <div class=\"Options\">\n    <dom-repeat items=\"[[_optionNames(question)]]\">\n      <template>\n        <div class=\"Option\" data-index=\"[[index]]\" on-click=\"_optionClick\">\n          [[item]]\n          <div class$=\"Circle[[_isSelected(index, selected)]]\"></div>\n        </div>\n      </template>\n    </dom-repeat>\n  </div>\n</playback-screen-wrapper>\n"
+module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question, selected)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled=\"[[_isDisabled(order, question, selected)]]\">\r\n  <div class=\"Options\">\r\n    <dom-repeat items=\"[[_optionNames(question)]]\">\r\n      <template>\r\n        <div class=\"Option\" data-index=\"[[index]]\" on-click=\"_optionClick\">\r\n          [[item]]\r\n          <div class$=\"Circle[[_isSelected(index, selected)]]\"></div>\r\n        </div>\r\n      </template>\r\n    </dom-repeat>\r\n  </div>\r\n</playback-screen-wrapper>\r\n"
 
 /***/ }),
 
@@ -45268,7 +45251,7 @@ module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<playback-screen-wrapper skip-callback=\"[[_skipCallback(question)]]\" no-next>\n  <div class=\"Options\">\n    <dom-repeat items=\"[[_optionNames(question)]]\">\n      <template>\n        <div class=\"Option\" data-question=\"[[question]]\" data-index=\"[[index]]\" on-click=\"_optionClick\">[[item]]</div>\n      </template>\n    </dom-repeat>\n  </div>\n</playback-screen-wrapper>\n"
+module.exports = "<playback-screen-wrapper skip-callback=\"[[_skipCallback(question)]]\" no-next>\r\n  <div class=\"Options\">\r\n    <dom-repeat items=\"[[_optionNames(question)]]\">\r\n      <template>\r\n        <div class=\"Option\" data-question=\"[[question]]\" data-index=\"[[index]]\" on-click=\"_optionClick\">[[item]]</div>\r\n      </template>\r\n    </dom-repeat>\r\n  </div>\r\n</playback-screen-wrapper>\r\n"
 
 /***/ }),
 
@@ -45647,7 +45630,7 @@ module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<playback-screen-wrapper skip-callback=\"[[_skipCallback(question)]]\" no-next>\n  <div class=\"Options\">\n    <dom-repeat items=\"[[_optionNames(question)]]\">\n      <template>\n        <div class=\"Option\" data-question=\"[[question]]\" data-index=\"[[index]]\" on-click=\"_optionClick\">[[item]]</div>\n      </template>\n    </dom-repeat>\n  </div>\n</playback-screen-wrapper>\n"
+module.exports = "<playback-screen-wrapper skip-callback=\"[[_skipCallback(question)]]\" no-next>\r\n  <div class=\"Options\">\r\n    <dom-repeat items=\"[[_optionNames(question)]]\">\r\n      <template>\r\n        <div class=\"Option\" data-question=\"[[question]]\" data-index=\"[[index]]\" on-click=\"_optionClick\">[[item]]</div>\r\n      </template>\r\n    </dom-repeat>\r\n  </div>\r\n</playback-screen-wrapper>\r\n"
 
 /***/ }),
 
