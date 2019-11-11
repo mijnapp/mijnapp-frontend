@@ -182,8 +182,8 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
       this.searching = state.address.searching;
       const self = this;
       setTimeout(function () {
-          self.shadowRoot.querySelector("#foundAddresses").scrollIntoView();
-      }, 200);
+          self.shadowRoot.querySelector('#foundAddresses').scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+      }, 400);
     }
     if (state.address.reset) {
       this._reset();
