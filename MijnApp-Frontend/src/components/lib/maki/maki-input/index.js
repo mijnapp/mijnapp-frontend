@@ -30,6 +30,10 @@ export default class MakiInput extends PolymerElement {
         type: String,
         value: '',
       },
+      pattern: {
+        type: String,
+        value: '',
+      },
       value: {
         type: Object,
         value: '',
@@ -96,6 +100,9 @@ export default class MakiInput extends PolymerElement {
   ready() {
     super.ready();
     const field = this.shadowRoot.querySelector('.Input');
+    if (field.type === 'number') {
+      field.setAttribute('pattern', '\\d*');
+    }
     field.addEventListener('focus', this._onFocus.bind(this));
     field.addEventListener('blur', this._onBlur.bind(this));
   }
