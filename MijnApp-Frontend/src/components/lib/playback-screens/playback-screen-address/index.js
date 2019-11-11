@@ -107,7 +107,7 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
         && address.woonplaats !== 'Vinkel') {
         window.clearErrorDialog();
         window.errorTitle.innerHTML = 'Let op!';
-        window.errorText.innerHTML = 'Het nieuwe adres dat je opgeeft ligt niet in de gemeente \'s-Hertogenbosch. Kies op de gemeentekeuze pagina (<a href="https://www.burgerberichten.nl/gemeenten/verhuizen">https://www.burgerberichten.nl/gemeenten/verhuizen</a>) de gemeente van uw nieuwe adres.';
+        window.errorText.innerHTML = 'Het nieuwe adres dat je opgeeft ligt niet in de aangesloten gemeenten. Kies op <a href="https://www.burgerberichten.nl/gemeenten/verhuizen">deze pagina</a> de gemeente van je nieuwe adres.';
         window.errorButton.innerHTML = 'Ga terug';
         window.errorDialog.open();
       } else {
