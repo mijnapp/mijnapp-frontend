@@ -36,12 +36,12 @@
                     </template>
                 </dom-repeat>
             </div>
-            <div class="SectionTitle">
-                <maki-icon-edit-document></maki-icon-edit-document>
-                <div>Benodigde documenten</div>
-            </div>
-            <dom-if if="{{_hasDocuments(journey)}}" class="DotList">
+            <dom-if if="{{_hasDocuments(journey)}}">
                 <template>
+                    <div class="SectionTitle">
+                        <maki-icon-edit-document></maki-icon-edit-document>
+                        <div>Benodigde documenten</div>
+                    </div>
                     <dom-repeat items="[[_documents(journey)]]">
                         <template>
                             <div class="DotListItem">
@@ -50,14 +50,6 @@
                             </div>
                         </template>
                     </dom-repeat>
-                </template>
-            </dom-if>
-            <dom-if if="{{!_hasDocuments(journey)}}" class="DotList">
-                <template>
-                    <div class="DotListItem">
-                        <div class="NoItems"></div>
-                        <div class="Text">Geen documenten nodig</div>
-                    </div>
                 </template>
             </dom-if>
             <dom-if if="{{preconditionsFullFilled}}">
