@@ -10,8 +10,8 @@
                 <dom-repeat items="[[persons]]">
                     <template>
                         <div class="Option" data-index="[[index]]" on-click="_optionClick">
-                            [[item.naam.aanschrijfwijze]]
                             <div class$="{{_isSelected(item.selected)}}"></div>
+                            <div class="OptionText">[[item.naam.aanschrijfwijze]]</div>
                         </div>
                     </template>
                 </dom-repeat>
