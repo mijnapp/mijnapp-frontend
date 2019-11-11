@@ -286,7 +286,7 @@ export default class MafApp extends connect(store)(PolymerElement) {
         end: {
           check: {
             title: 'Controleer je gegevens',
-            subtitle: 'Controleer onderstaande gegevens goed en verzend het formulier.',
+            subtitle: '',
           },
           success: {
             title: 'Je idee is doorgegeven',
@@ -381,7 +381,7 @@ export default class MafApp extends connect(store)(PolymerElement) {
         end: {
           check: {
             title: 'Controleer je gegevens',
-            subtitle: 'Controleer onderstaande gegevens goed en verzend het formulier.',
+            subtitle: '',
           },
           success: {
             title: 'Je verhuizing is aangevraagd',
