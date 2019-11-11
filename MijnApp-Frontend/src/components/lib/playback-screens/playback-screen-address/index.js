@@ -89,7 +89,7 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
         question.key || question.property,
         address.id,
         question.fieldName,
-        `${address.straat} ${address.huisnummer} ${address.huisnummertoevoeging ? address.huisnummertoevoeging : ''}, ${address.woonplaats} ${address.postcode}`
+          `${address.straat} ${address.huisnummer} ${address.huisnummertoevoeging ? address.huisnummertoevoeging : ''}, ${address.postcode} ${address.woonplaats}`
       )
     );
     store.dispatch(orderNext(question.next));
