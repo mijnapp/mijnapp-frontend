@@ -47,6 +47,8 @@ namespace MijnApp_Backend.Services
             var token = JObject.Parse(result);
             var list = (JArray)token.SelectToken("_embedded.item");
             var personList = list.ToObject<List<Persoon>>();
+            var index = personList.FindIndex(_ => _.burgerservicenummer == person.burgerservicenummer);
+            personList.RemoveAt(index);
             personList.Insert(0, person);
             return personList;
         }
