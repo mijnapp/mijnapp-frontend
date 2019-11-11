@@ -180,6 +180,10 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
       this.addresses = state.address.data.filter(this.filterAddresses);
       this.hasSearched = true;
       this.searching = state.address.searching;
+      const self = this;
+      setTimeout(function () {
+          self.shadowRoot.querySelector("#foundAddresses").scrollIntoView();
+      }, 200);
     }
     if (state.address.reset) {
       this._reset();

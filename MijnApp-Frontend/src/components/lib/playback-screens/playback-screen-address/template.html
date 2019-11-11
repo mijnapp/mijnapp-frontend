@@ -10,7 +10,7 @@
   </div>
   <dom-if if="{{showApiResult(hasSearched, hasValidPostalCodeAndNumber)}}">
     <template>
-      <div class="Title">Gevonden adressen</div>
+      <div id="foundAddresses" class="Title">Gevonden adressen</div>
       <dom-if if="{{searching}}">
         <template>
           <div class="Subtitle">Ophalen adressen voor {{postalCode}}, {{number}}{{numberAddition}}</div>
