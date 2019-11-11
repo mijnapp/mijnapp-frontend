@@ -36,6 +36,7 @@
   box-sizing: border-box;
   background-color: var(--main-content-background-color);
 }
+.DownloadButton,
 .PrevButton {
   float: left;
 }
@@ -44,7 +45,7 @@
   float: right;
 }
 .ButtonInner {
-  display: flex;
+clear: both;
 }
 .ButtonInnerLeft,
 .ButtonInnerRight {
@@ -55,10 +56,6 @@
 .ButtonInnerText {
   display: inline-block;
   padding: 0 8px;
-}
-.ButtonInnerTextDownload {
-  display: inline-block;
-  padding: 0 3px;
 }
 .Title {
   margin-top: 16px;
@@ -159,10 +156,6 @@ maki-icon-cross {
 maki-icon-truck,
 maki-icon-bulb {
   --icon-size: 20px;
-}
-.DownloadButton {
-  margin: 16px 0;
-  display: inline-block;
 }
 .JourneyProgress {
   height: 30px;
