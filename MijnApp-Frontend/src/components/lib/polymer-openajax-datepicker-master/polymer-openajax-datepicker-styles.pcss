@@ -4,6 +4,7 @@
   min-height: 300px;
 
   --datepicker-background-color: #FFF;
+  --datepicker-today-background-color: #E6E6E6;
   --datepicker-month-color: rgba(0, 0, 0, 0.38);
   --datepicker-width: 294px;
   --datepicker-zindex: 1000;
@@ -121,6 +122,7 @@ table#cal td {
 table#cal td.today {
   border-radius: 20px;
   border: 1px solid rgba(0, 0, 0, 0.12);
+  background: var(--datepicker-today-background-color);
 }
 
 table#cal td.disabled {
