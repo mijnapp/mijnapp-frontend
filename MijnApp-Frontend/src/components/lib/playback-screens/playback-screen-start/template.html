@@ -23,6 +23,20 @@
                 <div class="Subtitle">[[_subtitle(journey)]]</div>
             </div>
             <div class="SectionTitle">
+                <maki-icon-steps></maki-icon-steps>
+                <div>Deze stappen ga je doorlopen</div>
+            </div>
+            <div class="DotList">
+                <dom-repeat items="[[_steps(journey)]]">
+                    <template>
+                        <div class="DotListItem">
+                            <div class="Dot"></div>
+                            <div class="Text">[[item]]</div>
+                        </div>
+                    </template>
+                </dom-repeat>
+            </div>
+            <div class="SectionTitle">
                 <maki-icon-edit-document></maki-icon-edit-document>
                 <div>Benodigde documenten</div>
             </div>
@@ -46,20 +60,6 @@
                     </div>
                 </template>
             </dom-if>
-            <div class="SectionTitle">
-                <maki-icon-steps></maki-icon-steps>
-                <div>Deze stappen ga je doorlopen</div>
-            </div>
-            <div class="DotList">
-                <dom-repeat items="[[_steps(journey)]]">
-                    <template>
-                        <div class="DotListItem">
-                            <div class="Dot"></div>
-                            <div class="Text">[[item]]</div>
-                        </div>
-                    </template>
-                </dom-repeat>
-            </div>
             <dom-if if="{{preconditionsFullFilled}}">
                 <template>
                     <div class="ButtonContainer">
