@@ -27,7 +27,7 @@ export default class PlaybackScreenStart extends connect(store)(
   }
 
   _stop() {
-    store.dispatch(selectPage('home'));
+    store.dispatch(selectPage('journeys'));
   }
 
   _title(journey) {
