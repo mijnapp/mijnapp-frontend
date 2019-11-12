@@ -34,10 +34,10 @@ export default class MafScreenPersonData extends connect(store)(
   }
 
   _normalDate(date) {
-    if (date === null) {
+    if (date === null || date === undefined || date.date === null) {
       return 'Onbekend';
     }
-    date = new Date(date);
+    date = new Date(date.date);
     return toDutchDate(date);
   }
 

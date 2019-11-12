@@ -6,6 +6,11 @@ namespace MijnApp.Domain.Models
 {
     public class Geboorte
     {
-        public string datum { get; set; }
+        public Datum datum { get; set; }
+    }
+
+    public class Datum
+    {
+        public string date { get; set; }
     }
 }
