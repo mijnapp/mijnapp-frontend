@@ -89,7 +89,7 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
         question.key || question.property,
         address.id,
         question.fieldName,
-        `${address.straat} ${address.huisnummer}${address.huisnummertoevoeging ? address.huisnummertoevoeging : ''}, ${address.woonplaats} ${address.postcode}`
+          `${address.straat} ${address.huisnummer} ${address.huisnummertoevoeging ? address.huisnummertoevoeging : ''}, ${address.postcode} ${address.woonplaats}`
       )
     );
     store.dispatch(orderNext(question.next));
@@ -101,10 +101,13 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
       const question = e.currentTarget.dataQuestion;
       const index = e.currentTarget.dataIndex;
       const address = this.addresses[index];
-      if (address.woonplaats !== '\'s-Hertogenbosch') {
+      if (address.woonplaats !== '\'s-Hertogenbosch'
+        && address.woonplaats !== 'Rosmalen'
+        && address.woonplaats !== 'Nuland'
+        && address.woonplaats !== 'Vinkel') {
         window.clearErrorDialog();
         window.errorTitle.innerHTML = 'Let op!';
-        window.errorText.innerHTML = 'Het nieuwe adres dat je opgeeft ligt niet in de gemeente \'s-Hertogenbosch. Kies op de gemeentekeuze pagina (<a href="https://www.burgerberichten.nl/gemeenten/verhuizen">https://www.burgerberichten.nl/gemeenten/verhuizen</a>) de gemeente van uw nieuwe adres.';
+        window.errorText.innerHTML = 'Het nieuwe adres dat je opgeeft ligt niet in de aangesloten gemeenten. Kies op <a href="https://www.burgerberichten.nl/gemeenten/verhuizen">deze pagina</a> de gemeente van je nieuwe adres.';
         window.errorButton.innerHTML = 'Ga terug';
         window.errorDialog.open();
       } else {
@@ -177,6 +180,10 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
       this.addresses = state.address.data.filter(this.filterAddresses);
       this.hasSearched = true;
       this.searching = state.address.searching;
+      const self = this;
+      setTimeout(function () {
+          self.shadowRoot.querySelector('#foundAddresses').scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+      }, 400);
     }
     if (state.address.reset) {
       this._reset();

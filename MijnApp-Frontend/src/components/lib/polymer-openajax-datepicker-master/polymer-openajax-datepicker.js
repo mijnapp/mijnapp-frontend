@@ -243,52 +243,66 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
   // @return N/A
   //
   _popGrid() {
-    var numDays = this._calcNumDays(this.year, this.month);
-    var startWeekday = this._calcStartWeekday(this.year, this.month);
-    var weekday = 0;
-    var curDay = 1;
-    var rowCount = 1;
-    var $tbody = this.$grid.querySelector('tbody');
-    var dayOfMonth = this.dateObj.date();
+    const numDays = this._calcNumDays(this.year, this.month);
+    const startWeekday = this._calcStartWeekday(this.year, this.month);
+    let weekday = 0;
+    let curDay = 1;
+    let rowCount = 1;
+    const $tbody = this.$grid.querySelector('tbody');
+    const dayOfMonth = this.dateObj.date();
 
-    var gridCells = '\t<tr id="row0">\n';
+    // Clear the table
+    while ($tbody.hasChildNodes()) {
+      $tbody.removeChild($tbody.firstChild);
+    }
 
-    // clear the grid
-    $tbody.innerHTML = '';
+    // Start for iteration
+    let gridCells = document.createElement('tr');
+    gridCells.setAttribute('id', 'row0');
 
     // Insert the leading empty cells
     for (weekday = 0; weekday < startWeekday; weekday++) {
-      gridCells += '\t\t<td class="empty">&nbsp;</td>\n';
+      const empty = document.createElement('td');
+      empty.classList.add('empty');
+      empty.innerHTML = '&nbsp;';
+      gridCells.appendChild(empty);
     }
 
     // insert the days of the month.
     for (curDay = 1; curDay <= numDays; curDay++) {
       if (curDay === dayOfMonth && this.currentDate === true) {
         // eslint-disable-next-line
-        gridCells += '\t\t<td id="day' + curDay + '" class="today" headers="row' + rowCount + ' ' + this.dayNames[weekday] + '" role="gridcell" aria-selected="false">' + curDay + '</td>';
+        const today = this.createDay(curDay, rowCount, weekday);
+        today.classList.add('today');
+        gridCells.appendChild(today);
       } else {
         // eslint-disable-next-line
-        gridCells += '\t\t<td id="day' + curDay + '" headers="row' + rowCount + ' ' + this.dayNames[weekday] + '" role="gridcell" aria-selected="false">' + curDay + '</td>';
+        const day = this.createDay(curDay, rowCount, weekday);
+        gridCells.appendChild(day);
       }
       if (weekday === 6 && curDay < numDays) {
-        // This was the last day of the week, close it out
-        // and begin a new one
-        gridCells += '\t</tr>\n\t<tr id="row' + rowCount + '">\n';
-        rowCount++;
-        weekday = 0;
+          // This was the last day of the week, close it out
+          // and begin a new one
+          $tbody.insertAdjacentElement('beforeend', gridCells);
+          gridCells = document.createElement('tr');
+          gridCells.setAttribute('id', `row${rowCount}`);
+          rowCount++;
+          weekday = 0;
       } else {
-        weekday += 1;
+          $tbody.insertAdjacentElement('beforeend', gridCells);
+          weekday += 1;
       }
     }
-
-    // Insert any trailing empty cells
-    for (weekday; weekday < 7; weekday++) {
-      gridCells += '\t\t<td class="empty">&nbsp;</td>\n';
-    }
-    gridCells += '\t</tr>';
-    $tbody.insertAdjacentHTML('beforeend', gridCells);
   }
-
+  createDay(curDay, rowCount, weekday) {
+    const day = document.createElement('td');
+    day.setAttribute('id', `day${curDay}`);
+    day.setAttribute('headers', `row${rowCount} ${this.dayNames[weekday]}`);
+    day.setAttribute('role', 'gridcell');
+    day.setAttribute('aria-selected', 'false');
+    day.innerHTML = curDay;
+    return day;
+  }
   /**
     * It adds a class disable to not available days (because they are before a min date or after a max date)
     * @method _updateAvailableDays

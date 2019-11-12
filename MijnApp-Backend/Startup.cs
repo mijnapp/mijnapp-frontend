@@ -58,9 +58,15 @@ namespace MijnApp_Backend
         {
             var httpContextAccessor = serviceProvider.GetService<IHttpContextAccessor>();
             var correlationId = JwtTokenProvider.GetCorrelationIdForLogging(httpContextAccessor.HttpContext.User);
-            httpClient.DefaultRequestHeaders.Add("MijnAppCorrelationId", correlationId);
+            httpClient.DefaultRequestHeaders.Add("X-NLX-Logrecord-ID", correlationId);
             httpClient.DefaultRequestHeaders.Accept.Clear();
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            var frontEndHeaders = httpContextAccessor.HttpContext.Request.Headers;
+            if (frontEndHeaders.ContainsKey("X-NLX-Request-Process-Id"))
+            {
+                var processId = frontEndHeaders["X-NLX-Request-Process-Id"].ToString();
+                httpClient.DefaultRequestHeaders.Add("X-NLX-Request-Process-Id", processId);
+            }
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

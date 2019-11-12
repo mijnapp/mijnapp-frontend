@@ -4,6 +4,7 @@
     {
         public string id { get; set; }
         public string burgerservicenummer { get; set; }
+        public int leeftijd { get; set; }
         //geheimhouding_persoonsgegevens
         //geslachtsaanduiding
         //leeftijd

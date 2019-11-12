@@ -50,21 +50,8 @@ namespace MijnApp_Backend.Controllers
         private async Task<bool> PreconditionsFullFilledForVerhuizen()
         {
             var loggedInPerson = await _personService.GetPersonFromApi(User);
-            if (loggedInPerson.geboorte != null && loggedInPerson.geboorte.datum != null)
-            {
-                var birthdate = DateTime.ParseExact(loggedInPerson.geboorte.datum, "yyyy-mm-dd", CultureInfo.InvariantCulture);
 
-                var today = DateTime.Today;
-                // Calculate the age.
-                var age = today.Year - birthdate.Year;
-                // Go back to the year the person was born in case of a leap year
-                if (birthdate.Date > today.AddYears(-age)) age--;
-
-                return age >= 16;
-            }
-
-            //TODO - For now return true. If not we can't start any journeys anymore
-            return true;
+            return loggedInPerson.leeftijd >= 16;
         }
     }
 }

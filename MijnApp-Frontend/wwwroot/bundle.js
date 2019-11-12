@@ -24779,44 +24779,69 @@ const Base = Object(_lib_legacy_legacy_element_mixin_js__WEBPACK_IMPORTED_MODULE
 
 /***/ }),
 
-/***/ "./node_modules/@redux-saga/core/dist/io-427945dd.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/@redux-saga/core/dist/io-427945dd.js ***!
-  \***********************************************************/
-/*! exports provided: $, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, _, a, a0, a1, a2, a3, a4, a5, a6, a7, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z */
+/***/ "./node_modules/@redux-saga/core/dist/chunk-e922c950.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@redux-saga/core/dist/chunk-e922c950.js ***!
+  \**************************************************************/
+/*! exports provided: a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, _, $, a0, a1, a2, a3, a4, a5, a6, a7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "$", function() { return apply; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "A", function() { return ALL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "B", function() { return logError; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "C", function() { return CALL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "D", function() { return wrapSagaDispatch; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "E", function() { return identity; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "F", function() { return FORK; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "G", function() { return GET_CONTEXT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H", function() { return buffers; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "I", function() { return detach; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "J", function() { return JOIN; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "K", function() { return take; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "L", function() { return fork; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "M", function() { return cancel; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "N", function() { return call; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "O", function() { return actionChannel; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "P", function() { return PUT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Q", function() { return sliding; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "R", function() { return RACE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "S", function() { return SELECT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "T", function() { return TAKE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "U", function() { return delay; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "V", function() { return race; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return kTrue; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return expanding; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return check; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return none; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return once; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return remove; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return internalErr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return TAKE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return PUT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return ALL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return RACE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return CALL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return CPS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return FORK; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return JOIN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return CANCEL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return SELECT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return ACTION_CHANNEL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return CANCELLED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return FLUSH; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "u", function() { return GET_CONTEXT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "v", function() { return SET_CONTEXT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "w", function() { return getMetaInfo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "x", function() { return noop; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "y", function() { return createAllStyleChildCallbacks; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "z", function() { return createEmptyArray; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "A", function() { return assignWithSymbols; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "B", function() { return makeIterator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "C", function() { return shouldComplete; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "D", function() { return flatMap; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "E", function() { return getLocation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "F", function() { return createSetContextWarning; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "G", function() { return asyncIteratorSymbol; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H", function() { return shouldCancel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "I", function() { return shouldTerminate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "J", function() { return logError; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "K", function() { return wrapSagaDispatch; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "L", function() { return identity; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "M", function() { return take; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "N", function() { return fork; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "O", function() { return cancel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "P", function() { return call; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Q", function() { return actionChannel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "R", function() { return sliding; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "S", function() { return delay; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "T", function() { return race; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "U", function() { return buffers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "V", function() { return detach; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "W", function() { return effectTypes; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "X", function() { return takeMaybe; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Y", function() { return put; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Z", function() { return putResolve; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_", function() { return all; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CPS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "$", function() { return apply; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a0", function() { return cps; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a1", function() { return spawn; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a2", function() { return join; });
@@ -24825,31 +24850,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a5", function() { return flush; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a6", function() { return getContext; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a7", function() { return setContext; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return CANCEL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return check; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return ACTION_CHANNEL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return expanding; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return CANCELLED; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return FLUSH; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return SET_CONTEXT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return internalErr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return getMetaInfo; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return kTrue; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return createAllStyleChildCallbacks; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return createEmptyArray; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return none; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return once; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return assignWithSymbols; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return makeIterator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return remove; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return shouldComplete; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return noop; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "u", function() { return flatMap; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "v", function() { return getLocation; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "w", function() { return createSetContextWarning; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "x", function() { return asyncIteratorSymbol; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "y", function() { return shouldCancel; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "z", function() { return shouldTerminate; });
 /* harmony import */ var _redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @redux-saga/symbols */ "./node_modules/@redux-saga/symbols/dist/redux-saga-symbols.esm.js");
 /* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
 /* harmony import */ var _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @redux-saga/is */ "./node_modules/@redux-saga/is/dist/redux-saga-is.esm.js");
@@ -24867,18 +24867,7 @@ var konst = function konst(v) {
 var kTrue =
 /*#__PURE__*/
 konst(true);
-
 var noop = function noop() {};
-
-if ( true && typeof Proxy !== 'undefined') {
-  noop =
-  /*#__PURE__*/
-  new Proxy(noop, {
-    set: function set() {
-      throw internalErr('There was an attempt to assign a property to internal `noop` function.');
-    }
-  });
-}
 var identity = function identity(v) {
   return v;
 };
@@ -25209,7 +25198,7 @@ var effectTypes = /*#__PURE__*/Object.freeze({
   SET_CONTEXT: SET_CONTEXT
 });
 
-var TEST_HINT = '\n(HINT: if you are getting these errors in tests, consider using createMockTask from @redux-saga/testing-utils)';
+var TEST_HINT = '\n(HINT: if you are getting this errors in tests, consider using createMockTask from @redux-saga/testing-utils)';
 
 var makeEffect = function makeEffect(type, payload) {
   var _ref;
@@ -25539,17 +25528,17 @@ call.bind(null, _redux_saga_delay_p__WEBPACK_IMPORTED_MODULE_3__["default"]);
 /*!*******************************************************************!*\
   !*** ./node_modules/@redux-saga/core/dist/redux-saga-core.esm.js ***!
   \*******************************************************************/
-/*! exports provided: CANCEL, SAGA_LOCATION, buffers, detach, default, END, channel, eventChannel, isEnd, multicastChannel, runSaga, stdChannel */
+/*! exports provided: CANCEL, SAGA_LOCATION, buffers, detach, default, runSaga, END, isEnd, eventChannel, channel, multicastChannel, stdChannel */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "END", function() { return END; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "channel", function() { return channel; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "eventChannel", function() { return eventChannel; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isEnd", function() { return isEnd; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "multicastChannel", function() { return multicastChannel; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "runSaga", function() { return runSaga; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "END", function() { return END; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isEnd", function() { return isEnd; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "eventChannel", function() { return eventChannel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "channel", function() { return channel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "multicastChannel", function() { return multicastChannel; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stdChannel", function() { return stdChannel; });
 /* harmony import */ var _redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @redux-saga/symbols */ "./node_modules/@redux-saga/symbols/dist/redux-saga-symbols.esm.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CANCEL", function() { return _redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__["CANCEL"]; });
@@ -25559,10 +25548,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
 /* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
 /* harmony import */ var _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @redux-saga/is */ "./node_modules/@redux-saga/is/dist/redux-saga-is.esm.js");
-/* harmony import */ var _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./io-427945dd.js */ "./node_modules/@redux-saga/core/dist/io-427945dd.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "buffers", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["H"]; });
+/* harmony import */ var _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./chunk-e922c950.js */ "./node_modules/@redux-saga/core/dist/chunk-e922c950.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "buffers", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["U"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "detach", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["I"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "detach", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["V"]; });
 
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _redux_saga_deferred__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @redux-saga/deferred */ "./node_modules/@redux-saga/deferred/dist/redux-saga-deferred.esm.js");
@@ -25680,7 +25669,7 @@ var symbol = function symbol(pattern) {
   };
 };
 var wildcard = function wildcard() {
-  return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["k"];
+  return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["a"];
 };
 function matcher(pattern) {
   // prettier-ignore
@@ -25704,30 +25693,30 @@ var INVALID_BUFFER = 'invalid buffer passed to channel factory function';
 var UNDEFINED_INPUT_ERROR = "Saga or channel was provided with an undefined action\nHints:\n  - check that your Action Creator returns a non-undefined value\n  - if the Saga was started using runSaga, check that your subscribe source provides the action to its listeners";
 function channel(buffer$1) {
   if (buffer$1 === void 0) {
-    buffer$1 = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["e"])();
+    buffer$1 = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["b"])();
   }
 
   var closed = false;
   var takers = [];
 
   if (true) {
-    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(buffer$1, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["buffer"], INVALID_BUFFER);
+    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(buffer$1, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["buffer"], INVALID_BUFFER);
   }
 
   function checkForbiddenStates() {
     if (closed && takers.length) {
-      throw Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["i"])(CLOSED_CHANNEL_WITH_TAKERS);
+      throw Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["g"])(CLOSED_CHANNEL_WITH_TAKERS);
     }
 
     if (takers.length && !buffer$1.isEmpty()) {
-      throw Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["i"])('Cannot have pending takers with non empty buffer');
+      throw Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["g"])('Cannot have pending takers with non empty buffer');
     }
   }
 
   function put(input) {
     if (true) {
       checkForbiddenStates();
-      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(input, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["notUndef"], UNDEFINED_INPUT_ERROR);
+      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(input, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["notUndef"], UNDEFINED_INPUT_ERROR);
     }
 
     if (closed) {
@@ -25745,7 +25734,7 @@ function channel(buffer$1) {
   function take(cb) {
     if (true) {
       checkForbiddenStates();
-      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(cb, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], "channel.take's callback must be a function");
+      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(cb, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], "channel.take's callback must be a function");
     }
 
     if (closed && buffer$1.isEmpty()) {
@@ -25756,7 +25745,7 @@ function channel(buffer$1) {
       takers.push(cb);
 
       cb.cancel = function () {
-        Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["r"])(takers, cb);
+        Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["f"])(takers, cb);
       };
     }
   }
@@ -25764,7 +25753,7 @@ function channel(buffer$1) {
   function flush(cb) {
     if (true) {
       checkForbiddenStates();
-      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(cb, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], "channel.flush' callback must be a function");
+      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(cb, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], "channel.flush' callback must be a function");
     }
 
     if (closed && buffer$1.isEmpty()) {
@@ -25803,7 +25792,7 @@ function channel(buffer$1) {
 }
 function eventChannel(subscribe, buffer) {
   if (buffer === void 0) {
-    buffer = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["n"])();
+    buffer = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["d"])();
   }
 
   var closed = false;
@@ -25834,10 +25823,10 @@ function eventChannel(subscribe, buffer) {
   });
 
   if (true) {
-    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(unsubscribe, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'in eventChannel: subscribe should return a function to unsubscribe');
+    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(unsubscribe, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'in eventChannel: subscribe should return a function to unsubscribe');
   }
 
-  unsubscribe = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["o"])(unsubscribe);
+  unsubscribe = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["e"])(unsubscribe);
 
   if (closed) {
     unsubscribe();
@@ -25858,7 +25847,7 @@ function multicastChannel() {
 
   function checkForbiddenStates() {
     if (closed && nextTakers.length) {
-      throw Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["i"])(CLOSED_CHANNEL_WITH_TAKERS);
+      throw Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["g"])(CLOSED_CHANNEL_WITH_TAKERS);
     }
   }
 
@@ -25886,7 +25875,7 @@ function multicastChannel() {
   return _ref = {}, _ref[_redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__["MULTICAST"]] = true, _ref.put = function put(input) {
     if (true) {
       checkForbiddenStates();
-      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(input, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["notUndef"], UNDEFINED_INPUT_ERROR);
+      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(input, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["notUndef"], UNDEFINED_INPUT_ERROR);
     }
 
     if (closed) {
@@ -25925,9 +25914,9 @@ function multicastChannel() {
     cb[_redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__["MATCH"]] = matcher;
     ensureCanMutateNextTakers();
     nextTakers.push(cb);
-    cb.cancel = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["o"])(function () {
+    cb.cancel = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["e"])(function () {
       ensureCanMutateNextTakers();
-      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["r"])(nextTakers, cb);
+      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["f"])(nextTakers, cb);
     });
   }, _ref.close = close, _ref;
 }
@@ -25967,7 +25956,7 @@ function resolvePromise(promise, cb) {
 }
 
 var current = 0;
-var nextSagaId = (function () {
+var nextEffectId = (function () {
   return ++current;
 });
 
@@ -25980,7 +25969,7 @@ function getIteratorMetaInfo(iterator, fn) {
     };
   }
 
-  return Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["j"])(fn);
+  return Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["w"])(fn);
 }
 
 function createTaskIterator(_ref) {
@@ -26014,11 +26003,11 @@ function createTaskIterator(_ref) {
       }
     };
 
-    return Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["q"])(next);
+    return Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["B"])(next);
   } catch (err) {
     // do not bubble up synchronous failures for detached forks
     // instead create a failed task. See #152 and #441
-    return Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["q"])(function () {
+    return Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["B"])(function () {
       throw err;
     });
   }
@@ -26099,7 +26088,7 @@ function runCallEffect(env, _ref4, cb, _ref5) {
 
     if (Object(_redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["iterator"])(result)) {
       // resolve iterator
-      proc(env, result, task.context, current, Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["j"])(fn),
+      proc(env, result, task.context, current, Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["w"])(fn),
       /* isRoot */
       false, cb);
       return;
@@ -26151,7 +26140,7 @@ function runForkEffect(env, _ref7, cb, _ref8) {
   });
   var meta = getIteratorMetaInfo(taskIterator, fn);
   immediately(function () {
-    var child = proc(env, taskIterator, parent.context, current, meta, detached, undefined);
+    var child = proc(env, taskIterator, parent.context, current, meta, detached, _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"]);
 
     if (detached) {
       cb(child);
@@ -26179,7 +26168,7 @@ function runJoinEffect(env, taskOrTasks, cb, _ref9) {
       };
 
       cb.cancel = function () {
-        if (taskToJoin.isRunning()) Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["r"])(taskToJoin.joiners, joiner);
+        if (taskToJoin.isRunning()) Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["f"])(taskToJoin.joiners, joiner);
       };
 
       taskToJoin.joiners.push(joiner);
@@ -26198,7 +26187,7 @@ function runJoinEffect(env, taskOrTasks, cb, _ref9) {
       return;
     }
 
-    var childCallbacks = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["l"])(taskOrTasks, cb);
+    var childCallbacks = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["y"])(taskOrTasks, cb);
     taskOrTasks.forEach(function (t, i) {
       joinSingleTask(t, childCallbacks[i]);
     });
@@ -26237,7 +26226,7 @@ function runAllEffect(env, effects, cb, _ref11) {
     return;
   }
 
-  var childCallbacks = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["l"])(effects, cb);
+  var childCallbacks = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["y"])(effects, cb);
   keys.forEach(function (key) {
     digestEffect(effects[key], effectId, childCallbacks[key], key);
   });
@@ -26247,7 +26236,7 @@ function runRaceEffect(env, effects, cb, _ref12) {
   var digestEffect = _ref12.digestEffect;
   var effectId = current;
   var keys = Object.keys(effects);
-  var response = Object(_redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["array"])(effects) ? Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["m"])(keys.length) : {};
+  var response = Object(_redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["array"])(effects) ? Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["z"])(keys.length) : {};
   var childCbs = {};
   var completed = false;
   keys.forEach(function (key) {
@@ -26256,7 +26245,7 @@ function runRaceEffect(env, effects, cb, _ref12) {
         return;
       }
 
-      if (isErr || Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["s"])(res)) {
+      if (isErr || Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["C"])(res)) {
         // Race Auto cancellation
         cb.cancel();
         cb(res, isErr);
@@ -26268,7 +26257,7 @@ function runRaceEffect(env, effects, cb, _ref12) {
       }
     };
 
-    chCbAtKey.cancel = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
+    chCbAtKey.cancel = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
     childCbs[key] = chCbAtKey;
   });
 
@@ -26344,11 +26333,11 @@ function runGetContextEffect(env, prop, cb, _ref16) {
 
 function runSetContextEffect(env, props, cb, _ref17) {
   var task = _ref17.task;
-  Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["p"])(task.context, props);
+  Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["A"])(task.context, props);
   cb();
 }
 
-var effectRunnerMap = (_effectRunnerMap = {}, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["T"]] = runTakeEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["P"]] = runPutEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["A"]] = runAllEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["R"]] = runRaceEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["C"]] = runCallEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["a"]] = runCPSEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["F"]] = runForkEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["J"]] = runJoinEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["b"]] = runCancelEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["S"]] = runSelectEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["d"]] = runChannelEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["f"]] = runCancelledEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["g"]] = runFlushEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["G"]] = runGetContextEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["h"]] = runSetContextEffect, _effectRunnerMap);
+var effectRunnerMap = (_effectRunnerMap = {}, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["h"]] = runTakeEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["i"]] = runPutEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["j"]] = runAllEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["k"]] = runRaceEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["l"]] = runCallEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["m"]] = runCPSEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["n"]] = runForkEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["o"]] = runJoinEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["p"]] = runCancelEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["q"]] = runSelectEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["r"]] = runChannelEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["s"]] = runCancelledEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["t"]] = runFlushEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["u"]] = runGetContextEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["v"]] = runSetContextEffect, _effectRunnerMap);
 
 /**
  Used to track a parent task and its forks
@@ -26390,8 +26379,8 @@ function forkQueue(mainTask, onAbort, cont) {
         return;
       }
 
-      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["r"])(tasks, task);
-      task.cont = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
+      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["f"])(tasks, task);
+      task.cont = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
 
       if (isErr) {
         abort(res);
@@ -26415,7 +26404,7 @@ function forkQueue(mainTask, onAbort, cont) {
 
     completed = true;
     tasks.forEach(function (t) {
-      t.cont = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
+      t.cont = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
       t.cancel();
     });
     tasks = [];
@@ -26436,7 +26425,7 @@ function formatLocation(fileName, lineNumber) {
 }
 
 function effectLocationAsString(effect) {
-  var location = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["v"])(effect);
+  var location = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["E"])(effect);
 
   if (location) {
     var code = location.code,
@@ -26461,7 +26450,7 @@ function sagaLocationAsString(sagaMeta) {
 }
 
 function cancelledTasksAsString(sagaStack) {
-  var cancelledTasks = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["u"])(function (i) {
+  var cancelledTasks = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["D"])(function (i) {
     return i.cancelledTasks;
   }, sagaStack);
 
@@ -26510,10 +26499,6 @@ var toString = function toString() {
 
 function newTask(env, mainTask, parentContext, parentEffectId, meta, isRoot, cont) {
   var _task;
-
-  if (cont === void 0) {
-    cont = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
-  }
 
   var status = RUNNING;
   var taskResult;
@@ -26587,10 +26572,10 @@ function newTask(env, mainTask, parentContext, parentEffectId, meta, isRoot, con
 
   function setContext(props) {
     if (true) {
-      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(props, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["object"], Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["w"])('task', props));
+      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(props, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["object"], Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["F"])('task', props));
     }
 
-    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["p"])(context, props);
+    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["A"])(context, props);
   }
 
   function toPromise() {
@@ -26624,7 +26609,7 @@ function newTask(env, mainTask, parentContext, parentEffectId, meta, isRoot, con
 }
 
 function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont) {
-  if ( true && iterator$1[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["x"]]) {
+  if ( true && iterator$1[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["G"]]) {
     throw new Error("redux-saga doesn't support async generators, please use only regular ones");
   }
 
@@ -26635,27 +26620,28 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
     on it. It allows propagating cancellation to child effects
   **/
 
-  next.cancel = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
+  next.cancel = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
   /** Creates a main task to track the main flow */
 
   var mainTask = {
     meta: meta,
     cancel: cancelMain,
     status: RUNNING
-  };
-  /**
-   Creates a new task descriptor for this generator.
-   A task is the aggregation of it's mainTask and all it's forked tasks.
-   **/
+    /**
+     Creates a new task descriptor for this generator.
+     A task is the aggregation of it's mainTask and all it's forked tasks.
+     **/
 
+  };
   var task = newTask(env, mainTask, parentContext, parentEffectId, meta, isRoot, cont);
   var executingContext = {
     task: task,
     digestEffect: digestEffect
+    /**
+      cancellation of the main task. We'll simply resume the Generator with a TASK_CANCEL
+    **/
+
   };
-  /**
-    cancellation of the main task. We'll simply resume the Generator with a TASK_CANCEL
-  **/
 
   function cancelMain() {
     if (mainTask.status === RUNNING) {
@@ -26669,10 +26655,7 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
   **/
 
 
-  if (cont) {
-    cont.cancel = task.cancel;
-  } // kicks up the generator
-
+  cont.cancel = task.cancel; // kicks up the generator
 
   next(); // then return the task descriptor to the caller
 
@@ -26695,7 +26678,7 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
         result = iterator$1.throw(arg); // user handled the error, we can clear bookkept values
 
         clear();
-      } else if (Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["y"])(arg)) {
+      } else if (Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["H"])(arg)) {
         /**
           getting TASK_CANCEL automatically cancels the main task
           We can get this value here
@@ -26717,7 +26700,7 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
           done: true,
           value: _redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__["TASK_CANCEL"]
         };
-      } else if (Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["z"])(arg)) {
+      } else if (Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["I"])(arg)) {
         // We get TERMINATE flag, i.e. by taking from a channel that ended using `take` (and not `takem` used to trap End of channels)
         result = Object(_redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"])(iterator$1.return) ? iterator$1.return() : {
           done: true
@@ -26782,7 +26765,7 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
       label = '';
     }
 
-    var effectId = nextSagaId();
+    var effectId = nextEffectId();
     env.sagaMonitor && env.sagaMonitor.effectTriggered({
       effectId: effectId,
       parentEffectId: parentEffectId,
@@ -26803,7 +26786,7 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
       }
 
       effectSettled = true;
-      cb.cancel = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"]; // defensive measure
+      cb.cancel = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"]; // defensive measure
 
       if (env.sagaMonitor) {
         if (isErr) {
@@ -26821,7 +26804,7 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
     } // tracks down the current cancel
 
 
-    currCb.cancel = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"]; // setup cancellation logic on the parent cb
+    currCb.cancel = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"]; // setup cancellation logic on the parent cb
 
     cb.cancel = function () {
       // prevents cancelling an already completed effect
@@ -26832,7 +26815,7 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
       effectSettled = true;
       currCb.cancel(); // propagates cancel downward
 
-      currCb.cancel = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"]; // defensive measure
+      currCb.cancel = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"]; // defensive measure
 
       env.sagaMonitor && env.sagaMonitor.effectCancelled(effectId);
     };
@@ -26853,32 +26836,32 @@ function runSaga(_ref, saga) {
       sagaMonitor = _ref.sagaMonitor,
       effectMiddlewares = _ref.effectMiddlewares,
       _ref$onError = _ref.onError,
-      onError = _ref$onError === void 0 ? _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["B"] : _ref$onError;
-
-  if (true) {
-    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(saga, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], NON_GENERATOR_ERR);
-  }
+      onError = _ref$onError === void 0 ? _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["J"] : _ref$onError;
 
   for (var _len = arguments.length, args = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
     args[_key - 2] = arguments[_key];
   }
 
+  if (true) {
+    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(saga, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], NON_GENERATOR_ERR);
+  }
+
   var iterator$1 = saga.apply(void 0, args);
 
   if (true) {
-    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(iterator$1, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["iterator"], NON_GENERATOR_ERR);
+    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(iterator$1, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["iterator"], NON_GENERATOR_ERR);
   }
 
-  var effectId = nextSagaId();
+  var effectId = nextEffectId();
 
   if (sagaMonitor) {
     // monitors are expected to have a certain interface, let's fill-in any missing ones
-    sagaMonitor.rootSagaStarted = sagaMonitor.rootSagaStarted || _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
-    sagaMonitor.effectTriggered = sagaMonitor.effectTriggered || _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
-    sagaMonitor.effectResolved = sagaMonitor.effectResolved || _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
-    sagaMonitor.effectRejected = sagaMonitor.effectRejected || _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
-    sagaMonitor.effectCancelled = sagaMonitor.effectCancelled || _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
-    sagaMonitor.actionDispatched = sagaMonitor.actionDispatched || _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
+    sagaMonitor.rootSagaStarted = sagaMonitor.rootSagaStarted || _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
+    sagaMonitor.effectTriggered = sagaMonitor.effectTriggered || _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
+    sagaMonitor.effectResolved = sagaMonitor.effectResolved || _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
+    sagaMonitor.effectRejected = sagaMonitor.effectRejected || _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
+    sagaMonitor.effectCancelled = sagaMonitor.effectCancelled || _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
+    sagaMonitor.actionDispatched = sagaMonitor.actionDispatched || _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
     sagaMonitor.rootSagaStarted({
       effectId: effectId,
       saga: saga,
@@ -26888,22 +26871,22 @@ function runSaga(_ref, saga) {
 
   if (true) {
     if (Object(_redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["notUndef"])(dispatch)) {
-      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(dispatch, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'dispatch must be a function');
+      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(dispatch, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'dispatch must be a function');
     }
 
     if (Object(_redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["notUndef"])(getState)) {
-      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(getState, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'getState must be a function');
+      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(getState, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'getState must be a function');
     }
 
     if (Object(_redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["notUndef"])(effectMiddlewares)) {
       var MIDDLEWARE_TYPE_ERROR = 'effectMiddlewares must be an array of functions';
-      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(effectMiddlewares, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["array"], MIDDLEWARE_TYPE_ERROR);
+      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(effectMiddlewares, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["array"], MIDDLEWARE_TYPE_ERROR);
       effectMiddlewares.forEach(function (effectMiddleware) {
-        return Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(effectMiddleware, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], MIDDLEWARE_TYPE_ERROR);
+        return Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(effectMiddleware, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], MIDDLEWARE_TYPE_ERROR);
       });
     }
 
-    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(onError, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'onError passed to the redux-saga is not a function!');
+    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(onError, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'onError passed to the redux-saga is not a function!');
   }
 
   var finalizeRunEffect;
@@ -26921,21 +26904,21 @@ function runSaga(_ref, saga) {
       };
     };
   } else {
-    finalizeRunEffect = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["E"];
+    finalizeRunEffect = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["L"];
   }
 
   var env = {
     channel: channel,
-    dispatch: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["D"])(dispatch),
+    dispatch: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["K"])(dispatch),
     getState: getState,
     sagaMonitor: sagaMonitor,
     onError: onError,
     finalizeRunEffect: finalizeRunEffect
   };
   return immediately(function () {
-    var task = proc(env, iterator$1, context, effectId, Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["j"])(saga),
+    var task = proc(env, iterator$1, context, effectId, Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["w"])(saga),
     /* isRoot */
-    true, undefined);
+    true, _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"]);
 
     if (sagaMonitor) {
       sagaMonitor.effectResolved(effectId, task);
@@ -26961,7 +26944,7 @@ function sagaMiddlewareFactory(_ref) {
   var boundRunSaga;
 
   if (true) {
-    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(channel, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["channel"], 'options.channel passed to the Saga middleware is not a channel');
+    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(channel, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["channel"], 'options.channel passed to the Saga middleware is not a channel');
   }
 
   function sagaMiddleware(_ref3) {
@@ -26998,10 +26981,10 @@ function sagaMiddlewareFactory(_ref) {
 
   sagaMiddleware.setContext = function (props) {
     if (true) {
-      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(props, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["object"], Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["w"])('sagaMiddleware', props));
+      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(props, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["object"], Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["F"])('sagaMiddleware', props));
     }
 
-    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["p"])(context, props);
+    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["A"])(context, props);
   };
 
   return sagaMiddleware;
@@ -27017,7 +27000,7 @@ function sagaMiddlewareFactory(_ref) {
 /*!**********************************************************************!*\
   !*** ./node_modules/@redux-saga/core/dist/redux-saga-effects.esm.js ***!
   \**********************************************************************/
-/*! exports provided: actionChannel, all, apply, call, cancel, cancelled, cps, delay, effectTypes, flush, fork, getContext, join, put, putResolve, race, select, setContext, spawn, take, takeMaybe, debounce, retry, takeEvery, takeLatest, takeLeading, throttle */
+/*! exports provided: effectTypes, take, takeMaybe, put, putResolve, all, race, call, apply, cps, fork, spawn, join, cancel, select, actionChannel, cancelled, flush, getContext, setContext, delay, debounce, retry, takeEvery, takeLatest, takeLeading, throttle */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -27031,48 +27014,48 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @redux-saga/symbols */ "./node_modules/@redux-saga/symbols/dist/redux-saga-symbols.esm.js");
 /* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
 /* harmony import */ var _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @redux-saga/is */ "./node_modules/@redux-saga/is/dist/redux-saga-is.esm.js");
-/* harmony import */ var _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./io-427945dd.js */ "./node_modules/@redux-saga/core/dist/io-427945dd.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "actionChannel", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["O"]; });
+/* harmony import */ var _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./chunk-e922c950.js */ "./node_modules/@redux-saga/core/dist/chunk-e922c950.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "effectTypes", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["W"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "all", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["_"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "take", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["M"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "apply", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["$"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "takeMaybe", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["X"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "call", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["N"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "put", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["Y"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancel", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["M"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "putResolve", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["Z"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancelled", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a4"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "all", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["_"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cps", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a0"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "race", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["T"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "delay", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["U"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "call", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["P"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "effectTypes", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["W"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "apply", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["$"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "flush", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a5"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cps", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a0"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "fork", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "fork", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getContext", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a6"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "spawn", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a1"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "join", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a2"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "join", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a2"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "put", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["Y"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancel", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["O"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "putResolve", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["Z"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "select", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a3"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "race", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["V"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "actionChannel", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["Q"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "select", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a3"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancelled", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a4"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "setContext", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a7"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "flush", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a5"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "spawn", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a1"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getContext", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a6"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "take", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["K"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "setContext", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a7"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "takeMaybe", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["X"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "delay", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["S"]; });
 
 /* harmony import */ var _redux_saga_delay_p__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @redux-saga/delay-p */ "./node_modules/@redux-saga/delay-p/dist/redux-saga-delay-p.esm.js");
 
@@ -27130,7 +27113,7 @@ function fsmIterator(fsm, startState, name) {
     }
   }
 
-  return Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["q"])(next, function (error) {
+  return Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["B"])(next, function (error) {
     return next(null, error);
   }, name);
 }
@@ -27142,13 +27125,13 @@ function takeEvery(patternOrChannel, worker) {
 
   var yTake = {
     done: false,
-    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["K"])(patternOrChannel)
+    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["M"])(patternOrChannel)
   };
 
   var yFork = function yFork(ac) {
     return {
       done: false,
-      value: _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [worker].concat(args, [ac]))
+      value: _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [worker].concat(args, [ac]))
     };
   };
 
@@ -27181,20 +27164,20 @@ function takeLatest(patternOrChannel, worker) {
 
   var yTake = {
     done: false,
-    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["K"])(patternOrChannel)
+    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["M"])(patternOrChannel)
   };
 
   var yFork = function yFork(ac) {
     return {
       done: false,
-      value: _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [worker].concat(args, [ac]))
+      value: _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [worker].concat(args, [ac]))
     };
   };
 
   var yCancel = function yCancel(task) {
     return {
       done: false,
-      value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["M"])(task)
+      value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["O"])(task)
     };
   };
 
@@ -27243,13 +27226,13 @@ function takeLeading(patternOrChannel, worker) {
 
   var yTake = {
     done: false,
-    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["K"])(patternOrChannel)
+    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["M"])(patternOrChannel)
   };
 
   var yCall = function yCall(ac) {
     return {
       done: false,
-      value: _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [worker].concat(args, [ac]))
+      value: _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["P"].apply(void 0, [worker].concat(args, [ac]))
     };
   };
 
@@ -27284,26 +27267,26 @@ function throttle(delayLength, pattern, worker) {
   var action, channel;
   var yActionChannel = {
     done: false,
-    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["O"])(pattern, Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["Q"])(1))
+    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["Q"])(pattern, Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["R"])(1))
   };
 
   var yTake = function yTake() {
     return {
       done: false,
-      value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["K"])(channel)
+      value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["M"])(channel)
     };
   };
 
   var yFork = function yFork(ac) {
     return {
       done: false,
-      value: _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [worker].concat(args, [ac]))
+      value: _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [worker].concat(args, [ac]))
     };
   };
 
   var yDelay = {
     done: false,
-    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["U"])(delayLength)
+    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["S"])(delayLength)
   };
 
   var setAction = function setAction(ac) {
@@ -27353,11 +27336,11 @@ function retry(maxTries, delayLength, fn) {
 
   var yCall = {
     done: false,
-    value: _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [fn].concat(args))
+    value: _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["P"].apply(void 0, [fn].concat(args))
   };
   var yDelay = {
     done: false,
-    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["U"])(delayLength)
+    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["S"])(delayLength)
   };
   return fsmIterator({
     q1: function q1() {
@@ -27395,20 +27378,20 @@ function debounceHelper(delayLength, patternOrChannel, worker) {
   var action, raceOutput;
   var yTake = {
     done: false,
-    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["K"])(patternOrChannel)
+    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["M"])(patternOrChannel)
   };
   var yRace = {
     done: false,
-    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["V"])({
-      action: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["K"])(patternOrChannel),
-      debounce: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["U"])(delayLength)
+    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["T"])({
+      action: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["M"])(patternOrChannel),
+      debounce: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["S"])(delayLength)
     })
   };
 
   var yFork = function yFork(ac) {
     return {
       done: false,
-      value: _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [worker].concat(args, [ac]))
+      value: _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [worker].concat(args, [ac]))
     };
   };
 
@@ -27456,8 +27439,8 @@ function debounceHelper(delayLength, patternOrChannel, worker) {
 }
 
 var validateTakeEffect = function validateTakeEffect(fn, patternOrChannel, worker) {
-  Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["c"])(patternOrChannel, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], fn.name + " requires a pattern or channel");
-  Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["c"])(worker, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], fn.name + " requires a saga parameter");
+  Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["c"])(patternOrChannel, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], fn.name + " requires a pattern or channel");
+  Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["c"])(worker, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], fn.name + " requires a saga parameter");
 };
 
 function takeEvery$1(patternOrChannel, worker) {
@@ -27469,7 +27452,7 @@ function takeEvery$1(patternOrChannel, worker) {
     args[_key - 2] = arguments[_key];
   }
 
-  return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [takeEvery, patternOrChannel, worker].concat(args));
+  return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [takeEvery, patternOrChannel, worker].concat(args));
 }
 function takeLatest$1(patternOrChannel, worker) {
   if (true) {
@@ -27480,7 +27463,7 @@ function takeLatest$1(patternOrChannel, worker) {
     args[_key2 - 2] = arguments[_key2];
   }
 
-  return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [takeLatest, patternOrChannel, worker].concat(args));
+  return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [takeLatest, patternOrChannel, worker].concat(args));
 }
 function takeLeading$1(patternOrChannel, worker) {
   if (true) {
@@ -27491,33 +27474,33 @@ function takeLeading$1(patternOrChannel, worker) {
     args[_key3 - 2] = arguments[_key3];
   }
 
-  return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [takeLeading, patternOrChannel, worker].concat(args));
+  return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [takeLeading, patternOrChannel, worker].concat(args));
 }
 function throttle$1(ms, pattern, worker) {
   if (true) {
-    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["c"])(pattern, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], 'throttle requires a pattern');
-    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["c"])(worker, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], 'throttle requires a saga parameter');
+    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["c"])(pattern, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], 'throttle requires a pattern');
+    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["c"])(worker, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], 'throttle requires a saga parameter');
   }
 
   for (var _len4 = arguments.length, args = new Array(_len4 > 3 ? _len4 - 3 : 0), _key4 = 3; _key4 < _len4; _key4++) {
     args[_key4 - 3] = arguments[_key4];
   }
 
-  return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [throttle, ms, pattern, worker].concat(args));
+  return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [throttle, ms, pattern, worker].concat(args));
 }
 function retry$1(maxTries, delayLength, worker) {
   for (var _len5 = arguments.length, args = new Array(_len5 > 3 ? _len5 - 3 : 0), _key5 = 3; _key5 < _len5; _key5++) {
     args[_key5 - 3] = arguments[_key5];
   }
 
-  return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [retry, maxTries, delayLength, worker].concat(args));
+  return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["P"].apply(void 0, [retry, maxTries, delayLength, worker].concat(args));
 }
 function debounce(delayLength, pattern, worker) {
   for (var _len6 = arguments.length, args = new Array(_len6 > 3 ? _len6 - 3 : 0), _key6 = 3; _key6 < _len6; _key6++) {
     args[_key6 - 3] = arguments[_key6];
   }
 
-  return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [debounceHelper, delayLength, pattern, worker].concat(args));
+  return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [debounceHelper, delayLength, pattern, worker].concat(args));
 }
 
 
@@ -27597,31 +27580,31 @@ function delayP(ms, val) {
 /*!***************************************************************!*\
   !*** ./node_modules/@redux-saga/is/dist/redux-saga-is.esm.js ***!
   \***************************************************************/
-/*! exports provided: array, buffer, channel, effect, func, iterable, iterator, multicast, notUndef, number, object, observable, pattern, promise, sagaAction, string, stringableFunc, symbol, task, undef */
+/*! exports provided: undef, notUndef, func, number, string, array, object, promise, iterator, iterable, task, sagaAction, observable, buffer, pattern, channel, stringableFunc, symbol, multicast, effect */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "array", function() { return array; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buffer", function() { return buffer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "channel", function() { return channel; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "effect", function() { return effect; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "func", function() { return func; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "iterable", function() { return iterable; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "iterator", function() { return iterator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "multicast", function() { return multicast; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "undef", function() { return undef; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "notUndef", function() { return notUndef; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "func", function() { return func; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "number", function() { return number; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "object", function() { return object; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "observable", function() { return observable; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pattern", function() { return pattern; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "promise", function() { return promise; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sagaAction", function() { return sagaAction; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "string", function() { return string; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "array", function() { return array; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "object", function() { return object; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "promise", function() { return promise; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "iterator", function() { return iterator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "iterable", function() { return iterable; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "task", function() { return task; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sagaAction", function() { return sagaAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "observable", function() { return observable; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buffer", function() { return buffer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pattern", function() { return pattern; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "channel", function() { return channel; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stringableFunc", function() { return stringableFunc; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "symbol", function() { return symbol; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "task", function() { return task; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "undef", function() { return undef; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "multicast", function() { return multicast; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "effect", function() { return effect; });
 /* harmony import */ var _redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @redux-saga/symbols */ "./node_modules/@redux-saga/symbols/dist/redux-saga-symbols.esm.js");
 
 
@@ -27693,7 +27676,7 @@ var effect = function effect(eff) {
 /*!*************************************************************************!*\
   !*** ./node_modules/@redux-saga/symbols/dist/redux-saga-symbols.esm.js ***!
   \*************************************************************************/
-/*! exports provided: CANCEL, CHANNEL_END_TYPE, IO, MATCH, MULTICAST, SAGA_ACTION, SAGA_LOCATION, SELF_CANCELLATION, TASK, TASK_CANCEL, TERMINATE */
+/*! exports provided: CANCEL, CHANNEL_END_TYPE, IO, MATCH, MULTICAST, SAGA_ACTION, SELF_CANCELLATION, TASK, TASK_CANCEL, TERMINATE, SAGA_LOCATION */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -27704,11 +27687,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MATCH", function() { return MATCH; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MULTICAST", function() { return MULTICAST; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SAGA_ACTION", function() { return SAGA_ACTION; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SAGA_LOCATION", function() { return SAGA_LOCATION; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SELF_CANCELLATION", function() { return SELF_CANCELLATION; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TASK", function() { return TASK; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TASK_CANCEL", function() { return TASK_CANCEL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TERMINATE", function() { return TERMINATE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SAGA_LOCATION", function() { return SAGA_LOCATION; });
 var createSymbol = function createSymbol(name) {
   return "@@redux-saga/" + name;
 };
@@ -31462,7 +31445,7 @@ module.exports = function spread(callback) {
 
 
 var bind = __webpack_require__(/*! ./helpers/bind */ "./node_modules/axios/lib/helpers/bind.js");
-var isBuffer = __webpack_require__(/*! is-buffer */ "./node_modules/is-buffer/index.js");
+var isBuffer = __webpack_require__(/*! is-buffer */ "./node_modules/axios/node_modules/is-buffer/index.js");
 
 /*global toString:true*/
 
@@ -31797,10 +31780,10 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/is-buffer/index.js":
-/*!*****************************************!*\
-  !*** ./node_modules/is-buffer/index.js ***!
-  \*****************************************/
+/***/ "./node_modules/axios/node_modules/is-buffer/index.js":
+/*!************************************************************!*\
+  !*** ./node_modules/axios/node_modules/is-buffer/index.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -38603,7 +38586,7 @@ const connect = (store) => (baseElement) => class extends baseElement {
 /*!***********************************************************************!*\
   !*** ./node_modules/redux-saga/dist/redux-saga-core-npm-proxy.esm.js ***!
   \***********************************************************************/
-/*! exports provided: CANCEL, SAGA_LOCATION, buffers, detach, END, channel, eventChannel, isEnd, multicastChannel, runSaga, stdChannel, default */
+/*! exports provided: CANCEL, SAGA_LOCATION, buffers, detach, runSaga, END, isEnd, eventChannel, channel, multicastChannel, stdChannel, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -38617,17 +38600,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "detach", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["detach"]; });
 
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "runSaga", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["runSaga"]; });
+
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "END", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["END"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "channel", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["channel"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "eventChannel", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["eventChannel"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isEnd", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["isEnd"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "multicastChannel", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["multicastChannel"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "eventChannel", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["eventChannel"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "runSaga", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["runSaga"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "channel", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["channel"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "multicastChannel", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["multicastChannel"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "stdChannel", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["stdChannel"]; });
 
@@ -38645,53 +38628,53 @@ __webpack_require__.r(__webpack_exports__);
 /*!**************************************************************************!*\
   !*** ./node_modules/redux-saga/dist/redux-saga-effects-npm-proxy.esm.js ***!
   \**************************************************************************/
-/*! exports provided: actionChannel, all, apply, call, cancel, cancelled, cps, delay, effectTypes, flush, fork, getContext, join, put, putResolve, race, select, setContext, spawn, take, takeMaybe, debounce, retry, takeEvery, takeLatest, takeLeading, throttle */
+/*! exports provided: effectTypes, take, takeMaybe, put, putResolve, all, race, call, apply, cps, fork, spawn, join, cancel, select, actionChannel, cancelled, flush, getContext, setContext, delay, debounce, retry, takeEvery, takeLatest, takeLeading, throttle */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @redux-saga/core/effects */ "./node_modules/@redux-saga/core/dist/redux-saga-effects.esm.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "actionChannel", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["actionChannel"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "all", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["all"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "apply", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["apply"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "call", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["call"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancel", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["cancel"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancelled", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["cancelled"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cps", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["cps"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "delay", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["delay"]; });
-
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "effectTypes", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["effectTypes"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "flush", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["flush"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "take", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["take"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "fork", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["fork"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getContext", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["getContext"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "join", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["join"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "takeMaybe", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["takeMaybe"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "put", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["put"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "putResolve", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["putResolve"]; });
 
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "all", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["all"]; });
+
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "race", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["race"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "select", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["select"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "call", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["call"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "setContext", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["setContext"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "apply", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["apply"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cps", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["cps"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "fork", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["fork"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "spawn", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["spawn"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "take", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["take"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "join", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["join"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "takeMaybe", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["takeMaybe"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancel", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["cancel"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "select", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["select"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "actionChannel", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["actionChannel"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancelled", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["cancelled"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "flush", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["flush"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getContext", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["getContext"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "setContext", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["setContext"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "delay", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["delay"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "debounce", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["debounce"]; });
 
@@ -40145,7 +40128,7 @@ class MafApp extends (0, _connectMixin.connect)(_store.store)(_polymerElement.Po
       end: {
         check: {
           title: 'Controleer je gegevens',
-          subtitle: 'Controleer onderstaande gegevens goed en verzend het formulier.'
+          subtitle: ''
         },
         success: {
           title: 'Je idee is doorgegeven',
@@ -40163,7 +40146,7 @@ class MafApp extends (0, _connectMixin.connect)(_store.store)(_polymerElement.Po
         title: 'Wat wordt je nieuwe adres?',
         subtitle: 'Vul je postcode, huisnummer en eventuele toevoeging in van het nieuwe adres.',
         fieldName: 'nieuw adres',
-        fieldIcon: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNjAgNjAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDYwIDYwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8cGF0aCBkPSJNMzAsMjZjMy44NiwwLDctMy4xNDEsNy03cy0zLjE0LTctNy03cy03LDMuMTQxLTcsN1MyNi4xNCwyNiwzMCwyNnogTTMwLDE0YzIuNzU3LDAsNSwyLjI0Myw1LDVzLTIuMjQzLDUtNSw1DQoJCXMtNS0yLjI0My01LTVTMjcuMjQzLDE0LDMwLDE0eiIvPg0KCTxwYXRoIGQ9Ik0yOS44MjMsNTQuNzU3TDQ1LjE2NCwzMi42YzUuNzU0LTcuNjcxLDQuOTIyLTIwLjI4LTEuNzgxLTI2Ljk4MkMzOS43NjEsMS45OTUsMzQuOTQ1LDAsMjkuODIzLDANCgkJcy05LjkzOCwxLjk5NS0xMy41Niw1LjYxN2MtNi43MDMsNi43MDItNy41MzUsMTkuMzExLTEuODA0LDI2Ljk1MkwyOS44MjMsNTQuNzU3eiBNMTcuNjc3LDcuMDMxQzIwLjkyMiwzLjc4NywyNS4yMzUsMiwyOS44MjMsMg0KCQlzOC45MDEsMS43ODcsMTIuMTQ2LDUuMDMxYzYuMDUsNi4wNDksNi43OTUsMTcuNDM3LDEuNTczLDI0LjM5OUwyOS44MjMsNTEuMjQzTDE2LjA4MiwzMS40DQoJCUMxMC44ODIsMjQuNDY4LDExLjYyOCwxMy4wOCwxNy42NzcsNy4wMzF6Ii8+DQoJPHBhdGggZD0iTTQyLjExNyw0My4wMDdjLTAuNTUtMC4wNjctMS4wNDYsMC4zMjctMS4xMSwwLjg3NnMwLjMyOCwxLjA0NiwwLjg3NiwxLjExQzUyLjM5OSw0Ni4yMzEsNTgsNDkuNTY3LDU4LDUxLjUNCgkJYzAsMi43MTQtMTAuNjUyLDYuNS0yOCw2LjVTMiw1NC4yMTQsMiw1MS41YzAtMS45MzMsNS42MDEtNS4yNjksMTYuMTE3LTYuNTA3YzAuNTQ4LTAuMDY0LDAuOTQtMC41NjIsMC44NzYtMS4xMQ0KCQljLTAuMDY1LTAuNTQ5LTAuNTYxLTAuOTQ1LTEuMTEtMC44NzZDNy4zNTQsNDQuMjQ3LDAsNDcuNzM5LDAsNTEuNUMwLDU1LjcyNCwxMC4zMDUsNjAsMzAsNjBzMzAtNC4yNzYsMzAtOC41DQoJCUM2MCw0Ny43MzksNTIuNjQ2LDQ0LjI0Nyw0Mi4xMTcsNDMuMDA3eiIvPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=',
+        fieldIcon: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiANCgkJdmlld0JveD0iMCAwIDYwIDYwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA2MCA2MDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KCTxjaXJjbGUgc3R5bGU9Im9wYWNpdHk6MTtmaWxsOiNmNWY1ZjU7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjEuMzMyOTk5OTQ7c3Ryb2tlLWxpbmVjYXA6YnV0dDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6NDtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLWRhc2hvZmZzZXQ6MDtzdHJva2Utb3BhY2l0eToxO3BhaW50LW9yZGVyOm5vcm1hbCIgDQoJCQlpZD0icGF0aDUyOTAiIGN4PSIzMCIgY3k9IjMwIiByPSIzMCIgLz4NCgk8ZyBpZD0iZzQ3MzgiIHRyYW5zZm9ybT0ibWF0cml4KDAuOCwwLDAsMC44LDYsNikiIHN0eWxlPSJmaWxsOiMxZWJkZDM7ZmlsbC1vcGFjaXR5OjEiPg0KCQk8cGF0aCBkPSJtIDI5Ljk2NDIxMiwyNi4yNzU3IGMgMy4wODgsMCA1LjYsLTIuNTEyOCA1LjYsLTUuNiAwLC0zLjA4NzIgLTIuNTEyLC01LjYgLTUuNiwtNS42IC0zLjA4OCwwIC01LjYsMi41MTI4IC01LjYsNS42IDAsMy4wODcyIDIuNTEyLDUuNiA1LjYsNS42IHogbSAwLC05LjYgYyAyLjIwNTYsMCA0LDEuNzk0NCA0LDQgMCwyLjIwNTYgLTEuNzk0NCw0IC00LDQgLTIuMjA1NiwwIC00LC0xLjc5NDQgLTQsLTQgMCwtMi4yMDU2IDEuNzk0NCwtNCA0LC00IHoiIA0KCQkJCWlkPSJwYXRoNDczMiIgc3R5bGU9InN0cm9rZS13aWR0aDowLjgwMDAwMDAxO2ZpbGw6IzFlYmRkMztmaWxsLW9wYWNpdHk6MSIgLz4NCgkJPHBhdGggZD0ibSAyOS44MjI2MTIsNDkuMjgxMyAxMi4yNzI4LC0xNy43MjU2IGMgNC42MDMyLC02LjEzNjggMy45Mzc2LC0xNi4yMjQgLTEuNDI0OCwtMjEuNTg1NiAtMi44OTc2LC0yLjg5ODQgLTYuNzUwNCwtNC40OTQ0IC0xMC44NDgsLTQuNDk0NCAtNC4wOTc2LDAgLTcuOTUwNCwxLjU5NiAtMTAuODQ4LDQuNDkzNiAtNS4zNjI0LDUuMzYxNiAtNi4wMjgsMTUuNDQ4OCAtMS40NDMyLDIxLjU2MTYgeiBtIC05LjcxNjgsLTM4LjE4MDggYyAyLjU5NiwtMi41OTUyIDYuMDQ2NCwtNC4wMjQ4IDkuNzE2OCwtNC4wMjQ4IDMuNjcwNCwwIDcuMTIwOCwxLjQyOTYgOS43MTY4LDQuMDI0OCA0Ljg0LDQuODM5MiA1LjQzNiwxMy45NDk2IDEuMjU4NCwxOS41MTkyIGwgLTEwLjk3NTIsMTUuODUwNCAtMTAuOTkyOCwtMTUuODc0NCBjIC00LjE2LC01LjU0NTYgLTMuNTYzMiwtMTQuNjU2IDEuMjc2LC0xOS40OTUyIHoiIA0KCQkJCWlkPSJwYXRoNDczNCIgc3R5bGU9InN0cm9rZS13aWR0aDowLjgwMDAwMDAxO2ZpbGw6IzFlYmRkMztmaWxsLW9wYWNpdHk6MSIgLz4NCgkJPHBhdGggZD0ibSAzOS42OTM2LDQ0LjcwNTUxOSBjIC0wLjQ0LC0wLjA1MzYgLTAuODM2OCwwLjI2MTYgLTAuODg4LDAuNzAwOCAtMC4wNTEyLDAuNDM5MiAwLjI2MjQsMC44MzY4IDAuNzAwOCwwLjg4OCA4LjQxMjgsMC45OTA0IDEyLjg5MzYsMy42NTkyIDEyLjg5MzYsNS4yMDU2IDAsMi4xNzEyIC04LjUyMTYsNS4yIC0yMi40LDUuMiAtMTMuODc4NCwwIC0yMi40LC0zLjAyODggLTIyLjQsLTUuMiAwLC0xLjU0NjQgNC40ODA4LC00LjIxNTIgMTIuODkzNiwtNS4yMDU2IDAuNDM4NCwtMC4wNTEyIDAuNzUyLC0wLjQ0OTYgMC43MDA4LC0wLjg4OCAtMC4wNTIsLTAuNDM5MiAtMC40NDg4LC0wLjc1NiAtMC44ODgsLTAuNzAwOCAtOC40MjMyLDAuOTkyIC0xNC4zMDY0LDMuNzg1NiAtMTQuMzA2NCw2Ljc5NDQgMCwzLjM3OTIgOC4yNDQsNi44IDI0LDYuOCAxNS43NTYsMCAyNCwtMy40MjA4IDI0LC02LjggMCwtMy4wMDg4IC01Ljg4MzIsLTUuODAyNCAtMTQuMzA2NCwtNi43OTQ0IHoiIA0KCQkJCWlkPSJwYXRoNDczNiIgc3R5bGU9InN0cm9rZS13aWR0aDowLjgwMDAwMDAxO2ZpbGw6IzFlYmRkMztmaWxsLW9wYWNpdHk6MSIgLz4NCgk8L2c+DQo8L3N2Zz4=',
         next: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb'
       }, {
         id: 'ffefc10d-18fc-4a57-9431-5f7c8e98f1fb',
@@ -40173,7 +40156,7 @@ class MafApp extends (0, _connectMixin.connect)(_store.store)(_polymerElement.Po
         title: 'Wanneer ga je verhuizen?',
         subtitle: 'Kies je verhuisdatum in de onderstaande kalender.',
         fieldName: 'verhuisdatum',
-        fieldIcon: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNjAgNjAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDYwIDYwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8cGF0aCBkPSJNNTcsNGgtN1YxYzAtMC41NTMtMC40NDctMS0xLTFoLTdjLTAuNTUzLDAtMSwwLjQ0Ny0xLDF2M0gxOVYxYzAtMC41NTMtMC40NDctMS0xLTFoLTdjLTAuNTUzLDAtMSwwLjQ0Ny0xLDF2M0gzDQoJCUMyLjQ0Nyw0LDIsNC40NDcsMiw1djExdjQzYzAsMC41NTMsMC40NDcsMSwxLDFoNTRjMC41NTMsMCwxLTAuNDQ3LDEtMVYxNlY1QzU4LDQuNDQ3LDU3LjU1Myw0LDU3LDR6IE00MywyaDV2M3YzaC01VjVWMnogTTEyLDJoNQ0KCQl2M3YzaC01VjVWMnogTTQsNmg2djNjMCwwLjU1MywwLjQ0NywxLDEsMWg3YzAuNTUzLDAsMS0wLjQ0NywxLTFWNmgyMnYzYzAsMC41NTMsMC40NDcsMSwxLDFoN2MwLjU1MywwLDEtMC40NDcsMS0xVjZoNnY5SDRWNnoNCgkJIE00LDU4VjE3aDUydjQxSDR6Ii8+DQoJPHBhdGggZD0iTTM4LDIzaC03aC0yaC03aC0yaC05djl2MnY3djJ2OWg5aDJoN2gyaDdoMmg5di05di0ydi03di0ydi05aC05SDM4eiBNMzEsMjVoN3Y3aC03VjI1eiBNMzgsNDFoLTd2LTdoN1Y0MXogTTIyLDM0aDd2N2gtNw0KCQlWMzR6IE0yMiwyNWg3djdoLTdWMjV6IE0xMywyNWg3djdoLTdWMjV6IE0xMywzNGg3djdoLTdWMzR6IE0yMCw1MGgtN3YtN2g3VjUweiBNMjksNTBoLTd2LTdoN1Y1MHogTTM4LDUwaC03di03aDdWNTB6IE00Nyw1MGgtNw0KCQl2LTdoN1Y1MHogTTQ3LDQxaC03di03aDdWNDF6IE00NywyNXY3aC03di03SDQ3eiIvPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=',
+        fieldIcon: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiANCgkJdmlld0JveD0iMCAwIDYwIDYwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA2MCA2MDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KCTxjaXJjbGUgc3R5bGU9Im9wYWNpdHk6MTtmaWxsOiNmNWY1ZjU7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjEuMzMyOTk5OTQ7c3Ryb2tlLWxpbmVjYXA6YnV0dDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6NDtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLWRhc2hvZmZzZXQ6MDtzdHJva2Utb3BhY2l0eToxO3BhaW50LW9yZGVyOm5vcm1hbCIgDQoJCQlpZD0icGF0aDU0NDMiIGN4PSIzMCIgY3k9IjMwIiByPSIzMCIgLz4NCgk8ZyBpZD0iZzU0MzQiIHRyYW5zZm9ybT0ibWF0cml4KDAuNjQsMCwwLDAuNjQsMTAuOCwxMC44KSIgc3R5bGU9ImZpbGw6IzFlYmRkMztmaWxsLW9wYWNpdHk6MSI+DQoJCTxwYXRoIGQ9Ik0gNTcsNCBIIDUwIFYgMSBDIDUwLDAuNDQ3IDQ5LjU1MywwIDQ5LDAgSCA0MiBDIDQxLjQ0NywwIDQxLDAuNDQ3IDQxLDEgViA0IEggMTkgViAxIEMgMTksMC40NDcgMTguNTUzLDAgMTgsMCBIIDExIEMgMTAuNDQ3LDAgMTAsMC40NDcgMTAsMSBWIDQgSCAzIEMgMi40NDcsNCAyLDQuNDQ3IDIsNSB2IDExIDQzIGMgMCwwLjU1MyAwLjQ0NywxIDEsMSBoIDU0IGMgMC41NTMsMCAxLC0wLjQ0NyAxLC0xIFYgMTYgNSBDIDU4LDQuNDQ3IDU3LjU1Myw0IDU3LDQgWiBNIDQzLDIgaCA1IFYgNSA4IEggNDMgViA1IFogTSAxMiwyIGggNSBWIDUgOCBIIDEyIFYgNSBaIE0gNCw2IGggNiB2IDMgYyAwLDAuNTUzIDAuNDQ3LDEgMSwxIGggNyBjIDAuNTUzLDAgMSwtMC40NDcgMSwtMSBWIDYgaCAyMiB2IDMgYyAwLDAuNTUzIDAuNDQ3LDEgMSwxIGggNyBjIDAuNTUzLDAgMSwtMC40NDcgMSwtMSBWIDYgaCA2IHYgOSBIIDQgWiBNIDQsNTggViAxNyBoIDUyIHYgNDEgeiIJDQoJCQkJaWQ9InBhdGg1NDMwIiBzdHlsZT0iZmlsbDojMWViZGQzO2ZpbGwtb3BhY2l0eToxIiAvPg0KCQk8cGF0aCBkPSJtIDM4LDIzIGggLTcgLTIgLTcgLTIgLTkgdiA5IDIgNyAyIDkgaCA5IDIgNyAyIDcgMiA5IHYgLTkgLTIgLTcgLTIgLTkgaCAtOSB6IG0gLTcsMiBoIDcgdiA3IGggLTcgeiBtIDcsMTYgaCAtNyB2IC03IGggNyB6IE0gMjIsMzQgaCA3IHYgNyBoIC03IHogbSAwLC05IGggNyB2IDcgaCAtNyB6IG0gLTksMCBoIDcgdiA3IGggLTcgeiBtIDAsOSBoIDcgdiA3IGggLTcgeiBtIDcsMTYgaCAtNyB2IC03IGggNyB6IG0gOSwwIGggLTcgdiAtNyBoIDcgeiBtIDksMCBoIC03IHYgLTcgaCA3IHogbSA5LDAgaCAtNyB2IC03IGggNyB6IG0gMCwtOSBoIC03IHYgLTcgaCA3IHogbSAwLC0xNiB2IDcgaCAtNyB2IC03IHoiCQ0KCQkJCWlkPSJwYXRoNTQzMiIgc3R5bGU9ImZpbGw6IzFlYmRkMztmaWxsLW9wYWNpdHk6MSIgLz4NCgk8L2c+DQo8L3N2Zz4=',
         next: '37e30b1f-fb51-4d49-8756-fa5d4d55829a'
       }, {
         id: '37e30b1f-fb51-4d49-8756-fa5d4d55829a',
@@ -40182,7 +40165,7 @@ class MafApp extends (0, _connectMixin.connect)(_store.store)(_polymerElement.Po
         title: 'Met wie ga je verhuizen?',
         subtitle: 'Er wordt een bericht gestuurd naar de persoon die meeverhuist ' + '(onderstaande personen staan nu op hetzelfde adres als jij ' + 'ingeschreven)',
         fieldName: 'meeverhuizende personen',
-        fieldIcon: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTA1LjQgNTA1LjQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUwNS40IDUwNS40OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8Zz4NCgkJPHBhdGggZD0iTTQzNy4xLDIzMy40NWMxNC44LTEwLjQsMjQuNi0yNy43LDI0LjYtNDcuMmMwLTMxLjktMjUuOC01Ny43LTU3LjctNTcuN2MtMzEuOSwwLTU3LjcsMjUuOC01Ny43LDU3LjcNCgkJCWMwLDE5LjUsOS43LDM2LjgsMjQuNiw0Ny4yYy0xMi43LDQuNC0yNC4zLDExLjItMzQuMSwyMGMtMTMuNS0xMS41LTI5LjQtMjAuMy00Ni44LTI1LjVjMjEuMS0xMi44LDM1LjMtMzYuMSwzNS4zLTYyLjYNCgkJCWMwLTQwLjQtMzIuNy03My4xLTczLjEtNzMuMWMtNDAuNCwwLTczLjEsMzIuOC03My4xLDczLjFjMCwyNi41LDE0LjEsNDkuOCwzNS4zLDYyLjZjLTE3LjIsNS4yLTMyLjksMTMuOS00Ni4zLDI1LjINCgkJCWMtOS44LTguNi0yMS4yLTE1LjMtMzMuNy0xOS42YzE0LjgtMTAuNCwyNC42LTI3LjcsMjQuNi00Ny4yYzAtMzEuOS0yNS44LTU3LjctNTcuNy01Ny43cy01Ny43LDI1LjgtNTcuNyw1Ny43DQoJCQljMCwxOS41LDkuNywzNi44LDI0LjYsNDcuMkMyOC41LDI0Ny4yNSwwLDI4NC45NSwwLDMyOS4yNXY2LjZjMCwwLjIsMC4yLDAuNCwwLjQsMC40aDEyMi4zYy0wLjcsNS41LTEuMSwxMS4yLTEuMSwxNi45djYuOA0KCQkJYzAsMjkuNCwyMy44LDUzLjIsNTMuMiw1My4yaDE1NWMyOS40LDAsNTMuMi0yMy44LDUzLjItNTMuMnYtNi44YzAtNS43LTAuNC0xMS40LTEuMS0xNi45SDUwNWMwLjIsMCwwLjQtMC4yLDAuNC0wLjR2LTYuNg0KCQkJQzUwNS4yLDI4NC44NSw0NzYuOCwyNDcuMTUsNDM3LjEsMjMzLjQ1eiBNMzYyLjMsMTg2LjE1YzAtMjMsMTguNy00MS43LDQxLjctNDEuN3M0MS43LDE4LjcsNDEuNyw0MS43DQoJCQljMCwyMi43LTE4LjMsNDEuMi00MC45LDQxLjdjLTAuMywwLTAuNSwwLTAuOCwwcy0wLjUsMC0wLjgsMEMzODAuNSwyMjcuNDUsMzYyLjMsMjA4Ljk1LDM2Mi4zLDE4Ni4xNXogTTE5NC45LDE2NS4zNQ0KCQkJYzAtMzEuNSwyNS42LTU3LjEsNTcuMS01Ny4xczU3LjEsMjUuNiw1Ny4xLDU3LjFjMCwzMC40LTIzLjksNTUuMy01My44LDU3Yy0xLjEsMC0yLjIsMC0zLjMsMGMtMS4xLDAtMi4yLDAtMy4zLDANCgkJCUMyMTguOCwyMjAuNjUsMTk0LjksMTk1Ljc1LDE5NC45LDE2NS4zNXogTTU5LjMsMTg2LjE1YzAtMjMsMTguNy00MS43LDQxLjctNDEuN3M0MS43LDE4LjcsNDEuNyw0MS43YzAsMjIuNy0xOC4zLDQxLjItNDAuOSw0MS43DQoJCQljLTAuMywwLTAuNSwwLTAuOCwwcy0wLjUsMC0wLjgsMEM3Ny42LDIyNy40NSw1OS4zLDIwOC45NSw1OS4zLDE4Ni4xNXogTTEyNS41LDMyMC4xNUgxNi4yYzQuNS00Mi42LDQwLjUtNzYsODQuMi03Ni4zDQoJCQljMC4yLDAsMC40LDAsMC42LDBzMC40LDAsMC42LDBjMjAuOCwwLjEsMzkuOCw3LjgsNTQuNSwyMC4zQzE0MS43LDI3OS43NSwxMzEsMjk4Ljk1LDEyNS41LDMyMC4xNXogTTM2Ni44LDM1OS45NQ0KCQkJYzAsMjAuNS0xNi43LDM3LjItMzcuMiwzNy4yaC0xNTVjLTIwLjUsMC0zNy4yLTE2LjctMzcuMi0zNy4ydi02LjhjMC02Mi4xLDQ5LjYtMTEyLjksMTExLjMtMTE0LjdjMS4xLDAuMSwyLjMsMC4xLDMuNCwwLjENCgkJCXMyLjMsMCwzLjQtMC4xYzYxLjcsMS44LDExMS4zLDUyLjYsMTExLjMsMTE0LjdWMzU5Ljk1eiBNMzc4LjcsMzIwLjE1Yy01LjUtMjEuMS0xNi00MC0zMC4zLTU1LjZjMTQuOC0xMi44LDM0LTIwLjUsNTUtMjAuNw0KCQkJYzAuMiwwLDAuNCwwLDAuNiwwczAuNCwwLDAuNiwwYzQzLjcsMC4zLDc5LjcsMzMuNyw4NC4yLDc2LjNIMzc4Ljd6Ii8+DQoJPC9nPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=',
+        fieldIcon: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiANCgkJdmlld0JveD0iMCAwIDUwNS40IDUwNS40IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MDUuNCA1MDUuNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KCTxjaXJjbGUgc3R5bGU9Im9wYWNpdHk6MTtmaWxsOiNmNWY1ZjU7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjEuMzMyOTk5OTQ7c3Ryb2tlLWxpbmVjYXA6YnV0dDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6NDtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLWRhc2hvZmZzZXQ6MDtzdHJva2Utb3BhY2l0eToxO3BhaW50LW9yZGVyOm5vcm1hbCIgDQoJCQlpZD0icGF0aDU0MDciIGN4PSIyNTIuNyIgY3k9IjI1Mi43IiByPSIyNTIuNyIgLz4NCgk8ZyBpZD0iZzUzOTgiIHRyYW5zZm9ybT0ibWF0cml4KDAuOCwwLDAsMC44LDUwLjU0LDUwLjU0KSIgc3R5bGU9ImZpbGw6IzFlYmRkMztmaWxsLW9wYWNpdHk6MSI+DQoJCTxwYXRoIGQ9Im0gNDM3LjEsMjMzLjQ1IGMgMTQuOCwtMTAuNCAyNC42LC0yNy43IDI0LjYsLTQ3LjIgMCwtMzEuOSAtMjUuOCwtNTcuNyAtNTcuNywtNTcuNyAtMzEuOSwwIC01Ny43LDI1LjggLTU3LjcsNTcuNyAwLDE5LjUgOS43LDM2LjggMjQuNiw0Ny4yIC0xMi43LDQuNCAtMjQuMywxMS4yIC0zNC4xLDIwIC0xMy41LC0xMS41IC0yOS40LC0yMC4zIC00Ni44LC0yNS41IDIxLjEsLTEyLjggMzUuMywtMzYuMSAzNS4zLC02Mi42IDAsLTQwLjQgLTMyLjcsLTczLjEgLTczLjEsLTczLjEgLTQwLjQsMCAtNzMuMSwzMi44IC03My4xLDczLjEgMCwyNi41IDE0LjEsNDkuOCAzNS4zLDYyLjYgLTE3LjIsNS4yIC0zMi45LDEzLjkgLTQ2LjMsMjUuMiAtOS44LC04LjYgLTIxLjIsLTE1LjMgLTMzLjcsLTE5LjYgMTQuOCwtMTAuNCAyNC42LC0yNy43IDI0LjYsLTQ3LjIgMCwtMzEuOSAtMjUuOCwtNTcuNyAtNTcuNywtNTcuNyAtMzEuOSwwIC01Ny43LDI1LjggLTU3LjcsNTcuNyAwLDE5LjUgOS43LDM2LjggMjQuNiw0Ny4yIEMgMjguNSwyNDcuMjUgMCwyODQuOTUgMCwzMjkuMjUgdiA2LjYgYyAwLDAuMiAwLjIsMC40IDAuNCwwLjQgaCAxMjIuMyBjIC0wLjcsNS41IC0xLjEsMTEuMiAtMS4xLDE2LjkgdiA2LjggYyAwLDI5LjQgMjMuOCw1My4yIDUzLjIsNTMuMiBoIDE1NSBjIDI5LjQsMCA1My4yLC0yMy44IDUzLjIsLTUzLjIgdiAtNi44IGMgMCwtNS43IC0wLjQsLTExLjQgLTEuMSwtMTYuOSBIIDUwNSBjIDAuMiwwIDAuNCwtMC4yIDAuNCwtMC40IHYgLTYuNiBjIC0wLjIsLTQ0LjQgLTI4LjYsLTgyLjEgLTY4LjMsLTk1LjggeiBtIC03NC44LC00Ny4zIGMgMCwtMjMgMTguNywtNDEuNyA0MS43LC00MS43IDIzLDAgNDEuNywxOC43IDQxLjcsNDEuNyAwLDIyLjcgLTE4LjMsNDEuMiAtNDAuOSw0MS43IC0wLjMsMCAtMC41LDAgLTAuOCwwIC0wLjMsMCAtMC41LDAgLTAuOCwwIC0yMi43LC0wLjQgLTQwLjksLTE4LjkgLTQwLjksLTQxLjcgeiBtIC0xNjcuNCwtMjAuOCBjIDAsLTMxLjUgMjUuNiwtNTcuMSA1Ny4xLC01Ny4xIDMxLjUsMCA1Ny4xLDI1LjYgNTcuMSw1Ny4xIDAsMzAuNCAtMjMuOSw1NS4zIC01My44LDU3IC0xLjEsMCAtMi4yLDAgLTMuMywwIC0xLjEsMCAtMi4yLDAgLTMuMywwIC0yOS45LC0xLjcgLTUzLjgsLTI2LjYgLTUzLjgsLTU3IHogbSAtMTM1LjYsMjAuOCBjIDAsLTIzIDE4LjcsLTQxLjcgNDEuNywtNDEuNyAyMywwIDQxLjcsMTguNyA0MS43LDQxLjcgMCwyMi43IC0xOC4zLDQxLjIgLTQwLjksNDEuNyAtMC4zLDAgLTAuNSwwIC0wLjgsMCAtMC4zLDAgLTAuNSwwIC0wLjgsMCAtMjIuNiwtMC40IC00MC45LC0xOC45IC00MC45LC00MS43IHogbSA2Ni4yLDEzNCBIIDE2LjIgYyA0LjUsLTQyLjYgNDAuNSwtNzYgODQuMiwtNzYuMyAwLjIsMCAwLjQsMCAwLjYsMCAwLjIsMCAwLjQsMCAwLjYsMCAyMC44LDAuMSAzOS44LDcuOCA1NC41LDIwLjMgLTE0LjQsMTUuNiAtMjUuMSwzNC44IC0zMC42LDU2IHogbSAyNDEuMywzOS44IGMgMCwyMC41IC0xNi43LDM3LjIgLTM3LjIsMzcuMiBoIC0xNTUgYyAtMjAuNSwwIC0zNy4yLC0xNi43IC0zNy4yLC0zNy4yIHYgLTYuOCBjIDAsLTYyLjEgNDkuNiwtMTEyLjkgMTExLjMsLTExNC43IDEuMSwwLjEgMi4zLDAuMSAzLjQsMC4xIDEuMSwwIDIuMywwIDMuNCwtMC4xIDYxLjcsMS44IDExMS4zLDUyLjYgMTExLjMsMTE0LjcgdiA2LjggeiBtIDExLjksLTM5LjggYyAtNS41LC0yMS4xIC0xNiwtNDAgLTMwLjMsLTU1LjYgMTQuOCwtMTIuOCAzNCwtMjAuNSA1NSwtMjAuNyAwLjIsMCAwLjQsMCAwLjYsMCAwLjIsMCAwLjQsMCAwLjYsMCA0My43LDAuMyA3OS43LDMzLjcgODQuMiw3Ni4zIHoiIA0KCQkJCWlkPSJwYXRoNTM5NiIgc3R5bGU9ImZpbGw6IzFlYmRkMztmaWxsLW9wYWNpdHk6MSIgLz4NCgk8L2c+DQo8L3N2Zz4=',
         next: 'END' // '21586109-ce3b-4091-8420-85f92c0a6c11',
       }],
       overview: {
@@ -40194,7 +40177,7 @@ class MafApp extends (0, _connectMixin.connect)(_store.store)(_polymerElement.Po
       end: {
         check: {
           title: 'Controleer je gegevens',
-          subtitle: 'Controleer onderstaande gegevens goed en verzend het formulier.'
+          subtitle: ''
         },
         success: {
           title: 'Je verhuizing is aangevraagd',
@@ -40354,7 +40337,7 @@ module.exports = ".Wrapper{width:100%;max-width:var(--main-max-width);margin:0 a
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\n  <maf-screen heading=\"[[avgLog.procesOmschrijving]]\" on-back=\"[[_backToAvgLogs]]\">\n    <div class=\"SubHeading\">[[_capitalize(avgLog.opgevraagdeElementen)]]</div>\n    <div class=\"Description\">[[_capitalize(avgLog.omschrijving)]]</div>\n    <dom-repeat items=\"[[_mapObjToArr(avgLog)]]\">\n      <template>\n        <div class=\"AvgLogDataPoint\">\n          <div class=\"AvgLogDataPointLabel\">[[item.key]]</div>\n          <dom-if if=\"[[item.value]]\">\n            <template>\n              <div class=\"AvgLogDataPointValue\">[[item.value]]</div>\n            </template>\n          </dom-if>\n          <dom-if if=\"[[item.values]]\">\n            <template>\n              <dom-repeat items=\"[[item.values]]\" as=\"value\">\n                <template>\n                  <dom-if if=\"[[_isSame(value.key, 'Logo')]]\">\n                    <template>\n                      <div class=\"Logo\" style=\"[[_getLogoStyle(value.value)]]\"></div>\n                    </template>\n                  </dom-if>\n                  <dom-if if=\"[[_isNotSame(value.key, 'Logo')]]\">\n                    <template>\n                      <div class=\"AvgLogDataPointSubValue\">\n                        <div class=\"AvgLogDataPointSubValueKey\">[[value.key]]</div>\n                        <dom-if if=\"[[value.value]]\">\n                          <template>\n                            <div class=\"AvgLogDataPointSubValueValue\">[[value.value]]</div>\n                          </template>\n                        </dom-if>\n                      </div>\n                    </template>\n                  </dom-if>\n                  <dom-if if=\"[[value.values]]\">\n                    <template>\n                      <dom-repeat items=\"[[value.values]]\" as=\"final\">\n                        <template>\n                          <dom-if if=\"[[_isSame(final.key, 'Logo')]]\">\n                            <template>\n                              <div class=\"Logo\" style=\"[[_getLogoStyle(final.value)]]\"></div>\n                            </template>\n                          </dom-if>\n                          <dom-if if=\"[[_isNotSame(final.key, 'Logo')]]\">\n                            <template>\n                              <dom-if if=\"[[final.value]]\">\n                                <template>\n                                  <div class=\"AvgLogDataPointSubSubValue\">\n                                    <div class=\"AvgLogDataPointSubSubValueKey\">[[final.key]]</div>\n                                    <div class=\"AvgLogDataPointSubSubValueValue\">[[final.value]]</div>\n                                  </div>\n                                </template>\n                              </dom-if>\n                            </template>\n                          </dom-if>\n                        </template>\n                      </dom-repeat>\n                    </template>\n                  </dom-if>\n                </template>\n              </dom-repeat>\n            </template>\n          </dom-if>\n        </div>\n      </template>\n    </dom-repeat>\n  </maf-screen>\n</div>\n"
+module.exports = "<div class=\"Wrapper\">\r\n  <maf-screen heading=\"[[avgLog.procesOmschrijving]]\" on-back=\"[[_backToAvgLogs]]\">\r\n    <div class=\"SubHeading\">[[_capitalize(avgLog.opgevraagdeElementen)]]</div>\r\n    <div class=\"Description\">[[_capitalize(avgLog.omschrijving)]]</div>\r\n    <dom-repeat items=\"[[_mapObjToArr(avgLog)]]\">\r\n      <template>\r\n        <div class=\"AvgLogDataPoint\">\r\n          <div class=\"AvgLogDataPointLabel\">[[item.key]]</div>\r\n          <dom-if if=\"[[item.value]]\">\r\n            <template>\r\n              <div class=\"AvgLogDataPointValue\">[[item.value]]</div>\r\n            </template>\r\n          </dom-if>\r\n          <dom-if if=\"[[item.values]]\">\r\n            <template>\r\n              <dom-repeat items=\"[[item.values]]\" as=\"value\">\r\n                <template>\r\n                  <dom-if if=\"[[_isSame(value.key, 'Logo')]]\">\r\n                    <template>\r\n                      <div class=\"Logo\" style=\"[[_getLogoStyle(value.value)]]\"></div>\r\n                    </template>\r\n                  </dom-if>\r\n                  <dom-if if=\"[[_isNotSame(value.key, 'Logo')]]\">\r\n                    <template>\r\n                      <div class=\"AvgLogDataPointSubValue\">\r\n                        <div class=\"AvgLogDataPointSubValueKey\">[[value.key]]</div>\r\n                        <dom-if if=\"[[value.value]]\">\r\n                          <template>\r\n                            <div class=\"AvgLogDataPointSubValueValue\">[[value.value]]</div>\r\n                          </template>\r\n                        </dom-if>\r\n                      </div>\r\n                    </template>\r\n                  </dom-if>\r\n                  <dom-if if=\"[[value.values]]\">\r\n                    <template>\r\n                      <dom-repeat items=\"[[value.values]]\" as=\"final\">\r\n                        <template>\r\n                          <dom-if if=\"[[_isSame(final.key, 'Logo')]]\">\r\n                            <template>\r\n                              <div class=\"Logo\" style=\"[[_getLogoStyle(final.value)]]\"></div>\r\n                            </template>\r\n                          </dom-if>\r\n                          <dom-if if=\"[[_isNotSame(final.key, 'Logo')]]\">\r\n                            <template>\r\n                              <dom-if if=\"[[final.value]]\">\r\n                                <template>\r\n                                  <div class=\"AvgLogDataPointSubSubValue\">\r\n                                    <div class=\"AvgLogDataPointSubSubValueKey\">[[final.key]]</div>\r\n                                    <div class=\"AvgLogDataPointSubSubValueValue\">[[final.value]]</div>\r\n                                  </div>\r\n                                </template>\r\n                              </dom-if>\r\n                            </template>\r\n                          </dom-if>\r\n                        </template>\r\n                      </dom-repeat>\r\n                    </template>\r\n                  </dom-if>\r\n                </template>\r\n              </dom-repeat>\r\n            </template>\r\n          </dom-if>\r\n        </div>\r\n      </template>\r\n    </dom-repeat>\r\n  </maf-screen>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -40471,7 +40454,7 @@ module.exports = ".Wrapper{width:100%;max-width:var(--main-max-width);margin:0 a
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\n  <maf-screen on-back=\"[[_onBack]]\" heading=\"Mijn machtigingen\">\n    <div class=\"Cards\">\n      <dom-repeat items=\"{{cards}}\" as=\"card\">\n        <template>\n          <div class=\"Card\">\n            <div class=\"CardHead\">[[card.procesOmschrijving]]</div>\n            <dom-if if=\"[[_isSet(card.omschrijving)]]\">\n              <template>\n                <div class=\"CardDataPoint\">\n                  <div class=\"CardDataPointLabel\">[[card.omschrijving]]</div>\n                </div>\n              </template>\n            </dom-if>\n            <div class=\"CardDataPoint\">\n              <div class=\"CardDataPointLabel\">Verwerker Organisatie\n              </div>\n              <div class=\"CardDataPointValue\">[[card.verwerkerOrganisatie.handelsnaam]]</div>\n            </div>\n            <dom-repeat items=\"[[_mapObjToArr(card)]]\" as=\"point\" index-as=\"point_no\">\n              <template>\n                <div class=\"CardDataPoint\">\n                  <div class=\"CardDataPointLabel\">[[point.key]]</div>\n                  <div class=\"CardDataPointValue\">[[point.value]]</div>\n                </div>\n              </template>\n            </dom-repeat>\n            <div class=\"CardMoreButton\" on-click=\"_clickHandler\">Bekijk alle gegevens</div>\n          </div>\n        </template>\n      </dom-repeat>\n    </div>\n  </maf-screen>\n</div>"
+module.exports = "<div class=\"Wrapper\">\r\n  <maf-screen on-back=\"[[_onBack]]\" heading=\"Mijn machtigingen\">\r\n    <div class=\"Cards\">\r\n      <dom-repeat items=\"{{cards}}\" as=\"card\">\r\n        <template>\r\n          <div class=\"Card\">\r\n            <div class=\"CardHead\">[[card.procesOmschrijving]]</div>\r\n            <dom-if if=\"[[_isSet(card.omschrijving)]]\">\r\n              <template>\r\n                <div class=\"CardDataPoint\">\r\n                  <div class=\"CardDataPointLabel\">[[card.omschrijving]]</div>\r\n                </div>\r\n              </template>\r\n            </dom-if>\r\n            <div class=\"CardDataPoint\">\r\n              <div class=\"CardDataPointLabel\">Verwerker Organisatie\r\n              </div>\r\n              <div class=\"CardDataPointValue\">[[card.verwerkerOrganisatie.handelsnaam]]</div>\r\n            </div>\r\n            <dom-repeat items=\"[[_mapObjToArr(card)]]\" as=\"point\" index-as=\"point_no\">\r\n              <template>\r\n                <div class=\"CardDataPoint\">\r\n                  <div class=\"CardDataPointLabel\">[[point.key]]</div>\r\n                  <div class=\"CardDataPointValue\">[[point.value]]</div>\r\n                </div>\r\n              </template>\r\n            </dom-repeat>\r\n            <div class=\"CardMoreButton\" on-click=\"_clickHandler\">Bekijk alle gegevens</div>\r\n          </div>\r\n        </template>\r\n      </dom-repeat>\r\n    </div>\r\n  </maf-screen>\r\n</div>"
 
 /***/ }),
 
@@ -40584,7 +40567,7 @@ module.exports = ".Wrapper{width:100%;max-width:var(--main-max-width);margin:0 a
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\n  <maf-screen heading=\"[[contract.titel]]\" on-back=\"[[_backToContracts]]\">\n    <div class=\"SubHeading\">[[contract.type]]</div>\n    <div class=\"Description\">[[contract.omschrijving]]</div>\n    <dom-repeat items=\"[[_mapObjToArr(contract)]]\">\n      <template>\n        <div class=\"ContractDataPoint\">\n          <div class=\"ContractDataPointLabel\">[[item.key]]</div>\n          <dom-if if=\"[[item.value]]\">\n            <template>\n              <div class=\"ContractDataPointValue\">[[item.value]]</div>\n            </template>\n          </dom-if>\n          <dom-if if=\"[[item.values]]\">\n            <template>\n              <dom-repeat items=\"[[item.values]]\" as=\"value\">\n                <template>\n                  <dom-if if=\"[[_isSame(value.key, 'Logo')]]\">\n                    <template>\n                      <div class=\"Logo\" style=\"[[_getLogoStyle(value.value)]]\"></div>\n                    </template>\n                  </dom-if>\n                  <dom-if if=\"[[_isNotSame(value.key, 'Logo')]]\">\n                    <template>\n                      <div class=\"ContractDataPointSubValue\">\n                        <div class=\"ContractDataPointSubValueKey\">[[value.key]]</div>\n                        <dom-if if=\"[[value.value]]\">\n                          <template>\n                            <div class=\"ContractDataPointSubValueValue\">[[value.value]]</div>\n                          </template>\n                        </dom-if>\n                      </div>\n                    </template>\n                  </dom-if>\n                  <dom-if if=\"[[value.values]]\">\n                    <template>\n                      <dom-repeat items=\"[[value.values]]\" as=\"final\">\n                        <template>\n                          <dom-if if=\"[[_isSame(final.key, 'Logo')]]\">\n                            <template>\n                              <div class=\"Logo\" style=\"[[_getLogoStyle(final.value)]]\"></div>\n                            </template>\n                          </dom-if>\n                          <dom-if if=\"[[_isNotSame(final.key, 'Logo')]]\">\n                            <template>\n                              <dom-if if=\"[[final.value]]\">\n                                <template>\n                                  <div class=\"ContractDataPointSubSubValue\">\n                                    <div class=\"ContractDataPointSubSubValueKey\">[[final.key]]</div>\n                                    <div class=\"ContractDataPointSubSubValueValue\">[[final.value]]</div>\n                                  </div>\n                                </template>\n                              </dom-if>\n                            </template>\n                          </dom-if>\n                        </template>\n                      </dom-repeat>\n                    </template>\n                  </dom-if>\n                </template>\n              </dom-repeat>\n            </template>\n          </dom-if>\n        </div>\n      </template>\n    </dom-repeat>\n  </maf-screen>\n</div>\n"
+module.exports = "<div class=\"Wrapper\">\r\n  <maf-screen heading=\"[[contract.titel]]\" on-back=\"[[_backToContracts]]\">\r\n    <div class=\"SubHeading\">[[contract.type]]</div>\r\n    <div class=\"Description\">[[contract.omschrijving]]</div>\r\n    <dom-repeat items=\"[[_mapObjToArr(contract)]]\">\r\n      <template>\r\n        <div class=\"ContractDataPoint\">\r\n          <div class=\"ContractDataPointLabel\">[[item.key]]</div>\r\n          <dom-if if=\"[[item.value]]\">\r\n            <template>\r\n              <div class=\"ContractDataPointValue\">[[item.value]]</div>\r\n            </template>\r\n          </dom-if>\r\n          <dom-if if=\"[[item.values]]\">\r\n            <template>\r\n              <dom-repeat items=\"[[item.values]]\" as=\"value\">\r\n                <template>\r\n                  <dom-if if=\"[[_isSame(value.key, 'Logo')]]\">\r\n                    <template>\r\n                      <div class=\"Logo\" style=\"[[_getLogoStyle(value.value)]]\"></div>\r\n                    </template>\r\n                  </dom-if>\r\n                  <dom-if if=\"[[_isNotSame(value.key, 'Logo')]]\">\r\n                    <template>\r\n                      <div class=\"ContractDataPointSubValue\">\r\n                        <div class=\"ContractDataPointSubValueKey\">[[value.key]]</div>\r\n                        <dom-if if=\"[[value.value]]\">\r\n                          <template>\r\n                            <div class=\"ContractDataPointSubValueValue\">[[value.value]]</div>\r\n                          </template>\r\n                        </dom-if>\r\n                      </div>\r\n                    </template>\r\n                  </dom-if>\r\n                  <dom-if if=\"[[value.values]]\">\r\n                    <template>\r\n                      <dom-repeat items=\"[[value.values]]\" as=\"final\">\r\n                        <template>\r\n                          <dom-if if=\"[[_isSame(final.key, 'Logo')]]\">\r\n                            <template>\r\n                              <div class=\"Logo\" style=\"[[_getLogoStyle(final.value)]]\"></div>\r\n                            </template>\r\n                          </dom-if>\r\n                          <dom-if if=\"[[_isNotSame(final.key, 'Logo')]]\">\r\n                            <template>\r\n                              <dom-if if=\"[[final.value]]\">\r\n                                <template>\r\n                                  <div class=\"ContractDataPointSubSubValue\">\r\n                                    <div class=\"ContractDataPointSubSubValueKey\">[[final.key]]</div>\r\n                                    <div class=\"ContractDataPointSubSubValueValue\">[[final.value]]</div>\r\n                                  </div>\r\n                                </template>\r\n                              </dom-if>\r\n                            </template>\r\n                          </dom-if>\r\n                        </template>\r\n                      </dom-repeat>\r\n                    </template>\r\n                  </dom-if>\r\n                </template>\r\n              </dom-repeat>\r\n            </template>\r\n          </dom-if>\r\n        </div>\r\n      </template>\r\n    </dom-repeat>\r\n  </maf-screen>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -40692,7 +40675,7 @@ module.exports = ".Wrapper{width:100%;max-width:var(--main-max-width);margin:0 a
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\n  <maf-screen on-back=\"[[_onBack]]\" heading=\"Mijn contracten\">\n    <div class=\"Cards\">\n      <dom-repeat items=\"{{cards}}\" as=\"card\">\n        <template>\n          <div class=\"Card\">\n            <div class=\"CardHead\">[[card.titel]]</div>\n            <dom-if if=\"[[_isSet(card.omschrijving)]]\">\n              <template>\n                <div class=\"CardDataPoint\">\n                  <div class=\"CardDataPointLabel\">[[card.omschrijving]]</div>\n                </div>\n              </template>\n            </dom-if>\n            <dom-repeat items=\"[[_mapObjToArr(card)]]\" as=\"point\" index-as=\"point_no\">\n              <template>\n                <div class=\"CardDataPoint\">\n                  <div class=\"CardDataPointLabel\">[[point.key]]</div>\n                  <div class=\"CardDataPointValue\">[[point.value]]</div>\n                </div>\n              </template>\n            </dom-repeat>\n            <div class=\"CardDataPoint\">\n              <div class=\"CardDataPointLabel\">Organisatie</div>\n              <div class=\"CardDataPointValue\">[[card.organisatie.handelsnaam]]</div>\n            </div>\n            <div class=\"CardMoreButton\" on-click=\"_clickHandler\">Bekijk alle gegevens</div>\n          </div>\n        </template>\n      </dom-repeat>\n    </div>\n  </maf-screen>\n</div>"
+module.exports = "<div class=\"Wrapper\">\r\n  <maf-screen on-back=\"[[_onBack]]\" heading=\"Mijn contracten\">\r\n    <div class=\"Cards\">\r\n      <dom-repeat items=\"{{cards}}\" as=\"card\">\r\n        <template>\r\n          <div class=\"Card\">\r\n            <div class=\"CardHead\">[[card.titel]]</div>\r\n            <dom-if if=\"[[_isSet(card.omschrijving)]]\">\r\n              <template>\r\n                <div class=\"CardDataPoint\">\r\n                  <div class=\"CardDataPointLabel\">[[card.omschrijving]]</div>\r\n                </div>\r\n              </template>\r\n            </dom-if>\r\n            <dom-repeat items=\"[[_mapObjToArr(card)]]\" as=\"point\" index-as=\"point_no\">\r\n              <template>\r\n                <div class=\"CardDataPoint\">\r\n                  <div class=\"CardDataPointLabel\">[[point.key]]</div>\r\n                  <div class=\"CardDataPointValue\">[[point.value]]</div>\r\n                </div>\r\n              </template>\r\n            </dom-repeat>\r\n            <div class=\"CardDataPoint\">\r\n              <div class=\"CardDataPointLabel\">Organisatie</div>\r\n              <div class=\"CardDataPointValue\">[[card.organisatie.handelsnaam]]</div>\r\n            </div>\r\n            <div class=\"CardMoreButton\" on-click=\"_clickHandler\">Bekijk alle gegevens</div>\r\n          </div>\r\n        </template>\r\n      </dom-repeat>\r\n    </div>\r\n  </maf-screen>\r\n</div>"
 
 /***/ }),
 
@@ -40819,7 +40802,7 @@ window.customElements.define('maf-screen-home', MafScreenHome);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".Wrapper{height:100vh;max-width:var(--main-max-width);margin:0 auto;background-color:var(--main-content-background-color);padding:0 0 57px}.ScrollContainer,.Wrapper{width:100%;box-sizing:border-box}.ScrollContainer{height:100%;padding-bottom:75px;float:left;overflow-y:auto}.SearchWrapper{margin:13px 0 19px;float:left;width:100%}.FakeInput{opacity:1;color:var(--shaded-color-main);font-style:italic;margin:0;padding:.84em .84em calc(.84em - 2px);width:calc(100% - 1.68em);border:1px solid hsla(0,0%,49%,.4);border-radius:3px;font-size:18px}.FakeInput:hover{box-shadow:0 0 5px 1px rgba(30,189,211,.4)}.TilesWrapper{margin-top:13px;float:left;width:100%}.TilesTitle{height:29px;font-family:var(--typography-fontFamily);font-size:var(--main-font-subheader-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:0;text-align:left;color:var(--palette-primary-main);margin-bottom:7px}.Tiles{display:grid;grid-template-columns:auto auto;grid-template-rows:auto auto;grid-column-gap:16px;grid-row-gap:16px}.Tile{margin:10px 0;width:80%;cursor:pointer}.Tile:hover .TileMedia{box-shadow:0 0 5px 1px rgba(30,189,211,.4)}@media (min-width:600px){.Tile{width:60%}}.TileMedia{width:100%;height:0;padding-bottom:100%;position:relative;border-radius:3px}.TileMediaInner{position:absolute;top:0;left:0}.TileMediaInner,.TileMediaInner img{width:100%;height:100%}.TileTitle{height:23px;font-family:var(--typography-fontFamily);font-size:var(--main-font-text-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:1.28;letter-spacing:-.3px;text-align:left;color:var(--palette-primary-main);margin-top:15px}.NotAllowed{opacity:.25;cursor:not-allowed}.NotAllowed:hover .TileMedia{box-shadow:none}@-webkit-keyframes fadein{0%{bottom:0;opacity:0}to{bottom:70px;opacity:1}}@keyframes fadein{0%{bottom:0;opacity:0}to{bottom:70px;opacity:1}}@-webkit-keyframes fadeout{0%{bottom:70px;opacity:1}to{bottom:0;opacity:0}}@keyframes fadeout{0%{bottom:70px;opacity:1}to{bottom:0;opacity:0}}"
+module.exports = ".Wrapper{height:100vh;max-width:var(--main-max-width);margin:0 auto;background-color:var(--main-content-background-color);padding:0 0 57px}.ScrollContainer,.Wrapper{width:100%;box-sizing:border-box}.ScrollContainer{height:100%;padding-bottom:75px;float:left;overflow-y:auto}.SearchWrapper{margin:13px 0 19px;float:left;width:100%;display:block}.TilesWrapper{margin-top:13px;float:left;width:100%}.TilesTitle{height:29px;font-family:var(--typography-fontFamily);font-size:var(--main-font-subheader-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:0;text-align:left;color:var(--palette-primary-main);margin-bottom:7px}.Tiles{display:grid;grid-template-columns:auto auto;grid-template-rows:auto auto;grid-column-gap:16px;grid-row-gap:16px}.Tile{margin:10px 0;width:80%;cursor:pointer}.Tile:hover .TileMedia{box-shadow:0 0 5px 1px rgba(30,189,211,.4)}@media (min-width:600px){.Tile{width:60%}}.TileMedia{width:100%;height:0;padding-bottom:100%;position:relative;border-radius:3px}.TileMediaInner{position:absolute;top:0;left:0}.TileMediaInner,.TileMediaInner img{width:100%;height:100%}.TileTitle{height:23px;font-family:var(--typography-fontFamily);font-size:var(--main-font-text-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:1.28;letter-spacing:-.3px;text-align:left;color:var(--palette-primary-main);margin-top:15px}.NotAllowed{opacity:.25;cursor:not-allowed}.NotAllowed:hover .TileMedia{box-shadow:none}@-webkit-keyframes fadein{0%{bottom:0;opacity:0}to{bottom:70px;opacity:1}}@keyframes fadein{0%{bottom:0;opacity:0}to{bottom:70px;opacity:1}}@-webkit-keyframes fadeout{0%{bottom:70px;opacity:1}to{bottom:0;opacity:0}}@keyframes fadeout{0%{bottom:70px;opacity:1}to{bottom:0;opacity:0}}.Spacing{min-height:20px}maki-icon-search{float:left;padding:5px;margin-left:-30px;margin-top:12px;box-sizing:content-box;--icon-color:var(--icon-color-teal)}.FakeInput{opacity:1;color:var(--shaded-color-main);font-style:italic;margin:0;padding:.84em .84em calc(.84em - 2px);width:calc(100% - 1.68em);border:1px solid hsla(0,0%,49%,.4);border-radius:3px;font-size:18px;display:inline}.FakeInput:hover{box-shadow:0 0 5px 1px rgba(30,189,211,.4)}"
 
 /***/ }),
 
@@ -40830,7 +40813,7 @@ module.exports = ".Wrapper{height:100vh;max-width:var(--main-max-width);margin:0
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\r\n  <div class=\"ScrollContainer\">\r\n    <maf-screen heading=\"Mijn dashboard\">\r\n        <div class=\"SearchWrapper\">\r\n            <input class=\"FakeInput\" placeholder=\"Wat wil je regelen?\" type=\"text\" on-click=\"_goJourneys\"></input>\r\n        </div>\r\n      <div class=\"TilesWrapper\">\r\n        <div class=\"TilesTitle\">\r\n          Mijn gegevens\r\n        </div>\r\n        <div class=\"Tiles\">\r\n          <dom-repeat items=\"{{tiles}}\" as=\"tile\">\r\n            <template>\r\n              <div class=\"Tile\" on-click=\"_clickHandler\">\r\n                <div class=\"TileMedia\">\r\n                  <div class=\"TileMediaInner\">\r\n                    <img alt=\"[[tile.title]]\" src=\"[[tile.asset]]\" />\r\n                  </div>\r\n                </div>\r\n                <div class=\"TileTitle\">[[tile.title]]</div>\r\n              </div>\r\n            </template>\r\n          </dom-repeat>\r\n          <div class=\"Tile NotAllowed\" on-click=\"_clickHandler\">\r\n            <div class=\" TileMedia \">\r\n              <div class=\"TileMediaInner \">\r\n                <img src=\"assets/media/Passen.svg \" />\r\n              </div>\r\n            </div>\r\n            <div class=\"TileTitle \">Passen</div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </maf-screen>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"Wrapper\">\r\n    <div class=\"ScrollContainer\">\r\n      <div class=\"Spacing\"></div>    \r\n      <maf-screen heading=\"Mijn overzicht\">\r\n          <div class=\"SearchWrapper\">\r\n              <input class=\"FakeInput\" placeholder=\"Wat wil je regelen?\" type=\"text\" on-click=\"_goJourneys\"><maki-icon-search></maki-icon-search></input>\r\n              <maki-input elevation=\"0\" stroke=\"1\" placeholder=\"Wat wil je regelen?\" icon-right=\"true\" on-click=\"_goJourneys\">\r\n                  <maki-icon-search></maki-icon-search>\r\n              </maki-input>\r\n          </div>\r\n      <div class=\"TilesWrapper\">\r\n        <div class=\"TilesTitle\">\r\n          Mijn gegevens\r\n        </div>\r\n        <div class=\"Tiles\">\r\n          <dom-repeat items=\"{{tiles}}\" as=\"tile\">\r\n            <template>\r\n              <div class=\"Tile\" on-click=\"_clickHandler\">\r\n                <div class=\"TileMedia\">\r\n                  <div class=\"TileMediaInner\">\r\n                    <img alt=\"[[tile.title]]\" src=\"[[tile.asset]]\" />\r\n                  </div>\r\n                </div>\r\n                <div class=\"TileTitle\">[[tile.title]]</div>\r\n              </div>\r\n            </template>\r\n          </dom-repeat>\r\n          <div class=\"Tile NotAllowed\" on-click=\"_clickHandler\">\r\n            <div class=\" TileMedia \">\r\n              <div class=\"TileMediaInner \">\r\n                <img src=\"assets/media/Passen.svg \" />\r\n              </div>\r\n            </div>\r\n            <div class=\"TileTitle \">Passen</div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </maf-screen>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -41071,7 +41054,7 @@ window.customElements.define('maf-screen-journeys', MafScreenJourneys);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".Wrapper{height:100vh;max-width:var(--main-max-width);margin:0 auto;background-color:var(--main-content-background-color);padding:0 0 57px}.ScrollContainer,.Wrapper{width:100%;box-sizing:border-box}.ScrollContainer{height:100%;float:left;overflow-y:auto;padding-bottom:75px}.SearchWrapper{margin:13px 0 19px;float:left;width:100%}.Head{height:29px;font-size:var(--main-font-subheader-size);font-weight:700;line-height:normal;letter-spacing:0;color:var(--main-header-text-color);color:#19224c;margin:25px 0 10px}.Head,.Title{font-family:var(--typography-fontFamily);font-style:normal;font-stretch:normal}.Title{font-size:var(--main-font-text-size);font-weight:600;line-height:30px;text-align:left;color:var(--main-header-text-color);padding:22px 0;border-bottom:1px solid #eff1f3;position:relative;cursor:pointer;display:flex;justify-content:flex-start}.Title:after{content:\">\";transform:scaleY(1.5);color:var(--palette-secondary-main);position:absolute;right:26px}.Title:hover{background-color:var(--button-gray-background-color-hover)}maki-icon-bulb,maki-icon-truck{background-color:var(--button-gray-background-color);border-radius:15px;width:20px;height:20px;padding:5px;margin:0 10px;box-sizing:content-box;--icon-color:var(--icon-color-teal)}"
+module.exports = ".Wrapper{height:100vh;max-width:var(--main-max-width);margin:0 auto;background-color:var(--main-content-background-color);padding:0 0 57px}.ScrollContainer,.Wrapper{width:100%;box-sizing:border-box}.ScrollContainer{height:100%;float:left;overflow-y:auto;padding-bottom:75px}.SearchWrapper{margin:13px 0 19px;float:left;width:100%}.Head{height:29px;font-size:var(--main-font-subheader-size);font-weight:700;line-height:normal;letter-spacing:0;color:var(--main-header-text-color);color:#19224c;margin:25px 0 10px}.Head,.Title{font-family:var(--typography-fontFamily);font-style:normal;font-stretch:normal}.Title{font-size:var(--main-font-text-size);font-weight:600;line-height:30px;text-align:left;color:var(--main-header-text-color);padding:22px 0;border-bottom:1px solid #eff1f3;position:relative;cursor:pointer;display:flex;justify-content:flex-start}.Title:after{content:\">\";transform:scaleY(1.5);color:var(--palette-secondary-main);position:absolute;right:26px}.Title:hover{background-color:var(--button-gray-background-color-hover)}maki-icon-bulb,maki-icon-truck{background-color:var(--button-gray-background-color);border-radius:15px;width:20px;height:20px;margin:0 10px}maki-icon-bulb,maki-icon-search,maki-icon-truck{padding:5px;box-sizing:content-box;--icon-color:var(--icon-color-teal)}maki-icon-search{margin-left:-30px;margin-top:12px}"
 
 /***/ }),
 
@@ -41082,7 +41065,7 @@ module.exports = ".Wrapper{height:100vh;max-width:var(--main-max-width);margin:0
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\r\n  <div class=\"ScrollContainer\">\r\n    <maf-screen on-back=\"[[_onBack]]\" heading=\"Zoeken\">\r\n      <div class=\"SearchWrapper\">\r\n        <maki-input elevation=\"0\" stroke=\"1\" placeholder=\"Wat wil je regelen?\"></maki-input>\r\n        <div class=\"Head\">Suggesties</div>\r\n        <div class=\"Title\" on-click=\"_selectJourneyB\">\r\n          <maki-icon-truck></maki-icon-truck>\r\n          <div class=\"TitleText\">Ik ga verhuizen</div>\r\n        </div>\r\n        <div class=\"Title\" on-click=\"_selectJourneyA\">\r\n          <maki-icon-bulb></maki-icon-bulb>\r\n          <div class=\"TitleText\">Ik heb een goed idee</div>\r\n        </div>\r\n      </div>\r\n    </maf-screen>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"Wrapper\">\r\n  <div class=\"ScrollContainer\">\r\n    <maf-screen on-back=\"[[_onBack]]\" heading=\"Zoeken\">\r\n      <div class=\"SearchWrapper\">\r\n          <maki-input elevation=\"0\" stroke=\"1\" placeholder=\"Wat wil je regelen?\" icon-right=\"true\">\r\n              <maki-icon-search></maki-icon-search>\r\n          </maki-input>\r\n        <div class=\"Head\">Suggesties</div>\r\n        <div class=\"Title\" on-click=\"_selectJourneyB\">\r\n          <maki-icon-truck></maki-icon-truck>\r\n          <div class=\"TitleText\">Ik ga verhuizen</div>\r\n        </div>\r\n        <div class=\"Title\" on-click=\"_selectJourneyA\">\r\n          <maki-icon-bulb></maki-icon-bulb>\r\n          <div class=\"TitleText\">Ik heb een goed idee</div>\r\n        </div>\r\n      </div>\r\n    </maf-screen>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -41146,10 +41129,10 @@ class MafScreenPersonData extends (0, _connectMixin.connect)(_store.store)(_poly
   }
 
   _normalDate(date) {
-    if (date === null) {
+    if (date === null || date === undefined || date.date === null) {
       return 'Onbekend';
     }
-    date = new Date(date);
+    date = new Date(date.date);
     return (0, _dutchDate.toDutchDate)(date);
   }
 
@@ -41184,7 +41167,7 @@ module.exports = ".Wrapper{height:100vh;max-width:var(--main-max-width);margin:0
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\r\n    <div class=\"ScrollContainer\">\r\n        <dom-if if=\"{{searching}}\">\r\n            <template>\r\n                <maf-screen on-back=\"[[_onBack]]\" heading=\"Ophalen gegevens\">\r\n                    <div class=\"Subtitle\">Uw gegevens worden opgehaald</div>\r\n                </maf-screen>\r\n            </template>\r\n        </dom-if>\r\n        <dom-if if=\"{{!searching}}\">\r\n            <template>\r\n                <maf-screen on-back=\"[[_onBack]]\" heading=\"[[personData.naam.aanschrijfwijze]]\">\r\n                    <h2>Basisgegevens</h2>\r\n                    <div class=\"ContractDataPointContainer\">\r\n                        <div class=\"ContractDataPoint\">\r\n                            <div class=\"ContractDataPointLabel\">Naam</div>\r\n                            <div class=\"ContractDataPointValue\">[[personData.naam.aanschrijfwijze]]</div>\r\n                        </div>\r\n                        <div class=\"ContractDataPoint\">\r\n                            <div class=\"ContractDataPointLabel\">Geboortedatum</div>\r\n                            <div class=\"ContractDataPointValue\">[[_normalDate(personData.geboorte.datum)]]</div>\r\n                        </div>\r\n                        <!--<div class=\"ContractDataPoint\">\r\n                            <div class=\"ContractDataPointLabel\">Nationaliteit</div>\r\n                            <div class=\"ContractDataPointValue\">[[personData.address.country]]</div>\r\n                        </div>-->\r\n                        <div class=\"ContractDataPoint\">\r\n                            <div class=\"ContractDataPointLabel\">BSN</div>\r\n                            <div class=\"ContractDataPointValue\">[[personData.burgerservicenummer]]</div>\r\n                        </div>\r\n                        <div class=\"ContractDataPoint\">\r\n                            <div class=\"ContractDataPointLabel\">Adres</div>\r\n                            <div class=\"ContractDataPointValue\">\r\n                                [[personData.verblijfplaats.straatnaam]] [[personData.verblijfplaats.huisnummer]][[personData.verblijfplaats.huisnummertoevoeging]][[personData.verblijfplaats.huisletter]], [[personData.verblijfplaats.postcode]] [[personData.verblijfplaats.woonplaatsnaam]]\r\n                            </div>\r\n                        </div>\r\n                        <!--<div class=\"ContractDataPoint\">\r\n                            <div class=\"ContractDataPointLabel\">Telefoonnummer</div>\r\n                            <div class=\"ContractDataPointValue\">[[personData.phone_number]]</div>\r\n                        </div>\r\n                        <div class=\"ContractDataPoint\">\r\n                            <div class=\"ContractDataPointLabel\">Email</div>\r\n                            <div class=\"ContractDataPointValue\">[[personData.email]]</div>\r\n                        </div>-->\r\n                    </div>\r\n                </maf-screen>\r\n            </template>\r\n        </dom-if>\r\n    </div>\r\n</div>\r\n"
+module.exports = "<div class=\"Wrapper\">\r\n    <div class=\"ScrollContainer\">\r\n        <dom-if if=\"{{searching}}\">\r\n            <template>\r\n                <maf-screen on-back=\"[[_onBack]]\" heading=\"Ophalen gegevens\">\r\n                    <div class=\"Subtitle\">Uw gegevens worden opgehaald</div>\r\n                </maf-screen>\r\n            </template>\r\n        </dom-if>\r\n        <dom-if if=\"{{!searching}}\">\r\n            <template>\r\n                <maf-screen on-back=\"[[_onBack]]\" heading=\"[[personData.naam.aanschrijfwijze]]\">\r\n                    <h2>Basisgegevens</h2>\r\n                    <div class=\"ContractDataPointContainer\">\r\n                        <div class=\"ContractDataPoint\">\r\n                            <div class=\"ContractDataPointLabel\">Geboortedatum</div>\r\n                            <div class=\"ContractDataPointValue\">[[_normalDate(personData.geboorte.datum)]]</div>\r\n                        </div>\r\n                        <!--<div class=\"ContractDataPoint\">\r\n                            <div class=\"ContractDataPointLabel\">Nationaliteit</div>\r\n                            <div class=\"ContractDataPointValue\">[[personData.address.country]]</div>\r\n                        </div>-->\r\n                        <div class=\"ContractDataPoint\">\r\n                            <div class=\"ContractDataPointLabel\">BSN</div>\r\n                            <div class=\"ContractDataPointValue\">[[personData.burgerservicenummer]]</div>\r\n                        </div>\r\n                        <div class=\"ContractDataPoint\">\r\n                            <div class=\"ContractDataPointLabel\">Adres</div>\r\n                            <div class=\"ContractDataPointValue\">\r\n                                [[personData.verblijfplaats.straatnaam]] [[personData.verblijfplaats.huisnummer]][[personData.verblijfplaats.huisnummertoevoeging]][[personData.verblijfplaats.huisletter]], [[personData.verblijfplaats.postcode]] [[personData.verblijfplaats.woonplaatsnaam]]\r\n                            </div>\r\n                        </div>\r\n                        <!--<div class=\"ContractDataPoint\">\r\n                            <div class=\"ContractDataPointLabel\">Telefoonnummer</div>\r\n                            <div class=\"ContractDataPointValue\">[[personData.phone_number]]</div>\r\n                        </div>\r\n                        <div class=\"ContractDataPoint\">\r\n                            <div class=\"ContractDataPointLabel\">Email</div>\r\n                            <div class=\"ContractDataPointValue\">[[personData.email]]</div>\r\n                        </div>-->\r\n                    </div>\r\n                </maf-screen>\r\n            </template>\r\n        </dom-if>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -41272,7 +41255,7 @@ window.customElements.define('maf-screen-signin', MafScreenSignin);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".loginWrapper{height:100vh;max-width:var(--main-max-width);margin:0 auto;background-color:var(--main-content-background-color)}.loginWrapper,.ScrollContainer{width:100%;box-sizing:border-box}.ScrollContainer{height:100%;float:left;overflow-y:auto}.loginImage,.loginTitle{width:100%;float:left}.loginTitle{margin-top:50px;margin-bottom:30px;height:41px;font-family:var(--typography-fontFamily);font-size:var(--main-font-header-size);font-weight:700;line-height:41px;letter-spacing:-.3px;text-align:center;color:var(--main-header-text-color)}@media (max-height:510px){.loginTitle{margin-top:20px;margin-bottom:10px}}.loginContent{margin:0 10px;width:calc(100% - 20px);float:left}.loginDigidButton{max-width:410px;margin:10px auto;background-color:var(--button-gray-background-color);padding:10px;display:flex;justify-content:space-between;cursor:pointer}.loginDigidButton:hover{background-color:var(--button-gray-background-color-hover)}.loginDigidButtonText{display:flex;justify-content:flex-start}.loginSelectButton{width:40px;height:40px;background-size:40px 40px;margin-right:10px}.loginDigidButtonHeader{font-size:var(--main-font-text-size);line-height:40px;font-weight:700}.loginDigidButton:after{content:\">\";font-size:var(--main-font-text-size);font-weight:600;transform:scaleY(1.8);color:var(--palette-secondary-main);line-height:40px}.Error{color:red;width:100%;text-align:center}.Info{max-width:410px;margin:20px auto 40px}.InfoText{font-weight:700;line-height:30px}.InfoSubText,.InfoText{font-size:var(--main-font-medium-text-size)}.InfoSubText{font-weight:400;line-height:20px}"
+module.exports = ".loginWrapper{height:100vh;max-width:var(--main-max-width);margin:0 auto;background-color:var(--main-content-background-color)}.loginWrapper,.ScrollContainer{width:100%;box-sizing:border-box}.ScrollContainer{height:100%;float:left;overflow-y:auto}.loginImage,.loginTitle{width:100%;float:left}.loginTitle{margin-top:50px;margin-bottom:30px;height:41px;font-family:var(--typography-fontFamily);font-size:var(--main-font-header-size);font-weight:700;line-height:41px;letter-spacing:-.3px;text-align:center;color:var(--main-header-text-color)}@media (max-height:642px){.loginTitle{margin-top:20px;margin-bottom:10px}}.loginContent{margin:0 10px;width:calc(100% - 20px);float:left}.loginDigidButton{max-width:410px;margin:10px auto;background-color:var(--button-gray-background-color);padding:10px;display:flex;justify-content:space-between;cursor:pointer}.loginDigidButton:hover{background-color:var(--button-gray-background-color-hover)}.loginDigidButtonText{display:flex;justify-content:flex-start}.loginSelectButton{width:40px;height:40px;background-size:40px 40px;margin-right:10px}.loginDigidButtonHeader{font-size:var(--main-font-text-size);line-height:40px;font-weight:700}.loginDigidButton:after{content:\">\";font-size:var(--main-font-text-size);font-weight:600;transform:scaleY(1.8);color:var(--palette-secondary-main);line-height:40px}.Error{color:red;width:100%;text-align:center}.Info{max-width:410px;margin:20px auto 40px}.InfoText{font-weight:700;line-height:30px}.InfoSubText,.InfoText{font-size:var(--main-font-medium-text-size)}.InfoSubText{font-weight:400;line-height:20px}"
 
 /***/ }),
 
@@ -41543,7 +41526,7 @@ module.exports = ":host{display:inline-flex}svg{fill:var(--icon-color);stroke:va
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"22\" height=\"22\" viewBox=\"0 0 22 22\">\n    <path fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M21 16H1a3 3 0 0 0 3-3V8a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0h3.46z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"22\" height=\"22\" viewBox=\"0 0 22 22\">\r\n    <path fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M21 16H1a3 3 0 0 0 3-3V8a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0h3.46z\"/>\r\n</svg>\r\n"
 
 /***/ }),
 
@@ -41677,7 +41660,7 @@ module.exports = ":host{display:inline-flex}svg{fill:var(--icon-color);stroke:va
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\">\n    <path fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M19 9.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L1 19l1.9-5.7A8.38 8.38 0 0 1 2 9.5a8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\">\r\n    <path fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M19 9.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L1 19l1.9-5.7A8.38 8.38 0 0 1 2 9.5a8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z\"/>\r\n</svg>\r\n"
 
 /***/ }),
 
@@ -41744,7 +41727,7 @@ module.exports = ":host{display:inline-flex}svg{fill:var(--icon-color);stroke:va
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"9\" height=\"7\" viewBox=\"0 0 9 7\">\n    <path fill-rule=\"evenodd\" stroke-width=\".8\" d=\"M4.147 6.123a.289.289 0 0 1-.415.01L1.086 3.524a.29.29 0 1 1 .407-.412L3.926 5.51l4.106-4.417a.29.29 0 1 1 .424.394L4.147 6.123z\"/>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"9\" height=\"7\" viewBox=\"0 0 9 7\">\r\n    <path fill-rule=\"evenodd\" stroke-width=\".8\" d=\"M4.147 6.123a.289.289 0 0 1-.415.01L1.086 3.524a.29.29 0 1 1 .407-.412L3.926 5.51l4.106-4.417a.29.29 0 1 1 .424.394L4.147 6.123z\"/>\r\n</svg>\r\n"
 
 /***/ }),
 
@@ -42079,7 +42062,7 @@ module.exports = ":host{display:inline-flex}svg{fill:var(--icon-color);stroke:va
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"22\" viewBox=\"0 0 20 22\">\n    <g fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\">\n        <path d=\"M1 8l9-7 9 7v11a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8z\"/>\n        <path d=\"M7 21V11h6v10\"/>\n    </g>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"22\" viewBox=\"0 0 20 22\">\r\n    <g fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\">\r\n        <path d=\"M1 8l9-7 9 7v11a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8z\"/>\r\n        <path d=\"M7 21V11h6v10\"/>\r\n    </g>\r\n</svg>\r\n"
 
 /***/ }),
 
@@ -42213,7 +42196,7 @@ module.exports = ":host{display:inline-flex}svg{fill:var(--icon-color);stroke:va
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 17 17\">\n    <g fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" transform=\"translate(1 1)\">\n        <circle cx=\"6.5\" cy=\"6.5\" r=\"6.5\"/>\n        <path d=\"M15 15l-4-4\"/>\n    </g>\n</svg>\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 17 17\">\r\n    <g fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" transform=\"translate(1 1)\">\r\n        <circle cx=\"6.5\" cy=\"6.5\" r=\"6.5\"/>\r\n        <path d=\"M15 15l-4-4\"/>\r\n    </g>\r\n</svg>\r\n"
 
 /***/ }),
 
@@ -42731,7 +42714,7 @@ module.exports = ".Button{float:left;--icon-color:var(--main-color);display:inli
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class$=\"Button[[isHighlight(highlight)]][[isIcon(small, heading)]][[isItalic(italic)]][[isSmall(small)]][[isWhite(white)]][[isDisabled(disabled)]][[colorBooleans(iconColorMain, iconColorDisabled, iconColorHighlight, textColorMain, textColorDisabled, textColorHighlight, bubbleColorMain, bubbleColorDisabled, bubbleColorHighlight)]]\" style$=\"[[getElevation(elevation)]] [[_wrapperSize(size)]]\" on-click=\"clickHandler\">\n  <div class=\"Inner\" style$=\"[[_buttonSize(size, heading)]]\">\n    <dom-if if=[[hasHeading(heading)]]>\n      <template>\n        <span class=\"HeadingAsProp\" style$=\"[[_hoverStyle]]\">\n          [[heading]]\n          <span class=\"After\" />\n        </span>\n      </template>\n    </dom-if>\n    <div class=\"Child\" style$=\"[[_iconSize(size, heading)]]\">\n      <slot></slot>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class$=\"Button[[isHighlight(highlight)]][[isIcon(small, heading)]][[isItalic(italic)]][[isSmall(small)]][[isWhite(white)]][[isDisabled(disabled)]][[colorBooleans(iconColorMain, iconColorDisabled, iconColorHighlight, textColorMain, textColorDisabled, textColorHighlight, bubbleColorMain, bubbleColorDisabled, bubbleColorHighlight)]]\" style$=\"[[getElevation(elevation)]] [[_wrapperSize(size)]]\" on-click=\"clickHandler\">\r\n  <div class=\"Inner\" style$=\"[[_buttonSize(size, heading)]]\">\r\n    <dom-if if=[[hasHeading(heading)]]>\r\n      <template>\r\n        <span class=\"HeadingAsProp\" style$=\"[[_hoverStyle]]\">\r\n          [[heading]]\r\n          <span class=\"After\" />\r\n        </span>\r\n      </template>\r\n    </dom-if>\r\n    <div class=\"Child\" style$=\"[[_iconSize(size, heading)]]\">\r\n      <slot></slot>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -42798,7 +42781,7 @@ module.exports = ".Header{font-family:var(--typography-fontFamily);font-size:var
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Header\"><slot></slot></div>\n"
+module.exports = "<div class=\"Header\"><slot></slot></div>\r\n"
 
 /***/ }),
 
@@ -42852,6 +42835,10 @@ class MakiInput extends _polymerElement.PolymerElement {
         value: false
       },
       type: {
+        type: String,
+        value: ''
+      },
+      pattern: {
         type: String,
         value: ''
       },
@@ -42921,6 +42908,9 @@ class MakiInput extends _polymerElement.PolymerElement {
   ready() {
     super.ready();
     const field = this.shadowRoot.querySelector('.Input');
+    if (field.type === 'number') {
+      field.setAttribute('pattern', '\\d*');
+    }
     field.addEventListener('focus', this._onFocus.bind(this));
     field.addEventListener('blur', this._onBlur.bind(this));
   }
@@ -42958,7 +42948,7 @@ window.customElements.define('maki-input', MakiInput);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host{font-size:var(--typography-fontSize)}input::-webkit-inner-spin-button,input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}input[type=number]{-moz-appearance:textfield}.Icon{position:absolute;top:0;left:0;height:20px;width:20px}.Icon ::slotted(svg){--icon-color:var(--shaded-icon-main)}.Icon.iconLeft{float:left}.Icon.iconRight{float:right}.Input{margin:0;padding:.84em .84em calc(.84em - 2px);width:calc(100% - 1.68em);border:0;background-color:transparent;outline:none;font-size:var(--main-font-text-size);font-family:inherit;line-height:1.28;color:var(--shaded-color-main)}.Input:focus{outline:none;box-shadow:none}.Input:hover{box-shadow:0 0 5px 1px rgba(30,189,211,.4)}.Input.focussed{-webkit-appearance:none;box-shadow:0 0 5px 1px rgba(30,189,211,.6)}.Input::-webkit-input-placeholder{opacity:.6;color:var(--shaded-color-main);font-style:italic}.Input::-moz-placeholder{opacity:.6;color:var(--shaded-color-main);font-style:italic}.Input::-ms-input-placeholder{opacity:.6;color:var(--shaded-color-main);font-style:italic}.Input::placeholder{opacity:.6;color:var(--shaded-color-main);font-style:italic}.Highlight{height:2px;width:100%;position:relative}.HighlightExpander{height:2px;transform:scaleX(0);transition:transform var(--transitions-duration-shorter) var(--transitions-easing-easeOut)}.HighlightExpander,.HighlightHover{width:100%;background-color:var(--shaded-accent-main);position:absolute;top:0;left:0}.HighlightHover{height:1px;opacity:0;transition:opacity var(--transitions-duration-shorter) var(--transitions-easing-easeInOut)}.HighlightAlways{width:100%;height:1px;position:absolute;bottom:0;left:0;background-color:var(--shaded-accent-main);opacity:.5}.Wrapper:hover .HighlightHover{opacity:.5}.Highlight.focussed .HighlightExpander{transform:scale(1)}"
+module.exports = ":host{font-size:var(--typography-fontSize)}input::-webkit-inner-spin-button,input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}input[type=number]{-moz-appearance:textfield}.Icon{position:absolute;top:0;left:0}.Icon ::slotted(svg){--icon-color:var(--shaded-icon-main)}.Icon.iconLeft{float:left;position:relative}.Icon.iconRight{float:right;position:relative}.Input{margin:0;padding:.84em .84em calc(.84em - 2px);width:calc(100% - 1.68em);border:0;background-color:transparent;outline:none;font-size:var(--main-font-text-size);font-family:inherit;line-height:1.28;color:var(--shaded-color-main)}.Input:focus{outline:none;box-shadow:none}.Input:hover{box-shadow:0 0 5px 1px rgba(30,189,211,.4)}.Input.focussed{-webkit-appearance:none;box-shadow:0 0 5px 1px rgba(30,189,211,.6)}.Input::-webkit-input-placeholder{opacity:.6;color:var(--shaded-color-main);font-style:italic}.Input::-moz-placeholder{opacity:.6;color:var(--shaded-color-main);font-style:italic}.Input::-ms-input-placeholder{opacity:.6;color:var(--shaded-color-main);font-style:italic}.Input::placeholder{opacity:.6;color:var(--shaded-color-main);font-style:italic}.Highlight{height:2px;width:100%;position:relative}.HighlightExpander{height:2px;transform:scaleX(0);transition:transform var(--transitions-duration-shorter) var(--transitions-easing-easeOut)}.HighlightExpander,.HighlightHover{width:100%;background-color:var(--shaded-accent-main);position:absolute;top:0;left:0}.HighlightHover{height:1px;opacity:0;transition:opacity var(--transitions-duration-shorter) var(--transitions-easing-easeInOut)}.HighlightAlways{width:100%;height:1px;position:absolute;bottom:0;left:0;background-color:var(--shaded-accent-main);opacity:.5}.Wrapper:hover .HighlightHover{opacity:.5}.Highlight.focussed .HighlightExpander{transform:scale(1)}"
 
 /***/ }),
 
@@ -42969,7 +42959,7 @@ module.exports = ":host{font-size:var(--typography-fontSize)}input::-webkit-inne
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<maki-shaded-paper\r\n  accent-disabled=\"[[accentDisabled]]\"\r\n  accent-error=\"[[accentError]]\"\r\n  accent-primary=\"[[accentPrimary]]\"\r\n  accent-secondary=\"[[accentSecondary]]\"\r\n  disabled=\"[[disabled]]\"\r\n  error=\"[[error]]\"\r\n  fill=\"[[fill]]\"\r\n  icon-disabled=\"[[iconDisabled]]\"\r\n  icon-error=\"[[iconError]]\"\r\n  icon-primary=\"[[iconPrimary]]\"\r\n  icon-secondary=\"[[iconSecondary]]\"\r\n  primary=\"[[primary]]\"\r\n  secondary=\"[[secondary]]\"\r\n  transparent=\"[[transparent]]\"\r\n  elevation=\"[[elevation]]\"\r\n  rounding=\"[[rounding]]\"\r\n  stroke=\"[[stroke]]\"\r\n>\r\n  <div class=\"Wrapper\">\r\n    <div class$=\"Icon[[_hasIconLeft(iconLeft)]][[_hasIconRight(iconRight)]]\">\r\n      <slot></slot>\r\n    </div>\r\n    <input class$=\"Input[[_hasIconLeft(iconLeft)]][[_hasIconRight(iconRight)]][[_isFocussed(focussed)]]\" placeholder=\"[[placeholder]]\" maxlength$=\"[[maxlength]]\" type=\"[[type]]\" on-input=\"_onInput\" value=\"{{value}}\"></input>\r\n  </div>\r\n</maki-shaded-paper>\r\n"
+module.exports = "<maki-shaded-paper\r\n  accent-disabled=\"[[accentDisabled]]\"\r\n  accent-error=\"[[accentError]]\"\r\n  accent-primary=\"[[accentPrimary]]\"\r\n  accent-secondary=\"[[accentSecondary]]\"\r\n  disabled=\"[[disabled]]\"\r\n  error=\"[[error]]\"\r\n  fill=\"[[fill]]\"\r\n  icon-disabled=\"[[iconDisabled]]\"\r\n  icon-error=\"[[iconError]]\"\r\n  icon-primary=\"[[iconPrimary]]\"\r\n  icon-secondary=\"[[iconSecondary]]\"\r\n  primary=\"[[primary]]\"\r\n  secondary=\"[[secondary]]\"\r\n  transparent=\"[[transparent]]\"\r\n  elevation=\"[[elevation]]\"\r\n  rounding=\"[[rounding]]\"\r\n  stroke=\"[[stroke]]\"\r\n>\r\n  <div class=\"Wrapper\">\r\n    <div class$=\"Icon[[_hasIconLeft(iconLeft)]][[_hasIconRight(iconRight)]]\">\r\n      <slot></slot>\r\n    </div>\r\n    <input class$=\"Input[[_hasIconLeft(iconLeft)]][[_hasIconRight(iconRight)]][[_isFocussed(focussed)]]\" placeholder=\"[[placeholder]]\" maxlength$=\"[[maxlength]]\" type=\"[[type]]\" pattern$=\"[[patern]]\" on-input=\"_onInput\" value=\"{{value}}\" />\r\n  </div>\r\n</maki-shaded-paper>\r\n"
 
 /***/ }),
 
@@ -43068,7 +43058,7 @@ module.exports = ".Paper{border:0 solid var(--palette-primary-light)}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Paper\" style$=\"[[_borderStyle(stroke)]] [[_roundingStyle(rounding)]] [[_elevationStyle(elevation)]]\">\n  <slot></slot>\n</div>\n"
+module.exports = "<div class=\"Paper\" style$=\"[[_borderStyle(stroke)]] [[_roundingStyle(rounding)]] [[_elevationStyle(elevation)]]\">\r\n  <slot></slot>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -43248,7 +43238,7 @@ module.exports = ".Shaded{background-color:var(--palette-background-paper);--sha
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<maki-paper elevation=\"[[elevation]]\" rounding=\"[[rounding]]\" stroke=\"[[stroke]]\" >\n  <div class$=\"Shaded[[_isTransparent(transparent)]][[_isPrimary(primary)]][[_isSecondary(secondary)]][[_isError(error)]][[_isDisabled(disabled)]][[_isAccentPrimary(accentPrimary)]][[_isAccentSecondary(accentSecondary)]][[_isAccentError(accentError)]][[_isAccentDisabled(accentDisabled)]][[_isIconPrimary(iconPrimary)]][[_isIconSecondary(iconSecondary)]][[_isIconError(iconError)]][[_isIconDisabled(iconDisabled)]][[_isFill(fill)]]\"><slot></slot></div>\n</maki-paper>\n"
+module.exports = "<maki-paper elevation=\"[[elevation]]\" rounding=\"[[rounding]]\" stroke=\"[[stroke]]\" >\r\n  <div class$=\"Shaded[[_isTransparent(transparent)]][[_isPrimary(primary)]][[_isSecondary(secondary)]][[_isError(error)]][[_isDisabled(disabled)]][[_isAccentPrimary(accentPrimary)]][[_isAccentSecondary(accentSecondary)]][[_isAccentError(accentError)]][[_isAccentDisabled(accentDisabled)]][[_isIconPrimary(iconPrimary)]][[_isIconSecondary(iconSecondary)]][[_isIconError(iconError)]][[_isIconDisabled(iconDisabled)]][[_isFill(fill)]]\"><slot></slot></div>\r\n</maki-paper>\r\n"
 
 /***/ }),
 
@@ -43507,7 +43497,7 @@ module.exports = ".Theme{font-family:var(--typography-fontSize);font-size:var(--
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Theme\"><slot></slot></div>\n"
+module.exports = "<div class=\"Theme\"><slot></slot></div>\r\n"
 
 /***/ }),
 
@@ -43667,7 +43657,7 @@ window.customElements.define('playback-screen-wrapper', PlaybackScreenWrapper);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".Wrapper{height:100vh;max-width:var(--main-max-width);padding:0 0 57px}.ScrollContainer,.Wrapper{width:100%;box-sizing:border-box;float:left}.ScrollContainer{height:100%;overflow-y:auto;padding-bottom:75px}.Scroller{padding:0 16px}.TopbarButtonContainer{height:62px;padding:16px 0}.ButtonContainer,.TopbarButtonContainer{width:100%;max-width:var(--main-max-width);box-sizing:border-box}.ButtonContainer{height:50px;margin-top:16px;margin-bottom:8px;background-color:var(--main-content-background-color)}.PrevButton{float:left}.NextButton,.SkipButton{float:right}.ButtonInner{display:flex}.ButtonInnerLeft,.ButtonInnerRight{display:inline-block;opacity:1;transform:scale(.7,1.2)}.ButtonInnerText{display:inline-block;padding:0 8px}.Title{margin-top:16px;font-size:var(--main-font-subheader-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.3px}.Subtitle,.Title{font-family:var(--typography-fontFamily);text-align:left;color:var(--palette-primary-main)}.Subtitle{font-size:var(--main-font-medium-text-size);font-style:italic;line-height:1.28;letter-spacing:-.4px;margin:7px 0 16px}maki-icon-cross{--icon-color:var(--icon-red-color)}.JourneyHeader{background-color:var(--button-gray-background-color);margin:0 -16px;padding:16px;display:flex;flex-direction:column;justify-content:center}.JourneyIcon{background-color:var(--icon-color-teal);border-radius:30px;width:20px;height:20px;padding:10px;align-self:center;box-sizing:content-box;--icon-color:var(--main-content-background-color)}maki-icon-bulb,maki-icon-truck{--icon-size:20px}.JourneyTitle{font-size:var(--main-font-medium-text-size);text-align:center}.JourneyProgress{height:30px;width:100%;display:flex;justify-content:center}.JourneyProgressDotEmpty{margin:7px;width:12px;height:12px;background-color:var(--main-content-background-color);border-radius:8px;border:2px solid var(--icon-color);box-sizing:content-box}.JourneyProgressDot{width:16px;height:16px;border-radius:8px}.JourneyProgressDot,.JourneyProgressDotCheck{margin:7px;background-color:var(--icon-color)}.JourneyProgressDotCheck{width:12px;height:12px;border-radius:8px;border:2px solid var(--icon-color);display:flex;box-sizing:content-box}maki-icon-check{margin:3px 0 3px 1px;box-sizing:content-box;--icon-color:var(--main-content-background-color)}.JourneyProgressLine{margin:14px 0;width:40px;height:2px;background-color:var(--icon-color);border-radius:1px}"
+module.exports = ".Wrapper{height:100vh;max-width:var(--main-max-width);padding:0 0 57px}.ScrollContainer,.Wrapper{width:100%;box-sizing:border-box;float:left}.ScrollContainer{height:100%;overflow-y:auto;padding-bottom:75px}.Scroller{padding:0 16px}.TopbarButtonContainer{width:100%;height:62px;max-width:var(--main-max-width);padding:16px 0;box-sizing:border-box}.TopbarButtonContainer maki-button{float:right}.ButtonContainer{width:100%;max-width:var(--main-max-width);height:50px;margin-top:16px;margin-bottom:8px;box-sizing:border-box;background-color:var(--main-content-background-color)}.PrevButton{float:left}.NextButton,.SkipButton{float:right}.ButtonInner{display:flex}.ButtonInnerLeft,.ButtonInnerRight{display:inline-block;opacity:1;transform:scale(.7,1.2)}.ButtonInnerText{display:inline-block;padding:0 8px}.Title{margin-top:16px;font-size:var(--main-font-subheader-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.3px}.Subtitle,.Title{font-family:var(--typography-fontFamily);text-align:left;color:var(--palette-primary-main)}.Subtitle{font-size:var(--main-font-medium-text-size);font-style:italic;line-height:1.28;letter-spacing:-.4px;margin:7px 0 16px}maki-icon-cross{--icon-color:var(--icon-red-color)}.JourneyHeader{background-color:var(--button-gray-background-color);margin:0 -16px;padding:16px;display:flex;flex-direction:column;justify-content:center}.JourneyIcon{background-color:var(--icon-color-teal);border-radius:30px;width:20px;height:20px;padding:10px;align-self:center;box-sizing:content-box;--icon-color:var(--main-content-background-color)}maki-icon-bulb,maki-icon-truck{--icon-size:20px}.JourneyTitle{font-size:var(--main-font-medium-text-size);text-align:center}.JourneyProgress{height:30px;width:100%;display:flex;justify-content:center}.JourneyProgressDotEmpty{margin:7px;width:12px;height:12px;background-color:var(--main-content-background-color);border-radius:8px;border:2px solid var(--icon-color);box-sizing:content-box}.JourneyProgressDot{width:16px;height:16px;border-radius:8px}.JourneyProgressDot,.JourneyProgressDotCheck{margin:7px;background-color:var(--icon-color)}.JourneyProgressDotCheck{width:12px;height:12px;border-radius:8px;border:2px solid var(--icon-color);display:flex;box-sizing:content-box}maki-icon-check{margin:3px 0 3px 1px;box-sizing:content-box;--icon-color:var(--main-content-background-color)}.JourneyProgressLine{margin:14px 0;width:40px;height:2px;background-color:var(--icon-color);border-radius:1px}"
 
 /***/ }),
 
@@ -43787,7 +43777,7 @@ class PlaybackScreenAddress extends (0, _connectMixin.connect)(_store.store)(_po
   }
 
   _saveWithoutCheck(question, address) {
-    _store.store.dispatch((0, _order.orderSaveAnswer)(question.key || question.property, address.id, question.fieldName, `${address.straat} ${address.huisnummer}${address.huisnummertoevoeging ? address.huisnummertoevoeging : ''}, ${address.woonplaats} ${address.postcode}`));
+    _store.store.dispatch((0, _order.orderSaveAnswer)(question.key || question.property, address.id, question.fieldName, `${address.straat} ${address.huisnummer} ${address.huisnummertoevoeging ? address.huisnummertoevoeging : ''}, ${address.postcode} ${address.woonplaats}`));
     _store.store.dispatch((0, _order.orderNext)(question.next));
   }
 
@@ -43797,10 +43787,10 @@ class PlaybackScreenAddress extends (0, _connectMixin.connect)(_store.store)(_po
       const question = e.currentTarget.dataQuestion;
       const index = e.currentTarget.dataIndex;
       const address = this.addresses[index];
-      if (address.woonplaats !== '\'s-Hertogenbosch') {
+      if (address.woonplaats !== '\'s-Hertogenbosch' && address.woonplaats !== 'Rosmalen' && address.woonplaats !== 'Nuland' && address.woonplaats !== 'Vinkel') {
         window.clearErrorDialog();
         window.errorTitle.innerHTML = 'Let op!';
-        window.errorText.innerHTML = 'Het nieuwe adres dat je opgeeft ligt niet in de gemeente \'s-Hertogenbosch. Kies op de gemeentekeuze pagina (<a href="https://www.burgerberichten.nl/gemeenten/verhuizen">https://www.burgerberichten.nl/gemeenten/verhuizen</a>) de gemeente van uw nieuwe adres.';
+        window.errorText.innerHTML = 'Het nieuwe adres dat je opgeeft ligt niet in de aangesloten gemeenten. Kies op <a href="https://www.burgerberichten.nl/gemeenten/verhuizen">deze pagina</a> de gemeente van je nieuwe adres.';
         window.errorButton.innerHTML = 'Ga terug';
         window.errorDialog.open();
       } else {
@@ -43868,6 +43858,10 @@ class PlaybackScreenAddress extends (0, _connectMixin.connect)(_store.store)(_po
       this.addresses = state.address.data.filter(this.filterAddresses);
       this.hasSearched = true;
       this.searching = state.address.searching;
+      const self = this;
+      setTimeout(function () {
+        self.shadowRoot.querySelector('#foundAddresses').scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+      }, 400);
     }
     if (state.address.reset) {
       this._reset();
@@ -43898,7 +43892,7 @@ module.exports = ".Wrapper{width:100%;height:100%;float:left}.Item{margin:5px 0}
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<playback-screen-wrapper skip-callback=\"[[_skipCallback(question)]]\" no-next>\r\n  <div class=\"Item\">\r\n    <maki-input id=\"postalCodeInput\" elevation=\"0\" stroke=\"1\" placeholder=\"Postcode\" maxlength=\"6\" value=\"{{postalCode}}\" input-callback=\"[[_inputPostalCodeCallback()]]\" />\r\n  </div>\r\n  <div class=\"Item\">\r\n    <maki-input id=\"numberInput\" elevation=\"0\" stroke=\"1\" placeholder=\"Huisnummer\" value=\"{{number}}\" input-callback=\"[[_inputNumberCallback()]]\" type=\"number\"></maki-input>\r\n  </div>\r\n  <div class=\"Item\">\r\n    <maki-input id=\"numberAdditionInput\" elevation=\"0\" stroke=\"1\" placeholder=\"Huisnummertoevoeging\" value=\"{{numberAddition}}\" input-callback=\"[[_inputNumberAdditionCallback()]]\"></maki-input>\r\n  </div>\r\n  <dom-if if=\"{{showApiResult(hasSearched, hasValidPostalCodeAndNumber)}}\">\r\n    <template>\r\n      <div class=\"Title\">Gevonden adressen</div>\r\n      <dom-if if=\"{{searching}}\">\r\n        <template>\r\n          <div class=\"Subtitle\">Ophalen adressen voor {{postalCode}}, {{number}}{{numberAddition}}</div>\r\n        </template>\r\n      </dom-if>\r\n      <dom-if if=\"{{!searching}}\">\r\n        <template>\r\n          <dom-if if=\"{{!addresses.length}}\">\r\n            <template>\r\n              <div class=\"Subtitle\">\r\n                <maki-icon-attention></maki-icon-attention>\r\n                <div class=\"SubtitleAttention\">Het nieuwe adres is niet bekend bij de gemeente. Controleer de postcode, huisnummer en eventueel toevoeging en probeer opnieuw.</div>\r\n              </div>\r\n            </template>\r\n          </dom-if>\r\n          <dom-if if=\"{{addresses.length}}\">\r\n            <template>\r\n              <div class=\"Subtitle\">Staat uw adres niet in de lijst, controleer dan de ingevulde postcode, huisnummer en eventueel huisnummertoevoeging en probeer opnieuw.</div>\r\n            </template>\r\n          </dom-if>\r\n        </template>\r\n      </dom-if>\r\n      <div class=\"Options\">\r\n        <dom-repeat items=\"{{addresses}}\">\r\n          <template>\r\n            <div class=\"Option\" data-index=\"[[index]]\" data-question=\"[[question]]\" on-click=\"_optionClick\">\r\n              <div class=\"OptionText\">{{item.straat}} {{item.huisnummer}}{{item.huisnummertoevoeging}}, {{item.woonplaats}} {{item.postcode}}</div>\r\n              <div class=\"OptionCarrot\">></div>\r\n            </div>\r\n          </template>\r\n        </dom-repeat>\r\n      </div>\r\n    </template>\r\n  </dom-if>\r\n</playback-screen-wrapper>\r\n"
+module.exports = "<playback-screen-wrapper skip-callback=\"[[_skipCallback(question)]]\" no-next>\r\n  <div class=\"Item\">\r\n    <maki-input id=\"postalCodeInput\" elevation=\"0\" stroke=\"1\" placeholder=\"Postcode\" maxlength=\"6\" value=\"{{postalCode}}\" input-callback=\"[[_inputPostalCodeCallback()]]\" />\r\n  </div>\r\n  <div class=\"Item\">\r\n    <maki-input id=\"numberInput\" elevation=\"0\" stroke=\"1\" placeholder=\"Huisnummer\" value=\"{{number}}\" input-callback=\"[[_inputNumberCallback()]]\" type=\"number\"></maki-input>\r\n  </div>\r\n  <div class=\"Item\">\r\n    <maki-input id=\"numberAdditionInput\" elevation=\"0\" stroke=\"1\" placeholder=\"Huisnummertoevoeging\" value=\"{{numberAddition}}\" input-callback=\"[[_inputNumberAdditionCallback()]]\"></maki-input>\r\n  </div>\r\n  <dom-if if=\"{{showApiResult(hasSearched, hasValidPostalCodeAndNumber)}}\">\r\n    <template>\r\n      <div id=\"foundAddresses\" class=\"Title\">Gevonden adressen</div>\r\n      <dom-if if=\"{{searching}}\">\r\n        <template>\r\n          <div class=\"Subtitle\">Ophalen adressen voor {{postalCode}}, {{number}}{{numberAddition}}</div>\r\n        </template>\r\n      </dom-if>\r\n      <dom-if if=\"{{!searching}}\">\r\n        <template>\r\n          <dom-if if=\"{{!addresses.length}}\">\r\n            <template>\r\n              <div class=\"Subtitle\">\r\n                <maki-icon-attention></maki-icon-attention>\r\n                <div class=\"SubtitleAttention\">Het opgegeven adres is onbekend. Controleer de postcode, huisnummer en eventueel toevoeging en probeer opnieuw.</div>\r\n              </div>\r\n            </template>\r\n          </dom-if>\r\n          <dom-if if=\"{{addresses.length}}\">\r\n            <template>\r\n              <div class=\"Subtitle\">Staat uw adres niet in de lijst, controleer dan de ingevulde postcode, huisnummer en eventueel huisnummertoevoeging en probeer opnieuw.</div>\r\n            </template>\r\n          </dom-if>\r\n        </template>\r\n      </dom-if>\r\n      <div class=\"Options\">\r\n        <dom-repeat items=\"{{addresses}}\">\r\n          <template>\r\n            <div class=\"Option\" data-index=\"[[index]]\" data-question=\"[[question]]\" on-click=\"_optionClick\">\r\n                <div class=\"OptionText\">{{item.straat}} {{item.huisnummer}} {{item.huisnummertoevoeging}}, {{item.postcode}} {{item.woonplaats}}</div>\r\n              <div class=\"OptionCarrot\">></div>\r\n            </div>\r\n          </template>\r\n        </dom-repeat>\r\n      </div>\r\n    </template>\r\n  </dom-if>\r\n</playback-screen-wrapper>\r\n"
 
 /***/ }),
 
@@ -44022,7 +44016,7 @@ module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled=\"[[_isDisabled(order)]]\">\n  <div class=\"Options\">\n    <div class=\"Option\" on-click=\"_optionClick\">\n      Ja\n      <div class$=\"Circle[[_isSelected(order)]]\"></div>\n    </div>\n  </div>\n</playback-screen-wrapper>\n"
+module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled=\"[[_isDisabled(order)]]\">\r\n  <div class=\"Options\">\r\n    <div class=\"Option\" on-click=\"_optionClick\">\r\n      Ja\r\n      <div class$=\"Circle[[_isSelected(order)]]\"></div>\r\n    </div>\r\n  </div>\r\n</playback-screen-wrapper>\r\n"
 
 /***/ }),
 
@@ -44311,7 +44305,7 @@ class PlaybackScreenEnd extends (0, _connectMixin.connect)(_store.store)(_polyme
   }
 
   questionsToPdf() {
-    const body = [[{ width: 15, height: 15, svg: this.dataUrlToSvg('PHN2ZyBoZWlnaHQ9IjQ4MHB0IiB2aWV3Qm94PSIwIDAgNDgwIDQ4MCIgd2lkdGg9IjQ4MHB0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im0yNDAgMGMtMTMyLjU0Njg3NSAwLTI0MCAxMDcuNDUzMTI1LTI0MCAyNDBzMTA3LjQ1MzEyNSAyNDAgMjQwIDI0MGM3LjIzMDQ2OSAwIDE0LjQzMzU5NC0uMzI0MjE5IDIxLjYwMTU2Mi0uOTY4NzUgNi42NjQwNjMtLjU5NzY1NiAxMy4yNjk1MzItMS41MTE3MTkgMTkuODI0MjE5LTIuNjU2MjVsMi41MTk1MzEtLjQ0NTMxMmMxMjEuODYzMjgyLTIyLjc0MjE4OCAyMDYuMzU5Mzc2LTEzNC41NTA3ODIgMTk0Ljk2MDkzOC0yNTcuOTk2MDk0LTExLjM5ODQzOC0xMjMuNDQ1MzEzLTExNC45Mzc1LTIxNy44OTQ1MzE1LTIzOC45MDYyNS0yMTcuOTMzNTk0em0tMTkuMjgxMjUgNDYzLjE1MjM0NGgtLjU2NjQwNmMtNi4yMjI2NTYtLjU1MDc4Mi0xMi4zOTg0MzgtMS4zODI4MTMtMTguNTE5NTMyLTIuNDQ5MjE5LS4zNTE1NjItLjA2MjUtLjcwMzEyNC0uMTAxNTYzLTEuMDQ2ODc0LS4xNjc5NjktNS45ODQzNzYtMS4wNzAzMTItMTEuOTA2MjUtMi4zOTg0MzctMTcuNzY5NTMyLTMuOTQ5MjE4bC0xLjQxNzk2OC0uMzYzMjgyYy01LjcxODc1LTEuNTUwNzgxLTExLjM3NS0zLjM1MTU2Mi0xNi45NDkyMTktNS4zNTE1NjItLjU3ODEyNS0uMjA3MDMyLTEuMTYwMTU3LS4zOTA2MjUtMS43MzgyODEtLjYwNTQ2OS01LjQ2NDg0NC0yLjAwNzgxMy0xMC44MzIwMzItNC4yNTc4MTMtMTYuMTE3MTg4LTYuNjkxNDA2LS42NTYyNS0uMjkyOTY5LTEuMzEyNS0uNTc0MjE5LTEuOTY4NzUtLjg4NjcxOS01LjE4MzU5NC0yLjM5ODQzOC0xMC4yNjU2MjUtNS4xMDE1NjItMTUuMjUtNy45NDUzMTItLjcwMzEyNS0uMzk4NDM4LTEuNDE0MDYyLS43OTY4NzYtMi4xMTcxODgtMS4xOTE0MDctNC45MDYyNS0yLjg2MzI4MS05LjY5OTIxOC01LjkzMzU5My0xNC40MDIzNDMtOS4xNzU3ODEtLjcxMDkzOC0uNDk2MDk0LTEuNDI5Njg4LS45NzY1NjItMi4xMzY3MTktMS40NzI2NTYtNC42MjEwOTQtMy4yNzczNDQtOS4xMjUtNi43NTc4MTMtMTMuNTExNzE5LTEwLjM5ODQzOGwtMS4yMDcwMzEtMS4wNTQ2ODd2LTY3LjQ0OTIxOWMuMDU4NTk0LTQ4LjU3ODEyNSAzOS40MjE4NzUtODcuOTQxNDA2IDg4LTg4aDExMmM0OC41NzgxMjUuMDU4NTk0IDg3Ljk0MTQwNiAzOS40MjE4NzUgODggODh2NjcuNDU3MDMxbC0xLjA2MjUuODg2NzE5Yy00LjQ3MjY1NiAzLjczNDM3NS05LjA2MjUgNy4yNjU2MjUtMTMuNzc3MzQ0IDEwLjYwMTU2Mi0uNjI1LjQzNzUtMS4yNTc4MTIuODU1NDY5LTEuODc4OTA2IDEuMjg1MTU3LTQuNzU3ODEyIDMuMzA0Njg3LTkuNjMyODEyIDYuNDE0MDYyLTE0LjYyNSA5LjMzNTkzNy0uNjI1LjM2MzI4Mi0xLjI2NTYyNS43MDcwMzItMS44ODY3MTkgMS4wNjY0MDYtNS4wNTg1OTMgMi44Nzg5MDctMTAuMjAzMTI1IDUuNTk3NjU3LTE1LjQ0OTIxOSA4LjA0Njg3Ni0uNjAxNTYyLjI4MTI1LTEuMjA3MDMxLjU0Mjk2OC0xLjgxNjQwNi44MDA3ODEtNS4zMjgxMjUgMi40NTcwMzEtMTAuNzQyMTg3IDQuNzE4NzUtMTYuMjQ2MDk0IDYuNzQyMTg3LS41NDY4NzQuMjAzMTI1LTEuMDk3NjU2LjM3ODkwNi0xLjYwMTU2Mi41NzAzMTMtNS42MDE1NjIgMi4wMDc4MTItMTEuMjgxMjUgMy44MjQyMTktMTcuMDMxMjUgNS4zODI4MTJsLTEuMzc4OTA2LjM0Mzc1Yy01Ljg3MTA5NCAxLjU1MDc4MS0xMS43OTY4NzUgMi44ODY3MTktMTcuNzg5MDYzIDMuOTYwOTM4LS4zNDM3NS4wNjI1LS42ODc1LjEwNTQ2OS0xLjAzMTI1LjE2MDE1Ni02LjEyODkwNiAxLjA3MDMxMy0xMi4zMTI1IDEuOTAyMzQ0LTE4LjUzOTA2MiAyLjQ1NzAzMWgtLjU2NjQwN2MtNi4zOTg0MzcuNTUwNzgyLTEyLjgwMDc4MS44NDc2NTYtMTkuMjgxMjUuODQ3NjU2LTYuNDgwNDY4IDAtMTIuOTMzNTkzLS4yNDIxODctMTkuMzIwMzEyLS43OTI5Njh6bTE3OS4yODEyNS02Ni41MjczNDR2LTUyLjYyNWMtLjA2NjQwNi01Ny40MTAxNTYtNDYuNTg5ODQ0LTEwMy45MzM1OTQtMTA0LTEwNGgtMTEyYy01Ny40MTAxNTYuMDY2NDA2LTEwMy45MzM1OTQgNDYuNTg5ODQ0LTEwNCAxMDR2NTIuNjE3MTg4Yy04Ni4xNjQwNjItODcuOTQxNDA3LTg1LjIwMzEyNS0yMjguOTM3NSAyLjE0ODQzOC0zMTUuNjk5MjE5IDg3LjM1MTU2Mi04Ni43NTc4MTMgMjI4LjM1MTU2Mi04Ni43NTc4MTMgMzE1LjcwMzEyNCAwIDg3LjM1MTU2MyA4Ni43NjE3MTkgODguMzEyNSAyMjcuNzU3ODEyIDIuMTQ4NDM4IDMxNS42OTkyMTl6bTAgMCIvPjxwYXRoIGQ9Im0yNDAgNjRjLTQ0LjE4MzU5NCAwLTgwIDM1LjgxNjQwNi04MCA4MHMzNS44MTY0MDYgODAgODAgODAgODAtMzUuODE2NDA2IDgwLTgwYy0uMDQ2ODc1LTQ0LjE2NDA2Mi0zNS44MzU5MzgtNzkuOTUzMTI1LTgwLTgwem0wIDE0NGMtMzUuMzQ3NjU2IDAtNjQtMjguNjUyMzQ0LTY0LTY0czI4LjY1MjM0NC02NCA2NC02NCA2NCAyOC42NTIzNDQgNjQgNjRjLS4wMzkwNjIgMzUuMzI4MTI1LTI4LjY3MTg3NSA2My45NjA5MzgtNjQgNjR6bTAgMCIvPjwvc3ZnPg==') }, { text: 'indiener', style: 'question' }, { text: this.personData.naam.aanschrijfwijze, style: 'answer' }]];
+    const body = [[{ width: 15, height: 15, svg: this.dataUrlToSvg('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgaWQ9Im1pam5BcHBfdXNlciIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA0ODAgNDgwIiANCgkJc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDgwIDQ4MDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KCTxjaXJjbGUgc3R5bGU9Im9wYWNpdHk6MTtmaWxsOiNmNWY1ZjU7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjIuOTczNTQzMTc7c3Ryb2tlLWxpbmVjYXA6YnV0dDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6NDtzdHJva2UtZGFzaGFycmF5OjIuOTczNTQzMzEsIDguOTIwNjI5OTE5OTk5OTk3ODg7c3Ryb2tlLWRhc2hvZmZzZXQ6MDtzdHJva2Utb3BhY2l0eToxO3BhaW50LW9yZGVyOm5vcm1hbCIgDQoJCQlpZD0icGF0aDQ1MDgiIGN4PSIyNDAiIGN5PSIyNDAiIHI9IjI0MCIvPg0KCTxwYXRoIGQ9Ik0gMjM5Ljk5MzUsNDggQyAxMzMuOTU2LDQ4IDQ3Ljk5MzUwMywxMzMuOTYyNSA0Ny45OTM1MDMsMjQwIGMgMCwxMDYuMDM3NSA4NS45NjI0OTcsMTkyIDE5MS45OTk5OTcsMTkyIDUuNzg0MzgsMCAxMS41NDY4OCwtMC4yNTkzOCAxNy4yODEyNSwtMC43NzUgNS4zMzEyNSwtMC40NzgxMiAxMC42MTU2MywtMS4yMDkzOCAxNS44NTkzOCwtMi4xMjUgbCAyLjAxNTYyLC0wLjM1NjI1IEMgMzcyLjY0MDM4LDQxMC41NSA0NDAuMjM3MjUsMzIxLjEwMzEyIDQzMS4xMTg1LDIyMi4zNDY4OCA0MjEuOTk5NzUsMTIzLjU5MDYyIDMzOS4xNjg1LDQ4LjAzMTI1IDIzOS45OTM1LDQ4IFogbSAtMTUuNDI1LDM3MC41MjE4OCBoIC0wLjQ1MzEyIGMgLTQuOTc4MTMsLTAuNDQwNjMgLTkuOTE4NzUsLTEuMTA2MjYgLTE0LjgxNTYzLC0xLjk1OTM4IC0wLjI4MTI1LC0wLjA1IC0wLjU2MjUsLTAuMDgxMyAtMC44Mzc1LC0wLjEzNDM4IC00Ljc4NzUsLTAuODU2MjQgLTkuNTI1LC0xLjkxODc0IC0xNC4yMTU2MiwtMy4xNTkzNyBsIC0xLjEzNDM4LC0wLjI5MDYzIGMgLTQuNTc1LC0xLjI0MDYyIC05LjEsLTIuNjgxMjQgLTEzLjU1OTM3LC00LjI4MTI0IC0wLjQ2MjUsLTAuMTY1NjMgLTAuOTI4MTMsLTAuMzEyNSAtMS4zOTA2MywtMC40ODQzOCAtNC4zNzE4NywtMS42MDYyNSAtOC42NjU2MiwtMy40MDYyNSAtMTIuODkzNzUsLTUuMzUzMTIgLTAuNTI1LC0wLjIzNDM4IC0xLjA1LC0wLjQ1OTM4IC0xLjU3NSwtMC43MDkzOCAtNC4xNDY4NywtMS45MTg3NSAtOC4yMTI1LC00LjA4MTI1IC0xMi4yLC02LjM1NjI1IC0wLjU2MjUsLTAuMzE4NzUgLTEuMTMxMjUsLTAuNjM3NSAtMS42OTM3NSwtMC45NTMxMyAtMy45MjUsLTIuMjkwNjIgLTcuNzU5MzcsLTQuNzQ2ODcgLTExLjUyMTg3LC03LjM0MDYyIC0wLjU2ODc1LC0wLjM5Njg4IC0xLjE0Mzc1LC0wLjc4MTI1IC0xLjcwOTM4LC0xLjE3ODEyIC0zLjY5Njg3LC0yLjYyMTg4IC03LjMsLTUuNDA2MjYgLTEwLjgwOTM3LC04LjMxODc2IGwgLTAuOTY1NjMsLTAuODQzNzQgViAzMjMuMiBjIDAuMDQ2OSwtMzguODYyNSAzMS41Mzc1LC03MC4zNTMxMiA3MC40LC03MC40IGggODkuNiBjIDM4Ljg2MjUsMC4wNDY5IDcwLjM1MzEzLDMxLjUzNzUgNzAuNCw3MC40IHYgNTMuOTY1NjIgbCAtMC44NSwwLjcwOTM4IGMgLTMuNTc4MTIsMi45ODc1IC03LjI1LDUuODEyNSAtMTEuMDIxODcsOC40ODEyNSAtMC41LDAuMzUgLTEuMDA2MjUsMC42ODQzNyAtMS41MDMxMywxLjAyODEzIC0zLjgwNjI1LDIuNjQzNzQgLTcuNzA2MjUsNS4xMzEyNCAtMTEuNyw3LjQ2ODc0IC0wLjUsMC4yOTA2MyAtMS4wMTI1LDAuNTY1NjMgLTEuNTA5MzcsMC44NTMxMyAtNC4wNDY4OCwyLjMwMzEzIC04LjE2MjUsNC40NzgxMyAtMTIuMzU5MzgsNi40Mzc1IC0wLjQ4MTI1LDAuMjI1IC0wLjk2NTYyLDAuNDM0MzcgLTEuNDUzMTIsMC42NDA2MyAtNC4yNjI1LDEuOTY1NjIgLTguNTkzNzUsMy43NzUgLTEyLjk5Njg4LDUuMzkzNzQgLTAuNDM3NSwwLjE2MjUgLTAuODc4MTIsMC4zMDMxMyAtMS4yODEyNSwwLjQ1NjI2IC00LjQ4MTI1LDEuNjA2MjQgLTkuMDI1LDMuMDU5MzcgLTEzLjYyNSw0LjMwNjI0IGwgLTEuMTAzMTIsMC4yNzUgYyAtNC42OTY4OCwxLjI0MDYzIC05LjQzNzUsMi4zMDkzOCAtMTQuMjMxMjUsMy4xNjg3NiAtMC4yNzUsMC4wNSAtMC41NSwwLjA4NDQgLTAuODI1LDAuMTI4MTIgLTQuOTAzMTMsMC44NTYyNSAtOS44NSwxLjUyMTg4IC0xNC44MzEyNSwxLjk2NTYyIGggLTAuNDUzMTMgYyAtNS4xMTg3NSwwLjQ0MDYzIC0xMC4yNDA2MiwwLjY3ODEzIC0xNS40MjUsMC42NzgxMyAtNS4xODQzNywwIC0xMC4zNDY4NywtMC4xOTM3NSAtMTUuNDU2MjUsLTAuNjM0MzcgeiBNIDM2Ny45OTM1LDM2NS4zIHYgLTQyLjEgYyAtMC4wNTMxLC00NS45MjgxMiAtMzcuMjcxODcsLTgzLjE0Njg4IC04My4yLC04My4yIGggLTg5LjYgYyAtNDUuOTI4MTIsMC4wNTMxIC04My4xNDY4NywzNy4yNzE4OCAtODMuMiw4My4yIHYgNDIuMDkzNzUgYyAtNjguOTMxMjQ2LC03MC4zNTMxMyAtNjguMTYyNDk3LC0xODMuMTUgMS43MTg3NSwtMjUyLjU1OTM3IDY5Ljg4MTI1LC02OS40MDYyNTUgMTgyLjY4MTI1LC02OS40MDYyNTUgMjUyLjU2MjUsMCA2OS44ODEyNSw2OS40MDkzNyA3MC42NSwxODIuMjA2MjQgMS43MTg3NSwyNTIuNTU5MzcgeiBtIDAsMCIgDQoJCQlpZD0icGF0aDIiIHN0eWxlPSJzdHJva2Utd2lkdGg6MC44MDAwMDAwMTtmaWxsOiMxZWJkZDM7ZmlsbC1vcGFjaXR5OjEiLz4NCgk8cGF0aCBkPSJtIDI0MCw4MCBjIC0zNS4zNDY4OCwwIC02NCwyOC42NTMxMiAtNjQsNjQgMCwzNS4zNDY4OCAyOC42NTMxMiw2NCA2NCw2NCAzNS4zNDY4OCwwIDY0LC0yOC42NTMxMiA2NCwtNjQgLTAuMDM3NSwtMzUuMzMxMjUgLTI4LjY2ODc1LC02My45NjI1IC02NCwtNjQgeiBtIDAsMTE1LjIgYyAtMjguMjc4MTIsMCAtNTEuMiwtMjIuOTIxODggLTUxLjIsLTUxLjIgMCwtMjguMjc4MTIgMjIuOTIxODgsLTUxLjIgNTEuMiwtNTEuMiAyOC4yNzgxMiwwIDUxLjIsMjIuOTIxODggNTEuMiw1MS4yIC0wLjAzMTIsMjguMjYyNSAtMjIuOTM3NSw1MS4xNjg3NSAtNTEuMiw1MS4yIHogbSAwLDAiIA0KCQkJaWQ9InBhdGg0IiBzdHlsZT0ic3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjAuNzk5ODAwMDQ7c3Ryb2tlLW1pdGVybGltaXQ6NDtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLW9wYWNpdHk6MTtmaWxsOiMxZWJkZDM7ZmlsbC1vcGFjaXR5OjEiLz4NCjwvc3ZnPg==') }, { text: 'indiener', style: 'question' }, { text: this.personData.naam.aanschrijfwijze, style: 'answer' }]];
     this.order.filter(o => o.question && o.question !== 'END').forEach(o => {
       const dataRow = [];
       const question = this.questions.find(function (item) {
@@ -44444,7 +44438,7 @@ window.customElements.define('playback-screen-end', PlaybackScreenEnd);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".Wrapper{height:100vh;float:left;padding:0 0 57px}.TopbarButtonContainer,.Wrapper{width:100%;max-width:var(--main-max-width);box-sizing:border-box}.TopbarButtonContainer{height:62px;padding:16px 0}.ScrollContainer{box-sizing:border-box;width:100%;height:100%;float:left;overflow-y:auto;padding-bottom:75px}.Scroller{padding:0 16px}.ButtonContainer{width:100%;max-width:var(--main-max-width);height:50px;margin-top:16px;margin-bottom:8px;box-sizing:border-box;background-color:var(--main-content-background-color)}.PrevButton{float:left}.NextButton,.SkipButton{float:right}.ButtonInner{display:flex}.ButtonInnerLeft,.ButtonInnerRight{display:inline-block;opacity:1;transform:scale(.7,1.2)}.ButtonInnerText{display:inline-block;padding:0 8px}.ButtonInnerTextDownload{display:inline-block;padding:0 3px}.Title{margin-top:16px;font-size:var(--main-font-subheader-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.3px}.Subtitle,.Title{font-family:var(--typography-fontFamily);text-align:left;color:var(--palette-primary-main)}.Subtitle{font-size:var(--main-font-medium-text-size);font-style:italic;line-height:1.28;letter-spacing:-.4px;margin:7px 0 16px}.Answer{padding:10px 0}.AnswerLabel{font-weight:700;letter-spacing:-.2px;margin-bottom:3px}.AnswerAnswer,.AnswerLabel{font-family:var(--typography-fontFamily);font-size:var(--main-font-medium-text-size);font-style:normal;font-stretch:normal;text-align:left;color:var(--palette-primary-main);margin-left:40px}.AnswerAnswer{font-weight:400;letter-spacing:-.3px;white-space:pre-line}.RequestMessage{font-family:var(--typography-fontFamily);font-size:var(--main-font-text-size);font-weight:700;color:var(--palette-primary-main);text-align:center;line-height:56px}.RequestMessageBox{width:100%;display:flex;justify-content:center}.RequestSubMessage{font-family:var(--typography-fontFamily);font-size:var(--main-font-small-text-size);font-weight:700;color:var(--palette-primary-main);text-align:center;line-height:20px}maki-icon-cross{--icon-color:var(--icon-red-color)}.JourneyHeader{background-color:var(--button-gray-background-color);margin:0 -16px;padding:16px;display:flex;flex-direction:column;justify-content:center}.JourneyIcon{background-color:var(--icon-color-teal);border-radius:30px;width:20px;height:20px;padding:10px;align-self:center;box-sizing:content-box;--icon-color:var(--main-content-background-color)}.JourneyTitle{font-size:var(--main-font-medium-text-size);text-align:center}maki-icon-bulb,maki-icon-truck{--icon-size:20px}.DownloadButton{margin:16px 0;display:inline-block}.JourneyProgress{height:30px;width:100%;display:flex;justify-content:center}.JourneyProgressDotEmpty{margin:7px;width:12px;height:12px;background-color:var(--main-content-background-color);border-radius:8px;border:2px solid var(--icon-color);box-sizing:content-box}.JourneyProgressDot{width:16px;height:16px;border-radius:8px}.JourneyProgressDot,.JourneyProgressDotCheck{margin:7px;background-color:var(--icon-color)}.JourneyProgressDotCheck{width:12px;height:12px;border-radius:8px;border:2px solid var(--icon-color);display:flex;box-sizing:content-box}maki-icon-check{margin:3px 0 3px 1px;--icon-color:var(--main-content-background-color)}.JourneyProgressLine{margin:14px 0;width:40px;height:2px;background-color:var(--icon-color);border-radius:1px}.SuccessIcon{margin-top:15px;text-align:center}.SuccessIconImage{margin:auto;width:100px;height:100px;background-image:url(assets/radio.svg);background-repeat:no-repeat;background-position:50%;background-size:contain}.Image{width:30px;height:30px;float:left;margin:10px 10px 0 0}"
+module.exports = ".Wrapper{height:100vh;float:left;padding:0 0 57px}.TopbarButtonContainer,.Wrapper{width:100%;max-width:var(--main-max-width);box-sizing:border-box}.TopbarButtonContainer{height:62px;padding:16px 0}.TopbarButtonContainer maki-button{float:right}.ScrollContainer{box-sizing:border-box;width:100%;height:100%;float:left;overflow-y:auto;padding-bottom:75px}.Scroller{padding:0 16px}.ButtonContainer{width:100%;max-width:var(--main-max-width);height:50px;margin-top:16px;margin-bottom:8px;box-sizing:border-box;background-color:var(--main-content-background-color)}.DownloadButton,.PrevButton{float:left}.NextButton,.SkipButton{float:right}.ButtonInner{clear:both}.ButtonInnerLeft,.ButtonInnerRight{display:inline-block;opacity:1;transform:scale(.7,1.2)}.ButtonInnerText{display:inline-block;padding:0 8px}.Title{margin-top:16px;font-size:var(--main-font-subheader-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.3px}.Subtitle,.Title{font-family:var(--typography-fontFamily);text-align:left;color:var(--palette-primary-main)}.Subtitle{font-size:var(--main-font-medium-text-size);font-style:italic;line-height:1.28;letter-spacing:-.4px;margin:7px 0 16px}.Answer{padding:10px 0}.AnswerLabel{font-weight:700;letter-spacing:-.2px;margin-bottom:3px}.AnswerAnswer,.AnswerLabel{font-family:var(--typography-fontFamily);font-size:var(--main-font-medium-text-size);font-style:normal;font-stretch:normal;text-align:left;color:var(--palette-primary-main);margin-left:40px}.AnswerAnswer{font-weight:400;letter-spacing:-.3px;white-space:pre-line}.RequestMessage{font-family:var(--typography-fontFamily);font-size:var(--main-font-text-size);font-weight:700;color:var(--palette-primary-main);text-align:center;line-height:56px}.RequestMessageBox{width:100%;display:flex;justify-content:center}.RequestSubMessage{font-family:var(--typography-fontFamily);font-size:var(--main-font-small-text-size);font-weight:700;color:var(--palette-primary-main);text-align:center;line-height:20px}maki-icon-cross{--icon-color:var(--icon-red-color)}.JourneyHeader{background-color:var(--button-gray-background-color);margin:0 -16px;padding:16px;display:flex;flex-direction:column;justify-content:center}.JourneyIcon{background-color:var(--icon-color-teal);border-radius:30px;width:20px;height:20px;padding:10px;align-self:center;box-sizing:content-box;--icon-color:var(--main-content-background-color)}.JourneyTitle{font-size:var(--main-font-medium-text-size);text-align:center}maki-icon-bulb,maki-icon-truck{--icon-size:20px}.JourneyProgress{height:30px;width:100%;display:flex;justify-content:center}.JourneyProgressDotEmpty{margin:7px;width:12px;height:12px;background-color:var(--main-content-background-color);border-radius:8px;border:2px solid var(--icon-color);box-sizing:content-box}.JourneyProgressDot{width:16px;height:16px;border-radius:8px}.JourneyProgressDot,.JourneyProgressDotCheck{margin:7px;background-color:var(--icon-color)}.JourneyProgressDotCheck{width:12px;height:12px;border-radius:8px;border:2px solid var(--icon-color);display:flex;box-sizing:content-box}maki-icon-check{margin:3px 0 3px 1px;--icon-color:var(--main-content-background-color)}.JourneyProgressLine{margin:14px 0;width:40px;height:2px;background-color:var(--icon-color);border-radius:1px}.SuccessIcon{margin-top:15px;text-align:center}.SuccessIconImage{margin:auto;width:100px;height:100px;background-image:url(assets/radio.svg);background-repeat:no-repeat;background-position:50%;background-size:contain}.Image{width:30px;height:30px;float:left;margin:10px 10px 0 0}"
 
 /***/ }),
 
@@ -44455,7 +44449,7 @@ module.exports = ".Wrapper{height:100vh;float:left;padding:0 0 57px}.TopbarButto
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\r\n    <div class=\"ScrollContainer\">\r\n        <div class=\"Scroller\">\r\n            <div class=\"TopbarButtonContainer\">\r\n                <dom-if if=\"{{order_show_buttons}}\">\r\n                    <template>\r\n                        <maki-button on-click=\"_stop\" size=\"30\" stroke=\"0\" font-size=\"16\" heading=\"Stoppen\">\r\n                            <maki-icon-cross />\r\n                        </maki-button>\r\n                    </template>\r\n                </dom-if>\r\n            </div>\r\n            <div class=\"JourneyHeader\">\r\n                <div class=\"JourneyIcon\">\r\n                    <dom-if if=\"{{show_journey_icon_truck}}\">\r\n                        <template>\r\n                            <maki-icon-truck />\r\n                        </template>\r\n                    </dom-if>\r\n                    <dom-if if=\"{{show_journey_icon_bulb}}\">\r\n                        <template>\r\n                            <maki-icon-bulb />\r\n                        </template>\r\n                    </dom-if>\r\n                </div>\r\n                <div class=\"JourneyTitle\">[[_title(journey)]]</div>\r\n                <div class=\"JourneyProgress\">\r\n                    <dom-repeat items=\"{{journey.questions}}\">\r\n                        <template>\r\n                            <dom-if if=\"{{isCurrentQuestion(current, index)}}\">\r\n                                <template>\r\n                                    <div class=\"JourneyProgressDot\"></div>\r\n                                </template>\r\n                            </dom-if>\r\n                            <dom-if if=\"{{isNotAnswered(current, index)}}\">\r\n                                <template>\r\n                                    <div class=\"JourneyProgressDotEmpty\"></div>\r\n                                </template>\r\n                            </dom-if>\r\n                            <dom-if if=\"{{isAnswered(current, index)}}\">\r\n                                <template>\r\n                                    <div class=\"JourneyProgressDotCheck\">\r\n                                        <maki-icon-check />\r\n                                    </div>\r\n                                </template>\r\n                            </dom-if>\r\n                            <dom-if if=\"{{isNotLastItem(current, index)}}\">\r\n                                <template>\r\n                                    <div class=\"JourneyProgressLine\"></div>\r\n                                </template>\r\n                            </dom-if>\r\n                        </template>\r\n                    </dom-repeat>\r\n                    <dom-if if=\"{{order_status_send_ok}}\">\r\n                        <template>\r\n                            <div class=\"JourneyProgressLine\"></div>\r\n                            <div class=\"JourneyProgressDotCheck\">\r\n                                <maki-icon-check />\r\n                            </div>\r\n                        </template>\r\n                    </dom-if>\r\n                    <dom-if if=\"{{!order_status_send_ok}}\">\r\n                        <template>\r\n                            <div class=\"JourneyProgressLine\"></div>\r\n                            <div class=\"JourneyProgressDot\"></div>\r\n                        </template>\r\n                    </dom-if>\r\n                </div>\r\n            </div>\r\n            <div class=\"Title\">{{order_end_title}}</div>\r\n            <dom-if if=\"{{order_status_send_ok}}\">\r\n                <template>\r\n                    <div class=\"SuccessIcon\">\r\n                        <div class=\"SuccessIconImage\"></div>\r\n                    </div>\r\n                </template>\r\n            </dom-if>\r\n            <div class=\"Subtitle\">{{order_end_sub_title}}</div>\r\n            <div class=\"Answer\">\r\n                <img class=\"Image\" src=\"data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjQ4MHB0IiB2aWV3Qm94PSIwIDAgNDgwIDQ4MCIgd2lkdGg9IjQ4MHB0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im0yNDAgMGMtMTMyLjU0Njg3NSAwLTI0MCAxMDcuNDUzMTI1LTI0MCAyNDBzMTA3LjQ1MzEyNSAyNDAgMjQwIDI0MGM3LjIzMDQ2OSAwIDE0LjQzMzU5NC0uMzI0MjE5IDIxLjYwMTU2Mi0uOTY4NzUgNi42NjQwNjMtLjU5NzY1NiAxMy4yNjk1MzItMS41MTE3MTkgMTkuODI0MjE5LTIuNjU2MjVsMi41MTk1MzEtLjQ0NTMxMmMxMjEuODYzMjgyLTIyLjc0MjE4OCAyMDYuMzU5Mzc2LTEzNC41NTA3ODIgMTk0Ljk2MDkzOC0yNTcuOTk2MDk0LTExLjM5ODQzOC0xMjMuNDQ1MzEzLTExNC45Mzc1LTIxNy44OTQ1MzE1LTIzOC45MDYyNS0yMTcuOTMzNTk0em0tMTkuMjgxMjUgNDYzLjE1MjM0NGgtLjU2NjQwNmMtNi4yMjI2NTYtLjU1MDc4Mi0xMi4zOTg0MzgtMS4zODI4MTMtMTguNTE5NTMyLTIuNDQ5MjE5LS4zNTE1NjItLjA2MjUtLjcwMzEyNC0uMTAxNTYzLTEuMDQ2ODc0LS4xNjc5NjktNS45ODQzNzYtMS4wNzAzMTItMTEuOTA2MjUtMi4zOTg0MzctMTcuNzY5NTMyLTMuOTQ5MjE4bC0xLjQxNzk2OC0uMzYzMjgyYy01LjcxODc1LTEuNTUwNzgxLTExLjM3NS0zLjM1MTU2Mi0xNi45NDkyMTktNS4zNTE1NjItLjU3ODEyNS0uMjA3MDMyLTEuMTYwMTU3LS4zOTA2MjUtMS43MzgyODEtLjYwNTQ2OS01LjQ2NDg0NC0yLjAwNzgxMy0xMC44MzIwMzItNC4yNTc4MTMtMTYuMTE3MTg4LTYuNjkxNDA2LS42NTYyNS0uMjkyOTY5LTEuMzEyNS0uNTc0MjE5LTEuOTY4NzUtLjg4NjcxOS01LjE4MzU5NC0yLjM5ODQzOC0xMC4yNjU2MjUtNS4xMDE1NjItMTUuMjUtNy45NDUzMTItLjcwMzEyNS0uMzk4NDM4LTEuNDE0MDYyLS43OTY4NzYtMi4xMTcxODgtMS4xOTE0MDctNC45MDYyNS0yLjg2MzI4MS05LjY5OTIxOC01LjkzMzU5My0xNC40MDIzNDMtOS4xNzU3ODEtLjcxMDkzOC0uNDk2MDk0LTEuNDI5Njg4LS45NzY1NjItMi4xMzY3MTktMS40NzI2NTYtNC42MjEwOTQtMy4yNzczNDQtOS4xMjUtNi43NTc4MTMtMTMuNTExNzE5LTEwLjM5ODQzOGwtMS4yMDcwMzEtMS4wNTQ2ODd2LTY3LjQ0OTIxOWMuMDU4NTk0LTQ4LjU3ODEyNSAzOS40MjE4NzUtODcuOTQxNDA2IDg4LTg4aDExMmM0OC41NzgxMjUuMDU4NTk0IDg3Ljk0MTQwNiAzOS40MjE4NzUgODggODh2NjcuNDU3MDMxbC0xLjA2MjUuODg2NzE5Yy00LjQ3MjY1NiAzLjczNDM3NS05LjA2MjUgNy4yNjU2MjUtMTMuNzc3MzQ0IDEwLjYwMTU2Mi0uNjI1LjQzNzUtMS4yNTc4MTIuODU1NDY5LTEuODc4OTA2IDEuMjg1MTU3LTQuNzU3ODEyIDMuMzA0Njg3LTkuNjMyODEyIDYuNDE0MDYyLTE0LjYyNSA5LjMzNTkzNy0uNjI1LjM2MzI4Mi0xLjI2NTYyNS43MDcwMzItMS44ODY3MTkgMS4wNjY0MDYtNS4wNTg1OTMgMi44Nzg5MDctMTAuMjAzMTI1IDUuNTk3NjU3LTE1LjQ0OTIxOSA4LjA0Njg3Ni0uNjAxNTYyLjI4MTI1LTEuMjA3MDMxLjU0Mjk2OC0xLjgxNjQwNi44MDA3ODEtNS4zMjgxMjUgMi40NTcwMzEtMTAuNzQyMTg3IDQuNzE4NzUtMTYuMjQ2MDk0IDYuNzQyMTg3LS41NDY4NzQuMjAzMTI1LTEuMDk3NjU2LjM3ODkwNi0xLjYwMTU2Mi41NzAzMTMtNS42MDE1NjIgMi4wMDc4MTItMTEuMjgxMjUgMy44MjQyMTktMTcuMDMxMjUgNS4zODI4MTJsLTEuMzc4OTA2LjM0Mzc1Yy01Ljg3MTA5NCAxLjU1MDc4MS0xMS43OTY4NzUgMi44ODY3MTktMTcuNzg5MDYzIDMuOTYwOTM4LS4zNDM3NS4wNjI1LS42ODc1LjEwNTQ2OS0xLjAzMTI1LjE2MDE1Ni02LjEyODkwNiAxLjA3MDMxMy0xMi4zMTI1IDEuOTAyMzQ0LTE4LjUzOTA2MiAyLjQ1NzAzMWgtLjU2NjQwN2MtNi4zOTg0MzcuNTUwNzgyLTEyLjgwMDc4MS44NDc2NTYtMTkuMjgxMjUuODQ3NjU2LTYuNDgwNDY4IDAtMTIuOTMzNTkzLS4yNDIxODctMTkuMzIwMzEyLS43OTI5Njh6bTE3OS4yODEyNS02Ni41MjczNDR2LTUyLjYyNWMtLjA2NjQwNi01Ny40MTAxNTYtNDYuNTg5ODQ0LTEwMy45MzM1OTQtMTA0LTEwNGgtMTEyYy01Ny40MTAxNTYuMDY2NDA2LTEwMy45MzM1OTQgNDYuNTg5ODQ0LTEwNCAxMDR2NTIuNjE3MTg4Yy04Ni4xNjQwNjItODcuOTQxNDA3LTg1LjIwMzEyNS0yMjguOTM3NSAyLjE0ODQzOC0zMTUuNjk5MjE5IDg3LjM1MTU2Mi04Ni43NTc4MTMgMjI4LjM1MTU2Mi04Ni43NTc4MTMgMzE1LjcwMzEyNCAwIDg3LjM1MTU2MyA4Ni43NjE3MTkgODguMzEyNSAyMjcuNzU3ODEyIDIuMTQ4NDM4IDMxNS42OTkyMTl6bTAgMCIvPjxwYXRoIGQ9Im0yNDAgNjRjLTQ0LjE4MzU5NCAwLTgwIDM1LjgxNjQwNi04MCA4MHMzNS44MTY0MDYgODAgODAgODAgODAtMzUuODE2NDA2IDgwLTgwYy0uMDQ2ODc1LTQ0LjE2NDA2Mi0zNS44MzU5MzgtNzkuOTUzMTI1LTgwLTgwem0wIDE0NGMtMzUuMzQ3NjU2IDAtNjQtMjguNjUyMzQ0LTY0LTY0czI4LjY1MjM0NC02NCA2NC02NCA2NCAyOC42NTIzNDQgNjQgNjRjLS4wMzkwNjIgMzUuMzI4MTI1LTI4LjY3MTg3NSA2My45NjA5MzgtNjQgNjR6bTAgMCIvPjwvc3ZnPg==\"/>\r\n                <div class=\"AnswerLabel\">indiener</div>\r\n                <div class=\"AnswerAnswer\">{{personData.naam.aanschrijfwijze}}</div>\r\n            </div>\r\n            <dom-repeat items=\"[[_getOrderItems(order)]]\">\r\n                <template>\r\n                    <div class=\"Answer\">\r\n                        <img class=\"Image\" src=\"[[item.image]]\"/>\r\n                        <div class=\"AnswerLabel\">[[item.key]]</div>\r\n                        <div class=\"AnswerAnswer\">[[item.value]]</div>\r\n                    </div>\r\n                </template>\r\n            </dom-repeat>\r\n            <dom-if if=\"{{order_status_send_ok}}\">\r\n                <template>\r\n                    <div class=\"ButtonContainer\">\r\n                        <maki-button stroke=\"0\" size=\"40\" font-size=\"16\" set-color-main=\"#3192CF\" on-click=\"_createPdf\">\r\n                            <div class=\"ButtonInner\">\r\n                                <div class=\"ButtonInnerTextDownload\">Download overzicht</div>\r\n                            </div>\r\n                        </maki-button>\r\n                        <maki-button class=\"NextButton\" highlight set-color-highlight=\"#3192CF\" stroke=\"0\" size=\"40\" font-size=\"16\" on-click=\"_stop\">\r\n                            <div class=\"ButtonInner\">\r\n                                <div class=\"ButtonInnerText\">Sluiten</div>\r\n                            </div>\r\n                        </maki-button>\r\n                    </div>\r\n                </template>\r\n            </dom-if>\r\n            <dom-if if=\"{{order_status_sending}}\">\r\n                <template>\r\n                    <div class=\"RequestMessage\">Bezig met verzenden...</div>\r\n                </template>\r\n            </dom-if>\r\n            <dom-if if=\"{{order_status_send_failed}}\">\r\n                <template>\r\n                    <div class=\"RequestMessage\">Er is een fout opgetreden bij het versturen van de aanvraag.</div>\r\n                </template>\r\n            </dom-if>\r\n            <dom-if if=\"{{order_show_buttons}}\">\r\n                <template>\r\n                    <div class=\"ButtonContainer\">\r\n                        <maki-button class=\"PrevButton\" stroke=\"0\" size=\"40\" font-size=\"16\" set-color-main=\"#3192CF\" on-click=\"_prev\">\r\n                            <div class=\"ButtonInner\">\r\n                                <div class=\"ButtonInnerLeft\"><</div>\r\n                                <div class=\"ButtonInnerText\">Ga terug</div>\r\n                            </div>\r\n                        </maki-button>\r\n                        <maki-button class=\"NextButton\" disabled=\"[[disabled]]\" highlight set-color-highlight=\"#3192CF\" stroke=\"0\" size=\"40\" font-size=\"16\" on-click=\"[[_submit(order)]]\">\r\n                            <div class=\"ButtonInner\">\r\n                                <div class=\"ButtonInnerText\">Nu verzenden</div>\r\n                                <div class=\"ButtonInnerRight\">></div>\r\n                            </div>\r\n                        </maki-button>\r\n                    </div>\r\n                </template>\r\n            </dom-if>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
+module.exports = "<div class=\"Wrapper\">\r\n    <div class=\"ScrollContainer\">\r\n        <div class=\"Scroller\">\r\n            <div class=\"TopbarButtonContainer\">\r\n                <dom-if if=\"{{order_show_buttons}}\">\r\n                    <template>\r\n                        <maki-button on-click=\"_stop\" size=\"30\" stroke=\"0\" font-size=\"16\" heading=\"Stoppen\">\r\n                            <maki-icon-cross />\r\n                        </maki-button>\r\n                    </template>\r\n                </dom-if>\r\n            </div>\r\n            <div class=\"JourneyHeader\">\r\n                <div class=\"JourneyIcon\">\r\n                    <dom-if if=\"{{show_journey_icon_truck}}\">\r\n                        <template>\r\n                            <maki-icon-truck />\r\n                        </template>\r\n                    </dom-if>\r\n                    <dom-if if=\"{{show_journey_icon_bulb}}\">\r\n                        <template>\r\n                            <maki-icon-bulb />\r\n                        </template>\r\n                    </dom-if>\r\n                </div>\r\n                <div class=\"JourneyTitle\">[[_title(journey)]]</div>\r\n                <div class=\"JourneyProgress\">\r\n                    <dom-repeat items=\"{{journey.questions}}\">\r\n                        <template>\r\n                            <dom-if if=\"{{isCurrentQuestion(current, index)}}\">\r\n                                <template>\r\n                                    <div class=\"JourneyProgressDot\"></div>\r\n                                </template>\r\n                            </dom-if>\r\n                            <dom-if if=\"{{isNotAnswered(current, index)}}\">\r\n                                <template>\r\n                                    <div class=\"JourneyProgressDotEmpty\"></div>\r\n                                </template>\r\n                            </dom-if>\r\n                            <dom-if if=\"{{isAnswered(current, index)}}\">\r\n                                <template>\r\n                                    <div class=\"JourneyProgressDotCheck\">\r\n                                        <maki-icon-check />\r\n                                    </div>\r\n                                </template>\r\n                            </dom-if>\r\n                            <dom-if if=\"{{isNotLastItem(current, index)}}\">\r\n                                <template>\r\n                                    <div class=\"JourneyProgressLine\"></div>\r\n                                </template>\r\n                            </dom-if>\r\n                        </template>\r\n                    </dom-repeat>\r\n                    <dom-if if=\"{{order_status_send_ok}}\">\r\n                        <template>\r\n                            <div class=\"JourneyProgressLine\"></div>\r\n                            <div class=\"JourneyProgressDotCheck\">\r\n                                <maki-icon-check />\r\n                            </div>\r\n                        </template>\r\n                    </dom-if>\r\n                    <dom-if if=\"{{!order_status_send_ok}}\">\r\n                        <template>\r\n                            <div class=\"JourneyProgressLine\"></div>\r\n                            <div class=\"JourneyProgressDot\"></div>\r\n                        </template>\r\n                    </dom-if>\r\n                </div>\r\n            </div>\r\n            <div class=\"Title\">{{order_end_title}}</div>\r\n            <dom-if if=\"{{order_status_send_ok}}\">\r\n                <template>\r\n                    <div class=\"SuccessIcon\">\r\n                        <div class=\"SuccessIconImage\"></div>\r\n                    </div>\r\n                </template>\r\n            </dom-if>\r\n            <div class=\"Subtitle\">{{order_end_sub_title}}</div>\r\n            <div class=\"Answer\">\r\n                <img class=\"Image\" src=\"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgaWQ9Im1pam5BcHBfdXNlciIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA0ODAgNDgwIiANCgkJc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDgwIDQ4MDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KCTxjaXJjbGUgc3R5bGU9Im9wYWNpdHk6MTtmaWxsOiNmNWY1ZjU7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjIuOTczNTQzMTc7c3Ryb2tlLWxpbmVjYXA6YnV0dDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6NDtzdHJva2UtZGFzaGFycmF5OjIuOTczNTQzMzEsIDguOTIwNjI5OTE5OTk5OTk3ODg7c3Ryb2tlLWRhc2hvZmZzZXQ6MDtzdHJva2Utb3BhY2l0eToxO3BhaW50LW9yZGVyOm5vcm1hbCIgDQoJCQlpZD0icGF0aDQ1MDgiIGN4PSIyNDAiIGN5PSIyNDAiIHI9IjI0MCIvPg0KCTxwYXRoIGQ9Ik0gMjM5Ljk5MzUsNDggQyAxMzMuOTU2LDQ4IDQ3Ljk5MzUwMywxMzMuOTYyNSA0Ny45OTM1MDMsMjQwIGMgMCwxMDYuMDM3NSA4NS45NjI0OTcsMTkyIDE5MS45OTk5OTcsMTkyIDUuNzg0MzgsMCAxMS41NDY4OCwtMC4yNTkzOCAxNy4yODEyNSwtMC43NzUgNS4zMzEyNSwtMC40NzgxMiAxMC42MTU2MywtMS4yMDkzOCAxNS44NTkzOCwtMi4xMjUgbCAyLjAxNTYyLC0wLjM1NjI1IEMgMzcyLjY0MDM4LDQxMC41NSA0NDAuMjM3MjUsMzIxLjEwMzEyIDQzMS4xMTg1LDIyMi4zNDY4OCA0MjEuOTk5NzUsMTIzLjU5MDYyIDMzOS4xNjg1LDQ4LjAzMTI1IDIzOS45OTM1LDQ4IFogbSAtMTUuNDI1LDM3MC41MjE4OCBoIC0wLjQ1MzEyIGMgLTQuOTc4MTMsLTAuNDQwNjMgLTkuOTE4NzUsLTEuMTA2MjYgLTE0LjgxNTYzLC0xLjk1OTM4IC0wLjI4MTI1LC0wLjA1IC0wLjU2MjUsLTAuMDgxMyAtMC44Mzc1LC0wLjEzNDM4IC00Ljc4NzUsLTAuODU2MjQgLTkuNTI1LC0xLjkxODc0IC0xNC4yMTU2MiwtMy4xNTkzNyBsIC0xLjEzNDM4LC0wLjI5MDYzIGMgLTQuNTc1LC0xLjI0MDYyIC05LjEsLTIuNjgxMjQgLTEzLjU1OTM3LC00LjI4MTI0IC0wLjQ2MjUsLTAuMTY1NjMgLTAuOTI4MTMsLTAuMzEyNSAtMS4zOTA2MywtMC40ODQzOCAtNC4zNzE4NywtMS42MDYyNSAtOC42NjU2MiwtMy40MDYyNSAtMTIuODkzNzUsLTUuMzUzMTIgLTAuNTI1LC0wLjIzNDM4IC0xLjA1LC0wLjQ1OTM4IC0xLjU3NSwtMC43MDkzOCAtNC4xNDY4NywtMS45MTg3NSAtOC4yMTI1LC00LjA4MTI1IC0xMi4yLC02LjM1NjI1IC0wLjU2MjUsLTAuMzE4NzUgLTEuMTMxMjUsLTAuNjM3NSAtMS42OTM3NSwtMC45NTMxMyAtMy45MjUsLTIuMjkwNjIgLTcuNzU5MzcsLTQuNzQ2ODcgLTExLjUyMTg3LC03LjM0MDYyIC0wLjU2ODc1LC0wLjM5Njg4IC0xLjE0Mzc1LC0wLjc4MTI1IC0xLjcwOTM4LC0xLjE3ODEyIC0zLjY5Njg3LC0yLjYyMTg4IC03LjMsLTUuNDA2MjYgLTEwLjgwOTM3LC04LjMxODc2IGwgLTAuOTY1NjMsLTAuODQzNzQgViAzMjMuMiBjIDAuMDQ2OSwtMzguODYyNSAzMS41Mzc1LC03MC4zNTMxMiA3MC40LC03MC40IGggODkuNiBjIDM4Ljg2MjUsMC4wNDY5IDcwLjM1MzEzLDMxLjUzNzUgNzAuNCw3MC40IHYgNTMuOTY1NjIgbCAtMC44NSwwLjcwOTM4IGMgLTMuNTc4MTIsMi45ODc1IC03LjI1LDUuODEyNSAtMTEuMDIxODcsOC40ODEyNSAtMC41LDAuMzUgLTEuMDA2MjUsMC42ODQzNyAtMS41MDMxMywxLjAyODEzIC0zLjgwNjI1LDIuNjQzNzQgLTcuNzA2MjUsNS4xMzEyNCAtMTEuNyw3LjQ2ODc0IC0wLjUsMC4yOTA2MyAtMS4wMTI1LDAuNTY1NjMgLTEuNTA5MzcsMC44NTMxMyAtNC4wNDY4OCwyLjMwMzEzIC04LjE2MjUsNC40NzgxMyAtMTIuMzU5MzgsNi40Mzc1IC0wLjQ4MTI1LDAuMjI1IC0wLjk2NTYyLDAuNDM0MzcgLTEuNDUzMTIsMC42NDA2MyAtNC4yNjI1LDEuOTY1NjIgLTguNTkzNzUsMy43NzUgLTEyLjk5Njg4LDUuMzkzNzQgLTAuNDM3NSwwLjE2MjUgLTAuODc4MTIsMC4zMDMxMyAtMS4yODEyNSwwLjQ1NjI2IC00LjQ4MTI1LDEuNjA2MjQgLTkuMDI1LDMuMDU5MzcgLTEzLjYyNSw0LjMwNjI0IGwgLTEuMTAzMTIsMC4yNzUgYyAtNC42OTY4OCwxLjI0MDYzIC05LjQzNzUsMi4zMDkzOCAtMTQuMjMxMjUsMy4xNjg3NiAtMC4yNzUsMC4wNSAtMC41NSwwLjA4NDQgLTAuODI1LDAuMTI4MTIgLTQuOTAzMTMsMC44NTYyNSAtOS44NSwxLjUyMTg4IC0xNC44MzEyNSwxLjk2NTYyIGggLTAuNDUzMTMgYyAtNS4xMTg3NSwwLjQ0MDYzIC0xMC4yNDA2MiwwLjY3ODEzIC0xNS40MjUsMC42NzgxMyAtNS4xODQzNywwIC0xMC4zNDY4NywtMC4xOTM3NSAtMTUuNDU2MjUsLTAuNjM0MzcgeiBNIDM2Ny45OTM1LDM2NS4zIHYgLTQyLjEgYyAtMC4wNTMxLC00NS45MjgxMiAtMzcuMjcxODcsLTgzLjE0Njg4IC04My4yLC04My4yIGggLTg5LjYgYyAtNDUuOTI4MTIsMC4wNTMxIC04My4xNDY4NywzNy4yNzE4OCAtODMuMiw4My4yIHYgNDIuMDkzNzUgYyAtNjguOTMxMjQ2LC03MC4zNTMxMyAtNjguMTYyNDk3LC0xODMuMTUgMS43MTg3NSwtMjUyLjU1OTM3IDY5Ljg4MTI1LC02OS40MDYyNTUgMTgyLjY4MTI1LC02OS40MDYyNTUgMjUyLjU2MjUsMCA2OS44ODEyNSw2OS40MDkzNyA3MC42NSwxODIuMjA2MjQgMS43MTg3NSwyNTIuNTU5MzcgeiBtIDAsMCIgDQoJCQlpZD0icGF0aDIiIHN0eWxlPSJzdHJva2Utd2lkdGg6MC44MDAwMDAwMTtmaWxsOiMxZWJkZDM7ZmlsbC1vcGFjaXR5OjEiLz4NCgk8cGF0aCBkPSJtIDI0MCw4MCBjIC0zNS4zNDY4OCwwIC02NCwyOC42NTMxMiAtNjQsNjQgMCwzNS4zNDY4OCAyOC42NTMxMiw2NCA2NCw2NCAzNS4zNDY4OCwwIDY0LC0yOC42NTMxMiA2NCwtNjQgLTAuMDM3NSwtMzUuMzMxMjUgLTI4LjY2ODc1LC02My45NjI1IC02NCwtNjQgeiBtIDAsMTE1LjIgYyAtMjguMjc4MTIsMCAtNTEuMiwtMjIuOTIxODggLTUxLjIsLTUxLjIgMCwtMjguMjc4MTIgMjIuOTIxODgsLTUxLjIgNTEuMiwtNTEuMiAyOC4yNzgxMiwwIDUxLjIsMjIuOTIxODggNTEuMiw1MS4yIC0wLjAzMTIsMjguMjYyNSAtMjIuOTM3NSw1MS4xNjg3NSAtNTEuMiw1MS4yIHogbSAwLDAiIA0KCQkJaWQ9InBhdGg0IiBzdHlsZT0ic3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjAuNzk5ODAwMDQ7c3Ryb2tlLW1pdGVybGltaXQ6NDtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLW9wYWNpdHk6MTtmaWxsOiMxZWJkZDM7ZmlsbC1vcGFjaXR5OjEiLz4NCjwvc3ZnPg==\"/>\r\n                <div class=\"AnswerLabel\">indiener</div>\r\n                <div class=\"AnswerAnswer\">{{personData.naam.aanschrijfwijze}}</div>\r\n            </div>\r\n            <dom-repeat items=\"[[_getOrderItems(order)]]\">\r\n                <template>\r\n                    <div class=\"Answer\">\r\n                        <img class=\"Image\" src=\"[[item.image]]\"/>\r\n                        <div class=\"AnswerLabel\">[[item.key]]</div>\r\n                        <div class=\"AnswerAnswer\">[[item.value]]</div>\r\n                    </div>\r\n                </template>\r\n            </dom-repeat>\r\n            <dom-if if=\"{{order_status_send_ok}}\">\r\n                <template>\r\n                    <div class=\"ButtonContainer\">\r\n                        <maki-button class=\"DownloadButton\" highlight set-color-highlight=\"#3192CF\" stroke=\"0\" size=\"40\" font-size=\"16\" on-click=\"_createPdf\">\r\n                            <div class=\"ButtonInner\">\r\n                                <div class=\"ButtonInnerText\">Download overzicht</div>\r\n                            </div>\r\n                        </maki-button>\r\n                        <maki-button class=\"NextButton\" highlight set-color-highlight=\"#3192CF\" stroke=\"0\" size=\"40\" font-size=\"16\" on-click=\"_stop\">\r\n                            <div class=\"ButtonInner\">\r\n                                <div class=\"ButtonInnerText\">Sluiten</div>\r\n                            </div>\r\n                        </maki-button>\r\n                    </div>\r\n                </template>\r\n            </dom-if>\r\n            <dom-if if=\"{{order_status_sending}}\">\r\n                <template>\r\n                    <div class=\"RequestMessage\">Bezig met verzenden...</div>\r\n                </template>\r\n            </dom-if>\r\n            <dom-if if=\"{{order_status_send_failed}}\">\r\n                <template>\r\n                    <div class=\"RequestMessage\">Er is een fout opgetreden bij het versturen van de aanvraag.</div>\r\n                </template>\r\n            </dom-if>\r\n            <dom-if if=\"{{order_show_buttons}}\">\r\n                <template>\r\n                    <div class=\"ButtonContainer\">\r\n                        <maki-button class=\"PrevButton\" stroke=\"0\" size=\"40\" font-size=\"16\" set-color-main=\"#3192CF\" on-click=\"_prev\">\r\n                            <div class=\"ButtonInner\">\r\n                                <div class=\"ButtonInnerLeft\"><</div>\r\n                                <div class=\"ButtonInnerText\">Ga terug</div>\r\n                            </div>\r\n                        </maki-button>\r\n                        <maki-button class=\"NextButton\" disabled=\"[[disabled]]\" highlight set-color-highlight=\"#3192CF\" stroke=\"0\" size=\"40\" font-size=\"16\" on-click=\"[[_submit(order)]]\">\r\n                            <div class=\"ButtonInner\">\r\n                                <div class=\"ButtonInnerText\">Nu verzenden</div>\r\n                                <div class=\"ButtonInnerRight\">></div>\r\n                            </div>\r\n                        </maki-button>\r\n                    </div>\r\n                </template>\r\n            </dom-if>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -44563,7 +44557,7 @@ module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<playback-screen-wrapper no-next>\n  Type niet gespecificeerd\n</playback-screen-wrapper>\n"
+module.exports = "<playback-screen-wrapper no-next>\r\n  Type niet gespecificeerd\r\n</playback-screen-wrapper>\r\n"
 
 /***/ }),
 
@@ -44695,7 +44689,7 @@ module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled=\"[[_isDisabled(order)]]\">\n  <dom-repeat items=\"[[_items(question)]]\">\n    <template>\n      <div class=\"Item\">\n        <maki-input elevation=\"0\" rounding=\"0\" fill secondary placeholder=\"[[_itemTitle(item.title)]]\" value=\"[[_getValue(order, index)]]\" input-callback=\"[[_inputCallback(question, index, order)]]\"></maki-input>\n      </div>\n    </template>\n  </dom-repeat>\n</playback-screen-wrapper>\n"
+module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled=\"[[_isDisabled(order)]]\">\r\n  <dom-repeat items=\"[[_items(question)]]\">\r\n    <template>\r\n      <div class=\"Item\">\r\n        <maki-input elevation=\"0\" rounding=\"0\" fill secondary placeholder=\"[[_itemTitle(item.title)]]\" value=\"[[_getValue(order, index)]]\" input-callback=\"[[_inputCallback(question, index, order)]]\"></maki-input>\r\n      </div>\r\n    </template>\r\n  </dom-repeat>\r\n</playback-screen-wrapper>\r\n"
 
 /***/ }),
 
@@ -44841,7 +44835,7 @@ module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled=\"[[_isDisabled()]]\">\n  <div class=\"Options\">\n    <dom-repeat items=\"[[_optionNames(question)]]\">\n      <template>\n        <div class=\"Option\" data-index=\"[[index]]\" on-click=\"_optionClick\">\n          [[item]]\n          <div class$=\"Circle[[_isSelected(index, selected)]]\"></div>\n        </div>\n      </template>\n    </dom-repeat>\n  </div>\n</playback-screen-wrapper>\n"
+module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled=\"[[_isDisabled()]]\">\r\n  <div class=\"Options\">\r\n    <dom-repeat items=\"[[_optionNames(question)]]\">\r\n      <template>\r\n        <div class=\"Option\" data-index=\"[[index]]\" on-click=\"_optionClick\">\r\n          [[item]]\r\n          <div class$=\"Circle[[_isSelected(index, selected)]]\"></div>\r\n        </div>\r\n      </template>\r\n    </dom-repeat>\r\n  </div>\r\n</playback-screen-wrapper>\r\n"
 
 /***/ }),
 
@@ -45014,7 +45008,7 @@ window.customElements.define('playback-screen-persons-moving', PlaybackScreenPer
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width);float:left}.Options{width:100%;display:inline-block}.Option{margin:5px 0;font-family:var(--typography-fontFamily);float:left;box-sizing:border-box;width:100%;height:56px;font-size:var(--main-font-text-size);font-weight:500;font-style:normal;font-stretch:normal;line-height:1.28;letter-spacing:-.3px;text-align:left;padding:17px 0 16px 22px;color:var(--palette-primary-main);background-color:var(--button-gray-background-color);border-radius:3px;position:relative;cursor:pointer}.Option:hover:after{content:\" \";width:100%;height:100%;position:absolute;top:0;left:0;background-color:var(--palette-action-hover)}.Circle{pointer-events:none;width:20px;height:20px;border:1px solid var(--palette-primary-main);border-radius:5px;position:absolute;top:17px;right:15px}.Circle.selected{pointer-events:none;width:22px;height:22px;border:0;background-image:url(assets/checkBox.svg);background-repeat:no-repeat;background-position:50%;background-size:contain}"
+module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width);float:left}.Options{width:100%;display:inline-block}.Option{margin:5px 0;display:block;font-family:var(--typography-fontFamily);float:left;box-sizing:border-box;width:100%;height:56px;font-size:var(--main-font-text-size);font-weight:500;font-style:normal;font-stretch:normal;line-height:1.28;letter-spacing:-.3px;text-align:left;padding:17px 0 16px 22px;color:var(--palette-primary-main);background-color:var(--button-gray-background-color);border-radius:3px;position:relative;cursor:pointer}.Option:hover:after{content:\" \";width:100%;height:100%;position:absolute;top:0;left:0;background-color:var(--palette-action-hover)}.Circle{pointer-events:none;float:left;margin-left:-10px;width:20px;height:20px;border:1px solid var(--palette-primary-main);border-radius:5px;top:17px;right:15px}.Circle.selected{pointer-events:none;width:22px;height:22px;border:0;background-image:url(assets/checkBox.svg);background-repeat:no-repeat;background-position:50%;background-size:contain}.OptionText{display:inline;margin-left:10px}"
 
 /***/ }),
 
@@ -45025,7 +45019,7 @@ module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled$=\"{{isDisabled}}\">\r\n    <dom-if if=\"{{searchingMovingPersons}}\">\r\n        <template>\r\n            <div class=\"Subtitle\">De mogelijke medeverhuizers worden opgehaald</div>\r\n        </template>\r\n    </dom-if>\r\n    <dom-if if=\"{{!searchingMovingPersons}}\">\r\n        <template>\r\n            <div class=\"Options\">\r\n                <dom-repeat items=\"[[persons]]\">\r\n                    <template>\r\n                        <div class=\"Option\" data-index=\"[[index]]\" on-click=\"_optionClick\">\r\n                            [[item.naam.aanschrijfwijze]]\r\n                            <div class$=\"{{_isSelected(item.selected)}}\"></div>\r\n                        </div>\r\n                    </template>\r\n                </dom-repeat>\r\n            </div>\r\n        </template>\r\n    </dom-if>\r\n</playback-screen-wrapper>\r\n"
+module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled$=\"{{isDisabled}}\">\r\n    <dom-if if=\"{{searchingMovingPersons}}\">\r\n        <template>\r\n            <div class=\"Subtitle\">De mogelijke medeverhuizers worden opgehaald</div>\r\n        </template>\r\n    </dom-if>\r\n    <dom-if if=\"{{!searchingMovingPersons}}\">\r\n        <template>\r\n            <div class=\"Options\">\r\n                <dom-repeat items=\"[[persons]]\">\r\n                    <template>\r\n                        <div class=\"Option\" data-index=\"[[index]]\" on-click=\"_optionClick\">\r\n                            <div class$=\"{{_isSelected(item.selected)}}\"></div>\r\n                            <div class=\"OptionText\">[[item.naam.aanschrijfwijze]]</div>\r\n                        </div>\r\n                    </template>\r\n                </dom-repeat>\r\n            </div>\r\n        </template>\r\n    </dom-if>\r\n</playback-screen-wrapper>\r\n"
 
 /***/ }),
 
@@ -45158,7 +45152,7 @@ module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question, selected)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled=\"[[_isDisabled(order, question, selected)]]\">\n  <div class=\"Options\">\n    <dom-repeat items=\"[[_optionNames(question)]]\">\n      <template>\n        <div class=\"Option\" data-index=\"[[index]]\" on-click=\"_optionClick\">\n          [[item]]\n          <div class$=\"Circle[[_isSelected(index, selected)]]\"></div>\n        </div>\n      </template>\n    </dom-repeat>\n  </div>\n</playback-screen-wrapper>\n"
+module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question, selected)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled=\"[[_isDisabled(order, question, selected)]]\">\r\n  <div class=\"Options\">\r\n    <dom-repeat items=\"[[_optionNames(question)]]\">\r\n      <template>\r\n        <div class=\"Option\" data-index=\"[[index]]\" on-click=\"_optionClick\">\r\n          [[item]]\r\n          <div class$=\"Circle[[_isSelected(index, selected)]]\"></div>\r\n        </div>\r\n      </template>\r\n    </dom-repeat>\r\n  </div>\r\n</playback-screen-wrapper>\r\n"
 
 /***/ }),
 
@@ -45268,7 +45262,7 @@ module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<playback-screen-wrapper skip-callback=\"[[_skipCallback(question)]]\" no-next>\n  <div class=\"Options\">\n    <dom-repeat items=\"[[_optionNames(question)]]\">\n      <template>\n        <div class=\"Option\" data-question=\"[[question]]\" data-index=\"[[index]]\" on-click=\"_optionClick\">[[item]]</div>\n      </template>\n    </dom-repeat>\n  </div>\n</playback-screen-wrapper>\n"
+module.exports = "<playback-screen-wrapper skip-callback=\"[[_skipCallback(question)]]\" no-next>\r\n  <div class=\"Options\">\r\n    <dom-repeat items=\"[[_optionNames(question)]]\">\r\n      <template>\r\n        <div class=\"Option\" data-question=\"[[question]]\" data-index=\"[[index]]\" on-click=\"_optionClick\">[[item]]</div>\r\n      </template>\r\n    </dom-repeat>\r\n  </div>\r\n</playback-screen-wrapper>\r\n"
 
 /***/ }),
 
@@ -45325,7 +45319,7 @@ class PlaybackScreenStart extends (0, _connectMixin.connect)(_store.store)(_poly
   }
 
   _stop() {
-    _store.store.dispatch((0, _application.selectPage)('home'));
+    _store.store.dispatch((0, _application.selectPage)('journeys'));
   }
 
   _title(journey) {
@@ -45400,7 +45394,7 @@ window.customElements.define('playback-screen-start', PlaybackScreenStart);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host{width:100%;height:100%;float:left}.Wrapper{height:100vh;float:left;padding:0 0 57px;position:relative}.TopbarButtonContainer,.Wrapper{box-sizing:border-box;width:100%;max-width:var(--main-max-width)}.TopbarButtonContainer{height:62px;padding:16px 0}.ButtonContainer{width:100%;max-width:var(--main-max-width);margin-top:30px;margin-bottom:8px;height:50px;box-sizing:border-box;background-color:var(--main-content-background-color);display:flex;justify-content:center}.ButtonInner{display:flex}.ButtonInnerLeft,.ButtonInnerRight{display:inline-block;opacity:0;transform:scale(.7,1.2)}.ButtonInnerText{display:inline-block;padding:0 35px}.ButtonInnerRight{opacity:1}.ScrollContainer{box-sizing:border-box;width:100%;height:100%;float:left;overflow-y:auto;padding-bottom:75px}.Scroller{padding:0 16px;position:relative}.JourneyHeader{background-color:var(--button-gray-background-color);margin:0 -16px;padding:10px 16px;display:flex;flex-direction:column;justify-content:center}.JourneyIcon{background-color:var(--icon-color-teal);border-radius:30px;width:40px;height:40px;padding:10px;align-self:center;box-sizing:content-box;--icon-color:var(--main-content-background-color)}maki-icon-bulb,maki-icon-truck{--icon-size:40px}maki-icon-edit-document,maki-icon-steps{background-color:var(--button-gray-background-color);border-radius:15px;width:20px;height:20px;padding:5px;margin:0 10px 0 0;box-sizing:content-box;--icon-color:var(--icon-color-teal)}.Title{font-size:var(--main-font-header-size);font-weight:700;line-height:normal}.Subtitle,.Title{font-family:var(--typography-fontFamily);font-style:normal;font-stretch:normal;letter-spacing:-.3px;text-align:center;color:var(--palette-primary-main)}.Subtitle{opacity:.7;font-size:var(--main-font-small-text-size);font-weight:500;line-height:1.64;margin-top:7px}.SectionTitle{font-family:var(--typography-fontFamily);font-size:var(--main-font-text-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:30px;letter-spacing:-.3px;text-align:left;color:var(--palette-primary-main);margin:30px 0 15px;display:flex;justify-content:flext-start}.DotListItem{display:flex;align-items:center;margin-bottom:3px;padding-left:10px}.DotListItem:last-of-type{margin:0}.DotListItem .Dot{margin:2px 23px 0 0;width:8px;height:8px;background-color:var(--icon-color-teal);border-radius:4px}.NoItems{width:15px;height:15px;margin:2px 19px 0 -3px;border:0;background-image:url(assets/radio.svg);background-repeat:no-repeat;background-position:50%;background-size:contain}.DotListItem .Text{font-family:var(--typography-fontFamily);width:calc(100% - 21px);font-size:var(--main-font-small-text-size);font-weight:500;font-style:normal;font-stretch:normal;line-height:1.64;letter-spacing:-.3px;text-align:left;color:var(--palette-primary-main)}.NumberedListItem{display:flex;align-items:center;margin-bottom:10px}.NumberedListItem:last-of-type{margin:0}.NumberedListItem .Number{margin-right:9px;width:18px;height:18px;background-color:var(--palette-primary-main);color:var(--palette-primary-contrastText);border-radius:9px;font-size:var(--main-font-smallest-text-size);font-weight:700;letter-spacing:normal;line-height:18px;text-align:center}.NumberedListItem .Number,.NumberedListItem .Text{font-family:var(--typography-fontFamily);font-style:normal;font-stretch:normal}.NumberedListItem .Text{opacity:.7;font-size:var(--main-font-small-text-size);font-weight:500;line-height:1.64;letter-spacing:-.3px;text-align:left;color:var(--palette-primary-main)}maki-icon-cross{--icon-color:var(--icon-red-color)}"
+module.exports = ":host{width:100%;height:100%;float:left}.Wrapper{height:100vh;float:left;padding:0 0 57px;position:relative}.TopbarButtonContainer,.Wrapper{box-sizing:border-box;width:100%;max-width:var(--main-max-width)}.TopbarButtonContainer{height:62px;padding:16px 0}.ButtonContainer{width:100%;max-width:var(--main-max-width);margin-top:30px;margin-bottom:8px;height:50px;box-sizing:border-box;background-color:var(--main-content-background-color);display:flex;justify-content:center}.BackButton{display:inline-block;opacity:1;transform:scale(.7,1.2)}.ButtonInner{display:flex}.ButtonInnerLeft,.ButtonInnerRight{display:inline-block;opacity:0;transform:scale(.7,1.2)}.ButtonInnerText{display:inline-block;padding:0 35px}.ButtonInnerRight{opacity:1}.ScrollContainer{box-sizing:border-box;width:100%;height:100%;float:left;overflow-y:auto;padding-bottom:75px}.Scroller{padding:0 16px;position:relative}.JourneyHeader{background-color:var(--button-gray-background-color);margin:0 -16px;padding:10px 16px;display:flex;flex-direction:column;justify-content:center}.JourneyIcon{background-color:var(--icon-color-teal);border-radius:30px;width:40px;height:40px;padding:10px;align-self:center;box-sizing:content-box;--icon-color:var(--main-content-background-color)}maki-icon-bulb,maki-icon-truck{--icon-size:40px}maki-icon-edit-document,maki-icon-steps{background-color:var(--button-gray-background-color);border-radius:15px;width:20px;height:20px;padding:5px;margin:0 10px 0 0;box-sizing:content-box;--icon-color:var(--icon-color-teal)}.Title{font-weight:700;font-style:normal;line-height:normal;text-align:left;margin:auto}.SubtitleCenter,.Title{font-family:var(--typography-fontFamily);font-size:var(--main-font-small-text-size);font-stretch:normal;letter-spacing:-.3px;color:var(--palette-primary-main)}.SubtitleCenter{font-weight:500;font-style:italic;line-height:1.64;text-align:center;margin-top:7px}.SectionTitle{font-family:var(--typography-fontFamily);font-size:var(--main-font-text-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:30px;letter-spacing:-.3px;text-align:left;color:var(--palette-primary-main);margin:30px 0 15px;display:flex;justify-content:flext-start}.WarningTitle{display:flex;margin-top:20px}.WarningSubtitle{font-family:var(--typography-fontFamily);font-size:var(--main-font-small-text-size);font-weight:500;font-style:italic;font-stretch:normal;line-height:1.64;letter-spacing:-.3px;text-align:left;color:var(--palette-primary-main);margin-top:7px;margin-left:15px}.DotListItem{display:flex;align-items:center;margin-bottom:3px;padding-left:10px}.DotListItem:last-of-type{margin:0}.DotListItem .Dot{margin:2px 23px 0 0;width:8px;height:8px;background-color:var(--icon-color-teal);border-radius:4px}.NoItems{width:15px;height:15px;margin:2px 19px 0 -3px;border:0;background-image:url(assets/radio.svg);background-repeat:no-repeat;background-position:50%;background-size:contain}.DotListItem .Text{font-family:var(--typography-fontFamily);width:calc(100% - 21px);font-size:var(--main-font-small-text-size);font-weight:500;font-style:normal;font-stretch:normal;line-height:1.64;letter-spacing:-.3px;text-align:left;color:var(--palette-primary-main)}.NumberedListItem{display:flex;align-items:center;margin-bottom:10px}.NumberedListItem:last-of-type{margin:0}.NumberedListItem .Number{margin-right:9px;width:18px;height:18px;background-color:var(--palette-primary-main);color:var(--palette-primary-contrastText);border-radius:9px;font-size:var(--main-font-smallest-text-size);font-weight:700;letter-spacing:normal;line-height:18px;text-align:center}.NumberedListItem .Number,.NumberedListItem .Text{font-family:var(--typography-fontFamily);font-style:normal;font-stretch:normal}.NumberedListItem .Text{opacity:.7;font-size:var(--main-font-small-text-size);font-weight:500;line-height:1.64;letter-spacing:-.3px;text-align:left;color:var(--palette-primary-main)}maki-icon-attention,maki-icon-cross{--icon-color:var(--icon-red-color)}maki-icon-attention{margin:10px 0 0;--icon-size:30px}"
 
 /***/ }),
 
@@ -45411,7 +45405,7 @@ module.exports = ":host{width:100%;height:100%;float:left}.Wrapper{height:100vh;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\r\n    <div class=\"ScrollContainer\">\r\n        <div class=\"Scroller\">\r\n            <div class=\"TopbarButtonContainer\">\r\n                <maki-button on-click=\"_stop\" size=\"30\" stroke=\"0\" font-size=\"16\" heading=\"Stoppen\">\r\n                    <maki-icon-cross />\r\n                </maki-button>\r\n            </div>\r\n            <div class=\"JourneyHeader\">\r\n                <div class=\"JourneyIcon\">\r\n                    <dom-if if=\"{{show_journey_icon_truck}}\">\r\n                        <template>\r\n                            <maki-icon-truck />\r\n                        </template>\r\n                    </dom-if>\r\n                    <dom-if if=\"{{show_journey_icon_bulb}}\">\r\n                        <template>\r\n                            <maki-icon-bulb />\r\n                        </template>\r\n                    </dom-if>\r\n                </div>\r\n                <div class=\"Title\">[[_title(journey)]]</div>\r\n                <div class=\"Subtitle\">[[_subtitle(journey)]]</div>\r\n            </div>\r\n            <div class=\"SectionTitle\">\r\n                <maki-icon-edit-document></maki-icon-edit-document>\r\n                <div>Benodigde documenten</div>\r\n            </div>\r\n            <dom-if if=\"{{_hasDocuments(journey)}}\" class=\"DotList\">\r\n                <template>\r\n                    <dom-repeat items=\"[[_documents(journey)]]\">\r\n                        <template>\r\n                            <div class=\"DotListItem\">\r\n                                <div class=\"Dot\"></div>\r\n                                <div class=\"Text\">[[item]]</div>\r\n                            </div>\r\n                        </template>\r\n                    </dom-repeat>\r\n                </template>\r\n            </dom-if>\r\n            <dom-if if=\"{{!_hasDocuments(journey)}}\" class=\"DotList\">\r\n                <template>\r\n                    <div class=\"DotListItem\">\r\n                        <div class=\"NoItems\"></div>\r\n                        <div class=\"Text\">Geen documenten nodig</div>\r\n                    </div>\r\n                </template>\r\n            </dom-if>\r\n            <div class=\"SectionTitle\">\r\n                <maki-icon-steps></maki-icon-steps>\r\n                <div>Deze stappen ga je doorlopen</div>\r\n            </div>\r\n            <div class=\"DotList\">\r\n                <dom-repeat items=\"[[_steps(journey)]]\">\r\n                    <template>\r\n                        <div class=\"DotListItem\">\r\n                            <div class=\"Dot\"></div>\r\n                            <div class=\"Text\">[[item]]</div>\r\n                        </div>\r\n                    </template>\r\n                </dom-repeat>\r\n            </div>\r\n        </div>\r\n        <div class=\"ButtonContainer\">\r\n            <maki-button highlight size=\"40\" font-size=\"16\" set-color-highlight=\"#3192CF\" disabled=\"{{!preconditionsFullFilled}}\" on-click=\"[[_start(journey)]]\">\r\n                <div class=\"ButtonInner\">\r\n                    <div class=\"ButtonInnerText\">Starten</div>\r\n                    <div class=\"ButtonInnerRight\">></div>\r\n                </div>\r\n            </maki-button>\r\n        </div>\r\n        <dom-if if=\"{{!preconditionsFullFilled}}\">\r\n            <template>\r\n                <dom-if if=\"{{!preconditionsBeingChecked}}\">\r\n                    <template>\r\n                    <div class=\"Title\">Dit proces kan helaas niet gestart worden</div>\r\n                        <div class=\"Subtitle\">{{journey.preconditions}}</div>\r\n                    </template>\r\n                </dom-if>\r\n            </template>\r\n        </dom-if>\r\n        <dom-if if=\"{{preconditionsBeingChecked}}\">\r\n            <template>\r\n                <div class=\"Title\">Randvoorwaarden</div>\r\n                <div class=\"Subtitle\">De randvoorwaarden voor het starten van dit proces worden gecontroleerd</div>\r\n            </template>\r\n        </dom-if>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"Wrapper\">\r\n    <div class=\"ScrollContainer\">\r\n        <div class=\"Scroller\">\r\n            <div class=\"TopbarButtonContainer\">\r\n                <maki-button on-click=\"_stop\" size=\"30\" stroke=\"0\" font-size=\"16\" set-color-main=\"#3192CF\" heading=\"Ga terug\">\r\n                    <div class=\"BackButton\"><</div>\r\n                </maki-button>\r\n            </div>\r\n            <div class=\"JourneyHeader\">\r\n                <div class=\"JourneyIcon\">\r\n                    <dom-if if=\"{{show_journey_icon_truck}}\">\r\n                        <template>\r\n                            <maki-icon-truck />\r\n                        </template>\r\n                    </dom-if>\r\n                    <dom-if if=\"{{show_journey_icon_bulb}}\">\r\n                        <template>\r\n                            <maki-icon-bulb />\r\n                        </template>\r\n                    </dom-if>\r\n                </div>\r\n                <div class=\"Title\">[[_title(journey)]]</div>\r\n            </div>\r\n            <div class=\"SectionTitle\">\r\n                <maki-icon-steps></maki-icon-steps>\r\n                <div>Deze stappen ga je doorlopen</div>\r\n            </div>\r\n            <div class=\"DotList\">\r\n                <dom-repeat items=\"[[_steps(journey)]]\">\r\n                    <template>\r\n                        <div class=\"DotListItem\">\r\n                            <div class=\"Dot\"></div>\r\n                            <div class=\"Text\">[[item]]</div>\r\n                        </div>\r\n                    </template>\r\n                </dom-repeat>\r\n            </div>\r\n            <dom-if if=\"{{_hasDocuments(journey)}}\">\r\n                <template>\r\n                    <div class=\"SectionTitle\">\r\n                        <maki-icon-edit-document></maki-icon-edit-document>\r\n                        <div>Benodigde documenten</div>\r\n                    </div>\r\n                    <dom-repeat items=\"[[_documents(journey)]]\">\r\n                        <template>\r\n                            <div class=\"DotListItem\">\r\n                                <div class=\"Dot\"></div>\r\n                                <div class=\"Text\">[[item]]</div>\r\n                            </div>\r\n                        </template>\r\n                    </dom-repeat>\r\n                </template>\r\n            </dom-if>\r\n            <dom-if if=\"{{preconditionsFullFilled}}\">\r\n                <template>\r\n                    <div class=\"ButtonContainer\">\r\n                        <maki-button highlight size=\"40\" font-size=\"16\" set-color-highlight=\"#3192CF\" on-click=\"[[_start(journey)]]\">\r\n                            <div class=\"ButtonInner\">\r\n                                <div class=\"ButtonInnerText\">Starten</div>\r\n                                <div class=\"ButtonInnerRight\">></div>\r\n                            </div>\r\n                        </maki-button>\r\n                    </div>\r\n                </template>\r\n            </dom-if>\r\n            <dom-if if=\"{{!preconditionsFullFilled}}\">\r\n                <template>\r\n                    <dom-if if=\"{{!preconditionsBeingChecked}}\">\r\n                        <template>\r\n                            <div class=\"WarningTitle\">\r\n                                <maki-icon-attention width=\"30px\"></maki-icon-attention>\r\n                                <div class=\"WarningSubtitle\">\r\n                                    <div class=\"Title\">Dit proces kan niet worden gestart.</div>\r\n                                    <div class=\"WarningSubtitleLeft\">{{journey.preconditions}}</div>\r\n                                </div>\r\n                            </div>\r\n                        </template>\r\n                    </dom-if>\r\n                </template>\r\n            </dom-if>\r\n            <dom-if if=\"{{preconditionsBeingChecked}}\">\r\n                <template>\r\n                    <div class=\"SubtitleCenter\">Je gegevens worden opgehaald.</div>\r\n                </template>\r\n            </dom-if>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -45647,7 +45641,7 @@ module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<playback-screen-wrapper skip-callback=\"[[_skipCallback(question)]]\" no-next>\n  <div class=\"Options\">\n    <dom-repeat items=\"[[_optionNames(question)]]\">\n      <template>\n        <div class=\"Option\" data-question=\"[[question]]\" data-index=\"[[index]]\" on-click=\"_optionClick\">[[item]]</div>\n      </template>\n    </dom-repeat>\n  </div>\n</playback-screen-wrapper>\n"
+module.exports = "<playback-screen-wrapper skip-callback=\"[[_skipCallback(question)]]\" no-next>\r\n  <div class=\"Options\">\r\n    <dom-repeat items=\"[[_optionNames(question)]]\">\r\n      <template>\r\n        <div class=\"Option\" data-question=\"[[question]]\" data-index=\"[[index]]\" on-click=\"_optionClick\">[[item]]</div>\r\n      </template>\r\n    </dom-repeat>\r\n  </div>\r\n</playback-screen-wrapper>\r\n"
 
 /***/ }),
 
@@ -45658,7 +45652,7 @@ module.exports = "<playback-screen-wrapper skip-callback=\"[[_skipCallback(quest
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host{display:block;width:100%;min-height:300px;--datepicker-background-color:#fff;--datepicker-month-color:rgba(0,0,0,0.38);--datepicker-width:294px;--datepicker-zindex:1000;--datepicker-cells-color:#ddd;--datepicker-hover-color:rgba(0,0,0,0.04);--datepicker-selected-color:rgba(0,0,0,0.04);--datepicker-cellempty-color:#fff;--datepicker-buttons-hover:rgba(0,0,0,0.1);--datepicker-buttons-focus:rgba(0,0,0,0.38);--datepicker-font-color:var(--palette-primary-main)}.datepicker{padding:2px;margin-top:10px;z-index:var(--datepicker-zindex);width:var(--datepicker-width);color:var(--datepicker-font-color);background-color:var(--datepicker-background-color);border-radius:3px;box-shadow:0 0 2px rgba(0,0,0,.4)}div#month-wrap{height:30px}div#bn_prev{float:left;width:40px;height:40px}div#bn_prev:before{content:\"\\003c\";font-family:var(--typography-fontFamily);height:24px;font-size:var(--main-font-subheader-size);font-weight:500;font-style:normal;position:relative;top:5px;left:12px}div#bn_next{float:right;width:40px;height:40px}div#bn_next:before{content:\"\\003e\";font-family:var(--typography-fontFamily);height:24px;font-size:var(--main-font-subheader-size);font-weight:500;font-style:normal;position:relative;top:5px;left:12px}div#bn_next:focus,div#bn_next:hover,div#bn_prev:focus,div#bn_prev:hover{background-color:var(--datepicker-buttons-hover);border-radius:20px;outline:none}img.bn_img{margin:0;padding:2px}div#month{float:left;padding-top:6px;width:199px;height:24px;font-weight:700}div#month,table#cal{text-align:center;font-size:var(--main-font-medium-text-size)}table#cal{width:290px;border-collapse:seperate;table-layout:fixed;outline:none}table#cal td,table#cal th{width:38px;height:38px;padding:0;border:1px solid transparent}table#cal thead th{border-bottom:1px solid rgba(0,0,0,.12);margin-bottom:2px}table#cal td{cursor:pointer}table#cal td.today{border-radius:20px;border:1px solid rgba(0,0,0,.12)}table#cal td.disabled{color:#999}table#cal td.disabled,table#cal td.empty{background-color:var(--datepicker-cellempty-color)}table#cal td:hover{background-color:var(--datepicker-hover-color);border-radius:20px}table#cal td.focus{background-color:rgba(119,211,83,.32);border-color:#77d353;border-radius:20px}table#cal td.disabled:hover,table#cal td.empty:hover{background-color:var(--datepicker-cellempty-color);cursor:default}.offscreen{position:absolute;left:-200em;top:-100em}[aria-hidden=true]{display:none}abbr{text-decoration:none}"
+module.exports = ":host{display:block;width:100%;min-height:300px;--datepicker-background-color:#fff;--datepicker-today-background-color:#e6e6e6;--datepicker-month-color:rgba(0,0,0,0.38);--datepicker-width:294px;--datepicker-zindex:1000;--datepicker-cells-color:#ddd;--datepicker-hover-color:rgba(0,0,0,0.04);--datepicker-selected-color:rgba(0,0,0,0.04);--datepicker-cellempty-color:#fff;--datepicker-buttons-hover:rgba(0,0,0,0.1);--datepicker-buttons-focus:rgba(0,0,0,0.38);--datepicker-font-color:var(--palette-primary-main)}.datepicker{padding:2px;margin-top:10px;z-index:var(--datepicker-zindex);width:var(--datepicker-width);color:var(--datepicker-font-color);background-color:var(--datepicker-background-color);border-radius:3px;box-shadow:0 0 2px rgba(0,0,0,.4)}div#month-wrap{height:30px}div#bn_prev{float:left;width:40px;height:40px}div#bn_prev:before{content:\"\\003c\";font-family:var(--typography-fontFamily);height:24px;font-size:var(--main-font-subheader-size);font-weight:500;font-style:normal;position:relative;top:5px;left:12px}div#bn_next{float:right;width:40px;height:40px}div#bn_next:before{content:\"\\003e\";font-family:var(--typography-fontFamily);height:24px;font-size:var(--main-font-subheader-size);font-weight:500;font-style:normal;position:relative;top:5px;left:12px}div#bn_next:focus,div#bn_next:hover,div#bn_prev:focus,div#bn_prev:hover{background-color:var(--datepicker-buttons-hover);border-radius:20px;outline:none}img.bn_img{margin:0;padding:2px}div#month{float:left;padding-top:6px;width:199px;height:24px;font-weight:700}div#month,table#cal{text-align:center;font-size:var(--main-font-medium-text-size)}table#cal{width:290px;border-collapse:seperate;table-layout:fixed;outline:none}table#cal td,table#cal th{width:38px;height:38px;padding:0;border:1px solid transparent}table#cal thead th{border-bottom:1px solid rgba(0,0,0,.12);margin-bottom:2px}table#cal td{cursor:pointer}table#cal td.today{border-radius:20px;border:1px solid rgba(0,0,0,.12);background:var(--datepicker-today-background-color)}table#cal td.disabled{color:#999}table#cal td.disabled,table#cal td.empty{background-color:var(--datepicker-cellempty-color)}table#cal td:hover{background-color:var(--datepicker-hover-color);border-radius:20px}table#cal td.focus{background-color:rgba(119,211,83,.32);border-color:#77d353;border-radius:20px}table#cal td.disabled:hover,table#cal td.empty:hover{background-color:var(--datepicker-cellempty-color);cursor:default}.offscreen{position:absolute;left:-200em;top:-100em}[aria-hidden=true]{display:none}abbr{text-decoration:none}"
 
 /***/ }),
 
@@ -45943,52 +45937,66 @@ class PolymerOpenajaxDatePicker extends (0, _connectMixin.connect)(_store.store)
   // @return N/A
   //
   _popGrid() {
-    var numDays = this._calcNumDays(this.year, this.month);
-    var startWeekday = this._calcStartWeekday(this.year, this.month);
-    var weekday = 0;
-    var curDay = 1;
-    var rowCount = 1;
-    var $tbody = this.$grid.querySelector('tbody');
-    var dayOfMonth = this.dateObj.date();
+    const numDays = this._calcNumDays(this.year, this.month);
+    const startWeekday = this._calcStartWeekday(this.year, this.month);
+    let weekday = 0;
+    let curDay = 1;
+    let rowCount = 1;
+    const $tbody = this.$grid.querySelector('tbody');
+    const dayOfMonth = this.dateObj.date();
 
-    var gridCells = '\t<tr id="row0">\n';
+    // Clear the table
+    while ($tbody.hasChildNodes()) {
+      $tbody.removeChild($tbody.firstChild);
+    }
 
-    // clear the grid
-    $tbody.innerHTML = '';
+    // Start for iteration
+    let gridCells = document.createElement('tr');
+    gridCells.setAttribute('id', 'row0');
 
     // Insert the leading empty cells
     for (weekday = 0; weekday < startWeekday; weekday++) {
-      gridCells += '\t\t<td class="empty">&nbsp;</td>\n';
+      const empty = document.createElement('td');
+      empty.classList.add('empty');
+      empty.innerHTML = '&nbsp;';
+      gridCells.appendChild(empty);
     }
 
     // insert the days of the month.
     for (curDay = 1; curDay <= numDays; curDay++) {
       if (curDay === dayOfMonth && this.currentDate === true) {
         // eslint-disable-next-line
-        gridCells += '\t\t<td id="day' + curDay + '" class="today" headers="row' + rowCount + ' ' + this.dayNames[weekday] + '" role="gridcell" aria-selected="false">' + curDay + '</td>';
+        const today = this.createDay(curDay, rowCount, weekday);
+        today.classList.add('today');
+        gridCells.appendChild(today);
       } else {
         // eslint-disable-next-line
-        gridCells += '\t\t<td id="day' + curDay + '" headers="row' + rowCount + ' ' + this.dayNames[weekday] + '" role="gridcell" aria-selected="false">' + curDay + '</td>';
+        const day = this.createDay(curDay, rowCount, weekday);
+        gridCells.appendChild(day);
       }
       if (weekday === 6 && curDay < numDays) {
         // This was the last day of the week, close it out
         // and begin a new one
-        gridCells += '\t</tr>\n\t<tr id="row' + rowCount + '">\n';
+        $tbody.insertAdjacentElement('beforeend', gridCells);
+        gridCells = document.createElement('tr');
+        gridCells.setAttribute('id', `row${rowCount}`);
         rowCount++;
         weekday = 0;
       } else {
+        $tbody.insertAdjacentElement('beforeend', gridCells);
         weekday += 1;
       }
     }
-
-    // Insert any trailing empty cells
-    for (weekday; weekday < 7; weekday++) {
-      gridCells += '\t\t<td class="empty">&nbsp;</td>\n';
-    }
-    gridCells += '\t</tr>';
-    $tbody.insertAdjacentHTML('beforeend', gridCells);
   }
-
+  createDay(curDay, rowCount, weekday) {
+    const day = document.createElement('td');
+    day.setAttribute('id', `day${curDay}`);
+    day.setAttribute('headers', `row${rowCount} ${this.dayNames[weekday]}`);
+    day.setAttribute('role', 'gridcell');
+    day.setAttribute('aria-selected', 'false');
+    day.innerHTML = curDay;
+    return day;
+  }
   /**
     * It adds a class disable to not available days (because they are before a min date or after a max date)
     * @method _updateAvailableDays
@@ -47248,6 +47256,9 @@ Object.defineProperty(exports, "__esModule", {
 const SET_JOURNEY = exports.SET_JOURNEY = 'SET_JOURNEY';
 const setJourney = exports.setJourney = journey => ({ type: SET_JOURNEY, journey });
 
+const CHECK_PRECONDITIONS = exports.CHECK_PRECONDITIONS = 'CHECK_PRECONDITIONS';
+const checkPreconditions = exports.checkPreconditions = () => ({ type: CHECK_PRECONDITIONS });
+
 const ADD_QUESTION = exports.ADD_QUESTION = 'ADD_QUESTION';
 const addQuestion = exports.addQuestion = question => ({ type: ADD_QUESTION, question });
 const newQuestion = exports.newQuestion = id => ({ type: ADD_QUESTION, question: { id } });
@@ -47395,7 +47406,7 @@ const requestCheckPreconditionsSuccess = exports.requestCheckPreconditionsSucces
 
 const REQUEST_CHECK_PRECONDITIONS_FAILURE = exports.REQUEST_CHECK_PRECONDITIONS_FAILURE = 'REQUEST_CHECK_PRECONDITIONS_FAILURE';
 const requestCheckPreconditionsFailure = exports.requestCheckPreconditionsFailure = () => ({
-  type: REQUEST_CHECK_PRECONDITIONS_SUCCESS
+  type: REQUEST_CHECK_PRECONDITIONS_FAILURE
 });
 
 /***/ }),
@@ -47642,6 +47653,8 @@ var _configuration = __webpack_require__(/*! ../../helpers/configuration */ "./s
 
 var _util = __webpack_require__(/*! util */ "./node_modules/node-libs-browser/node_modules/util/util.js");
 
+var _headers = __webpack_require__(/*! ../helpers/headers */ "./src/redux/helpers/headers.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const addressApi = exports.addressApi = {
@@ -47650,7 +47663,10 @@ const addressApi = exports.addressApi = {
 
     const response = await _axios2.default.get(url, {
       baseURL: _configuration.configuration.BASE_URL_API(),
-      headers: { 'Authorization': 'Bearer ' + token }
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'X-NLX-Request-Process-Id': (0, _headers.getProcessId)()
+      }
     });
     if (response.statusText === 'OK' || response.status === 200) {
       return { data: response.data };
@@ -47683,13 +47699,18 @@ var _axios2 = _interopRequireDefault(_axios);
 
 var _configuration = __webpack_require__(/*! ../../helpers/configuration */ "./src/helpers/configuration.js");
 
+var _headers = __webpack_require__(/*! ../helpers/headers */ "./src/redux/helpers/headers.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const avgLogsApi = exports.avgLogsApi = {
   avgLogs: token => async () => {
     const response = await _axios2.default.get('/avglogs', {
       baseURL: _configuration.configuration.BASE_URL_API(),
-      headers: { 'Authorization': 'Bearer ' + token }
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'X-NLX-Request-Process-Id': (0, _headers.getProcessId)()
+      }
     });
     if (response.statusText === 'OK' || response.status === 200) {
       return { data: response.data };
@@ -47700,7 +47721,10 @@ const avgLogsApi = exports.avgLogsApi = {
   avgLog: (id, token) => async () => {
     const response = await _axios2.default.get(`/avglogs/${id}`, {
       baseURL: _configuration.configuration.BASE_URL_API(),
-      headers: { 'Authorization': 'Bearer ' + token }
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'X-NLX-Request-Process-Id': (0, _headers.getProcessId)()
+      }
     });
     if (response.statusText === 'OK' || response.status === 200) {
       return { data: response.data };
@@ -47733,13 +47757,18 @@ var _axios2 = _interopRequireDefault(_axios);
 
 var _configuration = __webpack_require__(/*! ../../helpers/configuration */ "./src/helpers/configuration.js");
 
+var _headers = __webpack_require__(/*! ../helpers/headers */ "./src/redux/helpers/headers.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const contractsApi = exports.contractsApi = {
   contracts: token => async () => {
     const response = await _axios2.default.get('/contracts', {
       baseURL: _configuration.configuration.BASE_URL_API(),
-      headers: { 'Authorization': 'Bearer ' + token }
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'X-NLX-Request-Process-Id': (0, _headers.getProcessId)()
+      }
     });
     if (response.statusText === 'OK' || response.status === 200) {
       return { data: response.data };
@@ -47750,7 +47779,10 @@ const contractsApi = exports.contractsApi = {
   contract: (id, token) => async () => {
     const response = await _axios2.default.get(`/contracts/${id}`, {
       baseURL: _configuration.configuration.BASE_URL_API(),
-      headers: { 'Authorization': 'Bearer ' + token }
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'X-NLX-Request-Process-Id': (0, _headers.getProcessId)()
+      }
     });
     if (response.statusText === 'OK' || response.status === 200) {
       return { data: response.data };
@@ -47783,13 +47815,18 @@ var _axios2 = _interopRequireDefault(_axios);
 
 var _configuration = __webpack_require__(/*! ../../helpers/configuration */ "./src/helpers/configuration.js");
 
+var _headers = __webpack_require__(/*! ../helpers/headers */ "./src/redux/helpers/headers.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const journeyApi = exports.journeyApi = {
   checkPreconditions: (journeyId, token) => async () => {
     const response = await _axios2.default.get('/journey/' + journeyId + '/checkPreconditions', {
       baseURL: _configuration.configuration.BASE_URL_API(),
-      headers: { 'Authorization': 'Bearer ' + token }
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'X-NLX-Request-Process-Id': (0, _headers.getProcessId)()
+      }
     });
     if (response.statusText === 'OK' || response.status === 200) {
       return { data: response.data };
@@ -47903,13 +47940,18 @@ var _axios2 = _interopRequireDefault(_axios);
 
 var _configuration = __webpack_require__(/*! ../../helpers/configuration */ "./src/helpers/configuration.js");
 
+var _headers = __webpack_require__(/*! ../helpers/headers */ "./src/redux/helpers/headers.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const ordersApi = exports.ordersApi = {
   submit: (data, token) => async () => {
     const response = await _axios2.default.post('/order', data, {
       baseURL: _configuration.configuration.BASE_URL_API(),
-      headers: { 'Authorization': 'Bearer ' + token }
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'X-NLX-Request-Process-Id': (0, _headers.getProcessId)()
+      }
     });
     if (response.statusText === 'OK' || response.status === 200) {
       return { data: response.data };
@@ -47942,13 +47984,18 @@ var _axios2 = _interopRequireDefault(_axios);
 
 var _configuration = __webpack_require__(/*! ../../helpers/configuration */ "./src/helpers/configuration.js");
 
+var _headers = __webpack_require__(/*! ../helpers/headers */ "./src/redux/helpers/headers.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const personApi = exports.personApi = {
   person: token => async () => {
     const response = await _axios2.default.get(`/person`, {
       baseURL: _configuration.configuration.BASE_URL_API(),
-      headers: { 'Authorization': 'Bearer ' + token }
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'X-NLX-Request-Process-Id': (0, _headers.getProcessId)()
+      }
     });
     if (response.statusText === 'OK' || response.status === 200) {
       return { data: response.data };
@@ -47959,7 +48006,10 @@ const personApi = exports.personApi = {
   personsMoving: token => async () => {
     const response = await _axios2.default.get(`/familyfirstgrade`, {
       baseURL: _configuration.configuration.BASE_URL_API(),
-      headers: { 'Authorization': 'Bearer ' + token }
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'X-NLX-Request-Process-Id': (0, _headers.getProcessId)()
+      }
     });
     if (response.statusText === 'OK' || response.status === 200) {
       return { data: response.data };
@@ -47984,6 +48034,10 @@ const personApi = exports.personApi = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.getProcessId = exports.jwtBearerTokenExists = exports.jwtBearerToken = exports.removeJwtBearerToken = exports.setJwtBearerToken = undefined;
+
+var _store = __webpack_require__(/*! ../store */ "./src/redux/store.js");
+
 const tokenStorageKey = 'mijnApp-JwtToken';
 
 const setJwtBearerToken = exports.setJwtBearerToken = jwtToken => {
@@ -48003,6 +48057,14 @@ const jwtBearerTokenExists = exports.jwtBearerTokenExists = () => {
   const jwtToken = window.sessionStorage.getItem(tokenStorageKey);
 
   return jwtToken ? true : false;
+};
+
+const getProcessId = exports.getProcessId = () => {
+  var journey = _store.store.getState().journey;
+  if (journey !== undefined && journey !== null && journey.request_type_id !== undefined && journey.request_type_id !== null) {
+    return journey.request_type_id;
+  }
+  return '';
 };
 
 /***/ }),
@@ -49032,6 +49094,8 @@ var _store = __webpack_require__(/*! ../store */ "./src/redux/store.js");
 
 var _contract = __webpack_require__(/*! ../actions/contract */ "./src/redux/actions/contract.js");
 
+var _journey = __webpack_require__(/*! ../actions/journey */ "./src/redux/actions/journey.js");
+
 var _headers = __webpack_require__(/*! ../helpers/headers */ "./src/redux/helpers/headers.js");
 
 var _lastPage = __webpack_require__(/*! ../helpers/lastPage */ "./src/redux/helpers/lastPage.js");
@@ -49051,6 +49115,10 @@ function* pageSelected(action) {
   let state = _store.store.getState();
   if (action.page !== 'contract' && state && state.contract && state.contract.data && state.contract.data.id) {
     yield (0, _effects.put)((0, _contract.clearContract)());
+  }
+
+  if (action.page === 'journey') {
+    yield (0, _effects.put)((0, _journey.checkPreconditions)());
   }
 }
 
@@ -49291,7 +49359,7 @@ var _orders = __webpack_require__(/*! ./orders */ "./src/redux/sagas/orders.js")
 var _application = __webpack_require__(/*! ./application */ "./src/redux/sagas/application.js");
 
 function* rootSaga() {
-  yield (0, _effects.all)([(0, _address.watchRequestAddressData)(), (0, _avgLog.watchRequestAvgLog)(), (0, _avgLogs.watchRequestAvgLogs)(), (0, _contract.watchRequestContract)(), (0, _contracts.watchRequestContracts)(), (0, _jwt.watchRequestJwtSigninFake)(), (0, _jwt.watchRequestJwtSignin)(), (0, _jwt.watchJwtSigninSuccess)(), (0, _jwt.watchJwtSigninSuccessFake)(), (0, _jwt.watchRequestJwtFromDigidCgi)(), (0, _jwt.watchRequestJwtFromDigidCgiSuccess)(), (0, _jwt.watchRequestJwtLogout)(), (0, _jwt.watchRequestJwtLogout401)(), (0, _application.watchSelectPage)(), (0, _application.watchSelectPageNoHistory)(), (0, _application.watchNextPageAfterLogin)(), (0, _person.watchRequestPersonData)(), (0, _person.watchRequestPersonsMoving)(), (0, _orders.watchRequestOrdersSubmit)(), (0, _journey.watchSetJourney)()]);
+  yield (0, _effects.all)([(0, _address.watchRequestAddressData)(), (0, _avgLog.watchRequestAvgLog)(), (0, _avgLogs.watchRequestAvgLogs)(), (0, _contract.watchRequestContract)(), (0, _contracts.watchRequestContracts)(), (0, _jwt.watchRequestJwtSigninFake)(), (0, _jwt.watchRequestJwtSignin)(), (0, _jwt.watchJwtSigninSuccess)(), (0, _jwt.watchJwtSigninSuccessFake)(), (0, _jwt.watchRequestJwtFromDigidCgi)(), (0, _jwt.watchRequestJwtFromDigidCgiSuccess)(), (0, _jwt.watchRequestJwtLogout)(), (0, _jwt.watchRequestJwtLogout401)(), (0, _application.watchSelectPage)(), (0, _application.watchSelectPageNoHistory)(), (0, _application.watchNextPageAfterLogin)(), (0, _person.watchRequestPersonData)(), (0, _person.watchRequestPersonsMoving)(), (0, _orders.watchRequestOrdersSubmit)(), (0, _journey.watchCheckPreconditions)()]);
 }
 
 /***/ }),
@@ -49311,9 +49379,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.watchDeleteQuestionPreflight = watchDeleteQuestionPreflight;
 exports.watchSetQuestionType = watchSetQuestionType;
-exports.watchSetJourney = watchSetJourney;
+exports.watchCheckPreconditions = watchCheckPreconditions;
 
 var _effects = __webpack_require__(/*! redux-saga/effects */ "./node_modules/redux-saga/dist/redux-saga-effects-npm-proxy.esm.js");
+
+var _store = __webpack_require__(/*! ../store */ "./src/redux/store.js");
 
 var _journey = __webpack_require__(/*! ../actions/journey */ "./src/redux/actions/journey.js");
 
@@ -49333,7 +49403,7 @@ function* deleteQuestionPreflightCheck(action) {
     if (action.id === 'START') {
       yield (0, _effects.put)(uiDeleteDialogSetStart());
     } else {
-      const state = store.getState();
+      const state = _store.store.getState();
       if (state && state.journey && state.journey.questions && Array.isArray(state.journey.questions) && state.journey.questions.length > 0) {
         const q = state.journey.questions.find(i => i.id === action.id);
         if (q) {
@@ -49366,14 +49436,20 @@ function* setQuestionTypeChecks(action) {
   }
 }
 
-function* watchSetJourney() {
-  yield (0, _effects.takeLatest)(_journey.SET_JOURNEY, checkPreconditions);
+function* watchCheckPreconditions() {
+  yield (0, _effects.takeLatest)(_journey.CHECK_PRECONDITIONS, checkPreconditions);
 }
 
-function* checkPreconditions(action) {
+function* checkPreconditions() {
+  var state = _store.store.getState();
   try {
-    const result = yield (0, _effects.call)(_journey2.journeyApi.checkPreconditions(action.journey.request_type_id, (0, _headers.jwtBearerToken)()));
-    yield (0, _effects.put)((0, _journey.requestCheckPreconditionsSuccess)(result.data));
+    var jwtToken = (0, _headers.jwtBearerToken)();
+    if (jwtToken === '') {
+      yield (0, _effects.put)((0, _journey.requestCheckPreconditionsFailure)('gebruiker is niet ingelogd'));
+    } else {
+      const result = yield (0, _effects.call)(_journey2.journeyApi.checkPreconditions(state.journey.request_type_id, (0, _headers.jwtBearerToken)()));
+      yield (0, _effects.put)((0, _journey.requestCheckPreconditionsSuccess)(result.data));
+    }
   } catch (e) {
     yield (0, _effects.put)((0, _journey.requestCheckPreconditionsFailure)(e));
   }

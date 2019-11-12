@@ -10,7 +10,7 @@
   </div>
   <dom-if if="{{showApiResult(hasSearched, hasValidPostalCodeAndNumber)}}">
     <template>
-      <div class="Title">Gevonden adressen</div>
+      <div id="foundAddresses" class="Title">Gevonden adressen</div>
       <dom-if if="{{searching}}">
         <template>
           <div class="Subtitle">Ophalen adressen voor {{postalCode}}, {{number}}{{numberAddition}}</div>
@@ -22,7 +22,7 @@
             <template>
               <div class="Subtitle">
                 <maki-icon-attention></maki-icon-attention>
-                <div class="SubtitleAttention">Het nieuwe adres is niet bekend bij de gemeente. Controleer de postcode, huisnummer en eventueel toevoeging en probeer opnieuw.</div>
+                <div class="SubtitleAttention">Het opgegeven adres is onbekend. Controleer de postcode, huisnummer en eventueel toevoeging en probeer opnieuw.</div>
               </div>
             </template>
           </dom-if>
@@ -37,7 +37,7 @@
         <dom-repeat items="{{addresses}}">
           <template>
             <div class="Option" data-index="[[index]]" data-question="[[question]]" on-click="_optionClick">
-              <div class="OptionText">{{item.straat}} {{item.huisnummer}}{{item.huisnummertoevoeging}}, {{item.woonplaats}} {{item.postcode}}</div>
+                <div class="OptionText">{{item.straat}} {{item.huisnummer}} {{item.huisnummertoevoeging}}, {{item.postcode}} {{item.woonplaats}}</div>
               <div class="OptionCarrot">></div>
             </div>
           </template>

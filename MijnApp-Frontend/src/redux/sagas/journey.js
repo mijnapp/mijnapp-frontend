@@ -67,8 +67,13 @@ export function* watchCheckPreconditions() {
 function* checkPreconditions() {
   var state = store.getState();
   try {
-    const result = yield call(journeyApi.checkPreconditions(state.journey.request_type_id, jwtBearerToken()));
-    yield put(requestCheckPreconditionsSuccess(result.data));
+    var jwtToken = jwtBearerToken();
+    if (jwtToken === '') {
+      yield put(requestCheckPreconditionsFailure('gebruiker is niet ingelogd'));
+    } else {
+      const result = yield call(journeyApi.checkPreconditions(state.journey.request_type_id, jwtBearerToken()));
+      yield put(requestCheckPreconditionsSuccess(result.data));
+    }
   } catch (e) {
     yield put(requestCheckPreconditionsFailure(e));
   }

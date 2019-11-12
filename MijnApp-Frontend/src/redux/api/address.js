@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { configuration } from '../../helpers/configuration';
 import { isNullOrUndefined } from 'util';
+import { getProcessId } from '../helpers/headers'
 
 export const addressApi = {
   address: (action, token) => async () => {
@@ -10,7 +11,10 @@ export const addressApi = {
 
     const response = await axios.get(url, {
       baseURL: configuration.BASE_URL_API(),
-      headers: { 'Authorization': 'Bearer ' + token }
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'X-NLX-Request-Process-Id': getProcessId()
+      }
     });
     if (response.statusText === 'OK' || response.status === 200) {
       return { data: response.data };
