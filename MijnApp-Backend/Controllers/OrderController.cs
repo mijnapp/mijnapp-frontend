@@ -80,21 +80,36 @@ namespace MijnApp_Backend.Controllers
             };
             foreach (var question in order.data.Where(q => q.question != "END"))
             {
-                if (question.value is string)
+                if (question.key is string)
                 {
-                    request.properties.Add(question.key, question.value);
+                    //Normal question
+                    if (question.value is string)
+                    {
+                        request.properties.Add(question.key, question.value);
+                    }
+                    else
+                    {
+                        var values = "";
+                        if (question.value != null)
+                        {
+                            values = string.Join(", ", question.value);
+                        }
+
+                        if (question.key != null)
+                        {
+                            request.properties.Add(question.key, values);
+                        }
+                    }
                 }
                 else
                 {
-                    var values = "";
-                    if (question.value != null)
+                    //Multiple keys/values in question
+                    var index = 0;
+                    foreach (string key in question.key)
                     {
-                        values = string.Join(", ", question.value);
-                    }
-
-                    if (question.key != null)
-                    {
-                        request.properties.Add(question.key, values);
+                        var value = question.value[index].ToString();
+                        request.properties.Add(key, value);
+                        index++;
                     }
                 }
             }
@@ -121,7 +136,7 @@ namespace MijnApp_Backend.Controllers
     public class Question
     {
         public string question { get; set; }
-        public string key { get; set; }
+        public dynamic key { get; set; }
         public dynamic value { get; set; }
         public string keyTitle { get; set; }
         public dynamic valueTitle { get; set; }

@@ -44,24 +44,17 @@ export default class PlaybackScreenMultipleText extends connect(store)(
     const key = question && question.options && Array.isArray(question.options)
       ? question.options.map((i) => i.value || i.fieldName || 'Naamloos veld')
       : [];
-    const keyTitle = question && question.options && Array.isArray(question.options)
-      ? question.options.map(
-        (i) =>
-        `${question.fieldName || 'Naamloze vraag'}: ${i.fieldName ||
-        'Naamloos veld'}`
-      )
-      : [];
+    const keyTitle = question && question.options && Array.isArray(question.options) ? question.fieldName : "";
     return (data) => {
       store.dispatch(
-        orderSaveAnswer(
-          key,
+        orderSaveAnswer(key,
           order.value && Array.isArray(order.value)
-            ? order.value.map((o, i) => (i === index ? data : o))
-            : key.map((o, i) => (i === index ? data : '')),
+          ? order.value.map((o, i) => (i === index ? data : o))
+          : key.map((o, i) => (i === index ? data : '')),
           keyTitle,
           order.value && Array.isArray(order.value)
-            ? order.value.map((o, i) => (i === index ? data : o))
-            : key.map((o, i) => (i === index ? data : ''))
+          ? order.value.map((o, i) => (i === index ? data : o))
+          : key.map((o, i) => (i === index ? data : ''))
         )
       );
     };
