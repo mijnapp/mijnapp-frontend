@@ -37,7 +37,16 @@
                 <dom-repeat items="{{addresses}}">
                     <template>
                         <div class="Option" data-index="[[index]]" data-question="[[question]]" on-click="_optionClick">
-                            <div class="OptionText">{{item.straat}} {{item.huisnummer}} {{item.huisnummertoevoeging}}, {{item.postcode}} {{item.woonplaats}}</div>
+                            <dom-if if="{{hasAddition(item.huisnummertoevoeging)}}">
+                                <template>
+                                    <div class="OptionText">{{item.straat}} {{item.huisnummer}} {{item.huisnummertoevoeging}}, {{item.postcode}} {{item.woonplaats}}</div>
+                                </template>
+                            </dom-if>
+                            <dom-if if="{{!hasAddition(item.huisnummertoevoeging)}}">
+                                <template>
+                                    <div class="OptionText">{{item.straat}} {{item.huisnummer}}, {{item.postcode}} {{item.woonplaats}}</div>
+                                </template>
+                            </dom-if>
                             <div class="OptionCarrot">></div>
                         </div>
                     </template>

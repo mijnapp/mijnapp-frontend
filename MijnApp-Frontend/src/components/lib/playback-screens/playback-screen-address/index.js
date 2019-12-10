@@ -91,7 +91,7 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
         question.key || question.property,
         address.id,
         question.fieldName,
-        `${address.straat} ${address.huisnummer} ${address.huisnummertoevoeging ? address.huisnummertoevoeging : ''}, ${address.postcode} ${address.woonplaats}`
+        `${address.straat} ${address.huisnummer}${address.huisnummertoevoeging ? ' ' + address.huisnummertoevoeging : ''}, ${address.postcode} ${address.woonplaats}`
       )
     );
     store.dispatch(orderNext(question.next));
@@ -154,6 +154,10 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
     }
 
     return true;
+  }
+
+  hasAddition(addition) {
+    return addition !== undefined;
   }
 
   stateChanged(state) {
