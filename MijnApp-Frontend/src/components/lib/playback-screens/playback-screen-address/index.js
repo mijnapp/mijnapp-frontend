@@ -21,6 +21,7 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
       hasSearched: Boolean,
       hasValidPostalCodeAndNumber: Boolean,
       searching: Boolean,
+      inWrongCity: Boolean,
     };
   }
 
@@ -61,6 +62,7 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
   }
 
   callApi() {
+    this.inWrongCity = false;
     // Check on valid postalCode and number.
     if (this.postalCode !== undefined &&
       this.postalCode !== null &&
@@ -89,7 +91,7 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
         question.key || question.property,
         address.id,
         question.fieldName,
-          `${address.straat} ${address.huisnummer} ${address.huisnummertoevoeging ? address.huisnummertoevoeging : ''}, ${address.postcode} ${address.woonplaats}`
+        `${address.straat} ${address.huisnummer} ${address.huisnummertoevoeging ? address.huisnummertoevoeging : ''}, ${address.postcode} ${address.woonplaats}`
       )
     );
     store.dispatch(orderNext(question.next));
@@ -105,11 +107,7 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
         && address.woonplaats !== 'Rosmalen'
         && address.woonplaats !== 'Nuland'
         && address.woonplaats !== 'Vinkel') {
-        window.clearErrorDialog();
-        window.errorTitle.innerHTML = 'Let op!';
-        window.errorText.innerHTML = 'Het nieuwe adres dat je opgeeft ligt niet in de aangesloten gemeenten. Kies op <a href="https://www.burgerberichten.nl/gemeenten/verhuizen">deze pagina</a> de gemeente van je nieuwe adres.';
-        window.errorButton.innerHTML = 'Ga terug';
-        window.errorDialog.open();
+        this.inWrongCity = true;
       } else {
         self._saveWithoutCheck(question, address);
       }
@@ -129,6 +127,7 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
     this.numberAddition = '';
     this.addresses = [];
     this.hasSearched = false;
+    this.inWrongCity = false;
   }
 
   ready() {
@@ -181,8 +180,8 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
       this.hasSearched = true;
       this.searching = state.address.searching;
       const self = this;
-      setTimeout(function () {
-          self.shadowRoot.querySelector('#foundAddresses').scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+      setTimeout(function() {
+        self.shadowRoot.querySelector('#foundAddresses').scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
       }, 400);
     }
     if (state.address.reset) {
