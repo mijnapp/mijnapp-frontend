@@ -348,6 +348,7 @@ export default class MafApp extends connect(store)(PolymerElement) {
               {
                 title: 'Telefoonnummer',
                 value: 'tel',
+                pattern: '([-.0-9 ])*\\d',
               },
             ],
             fieldName: 'contact informatie',
