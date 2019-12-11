@@ -40174,13 +40174,15 @@ class MafApp extends (0, _connectMixin.connect)(_store.store)(_polymerElement.Po
         title: 'Hoe kunnen we je bereiken?',
         subtitle: 'Vul je e-mailadres en/of je telefoonnummer in',
         options: [{
-          title: 'Email',
-          value: 'email'
+          title: 'E-mailadres',
+          value: 'email',
+          pattern: '\\b[\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4}\\b'
         }, {
           title: 'Telefoonnummer',
-          value: 'tel'
+          value: 'tel',
+          pattern: '([-.0-9 ])*\\d'
         }],
-        fieldName: 'contact informatie',
+        fieldName: 'contactinformatie',
         fieldIcon: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgaWQ9Im1pam5BcHBfdXNlciIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA0ODAgNDgwIiANCgkJc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDgwIDQ4MDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KCTxjaXJjbGUgc3R5bGU9Im9wYWNpdHk6MTtmaWxsOiNmNWY1ZjU7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjIuOTczNTQzMTc7c3Ryb2tlLWxpbmVjYXA6YnV0dDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6NDtzdHJva2UtZGFzaGFycmF5OjIuOTczNTQzMzEsIDguOTIwNjI5OTE5OTk5OTk3ODg7c3Ryb2tlLWRhc2hvZmZzZXQ6MDtzdHJva2Utb3BhY2l0eToxO3BhaW50LW9yZGVyOm5vcm1hbCIgDQoJCQlpZD0icGF0aDQ1MDgiIGN4PSIyNDAiIGN5PSIyNDAiIHI9IjI0MCIvPg0KCTxwYXRoIGQ9Ik0gMjM5Ljk5MzUsNDggQyAxMzMuOTU2LDQ4IDQ3Ljk5MzUwMywxMzMuOTYyNSA0Ny45OTM1MDMsMjQwIGMgMCwxMDYuMDM3NSA4NS45NjI0OTcsMTkyIDE5MS45OTk5OTcsMTkyIDUuNzg0MzgsMCAxMS41NDY4OCwtMC4yNTkzOCAxNy4yODEyNSwtMC43NzUgNS4zMzEyNSwtMC40NzgxMiAxMC42MTU2MywtMS4yMDkzOCAxNS44NTkzOCwtMi4xMjUgbCAyLjAxNTYyLC0wLjM1NjI1IEMgMzcyLjY0MDM4LDQxMC41NSA0NDAuMjM3MjUsMzIxLjEwMzEyIDQzMS4xMTg1LDIyMi4zNDY4OCA0MjEuOTk5NzUsMTIzLjU5MDYyIDMzOS4xNjg1LDQ4LjAzMTI1IDIzOS45OTM1LDQ4IFogbSAtMTUuNDI1LDM3MC41MjE4OCBoIC0wLjQ1MzEyIGMgLTQuOTc4MTMsLTAuNDQwNjMgLTkuOTE4NzUsLTEuMTA2MjYgLTE0LjgxNTYzLC0xLjk1OTM4IC0wLjI4MTI1LC0wLjA1IC0wLjU2MjUsLTAuMDgxMyAtMC44Mzc1LC0wLjEzNDM4IC00Ljc4NzUsLTAuODU2MjQgLTkuNTI1LC0xLjkxODc0IC0xNC4yMTU2MiwtMy4xNTkzNyBsIC0xLjEzNDM4LC0wLjI5MDYzIGMgLTQuNTc1LC0xLjI0MDYyIC05LjEsLTIuNjgxMjQgLTEzLjU1OTM3LC00LjI4MTI0IC0wLjQ2MjUsLTAuMTY1NjMgLTAuOTI4MTMsLTAuMzEyNSAtMS4zOTA2MywtMC40ODQzOCAtNC4zNzE4NywtMS42MDYyNSAtOC42NjU2MiwtMy40MDYyNSAtMTIuODkzNzUsLTUuMzUzMTIgLTAuNTI1LC0wLjIzNDM4IC0xLjA1LC0wLjQ1OTM4IC0xLjU3NSwtMC43MDkzOCAtNC4xNDY4NywtMS45MTg3NSAtOC4yMTI1LC00LjA4MTI1IC0xMi4yLC02LjM1NjI1IC0wLjU2MjUsLTAuMzE4NzUgLTEuMTMxMjUsLTAuNjM3NSAtMS42OTM3NSwtMC45NTMxMyAtMy45MjUsLTIuMjkwNjIgLTcuNzU5MzcsLTQuNzQ2ODcgLTExLjUyMTg3LC03LjM0MDYyIC0wLjU2ODc1LC0wLjM5Njg4IC0xLjE0Mzc1LC0wLjc4MTI1IC0xLjcwOTM4LC0xLjE3ODEyIC0zLjY5Njg3LC0yLjYyMTg4IC03LjMsLTUuNDA2MjYgLTEwLjgwOTM3LC04LjMxODc2IGwgLTAuOTY1NjMsLTAuODQzNzQgViAzMjMuMiBjIDAuMDQ2OSwtMzguODYyNSAzMS41Mzc1LC03MC4zNTMxMiA3MC40LC03MC40IGggODkuNiBjIDM4Ljg2MjUsMC4wNDY5IDcwLjM1MzEzLDMxLjUzNzUgNzAuNCw3MC40IHYgNTMuOTY1NjIgbCAtMC44NSwwLjcwOTM4IGMgLTMuNTc4MTIsMi45ODc1IC03LjI1LDUuODEyNSAtMTEuMDIxODcsOC40ODEyNSAtMC41LDAuMzUgLTEuMDA2MjUsMC42ODQzNyAtMS41MDMxMywxLjAyODEzIC0zLjgwNjI1LDIuNjQzNzQgLTcuNzA2MjUsNS4xMzEyNCAtMTEuNyw3LjQ2ODc0IC0wLjUsMC4yOTA2MyAtMS4wMTI1LDAuNTY1NjMgLTEuNTA5MzcsMC44NTMxMyAtNC4wNDY4OCwyLjMwMzEzIC04LjE2MjUsNC40NzgxMyAtMTIuMzU5MzgsNi40Mzc1IC0wLjQ4MTI1LDAuMjI1IC0wLjk2NTYyLDAuNDM0MzcgLTEuNDUzMTIsMC42NDA2MyAtNC4yNjI1LDEuOTY1NjIgLTguNTkzNzUsMy43NzUgLTEyLjk5Njg4LDUuMzkzNzQgLTAuNDM3NSwwLjE2MjUgLTAuODc4MTIsMC4zMDMxMyAtMS4yODEyNSwwLjQ1NjI2IC00LjQ4MTI1LDEuNjA2MjQgLTkuMDI1LDMuMDU5MzcgLTEzLjYyNSw0LjMwNjI0IGwgLTEuMTAzMTIsMC4yNzUgYyAtNC42OTY4OCwxLjI0MDYzIC05LjQzNzUsMi4zMDkzOCAtMTQuMjMxMjUsMy4xNjg3NiAtMC4yNzUsMC4wNSAtMC41NSwwLjA4NDQgLTAuODI1LDAuMTI4MTIgLTQuOTAzMTMsMC44NTYyNSAtOS44NSwxLjUyMTg4IC0xNC44MzEyNSwxLjk2NTYyIGggLTAuNDUzMTMgYyAtNS4xMTg3NSwwLjQ0MDYzIC0xMC4yNDA2MiwwLjY3ODEzIC0xNS40MjUsMC42NzgxMyAtNS4xODQzNywwIC0xMC4zNDY4NywtMC4xOTM3NSAtMTUuNDU2MjUsLTAuNjM0MzcgeiBNIDM2Ny45OTM1LDM2NS4zIHYgLTQyLjEgYyAtMC4wNTMxLC00NS45MjgxMiAtMzcuMjcxODcsLTgzLjE0Njg4IC04My4yLC04My4yIGggLTg5LjYgYyAtNDUuOTI4MTIsMC4wNTMxIC04My4xNDY4NywzNy4yNzE4OCAtODMuMiw4My4yIHYgNDIuMDkzNzUgYyAtNjguOTMxMjQ2LC03MC4zNTMxMyAtNjguMTYyNDk3LC0xODMuMTUgMS43MTg3NSwtMjUyLjU1OTM3IDY5Ljg4MTI1LC02OS40MDYyNTUgMTgyLjY4MTI1LC02OS40MDYyNTUgMjUyLjU2MjUsMCA2OS44ODEyNSw2OS40MDkzNyA3MC42NSwxODIuMjA2MjQgMS43MTg3NSwyNTIuNTU5MzcgeiBtIDAsMCIgDQoJCQlpZD0icGF0aDIiIHN0eWxlPSJzdHJva2Utd2lkdGg6MC44MDAwMDAwMTtmaWxsOiMxZWJkZDM7ZmlsbC1vcGFjaXR5OjEiLz4NCgk8cGF0aCBkPSJtIDI0MCw4MCBjIC0zNS4zNDY4OCwwIC02NCwyOC42NTMxMiAtNjQsNjQgMCwzNS4zNDY4OCAyOC42NTMxMiw2NCA2NCw2NCAzNS4zNDY4OCwwIDY0LC0yOC42NTMxMiA2NCwtNjQgLTAuMDM3NSwtMzUuMzMxMjUgLTI4LjY2ODc1LC02My45NjI1IC02NCwtNjQgeiBtIDAsMTE1LjIgYyAtMjguMjc4MTIsMCAtNTEuMiwtMjIuOTIxODggLTUxLjIsLTUxLjIgMCwtMjguMjc4MTIgMjIuOTIxODgsLTUxLjIgNTEuMiwtNTEuMiAyOC4yNzgxMiwwIDUxLjIsMjIuOTIxODggNTEuMiw1MS4yIC0wLjAzMTIsMjguMjYyNSAtMjIuOTM3NSw1MS4xNjg3NSAtNTEuMiw1MS4yIHogbSAwLDAiIA0KCQkJaWQ9InBhdGg0IiBzdHlsZT0ic3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjAuNzk5ODAwMDQ7c3Ryb2tlLW1pdGVybGltaXQ6NDtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLW9wYWNpdHk6MTtmaWxsOiMxZWJkZDM7ZmlsbC1vcGFjaXR5OjEiLz4NCjwvc3ZnPg==',
         next: 'END' // '21586109-ce3b-4091-8420-85f92c0a6c11',
       }],
@@ -42856,7 +42858,7 @@ class MakiInput extends _polymerElement.PolymerElement {
       },
       pattern: {
         type: String,
-        value: ''
+        value: null
       },
       value: {
         type: Object,
@@ -42975,7 +42977,7 @@ module.exports = ":host{font-size:var(--typography-fontSize)}input::-webkit-inne
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<maki-shaded-paper\r\n  accent-disabled=\"[[accentDisabled]]\"\r\n  accent-error=\"[[accentError]]\"\r\n  accent-primary=\"[[accentPrimary]]\"\r\n  accent-secondary=\"[[accentSecondary]]\"\r\n  disabled=\"[[disabled]]\"\r\n  error=\"[[error]]\"\r\n  fill=\"[[fill]]\"\r\n  icon-disabled=\"[[iconDisabled]]\"\r\n  icon-error=\"[[iconError]]\"\r\n  icon-primary=\"[[iconPrimary]]\"\r\n  icon-secondary=\"[[iconSecondary]]\"\r\n  primary=\"[[primary]]\"\r\n  secondary=\"[[secondary]]\"\r\n  transparent=\"[[transparent]]\"\r\n  elevation=\"[[elevation]]\"\r\n  rounding=\"[[rounding]]\"\r\n  stroke=\"[[stroke]]\"\r\n>\r\n  <div class=\"Wrapper\">\r\n    <div class$=\"Icon[[_hasIconLeft(iconLeft)]][[_hasIconRight(iconRight)]]\">\r\n      <slot></slot>\r\n    </div>\r\n    <input class$=\"Input[[_hasIconLeft(iconLeft)]][[_hasIconRight(iconRight)]][[_isFocussed(focussed)]]\" placeholder=\"[[placeholder]]\" maxlength$=\"[[maxlength]]\" type=\"[[type]]\" pattern$=\"[[patern]]\" on-input=\"_onInput\" value=\"{{value}}\" />\r\n  </div>\r\n</maki-shaded-paper>\r\n"
+module.exports = "<maki-shaded-paper\r\n  accent-disabled=\"[[accentDisabled]]\"\r\n  accent-error=\"[[accentError]]\"\r\n  accent-primary=\"[[accentPrimary]]\"\r\n  accent-secondary=\"[[accentSecondary]]\"\r\n  disabled=\"[[disabled]]\"\r\n  error=\"[[error]]\"\r\n  fill=\"[[fill]]\"\r\n  icon-disabled=\"[[iconDisabled]]\"\r\n  icon-error=\"[[iconError]]\"\r\n  icon-primary=\"[[iconPrimary]]\"\r\n  icon-secondary=\"[[iconSecondary]]\"\r\n  primary=\"[[primary]]\"\r\n  secondary=\"[[secondary]]\"\r\n  transparent=\"[[transparent]]\"\r\n  elevation=\"[[elevation]]\"\r\n  rounding=\"[[rounding]]\"\r\n  stroke=\"[[stroke]]\"\r\n>\r\n  <div class=\"Wrapper\">\r\n    <div class$=\"Icon[[_hasIconLeft(iconLeft)]][[_hasIconRight(iconRight)]]\">\r\n      <slot></slot>\r\n    </div>\r\n    <input class$=\"Input[[_hasIconLeft(iconLeft)]][[_hasIconRight(iconRight)]][[_isFocussed(focussed)]]\" placeholder=\"[[placeholder]]\" maxlength$=\"[[maxlength]]\" type=\"[[type]]\" pattern$=\"[[pattern]]\" on-input=\"_onInput\" value=\"{{value}}\" />\r\n  </div>\r\n</maki-shaded-paper>\r\n"
 
 /***/ }),
 
@@ -44346,7 +44348,9 @@ class PlaybackScreenEnd extends (0, _connectMixin.connect)(_store.store)(_polyme
         if (o.valueTitle.length > 0) {
           dataRow.push({ svg: this.dataUrlToSvg(question.fieldIcon), width: 15, height: 15 });
           dataRow.push({ text: o.keyTitle, style: 'question' });
-          dataRow.push({ text: o.valueTitle.join('\n'), style: 'answer' });
+          dataRow.push({ text: o.valueTitle.filter(function (el) {
+              return el != null && el != '';
+            }).join('\n'), style: 'answer' });
         }
       } else {
         dataRow.push({ svg: this.dataUrlToSvg(question.fieldIcon), width: 15, height: 15 });
@@ -44386,7 +44390,9 @@ class PlaybackScreenEnd extends (0, _connectMixin.connect)(_store.store)(_polyme
       });
       if (Array.isArray(o.valueTitle)) {
         if (o.valueTitle.length > 0) {
-          returnable.push({ key: o.keyTitle, value: o.valueTitle.join('\n'), image: question.fieldIcon });
+          returnable.push({ key: o.keyTitle, value: o.valueTitle.filter(function (el) {
+              return el != null && el != '';
+            }).join('\n'), image: question.fieldIcon });
         }
       } else {
         returnable.push({ key: o.keyTitle, value: o.valueTitle, image: question.fieldIcon });
@@ -44676,10 +44682,20 @@ class PlaybackScreenMultipleText extends (0, _connectMixin.connect)(_store.store
 
   _nextCallback(question) {
     return next => {
-      if (question && question.next) {
+      if (question && question.next && this._checkInputPatternValidation()) {
         next(question.next);
       }
     };
+  }
+
+  _checkInputPatternValidation() {
+    var inputsValid = true;
+    var inputs = this.shadowRoot.querySelectorAll('maki-input');
+    inputs.forEach(function (makiInput) {
+      var input = makiInput.shadowRoot.querySelector('input');
+      inputsValid = inputsValid && input.checkValidity();
+    });
+    return inputsValid;
   }
 
   _skipCallback(question) {
@@ -44690,7 +44706,7 @@ class PlaybackScreenMultipleText extends (0, _connectMixin.connect)(_store.store
   }
 
   _isDisabled(order) {
-    return !(order && order.value && Array.isArray(order.value) && order.value.map(i => i.length).reduce((a, b) => a + b, 0) > 0);
+    return !(order && order.value && Array.isArray(order.value) && order.value.map(i => i.length).reduce((a, b) => a + b, 0) > 0 && this._checkInputPatternValidation());
   }
 
   stateChanged(state) {
@@ -44731,7 +44747,7 @@ module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled=\"[[_isDisabled(order)]]\">\r\n  <dom-repeat items=\"[[_items(question)]]\">\r\n    <template>\r\n      <div class=\"Item\">\r\n        <maki-input elevation=\"0\" stroke=\"1\" placeholder=\"[[_itemTitle(item.title)]]\" value=\"[[_getValue(order, index)]]\" input-callback=\"[[_inputCallback(question, index, order)]]\"></maki-input>\r\n      </div>\r\n    </template>\r\n  </dom-repeat>\r\n</playback-screen-wrapper>\r\n"
+module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled=\"[[_isDisabled(order)]]\">\r\n  <dom-repeat items=\"[[_items(question)]]\">\r\n    <template>\r\n      <div class=\"Item\">\r\n        <maki-input elevation=\"0\" stroke=\"1\" placeholder=\"[[_itemTitle(item.title)]]\" value=\"[[_getValue(order, index)]]\" input-callback=\"[[_inputCallback(question, index, order)]]\" pattern=\"[[item.pattern]]\"></maki-input>\r\n      </div>\r\n    </template>\r\n  </dom-repeat>\r\n</playback-screen-wrapper>\r\n"
 
 /***/ }),
 
