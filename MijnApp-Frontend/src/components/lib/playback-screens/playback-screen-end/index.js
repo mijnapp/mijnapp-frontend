@@ -143,7 +143,7 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
 
     return {
       table: {
-        widths: [20,'*', '*'],
+        widths: [20, 'auto', '*'],
         body: body,
       },
       layout: 'noBorders',
@@ -234,7 +234,7 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
     this.order_end_title = this.order_show_buttons ? checkTitle : successTitle;
     this.order_end_sub_title = this.order_show_buttons ? checkSubTitle : successSubTitle;
     this.order_reponse_data = this.order_status_send_ok ? state.order.response_data.href : '';
-    if (this.journey.title === "Ik ga verhuizen") {
+    if (this.journey.title === 'Ik ga verhuizen') {
       this.show_journey_icon_truck = true;
       this.show_journey_icon_bulb = false;
     } else {

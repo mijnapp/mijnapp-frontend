@@ -14,7 +14,7 @@
           <template>
             <div class="Option" data-index="[[index]]" on-click="_optionClick">
               <div class$="{{_isSelected(item.selected)}}"></div>
-              <div class="OptionText">[[item.naam.aanschrijfwijze]]</div>
+              <div class="OptionText">[[_formatPersonInformation(item)]]</div>
             </div>
           </template>
         </dom-repeat>
