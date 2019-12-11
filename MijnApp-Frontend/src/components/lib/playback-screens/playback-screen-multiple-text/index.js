@@ -71,10 +71,20 @@ export default class PlaybackScreenMultipleText extends connect(store)(
 
   _nextCallback(question) {
     return (next) => {
-      if (question && question.next) {
+      if (question && question.next && this._checkInputPatternValidation()) {
         next(question.next);
       }
     };
+  }
+
+  _checkInputPatternValidation() {
+    var inputsValid = true;
+    var inputs = this.shadowRoot.querySelectorAll('maki-input');
+    inputs.forEach(function(makiInput) {
+      var input = makiInput.shadowRoot.querySelector('input');
+      inputsValid = inputsValid && input.checkValidity();
+    });
+    return inputsValid;
   }
 
   _skipCallback(question) {
@@ -89,7 +99,8 @@ export default class PlaybackScreenMultipleText extends connect(store)(
       order &&
       order.value &&
       Array.isArray(order.value) &&
-      order.value.map((i) => i.length).reduce((a, b) => a + b, 0) > 0
+      order.value.map((i) => i.length).reduce((a, b) => a + b, 0) > 0 &&
+      this._checkInputPatternValidation()
     );
   }
 

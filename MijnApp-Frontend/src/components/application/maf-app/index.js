@@ -341,8 +341,9 @@ export default class MafApp extends connect(store)(PolymerElement) {
             subtitle: 'Vul je e-mailadres en/of je telefoonnummer in',
             options: [
               {
-                title: 'Email',
+                title: 'E-mailadres',
                 value: 'email',
+                pattern: '\\b[\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4}\\b',
               },
               {
                 title: 'Telefoonnummer',

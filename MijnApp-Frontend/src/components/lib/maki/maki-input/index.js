@@ -32,7 +32,7 @@ export default class MakiInput extends PolymerElement {
       },
       pattern: {
         type: String,
-        value: '',
+        value: null,
       },
       value: {
         type: Object,
