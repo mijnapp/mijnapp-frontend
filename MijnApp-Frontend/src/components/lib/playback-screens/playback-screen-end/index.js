@@ -169,7 +169,6 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
       const question = this.questions.find(function(item) { return item.id === o.question; });
       if (Array.isArray(o.valueTitle)) {
         if (o.valueTitle.length > 0) {
-          console.log(o.valueTitle);
           returnable.push({ key: o.keyTitle, value: o.valueTitle.filter(function (el) { return el != null && el != ''; }).join('\n'), image: question.fieldIcon });
         }
       } else {
