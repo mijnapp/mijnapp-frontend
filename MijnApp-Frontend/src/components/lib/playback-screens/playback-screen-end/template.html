@@ -117,7 +117,12 @@
             </dom-if>
             <dom-if if="{{order_status_sending}}">
                 <template>
-                    <div class="RequestMessage">Bezig met verzenden...</div>
+                  <div class="RequestMessage">
+                    <div class="SpinnerBox">
+                      <img class="Spinner" src="assets/media/Spinner.svg" alt="spinner">
+                      <div class="SpinnerMessage">Bezig met verzenden.</div>
+                    </div>
+                  </div>
                 </template>
             </dom-if>
             <dom-if if="{{order_status_send_failed}}">

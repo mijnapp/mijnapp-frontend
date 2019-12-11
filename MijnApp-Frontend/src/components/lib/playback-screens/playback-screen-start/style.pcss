@@ -114,13 +114,13 @@ maki-icon-edit-document {
   font-family: var(--typography-fontFamily);
   font-size: var(--main-font-small-text-size);
   font-weight: 500;
-  font-style: italic;
   font-stretch: normal;
   line-height: 1.64;
-  letter-spacing: -0.3px;
-  text-align: center;
+  letter-spacing: -0.3px;  
   color: var(--palette-primary-main);
   margin-top: 7px;
+  display: flex;
+  justify-content: center;
 }
 .WarningSubtitle {
   font-family: var(--typography-fontFamily);
@@ -241,9 +241,14 @@ maki-icon-edit-document {
 maki-icon-cross {
   --icon-color: var(--icon-red-color);
 }
-
 maki-icon-attention {
 	margin: 10px 0 0 0;
   --icon-color: var(--icon-red-color);
   --icon-size: 30px;
+}
+.Spinner {
+  margin: 10px;
+}
+.SpinnerMessage {
+  margin-top: 16px;
 }

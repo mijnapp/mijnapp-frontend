@@ -80,7 +80,10 @@
             </dom-if>
             <dom-if if="{{preconditionsBeingChecked}}">
                 <template>
-                    <div class="SubtitleCenter">Je gegevens worden opgehaald.</div>
+                  <div class="SubtitleCenter">
+                    <img class="Spinner" src="assets/media/Spinner.svg" alt="spinner">
+                    <div class="SpinnerMessage">Je gegevens worden opgehaald.</div>
+                  </div>
                 </template>
             </dom-if>
         </div>

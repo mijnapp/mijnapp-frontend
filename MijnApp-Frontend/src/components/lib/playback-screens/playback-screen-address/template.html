@@ -12,9 +12,12 @@
         <template>
             <div id="foundAddresses" class="Title">Gevonden adressen</div>
             <dom-if if="{{searching}}">
-                <template>
-                    <div class="Subtitle">Ophalen adressen voor {{postalCode}}, {{number}}{{numberAddition}}</div>
-                </template>
+              <template>
+                <div class="SpinnerBox">
+                  <img class="Spinner" src="assets/media/Spinner.svg" alt="spinner">
+                  <div class="SpinnerMessage">Ophalen adressen voor {{postalCode}}, {{number}}{{numberAddition}}</div>
+                </div>
+              </template>
             </dom-if>
             <dom-if if="{{!searching}}">
                 <template>
