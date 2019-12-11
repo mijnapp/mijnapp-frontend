@@ -55,6 +55,11 @@ input[type=number] {
   color: var(--shaded-color-main);
   font-style: italic;
 }
+.Input:invalid {
+  -webkit-appearance: none;
+  -webkit-box-shadow: 0 0 5px 1px var(--palette-error-main);
+  box-shadow: 0 0 5px 1px var(--palette-error-main);
+}
 .Highlight {
   height: 2px;
   width: 100%;
