@@ -45062,6 +45062,11 @@ class PlaybackScreenPersonsMoving extends (0, _connectMixin.connect)(_store.stor
 
     this.persons = state.person.movingPersons;
     this.personsStatus = state.person.movingPersonsStatus;
+
+    if (this.question.type !== _common.QUESTION_TYPE_PERSONS_MOVING && this.personsStatus === _person.REQUEST_PERSONS_MOVING_FAILURE) {
+      this._clearPersonData();
+    }
+
     this.searchingMovingPersons = state.person.movingPersonsSearching;
     this.isDisabled = this.personsStatus !== _person.REQUEST_PERSONS_MOVING_SUCCESS;
     if (this.question.type === _common.QUESTION_TYPE_PERSONS_MOVING && this.personsStatus === _person.CLEAR_PERSONS_MOVING) {

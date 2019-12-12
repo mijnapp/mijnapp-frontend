@@ -7,6 +7,7 @@ import {
   clearPersonsMoving,
   CLEAR_PERSONS_MOVING,
   REQUEST_PERSONS_MOVING_SUCCESS,
+  REQUEST_PERSONS_MOVING_FAILURE,
   REQUEST_PERSONS_MOVING_SKIPQUESTION,
   requestPersonsMovingSkipQuestion,
   REQUEST_PERSONS_MOVING_SELECT_ALL,
@@ -128,6 +129,11 @@ export default class PlaybackScreenPersonsMoving extends connect(store)(PolymerE
 
     this.persons = state.person.movingPersons;
     this.personsStatus = state.person.movingPersonsStatus;
+
+    if (this.question.type !== QUESTION_TYPE_PERSONS_MOVING && this.personsStatus === REQUEST_PERSONS_MOVING_FAILURE) {
+      this._clearPersonData();
+    }
+
     this.searchingMovingPersons = state.person.movingPersonsSearching;
     this.isDisabled = this.personsStatus !== REQUEST_PERSONS_MOVING_SUCCESS;
     if (this.question.type === QUESTION_TYPE_PERSONS_MOVING && this.personsStatus === CLEAR_PERSONS_MOVING) {
