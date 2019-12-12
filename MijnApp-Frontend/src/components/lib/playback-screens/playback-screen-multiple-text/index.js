@@ -49,15 +49,22 @@ export default class PlaybackScreenMultipleText extends connect(store)(
       store.dispatch(
         orderSaveAnswer(key,
           order.value && Array.isArray(order.value)
-          ? order.value.map((o, i) => (i === index ? data : o))
-          : key.map((o, i) => (i === index ? data : '')),
+            ? order.value.map((o, i) => (i === index ? data : o))
+            : key.map((o, i) => (i === index ? data : '')),
           keyTitle,
           order.value && Array.isArray(order.value)
-          ? order.value.map((o, i) => (i === index ? data : o))
-          : key.map((o, i) => (i === index ? data : ''))
+            ? order.value.map((o, i) => (i === index ? data : o))
+            : key.map((o, i) => (i === index ? data : ''))
         )
       );
     };
+  }
+
+  _determineType(pattern) {
+    if (pattern === '([-.0-9 ])*\\d') {
+      return 'number';
+    }
+    return '';
   }
 
   _getValue(order, index) {
@@ -80,7 +87,7 @@ export default class PlaybackScreenMultipleText extends connect(store)(
   _checkInputPatternValidation() {
     var inputsValid = true;
     var inputs = this.shadowRoot.querySelectorAll('maki-input');
-    inputs.forEach(function(makiInput) {
+    inputs.forEach(function (makiInput) {
       var input = makiInput.shadowRoot.querySelector('input');
       inputsValid = inputsValid && input.checkValidity();
     });
