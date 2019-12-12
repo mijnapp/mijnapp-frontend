@@ -44683,6 +44683,13 @@ class PlaybackScreenMultipleText extends (0, _connectMixin.connect)(_store.store
     };
   }
 
+  _determineType(pattern) {
+    if (pattern === '([-.0-9 ])*\\d') {
+      return 'number';
+    }
+    return '';
+  }
+
   _getValue(order, index) {
     return order && order.value && Array.isArray(order.value) && order.value.length > index ? order.value[index] : '';
   }
@@ -44754,7 +44761,7 @@ module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled=\"[[_isDisabled(order)]]\">\r\n  <dom-repeat items=\"[[_items(question)]]\">\r\n    <template>\r\n      <div class=\"Item\">\r\n        <maki-input elevation=\"0\" stroke=\"1\" placeholder=\"[[_itemTitle(item.title)]]\" value=\"[[_getValue(order, index)]]\" input-callback=\"[[_inputCallback(question, index, order)]]\" pattern=\"[[item.pattern]]\"></maki-input>\r\n      </div>\r\n    </template>\r\n  </dom-repeat>\r\n</playback-screen-wrapper>\r\n"
+module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled=\"[[_isDisabled(order)]]\">\r\n  <dom-repeat items=\"[[_items(question)]]\">\r\n    <template>\r\n      <div class=\"Item\">\r\n        <maki-input elevation=\"0\" stroke=\"1\" placeholder=\"[[_itemTitle(item.title)]]\" value=\"[[_getValue(order, index)]]\" input-callback=\"[[_inputCallback(question, index, order)]]\" type=\"[[_determineType(item.pattern)]]\" pattern=\"[[item.pattern]]\"></maki-input>\r\n      </div>\r\n    </template>\r\n  </dom-repeat>\r\n</playback-screen-wrapper>\r\n"
 
 /***/ }),
 
