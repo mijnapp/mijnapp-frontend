@@ -101,10 +101,17 @@ export default class MakiInput extends PolymerElement {
     super.ready();
     const field = this.shadowRoot.querySelector('.Input');
     if (field.type === 'number') {
+      field.addEventListener('keypress', this._removeSigns.bind(this));
       field.setAttribute('pattern', '\\d*');
     }
     field.addEventListener('focus', this._onFocus.bind(this));
     field.addEventListener('blur', this._onBlur.bind(this));
+  }
+
+  _removeSigns(e) {
+    if (e.key === '-' || e.key === '+' || e.key === '.' || e.key === ',') {
+      e.preventDefault();
+    }
   }
 
   _onBlur() {
