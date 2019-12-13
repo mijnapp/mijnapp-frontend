@@ -29,8 +29,8 @@ Open a commandline
 use the command: docker-compose up, to run the containers and use CTRL + C to stop them again.
 To run them in the background use: docker-compose up - d
 
-The backend url: https://localhost:5555
-The frontend url: https://localhost:5666
+The backend url: https://localhost:40443
+The frontend url: https://localhost:60443
 
 To stop the containers:
 docker stop /mijnapp-backend
