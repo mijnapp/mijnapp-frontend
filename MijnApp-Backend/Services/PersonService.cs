@@ -52,7 +52,9 @@ namespace MijnApp_Backend.Services
             var result = await CallApi(url);
             var personList = JsonConvert.DeserializeObject<List<Persoon>>(result);
             var index = personList.FindIndex(_ => _.burgerservicenummer == person.burgerservicenummer);
-            personList.RemoveAt(index);
+            if (index > -1) { 
+                personList.RemoveAt(index);
+            }
             personList.Insert(0, person);
             return personList;
         }
