@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
@@ -41,7 +40,7 @@ namespace MijnApp_Backend.Services
             var person = await GetPersonFromApi(user);
 
             var bsn = _jwtTokenProvider.GetBsnFromClaims(user);
-            var bagId = person.verblijfplaats.id;
+            var bagId = person.verblijfplaats.bag_id;
 
             //Call Url for persons on address
             var url = !string.IsNullOrEmpty(bagId) ?
@@ -58,13 +57,6 @@ namespace MijnApp_Backend.Services
             personList.Insert(0, person);
             return personList;
         }
-
-        private async Task<string> GetBagIdForPerson(ClaimsPrincipal user)
-        {
-            var person = await GetPersonFromApi(user);
-            return person.verblijfplaats.id;
-        }
-
 
         internal async Task<string> CallApi(string url)
         {
