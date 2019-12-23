@@ -22,14 +22,13 @@
                 <div class="Title">[[_title(journey)]]</div>
             </div>
             <div class="SectionTitle">
-                <maki-icon-steps></maki-icon-steps>
                 <div>Deze stappen ga je doorlopen</div>
             </div>
             <div class="DotList">
                 <dom-repeat items="[[_steps(journey)]]">
                     <template>
                         <div class="DotListItem">
-                            <div class="Dot"></div>
+                            <maki-icon-steps></maki-icon-steps>
                             <div class="Text">[[item]]</div>
                         </div>
                     </template>
