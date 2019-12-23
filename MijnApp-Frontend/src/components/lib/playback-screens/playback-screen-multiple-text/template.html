@@ -2,7 +2,7 @@
   <dom-repeat items="[[_items(question)]]">
     <template>
       <div class="Item">
-        <maki-input elevation="0" stroke="1" placeholder="[[_itemTitle(item.title)]]" value="[[_getValue(order, index)]]" input-callback="[[_inputCallback(question, index, order)]]" type="[[_determineType(item.pattern)]]" pattern="[[item.pattern]]"></maki-input>
+        <maki-input elevation="0" stroke="1" placeholder="[[_itemTitle(item.title)]]" value="[[_getValue(order, index)]]" input-callback="[[_inputCallback(question, index, order)]]" type="[[_determineType(item.pattern)]]" pattern="[[item.pattern]]" pattern-validation-error-message="[[item.patternValidationErrorMessage]]"></maki-input>
       </div>
     </template>
   </dom-repeat>

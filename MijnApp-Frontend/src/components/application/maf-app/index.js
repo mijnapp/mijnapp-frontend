@@ -344,11 +344,13 @@ export default class MafApp extends connect(store)(PolymerElement) {
                 title: 'E-mailadres',
                 value: 'email',
                 pattern: '\\b[\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4}\\b',
+                patternValidationErrorMessage: 'Vul hier een geldig e-mailadres in',
               },
               {
                 title: 'Telefoonnummer',
                 value: 'tel',
                 pattern: '([-.0-9 ])*\\d',
+                patternValidationErrorMessage: 'Gebruik alleen cijfers bij het invullen',
               },
             ],
             fieldName: 'contactinformatie',

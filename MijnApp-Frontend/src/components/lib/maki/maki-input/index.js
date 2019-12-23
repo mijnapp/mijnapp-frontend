@@ -42,6 +42,14 @@ export default class MakiInput extends PolymerElement {
         type: Function,
         value: () => {},
       },
+      showInputPatternValidationMessage: {
+        type: Boolean,
+        value: false,
+      },
+      patternValidationErrorMessage: {
+        type: String,
+        value: 'Invalide invoer',
+      },
 
       // Props: Shaded Paper
       accentDisabled: {
@@ -85,7 +93,6 @@ export default class MakiInput extends PolymerElement {
       stroke: {
         type: Number,
       },
-     
     };
   }
 
@@ -116,13 +123,17 @@ export default class MakiInput extends PolymerElement {
 
   _onBlur() {
     this.focussed = false;
+    this._checkPatternValidity();
   }
+
   _onFocus() {
     this.focussed = true;
   }
+
   _onInput(e) {
     this.inputCallback(e.target.value);
   }
+
   _isFocussed(focussed) {
     return focussed ? ' focussed' : '';
   }
@@ -130,8 +141,20 @@ export default class MakiInput extends PolymerElement {
   _hasIconLeft(iconLeft) {
     return iconLeft ? ' iconLeft' : '';
   }
+
   _hasIconRight(iconRight) {
     return iconRight ? ' iconRight' : '';
+  }
+
+  _checkPatternValidity() {
+    const field = this.shadowRoot.querySelector('.Input');
+    this.showInputPatternValidationMessage = false;
+    if (field.hasAttribute('pattern')) {
+      var valid = field.checkValidity();
+      if (!valid) {
+        this.showInputPatternValidationMessage = true;
+      }
+    }
   }
 }
 

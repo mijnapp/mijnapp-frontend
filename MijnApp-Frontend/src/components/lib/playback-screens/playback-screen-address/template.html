@@ -1,9 +1,9 @@
 <playback-screen-wrapper skip-callback="[[_skipCallback(question)]]" no-next>
   <div class="Item">
-    <maki-input id="postalCodeInput" elevation="0" stroke="1" placeholder="Postcode" maxlength="6" value="{{postalCode}}" input-callback="[[_inputPostalCodeCallback()]]" pattern="\d{4}([A-Za-z]){2}" />
+    <maki-input id="postalCodeInput" elevation="0" stroke="1" placeholder="Postcode" maxlength="6" value="{{postalCode}}" input-callback="[[_inputPostalCodeCallback()]]" pattern="\d{4}([A-Za-z]){2}" pattern-validation-error-message="Gebruik de juiste opmaak '1234AB'" />
   </div>
   <div class="Item">
-    <maki-input id="numberInput" elevation="0" stroke="1" placeholder="Huisnummer" value="{{number}}" input-callback="[[_inputNumberCallback()]]" type="number" pattern="\d*"></maki-input>
+    <maki-input id="numberInput" elevation="0" stroke="1" placeholder="Huisnummer" value="{{number}}" input-callback="[[_inputNumberCallback()]]" type="number" pattern="\d*" pattern-validation-error-message="Gebruik alleen cijfers bij het invullen"></maki-input>
   </div>
   <div class="Item">
     <maki-input id="numberAdditionInput" elevation="0" stroke="1" placeholder="Huisnummertoevoeging" value="{{numberAddition}}" input-callback="[[_inputNumberAdditionCallback()]]"></maki-input>
