@@ -19,6 +19,13 @@
     <div class$="Icon[[_hasIconLeft(iconLeft)]][[_hasIconRight(iconRight)]]">
       <slot></slot>
     </div>
+    <dom-if if="[[showInputPatternValidationOkCheck]]">
+      <template>
+        <div class="Icon iconRight">
+          <maki-icon-check></maki-icon-check>
+        </div>
+      </template>
+    </dom-if>
     <input class$="Input[[_hasIconLeft(iconLeft)]][[_hasIconRight(iconRight)]][[_isFocussed(focussed)]]" placeholder="[[placeholder]]" maxlength$="[[maxlength]]" type="[[type]]" pattern$="[[pattern]]" on-input="_onInput" value="{{value}}" />
   </div>
 </maki-shaded-paper>

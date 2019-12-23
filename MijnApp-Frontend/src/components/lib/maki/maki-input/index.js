@@ -46,6 +46,10 @@ export default class MakiInput extends PolymerElement {
         type: Boolean,
         value: false,
       },
+      showInputPatternValidationOkCheck: {
+        type: Boolean,
+        value: false,
+      },
       patternValidationErrorMessage: {
         type: String,
         value: 'Invalide invoer',
@@ -128,6 +132,7 @@ export default class MakiInput extends PolymerElement {
 
   _onFocus() {
     this.focussed = true;
+    this.showInputPatternValidationOkCheck = false;
   }
 
   _onInput(e) {
@@ -149,10 +154,15 @@ export default class MakiInput extends PolymerElement {
   _checkPatternValidity() {
     const field = this.shadowRoot.querySelector('.Input');
     this.showInputPatternValidationMessage = false;
+    this.showInputPatternValidationOkCheck = false;
     if (field.hasAttribute('pattern')) {
       var valid = field.checkValidity();
       if (!valid) {
         this.showInputPatternValidationMessage = true;
+      } else {
+        if (field.value !== undefined && field.value !== null && field.value !== '') {
+          this.showInputPatternValidationOkCheck = true;
+        }
       }
     }
   }
