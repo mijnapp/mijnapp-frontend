@@ -17,6 +17,12 @@
 .Scroller {
   padding: 0 16px;
 }
+@supports (-webkit-overflow-scrolling: touch) {
+  /* CSS specific to iOS devices */ 
+  .ScrollerIphoneFix {
+    margin-top: 105px;
+  }
+}
 .TopbarButtonContainer {
   width: 100%;
   height: 62px;
