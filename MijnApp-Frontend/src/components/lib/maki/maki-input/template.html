@@ -1,26 +1,39 @@
-<maki-shaded-paper
-  accent-disabled="[[accentDisabled]]"
-  accent-error="[[accentError]]"
-  accent-primary="[[accentPrimary]]"
-  accent-secondary="[[accentSecondary]]"
-  disabled="[[disabled]]"
-  error="[[error]]"
-  fill="[[fill]]"
-  icon-disabled="[[iconDisabled]]"
-  icon-error="[[iconError]]"
-  icon-primary="[[iconPrimary]]"
-  icon-secondary="[[iconSecondary]]"
-  primary="[[primary]]"
-  secondary="[[secondary]]"
-  transparent="[[transparent]]"
-  elevation="[[elevation]]"
-  rounding="[[rounding]]"
-  stroke="[[stroke]]"
->
+<maki-shaded-paper accent-disabled="[[accentDisabled]]"
+                   accent-error="[[accentError]]"
+                   accent-primary="[[accentPrimary]]"
+                   accent-secondary="[[accentSecondary]]"
+                   disabled="[[disabled]]"
+                   error="[[error]]"
+                   fill="[[fill]]"
+                   icon-disabled="[[iconDisabled]]"
+                   icon-error="[[iconError]]"
+                   icon-primary="[[iconPrimary]]"
+                   icon-secondary="[[iconSecondary]]"
+                   primary="[[primary]]"
+                   secondary="[[secondary]]"
+                   transparent="[[transparent]]"
+                   elevation="[[elevation]]"
+                   rounding="[[rounding]]"
+                   stroke="[[stroke]]">
   <div class="Wrapper">
     <div class$="Icon[[_hasIconLeft(iconLeft)]][[_hasIconRight(iconRight)]]">
       <slot></slot>
     </div>
-    <input class$="Input[[_hasIconLeft(iconLeft)]][[_hasIconRight(iconRight)]][[_isFocussed(focussed)]]" placeholder="[[placeholder]]" maxlength$="[[maxlength]]" type="[[type]]" pattern$="[[patern]]" on-input="_onInput" value="{{value}}" />
+    <dom-if if="[[showInputPatternValidationOkCheck]]">
+      <template>
+        <div class="Icon iconRight">
+          <maki-icon-check></maki-icon-check>
+        </div>
+      </template>
+    </dom-if>
+    <input class$="Input[[_hasIconLeft(iconLeft)]][[_hasIconRight(iconRight)]][[_isFocussed(focussed)]]" placeholder="[[placeholder]]" maxlength$="[[maxlength]]" type="[[type]]" pattern$="[[pattern]]" on-input="_onInput" value="{{value}}" />
   </div>
 </maki-shaded-paper>
+<dom-if if="[[showInputPatternValidationMessage]]">
+  <template>
+    <div class="PatternInvalidMessage">
+      <maki-icon-attention></maki-icon-attention>
+      <div class="PatternInvalidMessageText">[[patternValidationErrorMessage]]</div>
+    </div>
+  </template>
+</dom-if>

@@ -89,10 +89,10 @@ maki-icon-bulb {
 maki-icon-steps,
 maki-icon-edit-document {
   background-color: var(--button-gray-background-color);
-  border-radius: 15px;
-  width: 20px;
-  height: 20px;
-  padding: 5px;
+  border-radius: 10px;
+  width: 10px;
+  height: 10px;
+  padding: 0px 5px 10px 5px;
   margin: 0 10px 0 0;
   box-sizing: content-box;
 
@@ -114,28 +114,17 @@ maki-icon-edit-document {
   font-family: var(--typography-fontFamily);
   font-size: var(--main-font-small-text-size);
   font-weight: 500;
-  font-style: italic;
   font-stretch: normal;
   line-height: 1.64;
   letter-spacing: -0.3px;
-  text-align: center;
   color: var(--palette-primary-main);
   margin-top: 7px;
-}
-.WarningSubtitle {
-  font-family: var(--typography-fontFamily);
-  font-size: var(--main-font-small-text-size);
-  font-weight: 500;
-  font-style: italic;
-  font-stretch: normal;
-  line-height: 1.64;
-  letter-spacing: -0.3px;
-  text-align: left;
-  color: var(--palette-primary-main);
+  display: flex;
+  justify-content: center;
 }
 .SectionTitle {
   font-family: var(--typography-fontFamily);
-  font-size: var(--main-font-text-size);
+  font-size: var(--main-font-subheader-size);  
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
@@ -168,7 +157,6 @@ maki-icon-edit-document {
   display: flex;
   align-items: center;
   margin-bottom: 3px;
-  padding-left: 10px;
 }
 .DotListItem:last-of-type {
   margin: 0;
@@ -193,7 +181,7 @@ maki-icon-edit-document {
 .DotListItem .Text {
   font-family: var(--typography-fontFamily);
   width: calc(100% - 21px);
-  font-size: var(--main-font-small-text-size);
+  font-size: var(--main-font-medium-text-size);
   font-weight: 500;
   font-style: normal;
   font-stretch: normal;
@@ -241,9 +229,15 @@ maki-icon-edit-document {
 maki-icon-cross {
   --icon-color: var(--icon-red-color);
 }
-
 maki-icon-attention {
-	margin: 10px 0 0 0;
+  margin: 10px 0 0 0;
+
   --icon-color: var(--icon-red-color);
   --icon-size: 30px;
+}
+.Spinner {
+  margin: 10px;
+}
+.SpinnerMessage {
+  margin-top: 16px;
 }

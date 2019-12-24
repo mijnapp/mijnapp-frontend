@@ -32,7 +32,7 @@ export default class MakiInput extends PolymerElement {
       },
       pattern: {
         type: String,
-        value: '',
+        value: null,
       },
       value: {
         type: Object,
@@ -41,6 +41,18 @@ export default class MakiInput extends PolymerElement {
       inputCallback: {
         type: Function,
         value: () => {},
+      },
+      showInputPatternValidationMessage: {
+        type: Boolean,
+        value: false,
+      },
+      showInputPatternValidationOkCheck: {
+        type: Boolean,
+        value: false,
+      },
+      patternValidationErrorMessage: {
+        type: String,
+        value: 'Invalide invoer',
       },
 
       // Props: Shaded Paper
@@ -85,7 +97,6 @@ export default class MakiInput extends PolymerElement {
       stroke: {
         type: Number,
       },
-     
     };
   }
 
@@ -101,21 +112,33 @@ export default class MakiInput extends PolymerElement {
     super.ready();
     const field = this.shadowRoot.querySelector('.Input');
     if (field.type === 'number') {
+      field.addEventListener('keypress', this._removeSigns.bind(this));
       field.setAttribute('pattern', '\\d*');
     }
     field.addEventListener('focus', this._onFocus.bind(this));
     field.addEventListener('blur', this._onBlur.bind(this));
   }
 
+  _removeSigns(e) {
+    if (e.key === '-' || e.key === '+' || e.key === '.' || e.key === ',') {
+      e.preventDefault();
+    }
+  }
+
   _onBlur() {
     this.focussed = false;
+    this._checkPatternValidity();
   }
+
   _onFocus() {
     this.focussed = true;
+    this.showInputPatternValidationOkCheck = false;
   }
+
   _onInput(e) {
     this.inputCallback(e.target.value);
   }
+
   _isFocussed(focussed) {
     return focussed ? ' focussed' : '';
   }
@@ -123,8 +146,25 @@ export default class MakiInput extends PolymerElement {
   _hasIconLeft(iconLeft) {
     return iconLeft ? ' iconLeft' : '';
   }
+
   _hasIconRight(iconRight) {
     return iconRight ? ' iconRight' : '';
+  }
+
+  _checkPatternValidity() {
+    const field = this.shadowRoot.querySelector('.Input');
+    this.showInputPatternValidationMessage = false;
+    this.showInputPatternValidationOkCheck = false;
+    if (field.hasAttribute('pattern')) {
+      var valid = field.checkValidity();
+      if (!valid) {
+        this.showInputPatternValidationMessage = true;
+      } else {
+        if (field.value !== undefined && field.value !== null && field.value !== '') {
+          this.showInputPatternValidationOkCheck = true;
+        }
+      }
+    }
   }
 }
 
