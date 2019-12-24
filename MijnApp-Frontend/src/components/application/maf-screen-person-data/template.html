@@ -2,9 +2,12 @@
     <div class="ScrollContainer">
         <dom-if if="{{searching}}">
             <template>
-                <maf-screen on-back="[[_onBack]]" heading="Ophalen gegevens">
-                    <div class="Subtitle">Uw gegevens worden opgehaald</div>
-                </maf-screen>
+              <maf-screen on-back="[[_onBack]]" heading="Ophalen gegevens">
+                <div class="SpinnerBox">
+                  <img class="Spinner" src="assets/media/Spinner.svg" alt="spinner">
+                  <div class="SpinnerMessage">Je gegevens worden opgehaald.</div>
+                </div>
+              </maf-screen>
             </template>
         </dom-if>
         <dom-if if="{{!searching}}">

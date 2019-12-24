@@ -14,6 +14,7 @@
 .Option {
   border-radius: 3px;
   padding: 8px;
+  min-height: 24px;
   color: var(--main-content-background-color);
   background-color: var(--icon-color);
   font-family: var(--typography-fontFamily);
@@ -50,7 +51,6 @@
 .Subtitle {
   font-family: var(--typography-fontFamily);
   font-size: var(--main-font-medium-text-size);
-  font-style: italic;
   line-height: 1.28;
   letter-spacing: -0.4px;
   text-align: left;
@@ -66,4 +66,34 @@ maki-icon-attention {
 
   --icon-color: var(--icon-red-color);
   --icon-size: 40px;
+}
+.Warning {
+  display: flex;
+  margin-top: 0;
+}
+.WarningTitle {
+  font-family: var(--typography-fontFamily);
+  font-size: var(--main-font-small-text-size);
+  font-weight: 500;
+  font-stretch: normal;
+  line-height: 1.64;
+  letter-spacing: -0.3px;
+  text-align: left;
+  color: var(--palette-primary-main);
+}
+.WarningSubtitle {
+  font-size: var(--main-font-text-size);
+  font-weight: bold;
+  font-style: normal;
+  line-height: normal;
+}
+.SpinnerBox {
+  display: flex;
+  justify-content: flex-start;
+}
+.Spinner {
+  margin: 10px;
+}
+.SpinnerMessage {
+  margin-top: 16px;
 }

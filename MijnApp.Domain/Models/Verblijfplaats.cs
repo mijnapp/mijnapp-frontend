@@ -2,7 +2,7 @@
 {
     public class Verblijfplaats
     {
-        public string id { get; set; }
+        public string bag_id { get; set; }
         public string huisletter { get; set; }
         public string huisnummer { get; set; }
         public string huisnummertoevoeging { get; set; }

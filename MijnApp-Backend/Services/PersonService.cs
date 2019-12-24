@@ -6,7 +6,6 @@ using MijnApp.Domain.Models;
 using MijnApp_Backend.HttpClients;
 using MijnApp_Backend.Security;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace MijnApp_Backend.Services
 {
@@ -14,7 +13,8 @@ namespace MijnApp_Backend.Services
     {
         private readonly string _baseUri;
         private const string UrlGetByBsn = "{0}ingeschrevenpersonen/{1}";
-        private const string UrlGetPersonsOnAddress = "{0}ingeschrevenpersonen?familie_eerstegraad={1}&verblijfplaats__identificatiecodenummeraanduiding={2}";
+        private const string UrlGetPersonsOnAddressWithBagId = "{0}ingeschrevenpersonen?familie_eerstegraad={1}&verblijfplaats__identificatiecodenummeraanduiding={2}";
+        private const string UrlGetPersonsOnAddressWithoutBagId = "{0}ingeschrevenpersonen?familie_eerstegraad={1}";
 
         private readonly JwtTokenProvider _jwtTokenProvider;
         private readonly IServiceClient _serviceClient;
@@ -40,25 +40,23 @@ namespace MijnApp_Backend.Services
             var person = await GetPersonFromApi(user);
 
             var bsn = _jwtTokenProvider.GetBsnFromClaims(user);
-            var bagId = person.verblijfplaats.id;
+            var bagId = person.verblijfplaats.bag_id;
+
             //Call Url for persons on address
-            var url = string.Format(UrlGetPersonsOnAddress, _baseUri, bsn, bagId);
+            var url = !string.IsNullOrEmpty(bagId) ?
+                        string.Format(UrlGetPersonsOnAddressWithBagId, _baseUri, bsn, bagId)
+                        :
+                        string.Format(UrlGetPersonsOnAddressWithoutBagId, _baseUri, bsn);
+
             var result = await CallApi(url);
-            var token = JObject.Parse(result);
-            var list = (JArray)token.SelectToken("_embedded.item");
-            var personList = list.ToObject<List<Persoon>>();
+            var personList = JsonConvert.DeserializeObject<List<Persoon>>(result);
             var index = personList.FindIndex(_ => _.burgerservicenummer == person.burgerservicenummer);
-            personList.RemoveAt(index);
+            if (index > -1) { 
+                personList.RemoveAt(index);
+            }
             personList.Insert(0, person);
             return personList;
         }
-
-        private async Task<string> GetBagIdForPerson(ClaimsPrincipal user)
-        {
-            var person = await GetPersonFromApi(user);
-            return person.verblijfplaats.id;
-        }
-
 
         internal async Task<string> CallApi(string url)
         {

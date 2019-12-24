@@ -55,6 +55,11 @@ input[type=number] {
   color: var(--shaded-color-main);
   font-style: italic;
 }
+.Input:invalid {
+  -webkit-appearance: none;
+  -webkit-box-shadow: 0 0 5px 1px var(--palette-error-main);
+  box-shadow: 0 0 5px 1px var(--palette-error-main);
+}
 .Highlight {
   height: 2px;
   width: 100%;
@@ -94,4 +99,24 @@ input[type=number] {
 }
 .Highlight.focussed .HighlightExpander {
   transform: scale(1, 1);
+}
+.PatternInvalidMessage {
+  display: flex;
+  justify-content: flex-start;
+  padding: 8px;
+}
+maki-icon-attention {
+  --icon-color: var(--icon-red-color);
+  --icon-size: 20px;
+  margin-right: 8px;
+}
+.PatternInvalidMessageText {
+  font-size: var(--main-font-smallest-text-size);
+  line-height: 20px;
+}
+maki-icon-check {
+  --icon-color: var(--icon-green-color);
+  margin-left: -36px;
+  margin-top: 16px;
+  --icon-size: 20px;
 }

@@ -2,310 +2,310 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="Dé app die digitale dienstverlening makkelijker, veiliger en overzichtelijker maakt.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+<meta name="description" content="Dé app die digitale dienstverlening makkelijker, veiliger en overzichtelijker maakt.">
 
-    <title>MijnApp</title>
+<title>MijnApp</title>
 
-    <!-- See https://goo.gl/OOhYW5 -->
-    <link rel="manifest" href="manifest.json">
+<!-- See https://goo.gl/OOhYW5 -->
+<link rel="manifest" href="manifest.json">
 
-    <!-- See https://goo.gl/qRE0vM -->
-    <meta name="theme-color" content="#3192CF">
+<!-- See https://goo.gl/qRE0vM -->
+<meta name="theme-color" content="#3192CF">
 
-    <!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="MijnApp">
+<!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="MijnApp">
 
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="MijnApp">
+<!-- Add to homescreen for Safari on iOS -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="MijnApp">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-32x32.png">
-    <link rel="mask-icon" href="./assets/icons/safari-pinned-tab.svg" color="#A7FFEB">
+<link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-32x32.png">
+<link rel="mask-icon" href="./assets/icons/safari-pinned-tab.svg" color="#A7FFEB">
 
-    <!-- Add the Leto font (default, and bold)-->
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+<!-- Add the Leto font (default, and bold)-->
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
 
-    <!-- Manifest for Windows -->
-    <meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
+<!-- Manifest for Windows -->
+<meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
 
-    <!-- Default twitter cards -->
-    <meta name="twitter:card" content="summary">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="MijnApp">
-    <meta property="og:image" content="/assets/icons/polymer-skeleton-192x192.png" />
+<!-- Default twitter cards -->
+<meta name="twitter:card" content="summary">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MijnApp">
+<meta property="og:image" content="/assets/icons/polymer-skeleton-192x192.png" />
 
-    <style>
-        @import url('./assets/fonts/stylesheet.css');
+<style>
+  @import url('./assets/fonts/stylesheet.css');
 
-        :root {
-            --main-background-color: #EDF2F9;
+  :root {
+    --main-background-color: #EDF2F9;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body, html { position: fixed; }
+
+  html {
+    font-size: calc(100% + 4 * (100vw - 600px) / 400);
+  }
+
+  body {
+    font-family: 'Lato', 'HK Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    line-height: 1.25;
+    overflow: hidden;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    height: 100%;
+    -webkit-tap-highlight-color: transparent;
+    background-color: var(--main-background-color);
+  }
+
+  .Loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .dialog {
+    max-width: 80vw;
+    font-family: var(--typography-fontFamily);
+  }
+  @media screen and (min-width: 700px) {
+    .dialog {
+      max-width: 700px;
+    }
+  }
+
+  .errorDialogHeader {
+    padding: 12px 24px;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  .errorDialogHeader maki-icon-attention {
+    --icon-size: 40px;
+    --icon-color: #D8000C;
+  }
+  .errorDialogHeader #errorTitle {
+    margin-left: 16px;
+  }
+  .errorDialogText {
+    font-size: 18px;
+    overflow-wrap: break-word;
+  }
+
+  .warningDialogHeader {
+    padding: 12px 24px;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .warningDialogHeader maki-icon-attention {
+    --icon-size: 40px;
+    --icon-color: #FFBA5C;
+  }
+
+  .warningDialogHeader #warningTitle {
+    margin-left: 16px;
+  }
+  .warningDialogText {
+    font-size: 18px;
+  }
+
+  .buttonContainer {
+    float: right;
+    box-sizing: border-box;
+    background-color: var(--palette-secondary-main);
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn {
+    display: inline-block;
+    font-size: 18px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    color: #FFF;
+    background-color: #3192CF;
+    padding: 10px 25px;
+    margin-right: 5px;
+    margin-left: 5px;
+    border-radius: 3px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  }
+
+  .btn:hover {
+    cursor: pointer;
+    background-color: #56A6D8;
+  }
+
+  .btnLink {
+    display: inline-block;
+    font-size: 18px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    color: #3192CF;
+    background-color: #FFF;
+    padding: 10px 25px;
+    border-radius: 3px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  }
+
+  .btnLink:hover {
+    cursor: pointer;
+    background-color: #F1F1F1;
+  }
+
+  #successToast {
+    --paper-toast-background-color: var(--paper-green-400);
+    --paper-toast-color: var(--palette-primary-contrastText);
+    font-size: 20px;
+    margin: 70px 0 0 0;
+  }
+
+</style>
+
+<script>
+  // Bunch of service worker stuff
+  (function () {
+    if (userIsOnIE()) {
+      //We don't support Internet Explorer. Show a friendly message to the user
+      window.location = window.location.origin + '/ienotsupported.html';
+      return;
+    }
+    if (!('serviceWorker' in navigator)) {
+      console.log('Service worker is not supported');
+      return;
+    }
+
+    navigator.serviceWorker.register('sw.js')
+      .then(function (registration) {
+        registration.onupdatefound = function () {
+          if (navigator.serviceWorker.controller) {
+            var installingWorker = registration.installing;
+            installingWorker.onstatechange = function () {
+              switch (installingWorker.state) {
+              case 'installed':
+                break;
+              case 'redundant':
+                throw new Error('The installing ' +
+                  'service worker became redundant.');
+              default:
+                // Ignore
+              }
+            };
+          }
+        };
+      }).catch(function (e) {
+        console.error('Error during service worker registration:', e);
+      });
+
+    navigator.serviceWorker.addEventListener('message',
+      function (event) {
+        if (event && event.data === 'NoConnection') {
+          window.clearErrorDialog();
+          window.errorText.innerHTML = 'Er is geen verbinding met het internet. De gegevens zijn niet opgehaald.';
+          window.errorDialog.open();
         }
+      });
+  })();
 
-        * {
-            box-sizing: border-box;
-        }
+  document.addEventListener('WebComponentsReady', function componentsReady() {
+    document.removeEventListener('WebComponentsReady', componentsReady, false);
 
-        body, html { position: fixed; }
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = 'bundle.js';
 
-        html {
-            font-size: calc(100% + 4 * (100vw - 600px) / 400);
-        }
+    var refScript = document.body.getElementsByTagName('script')[0];
+    refScript.parentNode.insertBefore(script, refScript);
+  }, false);
 
-        body {
-            font-family: 'Lato', 'HK Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-            line-height: 1.25;
-            overflow: hidden;
-            text-rendering: geometricPrecision;
-            -webkit-font-smoothing: antialiased;
-            margin: 0;
-            height: 100%;
-            -webkit-tap-highlight-color: transparent;
-            background-color: var(--main-background-color);
-        }
+  function clearWarningDialog() {
+    window.warningTitle.innerHTML = "";
+    window.warningText.innerHTML = "";
+    window.warningConfirmButton.innerHTML = "Doorgaan >";
+    window.warningConfirmButton.onclick = function () { };
+  }
 
-        .Loader {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+  function clearErrorDialog() {
+    window.errorTitle.innerHTML = "";
+    window.errorText.innerHTML = "";
+    window.errorButton.innerHTML = "Sluiten";
+  }
 
-        .dialog {
-            max-width: 80vw;
-            font-family: var(--typography-fontFamily);
-        }
-        @media screen and (min-width: 700px) {
-            .dialog {
-                max-width: 700px;
-            }
-        }
+  function userIsOnIE() {
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf('MSIE ');
+    return (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./));
+  }
 
-        .errorDialogHeader {
-            padding: 12px 24px;
-            font-size: 28px;
-            font-weight: bold;
-            line-height: 40px;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-        }
-        .errorDialogHeader maki-icon-attention {
-            --icon-size: 40px;
-            --icon-color: #D8000C;
-        }
-        .errorDialogHeader #errorTitle {
-            margin-left: 16px;
-        }
-        .errorDialogText {
-            font-size: 18px;
-            overflow-wrap: break-word;
-        }
-
-        .warningDialogHeader {
-            padding: 12px 24px;
-            font-size: 28px;
-            font-weight: bold;
-            line-height: 40px;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-        }
-
-        .warningDialogHeader maki-icon-attention {
-            --icon-size: 40px;
-            --icon-color: #FFBA5C;
-        }
-
-        .warningDialogHeader #warningTitle {
-            margin-left: 16px;
-        }
-        .warningDialogText {
-            font-size: 18px;
-        }
-
-        .buttonContainer {
-            float: right;
-            box-sizing: border-box;
-            background-color: var(--palette-secondary-main);
-            display: flex;
-            justify-content: center;
-        }
-
-        .btn {
-            display: inline-block;
-            font-size: 18px;
-            text-align: center;
-            white-space: nowrap;
-            vertical-align: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            border: 1px solid transparent;
-            color: #FFF;
-            background-color: #3192CF;
-            padding: 10px 25px;
-            margin-right: 5px;
-            margin-left: 5px;
-            border-radius: 3px;
-            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-        }
-
-        .btn:hover {
-            cursor: pointer;
-            background-color: #56A6D8;
-        }
-
-        .btnLink {
-            display: inline-block;
-            font-size: 18px;
-            text-align: center;
-            white-space: nowrap;
-            vertical-align: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            border: 1px solid transparent;
-            color: #3192CF;
-            background-color: #FFF;
-            padding: 10px 25px;
-            border-radius: 3px;
-            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-        }
-
-        .btnLink:hover {
-            cursor: pointer;
-            background-color: #F1F1F1;
-        }
-
-        #successToast {
-          --paper-toast-background-color: var(--paper-green-400);
-          --paper-toast-color: var(--palette-primary-contrastText);
-          font-size: 20px;
-        }
-
-    </style>
-
-    <script>
-        // Bunch of service worker stuff
-        (function () {
-            if (userIsOnIE()) {
-                //We don't support Internet Explorer. Show a friendly message to the user
-                window.location = window.location.origin + '/ienotsupported.html';
-                return;
-            }
-            if (!('serviceWorker' in navigator)) {
-                console.log('Service worker is not supported');
-                return;
-            }
-
-            navigator.serviceWorker.register('sw.js')
-                .then(function (registration) {
-                    registration.onupdatefound = function () {
-                        if (navigator.serviceWorker.controller) {
-                            var installingWorker = registration.installing;
-                            installingWorker.onstatechange = function () {
-                                switch (installingWorker.state) {
-                                    case 'installed':
-                                        break;
-                                    case 'redundant':
-                                        throw new Error('The installing ' +
-                                            'service worker became redundant.');
-                                    default:
-                                    // Ignore
-                                }
-                            };
-                        }
-                    };
-                }).catch(function (e) {
-                    console.error('Error during service worker registration:', e);
-                });
-
-            navigator.serviceWorker.addEventListener('message',
-                function (event) {
-                    if (event && event.data === 'NoConnection') {
-                        window.clearErrorDialog();
-                        window.errorText.innerHTML = 'Er is geen verbinding met het internet. De gegevens zijn niet opgehaald.';
-                        window.errorDialog.open();
-                    }
-                });
-        })();
-
-        document.addEventListener('WebComponentsReady', function componentsReady() {
-            document.removeEventListener('WebComponentsReady', componentsReady, false);
-
-            var script = document.createElement('script');
-            script.async = true;
-            script.src = 'bundle.js';
-
-            var refScript = document.body.getElementsByTagName('script')[0];
-            refScript.parentNode.insertBefore(script, refScript);
-        }, false);
-
-        function clearWarningDialog() {
-            window.warningTitle.innerHTML = "";
-            window.warningText.innerHTML = "";
-            window.warningConfirmButton.innerHTML = "Doorgaan >";
-            window.warningConfirmButton.onclick = function () { };
-        }
-
-        function clearErrorDialog() {
-            window.errorTitle.innerHTML = "";
-            window.errorText.innerHTML = "";
-            window.errorButton.innerHTML = "Sluiten";
-        }
-
-        function userIsOnIE() {
-            var ua = window.navigator.userAgent;
-            var msie = ua.indexOf('MSIE ');
-            return (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./));
-        }
-
-    </script>
+</script>
 </head>
 
 <body>
-    <noscript>
-        <div style="margin: 40px auto; font-size: 20px; background-color: white; text-align: center; width: 600px; padding: 10px;">
-            <strong>MijnApp</strong> werkt alleen met javascript aan. <br />
-            Zet javascript aan in uw browser om <strong>MijnApp</strong> te gebruiken.
-        </div>
-    </noscript>
-    <paper-toast id="successToast"></paper-toast>
-    <script>
-        successToast.horizontalAlign = "center";
-        successToast.verticalAlign = "top";
-    </script>
-    <paper-dialog id="warningDialog" modal class="dialog" style="display: none">
-        <div class="warningDialogHeader">
-            <maki-icon-attention></maki-icon-attention>
-            <div id="warningTitle"></div>
-        </div>
-        <p id="warningText" class="warningDialogText"></p>
-        <div class="buttonContainer">
-            <button class="btnLink" dialog-dismiss>Ga terug</button>
-            <button id="warningConfirmButton" class="btn" dialog-confirm>Doorgaan ></button>
-        </div>
-    </paper-dialog>
-    <paper-dialog id="errorDialog" modal class="dialog" style="display: none">
-        <div class="errorDialogHeader">
-            <maki-icon-attention></maki-icon-attention>
-            <div id="errorTitle"></div>
-        </div>
-        <p id="errorText" class="errorDialogText"></p>
-        <div class="buttonContainer">
-            <button id="errorButton" class="btn" dialog-confirm>Sluiten</button>
-        </div>
-    </paper-dialog>
-    <maf-app></maf-app>
-    <script defer src="./vendor/webcomponents-loader.js"></script>
-    <script src="pdfmake.bundle.js" async></script>
+<noscript>
+  <div style="margin: 40px auto; font-size: 20px; background-color: white; text-align: center; width: 600px; padding: 10px;">
+    <strong>MijnApp</strong> werkt alleen met javascript aan. <br />
+    Zet javascript aan in uw browser om <strong>MijnApp</strong> te gebruiken.
+  </div>
+</noscript>
+<paper-toast id="successToast"></paper-toast>
+<script>
+  successToast.horizontalAlign = "center";
+  successToast.verticalAlign = "top";
+</script>
+<paper-dialog id="warningDialog" modal class="dialog" style="display: none">
+  <div class="warningDialogHeader">
+    <maki-icon-attention></maki-icon-attention>
+    <div id="warningTitle"></div>
+  </div>
+  <p id="warningText" class="warningDialogText"></p>
+  <div class="buttonContainer">
+    <button class="btnLink" dialog-dismiss>Ga terug</button>
+    <button id="warningConfirmButton" class="btn" dialog-confirm>Doorgaan ></button>
+  </div>
+</paper-dialog>
+<paper-dialog id="errorDialog" modal class="dialog" style="display: none">
+  <div class="errorDialogHeader">
+    <maki-icon-attention></maki-icon-attention>
+    <div id="errorTitle"></div>
+  </div>
+  <p id="errorText" class="errorDialogText"></p>
+  <div class="buttonContainer">
+    <button id="errorButton" class="btn" dialog-confirm>Sluiten</button>
+  </div>
+</paper-dialog>
+<maf-app></maf-app>
+<script defer src="./vendor/webcomponents-loader.js"></script>
+<script src="pdfmake.bundle.js" async></script>
 </body>
-
 </html>

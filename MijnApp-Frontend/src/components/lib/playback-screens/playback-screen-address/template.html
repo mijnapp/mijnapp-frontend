@@ -1,9 +1,9 @@
 <playback-screen-wrapper skip-callback="[[_skipCallback(question)]]" no-next>
   <div class="Item">
-    <maki-input id="postalCodeInput" elevation="0" stroke="1" placeholder="Postcode" maxlength="6" value="{{postalCode}}" input-callback="[[_inputPostalCodeCallback()]]" />
+    <maki-input id="postalCodeInput" elevation="0" stroke="1" placeholder="Postcode" maxlength="6" value="{{postalCode}}" input-callback="[[_inputPostalCodeCallback()]]" pattern="\d{4}([A-Za-z]){2}" pattern-validation-error-message="Gebruik de juiste opmaak '1234AB'" />
   </div>
   <div class="Item">
-    <maki-input id="numberInput" elevation="0" stroke="1" placeholder="Huisnummer" value="{{number}}" input-callback="[[_inputNumberCallback()]]" type="number"></maki-input>
+    <maki-input id="numberInput" elevation="0" stroke="1" placeholder="Huisnummer" value="{{number}}" input-callback="[[_inputNumberCallback()]]" type="number" pattern="\d*" pattern-validation-error-message="Gebruik alleen cijfers bij het invullen"></maki-input>
   </div>
   <div class="Item">
     <maki-input id="numberAdditionInput" elevation="0" stroke="1" placeholder="Huisnummertoevoeging" value="{{numberAddition}}" input-callback="[[_inputNumberAdditionCallback()]]"></maki-input>
@@ -13,7 +13,10 @@
       <div id="foundAddresses" class="Title">Gevonden adressen</div>
       <dom-if if="{{searching}}">
         <template>
-          <div class="Subtitle">Ophalen adressen voor {{postalCode}}, {{number}}{{numberAddition}}</div>
+          <div class="SpinnerBox">
+            <img class="Spinner" src="assets/media/Spinner.svg" alt="spinner">
+            <div class="SpinnerMessage">Ophalen adressen voor {{postalCode}}, {{number}}{{numberAddition}}</div>
+          </div>
         </template>
       </dom-if>
       <dom-if if="{{!searching}}">
@@ -37,11 +40,33 @@
         <dom-repeat items="{{addresses}}">
           <template>
             <div class="Option" data-index="[[index]]" data-question="[[question]]" on-click="_optionClick">
-                <div class="OptionText">{{item.straat}} {{item.huisnummer}} {{item.huisnummertoevoeging}}, {{item.postcode}} {{item.woonplaats}}</div>
+              <dom-if if="{{hasAddition(item.huisnummertoevoeging)}}">
+                <template>
+                  <div class="OptionText">{{item.straat}} {{item.huisnummer}} {{item.huisnummertoevoeging}}, {{item.postcode}} {{item.woonplaats}}</div>
+                </template>
+              </dom-if>
+              <dom-if if="{{!hasAddition(item.huisnummertoevoeging)}}">
+                <template>
+                  <div class="OptionText">{{item.straat}} {{item.huisnummer}}, {{item.postcode}} {{item.woonplaats}}</div>
+                </template>
+              </dom-if>
               <div class="OptionCarrot">></div>
             </div>
           </template>
         </dom-repeat>
+      </div>
+      <div>
+        <dom-if if="{{inWrongCity}}">
+          <template>
+            <div class="Warning">
+              <maki-icon-attention width="30px"></maki-icon-attention>
+              <div class="WarningTitle">
+                <div class="WarningSubtitle">Let op!</div>
+                <div>Het nieuwe adres dat je opgeeft ligt helaas niet in een gemeente die MijnApp gebruikt. Geef de adreswijziging door op de website van de gemeente waar je naar toe verhuist.</div>
+              </div>
+            </div>
+          </template>
+        </dom-if>
       </div>
     </template>
   </dom-if>

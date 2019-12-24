@@ -4,25 +4,33 @@ services:
   mijnapp-backend:
     container_name: mijnapp-backend
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_ENVIRONMENT=Release
       - ASPNETCORE_URLS=https://+:443;http://+:80
       - ASPNETCORE_HTTPS_PORT=40443
-      - USER_SECRETS_ID=320e50fc-0267-417b-965b-f4c06031b254
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/app/cert/test.pfx
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=MyPassword
+      - ORIGINS=https://localhost:60443
+      - JwtClaimEncryption__SecretKey=1234567890ABCDEF
+      - Jwt__Key=***REMOVED***
+      - Jwt__Issuer=MijnApp
+      - DigidCgi__SharedSecret=Fromkeypass
+      - DigidCgi__SiamServer=https://siam1.test.anoigo.nl/aselectserver/server
+      - DigidCgi__ApplicationId=SOLV_DD
+      - DigidCgi__SiamServerName=siam1.test.anoigo.nl
+      - HasFakeLoginEnabled=true
     ports:
       - "40080:80"
       - "40443:443"
-    volumes:
-      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
-      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
   mijnapp-frontend:
     container_name: mijnapp-frontend
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_ENVIRONMENT=Release
       - ASPNETCORE_URLS=https://+:443;http://+:80
       - ASPNETCORE_HTTPS_PORT=60443
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/app/cert/test.pfx
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=MyPassword
+      - PublicSettings__BACKEND_URL=https://localhost:40443
+      - PublicSettings__HAS_FAKE_INLOG_ENABLED=true
     ports:
       - "60080:80"
       - "60443:443"
-    volumes:
-      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
-      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
