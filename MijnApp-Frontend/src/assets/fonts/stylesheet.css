@@ -81,3 +81,11 @@
     font-weight: 300;
     font-style: italic;
 }*/
+
+@font-face {
+    font-family: duo-basic;
+    font-style: normal;
+    font-weight: 400;
+    src: url("./fonts/duo-basic.eot?f5b51329c1c215ed0259dac00a3d35b0");
+    src: url("./fonts/duo-basic.eot?f5b51329c1c215ed0259dac00a3d35b0#iefix") format("embedded-opentype"), url("./fonts/duo-basic.ttf?f5b51329c1c215ed0259dac00a3d35b0") format("truetype"), url("./fonts/duo-basic.woff?f5b51329c1c215ed0259dac00a3d35b0") format("woff"), url("./fonts/duo-basic.svg?f5b51329c1c215ed0259dac00a3d35b0#duo-basic") format("svg")
+}

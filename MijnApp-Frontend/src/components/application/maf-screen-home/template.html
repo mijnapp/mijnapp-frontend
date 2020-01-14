@@ -2,37 +2,39 @@
     <div class="ScrollContainer">
         <div class="Spacing"></div>    
         <maf-screen heading="Mijn overzicht">
-            <div class="SearchWrapper">
-                <input class="FakeInput" placeholder="Wat wil je regelen?" type="text" on-click="_goJourneys"></input>
-                <maki-icon-search></maki-icon-search>
+          <div class="SearchWrapper input">
+            <div class="input__control-group" on-click="_goJourneys">
+              <input class="input__control input__control--search" placeholder="Wat wil je regelen?" type="text" />
+              <button class="btn btn--icon" title="Zoeken"><i class="icon icon-magnifier" role="presentation"></i></button>
             </div>
-            <div class="TilesWrapper">
-                <div class="TilesTitle">
-                    Mijn gegevens
-                </div>
-                <div class="Tiles">
-                    <dom-repeat items="{{tiles}}" as="tile">
-                        <template>
-                            <div class="Tile" on-click="_clickHandler">
-                                <div class="TileMedia">
-                                    <div class="TileMediaInner">
-                                        <img alt="[[tile.title]]" src="[[tile.asset]]" />
-                                    </div>
-                                </div>
-                                <div class="TileTitle">[[tile.title]]</div>
-                            </div>
-                        </template>
-                    </dom-repeat>
-                    <div class="Tile NotAllowed" on-click="_clickHandler">
-                        <div class=" TileMedia ">
-                            <div class="TileMediaInner ">
-                                <img src="assets/media/Passen.svg " />
-                            </div>
-                        </div>
-                        <div class="TileTitle ">Passen</div>
+          </div>
+          <div class="TilesWrapper">
+            <div class="TilesTitle">
+              Mijn gegevens
+            </div>
+            <div class="Tiles">
+              <dom-repeat items="{{tiles}}" as="tile">
+                <template>
+                  <div class="Tile" on-click="_clickHandler">
+                    <div class="TileMedia">
+                      <div class="TileMediaInner">
+                        <img alt="[[tile.title]]" src="[[tile.asset]]" />
+                      </div>
                     </div>
+                    <div class="TileTitle">[[tile.title]]</div>
+                  </div>
+                </template>
+              </dom-repeat>
+              <div class="Tile NotAllowed" on-click="_clickHandler">
+                <div class=" TileMedia ">
+                  <div class="TileMediaInner ">
+                    <img src="assets/media/Passen.svg " />
+                  </div>
                 </div>
+                <div class="TileTitle ">Passen</div>
+              </div>
             </div>
+          </div>
         </maf-screen>
     </div>
 </div>

@@ -2,9 +2,10 @@
   <div class="ScrollContainer">
     <maf-screen on-back="[[_onBack]]" heading="Zoeken">
       <div class="SearchWrapper">
-          <maki-input elevation="0" stroke="1" placeholder="Wat wil je regelen?" icon-right="true">
-              <maki-icon-search></maki-icon-search>
-          </maki-input>
+        <div class="input__control-group" on-click="_goJourneys">
+          <input class="input__control input__control--search" placeholder="Wat wil je regelen?" type="text" />
+          <button class="btn btn--icon" title="Zoeken"><i class="icon icon-magnifier" role="presentation"></i></button>
+        </div>
         <div class="Head">Suggesties</div>
         <div class="Title" on-click="_selectJourneyB">
           <maki-icon-truck></maki-icon-truck>

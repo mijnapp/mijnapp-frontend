@@ -6,6 +6,7 @@ import { setJourney } from '../../../redux/actions/journey';
 import { selectPage } from '../../../redux/actions/application';
 import { clearAddressData } from '../../../redux/actions/address';
 
+import '../../style-element.js';
 import css from './style.pcss';
 import template from './template.html';
 
@@ -23,7 +24,7 @@ export default class MafScreenJourneys extends connect(store)(PolymerElement) {
   }
 
   static get template() {
-    return html([`<style>${css}</style> ${template}`]);
+    return html([`<style include="style-element">${css}</style> ${template}`]);
   }
 
   constructor() {

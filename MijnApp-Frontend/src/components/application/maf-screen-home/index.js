@@ -6,6 +6,7 @@ import { requestContracts } from '../../../redux/actions/contracts';
 import { requestAvgLogs } from '../../../redux/actions/avgLogs';
 import { requestPersonData } from '../../../redux/actions/person';
 
+import '../../style-element.js';
 import css from './style.pcss';
 import template from './template.html';
 
@@ -45,7 +46,7 @@ export default class MafScreenHome extends connect(store)(PolymerElement) {
   }
 
   static get template() {
-    return html([`<style>${css}</style> ${template}`]);
+    return html([`<style include="style-element">${css}</style> ${template}`]);
   }
 
   constructor() {
