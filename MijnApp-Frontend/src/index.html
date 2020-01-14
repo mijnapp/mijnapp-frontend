@@ -40,8 +40,6 @@
 <meta property="og:image" content="/assets/icons/polymer-skeleton-192x192.png" />
 
 <style>
-  @import url('./assets/fonts/stylesheet.css');
-
   :root {
     --main-background-color: #EDF2F9;
   }
@@ -53,7 +51,7 @@
   body, html { position: fixed; }
 
   html {
-    font-size: calc(100% + 4 * (100vw - 600px) / 400);
+    font-size: 10px;
   }
 
   body {
@@ -134,31 +132,6 @@
     background-color: var(--palette-secondary-main);
     display: flex;
     justify-content: center;
-  }
-
-  .btn {
-    display: inline-block;
-    font-size: 18px;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    border: 1px solid transparent;
-    color: #FFF;
-    background-color: #3192CF;
-    padding: 10px 25px;
-    margin-right: 5px;
-    margin-left: 5px;
-    border-radius: 3px;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-  }
-
-  .btn:hover {
-    cursor: pointer;
-    background-color: #56A6D8;
   }
 
   .btnLink {

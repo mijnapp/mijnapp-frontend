@@ -5,6 +5,7 @@ import { requestJwtSignin } from '../../../redux/actions/jwt';
 import { connect } from 'pwa-helpers/connect-mixin';
 import { configuration } from '../../../helpers/configuration';
 
+import '../../style-element.js';
 import css from './style.pcss';
 import template from './template.html';
 import '@polymer/paper-input/paper-input';
@@ -20,7 +21,7 @@ export default class MafScreenSignin extends connect(store)(PolymerElement) {
   }
 
   static get template() {
-    return html([`<style>${css}</style> ${template}`]);
+    return html([`<style include="style-element">${css}</style> ${template}`]);
   }
 
   constructor() {

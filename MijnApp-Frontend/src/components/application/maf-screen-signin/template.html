@@ -1,36 +1,28 @@
 <div class="loginWrapper">
-    <div class="ScrollContainer">
-        <div>
-            <div class="loginTitle">MijnApp</div>
-            <img class="loginImage" src="assets/media/Inloggen.svg" alt="background-logo" />
-        </div>
-        <div class="loginContent">
-            <dom-if if="{{hasFakeInlogEnabled}}">
-                <template>
-                    <div class="loginDigidButton" on-click="_signInWithDigiDFake">
-                        <div class="loginDigidButtonText">
-                            <img src="assets/logo-digid.svg" class="loginSelectButton noselect" alt="digid-logo" />
-                            <div class="loginDigidButtonHeader">Test inloggen met DigiD</div>
-                        </div>
-                    </div>
-                </template>
-            </dom-if>
-            <div class="loginDigidButton" on-click="_signInWithDigiD">
-                <div class="loginDigidButtonText">
-                    <img src="assets/logo-digid.svg" class="loginSelectButton noselect" alt="digid-logo" />
-                    <div class="loginDigidButtonHeader">Inloggen met DigiD</div>
-                </div>
-            </div>
-            <div class="Info">
-                <div class="InfoText">Heeft u nog geen DigiD?</div>
-                <div class="InfoSubText">Vraag uw DigiD aan op <a href="http://www.digid.nl">www.digid.nl.</a></div>
-            </div>
-        </div>
-        <dom-if if="[[_showLoginWarning(jwtError)]]">
-            <template>
-                <div class="Error">Er is iets verkeerd gegaan tijdens het inloggen</div>
-                <div class="Error">[[_showLoginWarning(jwtError)]]</div>
-            </template>
-        </dom-if>
+  <div class="ScrollContainer">
+    <div class="loginTitle">MijnApp</div>
+    <img class="loginImage" src="assets/media/Inloggen.svg" alt="background-logo" />
+    <div class="loginContent">
+      <dom-if if="{{hasFakeInlogEnabled}}">
+        <template>
+          <button class="btn btn--primary" on-click="_signInWithDigiDFake">
+            Inloggen als tester
+          </button>
+        </template>
+      </dom-if>
+      <button class="btn btn--primary btn--digid cta-link" on-click="_signInWithDigiD">
+        Inloggen met DigiD
+      </button>
+      <div class="Info">
+        <div class="InfoText">Heeft u nog geen DigiD?</div>
+        <div class="InfoSubText">Vraag uw DigiD aan op <a href="http://www.digid.nl">www.digid.nl.</a></div>
+      </div>
     </div>
+    <dom-if if="[[_showLoginWarning(jwtError)]]">
+      <template>
+        <div class="Error">Er is iets verkeerd gegaan tijdens het inloggen</div>
+        <div class="Error">[[_showLoginWarning(jwtError)]]</div>
+      </template>
+    </dom-if>
+  </div>
 </div>
