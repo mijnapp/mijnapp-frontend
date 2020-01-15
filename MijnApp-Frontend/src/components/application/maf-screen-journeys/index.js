@@ -49,9 +49,7 @@ export default class MafScreenJourneys extends connect(store)(PolymerElement) {
 
   focusOnSearch() {
     if (!detectMobile.mobile()) {
-      this.shadowRoot.querySelector('maki-input').focus();
-      const makiInput = this.shadowRoot.querySelector('maki-input');
-      makiInput.shadowRoot.querySelector('.Input').focus();
+      this.shadowRoot.querySelector('#SearchInput').focus();
     }
   }
 
