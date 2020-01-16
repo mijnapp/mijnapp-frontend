@@ -18,7 +18,7 @@ namespace MijnApp_Backend.Controllers
     {
         private readonly JwtTokenProvider _jwtTokenProvider;
         private readonly string _baseUri;
-        private readonly string _processBaseUri;
+        private readonly string _orderTypeBaseUri;
         private readonly IServiceClient _serviceClient;
         private const string PostRequest = "{0}requests";
         private const string TargetOrganizationDenBosch = "1709124";
@@ -26,7 +26,7 @@ namespace MijnApp_Backend.Controllers
         public OrderController(IConfiguration config, IServiceClient serviceClient)
         {
             _baseUri = config.GetValue<string>("Api:OrderUri");
-            _processBaseUri = config.GetValue<string>("Api:ProcessUri");
+            _orderTypeBaseUri = config.GetValue<string>("Api:OrderTypeUri");
             _serviceClient = serviceClient;
             _jwtTokenProvider = new JwtTokenProvider(config);
         }
@@ -76,7 +76,7 @@ namespace MijnApp_Backend.Controllers
                 request_cases = new string[0],
                 properties = new Dictionary<string, object>(),
                 organizations = new [] { organization },
-                request_type = _processBaseUri + "request_types/" + order.requestType
+                request_type = _orderTypeBaseUri + "request_types/" + order.requestType
             };
             foreach (var question in order.data.Where(q => q.question != "END"))
             {
