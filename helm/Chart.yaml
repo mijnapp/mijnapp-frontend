@@ -1,0 +1,7 @@
+apiVersion: v1
+appVersion: V.0.1
+description: 'Mijnapp is an opensource application for communication between citizens and the municipality'
+name: mijnapp
+version: 0.1.0
+home: https://mijn-app.io/inwoner/index.html
+icon: https://mijn-app.io/inwoner/index.html
