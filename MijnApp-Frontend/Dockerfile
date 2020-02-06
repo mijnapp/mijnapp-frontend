@@ -13,9 +13,8 @@ RUN dotnet build "MijnApp-Frontend.csproj" -c Release -o /app/build
 
 FROM build AS publish
 RUN dotnet publish "MijnApp-Frontend.csproj" -c Release -o /app/publish
-
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-COPY --from=publish /app/cert /cert
+COPY  MijnApp-Frontend/cert cert/
 ENTRYPOINT ["dotnet", "MijnApp-Frontend.dll"]
