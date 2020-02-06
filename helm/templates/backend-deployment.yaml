@@ -1,0 +1,62 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ include "name" . }}-backend
+  labels:
+    app.kubernetes.io/name: {{ include "name" . }}-backend
+    app.kubernetes.io/part-of: {{ include "name" . }}
+    helm.sh/chart: {{ include "chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "name" . }}-backend
+        app.kubernetes.io/part-of: {{ include "name" . }}
+        helm.sh/chart: {{ include "chart" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+        app.kubernetes.io/managed-by: {{ .Release.Service }}
+    spec:
+      containers:
+        - name: {{ include "name" . }}-backend
+          image: "docker.io/mijnapp/backend:{{ .Values.settings.env }}"
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+            - containerPort: 443
+          env:
+            - name: ASPNETCORE_ENVIRONMENT
+              value: Release
+            - name: ASPNETCORE_URLS
+              value: https://+:443;http://+:80
+            - name: ASPNETCORE_HTTPS_PORT
+              value: 443
+            - name: ASPNETCORE_Kestrel__Certificates__Default__Path
+              value: /app/cert/test.pfx
+            - name: ASPNETCORE_Kestrel__Certificates__Default__Password
+              value: MyPassword
+            - name: ORIGINS
+              value: https://localhost:60443
+            - name: JwtClaimEncryption__SecretKey
+              value: 1234567890ABCDEF
+            - name: JwtClaimEncryption__SecretKey
+              value: 1234567890ABCDEF
+            - name: Jwt__Key
+              value: df32d6192fdf2907dfe14f2c42e7316505236350a4c35195c1bbd4159360b90a
+            - name: Jwt__Issuer
+              value: MijnApp
+            - name: Jwt__Issuer
+              value: DigidCgi__SharedSecret
+            - name: DigidCgi__SiamServer
+              value: https://siam1.test.anoigo.nl/aselectserver/server
+            - name: DigidCgi__ApplicationId
+              value: SOLV_DD
+            - name: DigidCgi__SiamServerName
+              value: siam1.test.anoigo.nl
+            - name: HasFakeLoginEnabled
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "fullname" . }}
+                  key: HasFakeLoginEnabled

@@ -1,0 +1,46 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ include "name" . }}-frontend
+  labels:
+    app.kubernetes.io/name: {{ include "name" . }}-frontend
+    app.kubernetes.io/part-of: {{ include "name" . }}
+    helm.sh/chart: {{ include "chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "name" . }}-frontend
+        app.kubernetes.io/part-of: {{ include "name" . }}
+        helm.sh/chart: {{ include "chart" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+        app.kubernetes.io/managed-by: {{ .Release.Service }}
+    spec:
+      containers:
+        - name: {{ include "name" . }}-frontend
+          image: "docker.io/mijnapp/frontend:{{ .Values.settings.env }}"
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+            - containerPort: 443
+          env:
+            - name: ASPNETCORE_ENVIRONMENT
+              value: Release
+            - name: ASPNETCORE_URLS
+              value: https://+:443;http://+:80
+            - name: ASPNETCORE_HTTPS_PORT
+              value: 443
+            - name: ASPNETCORE_Kestrel__Certificates__Default__Path
+              value: /app/cert/test.pfx
+            - name: ASPNETCORE_Kestrel__Certificates__Default__Password
+              value: MyPassword
+            - name: PublicSettings__BACKEND_URL
+              value: mijnapp-backend
+            - name: PublicSettings__HAS_FAKE_INLOG_ENABLED
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "fullname" . }}
+                  key: HasFakeLoginEnabled
