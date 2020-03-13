@@ -67,6 +67,7 @@ namespace MijnApp_Backend
                 var processId = frontEndHeaders["X-NLX-Request-Process-Id"].ToString();
                 httpClient.DefaultRequestHeaders.Add("X-NLX-Request-Process-Id", processId);
             }
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(Configuration["Api:ApiKey"]);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
