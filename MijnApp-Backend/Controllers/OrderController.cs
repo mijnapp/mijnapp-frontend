@@ -34,6 +34,40 @@ namespace MijnApp_Backend.Controllers
             _jwtTokenProvider = new JwtTokenProvider(config);
         }
 
+        [HttpGet]
+        [Route("orders")]
+        public async Task<IActionResult> GetOrders()
+        {
+            var orders = new List<Order>()
+            {
+                new Order
+                {
+                    data = new List<Question>()
+                    {
+                        new Question()
+                        {
+                            key = "testKey",
+                            value = "testValue"
+                        }
+                    },
+                    requestType = "testRequestType"
+                },
+                new Order
+                {
+                    data = new List<Question>()
+                    {
+                        new Question()
+                        {
+                            key = "testKey2",
+                            value = "testValue2"
+                        }
+                    },
+                    requestType = "testRequestType2"
+                }
+            };
+            return Json(orders);
+        }
+
         [HttpPost]
         [Route("order")]
         public async Task<IActionResult> Order([FromBody] dynamic order)
