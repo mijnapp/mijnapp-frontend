@@ -1,0 +1,32 @@
+<div class="Wrapper">
+  <div class="ScrollContainer">
+    <dom-if if="{{searching}}">
+      <template>
+        <maf-screen on-back="[[_onBack]]" heading="Mijn verzoeken">
+          <div class="SpinnerBox">
+            <img class="Spinner" src="assets/media/Spinner.svg" alt="spinner">
+            <div class="SpinnerMessage">Je gegevens worden opgehaald.</div>
+          </div>
+        </maf-screen>
+      </template>
+    </dom-if>
+    <dom-if if="{{!searching}}">
+      <template>
+        <maf-screen on-back="[[_onBack]]" heading="Mijn verzoeken">
+          <div class="OrdersContainer">
+            <dom-repeat items="{{orders}}" as="order">
+            <template>
+              <div class="Order">
+                <div class="OrderType">
+                  <div>Order type:</div>
+                  <div>{{order.requestType}}</div>
+                </div>
+              </div>
+            </template>
+            </dom-repeat>
+          </div>
+        </maf-screen>
+      </template>
+    </dom-if>
+  </div>
+</div>

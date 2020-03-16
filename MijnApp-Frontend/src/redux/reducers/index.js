@@ -10,6 +10,7 @@ import * as journey from './journey';
 import * as journeys from './journeys';
 import * as jwt from './jwt';
 import * as order from './order';
+import * as orders from './orders';
 import * as person from './person';
 import * as lastAction from './lastAction';
 
@@ -24,6 +25,7 @@ export default combineReducers({
   ...journeys,
   ...jwt,
   ...order,
+  ...orders,
   ...person,
   ...lastAction,
 });
