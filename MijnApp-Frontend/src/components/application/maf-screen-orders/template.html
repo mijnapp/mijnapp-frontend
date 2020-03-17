@@ -14,13 +14,16 @@
       <template>
         <maf-screen on-back="[[_onBack]]" heading="Mijn verzoeken">
           <div class="OrdersContainer">
-            <dom-repeat items="{{orders}}" as="order">
+            <dom-repeat items="{{orders}}" as="request">
             <template>
               <div class="Order">
-                <div class="OrderType">
-                  <div>Order type:</div>
-                  <div>{{order.requestType}}</div>
-                </div>
+                <ul>
+                  <li>Aanmaak datum: {{request.date_created}}</li>
+                  <li>Verzoek type: {{request.request_type}}</li>
+                  <li>Nieuw address: {{request.properties.adress}}</li>
+                  <li>Verhuis datum: {{request.properties.datum}}</li>
+                  <li>Wie: {{request.properties.wie}}</li>
+                </ul>
               </div>
             </template>
             </dom-repeat>
