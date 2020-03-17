@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using System;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using MijnApp_Backend.HttpClients;
@@ -22,6 +23,7 @@ namespace MijnApp_Backend.Controllers
         private readonly string _webResourceBaseUri;
         private readonly IServiceClient _serviceClient;
         private const string PostRequest = "{0}requests";
+        private const string GetRequest = "{0}requests";
         private const string TargetOrganizationDenBosch = "1709124";
         private const string OrganizationIdDenBosch = "4f387d0e-a2e5-44c0-9902-c31b63a8ee36"; // DEV = "1e452f11-a098-464e-8902-8fc2f1ee6acb";
 
@@ -38,34 +40,26 @@ namespace MijnApp_Backend.Controllers
         [Route("orders")]
         public async Task<IActionResult> GetOrders()
         {
-            var orders = new List<Order>()
+
+            var bsn = _jwtTokenProvider.GetBsnFromClaims(HttpContext.User);
+            var url = string.Format(GetRequest, _baseUri);
+            var response = await _serviceClient.GetAsync(url);
+            var result = await response.Content.ReadAsStringAsync();
+            var allRequest = JsonConvert.DeserializeObject<List<Request>>(result);
+
+            //Filter request on submitter (TODO: When the conduction API fixes the filtering on the API side, this wont be necessary)
+            var requestFromBsn = new List<Request>();
+            foreach (var request in allRequest)
             {
-                new Order
+                if (request.submitters.Length == 1 && request.submitters.First().person == bsn)
                 {
-                    data = new List<Question>()
-                    {
-                        new Question()
-                        {
-                            key = "testKey",
-                            value = "testValue"
-                        }
-                    },
-                    requestType = "testRequestType"
-                },
-                new Order
-                {
-                    data = new List<Question>()
-                    {
-                        new Question()
-                        {
-                            key = "testKey2",
-                            value = "testValue2"
-                        }
-                    },
-                    requestType = "testRequestType2"
+                    requestFromBsn.Add(request);
                 }
-            };
-            return Json(orders);
+            }
+
+            //Order request on create date. Last one on top
+            var orderedRequest = requestFromBsn.OrderByDescending(r => r.date_created).ToList();
+            return Json(orderedRequest);
         }
 
         [HttpPost]
@@ -105,6 +99,7 @@ namespace MijnApp_Backend.Controllers
         private Request CreateRequestData(Order order, string bsn)
         {
             var submitter = new Submitter { person = bsn };
+            //var submitter = new Submitter { person = "680508429" }; //Added request for different bsn.
             var organization = new Organization
             {
                 id = OrganizationIdDenBosch,
@@ -185,11 +180,26 @@ namespace MijnApp_Backend.Controllers
 
     internal class Request
     {
+        //Properties used when sending & retrieving a request
         public string request_type { get; set; }
         public string organization { get; set; }
         public Submitter[] submitters { get; set; }
         public Dictionary<string,object> properties { get; set; }
         public string[] request_cases { get; set; }
+
+        //Properties used when retrieving requests
+        public string reference { get; set; }
+        public string status { get; set; }
+        public DateTime date_created { get; set; }
+        public DateTime date_modified { get; set; }
+
+        //Properties we dont know?
+        //"cases": [],
+        //"parent": null,
+        //"children": [],
+        //"confidential": null,
+        //"current_stage": null,
+        //"date_submitted": null, Seems to be always null?
     }
 
     internal class Organization
