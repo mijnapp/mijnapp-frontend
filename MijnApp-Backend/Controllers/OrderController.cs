@@ -39,6 +39,7 @@ namespace MijnApp_Backend.Controllers
             _webResourceBaseUri = config.GetValue<string>("Api:WebResourceUri");
             _addressBaseUri = config.GetValue<string>("Api:AddressUri");
             _serviceClient = serviceClient;
+            _serviceClient.SetApiKey(config.GetValue<string>("Api:OrderApiKey"));
             _jwtTokenProvider = new JwtTokenProvider(config);
             _personService = new PersonService(_jwtTokenProvider, serviceClient, config);
             _cachedPersonsNames = new Dictionary<string, string>();
