@@ -6,6 +6,7 @@ import { selectPage } from '../../../redux/actions/application';
 import css from './style.pcss';
 import template from './template.html';
 import '../../objects/maf-screen';
+import { toDutchDateTime } from '../../helpers/dutchDate';
 
 export default class MafScreenOrders extends connect(store)(PolymerElement) {
   static get properties() {
@@ -27,6 +28,21 @@ export default class MafScreenOrders extends connect(store)(PolymerElement) {
   }
 
   _clickHandler(e) {
+  }
+
+  _getSubmitter(array) {
+    if (array !== undefined && array !== null && array.length === 1) {
+      return array[0].person;
+    }
+    return "";
+  }
+
+  _getDutchDateTime(date) {
+    if (date === null || date === undefined || date.date === null) {
+      return 'Onbekend';
+    }
+    date = new Date(date);
+    return toDutchDateTime(date);
   }
 
   stateChanged(state) {

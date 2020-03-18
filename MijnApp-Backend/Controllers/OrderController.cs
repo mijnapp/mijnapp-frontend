@@ -11,6 +11,7 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using MijnApp_Backend.Services;
 
 namespace MijnApp_Backend.Controllers
 {
@@ -18,22 +19,29 @@ namespace MijnApp_Backend.Controllers
     public class OrderController : Controller
     {
         private readonly JwtTokenProvider _jwtTokenProvider;
+        private readonly PersonService _personService;
         private readonly string _baseUri;
         private readonly string _orderTypeBaseUri;
         private readonly string _webResourceBaseUri;
+        private readonly string _addressBaseUri;
         private readonly IServiceClient _serviceClient;
         private const string PostRequest = "{0}requests";
         private const string GetRequest = "{0}requests";
         private const string TargetOrganizationDenBosch = "1709124";
         private const string OrganizationIdDenBosch = "4f387d0e-a2e5-44c0-9902-c31b63a8ee36"; // DEV = "1e452f11-a098-464e-8902-8fc2f1ee6acb";
+        private const string MovePersonRequestTypeId = "9d76fb58-0711-4437-acc4-9f4d9d403cdf";
+        private Dictionary<string, string> _cachedPersonsNames;
 
         public OrderController(IConfiguration config, IServiceClient serviceClient)
         {
             _baseUri = config.GetValue<string>("Api:OrderUri");
             _orderTypeBaseUri = config.GetValue<string>("Api:OrderTypeUri");
             _webResourceBaseUri = config.GetValue<string>("Api:WebResourceUri");
+            _addressBaseUri = config.GetValue<string>("Api:AddressUri");
             _serviceClient = serviceClient;
             _jwtTokenProvider = new JwtTokenProvider(config);
+            _personService = new PersonService(_jwtTokenProvider, serviceClient, config);
+            _cachedPersonsNames = new Dictionary<string, string>();
         }
 
         [HttpGet]
@@ -53,6 +61,8 @@ namespace MijnApp_Backend.Controllers
             {
                 if (request.submitters.Length == 1 && request.submitters.First().person == bsn)
                 {
+                    //Add the correct data for the request(based on the requestType?)
+                    await AddRequestDataFromType(request);
                     requestFromBsn.Add(request);
                 }
             }
@@ -60,6 +70,37 @@ namespace MijnApp_Backend.Controllers
             //Order request on create date. Last one on top
             var orderedRequest = requestFromBsn.OrderByDescending(r => r.date_created).ToList();
             return Json(orderedRequest);
+        }
+
+        private async Task<Request> AddRequestDataFromType(Request request)
+        {
+            //TODO get name from _orderTypeBaseUri
+            if (request.request_type == _orderTypeBaseUri + "request_types/" + MovePersonRequestTypeId)
+            {
+                request.request_type_name = "Verhuizen";
+
+                //find the wie property
+                string meeVerhuizersString = request.properties["wie"] as string;
+                var meeVerhuizers = meeVerhuizersString.Split(",");
+                var personNames = new List<string>();
+                foreach (var meeVerhuizer in meeVerhuizers)
+                {
+                    var guid = meeVerhuizer.Trim();
+                    if (_cachedPersonsNames.ContainsKey(guid))
+                    {
+                        personNames.Add(_cachedPersonsNames[guid]);
+                    }
+                    else
+                    {
+                        var person = await _personService.GetPersonFromApiFromGuid(guid);
+                        personNames.Add(person.naam.aanschrijfwijze);
+                        _cachedPersonsNames[guid] = person.naam.aanschrijfwijze;
+                    }
+                }
+                request.properties.Add("wie_name", string.Join(", ",personNames));
+            }
+
+            return request;
         }
 
         [HttpPost]
@@ -151,7 +192,7 @@ namespace MijnApp_Backend.Controllers
             }
 
             //TODO: Add some properties to verhuizen requestType on a fixed id for now. Will need to be discussed with Conduction.
-            if (order.requestType == "9d76fb58-0711-4437-acc4-9f4d9d403cdf")
+            if (order.requestType == MovePersonRequestTypeId)
             {
                 request.properties.Add("eigenaar", true);
                 request.properties.Add("ingangsdatum", "01-01-2000");
@@ -192,6 +233,9 @@ namespace MijnApp_Backend.Controllers
         public string status { get; set; }
         public DateTime date_created { get; set; }
         public DateTime date_modified { get; set; }
+
+        //Calculated properties 
+        public string request_type_name { get; set; }
 
         //Properties we dont know?
         //"cases": [],
