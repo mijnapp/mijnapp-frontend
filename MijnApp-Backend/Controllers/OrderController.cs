@@ -154,7 +154,8 @@ namespace MijnApp_Backend.Controllers
                 request_cases = new string[0],
                 properties = new Dictionary<string, object>(),
                 organization = _webResourceBaseUri  + "organizations/" + organization.id,
-                request_type = _orderTypeBaseUri + "request_types/" + order.requestType
+                request_type = _orderTypeBaseUri + "request_types/" + order.requestType,
+                status = "complete",
             };
             foreach (var question in order.data.Where(q => q.question != "END"))
             {
