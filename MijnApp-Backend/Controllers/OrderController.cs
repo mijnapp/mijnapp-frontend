@@ -31,6 +31,7 @@ namespace MijnApp_Backend.Controllers
             _orderTypeBaseUri = config.GetValue<string>("Api:OrderTypeUri");
             _webResourceBaseUri = config.GetValue<string>("Api:WebResourceUri");
             _serviceClient = serviceClient;
+            _serviceClient.SetApiKey(config.GetValue<string>("Api:OrderApiKey"));
             _jwtTokenProvider = new JwtTokenProvider(config);
         }
 
