@@ -24,6 +24,7 @@ namespace MijnApp_Backend.Services
             _baseUri = config.GetValue<string>("Api:BrpUri");
             _jwtTokenProvider = jwtTokenProvider;
             _serviceClient = serviceClient;
+            _serviceClient.SetApiKey(config.GetValue<string>("Api:BrpApiKey"));
         }
 
         internal async Task<Persoon> GetPersonFromApi(ClaimsPrincipal user)

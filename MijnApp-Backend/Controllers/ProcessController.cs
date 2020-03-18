@@ -18,6 +18,7 @@ namespace MijnApp_Backend.Controllers
         {
             _baseUri = config.GetValue<string>("Api:ProcessUri");
             _serviceClient = serviceClient;
+            _serviceClient.SetApiKey(config.GetValue<string>("Api:ProcessApiKey"));
         }
 
         [HttpGet]

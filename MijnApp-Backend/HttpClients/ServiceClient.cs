@@ -6,6 +6,7 @@ namespace MijnApp_Backend.HttpClients
 {
     public interface IServiceClient
     {
+        void SetApiKey(string apiKey);
         Task<HttpResponseMessage> GetAsync(string url);
         Task<HttpResponseMessage> PostAsync(string url, HttpContent content);
     }
@@ -17,6 +18,11 @@ namespace MijnApp_Backend.HttpClients
         public ServiceClient(HttpClient client)
         {
             _client = client;
+        }
+
+        public void SetApiKey(string apiKey)
+        {
+            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(apiKey);
         }
 
         public async Task<HttpResponseMessage> GetAsync(string url)

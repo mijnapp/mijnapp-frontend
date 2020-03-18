@@ -21,6 +21,7 @@ namespace MijnApp_Backend.Controllers
         {
             _baseUri = config.GetValue<string>("Api:AddressUri");
             _serviceClient = serviceClient;
+            _serviceClient.SetApiKey(config.GetValue<string>("Api:AddressApiKey"));
         }
 
         [HttpGet]
