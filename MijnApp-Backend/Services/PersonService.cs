@@ -15,10 +15,11 @@ namespace MijnApp_Backend.Services
         private const string UrlGetByBsn = "{0}ingeschrevenpersonen/{1}";
         private const string UrlGetPersonsOnAddressWithBagId = "{0}ingeschrevenpersonen?familie_eerstegraad={1}&verblijfplaats__identificatiecodenummeraanduiding={2}";
         private const string UrlGetPersonsOnAddressWithoutBagId = "{0}ingeschrevenpersonen?familie_eerstegraad={1}";
+        private const string UrlGetPersonOnGuid = "{0}ingeschrevenpersonen/uuid/{1}";
 
         private readonly JwtTokenProvider _jwtTokenProvider;
         private readonly IServiceClient _serviceClient;
-        
+
         internal PersonService(JwtTokenProvider jwtTokenProvider, IServiceClient serviceClient, IConfiguration config)
         {
             _baseUri = config.GetValue<string>("Api:BrpUri");
@@ -56,6 +57,14 @@ namespace MijnApp_Backend.Services
             }
             personList.Insert(0, person);
             return personList;
+        }
+
+        internal async Task<PersoonV2> GetPersonFromApiFromGuid(string guid)
+        {
+            var url = string.Format(UrlGetPersonOnGuid, _baseUri, guid);
+            var result = await CallApi(url);
+            var person = JsonConvert.DeserializeObject<PersoonV2>(result);
+            return person;
         }
 
         internal async Task<string> CallApi(string url)

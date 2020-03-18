@@ -18,11 +18,17 @@
             <template>
               <div class="Order">
                 <ul>
-                  <li>Aanmaak datum: {{request.date_created}}</li>
-                  <li>Verzoek type: {{request.request_type}}</li>
-                  <li>Nieuw address: {{request.properties.adress}}</li>
-                  <li>Verhuis datum: {{request.properties.datum}}</li>
-                  <li>Wie: {{request.properties.wie}}</li>
+                  <li><b>Aanmaak datum:</b> [[_getDutchDateTime(request.date_created)]]</li>
+                  <li><b>Verzoek:</b> {{request.request_type_name}}</li>
+                  <li><b>Indiener:</b> [[_getSubmitter(request.submitters)]]</li>
+                  <li><b>Details verzoek:</b>
+                      <ul>
+                        <li><b>Nieuw address:</b> {{request.properties.adress}}</li>
+                        <li><b>Verhuis datum:</b> {{request.properties.datum}}</li>
+                        <li><b>Mee verhuizers:</b> {{request.properties.wie_name}}</li>
+                        <li><b>Contact informatie:</b> mail: {{request.properties.email}} en tel: {{request.properties.tel}}</li>
+                      </ul>
+                  </li>
                 </ul>
               </div>
             </template>
