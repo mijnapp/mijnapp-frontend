@@ -17,8 +17,13 @@
             <dom-repeat items="{{contracts}}" as="contract">
               <template>
                 <div class="Order">
+                  HIER MOET HET LOGO KOMEN
+                </div>
+                <div class="Order">
                   <ul>
                     <li><b>Naam organisatie:</b> [[contract.organisatie]]</li>
+                    <li><b>Uw naam:</b> [[contract.naam]]</li>
+                    <li><b>Uw BSN:</b> [[contract.bsn]]</li>
                     <li><b>Overeenkomstnummer:</b> [[contract.identificatie]]</li>
                     <li><b>Naam van de overeenkomst:</b> [[contract.titel]]</li>
                     <li><b>Startdatum:</b> [[_getDutchDate(contract.beginDatum)]]</li>
