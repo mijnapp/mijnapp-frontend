@@ -16,10 +16,10 @@
           <div class="ContractsContainer">
             <dom-repeat items="{{contracts}}" as="contract">
               <template>
-                <div class="Order">
-                  HIER MOET HET LOGO KOMEN
-                </div>
-                <div class="Order">
+                <div class="Contract">
+                  <div class="ContractImage">
+                    <img src="[[contract.logo]]" />
+                  </div>
                   <ul>
                     <li><b>Naam organisatie:</b> [[contract.organisatie]]</li>
                     <li><b>Uw naam:</b> [[contract.naam]]</li>
