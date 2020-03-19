@@ -8,15 +8,24 @@ import { REQUEST_JWT_LOGOUT_SUCCESS } from '../actions/jwt';
 export const contracts = (state = { data: [] }, action) => {
   switch (action.type) {
     case REQUEST_CONTRACTS:
-      return state;
+      return {
+        ...state,
+        searching: true,
+        status: REQUEST_CONTRACTS,
+      };
     case REQUEST_CONTRACTS_SUCCESS:
       return {
         ...state,
+        searching: false,
         data: action.data,
         error: null,
       };
     case REQUEST_CONTRACTS_FAILURE:
-      return { ...state, error: action.error };
+      return {
+        ...state,
+        searching: false,
+        error: action.error
+      };
     case REQUEST_JWT_LOGOUT_SUCCESS:
       return { data: [] };
     default:
