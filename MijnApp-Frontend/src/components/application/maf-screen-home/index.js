@@ -30,7 +30,7 @@ export default class MafScreenHome extends connect(store)(PolymerElement) {
             target: 'avg-logs',
           },
           {
-            title: 'Contracten',
+            title: 'Overeenkomsten',
             asset: 'assets/media/Contracten.svg',
             target: 'contracts',
           },
