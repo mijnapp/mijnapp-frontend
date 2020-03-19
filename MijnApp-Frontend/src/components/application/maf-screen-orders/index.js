@@ -34,7 +34,7 @@ export default class MafScreenOrders extends connect(store)(PolymerElement) {
     if (array !== undefined && array !== null && array.length === 1) {
       return array[0].person;
     }
-    return "";
+    return '';
   }
 
   _getDutchDateTime(date) {
