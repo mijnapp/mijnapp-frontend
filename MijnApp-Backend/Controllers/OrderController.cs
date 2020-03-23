@@ -69,14 +69,14 @@ namespace MijnApp_Backend.Controllers
             }
 
             //Order request on create date. Last one on top
-            var orderedRequest = requestFromBsn.OrderByDescending(r => r.date_created).ToList();
+            var orderedRequest = requestFromBsn.OrderByDescending(r => r.dateCreated).ToList();
             return Json(orderedRequest);
         }
 
         private async Task<Request> AddRequestDataFromType(Request request)
         {
             //TODO get name from _orderTypeBaseUri
-            if (request.request_type == _orderTypeBaseUri + "request_types/" + MovePersonRequestTypeId)
+            if (request.requestType == _orderTypeBaseUri + "request_types/" + MovePersonRequestTypeId)
             {
                 request.request_type_name = "Verhuizen";
 
@@ -140,7 +140,9 @@ namespace MijnApp_Backend.Controllers
         /// <param name="bsn"></param>
         private Request CreateRequestData(Order order, string bsn)
         {
-            var submitter = new Submitter { person = bsn };
+            //Gebruik url ipv bsn in submitter (DEV: /ingeschrevenpersonen/uuid/1edd146d-25c5-439e-8c04-8d6bff997ab4, PROD: /ingeschrevenpersonen/uuid/0282b6eb-2bf2-4544-9242-511501d73be4)
+            var submitterUrl = "https://brp.dev.mijnapp.zaakonline.nl/ingeschrevenpersonen/uuid/1edd146d-25c5-439e-8c04-8d6bff997ab4";
+            var submitter = new Submitter { person = submitterUrl };
             //var submitter = new Submitter { person = "680508429" }; //Added request for different bsn.
             var organization = new Organization
             {
@@ -154,7 +156,7 @@ namespace MijnApp_Backend.Controllers
                 request_cases = new string[0],
                 properties = new Dictionary<string, object>(),
                 organization = _webResourceBaseUri  + "organizations/" + organization.id,
-                request_type = _orderTypeBaseUri + "request_types/" + order.requestType,
+                requestType = _orderTypeBaseUri + "request_types/" + order.requestType,
                 status = "complete",
             };
             foreach (var question in order.data.Where(q => q.question != "END"))
@@ -224,7 +226,7 @@ namespace MijnApp_Backend.Controllers
     internal class Request
     {
         //Properties used when sending & retrieving a request
-        public string request_type { get; set; }
+        public string requestType { get; set; }
         public string organization { get; set; }
         public Submitter[] submitters { get; set; }
         public Dictionary<string,object> properties { get; set; }
@@ -233,8 +235,8 @@ namespace MijnApp_Backend.Controllers
         //Properties used when retrieving requests
         public string reference { get; set; }
         public string status { get; set; }
-        public DateTime date_created { get; set; }
-        public DateTime date_modified { get; set; }
+        public DateTime dateCreated { get; set; }
+        public DateTime dateModified { get; set; }
 
         //Calculated properties 
         public string request_type_name { get; set; }
