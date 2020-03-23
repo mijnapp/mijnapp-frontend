@@ -26,7 +26,7 @@ namespace MijnApp_Backend.Controllers
         private readonly string _addressBaseUri;
         private readonly IServiceClient _serviceClient;
         private const string PostRequest = "{0}requests";
-        private const string GetRequest = "{0}requests";
+        private const string GetRequest = "{0}requests?submitters.brp={1}";
         private const string TargetOrganizationDenBosch = "1709124";
         private const string OrganizationIdDenBosch = "4f387d0e-a2e5-44c0-9902-c31b63a8ee36"; // DEV = "1e452f11-a098-464e-8902-8fc2f1ee6acb";
         private const string MovePersonRequestTypeId = "9d76fb58-0711-4437-acc4-9f4d9d403cdf";
@@ -49,23 +49,20 @@ namespace MijnApp_Backend.Controllers
         [Route("orders")]
         public async Task<IActionResult> GetOrders()
         {
-
             var bsn = _jwtTokenProvider.GetBsnFromClaims(HttpContext.User);
-            var url = string.Format(GetRequest, _baseUri);
+            var submitterUrl = "https://brp.dev.mijnapp.zaakonline.nl/ingeschrevenpersonen/uuid/1edd146d-25c5-439e-8c04-8d6bff997ab4";
+            var url = string.Format(GetRequest, _baseUri, submitterUrl);
             var response = await _serviceClient.GetAsync(url);
             var result = await response.Content.ReadAsStringAsync();
-            var allRequest = JsonConvert.DeserializeObject<List<Request>>(result);
+            var allRequestForSubmitter = JsonConvert.DeserializeObject<List<Request>>(result);
 
             //Filter request on submitter (TODO: When the conduction API fixes the filtering on the API side, this wont be necessary)
             var requestFromBsn = new List<Request>();
-            foreach (var request in allRequest)
+            foreach (var request in allRequestForSubmitter)
             {
-                if (request.submitters.Length == 1 && request.submitters.First().person == bsn)
-                {
-                    //Add the correct data for the request(based on the requestType?)
-                    await AddRequestDataFromType(request);
-                    requestFromBsn.Add(request);
-                }
+                //Add the correct data for the request(based on the requestType?)
+                await AddRequestDataFromType(request);
+                requestFromBsn.Add(request);
             }
 
             //Order request on create date. Last one on top
@@ -142,7 +139,11 @@ namespace MijnApp_Backend.Controllers
         {
             //Gebruik url ipv bsn in submitter (DEV: /ingeschrevenpersonen/uuid/1edd146d-25c5-439e-8c04-8d6bff997ab4, PROD: /ingeschrevenpersonen/uuid/0282b6eb-2bf2-4544-9242-511501d73be4)
             var submitterUrl = "https://brp.dev.mijnapp.zaakonline.nl/ingeschrevenpersonen/uuid/1edd146d-25c5-439e-8c04-8d6bff997ab4";
-            var submitter = new Submitter { person = submitterUrl };
+            var submitter = new Submitter
+            {
+                brp = submitterUrl,
+                person = "",
+            };
             //var submitter = new Submitter { person = "680508429" }; //Added request for different bsn.
             var organization = new Organization
             {
@@ -258,6 +259,7 @@ namespace MijnApp_Backend.Controllers
 
     internal class Submitter
     {
+        public string brp { get; set; }
         public string person { get; set; }
     }
 
