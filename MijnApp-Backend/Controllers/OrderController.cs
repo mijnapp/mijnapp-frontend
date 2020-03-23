@@ -27,6 +27,7 @@ namespace MijnApp_Backend.Controllers
         private readonly IServiceClient _serviceClient;
         private const string PostRequest = "{0}requests";
         private const string GetRequest = "{0}requests?submitters.brp={1}";
+        private const string GetAddressOnBagId = "{0}adressen?bagid={1}";
         private const string TargetOrganizationDenBosch = "1709124";
         private const string OrganizationIdDenBosch = "4f387d0e-a2e5-44c0-9902-c31b63a8ee36"; // DEV = "1e452f11-a098-464e-8902-8fc2f1ee6acb";
         private const string MovePersonRequestTypeId = "9d76fb58-0711-4437-acc4-9f4d9d403cdf";
@@ -96,6 +97,15 @@ namespace MijnApp_Backend.Controllers
                     }
                 }
                 request.properties.Add("wie_name", string.Join(", ",personNames));
+
+                string adressBagIdString = request.properties["adress"] as string;
+                var addressResponse = await _serviceClient.GetAsync(string.Format(GetAddressOnBagId, _addressBaseUri, adressBagIdString));
+                var addressResult = await addressResponse.Content.ReadAsStringAsync();
+                var address = JsonConvert.DeserializeObject<Address>(addressResult);
+                var addressFormat = "{0} {1}{2}, {3} {4}";
+                var adressString = string.Format(addressFormat, address.straat, address.huisnummer,
+                    address.huisnummertoevoeging, address.postcode, address.woonplaats);
+                request.properties.Add("adress_description", adressString);
             }
 
             return request;
@@ -262,6 +272,28 @@ namespace MijnApp_Backend.Controllers
         public string brp { get; set; }
         public string person { get; set; }
     }
+
+    public class Address
+    {
+        public string id { get; set; }
+        public string type { get; set; }
+        public string huisnummer { get; set; }
+        public string postcode { get; set; }
+        public string huisnummertoevoeging { get; set; }
+        public string straat { get; set; }
+        public string woonplaats { get; set; }
+
+        //public string oppervlakte { get; set; }
+        //public string woonplaats_nummer { get; set; }
+        //public string gemeente_nummer { get; set; }
+        //public string gemeente_rsin { get; set; }
+        //public string status_nummeraanduiding { get; set; }
+        //public string status_verblijfsobject { get; set; }
+        //public string status_openbare_ruimte { get; set; }
+        //public string status_woonplaats { get; set; }
+        //public string _links { get; set; }
+    }
+
 
     /*
 
