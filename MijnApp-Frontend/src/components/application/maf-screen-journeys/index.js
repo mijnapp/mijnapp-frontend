@@ -41,7 +41,8 @@ export default class MafScreenJourneys extends connect(store)(PolymerElement) {
     this._selectJourney(1);
   }
   _selectJourney(index) {
-    store.dispatch(setJourney(this.journeys[index]));
+    const isDeepLink = false;
+    store.dispatch(setJourney(this.journeys[index], isDeepLink));
     store.dispatch(selectPage('journey'));
     store.dispatch(clearAddressData());
   }
