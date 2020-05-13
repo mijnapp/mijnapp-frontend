@@ -13,19 +13,19 @@
     </dom-if>-->
     <div class="App">
       <iron-pages selected="[[page]]" attr-for-selected="page" fallback-selection="view404">
-        <maf-screen-avg-log page="avg-log"></maf-screen-avg-log>
+        <maf-screen-signin page="signin"></maf-screen-signin>
+        <maf-screen-journey page="journey"></maf-screen-journey>
+        <!--<maf-screen-avg-log page="avg-log"></maf-screen-avg-log>
         <maf-screen-avg-logs page="avg-logs"></maf-screen-avg-logs>
         <maf-screen-contract page="contract"></maf-screen-contract>
         <maf-screen-contracts page="contracts"></maf-screen-contracts>
         <maf-screen-home page="home"></maf-screen-home>
-        <maf-screen-journey page="journey"></maf-screen-journey>
         <maf-screen-journeys id="journeyScreen" page="journeys"></maf-screen-journeys>
-        <maf-screen-signin page="signin"></maf-screen-signin>
         <maf-screen-person-data page="person-data"></maf-screen-person-data>
-        <maf-screen-orders page="orders"></maf-screen-orders>
+        <maf-screen-orders page="orders"></maf-screen-orders>-->
       </iron-pages>
     </div>
-    <dom-if if="[[_showTabs(page)]]">
+    <!--<dom-if if="[[_showTabs(page)]]">
       <template>
         <div class="TabSwitcher">
           <div class="TabSwitcherWrapper">
@@ -82,6 +82,6 @@
           </div>
         </div>
       </template>
-    </dom-if>
+    </dom-if>-->
   </div>
 </maki-theme-provider>

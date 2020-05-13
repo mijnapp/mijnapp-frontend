@@ -27,7 +27,8 @@ export default class PlaybackScreenStart extends connect(store)(
   }
 
   _stop() {
-    store.dispatch(selectPage('journeys'));
+    //store.dispatch(selectPage('journeys'));
+    window.location = 'https://www.s-hertogenbosch.nl/verhuizen';
   }
 
   _title(journey) {

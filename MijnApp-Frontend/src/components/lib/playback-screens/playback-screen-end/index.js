@@ -146,7 +146,8 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
   }
 
   _stop() {
-    store.dispatch(selectPage('home'));
+    //store.dispatch(selectPage('home'));
+    window.location = 'https://www.s-hertogenbosch.nl/verhuizen';
   }
 
   _prev() {
