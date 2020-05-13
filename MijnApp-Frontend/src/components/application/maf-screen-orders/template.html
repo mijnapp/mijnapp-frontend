@@ -1,0 +1,41 @@
+<div class="Wrapper">
+  <div class="ScrollContainer">
+    <dom-if if="{{searching}}">
+      <template>
+        <maf-screen on-back="[[_onBack]]" heading="Mijn verzoeken">
+          <div class="SpinnerBox">
+            <img class="Spinner" src="assets/media/Spinner.svg" alt="spinner">
+            <div class="SpinnerMessage">Je gegevens worden opgehaald.</div>
+          </div>
+        </maf-screen>
+      </template>
+    </dom-if>
+    <dom-if if="{{!searching}}">
+      <template>
+        <maf-screen on-back="[[_onBack]]" heading="Mijn verzoeken">
+          <div class="OrdersContainer">
+            <dom-repeat items="{{orders}}" as="request">
+            <template>
+              <div class="Order">
+                <ul>
+                  <li><b>Aanmaakdatum:</b> [[_getDutchDateTime(request.date_created)]]</li>
+                  <li><b>Verzoek:</b> {{request.request_type_name}}</li>
+                  <li><b>Indiener:</b> [[_getSubmitter(request.submitters)]]</li>
+                  <li><b>Details verzoek:</b>
+                      <ul>
+                        <li><b>Nieuw adres:</b> {{request.properties.adress}}</li>
+                        <li><b>Verhuisdatum:</b> {{request.properties.datum}}</li>
+                        <li><b>Meeverhuizende personen:</b> {{request.properties.wie_name}}</li>
+                        <li><b>Contactinformatie:</b> mail: {{request.properties.email}} en tel: {{request.properties.tel}}</li>
+                      </ul>
+                  </li>
+                </ul>
+              </div>
+            </template>
+            </dom-repeat>
+          </div>
+        </maf-screen>
+      </template>
+    </dom-if>
+  </div>
+</div>

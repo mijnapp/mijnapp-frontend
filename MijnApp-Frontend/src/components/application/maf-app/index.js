@@ -23,6 +23,7 @@ import '../maf-screen-journey';
 import '../maf-screen-journeys';
 import '../maf-screen-signin';
 import '../maf-screen-person-data';
+import '../maf-screen-orders';
 import '../../lib/maki-icons/maki-icon-home';
 import '../../lib/maki-icons/maki-icon-search';
 import '../../lib/maki-icons/maki-icon-bell';
