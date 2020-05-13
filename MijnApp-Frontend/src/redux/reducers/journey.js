@@ -33,6 +33,7 @@ export const journey = (state = { title: '', questions: [] }, action) => {
           delete action.journey.preconditionsFullFilled;
       }
       action.journey.preconditionsBeingChecked = true;
+      action.journey.isDeepLink = action.isDeepLink;
       return action.journey;
     }
     case ADD_QUESTION:

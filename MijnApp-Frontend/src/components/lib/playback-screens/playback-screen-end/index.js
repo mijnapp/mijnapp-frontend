@@ -146,8 +146,11 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
   }
 
   _stop() {
-    //store.dispatch(selectPage('home'));
-    window.location = 'https://www.s-hertogenbosch.nl/verhuizen';
+    if (this.journey.isDeepLink && this.journey.successUrl) {
+      window.location = this.journey.successUrl;
+    } else {
+      store.dispatch(selectPage('home'));
+    }
   }
 
   _prev() {
