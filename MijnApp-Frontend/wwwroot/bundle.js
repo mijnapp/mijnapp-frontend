@@ -24779,69 +24779,44 @@ const Base = Object(_lib_legacy_legacy_element_mixin_js__WEBPACK_IMPORTED_MODULE
 
 /***/ }),
 
-/***/ "./node_modules/@redux-saga/core/dist/chunk-e922c950.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/@redux-saga/core/dist/chunk-e922c950.js ***!
-  \**************************************************************/
-/*! exports provided: a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, _, $, a0, a1, a2, a3, a4, a5, a6, a7 */
+/***/ "./node_modules/@redux-saga/core/dist/io-427945dd.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/@redux-saga/core/dist/io-427945dd.js ***!
+  \***********************************************************/
+/*! exports provided: $, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, _, a, a0, a1, a2, a3, a4, a5, a6, a7, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return kTrue; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return expanding; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return check; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return none; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return once; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return remove; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return internalErr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return TAKE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return PUT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return ALL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return RACE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return CALL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return CPS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return FORK; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return JOIN; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return CANCEL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return SELECT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return ACTION_CHANNEL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return CANCELLED; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return FLUSH; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "u", function() { return GET_CONTEXT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "v", function() { return SET_CONTEXT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "w", function() { return getMetaInfo; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "x", function() { return noop; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "y", function() { return createAllStyleChildCallbacks; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "z", function() { return createEmptyArray; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "A", function() { return assignWithSymbols; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "B", function() { return makeIterator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "C", function() { return shouldComplete; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "D", function() { return flatMap; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "E", function() { return getLocation; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "F", function() { return createSetContextWarning; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "G", function() { return asyncIteratorSymbol; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H", function() { return shouldCancel; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "I", function() { return shouldTerminate; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "J", function() { return logError; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "K", function() { return wrapSagaDispatch; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "L", function() { return identity; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "M", function() { return take; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "N", function() { return fork; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "O", function() { return cancel; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "P", function() { return call; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Q", function() { return actionChannel; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "R", function() { return sliding; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "S", function() { return delay; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "T", function() { return race; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "U", function() { return buffers; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "V", function() { return detach; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "$", function() { return apply; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "A", function() { return ALL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "B", function() { return logError; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "C", function() { return CALL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "D", function() { return wrapSagaDispatch; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "E", function() { return identity; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "F", function() { return FORK; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "G", function() { return GET_CONTEXT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H", function() { return buffers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "I", function() { return detach; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "J", function() { return JOIN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "K", function() { return take; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "L", function() { return fork; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "M", function() { return cancel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "N", function() { return call; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "O", function() { return actionChannel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "P", function() { return PUT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Q", function() { return sliding; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "R", function() { return RACE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "S", function() { return SELECT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "T", function() { return TAKE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "U", function() { return delay; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "V", function() { return race; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "W", function() { return effectTypes; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "X", function() { return takeMaybe; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Y", function() { return put; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Z", function() { return putResolve; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_", function() { return all; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "$", function() { return apply; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CPS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a0", function() { return cps; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a1", function() { return spawn; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a2", function() { return join; });
@@ -24850,6 +24825,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a5", function() { return flush; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a6", function() { return getContext; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a7", function() { return setContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return CANCEL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return check; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return ACTION_CHANNEL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return expanding; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return CANCELLED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return FLUSH; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return SET_CONTEXT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return internalErr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return getMetaInfo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return kTrue; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return createAllStyleChildCallbacks; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return createEmptyArray; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return none; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return once; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return assignWithSymbols; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return makeIterator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return remove; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return shouldComplete; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return noop; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "u", function() { return flatMap; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "v", function() { return getLocation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "w", function() { return createSetContextWarning; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "x", function() { return asyncIteratorSymbol; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "y", function() { return shouldCancel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "z", function() { return shouldTerminate; });
 /* harmony import */ var _redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @redux-saga/symbols */ "./node_modules/@redux-saga/symbols/dist/redux-saga-symbols.esm.js");
 /* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
 /* harmony import */ var _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @redux-saga/is */ "./node_modules/@redux-saga/is/dist/redux-saga-is.esm.js");
@@ -24867,7 +24867,18 @@ var konst = function konst(v) {
 var kTrue =
 /*#__PURE__*/
 konst(true);
+
 var noop = function noop() {};
+
+if ( true && typeof Proxy !== 'undefined') {
+  noop =
+  /*#__PURE__*/
+  new Proxy(noop, {
+    set: function set() {
+      throw internalErr('There was an attempt to assign a property to internal `noop` function.');
+    }
+  });
+}
 var identity = function identity(v) {
   return v;
 };
@@ -25198,7 +25209,7 @@ var effectTypes = /*#__PURE__*/Object.freeze({
   SET_CONTEXT: SET_CONTEXT
 });
 
-var TEST_HINT = '\n(HINT: if you are getting this errors in tests, consider using createMockTask from @redux-saga/testing-utils)';
+var TEST_HINT = '\n(HINT: if you are getting these errors in tests, consider using createMockTask from @redux-saga/testing-utils)';
 
 var makeEffect = function makeEffect(type, payload) {
   var _ref;
@@ -25528,17 +25539,17 @@ call.bind(null, _redux_saga_delay_p__WEBPACK_IMPORTED_MODULE_3__["default"]);
 /*!*******************************************************************!*\
   !*** ./node_modules/@redux-saga/core/dist/redux-saga-core.esm.js ***!
   \*******************************************************************/
-/*! exports provided: CANCEL, SAGA_LOCATION, buffers, detach, default, runSaga, END, isEnd, eventChannel, channel, multicastChannel, stdChannel */
+/*! exports provided: CANCEL, SAGA_LOCATION, buffers, detach, default, END, channel, eventChannel, isEnd, multicastChannel, runSaga, stdChannel */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "runSaga", function() { return runSaga; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "END", function() { return END; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isEnd", function() { return isEnd; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "eventChannel", function() { return eventChannel; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "channel", function() { return channel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "eventChannel", function() { return eventChannel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isEnd", function() { return isEnd; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "multicastChannel", function() { return multicastChannel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "runSaga", function() { return runSaga; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stdChannel", function() { return stdChannel; });
 /* harmony import */ var _redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @redux-saga/symbols */ "./node_modules/@redux-saga/symbols/dist/redux-saga-symbols.esm.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CANCEL", function() { return _redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__["CANCEL"]; });
@@ -25548,10 +25559,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
 /* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
 /* harmony import */ var _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @redux-saga/is */ "./node_modules/@redux-saga/is/dist/redux-saga-is.esm.js");
-/* harmony import */ var _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./chunk-e922c950.js */ "./node_modules/@redux-saga/core/dist/chunk-e922c950.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "buffers", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["U"]; });
+/* harmony import */ var _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./io-427945dd.js */ "./node_modules/@redux-saga/core/dist/io-427945dd.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "buffers", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["H"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "detach", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["V"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "detach", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["I"]; });
 
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _redux_saga_deferred__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @redux-saga/deferred */ "./node_modules/@redux-saga/deferred/dist/redux-saga-deferred.esm.js");
@@ -25669,7 +25680,7 @@ var symbol = function symbol(pattern) {
   };
 };
 var wildcard = function wildcard() {
-  return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["a"];
+  return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["k"];
 };
 function matcher(pattern) {
   // prettier-ignore
@@ -25693,30 +25704,30 @@ var INVALID_BUFFER = 'invalid buffer passed to channel factory function';
 var UNDEFINED_INPUT_ERROR = "Saga or channel was provided with an undefined action\nHints:\n  - check that your Action Creator returns a non-undefined value\n  - if the Saga was started using runSaga, check that your subscribe source provides the action to its listeners";
 function channel(buffer$1) {
   if (buffer$1 === void 0) {
-    buffer$1 = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["b"])();
+    buffer$1 = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["e"])();
   }
 
   var closed = false;
   var takers = [];
 
   if (true) {
-    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(buffer$1, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["buffer"], INVALID_BUFFER);
+    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(buffer$1, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["buffer"], INVALID_BUFFER);
   }
 
   function checkForbiddenStates() {
     if (closed && takers.length) {
-      throw Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["g"])(CLOSED_CHANNEL_WITH_TAKERS);
+      throw Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["i"])(CLOSED_CHANNEL_WITH_TAKERS);
     }
 
     if (takers.length && !buffer$1.isEmpty()) {
-      throw Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["g"])('Cannot have pending takers with non empty buffer');
+      throw Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["i"])('Cannot have pending takers with non empty buffer');
     }
   }
 
   function put(input) {
     if (true) {
       checkForbiddenStates();
-      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(input, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["notUndef"], UNDEFINED_INPUT_ERROR);
+      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(input, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["notUndef"], UNDEFINED_INPUT_ERROR);
     }
 
     if (closed) {
@@ -25734,7 +25745,7 @@ function channel(buffer$1) {
   function take(cb) {
     if (true) {
       checkForbiddenStates();
-      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(cb, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], "channel.take's callback must be a function");
+      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(cb, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], "channel.take's callback must be a function");
     }
 
     if (closed && buffer$1.isEmpty()) {
@@ -25745,7 +25756,7 @@ function channel(buffer$1) {
       takers.push(cb);
 
       cb.cancel = function () {
-        Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["f"])(takers, cb);
+        Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["r"])(takers, cb);
       };
     }
   }
@@ -25753,7 +25764,7 @@ function channel(buffer$1) {
   function flush(cb) {
     if (true) {
       checkForbiddenStates();
-      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(cb, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], "channel.flush' callback must be a function");
+      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(cb, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], "channel.flush' callback must be a function");
     }
 
     if (closed && buffer$1.isEmpty()) {
@@ -25792,7 +25803,7 @@ function channel(buffer$1) {
 }
 function eventChannel(subscribe, buffer) {
   if (buffer === void 0) {
-    buffer = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["d"])();
+    buffer = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["n"])();
   }
 
   var closed = false;
@@ -25823,10 +25834,10 @@ function eventChannel(subscribe, buffer) {
   });
 
   if (true) {
-    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(unsubscribe, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'in eventChannel: subscribe should return a function to unsubscribe');
+    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(unsubscribe, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'in eventChannel: subscribe should return a function to unsubscribe');
   }
 
-  unsubscribe = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["e"])(unsubscribe);
+  unsubscribe = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["o"])(unsubscribe);
 
   if (closed) {
     unsubscribe();
@@ -25847,7 +25858,7 @@ function multicastChannel() {
 
   function checkForbiddenStates() {
     if (closed && nextTakers.length) {
-      throw Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["g"])(CLOSED_CHANNEL_WITH_TAKERS);
+      throw Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["i"])(CLOSED_CHANNEL_WITH_TAKERS);
     }
   }
 
@@ -25875,7 +25886,7 @@ function multicastChannel() {
   return _ref = {}, _ref[_redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__["MULTICAST"]] = true, _ref.put = function put(input) {
     if (true) {
       checkForbiddenStates();
-      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(input, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["notUndef"], UNDEFINED_INPUT_ERROR);
+      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(input, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["notUndef"], UNDEFINED_INPUT_ERROR);
     }
 
     if (closed) {
@@ -25914,9 +25925,9 @@ function multicastChannel() {
     cb[_redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__["MATCH"]] = matcher;
     ensureCanMutateNextTakers();
     nextTakers.push(cb);
-    cb.cancel = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["e"])(function () {
+    cb.cancel = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["o"])(function () {
       ensureCanMutateNextTakers();
-      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["f"])(nextTakers, cb);
+      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["r"])(nextTakers, cb);
     });
   }, _ref.close = close, _ref;
 }
@@ -25956,7 +25967,7 @@ function resolvePromise(promise, cb) {
 }
 
 var current = 0;
-var nextEffectId = (function () {
+var nextSagaId = (function () {
   return ++current;
 });
 
@@ -25969,7 +25980,7 @@ function getIteratorMetaInfo(iterator, fn) {
     };
   }
 
-  return Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["w"])(fn);
+  return Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["j"])(fn);
 }
 
 function createTaskIterator(_ref) {
@@ -26003,11 +26014,11 @@ function createTaskIterator(_ref) {
       }
     };
 
-    return Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["B"])(next);
+    return Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["q"])(next);
   } catch (err) {
     // do not bubble up synchronous failures for detached forks
     // instead create a failed task. See #152 and #441
-    return Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["B"])(function () {
+    return Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["q"])(function () {
       throw err;
     });
   }
@@ -26088,7 +26099,7 @@ function runCallEffect(env, _ref4, cb, _ref5) {
 
     if (Object(_redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["iterator"])(result)) {
       // resolve iterator
-      proc(env, result, task.context, current, Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["w"])(fn),
+      proc(env, result, task.context, current, Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["j"])(fn),
       /* isRoot */
       false, cb);
       return;
@@ -26140,7 +26151,7 @@ function runForkEffect(env, _ref7, cb, _ref8) {
   });
   var meta = getIteratorMetaInfo(taskIterator, fn);
   immediately(function () {
-    var child = proc(env, taskIterator, parent.context, current, meta, detached, _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"]);
+    var child = proc(env, taskIterator, parent.context, current, meta, detached, undefined);
 
     if (detached) {
       cb(child);
@@ -26168,7 +26179,7 @@ function runJoinEffect(env, taskOrTasks, cb, _ref9) {
       };
 
       cb.cancel = function () {
-        if (taskToJoin.isRunning()) Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["f"])(taskToJoin.joiners, joiner);
+        if (taskToJoin.isRunning()) Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["r"])(taskToJoin.joiners, joiner);
       };
 
       taskToJoin.joiners.push(joiner);
@@ -26187,7 +26198,7 @@ function runJoinEffect(env, taskOrTasks, cb, _ref9) {
       return;
     }
 
-    var childCallbacks = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["y"])(taskOrTasks, cb);
+    var childCallbacks = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["l"])(taskOrTasks, cb);
     taskOrTasks.forEach(function (t, i) {
       joinSingleTask(t, childCallbacks[i]);
     });
@@ -26226,7 +26237,7 @@ function runAllEffect(env, effects, cb, _ref11) {
     return;
   }
 
-  var childCallbacks = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["y"])(effects, cb);
+  var childCallbacks = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["l"])(effects, cb);
   keys.forEach(function (key) {
     digestEffect(effects[key], effectId, childCallbacks[key], key);
   });
@@ -26236,7 +26247,7 @@ function runRaceEffect(env, effects, cb, _ref12) {
   var digestEffect = _ref12.digestEffect;
   var effectId = current;
   var keys = Object.keys(effects);
-  var response = Object(_redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["array"])(effects) ? Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["z"])(keys.length) : {};
+  var response = Object(_redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["array"])(effects) ? Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["m"])(keys.length) : {};
   var childCbs = {};
   var completed = false;
   keys.forEach(function (key) {
@@ -26245,7 +26256,7 @@ function runRaceEffect(env, effects, cb, _ref12) {
         return;
       }
 
-      if (isErr || Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["C"])(res)) {
+      if (isErr || Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["s"])(res)) {
         // Race Auto cancellation
         cb.cancel();
         cb(res, isErr);
@@ -26257,7 +26268,7 @@ function runRaceEffect(env, effects, cb, _ref12) {
       }
     };
 
-    chCbAtKey.cancel = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
+    chCbAtKey.cancel = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
     childCbs[key] = chCbAtKey;
   });
 
@@ -26333,11 +26344,11 @@ function runGetContextEffect(env, prop, cb, _ref16) {
 
 function runSetContextEffect(env, props, cb, _ref17) {
   var task = _ref17.task;
-  Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["A"])(task.context, props);
+  Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["p"])(task.context, props);
   cb();
 }
 
-var effectRunnerMap = (_effectRunnerMap = {}, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["h"]] = runTakeEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["i"]] = runPutEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["j"]] = runAllEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["k"]] = runRaceEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["l"]] = runCallEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["m"]] = runCPSEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["n"]] = runForkEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["o"]] = runJoinEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["p"]] = runCancelEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["q"]] = runSelectEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["r"]] = runChannelEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["s"]] = runCancelledEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["t"]] = runFlushEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["u"]] = runGetContextEffect, _effectRunnerMap[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["v"]] = runSetContextEffect, _effectRunnerMap);
+var effectRunnerMap = (_effectRunnerMap = {}, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["T"]] = runTakeEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["P"]] = runPutEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["A"]] = runAllEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["R"]] = runRaceEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["C"]] = runCallEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["a"]] = runCPSEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["F"]] = runForkEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["J"]] = runJoinEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["b"]] = runCancelEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["S"]] = runSelectEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["d"]] = runChannelEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["f"]] = runCancelledEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["g"]] = runFlushEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["G"]] = runGetContextEffect, _effectRunnerMap[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["h"]] = runSetContextEffect, _effectRunnerMap);
 
 /**
  Used to track a parent task and its forks
@@ -26379,8 +26390,8 @@ function forkQueue(mainTask, onAbort, cont) {
         return;
       }
 
-      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["f"])(tasks, task);
-      task.cont = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
+      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["r"])(tasks, task);
+      task.cont = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
 
       if (isErr) {
         abort(res);
@@ -26404,7 +26415,7 @@ function forkQueue(mainTask, onAbort, cont) {
 
     completed = true;
     tasks.forEach(function (t) {
-      t.cont = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
+      t.cont = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
       t.cancel();
     });
     tasks = [];
@@ -26425,7 +26436,7 @@ function formatLocation(fileName, lineNumber) {
 }
 
 function effectLocationAsString(effect) {
-  var location = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["E"])(effect);
+  var location = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["v"])(effect);
 
   if (location) {
     var code = location.code,
@@ -26450,7 +26461,7 @@ function sagaLocationAsString(sagaMeta) {
 }
 
 function cancelledTasksAsString(sagaStack) {
-  var cancelledTasks = Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["D"])(function (i) {
+  var cancelledTasks = Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["u"])(function (i) {
     return i.cancelledTasks;
   }, sagaStack);
 
@@ -26499,6 +26510,10 @@ var toString = function toString() {
 
 function newTask(env, mainTask, parentContext, parentEffectId, meta, isRoot, cont) {
   var _task;
+
+  if (cont === void 0) {
+    cont = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
+  }
 
   var status = RUNNING;
   var taskResult;
@@ -26572,10 +26587,10 @@ function newTask(env, mainTask, parentContext, parentEffectId, meta, isRoot, con
 
   function setContext(props) {
     if (true) {
-      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(props, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["object"], Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["F"])('task', props));
+      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(props, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["object"], Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["w"])('task', props));
     }
 
-    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["A"])(context, props);
+    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["p"])(context, props);
   }
 
   function toPromise() {
@@ -26609,7 +26624,7 @@ function newTask(env, mainTask, parentContext, parentEffectId, meta, isRoot, con
 }
 
 function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont) {
-  if ( true && iterator$1[_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["G"]]) {
+  if ( true && iterator$1[_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["x"]]) {
     throw new Error("redux-saga doesn't support async generators, please use only regular ones");
   }
 
@@ -26620,28 +26635,27 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
     on it. It allows propagating cancellation to child effects
   **/
 
-  next.cancel = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
+  next.cancel = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
   /** Creates a main task to track the main flow */
 
   var mainTask = {
     meta: meta,
     cancel: cancelMain,
     status: RUNNING
-    /**
-     Creates a new task descriptor for this generator.
-     A task is the aggregation of it's mainTask and all it's forked tasks.
-     **/
-
   };
+  /**
+   Creates a new task descriptor for this generator.
+   A task is the aggregation of it's mainTask and all it's forked tasks.
+   **/
+
   var task = newTask(env, mainTask, parentContext, parentEffectId, meta, isRoot, cont);
   var executingContext = {
     task: task,
     digestEffect: digestEffect
-    /**
-      cancellation of the main task. We'll simply resume the Generator with a TASK_CANCEL
-    **/
-
   };
+  /**
+    cancellation of the main task. We'll simply resume the Generator with a TASK_CANCEL
+  **/
 
   function cancelMain() {
     if (mainTask.status === RUNNING) {
@@ -26655,7 +26669,10 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
   **/
 
 
-  cont.cancel = task.cancel; // kicks up the generator
+  if (cont) {
+    cont.cancel = task.cancel;
+  } // kicks up the generator
+
 
   next(); // then return the task descriptor to the caller
 
@@ -26678,7 +26695,7 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
         result = iterator$1.throw(arg); // user handled the error, we can clear bookkept values
 
         clear();
-      } else if (Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["H"])(arg)) {
+      } else if (Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["y"])(arg)) {
         /**
           getting TASK_CANCEL automatically cancels the main task
           We can get this value here
@@ -26700,7 +26717,7 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
           done: true,
           value: _redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__["TASK_CANCEL"]
         };
-      } else if (Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["I"])(arg)) {
+      } else if (Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["z"])(arg)) {
         // We get TERMINATE flag, i.e. by taking from a channel that ended using `take` (and not `takem` used to trap End of channels)
         result = Object(_redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"])(iterator$1.return) ? iterator$1.return() : {
           done: true
@@ -26765,7 +26782,7 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
       label = '';
     }
 
-    var effectId = nextEffectId();
+    var effectId = nextSagaId();
     env.sagaMonitor && env.sagaMonitor.effectTriggered({
       effectId: effectId,
       parentEffectId: parentEffectId,
@@ -26786,7 +26803,7 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
       }
 
       effectSettled = true;
-      cb.cancel = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"]; // defensive measure
+      cb.cancel = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"]; // defensive measure
 
       if (env.sagaMonitor) {
         if (isErr) {
@@ -26804,7 +26821,7 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
     } // tracks down the current cancel
 
 
-    currCb.cancel = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"]; // setup cancellation logic on the parent cb
+    currCb.cancel = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"]; // setup cancellation logic on the parent cb
 
     cb.cancel = function () {
       // prevents cancelling an already completed effect
@@ -26815,7 +26832,7 @@ function proc(env, iterator$1, parentContext, parentEffectId, meta, isRoot, cont
       effectSettled = true;
       currCb.cancel(); // propagates cancel downward
 
-      currCb.cancel = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"]; // defensive measure
+      currCb.cancel = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"]; // defensive measure
 
       env.sagaMonitor && env.sagaMonitor.effectCancelled(effectId);
     };
@@ -26836,32 +26853,32 @@ function runSaga(_ref, saga) {
       sagaMonitor = _ref.sagaMonitor,
       effectMiddlewares = _ref.effectMiddlewares,
       _ref$onError = _ref.onError,
-      onError = _ref$onError === void 0 ? _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["J"] : _ref$onError;
+      onError = _ref$onError === void 0 ? _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["B"] : _ref$onError;
+
+  if (true) {
+    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(saga, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], NON_GENERATOR_ERR);
+  }
 
   for (var _len = arguments.length, args = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
     args[_key - 2] = arguments[_key];
   }
 
-  if (true) {
-    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(saga, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], NON_GENERATOR_ERR);
-  }
-
   var iterator$1 = saga.apply(void 0, args);
 
   if (true) {
-    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(iterator$1, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["iterator"], NON_GENERATOR_ERR);
+    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(iterator$1, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["iterator"], NON_GENERATOR_ERR);
   }
 
-  var effectId = nextEffectId();
+  var effectId = nextSagaId();
 
   if (sagaMonitor) {
     // monitors are expected to have a certain interface, let's fill-in any missing ones
-    sagaMonitor.rootSagaStarted = sagaMonitor.rootSagaStarted || _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
-    sagaMonitor.effectTriggered = sagaMonitor.effectTriggered || _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
-    sagaMonitor.effectResolved = sagaMonitor.effectResolved || _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
-    sagaMonitor.effectRejected = sagaMonitor.effectRejected || _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
-    sagaMonitor.effectCancelled = sagaMonitor.effectCancelled || _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
-    sagaMonitor.actionDispatched = sagaMonitor.actionDispatched || _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"];
+    sagaMonitor.rootSagaStarted = sagaMonitor.rootSagaStarted || _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
+    sagaMonitor.effectTriggered = sagaMonitor.effectTriggered || _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
+    sagaMonitor.effectResolved = sagaMonitor.effectResolved || _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
+    sagaMonitor.effectRejected = sagaMonitor.effectRejected || _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
+    sagaMonitor.effectCancelled = sagaMonitor.effectCancelled || _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
+    sagaMonitor.actionDispatched = sagaMonitor.actionDispatched || _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["t"];
     sagaMonitor.rootSagaStarted({
       effectId: effectId,
       saga: saga,
@@ -26871,22 +26888,22 @@ function runSaga(_ref, saga) {
 
   if (true) {
     if (Object(_redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["notUndef"])(dispatch)) {
-      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(dispatch, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'dispatch must be a function');
+      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(dispatch, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'dispatch must be a function');
     }
 
     if (Object(_redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["notUndef"])(getState)) {
-      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(getState, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'getState must be a function');
+      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(getState, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'getState must be a function');
     }
 
     if (Object(_redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["notUndef"])(effectMiddlewares)) {
       var MIDDLEWARE_TYPE_ERROR = 'effectMiddlewares must be an array of functions';
-      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(effectMiddlewares, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["array"], MIDDLEWARE_TYPE_ERROR);
+      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(effectMiddlewares, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["array"], MIDDLEWARE_TYPE_ERROR);
       effectMiddlewares.forEach(function (effectMiddleware) {
-        return Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(effectMiddleware, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], MIDDLEWARE_TYPE_ERROR);
+        return Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(effectMiddleware, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], MIDDLEWARE_TYPE_ERROR);
       });
     }
 
-    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(onError, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'onError passed to the redux-saga is not a function!');
+    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(onError, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["func"], 'onError passed to the redux-saga is not a function!');
   }
 
   var finalizeRunEffect;
@@ -26904,21 +26921,21 @@ function runSaga(_ref, saga) {
       };
     };
   } else {
-    finalizeRunEffect = _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["L"];
+    finalizeRunEffect = _io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["E"];
   }
 
   var env = {
     channel: channel,
-    dispatch: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["K"])(dispatch),
+    dispatch: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["D"])(dispatch),
     getState: getState,
     sagaMonitor: sagaMonitor,
     onError: onError,
     finalizeRunEffect: finalizeRunEffect
   };
   return immediately(function () {
-    var task = proc(env, iterator$1, context, effectId, Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["w"])(saga),
+    var task = proc(env, iterator$1, context, effectId, Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["j"])(saga),
     /* isRoot */
-    true, _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["x"]);
+    true, undefined);
 
     if (sagaMonitor) {
       sagaMonitor.effectResolved(effectId, task);
@@ -26944,7 +26961,7 @@ function sagaMiddlewareFactory(_ref) {
   var boundRunSaga;
 
   if (true) {
-    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(channel, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["channel"], 'options.channel passed to the Saga middleware is not a channel');
+    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(channel, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["channel"], 'options.channel passed to the Saga middleware is not a channel');
   }
 
   function sagaMiddleware(_ref3) {
@@ -26981,10 +26998,10 @@ function sagaMiddlewareFactory(_ref) {
 
   sagaMiddleware.setContext = function (props) {
     if (true) {
-      Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["c"])(props, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["object"], Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["F"])('sagaMiddleware', props));
+      Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["c"])(props, _redux_saga_is__WEBPACK_IMPORTED_MODULE_3__["object"], Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["w"])('sagaMiddleware', props));
     }
 
-    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_4__["A"])(context, props);
+    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_4__["p"])(context, props);
   };
 
   return sagaMiddleware;
@@ -27000,7 +27017,7 @@ function sagaMiddlewareFactory(_ref) {
 /*!**********************************************************************!*\
   !*** ./node_modules/@redux-saga/core/dist/redux-saga-effects.esm.js ***!
   \**********************************************************************/
-/*! exports provided: effectTypes, take, takeMaybe, put, putResolve, all, race, call, apply, cps, fork, spawn, join, cancel, select, actionChannel, cancelled, flush, getContext, setContext, delay, debounce, retry, takeEvery, takeLatest, takeLeading, throttle */
+/*! exports provided: actionChannel, all, apply, call, cancel, cancelled, cps, delay, effectTypes, flush, fork, getContext, join, put, putResolve, race, select, setContext, spawn, take, takeMaybe, debounce, retry, takeEvery, takeLatest, takeLeading, throttle */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -27014,48 +27031,48 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @redux-saga/symbols */ "./node_modules/@redux-saga/symbols/dist/redux-saga-symbols.esm.js");
 /* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
 /* harmony import */ var _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @redux-saga/is */ "./node_modules/@redux-saga/is/dist/redux-saga-is.esm.js");
-/* harmony import */ var _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./chunk-e922c950.js */ "./node_modules/@redux-saga/core/dist/chunk-e922c950.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "effectTypes", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["W"]; });
+/* harmony import */ var _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./io-427945dd.js */ "./node_modules/@redux-saga/core/dist/io-427945dd.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "actionChannel", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["O"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "take", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["M"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "all", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["_"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "takeMaybe", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["X"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "apply", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["$"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "put", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["Y"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "call", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["N"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "putResolve", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["Z"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancel", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["M"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "all", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["_"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancelled", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a4"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "race", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["T"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cps", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a0"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "call", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["P"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "delay", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["U"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "apply", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["$"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "effectTypes", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["W"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cps", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a0"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "flush", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a5"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "fork", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "fork", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "spawn", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a1"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getContext", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a6"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "join", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a2"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "join", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a2"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancel", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["O"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "put", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["Y"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "select", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a3"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "putResolve", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["Z"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "actionChannel", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["Q"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "race", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["V"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancelled", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a4"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "select", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a3"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "flush", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a5"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "setContext", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a7"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getContext", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a6"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "spawn", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["a1"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "setContext", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["a7"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "take", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["K"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "delay", function() { return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["S"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "takeMaybe", function() { return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["X"]; });
 
 /* harmony import */ var _redux_saga_delay_p__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @redux-saga/delay-p */ "./node_modules/@redux-saga/delay-p/dist/redux-saga-delay-p.esm.js");
 
@@ -27113,7 +27130,7 @@ function fsmIterator(fsm, startState, name) {
     }
   }
 
-  return Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["B"])(next, function (error) {
+  return Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["q"])(next, function (error) {
     return next(null, error);
   }, name);
 }
@@ -27125,13 +27142,13 @@ function takeEvery(patternOrChannel, worker) {
 
   var yTake = {
     done: false,
-    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["M"])(patternOrChannel)
+    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["K"])(patternOrChannel)
   };
 
   var yFork = function yFork(ac) {
     return {
       done: false,
-      value: _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [worker].concat(args, [ac]))
+      value: _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [worker].concat(args, [ac]))
     };
   };
 
@@ -27164,20 +27181,20 @@ function takeLatest(patternOrChannel, worker) {
 
   var yTake = {
     done: false,
-    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["M"])(patternOrChannel)
+    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["K"])(patternOrChannel)
   };
 
   var yFork = function yFork(ac) {
     return {
       done: false,
-      value: _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [worker].concat(args, [ac]))
+      value: _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [worker].concat(args, [ac]))
     };
   };
 
   var yCancel = function yCancel(task) {
     return {
       done: false,
-      value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["O"])(task)
+      value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["M"])(task)
     };
   };
 
@@ -27226,13 +27243,13 @@ function takeLeading(patternOrChannel, worker) {
 
   var yTake = {
     done: false,
-    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["M"])(patternOrChannel)
+    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["K"])(patternOrChannel)
   };
 
   var yCall = function yCall(ac) {
     return {
       done: false,
-      value: _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["P"].apply(void 0, [worker].concat(args, [ac]))
+      value: _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [worker].concat(args, [ac]))
     };
   };
 
@@ -27267,26 +27284,26 @@ function throttle(delayLength, pattern, worker) {
   var action, channel;
   var yActionChannel = {
     done: false,
-    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["Q"])(pattern, Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["R"])(1))
+    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["O"])(pattern, Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["Q"])(1))
   };
 
   var yTake = function yTake() {
     return {
       done: false,
-      value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["M"])(channel)
+      value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["K"])(channel)
     };
   };
 
   var yFork = function yFork(ac) {
     return {
       done: false,
-      value: _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [worker].concat(args, [ac]))
+      value: _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [worker].concat(args, [ac]))
     };
   };
 
   var yDelay = {
     done: false,
-    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["S"])(delayLength)
+    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["U"])(delayLength)
   };
 
   var setAction = function setAction(ac) {
@@ -27336,11 +27353,11 @@ function retry(maxTries, delayLength, fn) {
 
   var yCall = {
     done: false,
-    value: _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["P"].apply(void 0, [fn].concat(args))
+    value: _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [fn].concat(args))
   };
   var yDelay = {
     done: false,
-    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["S"])(delayLength)
+    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["U"])(delayLength)
   };
   return fsmIterator({
     q1: function q1() {
@@ -27378,20 +27395,20 @@ function debounceHelper(delayLength, patternOrChannel, worker) {
   var action, raceOutput;
   var yTake = {
     done: false,
-    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["M"])(patternOrChannel)
+    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["K"])(patternOrChannel)
   };
   var yRace = {
     done: false,
-    value: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["T"])({
-      action: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["M"])(patternOrChannel),
-      debounce: Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["S"])(delayLength)
+    value: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["V"])({
+      action: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["K"])(patternOrChannel),
+      debounce: Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["U"])(delayLength)
     })
   };
 
   var yFork = function yFork(ac) {
     return {
       done: false,
-      value: _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [worker].concat(args, [ac]))
+      value: _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [worker].concat(args, [ac]))
     };
   };
 
@@ -27439,8 +27456,8 @@ function debounceHelper(delayLength, patternOrChannel, worker) {
 }
 
 var validateTakeEffect = function validateTakeEffect(fn, patternOrChannel, worker) {
-  Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["c"])(patternOrChannel, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], fn.name + " requires a pattern or channel");
-  Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["c"])(worker, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], fn.name + " requires a saga parameter");
+  Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["c"])(patternOrChannel, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], fn.name + " requires a pattern or channel");
+  Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["c"])(worker, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], fn.name + " requires a saga parameter");
 };
 
 function takeEvery$1(patternOrChannel, worker) {
@@ -27452,7 +27469,7 @@ function takeEvery$1(patternOrChannel, worker) {
     args[_key - 2] = arguments[_key];
   }
 
-  return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [takeEvery, patternOrChannel, worker].concat(args));
+  return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [takeEvery, patternOrChannel, worker].concat(args));
 }
 function takeLatest$1(patternOrChannel, worker) {
   if (true) {
@@ -27463,7 +27480,7 @@ function takeLatest$1(patternOrChannel, worker) {
     args[_key2 - 2] = arguments[_key2];
   }
 
-  return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [takeLatest, patternOrChannel, worker].concat(args));
+  return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [takeLatest, patternOrChannel, worker].concat(args));
 }
 function takeLeading$1(patternOrChannel, worker) {
   if (true) {
@@ -27474,33 +27491,33 @@ function takeLeading$1(patternOrChannel, worker) {
     args[_key3 - 2] = arguments[_key3];
   }
 
-  return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [takeLeading, patternOrChannel, worker].concat(args));
+  return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [takeLeading, patternOrChannel, worker].concat(args));
 }
 function throttle$1(ms, pattern, worker) {
   if (true) {
-    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["c"])(pattern, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], 'throttle requires a pattern');
-    Object(_chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["c"])(worker, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], 'throttle requires a saga parameter');
+    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["c"])(pattern, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], 'throttle requires a pattern');
+    Object(_io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["c"])(worker, _redux_saga_is__WEBPACK_IMPORTED_MODULE_2__["notUndef"], 'throttle requires a saga parameter');
   }
 
   for (var _len4 = arguments.length, args = new Array(_len4 > 3 ? _len4 - 3 : 0), _key4 = 3; _key4 < _len4; _key4++) {
     args[_key4 - 3] = arguments[_key4];
   }
 
-  return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [throttle, ms, pattern, worker].concat(args));
+  return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [throttle, ms, pattern, worker].concat(args));
 }
 function retry$1(maxTries, delayLength, worker) {
   for (var _len5 = arguments.length, args = new Array(_len5 > 3 ? _len5 - 3 : 0), _key5 = 3; _key5 < _len5; _key5++) {
     args[_key5 - 3] = arguments[_key5];
   }
 
-  return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["P"].apply(void 0, [retry, maxTries, delayLength, worker].concat(args));
+  return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [retry, maxTries, delayLength, worker].concat(args));
 }
 function debounce(delayLength, pattern, worker) {
   for (var _len6 = arguments.length, args = new Array(_len6 > 3 ? _len6 - 3 : 0), _key6 = 3; _key6 < _len6; _key6++) {
     args[_key6 - 3] = arguments[_key6];
   }
 
-  return _chunk_e922c950_js__WEBPACK_IMPORTED_MODULE_3__["N"].apply(void 0, [debounceHelper, delayLength, pattern, worker].concat(args));
+  return _io_427945dd_js__WEBPACK_IMPORTED_MODULE_3__["L"].apply(void 0, [debounceHelper, delayLength, pattern, worker].concat(args));
 }
 
 
@@ -27580,31 +27597,31 @@ function delayP(ms, val) {
 /*!***************************************************************!*\
   !*** ./node_modules/@redux-saga/is/dist/redux-saga-is.esm.js ***!
   \***************************************************************/
-/*! exports provided: undef, notUndef, func, number, string, array, object, promise, iterator, iterable, task, sagaAction, observable, buffer, pattern, channel, stringableFunc, symbol, multicast, effect */
+/*! exports provided: array, buffer, channel, effect, func, iterable, iterator, multicast, notUndef, number, object, observable, pattern, promise, sagaAction, string, stringableFunc, symbol, task, undef */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "undef", function() { return undef; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "notUndef", function() { return notUndef; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "func", function() { return func; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "number", function() { return number; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "string", function() { return string; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "array", function() { return array; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "object", function() { return object; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "promise", function() { return promise; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "iterator", function() { return iterator; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "iterable", function() { return iterable; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "task", function() { return task; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sagaAction", function() { return sagaAction; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "observable", function() { return observable; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buffer", function() { return buffer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pattern", function() { return pattern; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "channel", function() { return channel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "effect", function() { return effect; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "func", function() { return func; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "iterable", function() { return iterable; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "iterator", function() { return iterator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "multicast", function() { return multicast; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "notUndef", function() { return notUndef; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "number", function() { return number; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "object", function() { return object; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "observable", function() { return observable; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pattern", function() { return pattern; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "promise", function() { return promise; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sagaAction", function() { return sagaAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "string", function() { return string; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stringableFunc", function() { return stringableFunc; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "symbol", function() { return symbol; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "multicast", function() { return multicast; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "effect", function() { return effect; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "task", function() { return task; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "undef", function() { return undef; });
 /* harmony import */ var _redux_saga_symbols__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @redux-saga/symbols */ "./node_modules/@redux-saga/symbols/dist/redux-saga-symbols.esm.js");
 
 
@@ -27676,7 +27693,7 @@ var effect = function effect(eff) {
 /*!*************************************************************************!*\
   !*** ./node_modules/@redux-saga/symbols/dist/redux-saga-symbols.esm.js ***!
   \*************************************************************************/
-/*! exports provided: CANCEL, CHANNEL_END_TYPE, IO, MATCH, MULTICAST, SAGA_ACTION, SELF_CANCELLATION, TASK, TASK_CANCEL, TERMINATE, SAGA_LOCATION */
+/*! exports provided: CANCEL, CHANNEL_END_TYPE, IO, MATCH, MULTICAST, SAGA_ACTION, SAGA_LOCATION, SELF_CANCELLATION, TASK, TASK_CANCEL, TERMINATE */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -27687,11 +27704,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MATCH", function() { return MATCH; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MULTICAST", function() { return MULTICAST; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SAGA_ACTION", function() { return SAGA_ACTION; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SAGA_LOCATION", function() { return SAGA_LOCATION; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SELF_CANCELLATION", function() { return SELF_CANCELLATION; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TASK", function() { return TASK; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TASK_CANCEL", function() { return TASK_CANCEL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TERMINATE", function() { return TERMINATE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SAGA_LOCATION", function() { return SAGA_LOCATION; });
 var createSymbol = function createSymbol(name) {
   return "@@redux-saga/" + name;
 };
@@ -31445,7 +31462,7 @@ module.exports = function spread(callback) {
 
 
 var bind = __webpack_require__(/*! ./helpers/bind */ "./node_modules/axios/lib/helpers/bind.js");
-var isBuffer = __webpack_require__(/*! is-buffer */ "./node_modules/axios/node_modules/is-buffer/index.js");
+var isBuffer = __webpack_require__(/*! is-buffer */ "./node_modules/is-buffer/index.js");
 
 /*global toString:true*/
 
@@ -31780,10 +31797,10 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/axios/node_modules/is-buffer/index.js":
-/*!************************************************************!*\
-  !*** ./node_modules/axios/node_modules/is-buffer/index.js ***!
-  \************************************************************/
+/***/ "./node_modules/is-buffer/index.js":
+/*!*****************************************!*\
+  !*** ./node_modules/is-buffer/index.js ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -38586,7 +38603,7 @@ const connect = (store) => (baseElement) => class extends baseElement {
 /*!***********************************************************************!*\
   !*** ./node_modules/redux-saga/dist/redux-saga-core-npm-proxy.esm.js ***!
   \***********************************************************************/
-/*! exports provided: CANCEL, SAGA_LOCATION, buffers, detach, runSaga, END, isEnd, eventChannel, channel, multicastChannel, stdChannel, default */
+/*! exports provided: CANCEL, SAGA_LOCATION, buffers, detach, END, channel, eventChannel, isEnd, multicastChannel, runSaga, stdChannel, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -38600,17 +38617,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "detach", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["detach"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "runSaga", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["runSaga"]; });
-
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "END", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["END"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isEnd", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["isEnd"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "eventChannel", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["eventChannel"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "channel", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["channel"]; });
 
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "eventChannel", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["eventChannel"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isEnd", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["isEnd"]; });
+
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "multicastChannel", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["multicastChannel"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "runSaga", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["runSaga"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "stdChannel", function() { return _redux_saga_core__WEBPACK_IMPORTED_MODULE_0__["stdChannel"]; });
 
@@ -38628,53 +38645,53 @@ __webpack_require__.r(__webpack_exports__);
 /*!**************************************************************************!*\
   !*** ./node_modules/redux-saga/dist/redux-saga-effects-npm-proxy.esm.js ***!
   \**************************************************************************/
-/*! exports provided: effectTypes, take, takeMaybe, put, putResolve, all, race, call, apply, cps, fork, spawn, join, cancel, select, actionChannel, cancelled, flush, getContext, setContext, delay, debounce, retry, takeEvery, takeLatest, takeLeading, throttle */
+/*! exports provided: actionChannel, all, apply, call, cancel, cancelled, cps, delay, effectTypes, flush, fork, getContext, join, put, putResolve, race, select, setContext, spawn, take, takeMaybe, debounce, retry, takeEvery, takeLatest, takeLeading, throttle */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @redux-saga/core/effects */ "./node_modules/@redux-saga/core/dist/redux-saga-effects.esm.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "actionChannel", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["actionChannel"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "all", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["all"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "apply", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["apply"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "call", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["call"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancel", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["cancel"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancelled", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["cancelled"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cps", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["cps"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "delay", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["delay"]; });
+
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "effectTypes", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["effectTypes"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "take", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["take"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "flush", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["flush"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "takeMaybe", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["takeMaybe"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "fork", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["fork"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getContext", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["getContext"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "join", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["join"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "put", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["put"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "putResolve", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["putResolve"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "all", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["all"]; });
-
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "race", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["race"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "call", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["call"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "apply", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["apply"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cps", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["cps"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "fork", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["fork"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "spawn", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["spawn"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "join", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["join"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancel", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["cancel"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "select", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["select"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "actionChannel", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["actionChannel"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cancelled", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["cancelled"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "flush", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["flush"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getContext", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["getContext"]; });
-
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "setContext", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["setContext"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "delay", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["delay"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "spawn", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["spawn"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "take", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["take"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "takeMaybe", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["takeMaybe"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "debounce", function() { return _redux_saga_core_effects__WEBPACK_IMPORTED_MODULE_0__["debounce"]; });
 
@@ -39883,6 +39900,8 @@ __webpack_require__(/*! ../maf-screen-signin */ "./src/components/application/ma
 
 __webpack_require__(/*! ../maf-screen-person-data */ "./src/components/application/maf-screen-person-data/index.js");
 
+__webpack_require__(/*! ../maf-screen-orders */ "./src/components/application/maf-screen-orders/index.js");
+
 __webpack_require__(/*! ../../lib/maki-icons/maki-icon-home */ "./src/components/lib/maki-icons/maki-icon-home/index.js");
 
 __webpack_require__(/*! ../../lib/maki-icons/maki-icon-search */ "./src/components/lib/maki-icons/maki-icon-search/index.js");
@@ -40176,11 +40195,13 @@ class MafApp extends (0, _connectMixin.connect)(_store.store)(_polymerElement.Po
         options: [{
           title: 'E-mailadres',
           value: 'email',
-          pattern: '\\b[\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4}\\b'
+          pattern: '\\b[\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4}\\b',
+          patternValidationErrorMessage: 'Vul hier een geldig e-mailadres in'
         }, {
           title: 'Telefoonnummer',
           value: 'tel',
-          pattern: '([-.0-9 ])*\\d'
+          pattern: '([-.0-9 ])*\\d',
+          patternValidationErrorMessage: 'Gebruik alleen cijfers bij het invullen'
         }],
         fieldName: 'contactinformatie',
         fieldIcon: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgaWQ9Im1pam5BcHBfdXNlciIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA0ODAgNDgwIiANCgkJc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDgwIDQ4MDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KCTxjaXJjbGUgc3R5bGU9Im9wYWNpdHk6MTtmaWxsOiNmNWY1ZjU7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjIuOTczNTQzMTc7c3Ryb2tlLWxpbmVjYXA6YnV0dDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6NDtzdHJva2UtZGFzaGFycmF5OjIuOTczNTQzMzEsIDguOTIwNjI5OTE5OTk5OTk3ODg7c3Ryb2tlLWRhc2hvZmZzZXQ6MDtzdHJva2Utb3BhY2l0eToxO3BhaW50LW9yZGVyOm5vcm1hbCIgDQoJCQlpZD0icGF0aDQ1MDgiIGN4PSIyNDAiIGN5PSIyNDAiIHI9IjI0MCIvPg0KCTxwYXRoIGQ9Ik0gMjM5Ljk5MzUsNDggQyAxMzMuOTU2LDQ4IDQ3Ljk5MzUwMywxMzMuOTYyNSA0Ny45OTM1MDMsMjQwIGMgMCwxMDYuMDM3NSA4NS45NjI0OTcsMTkyIDE5MS45OTk5OTcsMTkyIDUuNzg0MzgsMCAxMS41NDY4OCwtMC4yNTkzOCAxNy4yODEyNSwtMC43NzUgNS4zMzEyNSwtMC40NzgxMiAxMC42MTU2MywtMS4yMDkzOCAxNS44NTkzOCwtMi4xMjUgbCAyLjAxNTYyLC0wLjM1NjI1IEMgMzcyLjY0MDM4LDQxMC41NSA0NDAuMjM3MjUsMzIxLjEwMzEyIDQzMS4xMTg1LDIyMi4zNDY4OCA0MjEuOTk5NzUsMTIzLjU5MDYyIDMzOS4xNjg1LDQ4LjAzMTI1IDIzOS45OTM1LDQ4IFogbSAtMTUuNDI1LDM3MC41MjE4OCBoIC0wLjQ1MzEyIGMgLTQuOTc4MTMsLTAuNDQwNjMgLTkuOTE4NzUsLTEuMTA2MjYgLTE0LjgxNTYzLC0xLjk1OTM4IC0wLjI4MTI1LC0wLjA1IC0wLjU2MjUsLTAuMDgxMyAtMC44Mzc1LC0wLjEzNDM4IC00Ljc4NzUsLTAuODU2MjQgLTkuNTI1LC0xLjkxODc0IC0xNC4yMTU2MiwtMy4xNTkzNyBsIC0xLjEzNDM4LC0wLjI5MDYzIGMgLTQuNTc1LC0xLjI0MDYyIC05LjEsLTIuNjgxMjQgLTEzLjU1OTM3LC00LjI4MTI0IC0wLjQ2MjUsLTAuMTY1NjMgLTAuOTI4MTMsLTAuMzEyNSAtMS4zOTA2MywtMC40ODQzOCAtNC4zNzE4NywtMS42MDYyNSAtOC42NjU2MiwtMy40MDYyNSAtMTIuODkzNzUsLTUuMzUzMTIgLTAuNTI1LC0wLjIzNDM4IC0xLjA1LC0wLjQ1OTM4IC0xLjU3NSwtMC43MDkzOCAtNC4xNDY4NywtMS45MTg3NSAtOC4yMTI1LC00LjA4MTI1IC0xMi4yLC02LjM1NjI1IC0wLjU2MjUsLTAuMzE4NzUgLTEuMTMxMjUsLTAuNjM3NSAtMS42OTM3NSwtMC45NTMxMyAtMy45MjUsLTIuMjkwNjIgLTcuNzU5MzcsLTQuNzQ2ODcgLTExLjUyMTg3LC03LjM0MDYyIC0wLjU2ODc1LC0wLjM5Njg4IC0xLjE0Mzc1LC0wLjc4MTI1IC0xLjcwOTM4LC0xLjE3ODEyIC0zLjY5Njg3LC0yLjYyMTg4IC03LjMsLTUuNDA2MjYgLTEwLjgwOTM3LC04LjMxODc2IGwgLTAuOTY1NjMsLTAuODQzNzQgViAzMjMuMiBjIDAuMDQ2OSwtMzguODYyNSAzMS41Mzc1LC03MC4zNTMxMiA3MC40LC03MC40IGggODkuNiBjIDM4Ljg2MjUsMC4wNDY5IDcwLjM1MzEzLDMxLjUzNzUgNzAuNCw3MC40IHYgNTMuOTY1NjIgbCAtMC44NSwwLjcwOTM4IGMgLTMuNTc4MTIsMi45ODc1IC03LjI1LDUuODEyNSAtMTEuMDIxODcsOC40ODEyNSAtMC41LDAuMzUgLTEuMDA2MjUsMC42ODQzNyAtMS41MDMxMywxLjAyODEzIC0zLjgwNjI1LDIuNjQzNzQgLTcuNzA2MjUsNS4xMzEyNCAtMTEuNyw3LjQ2ODc0IC0wLjUsMC4yOTA2MyAtMS4wMTI1LDAuNTY1NjMgLTEuNTA5MzcsMC44NTMxMyAtNC4wNDY4OCwyLjMwMzEzIC04LjE2MjUsNC40NzgxMyAtMTIuMzU5MzgsNi40Mzc1IC0wLjQ4MTI1LDAuMjI1IC0wLjk2NTYyLDAuNDM0MzcgLTEuNDUzMTIsMC42NDA2MyAtNC4yNjI1LDEuOTY1NjIgLTguNTkzNzUsMy43NzUgLTEyLjk5Njg4LDUuMzkzNzQgLTAuNDM3NSwwLjE2MjUgLTAuODc4MTIsMC4zMDMxMyAtMS4yODEyNSwwLjQ1NjI2IC00LjQ4MTI1LDEuNjA2MjQgLTkuMDI1LDMuMDU5MzcgLTEzLjYyNSw0LjMwNjI0IGwgLTEuMTAzMTIsMC4yNzUgYyAtNC42OTY4OCwxLjI0MDYzIC05LjQzNzUsMi4zMDkzOCAtMTQuMjMxMjUsMy4xNjg3NiAtMC4yNzUsMC4wNSAtMC41NSwwLjA4NDQgLTAuODI1LDAuMTI4MTIgLTQuOTAzMTMsMC44NTYyNSAtOS44NSwxLjUyMTg4IC0xNC44MzEyNSwxLjk2NTYyIGggLTAuNDUzMTMgYyAtNS4xMTg3NSwwLjQ0MDYzIC0xMC4yNDA2MiwwLjY3ODEzIC0xNS40MjUsMC42NzgxMyAtNS4xODQzNywwIC0xMC4zNDY4NywtMC4xOTM3NSAtMTUuNDU2MjUsLTAuNjM0MzcgeiBNIDM2Ny45OTM1LDM2NS4zIHYgLTQyLjEgYyAtMC4wNTMxLC00NS45MjgxMiAtMzcuMjcxODcsLTgzLjE0Njg4IC04My4yLC04My4yIGggLTg5LjYgYyAtNDUuOTI4MTIsMC4wNTMxIC04My4xNDY4NywzNy4yNzE4OCAtODMuMiw4My4yIHYgNDIuMDkzNzUgYyAtNjguOTMxMjQ2LC03MC4zNTMxMyAtNjguMTYyNDk3LC0xODMuMTUgMS43MTg3NSwtMjUyLjU1OTM3IDY5Ljg4MTI1LC02OS40MDYyNTUgMTgyLjY4MTI1LC02OS40MDYyNTUgMjUyLjU2MjUsMCA2OS44ODEyNSw2OS40MDkzNyA3MC42NSwxODIuMjA2MjQgMS43MTg3NSwyNTIuNTU5MzcgeiBtIDAsMCIgDQoJCQlpZD0icGF0aDIiIHN0eWxlPSJzdHJva2Utd2lkdGg6MC44MDAwMDAwMTtmaWxsOiMxZWJkZDM7ZmlsbC1vcGFjaXR5OjEiLz4NCgk8cGF0aCBkPSJtIDI0MCw4MCBjIC0zNS4zNDY4OCwwIC02NCwyOC42NTMxMiAtNjQsNjQgMCwzNS4zNDY4OCAyOC42NTMxMiw2NCA2NCw2NCAzNS4zNDY4OCwwIDY0LC0yOC42NTMxMiA2NCwtNjQgLTAuMDM3NSwtMzUuMzMxMjUgLTI4LjY2ODc1LC02My45NjI1IC02NCwtNjQgeiBtIDAsMTE1LjIgYyAtMjguMjc4MTIsMCAtNTEuMiwtMjIuOTIxODggLTUxLjIsLTUxLjIgMCwtMjguMjc4MTIgMjIuOTIxODgsLTUxLjIgNTEuMiwtNTEuMiAyOC4yNzgxMiwwIDUxLjIsMjIuOTIxODggNTEuMiw1MS4yIC0wLjAzMTIsMjguMjYyNSAtMjIuOTM3NSw1MS4xNjg3NSAtNTEuMiw1MS4yIHogbSAwLDAiIA0KCQkJaWQ9InBhdGg0IiBzdHlsZT0ic3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjAuNzk5ODAwMDQ7c3Ryb2tlLW1pdGVybGltaXQ6NDtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLW9wYWNpdHk6MTtmaWxsOiMxZWJkZDM7ZmlsbC1vcGFjaXR5OjEiLz4NCjwvc3ZnPg==',
@@ -40218,7 +40239,7 @@ window.customElements.define('maf-app', MafApp);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":root{--main-max-width:800px;--main-content-background-color:#fff;--main-header-text-color:#19224c;--button-gray-background-color:#f5f5f5;--button-gray-background-color-hover:#f1f1f1;--button-gray-background-color-hover-dark:#ccc;--icon-red-color:#f95f62;--icon-color:#3192cf;--icon-color-teal:#1ebdd3;--icon-color-hover:#56a6d8;--main-font-header-size:32px;--main-font-subheader-size:24px;--main-font-text-size:18px;--main-font-medium-text-size:16px;--main-font-small-text-size:14px;--main-font-smallest-text-size:13px}:host{float:left}.AppWrapper{width:100vw;height:100vh;overflow-y:auto}.App{width:100vw;min-height:calc(100vh - 57px);margin-bottom:57px;height:calc(100vh - 57px);float:left}.TabSwitcher{position:fixed;bottom:0;left:0;height:57px;width:100%;border-top:1px solid var(--button-gray-background-color);background-color:var(--main-background-color)}.TabSwitcherWrapper{width:100%;height:57px;max-width:var(--main-max-width);margin:0 auto;display:flex;justify-content:space-around;background-color:var(--main-content-background-color)}.TabSwitcherTab{height:100%;width:20%;text-align:center;position:relative;cursor:pointer}.TabSwitcherTab:hover{background-color:var(--button-gray-background-color-hover)}.TabSwitcherTabActive{background-color:var(--button-gray-background-color-hover)}.NotAllowed{opacity:.25;cursor:not-allowed}.NotAllowed:hover{background-color:var(--main-content-background-color)}.TabSwitcherTabIcon{position:absolute;top:10px;width:100%;height:20px;display:flex;justify-content:center;align-items:center}.TabSwitcherTabIcon ::slotted(svg){fill:var(--icon-color);stroke:var(--icon-color);width:100%;height:100%}.TabSwitcherTabText{height:27px;width:100%;position:absolute;left:0;bottom:0;display:flex;justify-content:center;align-items:center}.TabSwitcherTabTextInner{font-family:var(--typography-fontFamily);font-size:var(--main-font-smallest-text-size);font-weight:500;font-style:normal;font-stretch:normal;line-height:1;letter-spacing:-.4px;text-align:center;color:var(--palette-text-disabled)}.TopBar{position:fixed;left:0;height:62px;width:100%;z-index:100;visibility:hidden}.TopBarWrapper{width:100%;height:62px;max-width:var(--main-max-width);margin:0 auto;padding:16px;box-sizing:border-box}.HamburgerMenuIcon{z-index:10;float:right;background-color:var(--button-gray-background-color);width:16px;height:16px;border-radius:15px;padding:7px;cursor:pointer;visibility:initial}.HamburgerMenuIcon:hover{background-color:var(--button-gray-background-color-hover-dark)}"
+module.exports = ":root{--main-max-width:800px;--main-content-background-color:#fff;--main-header-text-color:#19224c;--button-gray-background-color:#f5f5f5;--button-gray-background-color-hover:#f1f1f1;--button-gray-background-color-hover-dark:#ccc;--icon-red-color:#f95f62;--icon-green-color:#77d353;--icon-color:#3192cf;--icon-color-teal:#1ebdd3;--icon-color-hover:#56a6d8;--main-font-header-size:32px;--main-font-subheader-size:24px;--main-font-text-size:18px;--main-font-medium-text-size:16px;--main-font-small-text-size:14px;--main-font-smallest-text-size:13px}:host{float:left}.AppWrapper{width:100vw;height:100vh;overflow-y:auto}.App{width:100vw;min-height:calc(100vh - 57px);margin-bottom:57px;height:calc(100vh - 57px);float:left}.TabSwitcher{position:fixed;bottom:0;left:0;height:57px;width:100%;border-top:1px solid var(--button-gray-background-color);background-color:var(--main-background-color)}.TabSwitcherWrapper{width:100%;height:57px;max-width:var(--main-max-width);margin:0 auto;display:flex;justify-content:space-around;background-color:var(--main-content-background-color)}.TabSwitcherTab{height:100%;width:20%;text-align:center;position:relative;cursor:pointer}.TabSwitcherTab:hover{background-color:var(--button-gray-background-color-hover)}.TabSwitcherTabActive{background-color:var(--button-gray-background-color-hover)}.NotAllowed{opacity:.25;cursor:not-allowed}.NotAllowed:hover{background-color:var(--main-content-background-color)}.TabSwitcherTabIcon{position:absolute;top:10px;width:100%;height:20px;display:flex;justify-content:center;align-items:center}.TabSwitcherTabIcon ::slotted(svg){fill:var(--icon-color);stroke:var(--icon-color);width:100%;height:100%}.TabSwitcherTabText{height:27px;width:100%;position:absolute;left:0;bottom:0;display:flex;justify-content:center;align-items:center}.TabSwitcherTabTextInner{font-family:var(--typography-fontFamily);font-size:var(--main-font-smallest-text-size);font-weight:500;font-style:normal;font-stretch:normal;line-height:1;letter-spacing:-.4px;text-align:center;color:var(--palette-text-disabled)}.TopBar{position:fixed;left:0;height:62px;width:100%;z-index:100;visibility:hidden}.TopBarWrapper{width:100%;height:62px;max-width:var(--main-max-width);margin:0 auto;padding:16px;box-sizing:border-box}.HamburgerMenuIcon{z-index:10;float:right;background-color:var(--button-gray-background-color);width:16px;height:16px;border-radius:15px;padding:7px;cursor:pointer;visibility:initial}.HamburgerMenuIcon:hover{background-color:var(--button-gray-background-color-hover-dark)}"
 
 /***/ }),
 
@@ -40229,7 +40250,7 @@ module.exports = ":root{--main-max-width:800px;--main-content-background-color:#
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<maki-theme-provider theme=\"[[theme]]\">\r\n  <div class=\"AppWrapper\">\r\n    <!--<dom-if if=\"[[_showTabs(page)]]\">\r\n      <template>\r\n        <div class=\"TopBar\">\r\n          <div class=\"TopBarWrapper\">\r\n            <div class=\"HamburgerMenuIcon\">\r\n              <maki-icon-hamburger></maki-icon-hamburger>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </template>\r\n    </dom-if>-->\r\n    <div class=\"App\">\r\n      <iron-pages selected=\"[[page]]\" attr-for-selected=\"page\" fallback-selection=\"view404\">\r\n        <maf-screen-avg-log page=\"avg-log\"></maf-screen-avg-log>\r\n        <maf-screen-avg-logs page=\"avg-logs\"></maf-screen-avg-logs>\r\n        <maf-screen-contract page=\"contract\"></maf-screen-contract>\r\n        <maf-screen-contracts page=\"contracts\"></maf-screen-contracts>\r\n        <maf-screen-home page=\"home\"></maf-screen-home>\r\n        <maf-screen-journey page=\"journey\"></maf-screen-journey>\r\n        <maf-screen-journeys id=\"journeyScreen\" page=\"journeys\"></maf-screen-journeys>\r\n        <maf-screen-signin page=\"signin\"></maf-screen-signin>\r\n        <maf-screen-person-data page=\"person-data\"></maf-screen-person-data>\r\n      </iron-pages>\r\n    </div>\r\n    <dom-if if=\"[[_showTabs(page)]]\">\r\n      <template>\r\n        <div class=\"TabSwitcher\">\r\n          <div class=\"TabSwitcherWrapper\">\r\n            <div class$=\"TabSwitcherTab[[_isActive('home', page)]]\" on-click=\"_goHome\">\r\n              <div class=\"TabSwitcherTabIcon\">\r\n                <maki-icon-home></maki-icon-home>\r\n              </div>\r\n              <div class=\"TabSwitcherTabText\">\r\n                <div class=\"TabSwitcherTabTextInner\">\r\n                  Home\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class$=\"TabSwitcherTab[[_isActive('journeys', page)]]\" on-click=\"_goJourneys\">\r\n              <div class=\"TabSwitcherTabIcon\">\r\n                <maki-icon-search></maki-icon-search>\r\n              </div>\r\n              <div class=\"TabSwitcherTabText\">\r\n                <div class=\"TabSwitcherTabTextInner\">\r\n                  Zoeken\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"TabSwitcherTab NotAllowed\" on-click=\"_nope\">\r\n              <div class=\"TabSwitcherTabIcon\">\r\n                <maki-icon-bell></maki-icon-bell>\r\n              </div>\r\n              <div class=\"TabSwitcherTabText\">\r\n                <div class=\"TabSwitcherTabTextInner\">\r\n                  Notificaties\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"TabSwitcherTab NotAllowed\" on-click=\"_nope\">\r\n              <div class=\"TabSwitcherTabIcon\">\r\n                <maki-icon-chat></maki-icon-chat>\r\n              </div>\r\n              <div class=\"TabSwitcherTabText\">\r\n                <div class=\"TabSwitcherTabTextInner\">\r\n                  Chatten\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"TabSwitcherTab\" on-click=\"_goLogout\">\r\n              <div class=\"TabSwitcherTabIcon\">\r\n                <maki-icon-logout></maki-icon-logout>\r\n              </div>\r\n              <div class=\"TabSwitcherTabText\">\r\n                <div class=\"TabSwitcherTabTextInner\">\r\n                  Uitloggen\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </template>\r\n    </dom-if>\r\n  </div>\r\n</maki-theme-provider>\r\n"
+module.exports = "<maki-theme-provider theme=\"[[theme]]\">\r\n  <div class=\"AppWrapper\">\r\n    <!--<dom-if if=\"[[_showTabs(page)]]\">\r\n      <template>\r\n        <div class=\"TopBar\">\r\n          <div class=\"TopBarWrapper\">\r\n            <div class=\"HamburgerMenuIcon\">\r\n              <maki-icon-hamburger></maki-icon-hamburger>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </template>\r\n    </dom-if>-->\r\n    <div class=\"App\">\r\n      <iron-pages selected=\"[[page]]\" attr-for-selected=\"page\" fallback-selection=\"view404\">\r\n        <maf-screen-avg-log page=\"avg-log\"></maf-screen-avg-log>\r\n        <maf-screen-avg-logs page=\"avg-logs\"></maf-screen-avg-logs>\r\n        <maf-screen-contract page=\"contract\"></maf-screen-contract>\r\n        <maf-screen-contracts page=\"contracts\"></maf-screen-contracts>\r\n        <maf-screen-home page=\"home\"></maf-screen-home>\r\n        <maf-screen-journey page=\"journey\"></maf-screen-journey>\r\n        <maf-screen-journeys id=\"journeyScreen\" page=\"journeys\"></maf-screen-journeys>\r\n        <maf-screen-signin page=\"signin\"></maf-screen-signin>\r\n        <maf-screen-person-data page=\"person-data\"></maf-screen-person-data>\r\n        <maf-screen-orders page=\"orders\"></maf-screen-orders>\r\n      </iron-pages>\r\n    </div>\r\n    <dom-if if=\"[[_showTabs(page)]]\">\r\n      <template>\r\n        <div class=\"TabSwitcher\">\r\n          <div class=\"TabSwitcherWrapper\">\r\n            <div class$=\"TabSwitcherTab[[_isActive('home', page)]]\" on-click=\"_goHome\">\r\n              <div class=\"TabSwitcherTabIcon\">\r\n                <maki-icon-home></maki-icon-home>\r\n              </div>\r\n              <div class=\"TabSwitcherTabText\">\r\n                <div class=\"TabSwitcherTabTextInner\">\r\n                  Home\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class$=\"TabSwitcherTab[[_isActive('journeys', page)]]\" on-click=\"_goJourneys\">\r\n              <div class=\"TabSwitcherTabIcon\">\r\n                <maki-icon-search></maki-icon-search>\r\n              </div>\r\n              <div class=\"TabSwitcherTabText\">\r\n                <div class=\"TabSwitcherTabTextInner\">\r\n                  Zoeken\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"TabSwitcherTab NotAllowed\" on-click=\"_nope\">\r\n              <div class=\"TabSwitcherTabIcon\">\r\n                <maki-icon-bell></maki-icon-bell>\r\n              </div>\r\n              <div class=\"TabSwitcherTabText\">\r\n                <div class=\"TabSwitcherTabTextInner\">\r\n                  Notificaties\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"TabSwitcherTab NotAllowed\" on-click=\"_nope\">\r\n              <div class=\"TabSwitcherTabIcon\">\r\n                <maki-icon-chat></maki-icon-chat>\r\n              </div>\r\n              <div class=\"TabSwitcherTabText\">\r\n                <div class=\"TabSwitcherTabTextInner\">\r\n                  Chatten\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"TabSwitcherTab\" on-click=\"_goLogout\">\r\n              <div class=\"TabSwitcherTabIcon\">\r\n                <maki-icon-logout></maki-icon-logout>\r\n              </div>\r\n              <div class=\"TabSwitcherTabText\">\r\n                <div class=\"TabSwitcherTabTextInner\">\r\n                  Uitloggen\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </template>\r\n    </dom-if>\r\n  </div>\r\n</maki-theme-provider>\r\n"
 
 /***/ }),
 
@@ -40355,7 +40376,7 @@ module.exports = ".Wrapper{width:100%;max-width:var(--main-max-width);margin:0 a
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\r\n  <maf-screen heading=\"[[avgLog.procesOmschrijving]]\" on-back=\"[[_backToAvgLogs]]\">\r\n    <div class=\"SubHeading\">[[_capitalize(avgLog.opgevraagdeElementen)]]</div>\r\n    <div class=\"Description\">[[_capitalize(avgLog.omschrijving)]]</div>\r\n    <dom-repeat items=\"[[_mapObjToArr(avgLog)]]\">\r\n      <template>\r\n        <div class=\"AvgLogDataPoint\">\r\n          <div class=\"AvgLogDataPointLabel\">[[item.key]]</div>\r\n          <dom-if if=\"[[item.value]]\">\r\n            <template>\r\n              <div class=\"AvgLogDataPointValue\">[[item.value]]</div>\r\n            </template>\r\n          </dom-if>\r\n          <dom-if if=\"[[item.values]]\">\r\n            <template>\r\n              <dom-repeat items=\"[[item.values]]\" as=\"value\">\r\n                <template>\r\n                  <dom-if if=\"[[_isSame(value.key, 'Logo')]]\">\r\n                    <template>\r\n                      <div class=\"Logo\" style=\"[[_getLogoStyle(value.value)]]\"></div>\r\n                    </template>\r\n                  </dom-if>\r\n                  <dom-if if=\"[[_isNotSame(value.key, 'Logo')]]\">\r\n                    <template>\r\n                      <div class=\"AvgLogDataPointSubValue\">\r\n                        <div class=\"AvgLogDataPointSubValueKey\">[[value.key]]</div>\r\n                        <dom-if if=\"[[value.value]]\">\r\n                          <template>\r\n                            <div class=\"AvgLogDataPointSubValueValue\">[[value.value]]</div>\r\n                          </template>\r\n                        </dom-if>\r\n                      </div>\r\n                    </template>\r\n                  </dom-if>\r\n                  <dom-if if=\"[[value.values]]\">\r\n                    <template>\r\n                      <dom-repeat items=\"[[value.values]]\" as=\"final\">\r\n                        <template>\r\n                          <dom-if if=\"[[_isSame(final.key, 'Logo')]]\">\r\n                            <template>\r\n                              <div class=\"Logo\" style=\"[[_getLogoStyle(final.value)]]\"></div>\r\n                            </template>\r\n                          </dom-if>\r\n                          <dom-if if=\"[[_isNotSame(final.key, 'Logo')]]\">\r\n                            <template>\r\n                              <dom-if if=\"[[final.value]]\">\r\n                                <template>\r\n                                  <div class=\"AvgLogDataPointSubSubValue\">\r\n                                    <div class=\"AvgLogDataPointSubSubValueKey\">[[final.key]]</div>\r\n                                    <div class=\"AvgLogDataPointSubSubValueValue\">[[final.value]]</div>\r\n                                  </div>\r\n                                </template>\r\n                              </dom-if>\r\n                            </template>\r\n                          </dom-if>\r\n                        </template>\r\n                      </dom-repeat>\r\n                    </template>\r\n                  </dom-if>\r\n                </template>\r\n              </dom-repeat>\r\n            </template>\r\n          </dom-if>\r\n        </div>\r\n      </template>\r\n    </dom-repeat>\r\n  </maf-screen>\r\n</div>\r\n"
+module.exports = "<div class=\"Wrapper\">\n  <maf-screen heading=\"[[avgLog.procesOmschrijving]]\" on-back=\"[[_backToAvgLogs]]\">\n    <div class=\"SubHeading\">[[_capitalize(avgLog.opgevraagdeElementen)]]</div>\n    <div class=\"Description\">[[_capitalize(avgLog.omschrijving)]]</div>\n    <dom-repeat items=\"[[_mapObjToArr(avgLog)]]\">\n      <template>\n        <div class=\"AvgLogDataPoint\">\n          <div class=\"AvgLogDataPointLabel\">[[item.key]]</div>\n          <dom-if if=\"[[item.value]]\">\n            <template>\n              <div class=\"AvgLogDataPointValue\">[[item.value]]</div>\n            </template>\n          </dom-if>\n          <dom-if if=\"[[item.values]]\">\n            <template>\n              <dom-repeat items=\"[[item.values]]\" as=\"value\">\n                <template>\n                  <dom-if if=\"[[_isSame(value.key, 'Logo')]]\">\n                    <template>\n                      <div class=\"Logo\" style=\"[[_getLogoStyle(value.value)]]\"></div>\n                    </template>\n                  </dom-if>\n                  <dom-if if=\"[[_isNotSame(value.key, 'Logo')]]\">\n                    <template>\n                      <div class=\"AvgLogDataPointSubValue\">\n                        <div class=\"AvgLogDataPointSubValueKey\">[[value.key]]</div>\n                        <dom-if if=\"[[value.value]]\">\n                          <template>\n                            <div class=\"AvgLogDataPointSubValueValue\">[[value.value]]</div>\n                          </template>\n                        </dom-if>\n                      </div>\n                    </template>\n                  </dom-if>\n                  <dom-if if=\"[[value.values]]\">\n                    <template>\n                      <dom-repeat items=\"[[value.values]]\" as=\"final\">\n                        <template>\n                          <dom-if if=\"[[_isSame(final.key, 'Logo')]]\">\n                            <template>\n                              <div class=\"Logo\" style=\"[[_getLogoStyle(final.value)]]\"></div>\n                            </template>\n                          </dom-if>\n                          <dom-if if=\"[[_isNotSame(final.key, 'Logo')]]\">\n                            <template>\n                              <dom-if if=\"[[final.value]]\">\n                                <template>\n                                  <div class=\"AvgLogDataPointSubSubValue\">\n                                    <div class=\"AvgLogDataPointSubSubValueKey\">[[final.key]]</div>\n                                    <div class=\"AvgLogDataPointSubSubValueValue\">[[final.value]]</div>\n                                  </div>\n                                </template>\n                              </dom-if>\n                            </template>\n                          </dom-if>\n                        </template>\n                      </dom-repeat>\n                    </template>\n                  </dom-if>\n                </template>\n              </dom-repeat>\n            </template>\n          </dom-if>\n        </div>\n      </template>\n    </dom-repeat>\n  </maf-screen>\n</div>\n"
 
 /***/ }),
 
@@ -40472,7 +40493,7 @@ module.exports = ".Wrapper{width:100%;max-width:var(--main-max-width);margin:0 a
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\r\n  <maf-screen on-back=\"[[_onBack]]\" heading=\"Mijn machtigingen\">\r\n    <div class=\"Cards\">\r\n      <dom-repeat items=\"{{cards}}\" as=\"card\">\r\n        <template>\r\n          <div class=\"Card\">\r\n            <div class=\"CardHead\">[[card.procesOmschrijving]]</div>\r\n            <dom-if if=\"[[_isSet(card.omschrijving)]]\">\r\n              <template>\r\n                <div class=\"CardDataPoint\">\r\n                  <div class=\"CardDataPointLabel\">[[card.omschrijving]]</div>\r\n                </div>\r\n              </template>\r\n            </dom-if>\r\n            <div class=\"CardDataPoint\">\r\n              <div class=\"CardDataPointLabel\">Verwerker Organisatie\r\n              </div>\r\n              <div class=\"CardDataPointValue\">[[card.verwerkerOrganisatie.handelsnaam]]</div>\r\n            </div>\r\n            <dom-repeat items=\"[[_mapObjToArr(card)]]\" as=\"point\" index-as=\"point_no\">\r\n              <template>\r\n                <div class=\"CardDataPoint\">\r\n                  <div class=\"CardDataPointLabel\">[[point.key]]</div>\r\n                  <div class=\"CardDataPointValue\">[[point.value]]</div>\r\n                </div>\r\n              </template>\r\n            </dom-repeat>\r\n            <div class=\"CardMoreButton\" on-click=\"_clickHandler\">Bekijk alle gegevens</div>\r\n          </div>\r\n        </template>\r\n      </dom-repeat>\r\n    </div>\r\n  </maf-screen>\r\n</div>"
+module.exports = "<div class=\"Wrapper\">\n  <maf-screen on-back=\"[[_onBack]]\" heading=\"Mijn machtigingen\">\n    <div class=\"Cards\">\n      <dom-repeat items=\"{{cards}}\" as=\"card\">\n        <template>\n          <div class=\"Card\">\n            <div class=\"CardHead\">[[card.procesOmschrijving]]</div>\n            <dom-if if=\"[[_isSet(card.omschrijving)]]\">\n              <template>\n                <div class=\"CardDataPoint\">\n                  <div class=\"CardDataPointLabel\">[[card.omschrijving]]</div>\n                </div>\n              </template>\n            </dom-if>\n            <div class=\"CardDataPoint\">\n              <div class=\"CardDataPointLabel\">Verwerker Organisatie\n              </div>\n              <div class=\"CardDataPointValue\">[[card.verwerkerOrganisatie.handelsnaam]]</div>\n            </div>\n            <dom-repeat items=\"[[_mapObjToArr(card)]]\" as=\"point\" index-as=\"point_no\">\n              <template>\n                <div class=\"CardDataPoint\">\n                  <div class=\"CardDataPointLabel\">[[point.key]]</div>\n                  <div class=\"CardDataPointValue\">[[point.value]]</div>\n                </div>\n              </template>\n            </dom-repeat>\n            <div class=\"CardMoreButton\" on-click=\"_clickHandler\">Bekijk alle gegevens</div>\n          </div>\n        </template>\n      </dom-repeat>\n    </div>\n  </maf-screen>\n</div>"
 
 /***/ }),
 
@@ -40585,7 +40606,7 @@ module.exports = ".Wrapper{width:100%;max-width:var(--main-max-width);margin:0 a
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\r\n  <maf-screen heading=\"[[contract.titel]]\" on-back=\"[[_backToContracts]]\">\r\n    <div class=\"SubHeading\">[[contract.type]]</div>\r\n    <div class=\"Description\">[[contract.omschrijving]]</div>\r\n    <dom-repeat items=\"[[_mapObjToArr(contract)]]\">\r\n      <template>\r\n        <div class=\"ContractDataPoint\">\r\n          <div class=\"ContractDataPointLabel\">[[item.key]]</div>\r\n          <dom-if if=\"[[item.value]]\">\r\n            <template>\r\n              <div class=\"ContractDataPointValue\">[[item.value]]</div>\r\n            </template>\r\n          </dom-if>\r\n          <dom-if if=\"[[item.values]]\">\r\n            <template>\r\n              <dom-repeat items=\"[[item.values]]\" as=\"value\">\r\n                <template>\r\n                  <dom-if if=\"[[_isSame(value.key, 'Logo')]]\">\r\n                    <template>\r\n                      <div class=\"Logo\" style=\"[[_getLogoStyle(value.value)]]\"></div>\r\n                    </template>\r\n                  </dom-if>\r\n                  <dom-if if=\"[[_isNotSame(value.key, 'Logo')]]\">\r\n                    <template>\r\n                      <div class=\"ContractDataPointSubValue\">\r\n                        <div class=\"ContractDataPointSubValueKey\">[[value.key]]</div>\r\n                        <dom-if if=\"[[value.value]]\">\r\n                          <template>\r\n                            <div class=\"ContractDataPointSubValueValue\">[[value.value]]</div>\r\n                          </template>\r\n                        </dom-if>\r\n                      </div>\r\n                    </template>\r\n                  </dom-if>\r\n                  <dom-if if=\"[[value.values]]\">\r\n                    <template>\r\n                      <dom-repeat items=\"[[value.values]]\" as=\"final\">\r\n                        <template>\r\n                          <dom-if if=\"[[_isSame(final.key, 'Logo')]]\">\r\n                            <template>\r\n                              <div class=\"Logo\" style=\"[[_getLogoStyle(final.value)]]\"></div>\r\n                            </template>\r\n                          </dom-if>\r\n                          <dom-if if=\"[[_isNotSame(final.key, 'Logo')]]\">\r\n                            <template>\r\n                              <dom-if if=\"[[final.value]]\">\r\n                                <template>\r\n                                  <div class=\"ContractDataPointSubSubValue\">\r\n                                    <div class=\"ContractDataPointSubSubValueKey\">[[final.key]]</div>\r\n                                    <div class=\"ContractDataPointSubSubValueValue\">[[final.value]]</div>\r\n                                  </div>\r\n                                </template>\r\n                              </dom-if>\r\n                            </template>\r\n                          </dom-if>\r\n                        </template>\r\n                      </dom-repeat>\r\n                    </template>\r\n                  </dom-if>\r\n                </template>\r\n              </dom-repeat>\r\n            </template>\r\n          </dom-if>\r\n        </div>\r\n      </template>\r\n    </dom-repeat>\r\n  </maf-screen>\r\n</div>\r\n"
+module.exports = "<div class=\"Wrapper\">\n  <maf-screen heading=\"[[contract.titel]]\" on-back=\"[[_backToContracts]]\">\n    <div class=\"SubHeading\">[[contract.type]]</div>\n    <div class=\"Description\">[[contract.omschrijving]]</div>\n    <dom-repeat items=\"[[_mapObjToArr(contract)]]\">\n      <template>\n        <div class=\"ContractDataPoint\">\n          <div class=\"ContractDataPointLabel\">[[item.key]]</div>\n          <dom-if if=\"[[item.value]]\">\n            <template>\n              <div class=\"ContractDataPointValue\">[[item.value]]</div>\n            </template>\n          </dom-if>\n          <dom-if if=\"[[item.values]]\">\n            <template>\n              <dom-repeat items=\"[[item.values]]\" as=\"value\">\n                <template>\n                  <dom-if if=\"[[_isSame(value.key, 'Logo')]]\">\n                    <template>\n                      <div class=\"Logo\" style=\"[[_getLogoStyle(value.value)]]\"></div>\n                    </template>\n                  </dom-if>\n                  <dom-if if=\"[[_isNotSame(value.key, 'Logo')]]\">\n                    <template>\n                      <div class=\"ContractDataPointSubValue\">\n                        <div class=\"ContractDataPointSubValueKey\">[[value.key]]</div>\n                        <dom-if if=\"[[value.value]]\">\n                          <template>\n                            <div class=\"ContractDataPointSubValueValue\">[[value.value]]</div>\n                          </template>\n                        </dom-if>\n                      </div>\n                    </template>\n                  </dom-if>\n                  <dom-if if=\"[[value.values]]\">\n                    <template>\n                      <dom-repeat items=\"[[value.values]]\" as=\"final\">\n                        <template>\n                          <dom-if if=\"[[_isSame(final.key, 'Logo')]]\">\n                            <template>\n                              <div class=\"Logo\" style=\"[[_getLogoStyle(final.value)]]\"></div>\n                            </template>\n                          </dom-if>\n                          <dom-if if=\"[[_isNotSame(final.key, 'Logo')]]\">\n                            <template>\n                              <dom-if if=\"[[final.value]]\">\n                                <template>\n                                  <div class=\"ContractDataPointSubSubValue\">\n                                    <div class=\"ContractDataPointSubSubValueKey\">[[final.key]]</div>\n                                    <div class=\"ContractDataPointSubSubValueValue\">[[final.value]]</div>\n                                  </div>\n                                </template>\n                              </dom-if>\n                            </template>\n                          </dom-if>\n                        </template>\n                      </dom-repeat>\n                    </template>\n                  </dom-if>\n                </template>\n              </dom-repeat>\n            </template>\n          </dom-if>\n        </div>\n      </template>\n    </dom-repeat>\n  </maf-screen>\n</div>\n"
 
 /***/ }),
 
@@ -40611,8 +40632,6 @@ var _connectMixin = __webpack_require__(/*! pwa-helpers/connect-mixin */ "./node
 
 var _application = __webpack_require__(/*! ../../../redux/actions/application */ "./src/redux/actions/application.js");
 
-var _contract = __webpack_require__(/*! ../../../redux/actions/contract */ "./src/redux/actions/contract.js");
-
 var _style = __webpack_require__(/*! ./style.pcss */ "./src/components/application/maf-screen-contracts/style.pcss");
 
 var _style2 = _interopRequireDefault(_style);
@@ -40623,11 +40642,15 @@ var _template2 = _interopRequireDefault(_template);
 
 __webpack_require__(/*! ../../objects/maf-screen */ "./src/components/objects/maf-screen/index.js");
 
+var _dutchDate = __webpack_require__(/*! ../../helpers/dutchDate */ "./src/components/helpers/dutchDate.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class MafScreenContracts extends (0, _connectMixin.connect)(_store.store)(_polymerElement.PolymerElement) {
   static get properties() {
-    return {};
+    return {
+      searching: Boolean
+    };
   }
 
   static get template() {
@@ -40638,35 +40661,32 @@ class MafScreenContracts extends (0, _connectMixin.connect)(_store.store)(_polym
     super();
   }
 
-  _isSet(item) {
-    return item && item.length > 0;
-  }
-
   _onBack() {
     _store.store.dispatch((0, _application.selectPage)('home'));
   }
 
-  _mapObjToArr(obj) {
-    let returnable = [];
-    for (let i in obj) {
-      if (obj[i]) {
-        returnable.push({ key: i, value: obj[i] });
-      }
+  _clickHandler(e) {}
+
+  _getSubmitter(array) {
+    if (array !== undefined && array !== null && array.length === 1) {
+      return array[0].person;
     }
-    return returnable.filter(i => i.key !== 'id' && i.key !== 'titel' && i.key !== 'omschrijving' && i.key !== 'bsn' && i.key !== 'organisatie').map(i => Object.assign({}, i, {
-      key: i.key.replace(/^\w/, c => c.toUpperCase()).replace(/([A-Z])([A-Z])([a-z])|([a-z])([A-Z])/g, '$1$4 $2$3$5')
-    }));
+    return '';
   }
 
-  _clickHandler(e) {
-    if (e.model.card && e.model.card.id) {
-      _store.store.dispatch((0, _contract.requestContract)(e.model.card.id));
-      _store.store.dispatch((0, _application.selectPage)('contract'));
+  _getDutchDate(date) {
+    if (date === null || date === undefined || date.date === null) {
+      return 'Onbekend';
     }
+    date = new Date(date);
+    return (0, _dutchDate.toDutchDate)(date);
   }
 
   stateChanged(state) {
-    this.cards = state.contracts.data;
+    if (state.contracts.data != undefined) {
+      this.contracts = state.contracts.data;
+      this.searching = state.contracts.searching;
+    }
   }
 }
 
@@ -40682,7 +40702,7 @@ window.customElements.define('maf-screen-contracts', MafScreenContracts);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".Wrapper{width:100%;max-width:var(--main-max-width);margin:0 auto}.Cards{margin-top:14px;float:left;width:100%}.Card{width:100%;font-family:var(--typography-fontFamily);background-color:#f7f7f7;border-radius:5px;margin-bottom:20px;position:relative}.CardHead{font-size:var(--main-font-subheader-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:1.28;letter-spacing:-.3px;text-align:left;color:var(--palette-primary-main);padding:18px 68px 18px 16px}.CardIcon{position:absolute;top:20px;right:28px;width:24px;height:24px;border-radius:12px;background-color:var(--palette-secondary-main)}.CardDataPoint{font-size:var(--main-font-text-size);font-weight:500;font-style:normal;font-stretch:normal;line-height:1.53;letter-spacing:-.2px;text-align:left;color:#6a6d7b;padding:7px 25px 7px 16px;width:calc(100% - 41px);display:flex;justify-content:space-between}.CardDataPointLabel{margin-right:16px}.CardDataPointValue{margin-right:16px;text-align:right}.CardMoreButton{font-size:var(--main-font-text-size);font-weight:600;font-style:normal;font-stretch:normal;line-height:1.28;letter-spacing:-.4px;color:var(--palette-primary-main);padding:10px 16px 14px;margin:6px 18px 0 14px;width:calc(100% - 64px);border-top:1px solid #ecedee;text-align:center;cursor:pointer}.CardMoreButton:active{color:var(--palette-secondary-main)}"
+module.exports = ".Wrapper{height:100vh;max-width:var(--main-max-width);margin:0 auto;background-color:var(--main-content-background-color);padding:0 0 57px}.ScrollContainer,.Wrapper{width:100%;box-sizing:border-box}.ScrollContainer{height:100%;padding-bottom:75px;float:left;overflow-y:auto}.Contract{color:var(--main-header-text-color);padding:10px;border-bottom:1px solid #eff1f3;margin-bottom:5px;display:flex;flex-direction:column}.ContractImage{width:100px;height:100px}.SpinnerBox{display:flex;justify-content:flex-start}.Spinner{margin:10px}.SpinnerMessage{margin-top:16px}"
 
 /***/ }),
 
@@ -40693,7 +40713,7 @@ module.exports = ".Wrapper{width:100%;max-width:var(--main-max-width);margin:0 a
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\r\n  <maf-screen on-back=\"[[_onBack]]\" heading=\"Mijn contracten\">\r\n    <div class=\"Cards\">\r\n      <dom-repeat items=\"{{cards}}\" as=\"card\">\r\n        <template>\r\n          <div class=\"Card\">\r\n            <div class=\"CardHead\">[[card.titel]]</div>\r\n            <dom-if if=\"[[_isSet(card.omschrijving)]]\">\r\n              <template>\r\n                <div class=\"CardDataPoint\">\r\n                  <div class=\"CardDataPointLabel\">[[card.omschrijving]]</div>\r\n                </div>\r\n              </template>\r\n            </dom-if>\r\n            <dom-repeat items=\"[[_mapObjToArr(card)]]\" as=\"point\" index-as=\"point_no\">\r\n              <template>\r\n                <div class=\"CardDataPoint\">\r\n                  <div class=\"CardDataPointLabel\">[[point.key]]</div>\r\n                  <div class=\"CardDataPointValue\">[[point.value]]</div>\r\n                </div>\r\n              </template>\r\n            </dom-repeat>\r\n            <div class=\"CardDataPoint\">\r\n              <div class=\"CardDataPointLabel\">Organisatie</div>\r\n              <div class=\"CardDataPointValue\">[[card.organisatie.handelsnaam]]</div>\r\n            </div>\r\n            <div class=\"CardMoreButton\" on-click=\"_clickHandler\">Bekijk alle gegevens</div>\r\n          </div>\r\n        </template>\r\n      </dom-repeat>\r\n    </div>\r\n  </maf-screen>\r\n</div>"
+module.exports = "<div class=\"Wrapper\">\r\n  <div class=\"ScrollContainer\">\r\n    <dom-if if=\"{{searching}}\">\r\n      <template>\r\n        <maf-screen on-back=\"[[_onBack]]\" heading=\"Mijn overeenkomsten\">\r\n          <div class=\"SpinnerBox\">\r\n            <img class=\"Spinner\" src=\"assets/media/Spinner.svg\" alt=\"spinner\">\r\n            <div class=\"SpinnerMessage\">Je gegevens worden opgehaald.</div>\r\n          </div>\r\n        </maf-screen>\r\n      </template>\r\n    </dom-if>\r\n    <dom-if if=\"{{!searching}}\">\r\n      <template>\r\n        <maf-screen on-back=\"[[_onBack]]\" heading=\"Mijn overeenkomsten\">\r\n          <div class=\"ContractsContainer\">\r\n            <dom-repeat items=\"{{contracts}}\" as=\"contract\">\r\n              <template>\r\n                <div class=\"Contract\">\r\n                  <div class=\"ContractImage\">\r\n                    <img src=\"[[contract.logo]]\" />\r\n                  </div>\r\n                  <ul>\r\n                    <li><b>Naam organisatie:</b> [[contract.organisatie]]</li>\r\n                    <li><b>Uw naam:</b> [[contract.naam]]</li>\r\n                    <li><b>Uw BSN:</b> [[contract.bsn]]</li>\r\n                    <li><b>Overeenkomstnummer:</b> [[contract.identificatie]]</li>\r\n                    <li><b>Naam van de overeenkomst:</b> [[contract.titel]]</li>\r\n                    <li><b>Startdatum:</b> [[_getDutchDate(contract.beginDatum)]]</li>\r\n                    <li><b>Status:</b> [[contract.status]]</li>\r\n                    <li><b>Einddatum:</b> [[_getDutchDate(contract.eindDatum)]]</li>\r\n                  </ul>\r\n                </div>\r\n              </template>\r\n            </dom-repeat>\r\n          </div>\r\n        </maf-screen>\r\n      </template>\r\n    </dom-if>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -40725,6 +40745,8 @@ var _avgLogs = __webpack_require__(/*! ../../../redux/actions/avgLogs */ "./src/
 
 var _person = __webpack_require__(/*! ../../../redux/actions/person */ "./src/redux/actions/person.js");
 
+var _orders = __webpack_require__(/*! ../../../redux/actions/orders */ "./src/redux/actions/orders.js");
+
 var _style = __webpack_require__(/*! ./style.pcss */ "./src/components/application/maf-screen-home/style.pcss");
 
 var _style2 = _interopRequireDefault(_style);
@@ -40753,9 +40775,13 @@ class MafScreenHome extends (0, _connectMixin.connect)(_store.store)(_polymerEle
           asset: 'assets/media/Machtigingen.svg',
           target: 'avg-logs'
         }, {
-          title: 'Contracten',
+          title: 'Overeenkomsten',
           asset: 'assets/media/Contracten.svg',
           target: 'contracts'
+        }, {
+          title: 'Verzoeken',
+          asset: 'assets/media/Verzoeken.svg',
+          target: 'orders'
         }]
       },
       userID: String
@@ -40788,6 +40814,9 @@ class MafScreenHome extends (0, _connectMixin.connect)(_store.store)(_polymerEle
           break;
         case 'avg-logs':
           _store.store.dispatch((0, _avgLogs.requestAvgLogs)());
+          break;
+        case 'orders':
+          _store.store.dispatch((0, _orders.requestOrders)());
           break;
         default:
           break;
@@ -40831,7 +40860,7 @@ module.exports = ".Wrapper{height:100vh;max-width:var(--main-max-width);margin:0
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\r\n    <div class=\"ScrollContainer\">\r\n        <div class=\"Spacing\"></div>    \r\n        <maf-screen heading=\"Mijn overzicht\">\r\n            <div class=\"SearchWrapper\">\r\n                <input class=\"FakeInput\" placeholder=\"Wat wil je regelen?\" type=\"text\" on-click=\"_goJourneys\"></input>\r\n                <maki-icon-search></maki-icon-search>\r\n            </div>\r\n            <div class=\"TilesWrapper\">\r\n                <div class=\"TilesTitle\">\r\n                    Mijn gegevens\r\n                </div>\r\n                <div class=\"Tiles\">\r\n                    <dom-repeat items=\"{{tiles}}\" as=\"tile\">\r\n                        <template>\r\n                            <div class=\"Tile\" on-click=\"_clickHandler\">\r\n                                <div class=\"TileMedia\">\r\n                                    <div class=\"TileMediaInner\">\r\n                                        <img alt=\"[[tile.title]]\" src=\"[[tile.asset]]\" />\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"TileTitle\">[[tile.title]]</div>\r\n                            </div>\r\n                        </template>\r\n                    </dom-repeat>\r\n                    <div class=\"Tile NotAllowed\" on-click=\"_clickHandler\">\r\n                        <div class=\" TileMedia \">\r\n                            <div class=\"TileMediaInner \">\r\n                                <img src=\"assets/media/Passen.svg \" />\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"TileTitle \">Passen</div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </maf-screen>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"Wrapper\">\r\n    <div class=\"ScrollContainer\">\r\n        <div class=\"Spacing\"></div>    \r\n        <maf-screen heading=\"Mijn overzicht\">\r\n            <div class=\"SearchWrapper\">\r\n                <input class=\"FakeInput\" placeholder=\"Wat wil je regelen?\" type=\"text\" on-click=\"_goJourneys\"></input>\r\n                <maki-icon-search></maki-icon-search>\r\n            </div>\r\n            <div class=\"TilesWrapper\">\r\n                <div class=\"TilesTitle\">\r\n                    Mijn gegevens\r\n                </div>\r\n                <div class=\"Tiles\">\r\n                    <dom-repeat items=\"{{tiles}}\" as=\"tile\">\r\n                        <template>\r\n                            <div class=\"Tile\" on-click=\"_clickHandler\">\r\n                                <div class=\"TileMedia\">\r\n                                    <div class=\"TileMediaInner\">\r\n                                        <img alt=\"[[tile.title]]\" src=\"[[tile.asset]]\" />\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"TileTitle\">[[tile.title]]</div>\r\n                            </div>\r\n                        </template>\r\n                    </dom-repeat>\r\n                    <!--<div class=\"Tile NotAllowed\" on-click=\"_clickHandler\">\r\n                        <div class=\" TileMedia \">\r\n                            <div class=\"TileMediaInner \">\r\n                                <img src=\"assets/media/Passen.svg \" />\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"TileTitle \">Passen</div>\r\n                    </div>-->\r\n                </div>\r\n            </div>\r\n        </maf-screen>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -41087,6 +41116,113 @@ module.exports = "<div class=\"Wrapper\">\r\n  <div class=\"ScrollContainer\">\r
 
 /***/ }),
 
+/***/ "./src/components/application/maf-screen-orders/index.js":
+/*!***************************************************************!*\
+  !*** ./src/components/application/maf-screen-orders/index.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _polymerElement = __webpack_require__(/*! @polymer/polymer/polymer-element */ "./node_modules/@polymer/polymer/polymer-element.js");
+
+var _store = __webpack_require__(/*! ../../../redux/store */ "./src/redux/store.js");
+
+var _connectMixin = __webpack_require__(/*! pwa-helpers/connect-mixin */ "./node_modules/pwa-helpers/connect-mixin.js");
+
+var _application = __webpack_require__(/*! ../../../redux/actions/application */ "./src/redux/actions/application.js");
+
+var _style = __webpack_require__(/*! ./style.pcss */ "./src/components/application/maf-screen-orders/style.pcss");
+
+var _style2 = _interopRequireDefault(_style);
+
+var _template = __webpack_require__(/*! ./template.html */ "./src/components/application/maf-screen-orders/template.html");
+
+var _template2 = _interopRequireDefault(_template);
+
+__webpack_require__(/*! ../../objects/maf-screen */ "./src/components/objects/maf-screen/index.js");
+
+var _dutchDate = __webpack_require__(/*! ../../helpers/dutchDate */ "./src/components/helpers/dutchDate.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+class MafScreenOrders extends (0, _connectMixin.connect)(_store.store)(_polymerElement.PolymerElement) {
+  static get properties() {
+    return {
+      searching: Boolean
+    };
+  }
+
+  static get template() {
+    return (0, _polymerElement.html)([`<style>${_style2.default}</style> ${_template2.default}`]);
+  }
+
+  constructor() {
+    super();
+  }
+
+  _onBack() {
+    _store.store.dispatch((0, _application.selectPage)('home'));
+  }
+
+  _clickHandler(e) {}
+
+  _getSubmitter(array) {
+    if (array !== undefined && array !== null && array.length === 1) {
+      return array[0].person;
+    }
+    return '';
+  }
+
+  _getDutchDateTime(date) {
+    if (date === null || date === undefined || date.date === null) {
+      return 'Onbekend';
+    }
+    date = new Date(date);
+    return (0, _dutchDate.toDutchDateTime)(date);
+  }
+
+  stateChanged(state) {
+    if (state.orders.data != undefined) {
+      this.orders = state.orders.data;
+      this.searching = state.orders.searching;
+    }
+  }
+}
+
+exports.default = MafScreenOrders;
+window.customElements.define('maf-screen-orders', MafScreenOrders);
+
+/***/ }),
+
+/***/ "./src/components/application/maf-screen-orders/style.pcss":
+/*!*****************************************************************!*\
+  !*** ./src/components/application/maf-screen-orders/style.pcss ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".Wrapper{height:100vh;max-width:var(--main-max-width);margin:0 auto;background-color:var(--main-content-background-color);padding:0 0 57px}.ScrollContainer,.Wrapper{width:100%;box-sizing:border-box}.ScrollContainer{height:100%;padding-bottom:75px;float:left;overflow-y:auto}.Order{color:var(--main-header-text-color);padding:10px;border-bottom:1px solid #eff1f3;margin-bottom:5px;display:flex;flex-direction:column}.SpinnerBox{display:flex;justify-content:flex-start}.Spinner{margin:10px}.SpinnerMessage{margin-top:16px}"
+
+/***/ }),
+
+/***/ "./src/components/application/maf-screen-orders/template.html":
+/*!********************************************************************!*\
+  !*** ./src/components/application/maf-screen-orders/template.html ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"Wrapper\">\r\n  <div class=\"ScrollContainer\">\r\n    <dom-if if=\"{{searching}}\">\r\n      <template>\r\n        <maf-screen on-back=\"[[_onBack]]\" heading=\"Mijn verzoeken\">\r\n          <div class=\"SpinnerBox\">\r\n            <img class=\"Spinner\" src=\"assets/media/Spinner.svg\" alt=\"spinner\">\r\n            <div class=\"SpinnerMessage\">Je gegevens worden opgehaald.</div>\r\n          </div>\r\n        </maf-screen>\r\n      </template>\r\n    </dom-if>\r\n    <dom-if if=\"{{!searching}}\">\r\n      <template>\r\n        <maf-screen on-back=\"[[_onBack]]\" heading=\"Mijn verzoeken\">\r\n          <div class=\"OrdersContainer\">\r\n            <dom-repeat items=\"{{orders}}\" as=\"request\">\r\n            <template>\r\n              <div class=\"Order\">\r\n                <ul>\r\n                  <li><b>Aanmaakdatum:</b> [[_getDutchDateTime(request.date_created)]]</li>\r\n                  <li><b>Verzoek:</b> {{request.request_type_name}}</li>\r\n                  <li><b>Indiener:</b> [[_getSubmitter(request.submitters)]]</li>\r\n                  <li><b>Details verzoek:</b>\r\n                      <ul>\r\n                        <li><b>Nieuw adres:</b> {{request.properties.adress}}</li>\r\n                        <li><b>Verhuisdatum:</b> {{request.properties.datum}}</li>\r\n                        <li><b>Meeverhuizende personen:</b> {{request.properties.wie_name}}</li>\r\n                        <li><b>Contactinformatie:</b> mail: {{request.properties.email}} en tel: {{request.properties.tel}}</li>\r\n                      </ul>\r\n                  </li>\r\n                </ul>\r\n              </div>\r\n            </template>\r\n            </dom-repeat>\r\n          </div>\r\n        </maf-screen>\r\n      </template>\r\n    </dom-if>\r\n  </div>\r\n</div>\r\n"
+
+/***/ }),
+
 /***/ "./src/components/application/maf-screen-person-data/index.js":
 /*!********************************************************************!*\
   !*** ./src/components/application/maf-screen-person-data/index.js ***!
@@ -41174,7 +41310,7 @@ window.customElements.define('maf-screen-person-data', MafScreenPersonData);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".Wrapper{height:100vh;max-width:var(--main-max-width);margin:0 auto;background-color:var(--main-content-background-color);padding:0 0 57px}.ScrollContainer,.Wrapper{width:100%;box-sizing:border-box}.ScrollContainer{height:100%;padding-bottom:75px;float:left;overflow-y:auto}.SubHeading{font-size:var(--main-font-subheader-size);color:var(--palette-secondary-main);font-weight:500}.Description{font-size:var(--main-font-text-size);color:var(--palette-primary-main);font-style:italic}.ContractDataPointContainer{display:flex;flex-direction:column}.ContractDataPoint{font-family:var(--typography-fontFamily);padding:10px 0 13px;border-bottom:1px solid #eff1f3}.ContractDataPointLabel{opacity:.4;font-size:var(--main-font-text-size);font-weight:500;font-style:normal;font-stretch:normal;line-height:1.44;letter-spacing:-.3px;text-align:left;color:var(--main-header-text-color)}.ContractDataPointValue{font-size:var(--main-font-text-size);font-weight:600}.ContractDataPointSubValue,.ContractDataPointValue{font-style:normal;font-stretch:normal;line-height:1.28;letter-spacing:-.4px;text-align:left;color:var(--main-header-text-color)}.ContractDataPointSubValue{height:23px;font-size:var(--main-font-medium-text-size);width:100%;display:flex;justify-content:space-between}.ContractDataPointSubValueKey{font-weight:600}.ContractDataPointSubValueValue{font-weight:500}.ContractDataPointSubSubValue{height:23px;font-size:var(--main-font-small-text-size);font-style:normal;font-stretch:normal;line-height:1.28;letter-spacing:-.4px;text-align:left;color:var(--main-header-text-color);width:100%;display:flex;justify-content:space-between}.ContractDataPointSubSubValueKey{font-weight:500;margin-left:16px}.ContractDataPointSubSubValueValue{font-weight:400}.SpinnerBox{display:flex;justify-content:start}.Spinner{margin:10px}.SpinnerMessage{margin-top:16px}"
+module.exports = ".Wrapper{height:100vh;max-width:var(--main-max-width);margin:0 auto;background-color:var(--main-content-background-color);padding:0 0 57px}.ScrollContainer,.Wrapper{width:100%;box-sizing:border-box}.ScrollContainer{height:100%;padding-bottom:75px;float:left;overflow-y:auto}.SubHeading{font-size:var(--main-font-subheader-size);color:var(--palette-secondary-main);font-weight:500}.Description{font-size:var(--main-font-text-size);color:var(--palette-primary-main);font-style:italic}.ContractDataPointContainer{display:flex;flex-direction:column}.ContractDataPoint{font-family:var(--typography-fontFamily);padding:10px 0 13px;border-bottom:1px solid #eff1f3}.ContractDataPointLabel{opacity:.4;font-size:var(--main-font-text-size);font-weight:500;font-style:normal;font-stretch:normal;line-height:1.44;letter-spacing:-.3px;text-align:left;color:var(--main-header-text-color)}.ContractDataPointValue{font-size:var(--main-font-text-size);font-weight:600}.ContractDataPointSubValue,.ContractDataPointValue{font-style:normal;font-stretch:normal;line-height:1.28;letter-spacing:-.4px;text-align:left;color:var(--main-header-text-color)}.ContractDataPointSubValue{height:23px;font-size:var(--main-font-medium-text-size);width:100%;display:flex;justify-content:space-between}.ContractDataPointSubValueKey{font-weight:600}.ContractDataPointSubValueValue{font-weight:500}.ContractDataPointSubSubValue{height:23px;font-size:var(--main-font-small-text-size);font-style:normal;font-stretch:normal;line-height:1.28;letter-spacing:-.4px;text-align:left;color:var(--main-header-text-color);width:100%;display:flex;justify-content:space-between}.ContractDataPointSubSubValueKey{font-weight:500;margin-left:16px}.ContractDataPointSubSubValueValue{font-weight:400}.SpinnerBox{display:flex;justify-content:flex-start}.Spinner{margin:10px}.SpinnerMessage{margin-top:16px}"
 
 /***/ }),
 
@@ -41544,7 +41680,7 @@ module.exports = ":host{display:inline-flex}svg{fill:var(--icon-color);stroke:va
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"22\" height=\"22\" viewBox=\"0 0 22 22\">\r\n    <path fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M21 16H1a3 3 0 0 0 3-3V8a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0h3.46z\"/>\r\n</svg>\r\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"22\" height=\"22\" viewBox=\"0 0 22 22\">\n    <path fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M21 16H1a3 3 0 0 0 3-3V8a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0h3.46z\"/>\n</svg>\n"
 
 /***/ }),
 
@@ -41678,7 +41814,7 @@ module.exports = ":host{display:inline-flex}svg{fill:var(--icon-color);stroke:va
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\">\r\n    <path fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M19 9.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L1 19l1.9-5.7A8.38 8.38 0 0 1 2 9.5a8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z\"/>\r\n</svg>\r\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\">\n    <path fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M19 9.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L1 19l1.9-5.7A8.38 8.38 0 0 1 2 9.5a8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z\"/>\n</svg>\n"
 
 /***/ }),
 
@@ -41734,7 +41870,7 @@ window.customElements.define('maki-icon-check', MakiIconCheck);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host{display:inline-flex}svg{fill:var(--icon-color);stroke:var(--icon-color)}"
+module.exports = ":host{display:inline-flex}svg{fill:var(--icon-color);stroke:var(--icon-color);width:var(--icon-size);height:var(--icon-size)}"
 
 /***/ }),
 
@@ -41745,7 +41881,7 @@ module.exports = ":host{display:inline-flex}svg{fill:var(--icon-color);stroke:va
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"9\" height=\"7\" viewBox=\"0 0 9 7\">\r\n    <path fill-rule=\"evenodd\" stroke-width=\".8\" d=\"M4.147 6.123a.289.289 0 0 1-.415.01L1.086 3.524a.29.29 0 1 1 .407-.412L3.926 5.51l4.106-4.417a.29.29 0 1 1 .424.394L4.147 6.123z\"/>\r\n</svg>\r\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"9\" height=\"7\" viewBox=\"0 0 9 7\">\n    <path fill-rule=\"evenodd\" stroke-width=\".8\" d=\"M4.147 6.123a.289.289 0 0 1-.415.01L1.086 3.524a.29.29 0 1 1 .407-.412L3.926 5.51l4.106-4.417a.29.29 0 1 1 .424.394L4.147 6.123z\"/>\n</svg>\n"
 
 /***/ }),
 
@@ -42080,7 +42216,7 @@ module.exports = ":host{display:inline-flex}svg{fill:var(--icon-color);stroke:va
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"22\" viewBox=\"0 0 20 22\">\r\n    <g fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\">\r\n        <path d=\"M1 8l9-7 9 7v11a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8z\"/>\r\n        <path d=\"M7 21V11h6v10\"/>\r\n    </g>\r\n</svg>\r\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"22\" viewBox=\"0 0 20 22\">\n    <g fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\">\n        <path d=\"M1 8l9-7 9 7v11a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8z\"/>\n        <path d=\"M7 21V11h6v10\"/>\n    </g>\n</svg>\n"
 
 /***/ }),
 
@@ -42214,7 +42350,7 @@ module.exports = ":host{display:inline-flex}svg{fill:var(--icon-color);stroke:va
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 17 17\">\r\n    <g fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" transform=\"translate(1 1)\">\r\n        <circle cx=\"6.5\" cy=\"6.5\" r=\"6.5\"/>\r\n        <path d=\"M15 15l-4-4\"/>\r\n    </g>\r\n</svg>\r\n"
+module.exports = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"17\" height=\"17\" viewBox=\"0 0 17 17\">\n    <g fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" transform=\"translate(1 1)\">\n        <circle cx=\"6.5\" cy=\"6.5\" r=\"6.5\"/>\n        <path d=\"M15 15l-4-4\"/>\n    </g>\n</svg>\n"
 
 /***/ }),
 
@@ -42732,7 +42868,7 @@ module.exports = ".Button{float:left;--icon-color:var(--main-color);display:inli
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class$=\"Button[[isHighlight(highlight)]][[isIcon(small, heading)]][[isItalic(italic)]][[isSmall(small)]][[isWhite(white)]][[isDisabled(disabled)]][[colorBooleans(iconColorMain, iconColorDisabled, iconColorHighlight, textColorMain, textColorDisabled, textColorHighlight, bubbleColorMain, bubbleColorDisabled, bubbleColorHighlight)]]\" style$=\"[[getElevation(elevation)]] [[_wrapperSize(size)]]\" on-click=\"clickHandler\">\r\n  <div class=\"Inner\" style$=\"[[_buttonSize(size, heading)]]\">\r\n    <dom-if if=[[hasHeading(heading)]]>\r\n      <template>\r\n        <span class=\"HeadingAsProp\" style$=\"[[_hoverStyle]]\">\r\n          [[heading]]\r\n          <span class=\"After\" />\r\n        </span>\r\n      </template>\r\n    </dom-if>\r\n    <div class=\"Child\" style$=\"[[_iconSize(size, heading)]]\">\r\n      <slot></slot>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class$=\"Button[[isHighlight(highlight)]][[isIcon(small, heading)]][[isItalic(italic)]][[isSmall(small)]][[isWhite(white)]][[isDisabled(disabled)]][[colorBooleans(iconColorMain, iconColorDisabled, iconColorHighlight, textColorMain, textColorDisabled, textColorHighlight, bubbleColorMain, bubbleColorDisabled, bubbleColorHighlight)]]\" style$=\"[[getElevation(elevation)]] [[_wrapperSize(size)]]\" on-click=\"clickHandler\">\n  <div class=\"Inner\" style$=\"[[_buttonSize(size, heading)]]\">\n    <dom-if if=[[hasHeading(heading)]]>\n      <template>\n        <span class=\"HeadingAsProp\" style$=\"[[_hoverStyle]]\">\n          [[heading]]\n          <span class=\"After\" />\n        </span>\n      </template>\n    </dom-if>\n    <div class=\"Child\" style$=\"[[_iconSize(size, heading)]]\">\n      <slot></slot>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -42799,7 +42935,7 @@ module.exports = ".Header{font-family:var(--typography-fontFamily);font-size:var
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Header\"><slot></slot></div>\r\n"
+module.exports = "<div class=\"Header\"><slot></slot></div>\n"
 
 /***/ }),
 
@@ -42868,6 +43004,18 @@ class MakiInput extends _polymerElement.PolymerElement {
         type: Function,
         value: () => {}
       },
+      showInputPatternValidationMessage: {
+        type: Boolean,
+        value: false
+      },
+      showInputPatternValidationOkCheck: {
+        type: Boolean,
+        value: false
+      },
+      patternValidationErrorMessage: {
+        type: String,
+        value: 'Invalide invoer'
+      },
 
       // Props: Shaded Paper
       accentDisabled: {
@@ -42911,7 +43059,6 @@ class MakiInput extends _polymerElement.PolymerElement {
       stroke: {
         type: Number
       }
-
     };
   }
 
@@ -42942,13 +43089,18 @@ class MakiInput extends _polymerElement.PolymerElement {
 
   _onBlur() {
     this.focussed = false;
+    this._checkPatternValidity();
   }
+
   _onFocus() {
     this.focussed = true;
+    this.showInputPatternValidationOkCheck = false;
   }
+
   _onInput(e) {
     this.inputCallback(e.target.value);
   }
+
   _isFocussed(focussed) {
     return focussed ? ' focussed' : '';
   }
@@ -42956,8 +43108,25 @@ class MakiInput extends _polymerElement.PolymerElement {
   _hasIconLeft(iconLeft) {
     return iconLeft ? ' iconLeft' : '';
   }
+
   _hasIconRight(iconRight) {
     return iconRight ? ' iconRight' : '';
+  }
+
+  _checkPatternValidity() {
+    const field = this.shadowRoot.querySelector('.Input');
+    this.showInputPatternValidationMessage = false;
+    this.showInputPatternValidationOkCheck = false;
+    if (field.hasAttribute('pattern')) {
+      var valid = field.checkValidity();
+      if (!valid) {
+        this.showInputPatternValidationMessage = true;
+      } else {
+        if (field.value !== undefined && field.value !== null && field.value !== '') {
+          this.showInputPatternValidationOkCheck = true;
+        }
+      }
+    }
   }
 }
 
@@ -42973,7 +43142,7 @@ window.customElements.define('maki-input', MakiInput);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host{font-size:var(--typography-fontSize)}input::-webkit-inner-spin-button,input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}input[type=number]{-moz-appearance:textfield}.Icon{position:absolute;top:0;left:0}.Icon ::slotted(svg){--icon-color:var(--shaded-icon-main)}.Icon.iconLeft{float:left;position:relative}.Icon.iconRight{float:right;position:relative}.Input{margin:0;padding:.84em .84em calc(.84em - 2px);width:calc(100% - 1.68em);border:0;background-color:transparent;outline:none;font-size:var(--main-font-text-size);font-family:inherit;line-height:1.28;color:var(--shaded-color-main)}.Input:focus{outline:none;box-shadow:none}.Input:hover{box-shadow:0 0 5px 1px rgba(30,189,211,.4)}.Input.focussed{-webkit-appearance:none;box-shadow:0 0 5px 1px rgba(30,189,211,.6)}.Input::-webkit-input-placeholder{opacity:.6;color:var(--shaded-color-main);font-style:italic}.Input::-moz-placeholder{opacity:.6;color:var(--shaded-color-main);font-style:italic}.Input::-ms-input-placeholder{opacity:.6;color:var(--shaded-color-main);font-style:italic}.Input::placeholder{opacity:.6;color:var(--shaded-color-main);font-style:italic}.Input:invalid{-webkit-appearance:none;box-shadow:0 0 5px 1px var(--palette-error-main)}.Highlight{height:2px;width:100%;position:relative}.HighlightExpander{height:2px;transform:scaleX(0);transition:transform var(--transitions-duration-shorter) var(--transitions-easing-easeOut)}.HighlightExpander,.HighlightHover{width:100%;background-color:var(--shaded-accent-main);position:absolute;top:0;left:0}.HighlightHover{height:1px;opacity:0;transition:opacity var(--transitions-duration-shorter) var(--transitions-easing-easeInOut)}.HighlightAlways{width:100%;height:1px;position:absolute;bottom:0;left:0;background-color:var(--shaded-accent-main);opacity:.5}.Wrapper:hover .HighlightHover{opacity:.5}.Highlight.focussed .HighlightExpander{transform:scale(1)}"
+module.exports = ":host{font-size:var(--typography-fontSize)}input::-webkit-inner-spin-button,input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}input[type=number]{-moz-appearance:textfield}.Icon{position:absolute;top:0;left:0}.Icon ::slotted(svg){--icon-color:var(--shaded-icon-main)}.Icon.iconLeft{float:left;position:relative}.Icon.iconRight{float:right;position:relative}.Input{margin:0;padding:.84em .84em calc(.84em - 2px);width:calc(100% - 1.68em);border:0;background-color:transparent;outline:none;font-size:var(--main-font-text-size);font-family:inherit;line-height:1.28;color:var(--shaded-color-main)}.Input:focus{outline:none;box-shadow:none}.Input:hover{box-shadow:0 0 5px 1px rgba(30,189,211,.4)}.Input.focussed{-webkit-appearance:none;box-shadow:0 0 5px 1px rgba(30,189,211,.6)}.Input::-webkit-input-placeholder{opacity:.6;color:var(--shaded-color-main);font-style:italic}.Input::-moz-placeholder{opacity:.6;color:var(--shaded-color-main);font-style:italic}.Input::-ms-input-placeholder{opacity:.6;color:var(--shaded-color-main);font-style:italic}.Input::placeholder{opacity:.6;color:var(--shaded-color-main);font-style:italic}.Input:invalid{-webkit-appearance:none;box-shadow:0 0 5px 1px var(--palette-error-main)}.Highlight{height:2px;width:100%;position:relative}.HighlightExpander{height:2px;transform:scaleX(0);transition:transform var(--transitions-duration-shorter) var(--transitions-easing-easeOut)}.HighlightExpander,.HighlightHover{width:100%;background-color:var(--shaded-accent-main);position:absolute;top:0;left:0}.HighlightHover{height:1px;opacity:0;transition:opacity var(--transitions-duration-shorter) var(--transitions-easing-easeInOut)}.HighlightAlways{width:100%;height:1px;position:absolute;bottom:0;left:0;background-color:var(--shaded-accent-main);opacity:.5}.Wrapper:hover .HighlightHover{opacity:.5}.Highlight.focussed .HighlightExpander{transform:scale(1)}.PatternInvalidMessage{display:flex;justify-content:flex-start;padding:8px}maki-icon-attention{--icon-color:var(--icon-red-color);--icon-size:20px;margin-right:8px}.PatternInvalidMessageText{font-size:var(--main-font-smallest-text-size);line-height:20px}maki-icon-check{--icon-color:var(--icon-green-color);margin-left:-36px;margin-top:16px;--icon-size:20px}"
 
 /***/ }),
 
@@ -42984,7 +43153,7 @@ module.exports = ":host{font-size:var(--typography-fontSize)}input::-webkit-inne
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<maki-shaded-paper\r\n  accent-disabled=\"[[accentDisabled]]\"\r\n  accent-error=\"[[accentError]]\"\r\n  accent-primary=\"[[accentPrimary]]\"\r\n  accent-secondary=\"[[accentSecondary]]\"\r\n  disabled=\"[[disabled]]\"\r\n  error=\"[[error]]\"\r\n  fill=\"[[fill]]\"\r\n  icon-disabled=\"[[iconDisabled]]\"\r\n  icon-error=\"[[iconError]]\"\r\n  icon-primary=\"[[iconPrimary]]\"\r\n  icon-secondary=\"[[iconSecondary]]\"\r\n  primary=\"[[primary]]\"\r\n  secondary=\"[[secondary]]\"\r\n  transparent=\"[[transparent]]\"\r\n  elevation=\"[[elevation]]\"\r\n  rounding=\"[[rounding]]\"\r\n  stroke=\"[[stroke]]\"\r\n>\r\n  <div class=\"Wrapper\">\r\n    <div class$=\"Icon[[_hasIconLeft(iconLeft)]][[_hasIconRight(iconRight)]]\">\r\n      <slot></slot>\r\n    </div>\r\n    <input class$=\"Input[[_hasIconLeft(iconLeft)]][[_hasIconRight(iconRight)]][[_isFocussed(focussed)]]\" placeholder=\"[[placeholder]]\" maxlength$=\"[[maxlength]]\" type=\"[[type]]\" pattern$=\"[[pattern]]\" on-input=\"_onInput\" value=\"{{value}}\" />\r\n  </div>\r\n</maki-shaded-paper>\r\n"
+module.exports = "<maki-shaded-paper accent-disabled=\"[[accentDisabled]]\"\r\n                   accent-error=\"[[accentError]]\"\r\n                   accent-primary=\"[[accentPrimary]]\"\r\n                   accent-secondary=\"[[accentSecondary]]\"\r\n                   disabled=\"[[disabled]]\"\r\n                   error=\"[[error]]\"\r\n                   fill=\"[[fill]]\"\r\n                   icon-disabled=\"[[iconDisabled]]\"\r\n                   icon-error=\"[[iconError]]\"\r\n                   icon-primary=\"[[iconPrimary]]\"\r\n                   icon-secondary=\"[[iconSecondary]]\"\r\n                   primary=\"[[primary]]\"\r\n                   secondary=\"[[secondary]]\"\r\n                   transparent=\"[[transparent]]\"\r\n                   elevation=\"[[elevation]]\"\r\n                   rounding=\"[[rounding]]\"\r\n                   stroke=\"[[stroke]]\">\r\n  <div class=\"Wrapper\">\r\n    <div class$=\"Icon[[_hasIconLeft(iconLeft)]][[_hasIconRight(iconRight)]]\">\r\n      <slot></slot>\r\n    </div>\r\n    <dom-if if=\"[[showInputPatternValidationOkCheck]]\">\r\n      <template>\r\n        <div class=\"Icon iconRight\">\r\n          <maki-icon-check></maki-icon-check>\r\n        </div>\r\n      </template>\r\n    </dom-if>\r\n    <input class$=\"Input[[_hasIconLeft(iconLeft)]][[_hasIconRight(iconRight)]][[_isFocussed(focussed)]]\" placeholder=\"[[placeholder]]\" maxlength$=\"[[maxlength]]\" type=\"[[type]]\" pattern$=\"[[pattern]]\" on-input=\"_onInput\" value=\"{{value}}\" />\r\n  </div>\r\n</maki-shaded-paper>\r\n<dom-if if=\"[[showInputPatternValidationMessage]]\">\r\n  <template>\r\n    <div class=\"PatternInvalidMessage\">\r\n      <maki-icon-attention></maki-icon-attention>\r\n      <div class=\"PatternInvalidMessageText\">[[patternValidationErrorMessage]]</div>\r\n    </div>\r\n  </template>\r\n</dom-if>\r\n"
 
 /***/ }),
 
@@ -43083,7 +43252,7 @@ module.exports = ".Paper{border:0 solid var(--palette-primary-light)}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Paper\" style$=\"[[_borderStyle(stroke)]] [[_roundingStyle(rounding)]] [[_elevationStyle(elevation)]]\">\r\n  <slot></slot>\r\n</div>\r\n"
+module.exports = "<div class=\"Paper\" style$=\"[[_borderStyle(stroke)]] [[_roundingStyle(rounding)]] [[_elevationStyle(elevation)]]\">\n  <slot></slot>\n</div>\n"
 
 /***/ }),
 
@@ -43263,7 +43432,7 @@ module.exports = ".Shaded{background-color:var(--palette-background-paper);--sha
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<maki-paper elevation=\"[[elevation]]\" rounding=\"[[rounding]]\" stroke=\"[[stroke]]\" >\r\n  <div class$=\"Shaded[[_isTransparent(transparent)]][[_isPrimary(primary)]][[_isSecondary(secondary)]][[_isError(error)]][[_isDisabled(disabled)]][[_isAccentPrimary(accentPrimary)]][[_isAccentSecondary(accentSecondary)]][[_isAccentError(accentError)]][[_isAccentDisabled(accentDisabled)]][[_isIconPrimary(iconPrimary)]][[_isIconSecondary(iconSecondary)]][[_isIconError(iconError)]][[_isIconDisabled(iconDisabled)]][[_isFill(fill)]]\"><slot></slot></div>\r\n</maki-paper>\r\n"
+module.exports = "<maki-paper elevation=\"[[elevation]]\" rounding=\"[[rounding]]\" stroke=\"[[stroke]]\" >\n  <div class$=\"Shaded[[_isTransparent(transparent)]][[_isPrimary(primary)]][[_isSecondary(secondary)]][[_isError(error)]][[_isDisabled(disabled)]][[_isAccentPrimary(accentPrimary)]][[_isAccentSecondary(accentSecondary)]][[_isAccentError(accentError)]][[_isAccentDisabled(accentDisabled)]][[_isIconPrimary(iconPrimary)]][[_isIconSecondary(iconSecondary)]][[_isIconError(iconError)]][[_isIconDisabled(iconDisabled)]][[_isFill(fill)]]\"><slot></slot></div>\n</maki-paper>\n"
 
 /***/ }),
 
@@ -43522,7 +43691,7 @@ module.exports = ".Theme{font-family:var(--typography-fontSize);font-size:var(--
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Theme\"><slot></slot></div>\r\n"
+module.exports = "<div class=\"Theme\"><slot></slot></div>\n"
 
 /***/ }),
 
@@ -43682,7 +43851,7 @@ window.customElements.define('playback-screen-wrapper', PlaybackScreenWrapper);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".Wrapper{height:100vh;max-width:var(--main-max-width);padding:0 0 57px}.ScrollContainer,.Wrapper{width:100%;box-sizing:border-box;float:left}.ScrollContainer{height:100%;overflow-y:auto;padding-bottom:75px}.Scroller{padding:0 16px}.TopbarButtonContainer{width:100%;height:62px;max-width:var(--main-max-width);padding:16px 0;box-sizing:border-box}.TopbarButtonContainer maki-button{float:right}.ButtonContainer{width:100%;max-width:var(--main-max-width);height:50px;margin-top:16px;margin-bottom:8px;box-sizing:border-box;background-color:var(--main-content-background-color)}.PrevButton{float:left}.NextButton,.SkipButton{float:right}.ButtonInner{display:flex}.ButtonInnerLeft,.ButtonInnerRight{display:inline-block;opacity:1;transform:scale(.7,1.2)}.ButtonInnerText{display:inline-block;padding:0 8px}.Title{margin-top:16px;font-size:var(--main-font-subheader-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.3px}.Subtitle,.Title{font-family:var(--typography-fontFamily);text-align:left;color:var(--palette-primary-main)}.Subtitle{font-size:var(--main-font-medium-text-size);font-style:italic;line-height:1.28;letter-spacing:-.4px;margin:7px 0 16px}maki-icon-cross{--icon-color:var(--icon-red-color)}.JourneyHeader{background-color:var(--button-gray-background-color);margin:0 -16px;padding:16px;display:flex;flex-direction:column;justify-content:center}.JourneyIcon{background-color:var(--icon-color-teal);border-radius:30px;width:20px;height:20px;padding:10px;align-self:center;box-sizing:content-box;--icon-color:var(--main-content-background-color)}maki-icon-bulb,maki-icon-truck{--icon-size:20px}.JourneyTitle{font-size:var(--main-font-medium-text-size);text-align:center}.JourneyProgress{height:30px;width:100%;display:flex;justify-content:center}.JourneyProgressDotEmpty{margin:7px;width:12px;height:12px;background-color:var(--main-content-background-color);border-radius:8px;border:2px solid var(--icon-color);box-sizing:content-box}.JourneyProgressDot{width:16px;height:16px;border-radius:8px}.JourneyProgressDot,.JourneyProgressDotCheck{margin:7px;background-color:var(--icon-color)}.JourneyProgressDotCheck{width:12px;height:12px;border-radius:8px;border:2px solid var(--icon-color);display:flex;box-sizing:content-box}maki-icon-check{margin:3px 0 3px 1px;box-sizing:content-box;--icon-color:var(--main-content-background-color)}.JourneyProgressLine{margin:14px 0;width:40px;height:2px;background-color:var(--icon-color);border-radius:1px}"
+module.exports = ".Wrapper{height:100vh;max-width:var(--main-max-width);padding:0 0 57px}.ScrollContainer,.Wrapper{width:100%;box-sizing:border-box;float:left}.ScrollContainer{height:100%;overflow-y:auto;padding-bottom:75px}.Scroller{padding:0 16px}.TopbarButtonContainer{width:100%;height:62px;max-width:var(--main-max-width);padding:16px 0;box-sizing:border-box}.TopbarButtonContainer maki-button{float:right}.ButtonContainer{width:100%;max-width:var(--main-max-width);height:50px;margin-top:16px;margin-bottom:50px;box-sizing:border-box;background-color:var(--main-content-background-color)}.PrevButton{float:left}.NextButton,.SkipButton{float:right}.ButtonInner{display:flex}.ButtonInnerLeft,.ButtonInnerRight{display:inline-block;opacity:1;transform:scale(.7,1.2)}.ButtonInnerText{display:inline-block;padding:0 8px}.Title{margin-top:16px;font-size:var(--main-font-subheader-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.3px}.Subtitle,.Title{font-family:var(--typography-fontFamily);text-align:left;color:var(--palette-primary-main)}.Subtitle{font-size:var(--main-font-medium-text-size);line-height:1.28;letter-spacing:-.4px;margin:7px 0 16px}maki-icon-cross{--icon-color:var(--icon-red-color)}.JourneyHeader{background-color:var(--button-gray-background-color);margin:0 -16px;padding:16px;display:flex;flex-direction:column;justify-content:center}.JourneyIcon{background-color:var(--icon-color-teal);border-radius:30px;width:20px;height:20px;padding:10px;align-self:center;box-sizing:content-box;--icon-color:var(--main-content-background-color)}maki-icon-bulb,maki-icon-truck{--icon-size:20px}.JourneyTitle{font-size:var(--main-font-medium-text-size);text-align:center}.JourneyProgress{height:30px;width:100%;display:flex;justify-content:center}.JourneyProgressDotEmpty{margin:7px;width:12px;height:12px;background-color:var(--main-content-background-color);border-radius:8px;border:2px solid var(--icon-color);box-sizing:content-box}.JourneyProgressDot{width:16px;height:16px;border-radius:8px}.JourneyProgressDot,.JourneyProgressDotCheck{margin:7px;background-color:var(--icon-color)}.JourneyProgressDotCheck{width:12px;height:12px;border-radius:8px;border:2px solid var(--icon-color);display:flex;box-sizing:content-box}maki-icon-check{margin:3px 0 3px 1px;box-sizing:content-box;--icon-color:var(--main-content-background-color)}.JourneyProgressLine{margin:14px 0;width:40px;height:2px;background-color:var(--icon-color);border-radius:1px}"
 
 /***/ }),
 
@@ -43909,7 +44078,7 @@ window.customElements.define('playback-screen-address', PlaybackScreenAddress);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".Wrapper{width:100%;height:100%;float:left}.Item{margin:5px 0}.Options{display:flex;flex-direction:column;margin-bottom:16px}.Option{border-radius:3px;padding:8px;color:var(--main-content-background-color);background-color:var(--icon-color);font-family:var(--typography-fontFamily);font-size:var(--main-font-text-size);margin-top:5px;cursor:pointer;display:flex;flex-direction:row;align-items:center;justify-content:space-between}.Option:hover{background-color:var(--icon-color-hover);color:var(--palette-primary-contrastText)}.OptionText{width:90%}.OptionCarrot{font-size:var(--main-font-text-size)}.Title{margin-top:32px;font-size:var(--main-font-text-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.3px}.Subtitle,.Title{font-family:var(--typography-fontFamily);text-align:left;color:var(--palette-primary-main)}.Subtitle{font-size:var(--main-font-medium-text-size);line-height:1.28;letter-spacing:-.4px;margin:7px 0 16px;display:flex}.SubtitleAttention{padding:10px}maki-icon-attention{padding:10px;--icon-color:var(--icon-red-color);--icon-size:40px}.Warning{display:flex;margin-top:0}.WarningTitle{font-family:var(--typography-fontFamily);font-size:var(--main-font-small-text-size);font-weight:500;font-stretch:normal;line-height:1.64;letter-spacing:-.3px;text-align:left;color:var(--palette-primary-main)}.WarningSubtitle{font-size:var(--main-font-text-size);font-weight:700;font-style:normal;line-height:normal}.SpinnerBox{display:flex;justify-content:start}.Spinner{margin:10px}.SpinnerMessage{margin-top:16px}"
+module.exports = ".Wrapper{width:100%;height:100%;float:left}.Item{margin:5px 0}.Options{display:flex;flex-direction:column;margin-bottom:16px}.Option{border-radius:3px;padding:8px;min-height:24px;color:var(--main-content-background-color);background-color:var(--icon-color);font-family:var(--typography-fontFamily);font-size:var(--main-font-text-size);margin-top:5px;cursor:pointer;display:flex;flex-direction:row;align-items:center;justify-content:space-between}.Option:hover{background-color:var(--icon-color-hover);color:var(--palette-primary-contrastText)}.OptionText{width:90%}.OptionCarrot{font-size:var(--main-font-text-size)}.Title{margin-top:32px;font-size:var(--main-font-text-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.3px}.Subtitle,.Title{font-family:var(--typography-fontFamily);text-align:left;color:var(--palette-primary-main)}.Subtitle{font-size:var(--main-font-medium-text-size);line-height:1.28;letter-spacing:-.4px;margin:7px 0 16px;display:flex}.SubtitleAttention{padding:10px}maki-icon-attention{padding:10px;--icon-color:var(--icon-red-color);--icon-size:40px}.Warning{display:flex;margin-top:0}.WarningTitle{font-family:var(--typography-fontFamily);font-size:var(--main-font-small-text-size);font-weight:500;font-stretch:normal;line-height:1.64;letter-spacing:-.3px;text-align:left;color:var(--palette-primary-main)}.WarningSubtitle{font-size:var(--main-font-text-size);font-weight:700;font-style:normal;line-height:normal}.SpinnerBox{display:flex;justify-content:flex-start}.Spinner{margin:10px}.SpinnerMessage{margin-top:16px}"
 
 /***/ }),
 
@@ -43920,7 +44089,7 @@ module.exports = ".Wrapper{width:100%;height:100%;float:left}.Item{margin:5px 0}
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<playback-screen-wrapper skip-callback=\"[[_skipCallback(question)]]\" no-next>\r\n    <div class=\"Item\">\r\n        <maki-input id=\"postalCodeInput\" elevation=\"0\" stroke=\"1\" placeholder=\"Postcode\" maxlength=\"6\" value=\"{{postalCode}}\" input-callback=\"[[_inputPostalCodeCallback()]]\" pattern=\"\\d{4}([A-Za-z]){2}\" />\r\n    </div>\r\n    <div class=\"Item\">\r\n        <maki-input id=\"numberInput\" elevation=\"0\" stroke=\"1\" placeholder=\"Huisnummer\" value=\"{{number}}\" input-callback=\"[[_inputNumberCallback()]]\" type=\"number\" pattern=\"\\d*\"></maki-input>\r\n    </div>\r\n    <div class=\"Item\">\r\n        <maki-input id=\"numberAdditionInput\" elevation=\"0\" stroke=\"1\" placeholder=\"Huisnummertoevoeging\" value=\"{{numberAddition}}\" input-callback=\"[[_inputNumberAdditionCallback()]]\"></maki-input>\r\n    </div>\r\n    <dom-if if=\"{{showApiResult(hasSearched, hasValidPostalCodeAndNumber)}}\">\r\n        <template>\r\n            <div id=\"foundAddresses\" class=\"Title\">Gevonden adressen</div>\r\n            <dom-if if=\"{{searching}}\">\r\n              <template>\r\n                <div class=\"SpinnerBox\">\r\n                  <img class=\"Spinner\" src=\"assets/media/Spinner.svg\" alt=\"spinner\">\r\n                  <div class=\"SpinnerMessage\">Ophalen adressen voor {{postalCode}}, {{number}}{{numberAddition}}</div>\r\n                </div>\r\n              </template>\r\n            </dom-if>\r\n            <dom-if if=\"{{!searching}}\">\r\n                <template>\r\n                    <dom-if if=\"{{!addresses.length}}\">\r\n                        <template>\r\n                            <div class=\"Subtitle\">\r\n                                <maki-icon-attention></maki-icon-attention>\r\n                                <div class=\"SubtitleAttention\">Het opgegeven adres is onbekend. Controleer de postcode, huisnummer en eventueel toevoeging en probeer opnieuw.</div>\r\n                            </div>\r\n                        </template>\r\n                    </dom-if>\r\n                    <dom-if if=\"{{addresses.length}}\">\r\n                        <template>\r\n                            <div class=\"Subtitle\">Staat uw adres niet in de lijst, controleer dan de ingevulde postcode, huisnummer en eventueel huisnummertoevoeging en probeer opnieuw.</div>\r\n                        </template>\r\n                    </dom-if>\r\n                </template>\r\n            </dom-if>\r\n            <div class=\"Options\">\r\n                <dom-repeat items=\"{{addresses}}\">\r\n                    <template>\r\n                        <div class=\"Option\" data-index=\"[[index]]\" data-question=\"[[question]]\" on-click=\"_optionClick\">\r\n                            <dom-if if=\"{{hasAddition(item.huisnummertoevoeging)}}\">\r\n                                <template>\r\n                                    <div class=\"OptionText\">{{item.straat}} {{item.huisnummer}} {{item.huisnummertoevoeging}}, {{item.postcode}} {{item.woonplaats}}</div>\r\n                                </template>\r\n                            </dom-if>\r\n                            <dom-if if=\"{{!hasAddition(item.huisnummertoevoeging)}}\">\r\n                                <template>\r\n                                    <div class=\"OptionText\">{{item.straat}} {{item.huisnummer}}, {{item.postcode}} {{item.woonplaats}}</div>\r\n                                </template>\r\n                            </dom-if>\r\n                            <div class=\"OptionCarrot\">></div>\r\n                        </div>\r\n                    </template>\r\n                </dom-repeat>\r\n            </div>\r\n            <div>\r\n                <dom-if if=\"{{inWrongCity}}\">\r\n                    <template>\r\n                        <div class=\"Warning\">\r\n                            <maki-icon-attention width=\"30px\"></maki-icon-attention>\r\n                            <div class=\"WarningTitle\">\r\n                                <div class=\"WarningSubtitle\">Let op!</div>\r\n                                <div>Het nieuwe adres dat je opgeeft ligt niet in de aangesloten gemeenten. Kies op <a href=\"https://www.burgerberichten.nl/gemeenten/verhuizen\" target=\"_blank\">deze pagina</a> de gemeente van je nieuwe adres.</div>\r\n                            </div>\r\n                        </div>                        \r\n\r\n                    </template>\r\n                </dom-if>\r\n            </div>\r\n        </template>\r\n    </dom-if>\r\n</playback-screen-wrapper>\r\n"
+module.exports = "<playback-screen-wrapper skip-callback=\"[[_skipCallback(question)]]\" no-next>\r\n  <div class=\"Item\">\r\n    <maki-input id=\"postalCodeInput\" elevation=\"0\" stroke=\"1\" placeholder=\"Postcode\" maxlength=\"6\" value=\"{{postalCode}}\" input-callback=\"[[_inputPostalCodeCallback()]]\" pattern=\"\\d{4}([A-Za-z]){2}\" pattern-validation-error-message=\"Gebruik de juiste opmaak '1234AB'\" />\r\n  </div>\r\n  <div class=\"Item\">\r\n    <maki-input id=\"numberInput\" elevation=\"0\" stroke=\"1\" placeholder=\"Huisnummer\" value=\"{{number}}\" input-callback=\"[[_inputNumberCallback()]]\" type=\"number\" pattern=\"\\d*\" pattern-validation-error-message=\"Gebruik alleen cijfers bij het invullen\"></maki-input>\r\n  </div>\r\n  <div class=\"Item\">\r\n    <maki-input id=\"numberAdditionInput\" elevation=\"0\" stroke=\"1\" placeholder=\"Huisnummertoevoeging\" value=\"{{numberAddition}}\" input-callback=\"[[_inputNumberAdditionCallback()]]\"></maki-input>\r\n  </div>\r\n  <dom-if if=\"{{showApiResult(hasSearched, hasValidPostalCodeAndNumber)}}\">\r\n    <template>\r\n      <div id=\"foundAddresses\" class=\"Title\">Gevonden adressen</div>\r\n      <dom-if if=\"{{searching}}\">\r\n        <template>\r\n          <div class=\"SpinnerBox\">\r\n            <img class=\"Spinner\" src=\"assets/media/Spinner.svg\" alt=\"spinner\">\r\n            <div class=\"SpinnerMessage\">Ophalen adressen voor {{postalCode}}, {{number}}{{numberAddition}}</div>\r\n          </div>\r\n        </template>\r\n      </dom-if>\r\n      <dom-if if=\"{{!searching}}\">\r\n        <template>\r\n          <dom-if if=\"{{!addresses.length}}\">\r\n            <template>\r\n              <div class=\"Subtitle\">\r\n                <maki-icon-attention></maki-icon-attention>\r\n                <div class=\"SubtitleAttention\">Het opgegeven adres is onbekend. Controleer de postcode, huisnummer en eventueel toevoeging en probeer opnieuw.</div>\r\n              </div>\r\n            </template>\r\n          </dom-if>\r\n          <dom-if if=\"{{addresses.length}}\">\r\n            <template>\r\n              <div class=\"Subtitle\">Staat uw adres niet in de lijst, controleer dan de ingevulde postcode, huisnummer en eventueel huisnummertoevoeging en probeer opnieuw.</div>\r\n            </template>\r\n          </dom-if>\r\n        </template>\r\n      </dom-if>\r\n      <div class=\"Options\">\r\n        <dom-repeat items=\"{{addresses}}\">\r\n          <template>\r\n            <div class=\"Option\" data-index=\"[[index]]\" data-question=\"[[question]]\" on-click=\"_optionClick\">\r\n              <dom-if if=\"{{hasAddition(item.huisnummertoevoeging)}}\">\r\n                <template>\r\n                  <div class=\"OptionText\">{{item.straat}} {{item.huisnummer}} {{item.huisnummertoevoeging}}, {{item.postcode}} {{item.woonplaats}}</div>\r\n                </template>\r\n              </dom-if>\r\n              <dom-if if=\"{{!hasAddition(item.huisnummertoevoeging)}}\">\r\n                <template>\r\n                  <div class=\"OptionText\">{{item.straat}} {{item.huisnummer}}, {{item.postcode}} {{item.woonplaats}}</div>\r\n                </template>\r\n              </dom-if>\r\n              <div class=\"OptionCarrot\">></div>\r\n            </div>\r\n          </template>\r\n        </dom-repeat>\r\n      </div>\r\n      <div>\r\n        <dom-if if=\"{{inWrongCity}}\">\r\n          <template>\r\n            <div class=\"Warning\">\r\n              <maki-icon-attention width=\"30px\"></maki-icon-attention>\r\n              <div class=\"WarningTitle\">\r\n                <div class=\"WarningSubtitle\">Let op!</div>\r\n                <div>Het nieuwe adres dat je opgeeft ligt helaas niet in een gemeente die MijnApp gebruikt. Geef de adreswijziging door op de website van de gemeente waar je naar toe verhuist.</div>\r\n              </div>\r\n            </div>\r\n          </template>\r\n        </dom-if>\r\n      </div>\r\n    </template>\r\n  </dom-if>\r\n</playback-screen-wrapper>\r\n"
 
 /***/ }),
 
@@ -44044,7 +44213,7 @@ module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled=\"[[_isDisabled(order)]]\">\r\n  <div class=\"Options\">\r\n    <div class=\"Option\" on-click=\"_optionClick\">\r\n      Ja\r\n      <div class$=\"Circle[[_isSelected(order)]]\"></div>\r\n    </div>\r\n  </div>\r\n</playback-screen-wrapper>\r\n"
+module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled=\"[[_isDisabled(order)]]\">\n  <div class=\"Options\">\n    <div class=\"Option\" on-click=\"_optionClick\">\n      Ja\n      <div class$=\"Circle[[_isSelected(order)]]\"></div>\n    </div>\n  </div>\n</playback-screen-wrapper>\n"
 
 /***/ }),
 
@@ -44493,7 +44662,7 @@ window.customElements.define('playback-screen-end', PlaybackScreenEnd);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".Wrapper{height:100vh;float:left;padding:0 0 57px}.TopbarButtonContainer,.Wrapper{width:100%;max-width:var(--main-max-width);box-sizing:border-box}.TopbarButtonContainer{height:62px;padding:16px 0}.TopbarButtonContainer maki-button{float:right}.ScrollContainer{box-sizing:border-box;width:100%;height:100%;float:left;overflow-y:auto;padding-bottom:75px}.Scroller{padding:0 16px}.ButtonContainer{width:100%;max-width:var(--main-max-width);height:50px;margin-top:16px;margin-bottom:8px;box-sizing:border-box;background-color:var(--main-content-background-color)}.DownloadButton,.PrevButton{float:left}.NextButton,.SkipButton{float:right}.ButtonInner{clear:both}.ButtonInnerLeft,.ButtonInnerRight{display:inline-block;opacity:1;transform:scale(.7,1.2)}.ButtonInnerText{display:inline-block;padding:0 8px}.Title{margin-top:16px;font-size:var(--main-font-subheader-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.3px}.Subtitle,.Title{font-family:var(--typography-fontFamily);text-align:left;color:var(--palette-primary-main)}.Subtitle{font-size:var(--main-font-medium-text-size);font-style:italic;line-height:1.28;letter-spacing:-.4px;margin:7px 0 16px}.Answer{padding:10px 0}.AnswerLabel{font-weight:700;letter-spacing:-.2px;margin-bottom:3px}.AnswerAnswer,.AnswerLabel{font-family:var(--typography-fontFamily);font-size:var(--main-font-medium-text-size);font-style:normal;font-stretch:normal;text-align:left;color:var(--palette-primary-main);margin-left:40px}.AnswerAnswer{font-weight:400;letter-spacing:-.3px;white-space:pre-line}.RequestMessage{font-family:var(--typography-fontFamily);font-size:var(--main-font-text-size);font-weight:700;color:var(--palette-primary-main);text-align:center;line-height:56px}.RequestMessageBox{width:100%;display:flex;justify-content:center}.RequestSubMessage{font-family:var(--typography-fontFamily);font-size:var(--main-font-small-text-size);font-weight:700;color:var(--palette-primary-main);text-align:center;line-height:20px}maki-icon-cross{--icon-color:var(--icon-red-color)}.JourneyHeader{background-color:var(--button-gray-background-color);margin:0 -16px;padding:16px;display:flex;flex-direction:column;justify-content:center}.JourneyIcon{background-color:var(--icon-color-teal);border-radius:30px;width:20px;height:20px;padding:10px;align-self:center;box-sizing:content-box;--icon-color:var(--main-content-background-color)}.JourneyTitle{font-size:var(--main-font-medium-text-size);text-align:center}maki-icon-bulb,maki-icon-truck{--icon-size:20px}.JourneyProgress{height:30px;width:100%;display:flex;justify-content:center}.JourneyProgressDotEmpty{margin:7px;width:12px;height:12px;background-color:var(--main-content-background-color);border-radius:8px;border:2px solid var(--icon-color);box-sizing:content-box}.JourneyProgressDot{width:16px;height:16px;border-radius:8px}.JourneyProgressDot,.JourneyProgressDotCheck{margin:7px;background-color:var(--icon-color)}.JourneyProgressDotCheck{width:12px;height:12px;border-radius:8px;border:2px solid var(--icon-color);display:flex;box-sizing:content-box}maki-icon-check{margin:3px 0 3px 1px;--icon-color:var(--main-content-background-color)}.JourneyProgressLine{margin:14px 0;width:40px;height:2px;background-color:var(--icon-color);border-radius:1px}.SuccessIcon{margin-top:15px;text-align:center}.SuccessIconImage{margin:auto;width:100px;height:100px;background-image:url(assets/radio.svg);background-repeat:no-repeat;background-position:50%;background-size:contain}.Image{width:30px;height:30px;float:left;margin:10px 10px 0 0}.SpinnerBox{display:flex;justify-content:start}.Spinner{margin:10px}"
+module.exports = ".Wrapper{height:100vh;float:left;padding:0 0 57px}.TopbarButtonContainer,.Wrapper{width:100%;max-width:var(--main-max-width);box-sizing:border-box}.TopbarButtonContainer{height:62px;padding:16px 0}.TopbarButtonContainer maki-button{float:right}.ScrollContainer{box-sizing:border-box;width:100%;height:100%;float:left;overflow-y:auto;padding-bottom:75px}.Scroller{padding:0 16px}.ButtonContainer{width:100%;max-width:var(--main-max-width);height:50px;margin-top:16px;margin-bottom:8px;box-sizing:border-box;background-color:var(--main-content-background-color)}.DownloadButton,.PrevButton{float:left}.NextButton,.SkipButton{float:right}.ButtonInner{clear:both}.ButtonInnerLeft,.ButtonInnerRight{display:inline-block;opacity:1;transform:scale(.7,1.2)}.ButtonInnerText{display:inline-block;padding:0 8px}.Title{margin-top:16px;font-size:var(--main-font-subheader-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:normal;letter-spacing:-.3px}.Subtitle,.Title{font-family:var(--typography-fontFamily);text-align:left;color:var(--palette-primary-main)}.Subtitle{font-size:var(--main-font-medium-text-size);line-height:1.28;letter-spacing:-.4px;margin:7px 0 16px}.Answer{padding:10px 0}.AnswerLabel{font-weight:700;letter-spacing:-.2px;margin-bottom:3px}.AnswerAnswer,.AnswerLabel{font-family:var(--typography-fontFamily);font-size:var(--main-font-medium-text-size);font-style:normal;font-stretch:normal;text-align:left;color:var(--palette-primary-main);margin-left:40px}.AnswerAnswer{font-weight:400;letter-spacing:-.3px;white-space:pre-line}.RequestMessage{font-family:var(--typography-fontFamily);font-size:var(--main-font-text-size);font-weight:700;color:var(--palette-primary-main);text-align:center;line-height:56px}.RequestMessageBox{width:100%;display:flex;justify-content:center}.RequestSubMessage{font-family:var(--typography-fontFamily);font-size:var(--main-font-small-text-size);font-weight:700;color:var(--palette-primary-main);text-align:center;line-height:20px}maki-icon-cross{--icon-color:var(--icon-red-color)}.JourneyHeader{background-color:var(--button-gray-background-color);margin:0 -16px;padding:16px;display:flex;flex-direction:column;justify-content:center}.JourneyIcon{background-color:var(--icon-color-teal);border-radius:30px;width:20px;height:20px;padding:10px;align-self:center;box-sizing:content-box;--icon-color:var(--main-content-background-color)}.JourneyTitle{font-size:var(--main-font-medium-text-size);text-align:center}maki-icon-bulb,maki-icon-truck{--icon-size:20px}.JourneyProgress{height:30px;width:100%;display:flex;justify-content:center}.JourneyProgressDotEmpty{margin:7px;width:12px;height:12px;background-color:var(--main-content-background-color);border-radius:8px;border:2px solid var(--icon-color);box-sizing:content-box}.JourneyProgressDot{width:16px;height:16px;border-radius:8px}.JourneyProgressDot,.JourneyProgressDotCheck{margin:7px;background-color:var(--icon-color)}.JourneyProgressDotCheck{width:12px;height:12px;border-radius:8px;border:2px solid var(--icon-color);display:flex;box-sizing:content-box}maki-icon-check{margin:3px 0 3px 1px;--icon-color:var(--main-content-background-color)}.JourneyProgressLine{margin:14px 0;width:40px;height:2px;background-color:var(--icon-color);border-radius:1px}.SuccessIcon{margin-top:15px;text-align:center}.SuccessIconImage{margin:auto;width:100px;height:100px;background-image:url(assets/radio.svg);background-repeat:no-repeat;background-position:50%;background-size:contain}.Image{width:30px;height:30px;float:left;margin:10px 10px 0 0}.SpinnerBox{display:flex;justify-content:flex-start}.Spinner{margin:10px}"
 
 /***/ }),
 
@@ -44612,7 +44781,7 @@ module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<playback-screen-wrapper no-next>\r\n  Type niet gespecificeerd\r\n</playback-screen-wrapper>\r\n"
+module.exports = "<playback-screen-wrapper no-next>\n  Type niet gespecificeerd\n</playback-screen-wrapper>\n"
 
 /***/ }),
 
@@ -44761,7 +44930,7 @@ module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled=\"[[_isDisabled(order)]]\">\r\n  <dom-repeat items=\"[[_items(question)]]\">\r\n    <template>\r\n      <div class=\"Item\">\r\n        <maki-input elevation=\"0\" stroke=\"1\" placeholder=\"[[_itemTitle(item.title)]]\" value=\"[[_getValue(order, index)]]\" input-callback=\"[[_inputCallback(question, index, order)]]\" type=\"[[_determineType(item.pattern)]]\" pattern=\"[[item.pattern]]\"></maki-input>\r\n      </div>\r\n    </template>\r\n  </dom-repeat>\r\n</playback-screen-wrapper>\r\n"
+module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled=\"[[_isDisabled(order)]]\">\r\n  <dom-repeat items=\"[[_items(question)]]\">\r\n    <template>\r\n      <div class=\"Item\">\r\n        <maki-input elevation=\"0\" stroke=\"1\" placeholder=\"[[_itemTitle(item.title)]]\" value=\"[[_getValue(order, index)]]\" input-callback=\"[[_inputCallback(question, index, order)]]\" type=\"[[_determineType(item.pattern)]]\" pattern=\"[[item.pattern]]\" pattern-validation-error-message=\"[[item.patternValidationErrorMessage]]\"></maki-input>\r\n      </div>\r\n    </template>\r\n  </dom-repeat>\r\n</playback-screen-wrapper>\r\n"
 
 /***/ }),
 
@@ -44907,7 +45076,7 @@ module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled=\"[[_isDisabled()]]\">\r\n  <div class=\"Options\">\r\n    <dom-repeat items=\"[[_optionNames(question)]]\">\r\n      <template>\r\n        <div class=\"Option\" data-index=\"[[index]]\" on-click=\"_optionClick\">\r\n          [[item]]\r\n          <div class$=\"Circle[[_isSelected(index, selected)]]\"></div>\r\n        </div>\r\n      </template>\r\n    </dom-repeat>\r\n  </div>\r\n</playback-screen-wrapper>\r\n"
+module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled=\"[[_isDisabled()]]\">\n  <div class=\"Options\">\n    <dom-repeat items=\"[[_optionNames(question)]]\">\n      <template>\n        <div class=\"Option\" data-index=\"[[index]]\" on-click=\"_optionClick\">\n          [[item]]\n          <div class$=\"Circle[[_isSelected(index, selected)]]\"></div>\n        </div>\n      </template>\n    </dom-repeat>\n  </div>\n</playback-screen-wrapper>\n"
 
 /***/ }),
 
@@ -45101,7 +45270,7 @@ window.customElements.define('playback-screen-persons-moving', PlaybackScreenPer
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width);float:left}.Options{width:100%;display:inline-block}.Option{margin:5px 0;display:flex;align-items:flex-start;font-family:var(--typography-fontFamily);float:left;box-sizing:border-box;width:100%;font-size:var(--main-font-text-size);font-weight:500;font-style:normal;font-stretch:normal;line-height:1.28;letter-spacing:-.3px;text-align:left;padding:17px 0 16px 22px;color:var(--palette-primary-main);background-color:var(--button-gray-background-color);border-radius:3px;position:relative;cursor:pointer}.Option:hover:after{content:\" \";width:100%;height:100%;position:absolute;top:0;left:0;background-color:var(--palette-action-hover)}.Circle{pointer-events:none;float:left;margin-left:-10px;width:20px;height:20px;border:1px solid var(--palette-primary-main);border-radius:5px;top:17px;right:15px;flex:none}.Circle.selected{pointer-events:none;width:22px;height:22px;border:0;background-image:url(assets/checkBox.svg);background-repeat:no-repeat;background-position:50%;background-size:contain}.OptionText{display:inline;margin-left:10px;flex-grow:1;flex-basis:0}.SpinnerBox{display:flex;justify-content:start}.Spinner{margin:10px}.SpinnerMessage{margin-top:16px}"
+module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width);float:left}.Options{width:100%;display:inline-block}.Option{margin:5px 0;display:flex;align-items:flex-start;font-family:var(--typography-fontFamily);float:left;box-sizing:border-box;width:100%;font-size:var(--main-font-text-size);font-weight:500;font-style:normal;font-stretch:normal;line-height:1.28;letter-spacing:-.3px;text-align:left;padding:17px 0 16px 22px;color:var(--palette-primary-main);background-color:var(--button-gray-background-color);border-radius:3px;position:relative;cursor:pointer}.Option:hover:after{content:\" \";width:100%;height:100%;position:absolute;top:0;left:0;background-color:var(--palette-action-hover)}.Circle{pointer-events:none;float:left;margin-left:-10px;width:20px;height:20px;border:1px solid var(--palette-primary-main);border-radius:5px;top:17px;right:15px;flex:none}.Circle.selected{pointer-events:none;width:22px;height:22px;border:0;background-image:url(assets/checkBox.svg);background-repeat:no-repeat;background-position:50%;background-size:contain}.OptionText{display:inline;margin-left:10px;flex-grow:1;flex-basis:0}.SpinnerBox{display:flex;justify-content:flex-start}.Spinner{margin:10px}.SpinnerMessage{margin-top:16px}"
 
 /***/ }),
 
@@ -45245,7 +45414,7 @@ module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question, selected)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled=\"[[_isDisabled(order, question, selected)]]\">\r\n  <div class=\"Options\">\r\n    <dom-repeat items=\"[[_optionNames(question)]]\">\r\n      <template>\r\n        <div class=\"Option\" data-index=\"[[index]]\" on-click=\"_optionClick\">\r\n          [[item]]\r\n          <div class$=\"Circle[[_isSelected(index, selected)]]\"></div>\r\n        </div>\r\n      </template>\r\n    </dom-repeat>\r\n  </div>\r\n</playback-screen-wrapper>\r\n"
+module.exports = "<playback-screen-wrapper next-callback=\"[[_nextCallback(question, selected)]]\" skip-callback=\"[[_skipCallback(question)]]\" disabled=\"[[_isDisabled(order, question, selected)]]\">\n  <div class=\"Options\">\n    <dom-repeat items=\"[[_optionNames(question)]]\">\n      <template>\n        <div class=\"Option\" data-index=\"[[index]]\" on-click=\"_optionClick\">\n          [[item]]\n          <div class$=\"Circle[[_isSelected(index, selected)]]\"></div>\n        </div>\n      </template>\n    </dom-repeat>\n  </div>\n</playback-screen-wrapper>\n"
 
 /***/ }),
 
@@ -45355,7 +45524,7 @@ module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<playback-screen-wrapper skip-callback=\"[[_skipCallback(question)]]\" no-next>\r\n  <div class=\"Options\">\r\n    <dom-repeat items=\"[[_optionNames(question)]]\">\r\n      <template>\r\n        <div class=\"Option\" data-question=\"[[question]]\" data-index=\"[[index]]\" on-click=\"_optionClick\">[[item]]</div>\r\n      </template>\r\n    </dom-repeat>\r\n  </div>\r\n</playback-screen-wrapper>\r\n"
+module.exports = "<playback-screen-wrapper skip-callback=\"[[_skipCallback(question)]]\" no-next>\n  <div class=\"Options\">\n    <dom-repeat items=\"[[_optionNames(question)]]\">\n      <template>\n        <div class=\"Option\" data-question=\"[[question]]\" data-index=\"[[index]]\" on-click=\"_optionClick\">[[item]]</div>\n      </template>\n    </dom-repeat>\n  </div>\n</playback-screen-wrapper>\n"
 
 /***/ }),
 
@@ -45487,7 +45656,7 @@ window.customElements.define('playback-screen-start', PlaybackScreenStart);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host{width:100%;height:100%;float:left}.Wrapper{height:100vh;float:left;padding:0 0 57px;position:relative}.TopbarButtonContainer,.Wrapper{box-sizing:border-box;width:100%;max-width:var(--main-max-width)}.TopbarButtonContainer{height:62px;padding:16px 0}.ButtonContainer{width:100%;max-width:var(--main-max-width);margin-top:30px;margin-bottom:8px;height:50px;box-sizing:border-box;background-color:var(--main-content-background-color);display:flex;justify-content:center}.BackButton{display:inline-block;opacity:1;transform:scale(.7,1.2)}.ButtonInner{display:flex}.ButtonInnerLeft,.ButtonInnerRight{display:inline-block;opacity:0;transform:scale(.7,1.2)}.ButtonInnerText{display:inline-block;padding:0 35px}.ButtonInnerRight{opacity:1}.ScrollContainer{box-sizing:border-box;width:100%;height:100%;float:left;overflow-y:auto;padding-bottom:75px}.Scroller{padding:0 16px;position:relative}.JourneyHeader{background-color:var(--button-gray-background-color);margin:0 -16px;padding:10px 16px;display:flex;flex-direction:column;justify-content:center}.JourneyIcon{background-color:var(--icon-color-teal);border-radius:30px;width:40px;height:40px;padding:10px;align-self:center;box-sizing:content-box;--icon-color:var(--main-content-background-color)}maki-icon-bulb,maki-icon-truck{--icon-size:40px}maki-icon-edit-document,maki-icon-steps{background-color:var(--button-gray-background-color);border-radius:15px;width:20px;height:20px;padding:5px;margin:0 10px 0 0;box-sizing:content-box;--icon-color:var(--icon-color-teal)}.Title{font-weight:700;font-style:normal;line-height:normal;text-align:left;margin:auto}.SubtitleCenter,.Title{font-family:var(--typography-fontFamily);font-size:var(--main-font-small-text-size);font-stretch:normal;letter-spacing:-.3px;color:var(--palette-primary-main)}.SubtitleCenter{font-weight:500;line-height:1.64;margin-top:7px;display:flex;justify-content:center}.SectionTitle{font-family:var(--typography-fontFamily);font-size:var(--main-font-text-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:30px;letter-spacing:-.3px;text-align:left;color:var(--palette-primary-main);margin:30px 0 15px;display:flex;justify-content:flext-start}.WarningTitle{display:flex;margin-top:20px}.WarningSubtitle{font-family:var(--typography-fontFamily);font-size:var(--main-font-small-text-size);font-weight:500;font-style:italic;font-stretch:normal;line-height:1.64;letter-spacing:-.3px;text-align:left;color:var(--palette-primary-main);margin-top:7px;margin-left:15px}.DotListItem{display:flex;align-items:center;margin-bottom:3px;padding-left:10px}.DotListItem:last-of-type{margin:0}.DotListItem .Dot{margin:2px 23px 0 0;width:8px;height:8px;background-color:var(--icon-color-teal);border-radius:4px}.NoItems{width:15px;height:15px;margin:2px 19px 0 -3px;border:0;background-image:url(assets/radio.svg);background-repeat:no-repeat;background-position:50%;background-size:contain}.DotListItem .Text{font-family:var(--typography-fontFamily);width:calc(100% - 21px);font-size:var(--main-font-small-text-size);font-weight:500;font-style:normal;font-stretch:normal;line-height:1.64;letter-spacing:-.3px;text-align:left;color:var(--palette-primary-main)}.NumberedListItem{display:flex;align-items:center;margin-bottom:10px}.NumberedListItem:last-of-type{margin:0}.NumberedListItem .Number{margin-right:9px;width:18px;height:18px;background-color:var(--palette-primary-main);color:var(--palette-primary-contrastText);border-radius:9px;font-size:var(--main-font-smallest-text-size);font-weight:700;letter-spacing:normal;line-height:18px;text-align:center}.NumberedListItem .Number,.NumberedListItem .Text{font-family:var(--typography-fontFamily);font-style:normal;font-stretch:normal}.NumberedListItem .Text{opacity:.7;font-size:var(--main-font-small-text-size);font-weight:500;line-height:1.64;letter-spacing:-.3px;text-align:left;color:var(--palette-primary-main)}maki-icon-attention,maki-icon-cross{--icon-color:var(--icon-red-color)}maki-icon-attention{margin:10px 0 0;--icon-size:30px}.Spinner{margin:10px}.SpinnerMessage{margin-top:16px}"
+module.exports = ":host{width:100%;height:100%;float:left}.Wrapper{height:100vh;float:left;padding:0 0 57px;position:relative}.TopbarButtonContainer,.Wrapper{box-sizing:border-box;width:100%;max-width:var(--main-max-width)}.TopbarButtonContainer{height:62px;padding:16px 0}.ButtonContainer{width:100%;max-width:var(--main-max-width);margin-top:30px;margin-bottom:8px;height:50px;box-sizing:border-box;background-color:var(--main-content-background-color);display:flex;justify-content:center}.BackButton{display:inline-block;opacity:1;transform:scale(.7,1.2)}.ButtonInner{display:flex}.ButtonInnerLeft,.ButtonInnerRight{display:inline-block;opacity:0;transform:scale(.7,1.2)}.ButtonInnerText{display:inline-block;padding:0 35px}.ButtonInnerRight{opacity:1}.ScrollContainer{box-sizing:border-box;width:100%;height:100%;float:left;overflow-y:auto;padding-bottom:75px}.Scroller{padding:0 16px;position:relative}.JourneyHeader{background-color:var(--button-gray-background-color);margin:0 -16px;padding:10px 16px;display:flex;flex-direction:column;justify-content:center}.JourneyIcon{background-color:var(--icon-color-teal);border-radius:30px;width:40px;height:40px;padding:10px;align-self:center;box-sizing:content-box;--icon-color:var(--main-content-background-color)}maki-icon-bulb,maki-icon-truck{--icon-size:40px}maki-icon-edit-document,maki-icon-steps{background-color:var(--button-gray-background-color);border-radius:10px;width:10px;height:10px;padding:0 5px 10px;margin:0 10px 0 0;box-sizing:content-box;--icon-color:var(--icon-color-teal)}.Title{font-weight:700;font-style:normal;line-height:normal;text-align:left;margin:auto}.SubtitleCenter,.Title{font-family:var(--typography-fontFamily);font-size:var(--main-font-small-text-size);font-stretch:normal;letter-spacing:-.3px;color:var(--palette-primary-main)}.SubtitleCenter{font-weight:500;line-height:1.64;margin-top:7px;display:flex;justify-content:center}.SectionTitle{font-family:var(--typography-fontFamily);font-size:var(--main-font-subheader-size);font-weight:700;font-style:normal;font-stretch:normal;line-height:30px;letter-spacing:-.3px;text-align:left;color:var(--palette-primary-main);margin:30px 0 15px;display:flex;justify-content:flext-start}.WarningTitle{display:flex;margin-top:20px}.WarningSubtitle{font-family:var(--typography-fontFamily);font-size:var(--main-font-small-text-size);font-weight:500;font-style:italic;font-stretch:normal;line-height:1.64;letter-spacing:-.3px;text-align:left;color:var(--palette-primary-main);margin-top:7px;margin-left:15px}.DotListItem{display:flex;align-items:center;margin-bottom:3px}.DotListItem:last-of-type{margin:0}.DotListItem .Dot{margin:2px 23px 0 0;width:8px;height:8px;background-color:var(--icon-color-teal);border-radius:4px}.NoItems{width:15px;height:15px;margin:2px 19px 0 -3px;border:0;background-image:url(assets/radio.svg);background-repeat:no-repeat;background-position:50%;background-size:contain}.DotListItem .Text{font-family:var(--typography-fontFamily);width:calc(100% - 21px);font-size:var(--main-font-medium-text-size);font-weight:500;font-style:normal;font-stretch:normal;line-height:1.64;letter-spacing:-.3px;text-align:left;color:var(--palette-primary-main)}.NumberedListItem{display:flex;align-items:center;margin-bottom:10px}.NumberedListItem:last-of-type{margin:0}.NumberedListItem .Number{margin-right:9px;width:18px;height:18px;background-color:var(--palette-primary-main);color:var(--palette-primary-contrastText);border-radius:9px;font-size:var(--main-font-smallest-text-size);font-weight:700;letter-spacing:normal;line-height:18px;text-align:center}.NumberedListItem .Number,.NumberedListItem .Text{font-family:var(--typography-fontFamily);font-style:normal;font-stretch:normal}.NumberedListItem .Text{opacity:.7;font-size:var(--main-font-small-text-size);font-weight:500;line-height:1.64;letter-spacing:-.3px;text-align:left;color:var(--palette-primary-main)}maki-icon-attention,maki-icon-cross{--icon-color:var(--icon-red-color)}maki-icon-attention{margin:10px 0 0;--icon-size:30px}.Spinner{margin:10px}.SpinnerMessage{margin-top:16px}"
 
 /***/ }),
 
@@ -45498,7 +45667,7 @@ module.exports = ":host{width:100%;height:100%;float:left}.Wrapper{height:100vh;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"Wrapper\">\r\n    <div class=\"ScrollContainer\">\r\n        <div class=\"Scroller\">\r\n            <div class=\"TopbarButtonContainer\">\r\n                <maki-button on-click=\"_stop\" size=\"30\" stroke=\"0\" font-size=\"16\" set-color-main=\"#3192CF\" heading=\"Ga terug\">\r\n                    <div class=\"BackButton\"><</div>\r\n                </maki-button>\r\n            </div>\r\n            <div class=\"JourneyHeader\">\r\n                <div class=\"JourneyIcon\">\r\n                    <dom-if if=\"{{show_journey_icon_truck}}\">\r\n                        <template>\r\n                            <maki-icon-truck />\r\n                        </template>\r\n                    </dom-if>\r\n                    <dom-if if=\"{{show_journey_icon_bulb}}\">\r\n                        <template>\r\n                            <maki-icon-bulb />\r\n                        </template>\r\n                    </dom-if>\r\n                </div>\r\n                <div class=\"Title\">[[_title(journey)]]</div>\r\n            </div>\r\n            <div class=\"SectionTitle\">\r\n                <maki-icon-steps></maki-icon-steps>\r\n                <div>Deze stappen ga je doorlopen</div>\r\n            </div>\r\n            <div class=\"DotList\">\r\n                <dom-repeat items=\"[[_steps(journey)]]\">\r\n                    <template>\r\n                        <div class=\"DotListItem\">\r\n                            <div class=\"Dot\"></div>\r\n                            <div class=\"Text\">[[item]]</div>\r\n                        </div>\r\n                    </template>\r\n                </dom-repeat>\r\n            </div>\r\n            <dom-if if=\"{{_hasDocuments(journey)}}\">\r\n                <template>\r\n                    <div class=\"SectionTitle\">\r\n                        <maki-icon-edit-document></maki-icon-edit-document>\r\n                        <div>Benodigde documenten</div>\r\n                    </div>\r\n                    <dom-repeat items=\"[[_documents(journey)]]\">\r\n                        <template>\r\n                            <div class=\"DotListItem\">\r\n                                <div class=\"Dot\"></div>\r\n                                <div class=\"Text\">[[item]]</div>\r\n                            </div>\r\n                        </template>\r\n                    </dom-repeat>\r\n                </template>\r\n            </dom-if>\r\n            <dom-if if=\"{{preconditionsFullFilled}}\">\r\n                <template>\r\n                    <div class=\"ButtonContainer\">\r\n                        <maki-button highlight size=\"40\" font-size=\"16\" set-color-highlight=\"#3192CF\" on-click=\"[[_start(journey)]]\">\r\n                            <div class=\"ButtonInner\">\r\n                                <div class=\"ButtonInnerText\">Starten</div>\r\n                                <div class=\"ButtonInnerRight\">></div>\r\n                            </div>\r\n                        </maki-button>\r\n                    </div>\r\n                </template>\r\n            </dom-if>\r\n            <dom-if if=\"{{!preconditionsFullFilled}}\">\r\n                <template>\r\n                    <dom-if if=\"{{!preconditionsBeingChecked}}\">\r\n                        <template>\r\n                            <div class=\"WarningTitle\">\r\n                                <maki-icon-attention width=\"30px\"></maki-icon-attention>\r\n                                <div class=\"WarningSubtitle\">\r\n                                    <div class=\"Title\">Dit proces kan niet worden gestart.</div>\r\n                                    <div class=\"WarningSubtitleLeft\">{{journey.preconditions}}</div>\r\n                                </div>\r\n                            </div>\r\n                        </template>\r\n                    </dom-if>\r\n                </template>\r\n            </dom-if>\r\n            <dom-if if=\"{{preconditionsBeingChecked}}\">\r\n                <template>\r\n                  <div class=\"SubtitleCenter\">\r\n                    <img class=\"Spinner\" src=\"assets/media/Spinner.svg\" alt=\"spinner\">\r\n                    <div class=\"SpinnerMessage\">Je gegevens worden opgehaald.</div>\r\n                  </div>\r\n                </template>\r\n            </dom-if>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
+module.exports = "<div class=\"Wrapper\">\r\n    <div class=\"ScrollContainer\">\r\n        <div class=\"Scroller\">\r\n            <div class=\"TopbarButtonContainer\">\r\n                <maki-button on-click=\"_stop\" size=\"30\" stroke=\"0\" font-size=\"16\" set-color-main=\"#3192CF\" heading=\"Ga terug\">\r\n                    <div class=\"BackButton\"><</div>\r\n                </maki-button>\r\n            </div>\r\n            <div class=\"JourneyHeader\">\r\n                <div class=\"JourneyIcon\">\r\n                    <dom-if if=\"{{show_journey_icon_truck}}\">\r\n                        <template>\r\n                            <maki-icon-truck />\r\n                        </template>\r\n                    </dom-if>\r\n                    <dom-if if=\"{{show_journey_icon_bulb}}\">\r\n                        <template>\r\n                            <maki-icon-bulb />\r\n                        </template>\r\n                    </dom-if>\r\n                </div>\r\n                <div class=\"Title\">[[_title(journey)]]</div>\r\n            </div>\r\n            <div class=\"SectionTitle\">\r\n                <div>Deze stappen ga je doorlopen</div>\r\n            </div>\r\n            <div class=\"DotList\">\r\n                <dom-repeat items=\"[[_steps(journey)]]\">\r\n                    <template>\r\n                        <div class=\"DotListItem\">\r\n                            <maki-icon-steps></maki-icon-steps>\r\n                            <div class=\"Text\">[[item]]</div>\r\n                        </div>\r\n                    </template>\r\n                </dom-repeat>\r\n            </div>\r\n            <dom-if if=\"{{_hasDocuments(journey)}}\">\r\n                <template>\r\n                    <div class=\"SectionTitle\">\r\n                        <maki-icon-edit-document></maki-icon-edit-document>\r\n                        <div>Benodigde documenten</div>\r\n                    </div>\r\n                    <dom-repeat items=\"[[_documents(journey)]]\">\r\n                        <template>\r\n                            <div class=\"DotListItem\">\r\n                                <div class=\"Dot\"></div>\r\n                                <div class=\"Text\">[[item]]</div>\r\n                            </div>\r\n                        </template>\r\n                    </dom-repeat>\r\n                </template>\r\n            </dom-if>\r\n            <dom-if if=\"{{preconditionsFullFilled}}\">\r\n                <template>\r\n                    <div class=\"ButtonContainer\">\r\n                        <maki-button highlight size=\"40\" font-size=\"16\" set-color-highlight=\"#3192CF\" on-click=\"[[_start(journey)]]\">\r\n                            <div class=\"ButtonInner\">\r\n                                <div class=\"ButtonInnerText\">Starten</div>\r\n                                <div class=\"ButtonInnerRight\">></div>\r\n                            </div>\r\n                        </maki-button>\r\n                    </div>\r\n                </template>\r\n            </dom-if>\r\n            <dom-if if=\"{{!preconditionsFullFilled}}\">\r\n                <template>\r\n                    <dom-if if=\"{{!preconditionsBeingChecked}}\">\r\n                        <template>\r\n                            <div class=\"WarningTitle\">\r\n                                <maki-icon-attention width=\"30px\"></maki-icon-attention>\r\n                                <div class=\"WarningSubtitle\">\r\n                                    <div class=\"Title\">Dit proces kan niet worden gestart.</div>\r\n                                    <div class=\"WarningSubtitleLeft\">{{journey.preconditions}}</div>\r\n                                </div>\r\n                            </div>\r\n                        </template>\r\n                    </dom-if>\r\n                </template>\r\n            </dom-if>\r\n            <dom-if if=\"{{preconditionsBeingChecked}}\">\r\n                <template>\r\n                  <div class=\"SubtitleCenter\">\r\n                    <img class=\"Spinner\" src=\"assets/media/Spinner.svg\" alt=\"spinner\">\r\n                    <div class=\"SpinnerMessage\">Je gegevens worden opgehaald.</div>\r\n                  </div>\r\n                </template>\r\n            </dom-if>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -45734,7 +45903,7 @@ module.exports = ".Wrapper{width:100%;height:100%;max-width:var(--main-max-width
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<playback-screen-wrapper skip-callback=\"[[_skipCallback(question)]]\" no-next>\r\n  <div class=\"Options\">\r\n    <dom-repeat items=\"[[_optionNames(question)]]\">\r\n      <template>\r\n        <div class=\"Option\" data-question=\"[[question]]\" data-index=\"[[index]]\" on-click=\"_optionClick\">[[item]]</div>\r\n      </template>\r\n    </dom-repeat>\r\n  </div>\r\n</playback-screen-wrapper>\r\n"
+module.exports = "<playback-screen-wrapper skip-callback=\"[[_skipCallback(question)]]\" no-next>\n  <div class=\"Options\">\n    <dom-repeat items=\"[[_optionNames(question)]]\">\n      <template>\n        <div class=\"Option\" data-question=\"[[question]]\" data-index=\"[[index]]\" on-click=\"_optionClick\">[[item]]</div>\n      </template>\n    </dom-repeat>\n  </div>\n</playback-screen-wrapper>\n"
 
 /***/ }),
 
@@ -47664,6 +47833,18 @@ const requestOrdersSubmitFailed = exports.requestOrdersSubmitFailed = error => (
   type: REQUEST_ORDERS_SUBMIT_FAILED,
   error
 });
+const REQUEST_ORDERS = exports.REQUEST_ORDERS = 'REQUEST_ORDERS';
+const requestOrders = exports.requestOrders = () => ({ type: REQUEST_ORDERS });
+const REQUEST_ORDERS_SUCCESS = exports.REQUEST_ORDERS_SUCCESS = 'REQUEST_ORDERS_SUCCESS';
+const requestOrdersSuccess = exports.requestOrdersSuccess = data => ({
+  type: REQUEST_ORDERS_SUCCESS,
+  data
+});
+const REQUEST_ORDERS_FAILURE = exports.REQUEST_ORDERS_FAILURE = 'REQUEST_ORDERS_FAILURE';
+const requestOrdersFailure = exports.requestOrdersFailure = error => ({
+  type: REQUEST_ORDERS_FAILURE,
+  error
+});
 
 /***/ }),
 
@@ -48040,6 +48221,34 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 const ordersApi = exports.ordersApi = {
   submit: (data, token) => async () => {
     const response = await _axios2.default.post('/order', data, {
+      baseURL: _configuration.configuration.BASE_URL_API(),
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'X-NLX-Request-Process-Id': (0, _headers.getProcessId)()
+      }
+    });
+    if (response.statusText === 'OK' || response.status === 200) {
+      return { data: response.data };
+    } else {
+      throw response.status;
+    }
+  },
+  orders: token => async () => {
+    const response = await _axios2.default.get('/orders', {
+      baseURL: _configuration.configuration.BASE_URL_API(),
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'X-NLX-Request-Process-Id': (0, _headers.getProcessId)()
+      }
+    });
+    if (response.statusText === 'OK' || response.status === 200) {
+      return { data: response.data };
+    } else {
+      throw response.status;
+    }
+  },
+  order: (id, token) => async () => {
+    const response = await _axios2.default.get(`/orders/${id}`, {
       baseURL: _configuration.configuration.BASE_URL_API(),
       headers: {
         'Authorization': 'Bearer ' + token,
@@ -48491,14 +48700,21 @@ var _jwt = __webpack_require__(/*! ../actions/jwt */ "./src/redux/actions/jwt.js
 const contracts = exports.contracts = (state = { data: [] }, action) => {
   switch (action.type) {
     case _contracts.REQUEST_CONTRACTS:
-      return state;
+      return Object.assign({}, state, {
+        searching: true,
+        status: _contracts.REQUEST_CONTRACTS
+      });
     case _contracts.REQUEST_CONTRACTS_SUCCESS:
       return Object.assign({}, state, {
+        searching: false,
         data: action.data,
         error: null
       });
     case _contracts.REQUEST_CONTRACTS_FAILURE:
-      return Object.assign({}, state, { error: action.error });
+      return Object.assign({}, state, {
+        searching: false,
+        error: action.error
+      });
     case _jwt.REQUEST_JWT_LOGOUT_SUCCESS:
       return { data: [] };
     default:
@@ -48564,6 +48780,10 @@ var _order = __webpack_require__(/*! ./order */ "./src/redux/reducers/order.js")
 
 var order = _interopRequireWildcard(_order);
 
+var _orders = __webpack_require__(/*! ./orders */ "./src/redux/reducers/orders.js");
+
+var orders = _interopRequireWildcard(_orders);
+
 var _person = __webpack_require__(/*! ./person */ "./src/redux/reducers/person.js");
 
 var person = _interopRequireWildcard(_person);
@@ -48574,7 +48794,7 @@ var lastAction = _interopRequireWildcard(_lastAction);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-exports.default = (0, _redux.combineReducers)(Object.assign({}, address, application, avgLog, avgLogs, contract, contracts, journey, journeys, jwt, order, person, lastAction));
+exports.default = (0, _redux.combineReducers)(Object.assign({}, address, application, avgLog, avgLogs, contract, contracts, journey, journeys, jwt, order, orders, person, lastAction));
 
 /***/ }),
 
@@ -49020,6 +49240,52 @@ const item = (state = {
 
 /***/ }),
 
+/***/ "./src/redux/reducers/orders.js":
+/*!**************************************!*\
+  !*** ./src/redux/reducers/orders.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.orders = undefined;
+
+var _orders = __webpack_require__(/*! ../actions/orders */ "./src/redux/actions/orders.js");
+
+var _jwt = __webpack_require__(/*! ../actions/jwt */ "./src/redux/actions/jwt.js");
+
+const orders = exports.orders = (state = { data: [] }, action) => {
+  switch (action.type) {
+    case _orders.REQUEST_ORDERS:
+      return Object.assign({}, state, {
+        searching: true,
+        status: _orders.REQUEST_ORDERS
+      });
+    case _orders.REQUEST_ORDERS_SUCCESS:
+      return Object.assign({}, state, {
+        searching: false,
+        data: action.data,
+        error: null
+      });
+    case _orders.REQUEST_ORDERS_FAILURE:
+      return Object.assign({}, state, {
+        searching: false,
+        error: action.error
+      });
+    case _jwt.REQUEST_JWT_LOGOUT_SUCCESS:
+      return { data: [] };
+    default:
+      return state;
+  }
+};
+
+/***/ }),
+
 /***/ "./src/redux/reducers/person.js":
 /*!**************************************!*\
   !*** ./src/redux/reducers/person.js ***!
@@ -49452,7 +49718,7 @@ var _orders = __webpack_require__(/*! ./orders */ "./src/redux/sagas/orders.js")
 var _application = __webpack_require__(/*! ./application */ "./src/redux/sagas/application.js");
 
 function* rootSaga() {
-  yield (0, _effects.all)([(0, _address.watchRequestAddressData)(), (0, _avgLog.watchRequestAvgLog)(), (0, _avgLogs.watchRequestAvgLogs)(), (0, _contract.watchRequestContract)(), (0, _contracts.watchRequestContracts)(), (0, _jwt.watchRequestJwtSigninFake)(), (0, _jwt.watchRequestJwtSignin)(), (0, _jwt.watchJwtSigninSuccess)(), (0, _jwt.watchJwtSigninSuccessFake)(), (0, _jwt.watchRequestJwtFromDigidCgi)(), (0, _jwt.watchRequestJwtFromDigidCgiSuccess)(), (0, _jwt.watchRequestJwtLogout)(), (0, _jwt.watchRequestJwtLogout401)(), (0, _application.watchSelectPage)(), (0, _application.watchSelectPageNoHistory)(), (0, _application.watchNextPageAfterLogin)(), (0, _person.watchRequestPersonData)(), (0, _person.watchRequestPersonsMoving)(), (0, _orders.watchRequestOrdersSubmit)(), (0, _journey.watchCheckPreconditions)()]);
+  yield (0, _effects.all)([(0, _address.watchRequestAddressData)(), (0, _avgLog.watchRequestAvgLog)(), (0, _avgLogs.watchRequestAvgLogs)(), (0, _contract.watchRequestContract)(), (0, _contracts.watchRequestContracts)(), (0, _jwt.watchRequestJwtSigninFake)(), (0, _jwt.watchRequestJwtSignin)(), (0, _jwt.watchJwtSigninSuccess)(), (0, _jwt.watchJwtSigninSuccessFake)(), (0, _jwt.watchRequestJwtFromDigidCgi)(), (0, _jwt.watchRequestJwtFromDigidCgiSuccess)(), (0, _jwt.watchRequestJwtLogout)(), (0, _jwt.watchRequestJwtLogout401)(), (0, _application.watchSelectPage)(), (0, _application.watchSelectPageNoHistory)(), (0, _application.watchNextPageAfterLogin)(), (0, _person.watchRequestPersonData)(), (0, _person.watchRequestPersonsMoving)(), (0, _orders.watchRequestOrdersSubmit)(), (0, _orders.watchRequestOrders)(), (0, _journey.watchCheckPreconditions)()]);
 }
 
 /***/ }),
@@ -49693,6 +49959,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.watchRequestOrdersSubmit = watchRequestOrdersSubmit;
+exports.watchRequestOrders = watchRequestOrders;
 
 var _effects = __webpack_require__(/*! redux-saga/effects */ "./node_modules/redux-saga/dist/redux-saga-effects-npm-proxy.esm.js");
 
@@ -49712,6 +49979,19 @@ function* fetchOrdersSubmit(action) {
     yield (0, _effects.put)((0, _orders2.requestOrdersSubmitSuccess)(result.data));
   } catch (e) {
     yield (0, _effects.put)((0, _orders2.requestOrdersSubmitFailed)(e));
+  }
+}
+
+function* watchRequestOrders() {
+  yield (0, _effects.takeLatest)(_orders2.REQUEST_ORDERS, fetchOrders);
+}
+
+function* fetchOrders() {
+  try {
+    const result = yield (0, _effects.call)(_orders.ordersApi.orders((0, _headers.jwtBearerToken)()));
+    yield (0, _effects.put)((0, _orders2.requestOrdersSuccess)(result.data));
+  } catch (e) {
+    yield (0, _effects.put)((0, _orders2.requestOrdersFailure)(e));
   }
 }
 

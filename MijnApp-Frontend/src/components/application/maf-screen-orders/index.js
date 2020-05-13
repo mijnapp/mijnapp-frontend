@@ -6,9 +6,9 @@ import { selectPage } from '../../../redux/actions/application';
 import css from './style.pcss';
 import template from './template.html';
 import '../../objects/maf-screen';
-import { toDutchDate } from '../../helpers/dutchDate';
+import { toDutchDateTime } from '../../helpers/dutchDate';
 
-export default class MafScreenContracts extends connect(store)(PolymerElement) {
+export default class MafScreenOrders extends connect(store)(PolymerElement) {
   static get properties() {
     return {
       searching: Boolean,
@@ -37,20 +37,20 @@ export default class MafScreenContracts extends connect(store)(PolymerElement) {
     return '';
   }
 
-  _getDutchDate(date) {
+  _getDutchDateTime(date) {
     if (date === null || date === undefined || date.date === null) {
       return 'Onbekend';
     }
     date = new Date(date);
-    return toDutchDate(date);
+    return toDutchDateTime(date);
   }
 
   stateChanged(state) {
-    if (state.contracts.data != undefined) {
-      this.contracts = state.contracts.data;
-      this.searching = state.contracts.searching;
+    if (state.orders.data != undefined) {
+      this.orders = state.orders.data;
+      this.searching = state.orders.searching;
     }
   }
 }
 
-window.customElements.define('maf-screen-contracts', MafScreenContracts);
+window.customElements.define('maf-screen-orders', MafScreenOrders);

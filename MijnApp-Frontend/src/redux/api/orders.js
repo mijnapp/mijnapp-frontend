@@ -19,4 +19,34 @@ export const ordersApi = {
       throw response.status;
     }
   },
+  orders: (token) => async () => {
+    const response = await axios.get('/orders',
+      {
+        baseURL: configuration.BASE_URL_API(),
+        headers: {
+          'Authorization': 'Bearer ' + token,
+          'X-NLX-Request-Process-Id': getProcessId()
+        }
+      });
+    if (response.statusText === 'OK' || response.status === 200) {
+      return { data: response.data };
+    } else {
+      throw response.status;
+    }
+  },
+  order: (id, token) => async () => {
+    const response = await axios.get(`/orders/${id}`,
+      {
+        baseURL: configuration.BASE_URL_API(),
+        headers: {
+          'Authorization': 'Bearer ' + token,
+          'X-NLX-Request-Process-Id': getProcessId()
+        }
+      });
+    if (response.statusText === 'OK' || response.status === 200) {
+      return { data: response.data };
+    } else {
+      throw response.status;
+    }
+  },
 };

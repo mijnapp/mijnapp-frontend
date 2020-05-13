@@ -5,6 +5,7 @@ import { selectPage } from '../../../redux/actions/application';
 import { requestContracts } from '../../../redux/actions/contracts';
 import { requestAvgLogs } from '../../../redux/actions/avgLogs';
 import { requestPersonData } from '../../../redux/actions/person';
+import { requestOrders } from '../../../redux/actions/orders';
 
 import css from './style.pcss';
 import template from './template.html';
@@ -29,9 +30,14 @@ export default class MafScreenHome extends connect(store)(PolymerElement) {
             target: 'avg-logs',
           },
           {
-            title: 'Contracten',
+            title: 'Overeenkomsten',
             asset: 'assets/media/Contracten.svg',
             target: 'contracts',
+          },
+          {
+            title: 'Verzoeken',
+            asset: 'assets/media/Verzoeken.svg',
+            target: 'orders',
           },
           // {
           //   title: 'Passen',
@@ -72,6 +78,9 @@ export default class MafScreenHome extends connect(store)(PolymerElement) {
           break;
         case 'avg-logs':
           store.dispatch(requestAvgLogs());
+          break;
+        case 'orders':
+          store.dispatch(requestOrders());
           break;
         default:
           break;

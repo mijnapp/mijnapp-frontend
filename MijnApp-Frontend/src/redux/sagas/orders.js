@@ -1,6 +1,13 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { ordersApi } from '../api/orders';
-import { REQUEST_ORDERS_SUBMIT, requestOrdersSubmitSuccess, requestOrdersSubmitFailed } from '../actions/orders';
+import {
+  REQUEST_ORDERS_SUBMIT,
+  requestOrdersSubmitSuccess,
+  requestOrdersSubmitFailed,
+  REQUEST_ORDERS,
+  requestOrdersSuccess,
+  requestOrdersFailure,
+} from '../actions/orders';
 import { jwtBearerToken } from '../helpers/headers';
 
 export function* watchRequestOrdersSubmit() {
@@ -13,5 +20,18 @@ function* fetchOrdersSubmit(action) {
     yield put(requestOrdersSubmitSuccess(result.data));
   } catch (e) {
     yield put(requestOrdersSubmitFailed(e));
+  }
+}
+
+export function* watchRequestOrders() {
+  yield takeLatest(REQUEST_ORDERS, fetchOrders);
+}
+
+function* fetchOrders() {
+  try {
+    const result = yield call(ordersApi.orders(jwtBearerToken()));
+    yield put(requestOrdersSuccess(result.data));
+  } catch (e) {
+    yield put(requestOrdersFailure(e));
   }
 }
