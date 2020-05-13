@@ -16,6 +16,18 @@ export default class MafScreenSignin extends connect(store)(PolymerElement) {
         type: Boolean,
         value: false,
       },
+      loginTitle: {
+        type: String,
+        value: 'Verhuizing doorgeven',
+      },
+      loginSubTitleText1: {
+        type: String,
+        value: 'U gaat een verhuizing doorgeven in of naar de gemeente \'s- Hertogenbosch.',
+      },
+      loginSubTitleText2: {
+        type: String,
+        value: 'U moet in dit formulier inloggen met DigiD.',
+      },
     };
   }
 
