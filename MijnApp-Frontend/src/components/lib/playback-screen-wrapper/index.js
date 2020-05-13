@@ -56,8 +56,11 @@ export default class PlaybackScreenWrapper extends connect(store)(
   }
 
   _stop() {
-    //store.dispatch(selectPage('home'));
-    window.location = 'https://www.s-hertogenbosch.nl/verhuizen';
+    if (this.journey.isDeepLink && this.journey.stopUrl) {
+      window.location = this.journey.stopUrl;
+    } else {
+      store.dispatch(selectPage('journeys'));
+    }
   }
 
   _next(nextCallback, disabled) {

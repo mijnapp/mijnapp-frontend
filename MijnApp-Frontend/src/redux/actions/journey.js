@@ -1,5 +1,5 @@
 export const SET_JOURNEY = 'SET_JOURNEY';
-export const setJourney = (journey) => ({ type: SET_JOURNEY, journey });
+export const setJourney = (journey, isDeepLink) => ({ type: SET_JOURNEY, journey, isDeepLink });
 
 export const CHECK_PRECONDITIONS = 'CHECK_PRECONDITIONS';
 export const checkPreconditions = () => ({ type: CHECK_PRECONDITIONS });
