@@ -32,7 +32,7 @@ export default class MafScreenOrders extends connect(store)(PolymerElement) {
 
   _getSubmitter(array) {
     if (array !== undefined && array !== null && array.length === 1) {
-      return array[0].person;
+      return array[0].brp;
     }
     return '';
   }
