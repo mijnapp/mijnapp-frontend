@@ -151,7 +151,8 @@ export default class MafApp extends connect(store)(PolymerElement) {
     }
 
     if (foundJourneyToStart) {
-      store.dispatch(setJourney(foundJourneyToStart));
+      const isDeepLink = true;
+      store.dispatch(setJourney(foundJourneyToStart, isDeepLink));
       store.dispatch(selectPage('journey'));
       store.dispatch(clearAddressData());
     }
@@ -414,6 +415,8 @@ export default class MafApp extends connect(store)(PolymerElement) {
             subtitle: 'De volgende gegevens zijn succesvol verzonden naar de gemeente.',
           },
         },
+        stopUrl: 'https://www.s-hertogenbosch.nl/verhuizen',
+        successUrl: 'https://www.s-hertogenbosch.nl/verhuizen',
       },
     ]));
   }

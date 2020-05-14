@@ -26,9 +26,10 @@ namespace MijnApp_Backend.Controllers
         private readonly string _addressBaseUri;
         private readonly IServiceClient _serviceClient;
         private const string PostRequest = "{0}requests";
-        private const string GetRequest = "{0}requests";
+        private const string GetRequest = "{0}requests?submitters.brp={1}";
+        private const string GetAddressOnBagId = "{0}adressen?bagid={1}";
         private const string TargetOrganizationDenBosch = "1709124";
-        private const string OrganizationIdDenBosch = "4f387d0e-a2e5-44c0-9902-c31b63a8ee36"; // DEV = "1e452f11-a098-464e-8902-8fc2f1ee6acb";
+        private const string OrganizationIdDenBosch = "4f387d0e-a2e5-44c0-9902-c31b63a8ee36";
         private const string MovePersonRequestTypeId = "9d76fb58-0711-4437-acc4-9f4d9d403cdf";
         private Dictionary<string, string> _cachedPersonsNames;
 
@@ -49,34 +50,31 @@ namespace MijnApp_Backend.Controllers
         [Route("orders")]
         public async Task<IActionResult> GetOrders()
         {
-
             var bsn = _jwtTokenProvider.GetBsnFromClaims(HttpContext.User);
-            var url = string.Format(GetRequest, _baseUri);
+            var submitterUrl = "https://brp.dev.mijnapp.zaakonline.nl/ingeschrevenpersonen/uuid/1edd146d-25c5-439e-8c04-8d6bff997ab4";
+            var url = string.Format(GetRequest, _baseUri, submitterUrl);
             var response = await _serviceClient.GetAsync(url);
             var result = await response.Content.ReadAsStringAsync();
-            var allRequest = JsonConvert.DeserializeObject<List<Request>>(result);
+            var allRequestForSubmitter = JsonConvert.DeserializeObject<List<Request>>(result);
 
             //Filter request on submitter (TODO: When the conduction API fixes the filtering on the API side, this wont be necessary)
             var requestFromBsn = new List<Request>();
-            foreach (var request in allRequest)
+            foreach (var request in allRequestForSubmitter)
             {
-                if (request.submitters.Length == 1 && request.submitters.First().person == bsn)
-                {
-                    //Add the correct data for the request(based on the requestType?)
-                    await AddRequestDataFromType(request);
-                    requestFromBsn.Add(request);
-                }
+                //Add the correct data for the request(based on the requestType?)
+                await AddRequestDataFromType(request);
+                requestFromBsn.Add(request);
             }
 
             //Order request on create date. Last one on top
-            var orderedRequest = requestFromBsn.OrderByDescending(r => r.date_created).ToList();
+            var orderedRequest = requestFromBsn.OrderByDescending(r => r.dateCreated).ToList();
             return Json(orderedRequest);
         }
 
         private async Task<Request> AddRequestDataFromType(Request request)
         {
             //TODO get name from _orderTypeBaseUri
-            if (request.request_type == _orderTypeBaseUri + "request_types/" + MovePersonRequestTypeId)
+            if (request.requestType == _orderTypeBaseUri + "request_types/" + MovePersonRequestTypeId)
             {
                 request.request_type_name = "Verhuizen";
 
@@ -99,6 +97,15 @@ namespace MijnApp_Backend.Controllers
                     }
                 }
                 request.properties.Add("wie_name", string.Join(", ",personNames));
+
+                string adressBagIdString = request.properties["adress"] as string;
+                var addressResponse = await _serviceClient.GetAsync(string.Format(GetAddressOnBagId, _addressBaseUri, adressBagIdString));
+                var addressResult = await addressResponse.Content.ReadAsStringAsync();
+                var address = JsonConvert.DeserializeObject<Address>(addressResult);
+                var addressFormat = "{0} {1}{2}, {3} {4}";
+                var adressString = string.Format(addressFormat, address.straat, address.huisnummer,
+                    address.huisnummertoevoeging, address.postcode, address.woonplaats);
+                request.properties.Add("adress_description", adressString);
             }
 
             return request;
@@ -140,7 +147,13 @@ namespace MijnApp_Backend.Controllers
         /// <param name="bsn"></param>
         private Request CreateRequestData(Order order, string bsn)
         {
-            var submitter = new Submitter { person = bsn };
+            //Gebruik url ipv bsn in submitter (DEV: /ingeschrevenpersonen/uuid/1edd146d-25c5-439e-8c04-8d6bff997ab4, PROD: /ingeschrevenpersonen/uuid/0282b6eb-2bf2-4544-9242-511501d73be4)
+            var submitterUrl = "https://brp.dev.mijnapp.zaakonline.nl/ingeschrevenpersonen/uuid/1edd146d-25c5-439e-8c04-8d6bff997ab4";
+            var submitter = new Submitter
+            {
+                brp = submitterUrl,
+                person = "",
+            };
             //var submitter = new Submitter { person = "680508429" }; //Added request for different bsn.
             var organization = new Organization
             {
@@ -154,7 +167,7 @@ namespace MijnApp_Backend.Controllers
                 request_cases = new string[0],
                 properties = new Dictionary<string, object>(),
                 organization = _webResourceBaseUri  + "organizations/" + organization.id,
-                request_type = _orderTypeBaseUri + "request_types/" + order.requestType,
+                requestType = _orderTypeBaseUri + "request_types/" + order.requestType,
                 status = "complete",
             };
             foreach (var question in order.data.Where(q => q.question != "END"))
@@ -224,7 +237,7 @@ namespace MijnApp_Backend.Controllers
     internal class Request
     {
         //Properties used when sending & retrieving a request
-        public string request_type { get; set; }
+        public string requestType { get; set; }
         public string organization { get; set; }
         public Submitter[] submitters { get; set; }
         public Dictionary<string,object> properties { get; set; }
@@ -233,8 +246,8 @@ namespace MijnApp_Backend.Controllers
         //Properties used when retrieving requests
         public string reference { get; set; }
         public string status { get; set; }
-        public DateTime date_created { get; set; }
-        public DateTime date_modified { get; set; }
+        public DateTime dateCreated { get; set; }
+        public DateTime dateModified { get; set; }
 
         //Calculated properties 
         public string request_type_name { get; set; }
@@ -256,8 +269,31 @@ namespace MijnApp_Backend.Controllers
 
     internal class Submitter
     {
+        public string brp { get; set; }
         public string person { get; set; }
     }
+
+    public class Address
+    {
+        public string id { get; set; }
+        public string type { get; set; }
+        public string huisnummer { get; set; }
+        public string postcode { get; set; }
+        public string huisnummertoevoeging { get; set; }
+        public string straat { get; set; }
+        public string woonplaats { get; set; }
+
+        //public string oppervlakte { get; set; }
+        //public string woonplaats_nummer { get; set; }
+        //public string gemeente_nummer { get; set; }
+        //public string gemeente_rsin { get; set; }
+        //public string status_nummeraanduiding { get; set; }
+        //public string status_verblijfsobject { get; set; }
+        //public string status_openbare_ruimte { get; set; }
+        //public string status_woonplaats { get; set; }
+        //public string _links { get; set; }
+    }
+
 
     /*
 

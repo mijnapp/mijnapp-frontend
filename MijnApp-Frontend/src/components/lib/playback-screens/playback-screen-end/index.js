@@ -152,7 +152,11 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
   }
 
   _stop() {
-    store.dispatch(selectPage('home'));
+    if (this.journey.isDeepLink && this.journey.successUrl) {
+      window.location = this.journey.successUrl;
+    } else {
+      store.dispatch(selectPage('home'));
+    }
   }
 
   _prev() {
