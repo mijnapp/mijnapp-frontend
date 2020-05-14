@@ -22,7 +22,7 @@ export default class MafScreenSignin extends connect(store)(PolymerElement) {
       },
       loginSubTitleText1: {
         type: String,
-        value: 'U gaat een verhuizing doorgeven in of naar de gemeente \'s- Hertogenbosch.',
+        value: 'U gaat een verhuizing doorgeven in of naar de gemeente \'s-Hertogenbosch.',
       },
       loginSubTitleText2: {
         type: String,
