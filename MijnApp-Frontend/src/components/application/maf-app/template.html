@@ -25,11 +25,11 @@
         <maf-screen-orders page="orders"></maf-screen-orders>-->
       </iron-pages>
     </div>
-    <!--<dom-if if="[[_showTabs(page)]]">
+    <dom-if if="[[_showTabs(page)]]">
       <template>
         <div class="TabSwitcher">
           <div class="TabSwitcherWrapper">
-            <div class$="TabSwitcherTab[[_isActive('home', page)]]" on-click="_goHome">
+            <!--<div class$="TabSwitcherTab[[_isActive('home', page)]]" on-click="_goHome">
               <div class="TabSwitcherTabIcon">
                 <maki-icon-home></maki-icon-home>
               </div>
@@ -68,7 +68,7 @@
                   Chatten
                 </div>
               </div>
-            </div>
+            </div>>-->
             <div class="TabSwitcherTab" on-click="_goLogout">
               <div class="TabSwitcherTabIcon">
                 <maki-icon-logout></maki-icon-logout>
@@ -82,6 +82,6 @@
           </div>
         </div>
       </template>
-    </dom-if>-->
+    </dom-if>
   </div>
 </maki-theme-provider>
