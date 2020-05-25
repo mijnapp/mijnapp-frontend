@@ -94,7 +94,9 @@ function* doJwtLogout() {
   removeLastAction();
   window.successToast.text = 'Succesvol uitgelogd';
   window.successToast.open();
-  window.location = 'https://mijnappdenboschtestfe.z6.web.core.windows.net/startjourney?name=verhuizen';
+  //yield put(selectPage('signin'));
+  var url = window.location.origin;
+  window.location = url + '/startjourney?name=verhuizen';
 }
 
 export function* watchRequestJwtLogout401() {
@@ -110,5 +112,7 @@ function* doJwtLogout401(action) {
   window.errorText.innerHTML = `U heeft geen geldige sessie meer en zult opnieuw moeten inloggen.`;
   window.errorDialog.open();
   // Here we do a selectPageNoHistory, so that when the user logs in again, he is navigated to were he was.
-  yield put(selectPageNoHistory('signin'));
+  //yield put(selectPageNoHistory('signin'));
+  var url = window.location.origin;
+  window.location = url + '/startjourney?name=verhuizen';
 }
