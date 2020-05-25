@@ -94,7 +94,7 @@ function* doJwtLogout() {
   removeLastAction();
   window.successToast.text = 'Succesvol uitgelogd';
   window.successToast.open();
-  yield put(selectPage('signin'));
+  window.location = 'https://www.s-hertogenbosch.nl/';
 }
 
 export function* watchRequestJwtLogout401() {
