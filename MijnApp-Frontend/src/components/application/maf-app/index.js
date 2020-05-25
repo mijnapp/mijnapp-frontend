@@ -415,8 +415,8 @@ export default class MafApp extends connect(store)(PolymerElement) {
             subtitle: 'De volgende gegevens zijn succesvol verzonden naar de gemeente.',
           },
         },
-        stopUrl: 'https://www.s-hertogenbosch.nl/verhuizen',
-        successUrl: 'https://www.s-hertogenbosch.nl/verhuizen',
+        stopUrl: 'https://www.s-hertogenbosch.nl/',
+        successUrl: 'https://www.s-hertogenbosch.nl/',
       },
     ]));
   }
