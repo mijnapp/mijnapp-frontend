@@ -94,7 +94,7 @@ function* doJwtLogout() {
   removeLastAction();
   window.successToast.text = 'Succesvol uitgelogd';
   window.successToast.open();
-  window.location = 'https://www.s-hertogenbosch.nl/';
+  window.location = 'https://mijnappdenboschtestfe.z6.web.core.windows.net/startjourney?name=verhuizen';
 }
 
 export function* watchRequestJwtLogout401() {
