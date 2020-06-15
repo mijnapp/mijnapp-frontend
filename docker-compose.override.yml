@@ -21,6 +21,7 @@ services:
     ports:
       - "40080:80"
       - "40443:443"
+      
   mijnapp-frontend:
     container_name: mijnapp-frontend
     environment:
