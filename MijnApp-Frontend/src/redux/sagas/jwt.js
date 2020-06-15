@@ -24,9 +24,9 @@ export function* watchRequestJwtSigninFake() {
   yield takeLatest(REQUEST_JWT_SIGNIN_FAKE, fetchJwtSigninFake);
 }
 
-function* fetchJwtSigninFake() {
+function* fetchJwtSigninFake(action) {
   try {
-    const result = yield call(jwtApi.signinfake());
+    const result = yield call(jwtApi.signinfake(action));
     yield put(requestJwtSigninSuccessFake(result.data, result.headers));
   } catch (e) {
     yield put(requestJwtSigninFailure(e));

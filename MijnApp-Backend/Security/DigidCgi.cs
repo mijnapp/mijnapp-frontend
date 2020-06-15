@@ -45,10 +45,10 @@ namespace MijnApp_Backend.Security
             _digidClient = digidClient;
         }
 
-        internal DigidUser AuthenticateFakeUser()
+        internal DigidUser AuthenticateFakeUser(string bsn)
         {
             var properties = new NameValueCollection();
-            properties.Add(DigidConstants.Uid, "900003509");
+            properties.Add(DigidConstants.Uid, bsn);
             properties.Add(DigidConstants.Organization, "someOrganization");
             properties.Add(DigidConstants.TgtExpTime, "645643632");
 

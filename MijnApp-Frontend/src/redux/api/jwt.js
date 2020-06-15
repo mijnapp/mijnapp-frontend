@@ -3,9 +3,9 @@ import { configuration } from '../../helpers/configuration';
 import { setJwtBearerToken } from '../helpers/headers';
 
 export const jwtApi = {
-  signinfake: () => async () => {
+  signinfake: (action) => async () => {
     const response = await axios.post(
-      '/jwt/signinfake',
+      `/jwt/signinfake/${action.fakeBsn}`,
       null,
       {
         baseURL: configuration.BASE_URL_API(),
