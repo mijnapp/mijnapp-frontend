@@ -36,10 +36,8 @@ namespace MijnApp_Frontend
             }
             else
             {
-                app.UseHsts();
                 ConfigureFrontend();
             }
-            app.UseHttpsRedirection();
 
             app.UseDefaultFiles();
             app.UseStaticFiles();
