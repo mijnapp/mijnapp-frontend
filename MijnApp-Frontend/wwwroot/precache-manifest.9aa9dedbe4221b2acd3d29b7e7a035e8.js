@@ -1,19 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "523947b14f00c3eca0dfd8072be50cff",
-    "url": "assets\\AnimatedSkeleton.svg"
-  },
-  {
-    "revision": "36517d3a817c5451d1d35e6d4d47791b",
-    "url": "assets\\back.svg"
-  },
-  {
-    "revision": "9dc5176f085d44e77d1c131fcedf8bae",
-    "url": "assets\\backWhite.svg"
-  },
-  {
     "revision": "ab679549bd7d2b0209ffaf8dd010ad14",
     "url": "assets\\checkBox.svg"
+  },
+  {
+    "revision": "a8e284722e4712a9966a91ffb5643690",
+    "url": "assets\\fieldIcons\\calendar.svg"
+  },
+  {
+    "revision": "1a31b7e0c9aea00d2930e9b6b54f1758",
+    "url": "assets\\fieldIcons\\group.svg"
+  },
+  {
+    "revision": "9112bd0979869cbe12cc060afdf9c78d",
+    "url": "assets\\fieldIcons\\placeholder.svg"
+  },
+  {
+    "revision": "5533d3f656354d586a8ec9b3544551f6",
+    "url": "assets\\fieldIcons\\user.svg"
   },
   {
     "revision": "4d9279e99dfcca51b6c1d6cd7a654546",
@@ -104,8 +108,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets\\icons\\apple-touch-icon.png"
   },
   {
-    "revision": "30e31efd77a6dee5beba32c20d37522e",
+    "revision": "9e74a4603ded83f123a0b1b1ea9ab92a",
     "url": "assets\\icons\\browserconfig.xml"
+  },
+  {
+    "revision": "eb11e8e271f46f0ef670e14c8b4912ff",
+    "url": "assets\\icons\\chrome.svg"
+  },
+  {
+    "revision": "d46f9a4f305f47e665e6e2ae22f4579d",
+    "url": "assets\\icons\\edge.svg"
   },
   {
     "revision": "00e36877b1c926a3692caad2019284e6",
@@ -114,6 +126,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "dfd2288eec7d66dc6e1ef5c60e0c22cc",
     "url": "assets\\icons\\favicon-32x32.png"
+  },
+  {
+    "revision": "2138ab8f59b152a40bafb55ffa274ce0",
+    "url": "assets\\icons\\firefox.svg"
   },
   {
     "revision": "c610f956381e5acdb4f36bce2caf9d97",
@@ -152,7 +168,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets\\icons\\mstile-150x150.png"
   },
   {
-    "revision": "8fa975f4477f238d81b18d928c8fafae",
+    "revision": "1405359f10118373dfa8a553f6ddb6be",
     "url": "assets\\icons\\safari-pinned-tab.svg"
   },
   {
@@ -160,39 +176,47 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets\\logo-digid.svg"
   },
   {
-    "revision": "54d8358fb31ab5b83dab3df6098e9f35",
-    "url": "assets\\logo.svg"
-  },
-  {
-    "revision": "b33867513827b2d0030596c39af93943",
+    "revision": "a75df23d2248b9c7dbbe4ad6fc156081",
     "url": "assets\\media\\Basisgegevens.svg"
   },
   {
-    "revision": "0487f7ebf6ee72dd0f1aaf548073db98",
+    "revision": "10646107660ffd1536ba0f3a5068ab2b",
     "url": "assets\\media\\Contracten.svg"
   },
   {
-    "revision": "03b340657802f55b685b1a233c930955",
+    "revision": "6383d468ba73ffca8be9b21fb8971262",
     "url": "assets\\media\\Inloggen.svg"
   },
   {
-    "revision": "cade792da64d8cc533b815277ce3de06",
+    "revision": "e4429f8ca9c8f176c8b8ef50b5b5da75",
     "url": "assets\\media\\Machtigingen.svg"
   },
   {
-    "revision": "cad288ba324c92bc86c6ddb47f6295a9",
+    "revision": "7232f9738f4317791b88434f9fc1b00d",
     "url": "assets\\media\\Passen.svg"
   },
   {
-    "revision": "756b1280cb315ffc1095e0ffcbc2370f",
-    "url": "assets\\phone.svg"
+    "revision": "4920825d5cb61b65cd1a686543fff05e",
+    "url": "assets\\media\\Spinner.svg"
+  },
+  {
+    "revision": "2470adc619911d9d617e4eef9fd8090f",
+    "url": "assets\\media\\Verzoeken.svg"
+  },
+  {
+    "revision": "33220f092cdd912f00c90d5b5720b3ef",
+    "url": "assets\\media\\denbosch\\background_full_size.jpg"
+  },
+  {
+    "revision": "ccbdda96809122f9bc2692e05a55e641",
+    "url": "assets\\media\\denbosch\\logoDenBosch.svg"
   },
   {
     "revision": "90aa1880ed0e173945fbf9b37cc09180",
     "url": "assets\\radio.svg"
   },
   {
-    "revision": "7b48b2c3f65ff8362f72",
+    "revision": "11c0e00c35bb7dc4d592",
     "url": "bundle.js"
   },
   {
@@ -204,11 +228,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "custom-sw.js"
   },
   {
-    "revision": "bb66d207a7ba0a052c3896a6f554162f",
+    "revision": "11f85bdfc67e8142e40e21fc00a35bcb",
     "url": "ienotsupported.html"
   },
   {
-    "revision": "90d20b5c4f512c5836d5fee5dd15cba7",
+    "revision": "b2ee86d0ac679c5c14895c9281c19fa0",
     "url": "index.html"
   },
   {
@@ -216,7 +240,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "manifest.json"
   },
   {
-    "revision": "fe8b79f7557a31979165",
+    "revision": "296535caafcea5c840ef",
     "url": "pdfmake.bundle.js"
   },
   {
