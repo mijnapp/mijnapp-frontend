@@ -3,14 +3,15 @@
 # Declare variables to be passed into your templates.
 
 settings:
-  adresEndpoint: https://adressen.zaakonline.nl/
-  orderEndpoint: https://orc.zaakonline.nl/
-  brpEndpoint: https://brp.zaakonline.nl/
-  verzoekenEndpoint: https://vrc.zaakonline.nl/
-  verzoekTypeEndpoint: https://vtc.zaakonline.nl/
-  processTypeEndpoint: https://ptc.zaakonline.nl/
+  adresEndpoint: https://as.prod/
+  orderEndpoint: https://orc.prod/
+  brpEndpoint: https://brp.prod/
+  verzoekenEndpoint: https://vrc.prod/
+  verzoekTypeEndpoint: https://vtc.prod/
+  processTypeEndpoint: https://ptc.prod/
   HasFakeLoginEnabled: true
-  env: Release
+  env: release
+  domain: verhuizen.accp.s-hertogenbosch.nl
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
