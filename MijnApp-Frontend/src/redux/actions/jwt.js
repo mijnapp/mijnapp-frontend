@@ -1,6 +1,7 @@
 export const REQUEST_JWT_SIGNIN_FAKE = 'REQUEST_JWT_SIGNIN_FAKE';
-export const requestJwtSigninFake = () => ({
+export const requestJwtSigninFake = (fakeBsn) => ({
   type: REQUEST_JWT_SIGNIN_FAKE,
+  fakeBsn,
 });
 export const REQUEST_JWT_SIGNIN_SUCCESS_FAKE = 'REQUEST_JWT_SIGNIN_SUCCESS_FAKE';
 export const requestJwtSigninSuccessFake = (data, headers) => ({

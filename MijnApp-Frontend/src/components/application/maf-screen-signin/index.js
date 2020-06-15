@@ -28,6 +28,10 @@ export default class MafScreenSignin extends connect(store)(PolymerElement) {
         type: String,
         value: 'U moet in dit formulier inloggen met DigiD.',
       },
+      showFakeUsersSelect: {
+        type: Boolean,
+        value: false,
+      },
     };
   }
 
@@ -48,8 +52,13 @@ export default class MafScreenSignin extends connect(store)(PolymerElement) {
     store.dispatch(requestJwtSignin());
   }
 
-  _signInWithDigiDFake() {
-    store.dispatch(requestJwtSigninFake());
+  _showFakeUserSelect() {
+    this.showFakeUsersSelect = true;
+  }
+
+  _userChanged(event) {
+    var fakeBsn = event.target.value;
+    store.dispatch(requestJwtSigninFake(fakeBsn));
   }
 
   stateChanged(state) {

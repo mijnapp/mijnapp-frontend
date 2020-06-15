@@ -11,12 +11,34 @@
       <div class="loginContent">
         <dom-if if="{{hasFakeInlogEnabled}}">
           <template>
-            <div class="loginDigidButton" on-click="_signInWithDigiDFake">
+            <div class="loginDigidButton" on-click="_showFakeUserSelect">
               <div class="loginDigidButtonText">
                 <img src="assets/logo-digid.svg" class="loginSelectButton noselect" alt="digid-logo" />
                 <div class="loginDigidButtonHeader">Test inloggen met DigiD</div>
               </div>
             </div>
+            <dom-if if="{{showFakeUsersSelect}}">
+              <template>
+                <select name="fakeUsers" id="fakeUsers" class="loginDigidSelect" on-change="_userChanged">
+                  <option value="0" selected="true" disabled="true">Kies een gebruiker</option>
+                  <option value="900003509">Jan Willem de Kieft (900003509)</option>
+                  <option value="999999102">Jeroen Oranje (999999102)</option>
+                  <option value="999999114">Yvonne Rood (999999114)</option>
+                  <option value="999999126">Stan Oranje  (999999126)</option>
+                  <option value="999999138">Tim Oranje (999999138)</option>
+                  <option value="999999151">Luuk Oranje (999999151)</option>
+                  <option value="999999163">Wim Fris (999999163)</option>
+                  <option value="999999011">Angeline Warm (999999011)</option>
+                  <option value="999999175">Renate Fris (999999175)</option>
+                  <option value="999999060">Leon Giraf (999999060)</option>
+                  <option value="999999187">Tobias Reus (999999187)</option>
+                  <option value="999999199">Ton Reus (999999199)</option>
+                  <option value="999999205">Inge Links (999999205)</option>
+                  <option value="999999217">Erik Rechts (999999217)</option>
+                  <option value="999999187">Tobias Reus (999999187)</option>
+                </select>
+              </template>
+            </dom-if>
           </template>
         </dom-if>
         <div class="loginDigidButton" on-click="_signInWithDigiD">
