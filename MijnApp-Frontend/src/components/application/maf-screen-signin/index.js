@@ -32,6 +32,26 @@ export default class MafScreenSignin extends connect(store)(PolymerElement) {
         type: Boolean,
         value: false,
       },
+      fakeUsers: {
+        value() {
+          return [
+            { bsn: '900003509', name: 'Jan Willem de Kieft' },
+            { bsn: '999999102', name: 'Jeroen Oranje' },
+            { bsn: '999999114', name: 'Yvonne Rood' },
+            { bsn: '999999126', name: 'Stan Oranje' },
+            { bsn: '999999138', name: 'Tim Oranje' },
+            { bsn: '999999151', name: 'Luuk Oranje' },
+            { bsn: '999999163', name: 'Wim Fris' },
+            { bsn: '999999011', name: 'Angeline Warm' },
+            { bsn: '999999175', name: 'Renate Fris' },
+            { bsn: '999999060', name: 'Leon Giraf' },
+            { bsn: '999999187', name: 'Tobias Reus' },
+            { bsn: '999999199', name: 'Ton Reus' },
+            { bsn: '999999205', name: 'Inge Links' },
+            { bsn: '999999217', name: 'Erik Rechts' },
+          ];
+        },
+      },
     };
   }
 
