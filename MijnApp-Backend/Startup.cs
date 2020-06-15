@@ -78,12 +78,7 @@ namespace MijnApp_Backend
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseHsts();
-            }
 
-            app.UseHttpsRedirection();
             app.UseRouting();
 
             var origins = Configuration.GetValue<string>("Origins").Split(';');

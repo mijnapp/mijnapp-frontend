@@ -82,7 +82,7 @@
     }
 
     .ieInfo {
-      max-width: 410px;
+      max-width: 500px;
       margin: 20px auto
     }
 
@@ -99,6 +99,15 @@
       font-weight: 400;
       line-height: 20px
     }
+
+    .ieAlternativesTable {
+      margin-top: 20px;
+      width: 100%
+    }
+
+    .ieAlternativesCell {
+      text-align: center;
+    }
   </style>
 </head>
 
@@ -113,11 +122,23 @@
         <div class="ieContent">
           <div class="ieInfo">
             <div class="ieInfoText">
-              Internet Explorer wordt niet ondersteund
+              Je bezoekt MijnApp met de verouderde browser Internet Explorer 11.
             </div>
             <div class="ieInfoSubText">
-              Gebruikt u alstublieft een andere, meer moderne browser
+              MijnApp biedt hiervoor geen ondersteuning. Voor veilig en optimaal gebruik van onze applicatie adviseren wij het gebruik van onderstaande browsers.
             </div>
+            <table class="ieAlternativesTable">
+              <tr>
+                <td class="ieAlternativesCell"><a href="https://www.microsoft.com/nl-nl/windows/microsoft-edge"><img alt="Edge" src="./assets/icons/edge.svg" height="80" width="80"></a></td>
+                <td class="ieAlternativesCell"><a href="https://www.google.nl/chrome/"><img alt="Chrome" src="./assets/icons/chrome.svg" height="80" width="80"></a></td>
+                <td class="ieAlternativesCell"><a href="https://www.mozilla.org/nl/firefox/new/"><img alt="Firefox" src="./assets/icons/firefox.svg" height="80" width="80"></a></td>
+              </tr>
+              <tr>
+                <td class="ieAlternativesCell">Edge</td>
+                <td class="ieAlternativesCell">Chrome</td>
+                <td class="ieAlternativesCell">Firefox</td>
+              </tr>
+            </table>
           </div>
         </div>
       </div>
