@@ -33,7 +33,7 @@ namespace MijnApp_Backend.Controllers
         private const string MovePersonRequestTypeId = "9d76fb58-0711-4437-acc4-9f4d9d403cdf";
         private Dictionary<string, string> _cachedPersonsNames;
 
-        public OrderController(IConfiguration config, IServiceClient serviceClient)
+        public OrderController(IConfiguration config, IServiceClient serviceClient, IServiceClient serviceClientForPerson)
         {
             _baseUri = config.GetValue<string>("Api:OrderUri");
             _orderTypeBaseUri = config.GetValue<string>("Api:OrderTypeUri");
@@ -42,7 +42,7 @@ namespace MijnApp_Backend.Controllers
             _serviceClient = serviceClient;
             _serviceClient.SetApiKey(config.GetValue<string>("Api:OrderApiKey"));
             _jwtTokenProvider = new JwtTokenProvider(config);
-            _personService = new PersonService(_jwtTokenProvider, serviceClient, config);
+            _personService = new PersonService(_jwtTokenProvider, serviceClientForPerson, config);
             _cachedPersonsNames = new Dictionary<string, string>();
         }
 
