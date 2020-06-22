@@ -50,16 +50,46 @@ spec:
               value: ***REMOVED***
             - name: Jwt__Issuer
               value: MijnApp
-            - name: Jwt__Issuer
-              value: DigidCgi__SharedSecret
+            - name: DigidCgi__SharedSecret
+              value: ***REMOVED***
             - name: DigidCgi__SiamServer
-              value: https://siam1.test.anoigo.nl/aselectserver/server
+              value: https://alsiam.s-hertogenbosch.nl/aselectserver/server
             - name: DigidCgi__ApplicationId
-              value: SOLV_DD
+              value: Denbosch_Verhuizen
             - name: DigidCgi__SiamServerName
-              value: siam1.test.anoigo.nl
+              value: alsiam.s-hertogenbosch.nl
             - name: HasFakeLoginEnabled
               valueFrom:
                 secretKeyRef:
                   name: {{ template "fullname" . }}
                   key: HasFakeLoginEnabled
+            - name: Api__AddressApiKey
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "fullname" . }}
+                  key: AddressApiKey
+            - name: Api__BrpApiKey
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "fullname" . }}
+                  key: BrpApiKey
+            - name: Api__OrderApiKey
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "fullname" . }}
+                  key: OrderApiKey
+            - name: Api__OrderTypeApiKey
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "fullname" . }}
+                  key: OrderTypeApiKey
+            - name: Api__ProcessApiKey
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "fullname" . }}
+                  key: ProcessApiKey
+            - name: Api__WebResourceApiKey
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "fullname" . }}
+                  key: WebResourceApiKey

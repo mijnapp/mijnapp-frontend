@@ -9,15 +9,22 @@ services:
       - ASPNETCORE_HTTPS_PORT=40443
       - ASPNETCORE_Kestrel__Certificates__Default__Path=/app/cert/test.pfx
       - ASPNETCORE_Kestrel__Certificates__Default__Password=MyPassword
-      - ORIGINS=https://localhost:60443
+      - ORIGINS=http://localhost:60080
       - JwtClaimEncryption__SecretKey=1234567890ABCDEF
       - Jwt__Key=***REMOVED***
       - Jwt__Issuer=MijnApp
-      - DigidCgi__SharedSecret=Fromkeypass
-      - DigidCgi__SiamServer=https://siam1.test.anoigo.nl/aselectserver/server
-      - DigidCgi__ApplicationId=SOLV_DD
-      - DigidCgi__SiamServerName=siam1.test.anoigo.nl
+      - DigidCgi__SiamServer=https://alsiam.s-hertogenbosch.nl/aselectserver/server
+      - DigidCgi__ApplicationId=Denbosch_Verhuizen
+      - DigidCgi__SiamServerName=alsiam.s-hertogenbosch.nl
       - HasFakeLoginEnabled=true
+      - Api__AddressApiKey=***REMOVED***
+      - Api__BrpApiKey=***REMOVED***
+      - Api__OrderApiKey=***REMOVED***
+      - Api__OrderTypeApiKey=***REMOVED***
+      - Api__ProcessApiKey=***REMOVED***
+      - Api__WebResourceApiKey=***REMOVED***
+      - Api__ContractApiKey=aaaaaaaaaaaaaaaa
+      - DigidCgi__SharedSecret=***REMOVED***
     ports:
       - "40080:80"
       - "40443:443"
@@ -30,7 +37,7 @@ services:
       - ASPNETCORE_HTTPS_PORT=60443
       - ASPNETCORE_Kestrel__Certificates__Default__Path=/app/cert/test.pfx
       - ASPNETCORE_Kestrel__Certificates__Default__Password=MyPassword
-      - PublicSettings__BACKEND_URL=https://mijnapp-backend
+      - PublicSettings__BACKEND_URL=http://localhost:40080
       - PublicSettings__HAS_FAKE_INLOG_ENABLED=true
     ports:
       - "60080:80"
