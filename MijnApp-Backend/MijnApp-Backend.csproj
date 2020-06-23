@@ -40,6 +40,12 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="cert\test.pfx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Condition="'$(Configuration)' == 'Debug'" Command="if EXIST &quot;C:\UserSecrets\320e50fc-0267-417b-965b-f4c06031b254\&quot; (&#xD;&#xA;xcopy &quot;%25USERPROFILE%25\AppData\Roaming\Microsoft\UserSecrets\320e50fc-0267-417b-965b-f4c06031b254\secrets.json&quot; &quot;C:\UserSecrets\320e50fc-0267-417b-965b-f4c06031b254\&quot; /Y&#xD;&#xA;)" />
   </Target>
