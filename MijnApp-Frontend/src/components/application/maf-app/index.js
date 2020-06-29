@@ -330,6 +330,7 @@ export default class MafApp extends connect(store)(PolymerElement) {
             id: '37e30b1f-fb51-4d49-8756-fa5d4d55829a',
             type: 'personsMoving',
             property: 'wie',
+            property2: 'wie_bsn',
             title: 'Met wie ga je verhuizen?',
             subtitle: 'Onderstaande personen kunnen door jou verhuist worden.',
             fieldName: 'meeverhuizende personen',
