@@ -116,6 +116,9 @@ function* doJwtLogout401(action) {
   window.errorDialog.open();
   // Here we do a selectPageNoHistory, so that when the user logs in again, he is navigated to were he was.
   //yield put(selectPageNoHistory('signin'));
-  var url = window.location.origin;
-  window.location = url + '/startjourney?name=verhuizen';
+  setTimeout(function() {
+    var url = window.location.origin;
+    window.location = url + '/startjourney?name=verhuizen';
+  }, 2000);
+
 }
