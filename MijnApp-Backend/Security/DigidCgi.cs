@@ -119,6 +119,18 @@ namespace MijnApp_Backend.Security
             return digidUser;
         }
 
+        internal string SimpleLogoutUrl()
+        {
+            var siamUrl = _config["DigidCgi:SiamServer"];
+            // The siam test server of anoigo does not respond to the simple logout. 
+            // To prevent errors, return empty.
+            if (siamUrl == "https://siam1.test.anoigo.nl/aselectserver/server")
+            {
+                return "";
+            }
+            return siamUrl;
+        }
+
         internal void ProlongSession(ClaimsPrincipal currentUser)
         {
             //TODO - implement Http call to SIAM server with aselect_credentials from user

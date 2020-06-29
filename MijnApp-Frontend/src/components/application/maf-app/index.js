@@ -69,8 +69,12 @@ export default class MafApp extends connect(store)(PolymerElement) {
       } else if (window.location.pathname.indexOf('startjourney') > -1) {
         this._handleStartJourney();
       } else {
-        const path = window.location.pathname.charAt(0) === '/' ? window.location.pathname.substring(1) : window.location.pathname;
-        store.dispatch(selectPageNoHistory(path));
+        //const path = window.location.pathname.charAt(0) === '/' ? window.location.pathname.substring(1) : window.location.pathname;
+        //store.dispatch(selectPageNoHistory(path));
+
+        //Whatever the user navigates to, force him to start the Verhuizen journey
+
+        this._handleStartJourney('verhuizen');
       }
     }
   }
@@ -131,9 +135,9 @@ export default class MafApp extends connect(store)(PolymerElement) {
     store.dispatch(requestJwtTokenForDigidCgi(aselectCredentials, rid));
   }
 
-  _handleStartJourney() {
+  _handleStartJourney(defaultJourneyToStart) {
     const url = decodeURI(window.location.href);
-    const journeyToStart = url.split('name=')[1].split('&')[0];
+    const journeyToStart = defaultJourneyToStart ? defaultJourneyToStart : url.split('name=')[1].split('&')[0];
     var journeyIdToStart = getJourneyId(journeyToStart);
 
     var foundJourneyToStart;
@@ -327,10 +331,7 @@ export default class MafApp extends connect(store)(PolymerElement) {
             type: 'personsMoving',
             property: 'wie',
             title: 'Met wie ga je verhuizen?',
-            subtitle:
-                      'Er wordt een bericht gestuurd naar de persoon die meeverhuist ' +
-                      '(onderstaande personen staan nu op hetzelfde adres als jij ' +
-                      'ingeschreven)',
+            subtitle: 'Onderstaande personen kunnen door jou verhuist worden.',
             fieldName: 'meeverhuizende personen',
             fieldIcon: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiANCgkJdmlld0JveD0iMCAwIDUwNS40IDUwNS40IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MDUuNCA1MDUuNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KCTxjaXJjbGUgc3R5bGU9Im9wYWNpdHk6MTtmaWxsOiNmNWY1ZjU7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjEuMzMyOTk5OTQ7c3Ryb2tlLWxpbmVjYXA6YnV0dDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6NDtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLWRhc2hvZmZzZXQ6MDtzdHJva2Utb3BhY2l0eToxO3BhaW50LW9yZGVyOm5vcm1hbCIgDQoJCQlpZD0icGF0aDU0MDciIGN4PSIyNTIuNyIgY3k9IjI1Mi43IiByPSIyNTIuNyIgLz4NCgk8ZyBpZD0iZzUzOTgiIHRyYW5zZm9ybT0ibWF0cml4KDAuOCwwLDAsMC44LDUwLjU0LDUwLjU0KSIgc3R5bGU9ImZpbGw6IzFlYmRkMztmaWxsLW9wYWNpdHk6MSI+DQoJCTxwYXRoIGQ9Im0gNDM3LjEsMjMzLjQ1IGMgMTQuOCwtMTAuNCAyNC42LC0yNy43IDI0LjYsLTQ3LjIgMCwtMzEuOSAtMjUuOCwtNTcuNyAtNTcuNywtNTcuNyAtMzEuOSwwIC01Ny43LDI1LjggLTU3LjcsNTcuNyAwLDE5LjUgOS43LDM2LjggMjQuNiw0Ny4yIC0xMi43LDQuNCAtMjQuMywxMS4yIC0zNC4xLDIwIC0xMy41LC0xMS41IC0yOS40LC0yMC4zIC00Ni44LC0yNS41IDIxLjEsLTEyLjggMzUuMywtMzYuMSAzNS4zLC02Mi42IDAsLTQwLjQgLTMyLjcsLTczLjEgLTczLjEsLTczLjEgLTQwLjQsMCAtNzMuMSwzMi44IC03My4xLDczLjEgMCwyNi41IDE0LjEsNDkuOCAzNS4zLDYyLjYgLTE3LjIsNS4yIC0zMi45LDEzLjkgLTQ2LjMsMjUuMiAtOS44LC04LjYgLTIxLjIsLTE1LjMgLTMzLjcsLTE5LjYgMTQuOCwtMTAuNCAyNC42LC0yNy43IDI0LjYsLTQ3LjIgMCwtMzEuOSAtMjUuOCwtNTcuNyAtNTcuNywtNTcuNyAtMzEuOSwwIC01Ny43LDI1LjggLTU3LjcsNTcuNyAwLDE5LjUgOS43LDM2LjggMjQuNiw0Ny4yIEMgMjguNSwyNDcuMjUgMCwyODQuOTUgMCwzMjkuMjUgdiA2LjYgYyAwLDAuMiAwLjIsMC40IDAuNCwwLjQgaCAxMjIuMyBjIC0wLjcsNS41IC0xLjEsMTEuMiAtMS4xLDE2LjkgdiA2LjggYyAwLDI5LjQgMjMuOCw1My4yIDUzLjIsNTMuMiBoIDE1NSBjIDI5LjQsMCA1My4yLC0yMy44IDUzLjIsLTUzLjIgdiAtNi44IGMgMCwtNS43IC0wLjQsLTExLjQgLTEuMSwtMTYuOSBIIDUwNSBjIDAuMiwwIDAuNCwtMC4yIDAuNCwtMC40IHYgLTYuNiBjIC0wLjIsLTQ0LjQgLTI4LjYsLTgyLjEgLTY4LjMsLTk1LjggeiBtIC03NC44LC00Ny4zIGMgMCwtMjMgMTguNywtNDEuNyA0MS43LC00MS43IDIzLDAgNDEuNywxOC43IDQxLjcsNDEuNyAwLDIyLjcgLTE4LjMsNDEuMiAtNDAuOSw0MS43IC0wLjMsMCAtMC41LDAgLTAuOCwwIC0wLjMsMCAtMC41LDAgLTAuOCwwIC0yMi43LC0wLjQgLTQwLjksLTE4LjkgLTQwLjksLTQxLjcgeiBtIC0xNjcuNCwtMjAuOCBjIDAsLTMxLjUgMjUuNiwtNTcuMSA1Ny4xLC01Ny4xIDMxLjUsMCA1Ny4xLDI1LjYgNTcuMSw1Ny4xIDAsMzAuNCAtMjMuOSw1NS4zIC01My44LDU3IC0xLjEsMCAtMi4yLDAgLTMuMywwIC0xLjEsMCAtMi4yLDAgLTMuMywwIC0yOS45LC0xLjcgLTUzLjgsLTI2LjYgLTUzLjgsLTU3IHogbSAtMTM1LjYsMjAuOCBjIDAsLTIzIDE4LjcsLTQxLjcgNDEuNywtNDEuNyAyMywwIDQxLjcsMTguNyA0MS43LDQxLjcgMCwyMi43IC0xOC4zLDQxLjIgLTQwLjksNDEuNyAtMC4zLDAgLTAuNSwwIC0wLjgsMCAtMC4zLDAgLTAuNSwwIC0wLjgsMCAtMjIuNiwtMC40IC00MC45LC0xOC45IC00MC45LC00MS43IHogbSA2Ni4yLDEzNCBIIDE2LjIgYyA0LjUsLTQyLjYgNDAuNSwtNzYgODQuMiwtNzYuMyAwLjIsMCAwLjQsMCAwLjYsMCAwLjIsMCAwLjQsMCAwLjYsMCAyMC44LDAuMSAzOS44LDcuOCA1NC41LDIwLjMgLTE0LjQsMTUuNiAtMjUuMSwzNC44IC0zMC42LDU2IHogbSAyNDEuMywzOS44IGMgMCwyMC41IC0xNi43LDM3LjIgLTM3LjIsMzcuMiBoIC0xNTUgYyAtMjAuNSwwIC0zNy4yLC0xNi43IC0zNy4yLC0zNy4yIHYgLTYuOCBjIDAsLTYyLjEgNDkuNiwtMTEyLjkgMTExLjMsLTExNC43IDEuMSwwLjEgMi4zLDAuMSAzLjQsMC4xIDEuMSwwIDIuMywwIDMuNCwtMC4xIDYxLjcsMS44IDExMS4zLDUyLjYgMTExLjMsMTE0LjcgdiA2LjggeiBtIDExLjksLTM5LjggYyAtNS41LC0yMS4xIC0xNiwtNDAgLTMwLjMsLTU1LjYgMTQuOCwtMTIuOCAzNCwtMjAuNSA1NSwtMjAuNyAwLjIsMCAwLjQsMCAwLjYsMCAwLjIsMCAwLjQsMCAwLjYsMCA0My43LDAuMyA3OS43LDMzLjcgODQuMiw3Ni4zIHoiIA0KCQkJCWlkPSJwYXRoNTM5NiIgc3R5bGU9ImZpbGw6IzFlYmRkMztmaWxsLW9wYWNpdHk6MSIgLz4NCgk8L2c+DQo8L3N2Zz4=',
             next: '51e58c64-eabb-4288-af4c-2080d9e3b71f',

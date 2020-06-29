@@ -14,6 +14,6 @@ export const getJourneyId = (journeyName) => {
     }
   }
 
-  return undefined;
+  return '9d76fb58-0711-4437-acc4-9f4d9d403cdf';
 };
 
