@@ -204,6 +204,27 @@ namespace MijnApp_Backend.Controllers
                         index++;
                     }
                 }
+
+                if (question.key2 is string)
+                {
+                    if (question.value2 is string)
+                    {
+                        request.properties.Add(question.key2, question.value2);
+                    }
+                    else
+                    {
+                        var values = "";
+                        if (question.value2 != null)
+                        {
+                            values = string.Join(", ", question.value2);
+                        }
+
+                        if (question.key2 != null)
+                        {
+                            request.properties.Add(question.key2, values);
+                        }
+                    }
+                }
             }
 
             //TODO: Add some properties to verhuizen requestType on a fixed id for now. Will need to be discussed with Conduction.
@@ -232,6 +253,8 @@ namespace MijnApp_Backend.Controllers
         public dynamic value { get; set; }
         public string keyTitle { get; set; }
         public dynamic valueTitle { get; set; }
+        public dynamic key2 { get; set; }
+        public dynamic value2 { get; set; }
     }
 
     internal class Request

@@ -97,6 +97,8 @@ const item = (
         value: action.value,
         keyTitle: action.keyTitle,
         valueTitle: action.valueTitle,
+        key2: action.key2,
+        value2: action.value2,
         _tracker: action._tracker,
       };
     case ORDER_CLEAR_ANSWER:
