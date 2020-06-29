@@ -115,5 +115,10 @@ function* doJwtLogout401(action) {
   window.errorText.innerHTML = `U heeft geen geldige sessie meer en zult opnieuw moeten inloggen.`;
   window.errorDialog.open();
   // Here we do a selectPageNoHistory, so that when the user logs in again, he is navigated to were he was.
-  yield put(selectPageNoHistory('signin'));
+  //yield put(selectPageNoHistory('signin'));
+  setTimeout(function() {
+    var url = window.location.origin;
+    window.location = url + '/startjourney?name=verhuizen';
+  }, 2000);
+
 }
