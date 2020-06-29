@@ -11,6 +11,7 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using MijnApp.Domain.Models;
 using MijnApp_Backend.Services;
 
 namespace MijnApp_Backend.Controllers
@@ -18,8 +19,8 @@ namespace MijnApp_Backend.Controllers
     [Authorize]
     public class OrderController : Controller
     {
-        private readonly JwtTokenProvider _jwtTokenProvider;
         private readonly PersonService _personService;
+        private readonly string _brpBaseUri;
         private readonly string _baseUri;
         private readonly string _orderTypeBaseUri;
         private readonly string _webResourceBaseUri;
@@ -31,18 +32,19 @@ namespace MijnApp_Backend.Controllers
         private const string TargetOrganizationDenBosch = "1709124";
         private const string OrganizationIdDenBosch = "4f387d0e-a2e5-44c0-9902-c31b63a8ee36"; // DEV = "1e452f11-a098-464e-8902-8fc2f1ee6acb";
         private const string MovePersonRequestTypeId = "9d76fb58-0711-4437-acc4-9f4d9d403cdf";
-        private Dictionary<string, string> _cachedPersonsNames;
+        private readonly Dictionary<string, string> _cachedPersonsNames;
 
         public OrderController(IConfiguration config, IServiceClient serviceClient, IServiceClient serviceClient2)
         {
+            _brpBaseUri = config.GetValue<string>("Api:BrpUri");
             _baseUri = config.GetValue<string>("Api:OrderUri");
             _orderTypeBaseUri = config.GetValue<string>("Api:OrderTypeUri");
             _webResourceBaseUri = config.GetValue<string>("Api:WebResourceUri");
             _addressBaseUri = config.GetValue<string>("Api:AddressUri");
             _serviceClient = serviceClient;
             _serviceClient.SetApiKey(config.GetValue<string>("Api:OrderApiKey"));
-            _jwtTokenProvider = new JwtTokenProvider(config);
-            _personService = new PersonService(_jwtTokenProvider, serviceClient2, config);
+            var jwtTokenProvider = new JwtTokenProvider(config);
+            _personService = new PersonService(jwtTokenProvider, serviceClient2, config);
             _cachedPersonsNames = new Dictionary<string, string>();
         }
 
@@ -50,8 +52,8 @@ namespace MijnApp_Backend.Controllers
         [Route("orders")]
         public async Task<IActionResult> GetOrders()
         {
-            var bsn = _jwtTokenProvider.GetBsnFromClaims(HttpContext.User);
-            var submitterUrl = "https://brp.dev.mijnapp.zaakonline.nl/ingeschrevenpersonen/uuid/1edd146d-25c5-439e-8c04-8d6bff997ab4";
+            var currentPerson = _personService.GetPersonFromApi(User);
+            var submitterUrl = _brpBaseUri + $"ingeschrevenpersonen/uuid/{currentPerson.Result.id}";
             var url = string.Format(GetRequest, _baseUri, submitterUrl);
             var response = await _serviceClient.GetAsync(url);
             var result = await response.Content.ReadAsStringAsync();
@@ -71,7 +73,7 @@ namespace MijnApp_Backend.Controllers
             return Json(orderedRequest);
         }
 
-        private async Task<Request> AddRequestDataFromType(Request request)
+        private async Task AddRequestDataFromType(Request request)
         {
             //TODO get name from _orderTypeBaseUri
             if (request.requestType == _orderTypeBaseUri + "request_types/" + MovePersonRequestTypeId)
@@ -107,8 +109,6 @@ namespace MijnApp_Backend.Controllers
                     address.huisnummertoevoeging, address.postcode, address.woonplaats);
                 request.properties.Add("adress_description", adressString);
             }
-
-            return request;
         }
 
         [HttpPost]
@@ -121,8 +121,9 @@ namespace MijnApp_Backend.Controllers
 
         private async Task<IActionResult> CallRequestApiAsync(Order order)
         {
-            var bsn = _jwtTokenProvider.GetBsnFromClaims(HttpContext.User);
-            var requestData = CreateRequestData(order, bsn);
+            var currentPerson = _personService.GetPersonFromApi(User);
+            
+            var requestData = CreateRequestData(order, currentPerson.Result);
             var stringContent = new StringContent(JsonConvert.SerializeObject(requestData), Encoding.UTF8, "application/json");
             var response = await _serviceClient.PostAsync(string.Format(PostRequest, _baseUri), stringContent);
             var result = await response.Content.ReadAsStringAsync();
@@ -144,14 +145,15 @@ namespace MijnApp_Backend.Controllers
         /// The target organization of municipality DenBosch is used for now. This will be the organization that will handle the request.
         /// </summary>
         /// <param name="order"></param>
-        /// <param name="bsn"></param>
-        private Request CreateRequestData(Order order, string bsn)
+        /// <param name="loggedInPerson"></param>
+        private Request CreateRequestData(Order order, Persoon loggedInPerson)
         {
             //Gebruik url ipv bsn in submitter (DEV: /ingeschrevenpersonen/uuid/1edd146d-25c5-439e-8c04-8d6bff997ab4, PROD: /ingeschrevenpersonen/uuid/0282b6eb-2bf2-4544-9242-511501d73be4)
-            var submitterUrl = "https://brp.dev.mijnapp.zaakonline.nl/ingeschrevenpersonen/uuid/1edd146d-25c5-439e-8c04-8d6bff997ab4";
+            var submitterUrl = _brpBaseUri + $"ingeschrevenpersonen/uuid/{loggedInPerson.id}";
             var submitter = new Submitter
             {
                 brp = submitterUrl,
+                bsn = loggedInPerson.burgerservicenummer,
                 person = "",
             };
             //var submitter = new Submitter { person = "680508429" }; //Added request for different bsn.
@@ -293,6 +295,7 @@ namespace MijnApp_Backend.Controllers
     internal class Submitter
     {
         public string brp { get; set; }
+        public string bsn { get; set; }
         public string person { get; set; }
     }
 
