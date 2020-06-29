@@ -5,6 +5,7 @@ import { selectPage } from '../../../../redux/actions/application';
 import { requestOrdersSubmit } from '../../../../redux/actions/orders';
 import { orderPrev } from '../../../../redux/actions/order';
 import { requestPersonData, CLEAR_PERSON_DATA } from '../../../../redux/actions/person';
+import { requestJwtLogout } from '../../../../redux/actions/jwt';
 import { JOURNEY_START, JOURNEY_END, ORDER_STATUS_SENDING, ORDER_STATUS_SEND_OK, ORDER_STATUS_NOT_SEND, ORDER_STATUS_SEND_FAILED } from '../../../../helpers/common';
 import css from './style.pcss';
 import template from './template.html';
@@ -153,7 +154,7 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
 
   _stop() {
     if (this.journey.isDeepLink && this.journey.successUrl) {
-      window.location = this.journey.successUrl;
+      store.dispatch(requestJwtLogout(this.journey.stopUrl));
     } else {
       store.dispatch(selectPage('home'));
     }

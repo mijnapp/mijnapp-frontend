@@ -41,8 +41,9 @@ export const requestJwtTokenForDigidFailure = (error) => ({
   error,
 });
 export const REQUEST_JWT_LOGOUT = 'REQUEST_JWT_LOGOUT';
-export const requestJwtLogout = () => ({
+export const requestJwtLogout = (returnUrl) => ({
   type: REQUEST_JWT_LOGOUT,
+  returnUrl: returnUrl,
 });
 export const REQUEST_JWT_LOGOUT_401 = 'REQUEST_JWT_LOGOUT_401';
 export const requestJwtLogoutUnauthorized = (lastAction) => ({

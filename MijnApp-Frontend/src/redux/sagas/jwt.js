@@ -87,14 +87,19 @@ export function* watchRequestJwtLogout() {
   yield takeLatest(REQUEST_JWT_LOGOUT, doJwtLogout);
 }
 
-function* doJwtLogout() {
+function* doJwtLogout(action) {
   yield call(jwtApi.logout(jwtBearerToken()));
   yield put(requestJwtLogoutSuccess());
   removeJwtBearerToken();
   removeLastAction();
   window.successToast.text = 'Succesvol uitgelogd';
   window.successToast.open();
-  yield put(selectPage('signin'));
+  if (action !== null && action !== undefined && action.returnUrl !== undefined && action.returnUrl !== null && action.returnUrl !== '') {
+    window.location = action.returnUrl;
+  } else {
+    var url = window.location.origin;
+    window.location = url + '/startjourney?name=verhuizen';
+  }
 }
 
 export function* watchRequestJwtLogout401() {
