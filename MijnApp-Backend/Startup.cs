@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -47,8 +48,19 @@ namespace MijnApp_Backend
                 });
 
             services.AddHttpContextAccessor();
-            services.AddHttpClient<IDigidClient,DigidClient>();
             services.AddHttpClient<IServiceClient, ServiceClient>(ConfigureServiceClient);
+
+            var certPath = Configuration["DigidCgi:CertificatePath"];
+            var certPass = Configuration["DigidCgi:CertificatePassword"];
+            // Create a collection object and populate it using the PFX file
+            X509Certificate2Collection collection = new X509Certificate2Collection();
+            collection.Import(certPath, certPass, X509KeyStorageFlags.PersistKeySet);
+            var httpClientHandler = new HttpClientHandler();
+            httpClientHandler.ClientCertificates.Add(collection[0]);
+            httpClientHandler.ClientCertificateOptions = ClientCertificateOption.Manual;
+
+            services.AddHttpClient<IDigidClient,DigidClient>()
+                .ConfigurePrimaryHttpMessageHandler(() => httpClientHandler);
 
             services.AddCors();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);

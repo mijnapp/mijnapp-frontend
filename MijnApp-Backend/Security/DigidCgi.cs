@@ -74,7 +74,7 @@ namespace MijnApp_Backend.Security
 
             var resultCode = dict[DigidConstants.ResultCode];
 
-            if (resultCode.Equals(DigidConstants.ResultCodeOk))
+            if (resultCode != null && resultCode.Equals(DigidConstants.ResultCodeOk))
             {
                 var siamRedirectUrl = string.Format(SiamRedirectUrl, dict[DigidConstants.AsUrl], dict[DigidConstants.ASelectServer], dict[DigidConstants.Rid]);
                 return siamRedirectUrl;
