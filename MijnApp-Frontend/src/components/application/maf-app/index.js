@@ -69,8 +69,12 @@ export default class MafApp extends connect(store)(PolymerElement) {
       } else if (window.location.pathname.indexOf('startjourney') > -1) {
         this._handleStartJourney();
       } else {
-        const path = window.location.pathname.charAt(0) === '/' ? window.location.pathname.substring(1) : window.location.pathname;
-        store.dispatch(selectPageNoHistory(path));
+        //const path = window.location.pathname.charAt(0) === '/' ? window.location.pathname.substring(1) : window.location.pathname;
+        //store.dispatch(selectPageNoHistory(path));
+
+        //Whatever the user navigates to, force him to start the Verhuizen journey
+
+        this._handleStartJourney('verhuizen');
       }
     }
   }
@@ -131,9 +135,9 @@ export default class MafApp extends connect(store)(PolymerElement) {
     store.dispatch(requestJwtTokenForDigidCgi(aselectCredentials, rid));
   }
 
-  _handleStartJourney() {
+  _handleStartJourney(defaultJourneyToStart) {
     const url = decodeURI(window.location.href);
-    const journeyToStart = url.split('name=')[1].split('&')[0];
+    const journeyToStart = defaultJourneyToStart ? defaultJourneyToStart : url.split('name=')[1].split('&')[0];
     var journeyIdToStart = getJourneyId(journeyToStart);
 
     var foundJourneyToStart;
