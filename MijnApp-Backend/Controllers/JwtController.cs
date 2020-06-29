@@ -65,7 +65,10 @@ namespace MijnApp_Backend.Controllers
             var correlationId = JwtTokenProvider.GetCorrelationIdForLogging(HttpContext.User);
             _auditLogger.Info("Gebruiker uitgelogd", correlationId);
 
-            return Ok();
+            return Ok(new
+            {
+                simpleLogoutUrl = _digidCgi.SimpleLogoutUrl()
+            });
         }
 
         [HttpPost]
