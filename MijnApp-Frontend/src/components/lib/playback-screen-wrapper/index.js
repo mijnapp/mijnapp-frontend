@@ -3,6 +3,7 @@ import { connect } from 'pwa-helpers/connect-mixin';
 import { store } from '../../../redux/store';
 import { orderNext, orderPrev } from '../../../redux/actions/order';
 import { selectPage } from '../../../redux/actions/application';
+import { requestJwtLogout } from '../../../redux/actions/jwt';
 import { JOURNEY_START, JOURNEY_END } from '../../../helpers/common';
 
 import css from './style.pcss';
@@ -57,7 +58,7 @@ export default class PlaybackScreenWrapper extends connect(store)(
 
   _stop() {
     if (this.journey.isDeepLink && this.journey.stopUrl) {
-      window.location = this.journey.stopUrl;
+      store.dispatch(requestJwtLogout(this.journey.stopUrl));
     } else {
       store.dispatch(selectPage('journeys'));
     }
