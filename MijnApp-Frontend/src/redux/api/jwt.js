@@ -60,7 +60,7 @@ export const jwtApi = {
     }
   },
   logout: (token) => async () => {
-    await axios.post(
+    const response = await axios.post(
       '/jwt/signout',
       null,
       {
@@ -68,5 +68,13 @@ export const jwtApi = {
         headers: { 'Authorization': 'Bearer ' + token }
       }
     );
+    if (response.statusText === 'OK' || response.status === 200) {
+      var simpleLogoutUrl = response.data.simpleLogoutUrl;
+      if (simpleLogoutUrl !== null && simpleLogoutUrl !== '') {
+        await axios.get(simpleLogoutUrl, null);
+      }
+    } else {
+      throw response.status;
+    }
   },
 };
