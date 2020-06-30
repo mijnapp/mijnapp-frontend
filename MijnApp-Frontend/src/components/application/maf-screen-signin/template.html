@@ -21,9 +21,9 @@
               <template>
                 <select name="fakeUsers" id="fakeUsers" class="loginDigidSelect" on-change="_userChanged">
                   <option value="0" selected="true" disabled="true">Kies een gebruiker</option>
-                    <template is="dom-repeat" items="{{fakeUsers}}">
-                      <option value="{{item.bsn}}">{{item.name}} ({{item.bsn}})</option>
-                    </template>
+                  <template is="dom-repeat" items="{{fakeUsers}}">
+                    <option value="{{item.bsn}}">{{item.name}} ({{item.bsn}})</option>
+                  </template>
                 </select>
               </template>
             </dom-if>
@@ -38,6 +38,9 @@
         <div class="Info">
           <div class="InfoText">Heeft u nog geen DigiD?</div>
           <div class="InfoSubText">Vraag uw DigiD aan op <a href="http://www.digid.nl">www.digid.nl.</a></div>
+        </div>
+        <div class="InfoFooter">
+          <div>MijnApp versie 1.0.1 (30-06-2020)</div>
         </div>
       </div>
       <dom-if if="[[_showLoginWarning(jwtError)]]">
