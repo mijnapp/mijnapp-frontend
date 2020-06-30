@@ -122,12 +122,6 @@ namespace MijnApp_Backend.Security
         internal string SimpleLogoutUrl()
         {
             var siamUrl = _config["DigidCgi:SiamServer"];
-            // The siam test server of anoigo does not respond to the simple logout. 
-            // To prevent errors, return empty.
-            if (siamUrl == "https://siam1.test.anoigo.nl/aselectserver/server")
-            {
-                return "";
-            }
             return siamUrl;
         }
 
