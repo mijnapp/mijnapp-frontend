@@ -25,10 +25,18 @@ function* fetchAddressData(action) {
 }
 
 function sortAddress(a, b) {
-  if (a.huisnummertoevoeging < b.huisnummertoevoeging) {
+  // huisnummertoevoeging is usually empty or sometimes an "A" or "Bis".
+  // But in complex cases it can be "H 123" or "ZW"
+  // The sorting should first see if there are any numbers inside the huisnummertoevoeging.
+  // It should remove the numbers. Then do the sorting on alphabet.
+  // After it should sort on numbers. This means that ("B 4", "A 111", "A 70") should be sorted as A 70, A 111, B 4;
+  if (a.huisnummertoevoeging == undefined && b.huisnummertoevoeging == undefined) {
+    return 0;
+  }
+  if (a.huisnummertoevoeging == undefined && b.huisnummertoevoeging != undefined) {
     return -1;
   }
-  if (a.huisnummertoevoeging > b.huisnummertoevoeging) {
+  if (a.huisnummertoevoeging != undefined && b.huisnummertoevoeging == undefined) {
     return 1;
   }
   var aHuisnummerToevoegingTrimmed = a.huisnummertoevoeging.trim();
