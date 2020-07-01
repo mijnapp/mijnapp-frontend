@@ -39,9 +39,21 @@ function sortAddress(a, b) {
   if (a.huisnummertoevoeging != undefined && b.huisnummertoevoeging == undefined) {
     return 1;
   }
+  var aHuisnummerToevoegingTrimmed = a.huisnummertoevoeging.trim();
+  var bHuisnummerToevoegingTrimmed = b.huisnummertoevoeging.trim();
 
-  var aHuisnummertoevoegingLetters = a.huisnummertoevoeging.match(/[a-zA-Z]+/g);
-  var bHuisnummertoevoegingLetters = b.huisnummertoevoeging.match(/[a-zA-Z]+/g);
+  if (aHuisnummerToevoegingTrimmed === '' && bHuisnummerToevoegingTrimmed === '') {
+    return 0;
+  }
+  if (aHuisnummerToevoegingTrimmed === '' && bHuisnummerToevoegingTrimmed !== '') {
+    return -1;
+  }
+  if (aHuisnummerToevoegingTrimmed !== '' && bHuisnummerToevoegingTrimmed === '') {
+    return 1;
+  }
+
+  var aHuisnummertoevoegingLetters = aHuisnummerToevoegingTrimmed.match(/[a-zA-Z]+/g);
+  var bHuisnummertoevoegingLetters = bHuisnummerToevoegingTrimmed.match(/[a-zA-Z]+/g);
   if (aHuisnummertoevoegingLetters[0] < bHuisnummertoevoegingLetters[0]) {
     return -1;
   }
@@ -49,8 +61,8 @@ function sortAddress(a, b) {
     return 1;
   }
   // If the letters are the same between items. Check on numbers, first check if there are any numbers.
-  var aHuisnummertoevoegingNumbers = a.huisnummertoevoeging.match(/\d+/g);
-  var bHuisnummertoevoegingNumbers = b.huisnummertoevoeging.match(/\d+/g);
+  var aHuisnummertoevoegingNumbers = aHuisnummerToevoegingTrimmed.match(/\d+/g);
+  var bHuisnummertoevoegingNumbers = bHuisnummerToevoegingTrimmed.match(/\d+/g);
 
   if (aHuisnummertoevoegingNumbers == null && bHuisnummertoevoegingNumbers == null) {
     return 0;

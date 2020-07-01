@@ -148,9 +148,10 @@ export default class PlaybackScreenAddress extends connect(store)(PolymerElement
   }
 
   filterAddresses(address) {
-    if (address.statusVerblijfsobject === 'VerblijfsobjectIngetrokken'
-      || address.statusVerblijfsobject === 'NietGerealiseerdVerblijfsobject'
-      || address.statusVerblijfsobject === 'PlaatsIngetrokken') {
+    var statusVerblijfsobjectNoSpaces = address.statusVerblijfsobject.replace(/\s/g, '').toLowerCase();
+    if (statusVerblijfsobjectNoSpaces === 'verblijfsobjectingetrokken'
+      || statusVerblijfsobjectNoSpaces === 'nietgerealiseerdverblijfsobject'
+      || statusVerblijfsobjectNoSpaces === 'plaatsingetrokken') {
       return false;
     }
 
