@@ -24,6 +24,7 @@ namespace MijnApp_Backend
 #endif
                 })
                 .UseKestrel(options => options.AddServerHeader = false)
+                .UseIIS()
                 .UseStartup<Startup>();
     }
 }
