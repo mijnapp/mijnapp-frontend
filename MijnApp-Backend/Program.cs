@@ -23,6 +23,7 @@ namespace MijnApp_Backend
                     }
 #endif
                 })
+                .UseKestrel(options => options.AddServerHeader = false)
                 .UseStartup<Startup>();
     }
 }
