@@ -10,9 +10,15 @@ metadata:
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 data:
-  adres-endpoint: {{ .Values.settings.adresEndpoint | quote }}
-  order-endpoint: {{ .Values.settings.orderEndpoint | quote }}
+  addres-endpoint: {{ .Values.settings.adresEndpoint | quote }}
   brp-endpoint: {{ .Values.settings.brpEndpoint | quote }}
   verzoeken-endpoint: {{ .Values.settings.verzoekenEndpoint | quote }}
   verzoekType-endpoint: {{ .Values.settings.verzoekTypeEndpoint | quote }}
   processType-endpoint: {{ .Values.settings.processTypeEndpoint | quote }}
+  webResource-endpoint: {{ .Values.settings.webResourceEndpoint | quote }}
+  contract-endpoint: https://contracten-api-master-test.azurewebsites.net/api/personen/{bsn}/contracten
+  digid-server: https://alsiam.s-hertogenbosch.nl/aselectserver/server
+  digid-serverName: alsiam.s-hertogenbosch.nl
+  digid-application-id: Denbosch_Verhuizen
+  jwt-issuer: MijnApp
+
