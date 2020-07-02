@@ -52,8 +52,8 @@ namespace MijnApp_Backend.Controllers
         [Route("orders")]
         public async Task<IActionResult> GetOrders()
         {
-            var currentPerson = _personService.GetPersonFromApi(User);
-            var submitterUrl = _brpBaseUri + $"ingeschrevenpersonen/uuid/{currentPerson.Result.id}";
+            var currentPerson = await _personService.GetPersonFromApi(User);
+            var submitterUrl = _brpBaseUri + $"ingeschrevenpersonen/uuid/{currentPerson.id}";
             var url = string.Format(GetRequest, _baseUri, submitterUrl);
             var response = await _serviceClient.GetAsync(url);
             var result = await response.Content.ReadAsStringAsync();
@@ -121,9 +121,9 @@ namespace MijnApp_Backend.Controllers
 
         private async Task<IActionResult> CallRequestApiAsync(Order order)
         {
-            var currentPerson = _personService.GetPersonFromApi(User);
+            var currentPerson = await _personService.GetPersonFromApi(User);
             
-            var requestData = CreateRequestData(order, currentPerson.Result);
+            var requestData = CreateRequestData(order, currentPerson);
             var stringContent = new StringContent(JsonConvert.SerializeObject(requestData), Encoding.UTF8, "application/json");
             var response = await _serviceClient.PostAsync(string.Format(PostRequest, _baseUri), stringContent);
             var result = await response.Content.ReadAsStringAsync();
