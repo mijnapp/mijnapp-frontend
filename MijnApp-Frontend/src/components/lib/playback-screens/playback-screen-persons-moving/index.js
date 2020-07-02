@@ -65,9 +65,10 @@ export default class PlaybackScreenPersonsMoving extends connect(store)(PolymerE
 
     const selectedPersons = self.persons.filter(function (item) { return item.selected; });
     const ids = selectedPersons.map(function (item) { return item.id; });
+    const bsns = selectedPersons.map(function (item) { return item.burgerservicenummer; });
     const names = selectedPersons.map(function (item) { return self._formatPersonInformation(item); });
     store.dispatch(requestPersonsMovingSelectAll());
-    store.dispatch(orderSaveAnswer(self.question.key || self.question.property, ids, self.question.fieldName, names));
+    store.dispatch(orderSaveAnswer(self.question.key || self.question.property, ids, self.question.fieldName, names, self.question.property2, bsns));
   }
 
   _nextCallback(question) {
@@ -144,10 +145,15 @@ export default class PlaybackScreenPersonsMoving extends connect(store)(PolymerE
     }
     if (this.question.type === QUESTION_TYPE_PERSONS_MOVING && this.personsStatus === REQUEST_PERSONS_MOVING_SKIPQUESTION) {
       const self = this;
+      const selectedPersons = self.persons.filter(function (item) { return item.selected; });
+      const ids = selectedPersons.map(function (item) { return item.id; });
+      const bsns = selectedPersons.map(function (item) { return item.burgerservicenummer; });
+      const names = selectedPersons.map(function (item) { return self._formatPersonInformation(item); });
       store.dispatch({
         action1: store.dispatch(requestPersonsMovingSkipQuestion()),
-        action2: store.dispatch(orderSkip(self.current)),
-        action3: store.dispatch(orderNext(self.question.next)),
+        action2: store.dispatch(orderSaveAnswer(self.question.key || self.question.property, ids, self.question.fieldName, names, self.question.property2, bsns)),
+        action3: store.dispatch(orderSkip(self.current)),
+        action4: store.dispatch(orderNext(self.question.next)),
       });
     }
     if (this.question.type === QUESTION_TYPE_PERSONS_MOVING && this.personsStatus === REQUEST_PERSONS_MOVING_SELECT_ALL) {

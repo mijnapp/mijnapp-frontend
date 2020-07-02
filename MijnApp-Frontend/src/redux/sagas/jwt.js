@@ -2,7 +2,7 @@ import { call, put, takeLatest } from 'redux-saga/effects';
 import { jwtApi } from '../api/jwt';
 import { jwtBearerToken, removeJwtBearerToken } from '../helpers/headers';
 import { selectPage, selectPageNoHistory, nextPageAfterLogin } from '../actions/application';
-import { setLastAction, removeLastAction } from '../helpers/lastAction';
+import { setLastAction} from '../helpers/lastAction';
 
 import {
   REQUEST_JWT_SIGNIN_FAKE,
@@ -18,7 +18,6 @@ import {
   requestJwtTokenForDigidSuccess, requestJwtTokenForDigidFailure,
   requestJwtLogoutSuccess,
 } from '../actions/jwt';
-
 
 export function* watchRequestJwtSigninFake() {
   yield takeLatest(REQUEST_JWT_SIGNIN_FAKE, fetchJwtSigninFake);
@@ -87,16 +86,16 @@ export function* watchRequestJwtLogout() {
   yield takeLatest(REQUEST_JWT_LOGOUT, doJwtLogout);
 }
 
-function* doJwtLogout() {
-  yield call(jwtApi.logout(jwtBearerToken()));
+function* doJwtLogout(action) {
+  const result = yield call(jwtApi.logout(jwtBearerToken()));
   yield put(requestJwtLogoutSuccess());
-  removeJwtBearerToken();
-  removeLastAction();
-  window.successToast.text = 'Succesvol uitgelogd';
-  window.successToast.open();
-  //yield put(selectPage('signin'));
-  var url = window.location.origin;
-  window.location = url + '/startjourney?name=verhuizen';
+
+  if (result !== null && result !== '') {
+    window.location = result;
+  } else {
+    var url = window.location.origin;
+    window.location = url + '/startjourney?name=verhuizen';
+  }
 }
 
 export function* watchRequestJwtLogout401() {
@@ -113,6 +112,9 @@ function* doJwtLogout401(action) {
   window.errorDialog.open();
   // Here we do a selectPageNoHistory, so that when the user logs in again, he is navigated to were he was.
   //yield put(selectPageNoHistory('signin'));
-  var url = window.location.origin;
-  window.location = url + '/startjourney?name=verhuizen';
+  setTimeout(function() {
+    var url = window.location.origin;
+    window.location = url + '/startjourney?name=verhuizen';
+  }, 2000);
+
 }

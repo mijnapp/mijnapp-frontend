@@ -119,6 +119,12 @@ namespace MijnApp_Backend.Security
             return digidUser;
         }
 
+        internal string SimpleLogoutUrl()
+        {
+            var siamUrl = _config["DigidCgi:SiamServer"];
+            return siamUrl;
+        }
+
         internal void ProlongSession(ClaimsPrincipal currentUser)
         {
             //TODO - implement Http call to SIAM server with aselect_credentials from user

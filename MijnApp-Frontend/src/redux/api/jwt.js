@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { configuration } from '../../helpers/configuration';
-import { setJwtBearerToken } from '../helpers/headers';
+import { setJwtBearerToken, removeJwtBearerToken } from '../helpers/headers';
+import { removeLastAction } from '../helpers/lastAction';
 
 export const jwtApi = {
   signinfake: (action) => async () => {
@@ -60,7 +61,7 @@ export const jwtApi = {
     }
   },
   logout: (token) => async () => {
-    await axios.post(
+    const response = await axios.post(
       '/jwt/signout',
       null,
       {
@@ -68,5 +69,14 @@ export const jwtApi = {
         headers: { 'Authorization': 'Bearer ' + token }
       }
     );
+    if (response.statusText === 'OK' || response.status === 200) {
+      removeJwtBearerToken();
+      removeLastAction();
+      window.successToast.text = 'Succesvol uitgelogd';
+      window.successToast.open();
+      return response.data.simpleLogoutUrl;
+    } else {
+      throw response.status;
+    }
   },
 };

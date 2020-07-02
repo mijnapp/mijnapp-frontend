@@ -4,6 +4,8 @@ export const orderSaveAnswer = (
   value,
   keyTitle,
   valueTitle,
+  key2,
+  value2,
   _tracker
 ) => ({
   type: ORDER_SAVE_ANSWER,
@@ -11,6 +13,8 @@ export const orderSaveAnswer = (
   value,
   keyTitle,
   valueTitle,
+  key2,
+  value2,
   _tracker,
 });
 

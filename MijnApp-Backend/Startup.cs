@@ -48,22 +48,26 @@ namespace MijnApp_Backend
                 });
 
             services.AddHttpContextAccessor();
-            services.AddHttpClient<IServiceClient, ServiceClient>(ConfigureServiceClient);
+            services.AddHttpClient<IServiceClient, ServiceClient>(ConfigureServiceClient).ConfigurePrimaryHttpMessageHandler(ConfigureServiceWithCertificate);
+            services.AddHttpClient<IDigidClient, DigidClient>().ConfigurePrimaryHttpMessageHandler(ConfigureServiceWithCertificate);
 
+            services.AddCors();
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+        }
+
+        private HttpMessageHandler ConfigureServiceWithCertificate(IServiceProvider arg)
+        {
             var certPath = Configuration["DigidCgi:CertificatePath"];
             var certPass = Configuration["DigidCgi:CertificatePassword"];
             // Create a collection object and populate it using the PFX file
             X509Certificate2Collection collection = new X509Certificate2Collection();
             collection.Import(certPath, certPass, X509KeyStorageFlags.EphemeralKeySet);
+
             var httpClientHandler = new HttpClientHandler();
             httpClientHandler.ClientCertificates.Add(collection[0]);
             httpClientHandler.ClientCertificateOptions = ClientCertificateOption.Manual;
 
-            services.AddHttpClient<IDigidClient,DigidClient>()
-                .ConfigurePrimaryHttpMessageHandler(() => httpClientHandler);
-
-            services.AddCors();
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            return httpClientHandler;
         }
 
         private void ConfigureServiceClient(IServiceProvider serviceProvider, HttpClient httpClient)
