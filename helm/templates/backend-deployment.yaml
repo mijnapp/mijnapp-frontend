@@ -30,6 +30,7 @@ spec:
             - containerPort: 80
             - containerPort: 443
           env:
+            # General settings
             - name: ASPNETCORE_ENVIRONMENT
               value: Release
             - name: ASPNETCORE_URLS
@@ -38,26 +39,67 @@ spec:
               value: '443'
             - name: ASPNETCORE_Kestrel__Certificates__Default__Path
               value: /app/cert/test.pfx
-            - name: ASPNETCORE_Kestrel__Certificates__Default__Password
-              value: MyPassword
             - name: ORIGINS
-              value: https://mijnapp
-            - name: JwtClaimEncryption__SecretKey
-              value: 1234567890ABCDEF
-            - name: JwtClaimEncryption__SecretKey
-              value: 1234567890ABCDEF
-            - name: Jwt__Key
-              value: ***REMOVED***
+              value: https://verhuizen.accp.s-hertogenbosch.nl/mijnapp-backend/
             - name: Jwt__Issuer
-              value: MijnApp
-            - name: DigidCgi__SharedSecret
-              value: ***REMOVED***
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ template "fullname" . }}
+                  key: jwt-issuer
             - name: DigidCgi__SiamServer
-              value: https://alsiam.s-hertogenbosch.nl/aselectserver/server
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ template "fullname" . }}
+                  key: digid-server
             - name: DigidCgi__ApplicationId
-              value: Denbosch_Verhuizen
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ template "fullname" . }}
+                  key: digid-application-id
             - name: DigidCgi__SiamServerName
-              value: alsiam.s-hertogenbosch.nl
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ template "fullname" . }}
+                  key: digid-servername
+
+            # API Uris
+            - name: Api__AddressUri
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ template "fullname" . }}
+                  key: address-endpoint
+            - name: Api__BrpUri
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ template "fullname" . }}
+                  key: brp-endpoint
+            - name: Api__OrderUri
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ template "fullname" . }}
+                  key: verzoeken-endpoint
+            - name: Api__OrderTypeUri
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ template "fullname" . }}
+                  key: verzoekType-endpoint
+            - name: Api__ProcessUri
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ template "fullname" . }}
+                  key: processType-endpoint
+            - name: Api__WebResourceUri
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ template "fullname" . }}
+                  key: webResource-endpoint
+            - name: Api__ContractUri
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ template "fullname" . }}
+                  key: contract-endpoint
+
+            # Secret information
             - name: HasFakeLoginEnabled
               valueFrom:
                 secretKeyRef:
@@ -93,3 +135,38 @@ spec:
                 secretKeyRef:
                   name: {{ template "fullname" . }}
                   key: WebResourceApiKey
+            - name: Api__ContractApiKey
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "fullname" . }}
+                  key: ContractApiKey
+            - name: DigidCgi__CertificatePath
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "fullname" . }}
+                  key: DigidCertPath
+            - name: DigidCgi__CertificatePassword
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "fullname" . }}
+                  key: DigidCertPassword
+            - name: DigidCgi__SharedSecret
+              valueFrom:
+                secretKeyRef:
+                  name: {{template "fullname" . }}
+                  key: DigidSharedSecret
+            - name: Jwt__Key
+              valueFrom:
+                secretKeyRef:
+                  name: {{template "fullname" . }}
+                  key: JwtKey
+            - name: JwtClaimEncryption__SecretKey
+              valueFrom:
+                secretKeyRef:
+                  name: {{template "fullname" . }}
+                  key: JwtClaimEncryptionSecretKey
+            - name: ASPNETCORE_Kestrel__Certificates__Default__Password
+              valueFrom:
+                secretKeyRef:
+                  name: {{template "fullname" . }}
+                  key: AspNetCoreCertificatesDefaultPassword
