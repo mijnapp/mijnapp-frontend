@@ -38,7 +38,13 @@ namespace MijnApp_Frontend
             {
                 ConfigureFrontend();
             }
-
+            app.Use(async (context, next) =>
+            {
+                context.Response.Headers.Add("X-Frame-Options", "deny");
+                context.Response.Headers.Add("Referrer-Policy", "same-origin");
+                context.Response.Headers.Add("X-Content-Type-Options", "nosniff");
+                await next.Invoke();
+            });
             app.UseDefaultFiles();
             app.UseStaticFiles();
 

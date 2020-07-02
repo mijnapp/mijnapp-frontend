@@ -95,6 +95,11 @@ namespace MijnApp_Backend
                 app.UseDeveloperExceptionPage();
             }
 
+            app.Use(async (context, next) =>
+            {
+                context.Response.Headers.Add("X-Frame-Options", "deny");
+                await next.Invoke();
+            });
             app.UseRouting();
 
             var origins = Configuration.GetValue<string>("Origins").Split(';');
