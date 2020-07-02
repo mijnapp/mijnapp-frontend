@@ -20,7 +20,7 @@
       "applicationUrl": "http://localhost/MijnApp-Backend"
     },
     "MijnApp_Backend": {
-      "commandName": "IIS",
+      "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
