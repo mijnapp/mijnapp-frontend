@@ -12,3 +12,4 @@ node_modules
 src/vendor/webcomponents-loader.js
 *.report.html
 bower_components
+*.pfx
