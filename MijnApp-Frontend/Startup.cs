@@ -42,27 +42,26 @@ namespace MijnApp_Frontend
             app.UseXfo(options => options.Deny());
             app.UseReferrerPolicy(opts => opts.SameOrigin());
             app.UseXContentTypeOptions(); //add "nosniff"
+            var backendHost = Configuration.GetValue<string>("PublicSettings:BACKEND_HOST");
+            app.UseCsp(options => options
+                .DefaultSources(s => s.Self()
+                    .CustomSources(backendHost))
+                .FrameSources(s => s.Self())
+                .FrameAncestors(s => s.Self())
+                .StyleSources(s => s.Self()
+                    .CustomSources("https://fonts.googleapis.com")
+                    .UnsafeInline())
+                .FontSources(s => s.Self()
+                    .CustomSources("https://fonts.gstatic.com"))
+                .ScriptSources(s => s.Self()
+                    .UnsafeInline())
+                .ImageSources(s => s.Self()
+                    .CustomSources("data:"))
+            );
 
             /* TODO:
             app.UseHsts(options => options.MaxAge(days: 30));
-            app.UseXXssProtection(options => options.EnabledWithBlockMode());             
-            
-            app.UseCsp(options => options
-                .DefaultSources(s => s.Self()
-                    .CustomSources("data:")
-                    .CustomSources("https:"))
-                .StyleSources(s => s.Self()
-                    .CustomSources("www.google.com", "platform.twitter.com", "cdn.syndication.twimg.com",
-                        "fonts.googleapis.com")
-                    .UnsafeInline()
-                )
-                .ScriptSources(s => s.Self()
-                    .CustomSources("www.google.com", "cse.google.com", "cdn.syndication.twimg.com",
-                        "platform.twitter.com")
-                    .UnsafeInline()
-                    .UnsafeEval()
-                )
-            );
+            app.UseXXssProtection(options => options.EnabledWithBlockMode());
             */
 
             app.UseDefaultFiles();
