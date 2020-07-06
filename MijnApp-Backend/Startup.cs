@@ -48,7 +48,8 @@ namespace MijnApp_Backend
                 });
 
             services.AddHttpContextAccessor();
-            services.AddHttpClient<IServiceClient, ServiceClient>(ConfigureServiceClient).ConfigurePrimaryHttpMessageHandler(ConfigureServiceWithCertificate);
+            services.AddHttpClient<IServiceClient, ServiceClient>(ConfigureServiceClient)
+                .ConfigurePrimaryHttpMessageHandler(ConfigureServiceWithCertificate);
             services.AddHttpClient<IDigidClient, DigidClient>().ConfigurePrimaryHttpMessageHandler(ConfigureServiceWithCertificate);
 
             services.AddCors();
@@ -59,13 +60,13 @@ namespace MijnApp_Backend
         {
             var certPath = Configuration["DigidCgi:CertificatePath"];
             var certPass = Configuration["DigidCgi:CertificatePassword"];
-            // Create a collection object and populate it using the PFX file
-            X509Certificate2Collection collection = new X509Certificate2Collection();
-            collection.Import(certPath, certPass, X509KeyStorageFlags.EphemeralKeySet);
 
-            var httpClientHandler = new HttpClientHandler();
-            httpClientHandler.ClientCertificates.Add(collection[0]);
-            httpClientHandler.ClientCertificateOptions = ClientCertificateOption.Manual;
+            var httpClientHandler = new HttpClientHandler
+            {
+                PreAuthenticate = true,
+                ClientCertificateOptions = ClientCertificateOption.Manual
+            };
+            httpClientHandler.ClientCertificates.Add(new X509Certificate2(certPath, certPass));
 
             return httpClientHandler;
         }
