@@ -60,12 +60,12 @@ namespace MijnApp_Backend
             var certPath = Configuration["DigidCgi:CertificatePath"];
             var certPass = Configuration["DigidCgi:CertificatePassword"];
             // Create a collection object and populate it using the PFX file
-            X509Certificate2Collection collection = new X509Certificate2Collection();
+            var collection = new X509Certificate2Collection();
             collection.Import(certPath, certPass, X509KeyStorageFlags.EphemeralKeySet);
 
             var httpClientHandler = new HttpClientHandler();
             httpClientHandler.ClientCertificates.Add(collection[0]);
-            httpClientHandler.ClientCertificateOptions = ClientCertificateOption.Manual;
+            httpClientHandler.ClientCertificateOptions = ClientCertificateOption.Automatic;
 
             return httpClientHandler;
         }
