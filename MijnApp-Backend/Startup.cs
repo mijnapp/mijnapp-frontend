@@ -94,12 +94,11 @@ namespace MijnApp_Backend
             {
                 app.UseDeveloperExceptionPage();
             }
+            //NWebSec security headers.
+            app.UseXfo(options => options.Deny());
+            app.UseReferrerPolicy(opts => opts.SameOrigin());
+            app.UseXContentTypeOptions(); //add "nosniff"
 
-            app.Use(async (context, next) =>
-            {
-                context.Response.Headers.Add("X-Frame-Options", "deny");
-                await next.Invoke();
-            });
             app.UseRouting();
 
             var origins = Configuration.GetValue<string>("Origins").Split(';');

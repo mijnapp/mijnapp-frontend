@@ -38,13 +38,33 @@ namespace MijnApp_Frontend
             {
                 ConfigureFrontend();
             }
-            app.Use(async (context, next) =>
-            {
-                context.Response.Headers.Add("X-Frame-Options", "deny");
-                context.Response.Headers.Add("Referrer-Policy", "same-origin");
-                context.Response.Headers.Add("X-Content-Type-Options", "nosniff");
-                await next.Invoke();
-            });
+            //NWebSec security headers.
+            app.UseXfo(options => options.Deny());
+            app.UseReferrerPolicy(opts => opts.SameOrigin());
+            app.UseXContentTypeOptions(); //add "nosniff"
+
+            /* TODO:
+            app.UseHsts(options => options.MaxAge(days: 30));
+            app.UseXXssProtection(options => options.EnabledWithBlockMode());             
+            
+            app.UseCsp(options => options
+                .DefaultSources(s => s.Self()
+                    .CustomSources("data:")
+                    .CustomSources("https:"))
+                .StyleSources(s => s.Self()
+                    .CustomSources("www.google.com", "platform.twitter.com", "cdn.syndication.twimg.com",
+                        "fonts.googleapis.com")
+                    .UnsafeInline()
+                )
+                .ScriptSources(s => s.Self()
+                    .CustomSources("www.google.com", "cse.google.com", "cdn.syndication.twimg.com",
+                        "platform.twitter.com")
+                    .UnsafeInline()
+                    .UnsafeEval()
+                )
+            );
+            */
+
             app.UseDefaultFiles();
             app.UseStaticFiles();
 
