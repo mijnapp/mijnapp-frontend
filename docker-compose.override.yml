@@ -19,14 +19,14 @@ services:
       - DigidCgi__CertificatePath=/app/cert/verhuizen.accp.s-hertogenbosch.nl.pfx
       - DigidCgi__CertificatePassword=***REMOVED***
       - HasFakeLoginEnabled=true
-      - Api__AddressApiKey=***REMOVED***
-      - Api__BrpApiKey=***REMOVED***
-      - Api__OrderApiKey=***REMOVED***
-      - Api__OrderTypeApiKey=***REMOVED***
-      - Api__ProcessApiKey=***REMOVED***
-      - Api__WebResourceApiKey=***REMOVED***
+      - Api__AddressApiKey=!changeMe!
+      - Api__BrpApiKey=!changeMe!
+      - Api__OrderApiKey=!changeMe!
+      - Api__OrderTypeApiKey=!changeMe!
+      - Api__ProcessApiKey=!changeMe!
+      - Api__WebResourceApiKey=!changeMe!
       - Api__ContractApiKey=aaaaaaaaaaaaaaaa
-      - DigidCgi__SharedSecret=***REMOVED***
+      - DigidCgi__SharedSecret=!changeMe!
     ports:
       - "40080:80"
       - "40443:443"
