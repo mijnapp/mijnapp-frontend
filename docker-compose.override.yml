@@ -17,7 +17,7 @@ services:
       - DigidCgi__ApplicationId=Denbosch_Verhuizen
       - DigidCgi__SiamServerName=alsiam.s-hertogenbosch.nl
       - DigidCgi__CertificatePath=/app/cert/verhuizen.accp.s-hertogenbosch.nl.pfx
-      - DigidCgi__CertificatePassword=***REMOVED***
+      - DigidCgi__CertificatePassword=!changeMe!
       - HasFakeLoginEnabled=true
       - Api__AddressApiKey=!changeMe!
       - Api__BrpApiKey=!changeMe!
