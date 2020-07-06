@@ -108,7 +108,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets\\icons\\apple-touch-icon.png"
   },
   {
-    "revision": "30e31efd77a6dee5beba32c20d37522e",
+    "revision": "9e74a4603ded83f123a0b1b1ea9ab92a",
     "url": "assets\\icons\\browserconfig.xml"
   },
   {
@@ -168,7 +168,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets\\icons\\mstile-150x150.png"
   },
   {
-    "revision": "8fa975f4477f238d81b18d928c8fafae",
+    "revision": "1405359f10118373dfa8a553f6ddb6be",
     "url": "assets\\icons\\safari-pinned-tab.svg"
   },
   {
@@ -176,7 +176,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets\\logo-digid.svg"
   },
   {
-    "revision": "b33867513827b2d0030596c39af93943",
+    "revision": "a75df23d2248b9c7dbbe4ad6fc156081",
     "url": "assets\\media\\Basisgegevens.svg"
   },
   {
@@ -184,15 +184,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets\\media\\Contracten.svg"
   },
   {
-    "revision": "03b340657802f55b685b1a233c930955",
+    "revision": "6383d468ba73ffca8be9b21fb8971262",
     "url": "assets\\media\\Inloggen.svg"
   },
   {
-    "revision": "cade792da64d8cc533b815277ce3de06",
+    "revision": "e4429f8ca9c8f176c8b8ef50b5b5da75",
     "url": "assets\\media\\Machtigingen.svg"
   },
   {
-    "revision": "cad288ba324c92bc86c6ddb47f6295a9",
+    "revision": "7232f9738f4317791b88434f9fc1b00d",
     "url": "assets\\media\\Passen.svg"
   },
   {
@@ -200,7 +200,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets\\media\\Spinner.svg"
   },
   {
-    "revision": "9fc1780e8386fd98de3b6eb286133699",
+    "revision": "2470adc619911d9d617e4eef9fd8090f",
     "url": "assets\\media\\Verzoeken.svg"
   },
   {
@@ -216,7 +216,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets\\radio.svg"
   },
   {
-    "revision": "beb9ddcfeb64363077ee",
+    "revision": "643865633b63d4bd8387",
     "url": "bundle.js"
   },
   {
@@ -240,7 +240,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "manifest.json"
   },
   {
-    "revision": "7db70caad9dc09c90e88",
+    "revision": "296535caafcea5c840ef",
     "url": "pdfmake.bundle.js"
   },
   {
