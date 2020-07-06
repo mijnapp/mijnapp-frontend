@@ -60,12 +60,12 @@ namespace MijnApp_Backend
             var certPath = Configuration["DigidCgi:CertificatePath"];
             var certPass = Configuration["DigidCgi:CertificatePassword"];
             // Create a collection object and populate it using the PFX file
-            var collection = new X509Certificate2Collection();
+            X509Certificate2Collection collection = new X509Certificate2Collection();
             collection.Import(certPath, certPass, X509KeyStorageFlags.EphemeralKeySet);
 
             var httpClientHandler = new HttpClientHandler();
             httpClientHandler.ClientCertificates.Add(collection[0]);
-            httpClientHandler.ClientCertificateOptions = ClientCertificateOption.Automatic;
+            httpClientHandler.ClientCertificateOptions = ClientCertificateOption.Manual;
 
             return httpClientHandler;
         }
@@ -94,12 +94,11 @@ namespace MijnApp_Backend
             {
                 app.UseDeveloperExceptionPage();
             }
+            //NWebSec security headers.
+            app.UseXfo(options => options.Deny());
+            app.UseReferrerPolicy(opts => opts.SameOrigin());
+            app.UseXContentTypeOptions(); //add "nosniff"
 
-            app.Use(async (context, next) =>
-            {
-                context.Response.Headers.Add("X-Frame-Options", "deny");
-                await next.Invoke();
-            });
             app.UseRouting();
 
             var origins = Configuration.GetValue<string>("Origins").Split(';');

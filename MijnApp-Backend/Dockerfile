@@ -1,9 +1,9 @@
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.0-bionic AS base
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-bionic AS base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/core/sdk:3.0-bionic AS build
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1-bionic AS build
 WORKDIR /src
 COPY ["MijnApp-Backend/MijnApp-Backend.csproj", "MijnApp-Backend/"]
 COPY ["MijnApp.Domain/MijnApp.Domain.csproj", "MijnApp.Domain/"]
