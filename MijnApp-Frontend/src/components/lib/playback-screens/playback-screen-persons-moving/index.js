@@ -95,7 +95,7 @@ export default class PlaybackScreenPersonsMoving extends connect(store)(PolymerE
       return 'Onbekende persoon';
     }
 
-    var info = person.naam.voornamen; // person.naam.aanschrijfwijze;
+    var info = person.naam.aanschrijfwijze;
 
     if (person.geboorte === null || person.geboorte.datum === null || person.geboorte.datum.datum === null) {
       return info;

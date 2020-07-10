@@ -94,8 +94,8 @@ namespace MijnApp_Backend.Controllers
                     else
                     {
                         var person = await _personService.GetPersonFromApiFromGuid(guid);
-                        personNames.Add(person.naam.voornamen);
-                        _cachedPersonsNames[guid] = person.naam.voornamen;
+                        personNames.Add(person.naam.aanschrijfwijze);
+                        _cachedPersonsNames[guid] = person.naam.aanschrijfwijze;
                     }
                 }
                 request.properties.Add("wie_name", string.Join(", ",personNames));
