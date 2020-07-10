@@ -9,5 +9,10 @@
         public string postcode { get; set; }
         public string straatnaam { get; set; }
         public string woonplaatsnaam { get; set; }
+
+        public string AddressString()
+        {
+            return postcode + " " + straatnaam + " " + huisnummer + " " + huisnummertoevoeging + " " + huisletter;
+        }
     }
 }

@@ -21,6 +21,9 @@
         //ouders
         //kinderen
         //partners
+        public Partner[] partners { get; set; }
+        public Ouder[] ouders { get; set; }
+        public Kind[] kinderen { get; set; }
     }
 
     public class PersoonV2
@@ -44,5 +47,20 @@
         //ouders
         //kinderen
         //partners
+    }
+
+    public class Partner
+    {
+        public string bsn { get; set; }
+    }
+
+    public class Ouder
+    {
+        public string bsn { get; set; }
+    }
+
+    public class Kind
+    {
+        public string bsn { get; set; }
     }
 }

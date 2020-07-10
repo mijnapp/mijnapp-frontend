@@ -64,11 +64,11 @@ export default class PlaybackScreenPersonsMoving extends connect(store)(PolymerE
     const self = this;
 
     const selectedPersons = self.persons.filter(function (item) { return item.selected; });
-    const ids = selectedPersons.map(function (item) { return item.id; });
+    // const ids = selectedPersons.map(function (item) { return item.id; });
     const bsns = selectedPersons.map(function (item) { return item.burgerservicenummer; });
     const names = selectedPersons.map(function (item) { return self._formatPersonInformation(item); });
     store.dispatch(requestPersonsMovingSelectAll());
-    store.dispatch(orderSaveAnswer(self.question.key || self.question.property, ids, self.question.fieldName, names, self.question.property2, bsns));
+    store.dispatch(orderSaveAnswer(self.question.key || self.question.property, bsns, self.question.fieldName, names, self.question.property2, bsns));
   }
 
   _nextCallback(question) {
@@ -95,13 +95,13 @@ export default class PlaybackScreenPersonsMoving extends connect(store)(PolymerE
       return 'Onbekende persoon';
     }
 
-    var info = person.naam.aanschrijfwijze;
+    var info = person.naam.voornamen; // person.naam.aanschrijfwijze;
 
-    if (person.geboorte === null || person.geboorte.datum === null || person.geboorte.datum.date === null) {
+    if (person.geboorte === null || person.geboorte.datum === null || person.geboorte.datum.datum === null) {
       return info;
     }
 
-    return `${info}, geboren op ${moment(person.geboorte.datum.date).format('DD-MM-YYYY')}`;
+    return `${info}, geboren op ${moment(person.geboorte.datum.datum).format('DD-MM-YYYY')}`;
   }
 
   _clearPersonData() {
@@ -146,12 +146,12 @@ export default class PlaybackScreenPersonsMoving extends connect(store)(PolymerE
     if (this.question.type === QUESTION_TYPE_PERSONS_MOVING && this.personsStatus === REQUEST_PERSONS_MOVING_SKIPQUESTION) {
       const self = this;
       const selectedPersons = self.persons.filter(function (item) { return item.selected; });
-      const ids = selectedPersons.map(function (item) { return item.id; });
+      // const ids = selectedPersons.map(function (item) { return item.id; });
       const bsns = selectedPersons.map(function (item) { return item.burgerservicenummer; });
       const names = selectedPersons.map(function (item) { return self._formatPersonInformation(item); });
       store.dispatch({
         action1: store.dispatch(requestPersonsMovingSkipQuestion()),
-        action2: store.dispatch(orderSaveAnswer(self.question.key || self.question.property, ids, self.question.fieldName, names, self.question.property2, bsns)),
+        action2: store.dispatch(orderSaveAnswer(self.question.key || self.question.property, bsns, self.question.fieldName, names, self.question.property2, bsns)),
         action3: store.dispatch(orderSkip(self.current)),
         action4: store.dispatch(orderNext(self.question.next)),
       });

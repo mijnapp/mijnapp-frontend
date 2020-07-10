@@ -94,8 +94,8 @@ namespace MijnApp_Backend.Controllers
                     else
                     {
                         var person = await _personService.GetPersonFromApiFromGuid(guid);
-                        personNames.Add(person.naam.aanschrijfwijze);
-                        _cachedPersonsNames[guid] = person.naam.aanschrijfwijze;
+                        personNames.Add(person.naam.voornamen);
+                        _cachedPersonsNames[guid] = person.naam.voornamen;
                     }
                 }
                 request.properties.Add("wie_name", string.Join(", ",personNames));
@@ -148,8 +148,9 @@ namespace MijnApp_Backend.Controllers
         /// <param name="loggedInPerson"></param>
         private Request CreateRequestData(Order order, Persoon loggedInPerson)
         {
-            //Gebruik url ipv bsn in submitter (DEV: /ingeschrevenpersonen/uuid/1edd146d-25c5-439e-8c04-8d6bff997ab4, PROD: /ingeschrevenpersonen/uuid/0282b6eb-2bf2-4544-9242-511501d73be4)
-            var submitterUrl = _brpBaseUri + $"ingeschrevenpersonen/uuid/{loggedInPerson.id}";
+            // Gebruik url ipv bsn in submitter (DEV: /ingeschrevenpersonen/uuid/1edd146d-25c5-439e-8c04-8d6bff997ab4, PROD: /ingeschrevenpersonen/uuid/0282b6eb-2bf2-4544-9242-511501d73be4)
+            // Wijzigingen voor omgeving DenBosch
+            var submitterUrl = _brpBaseUri + $"ingeschrevenpersonen/{loggedInPerson.burgerservicenummer}";
             var submitter = new Submitter
             {
                 brp = submitterUrl,
