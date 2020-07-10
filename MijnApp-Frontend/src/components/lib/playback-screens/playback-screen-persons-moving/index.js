@@ -43,6 +43,10 @@ export default class PlaybackScreenPersonsMoving extends connect(store)(PolymerE
       : 'Circle';
   }
 
+  _isFirstIndex(index) {
+    return (index === 0);
+  }
+
   _optionClick(e) {
     if (e && e.target && !isNaN(e.target.dataIndex)) {
       const index = e.target.dataIndex;

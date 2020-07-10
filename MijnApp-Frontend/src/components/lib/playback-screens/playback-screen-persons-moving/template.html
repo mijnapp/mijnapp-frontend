@@ -12,10 +12,24 @@
       <div class="Options">
         <dom-repeat items="[[persons]]">
           <template>
-            <div class="Option" data-index="[[index]]" on-click="_optionClick">
-              <div class$="{{_isSelected(item.selected)}}"></div>
-              <div class="OptionText">[[_formatPersonInformation(item)]]</div>
-            </div>
+            <dom-if if="{{_isFirstIndex(index)}}">
+              <template>
+                <div>Indiener</div>
+                <div class="OptionNoHover">
+                  <div class="Circle selected"></div>
+                  <div class="OptionText">[[_formatPersonInformation(item)]]</div>
+                </div>
+                <div>Familie op huidige adres</div>
+              </template>
+            </dom-if>
+            <dom-if if="{{!_isFirstIndex(index)}}">
+              <template>
+                <div class="Option" data-index="[[index]]" on-click="_optionClick">
+                  <div class$="{{_isSelected(item.selected)}}"></div>
+                  <div class="OptionText">[[_formatPersonInformation(item)]]</div>
+                </div>
+              </template>
+            </dom-if>
           </template>
         </dom-repeat>
       </div>

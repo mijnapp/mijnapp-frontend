@@ -35,7 +35,6 @@ export default class MafScreenSignin extends connect(store)(PolymerElement) {
       fakeUsers: {
         value() {
           return [
-            { bsn: '900003509', name: 'Jan Willem de Kieft' },
             { bsn: '999999102', name: 'Jeroen Oranje' },
             { bsn: '999999114', name: 'Yvonne Rood' },
             { bsn: '999999126', name: 'Stan Oranje' },
