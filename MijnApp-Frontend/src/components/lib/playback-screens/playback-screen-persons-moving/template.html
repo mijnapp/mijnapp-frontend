@@ -14,12 +14,11 @@
           <template>
             <dom-if if="{{_isFirstIndex(index)}}">
               <template>
-                <div>Indiener</div>
                 <div class="OptionNoHover">
-                  <div class="Circle selected"></div>
+                  <div class="Circle selected disabled"></div>
                   <div class="OptionText">[[_formatPersonInformation(item)]]</div>
                 </div>
-                <div>Familie op huidige adres</div>
+                <div class="Divider"></div>
               </template>
             </dom-if>
             <dom-if if="{{!_isFirstIndex(index)}}">

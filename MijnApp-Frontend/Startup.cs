@@ -54,7 +54,8 @@ namespace MijnApp_Frontend
                 .FontSources(s => s.Self()
                     .CustomSources("https://fonts.gstatic.com"))
                 .ScriptSources(s => s.Self()
-                    .UnsafeInline())
+                    .UnsafeInline()
+                    .UnsafeEval()) //Needed for pdf make.
                 .ImageSources(s => s.Self()
                     .CustomSources("data:"))
             );

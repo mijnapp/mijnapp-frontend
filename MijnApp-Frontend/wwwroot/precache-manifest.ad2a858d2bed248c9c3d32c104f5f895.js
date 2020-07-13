@@ -4,6 +4,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets\\checkBox.svg"
   },
   {
+    "revision": "22e4c032dac4788c991012f7c448cfc7",
+    "url": "assets\\checkBoxDisabled.svg"
+  },
+  {
     "revision": "a8e284722e4712a9966a91ffb5643690",
     "url": "assets\\fieldIcons\\calendar.svg"
   },
@@ -216,7 +220,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets\\radio.svg"
   },
   {
-    "revision": "f2581bd297ed3be324a4",
+    "revision": "714f2e655062252069f3",
     "url": "bundle.js"
   },
   {
