@@ -16,9 +16,10 @@ export default class PlaybackScreenStart extends connect(store)(
     return {
       preconditionsFullFilled: Boolean,
       preconditionsBeingChecked: Boolean,
+      preconditionsCheckFailed: Boolean,
     };
   }
-
+ 
   static get template() {
     return html([`<style>${css}</style> ${template}`]);
   }
@@ -92,6 +93,7 @@ export default class PlaybackScreenStart extends connect(store)(
     this.journey = state.journey;
     this.preconditionsFullFilled = state.journey.preconditionsFullFilled;
     this.preconditionsBeingChecked = state.journey.preconditionsBeingChecked;
+    this.preconditionsCheckFailed = state.journey.preconditionsCheckFailed;
     this.id =
       state.order.current === JOURNEY_START
         ? JOURNEY_START

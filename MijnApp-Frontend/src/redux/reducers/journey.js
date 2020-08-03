@@ -16,6 +16,7 @@ import {
   SET_QUESTION_OPTION_GOTO,
   SET_QUESTION_OPTION_TITLE,
   SET_QUESTION_OPTION_VALUE,
+  CHECK_PRECONDITIONS,
   REQUEST_CHECK_PRECONDITIONS_SUCCESS,
   REQUEST_CHECK_PRECONDITIONS_FAILURE
 } from '../actions/journey';
@@ -29,8 +30,14 @@ export const journey = (state = { title: '', questions: [] }, action) => {
       if (state.preconditionsFullFilled) {
           delete state.preconditionsFullFilled;
       }
+      if (state.preconditionsCheckFailed) {
+        delete state.preconditionsCheckFailed;
+      }
       if (action.journey.preconditionsFullFilled) {
           delete action.journey.preconditionsFullFilled;
+      }
+      if (action.journey.preconditionsCheckFailed) {
+        delete action.journey.preconditionsCheckFailed;
       }
       action.journey.preconditionsBeingChecked = true;
       action.journey.isDeepLink = action.isDeepLink;
@@ -46,17 +53,26 @@ export const journey = (state = { title: '', questions: [] }, action) => {
         ...state,
         title: action.title,
       };
+    case CHECK_PRECONDITIONS:
+      return {
+        ...state,
+        preconditionsFullFilled: false,
+        preconditionsBeingChecked: true,
+        preconditionsCheckFailed: false,
+      };
     case REQUEST_CHECK_PRECONDITIONS_SUCCESS:
       return {
         ...state,
         preconditionsFullFilled: action.data !== undefined ? action.data.preconditionsFullFilled : false,
         preconditionsBeingChecked: false,
+        preconditionsCheckFailed: false,
       };
     case REQUEST_CHECK_PRECONDITIONS_FAILURE:
       return {
          ...state,
          preconditionsFullFilled: false,
          preconditionsBeingChecked: false,
+         preconditionsCheckFailed: true,
       };
     case ADD_LINK_TO_QUESTION_NEXT:
     case ADD_LINK_TO_QUESTION_SKIP:

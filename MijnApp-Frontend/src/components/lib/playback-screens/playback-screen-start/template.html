@@ -1,90 +1,109 @@
 <div class="Wrapper">
     <div class="ScrollContainer">
-        <div class="Scroller">
-            <div class="TopbarButtonContainer">
-                <maki-button on-click="_stop" size="30" stroke="0" font-size="16" set-color-main="#3192CF" heading="Ga terug">
-                    <div class="BackButton"><</div>
-                </maki-button>
-            </div>
-            <div class="JourneyHeader">
-                <div class="JourneyIcon">
-                    <dom-if if="{{show_journey_icon_truck}}">
-                        <template>
-                            <maki-icon-truck />
-                        </template>
-                    </dom-if>
-                    <dom-if if="{{show_journey_icon_bulb}}">
-                        <template>
-                            <maki-icon-bulb />
-                        </template>
-                    </dom-if>
-                </div>
-                <div class="Title">[[_title(journey)]]</div>
-            </div>
-            <div class="SectionTitle">
-                <div>Deze stappen ga je doorlopen</div>
-            </div>
-            <div class="DotList">
-                <dom-repeat items="[[_steps(journey)]]">
-                    <template>
-                        <div class="DotListItem">
-                            <maki-icon-steps></maki-icon-steps>
-                            <div class="Text">[[item]]</div>
-                        </div>
-                    </template>
-                </dom-repeat>
-            </div>
-            <dom-if if="{{_hasDocuments(journey)}}">
-                <template>
-                    <div class="SectionTitle">
-                        <maki-icon-edit-document></maki-icon-edit-document>
-                        <div>Benodigde documenten</div>
-                    </div>
-                    <dom-repeat items="[[_documents(journey)]]">
-                        <template>
-                            <div class="DotListItem">
-                                <div class="Dot"></div>
-                                <div class="Text">[[item]]</div>
-                            </div>
-                        </template>
-                    </dom-repeat>
-                </template>
-            </dom-if>
-            <dom-if if="{{preconditionsFullFilled}}">
-                <template>
-                    <div class="ButtonContainer">
-                        <maki-button highlight size="40" font-size="16" set-color-highlight="#3192CF" on-click="[[_start(journey)]]">
-                            <div class="ButtonInner">
-                                <div class="ButtonInnerText">Starten</div>
-                                <div class="ButtonInnerRight">></div>
-                            </div>
-                        </maki-button>
-                    </div>
-                </template>
-            </dom-if>
-            <dom-if if="{{!preconditionsFullFilled}}">
-                <template>
-                    <dom-if if="{{!preconditionsBeingChecked}}">
-                        <template>
-                            <div class="WarningTitle">
-                                <maki-icon-attention width="30px"></maki-icon-attention>
-                                <div class="WarningSubtitle">
-                                    <div class="Title">Dit proces kan niet worden gestart.</div>
-                                    <div class="WarningSubtitleLeft">{{journey.preconditions}}</div>
-                                </div>
-                            </div>
-                        </template>
-                    </dom-if>
-                </template>
-            </dom-if>
-            <dom-if if="{{preconditionsBeingChecked}}">
-                <template>
-                  <div class="SubtitleCenter">
-                    <img class="Spinner" src="assets/media/Spinner.svg" alt="spinner">
-                    <div class="SpinnerMessage">Je gegevens worden opgehaald.</div>
-                  </div>
-                </template>
-            </dom-if>
+      <div class="Scroller">
+        <div class="TopbarButtonContainer">
+          <maki-button on-click="_stop" size="30" stroke="0" font-size="16" set-color-main="#3192CF" heading="Ga terug">
+            <div class="BackButton"><</div>
+          </maki-button>
         </div>
+        <div class="JourneyHeader">
+          <div class="JourneyIcon">
+            <dom-if if="{{show_journey_icon_truck}}">
+              <template>
+                <maki-icon-truck />
+              </template>
+            </dom-if>
+            <dom-if if="{{show_journey_icon_bulb}}">
+              <template>
+                <maki-icon-bulb />
+              </template>
+            </dom-if>
+          </div>
+          <div class="Title">[[_title(journey)]]</div>
+        </div>
+        <div class="SectionTitle">
+          <div>Deze stappen ga je doorlopen</div>
+        </div>
+        <div class="DotList">
+          <dom-repeat items="[[_steps(journey)]]">
+            <template>
+              <div class="DotListItem">
+                <maki-icon-steps></maki-icon-steps>
+                <div class="Text">[[item]]</div>
+              </div>
+            </template>
+          </dom-repeat>
+        </div>
+        <dom-if if="{{_hasDocuments(journey)}}">
+          <template>
+            <div class="SectionTitle">
+              <maki-icon-edit-document></maki-icon-edit-document>
+              <div>Benodigde documenten</div>
+            </div>
+            <dom-repeat items="[[_documents(journey)]]">
+              <template>
+                <div class="DotListItem">
+                  <div class="Dot"></div>
+                  <div class="Text">[[item]]</div>
+                </div>
+              </template>
+            </dom-repeat>
+          </template>
+        </dom-if>
+        <dom-if if="{{preconditionsFullFilled}}">
+          <template>
+            <div class="ButtonContainer">
+              <maki-button highlight size="40" font-size="16" set-color-highlight="#3192CF" on-click="[[_start(journey)]]">
+                <div class="ButtonInner">
+                  <div class="ButtonInnerText">Starten</div>
+                  <div class="ButtonInnerRight">></div>
+                </div>
+              </maki-button>
+            </div>
+          </template>
+        </dom-if>
+        <dom-if if="{{!preconditionsFullFilled}}">
+          <template>
+            <dom-if if="{{!preconditionsBeingChecked}}">
+              <template>
+                <dom-if if="{{!preconditionsCheckFailed}}">
+                  <template>
+                    <div class="WarningTitle">
+                      <maki-icon-attention width="30px"></maki-icon-attention>
+                      <div class="WarningSubtitle">
+                        <div class="Title">Dit proces kan niet worden gestart.</div>
+                        <div class="WarningSubtitleLeft">{{journey.preconditions}}</div>
+                      </div>
+                    </div>
+                  </template>
+                </dom-if>
+              </template>
+            </dom-if>
+          </template>
+        </dom-if>
+        <dom-if if="{{preconditionsBeingChecked}}">
+          <template>
+            <div class="SubtitleCenter">
+              <img class="Spinner" src="assets/media/Spinner.svg" alt="spinner">
+              <div class="SpinnerMessage">Je gegevens worden opgehaald.</div>
+            </div>
+          </template>
+        </dom-if>
+        <dom-if if="{{!preconditionsBeingChecked}}">
+          <template>
+            <dom-if if="{{preconditionsCheckFailed}}">
+              <template>
+                <div class="WarningTitle">
+                  <maki-icon-attention width="30px"></maki-icon-attention>
+                  <div class="WarningSubtitle">
+                    <div class="Title">Dit proces kan niet worden gestart.</div>
+                    <div class="WarningSubtitleLeft">Gegevens kunnen niet worden opgehaald.</div>
+                  </div>
+                </div>
+              </template>
+            </dom-if>
+          </template>
+        </dom-if>
+      </div>
     </div>
 </div>
