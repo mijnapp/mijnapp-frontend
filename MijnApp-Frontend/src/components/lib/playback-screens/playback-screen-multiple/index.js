@@ -73,6 +73,7 @@ export default class PlaybackScreenMultiple extends connect(store)(PolymerElemen
           answer.valueTitle,
           null,
           null,
+          null,
           selected
         )
       );

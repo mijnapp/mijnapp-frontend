@@ -44,19 +44,32 @@ export default class PlaybackScreenCalendar extends connect(store)(
 
   _datePickerValueChanged(data) {
     const question = this.question;
+    var warningMessage = '';
+
     if (data) {
       var selectedDate = moment(data, 'DD-MM-YYYY');
       this.datepickerValueText = selectedDate.format('D MMMM YYYY');
       var selectedDateWithDaysAdded = selectedDate.add(this.daysInPastWarning, 'days');
       // If the selected date + offset is before the current date, show the warning.
       this.showDaysInPastWarningMessage = selectedDateWithDaysAdded.isBefore(moment());
+      if (this.showDaysInPastWarningMessage) {
+        warningMessage =
+          'Uw verhuizing was langer dan ' +
+          this.daysInPastWarning +
+          ' dagen geleden. De gemeente zal uw verhuisdatum aanpassen naar de datum van vandaag (' +
+          this.currentDateText +
+          ').';
+      }
     }
     store.dispatch(
       orderSaveAnswer(
         question.key || question.property,
         data,
         question.fieldName,
-        this.datepickerValueText
+        this.datepickerValueText,
+        null,
+        null,
+        warningMessage
       )
     );
   }
