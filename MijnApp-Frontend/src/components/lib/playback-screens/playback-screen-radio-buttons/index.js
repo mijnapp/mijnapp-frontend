@@ -52,7 +52,7 @@ export default class PlaybackScreenRadioButtons extends connect(store)(
         const value = this.question.options[index].value || this.question.options[index].title;
         const valueTitle = this.question.options[index].fieldName;
         store.dispatch(
-          orderSaveAnswer(key, value, keyTitle, valueTitle, index)
+          orderSaveAnswer(key, value, keyTitle, valueTitle, null, index)
         );
       }
     }
