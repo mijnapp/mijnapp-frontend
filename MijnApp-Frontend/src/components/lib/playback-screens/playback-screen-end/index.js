@@ -134,7 +134,7 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
           dataRow.push({ text: o.keyTitle, style: 'question' });
           var answerArrayText = o.valueTitle.filter(function(el) { return el != null && el != ''; }).join('\n');
           if (o.warning !== null && o.warning !== undefined) {
-            answerArrayText = answerArrayText + '\n' + o.warning;
+            answerArrayText = [answerArrayText + '\n', { text: o.warning, color: 'red' }];
           }
           dataRow.push({ text: answerArrayText, style: 'answer' });
         }
@@ -143,7 +143,7 @@ export default class PlaybackScreenEnd extends connect(store)(PolymerElement) {
         dataRow.push({ text: o.keyTitle, style: 'question' });
         var answerText = o.valueTitle;
         if (o.warning !== null && o.warning !== undefined) {
-          answerText = answerText + '\n' + o.warning;
+          answerText = [answerText + '\n', { text: o.warning, color: 'red'}];
         }
         dataRow.push({ text: answerText, style: 'answer' });
       }
