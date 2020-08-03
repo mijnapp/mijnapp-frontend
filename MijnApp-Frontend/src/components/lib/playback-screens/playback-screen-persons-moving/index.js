@@ -153,6 +153,11 @@ export default class PlaybackScreenPersonsMoving extends connect(store)(PolymerE
       // const ids = selectedPersons.map(function (item) { return item.id; });
       const bsns = selectedPersons.map(function (item) { return item.burgerservicenummer; });
       const names = selectedPersons.map(function (item) { return self._formatPersonInformation(item); });
+      if (self.persons && self.persons.length === 1) {
+        bsns.push(self.persons[0].burgerservicenummer);
+        names.push(self._formatPersonInformation(self.persons[0]));
+      }
+
       store.dispatch({
         type:'DoNothing',
         action1: store.dispatch(requestPersonsMovingSkipQuestion()),
