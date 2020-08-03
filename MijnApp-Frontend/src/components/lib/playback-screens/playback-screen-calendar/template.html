@@ -4,4 +4,15 @@
     <div class="selectedDateLabel">Verhuisdatum:</div>
     <div class="selectedDateField">{{datepickerValueText}}</div>
   </div>
+  <dom-if if="{{showDaysInPastWarningMessage}}">
+    <template>
+      <div class="WarningTitle">
+        <maki-icon-attention width="30px"></maki-icon-attention>
+        <div class="WarningSubtitle">
+          <div class="Title">Uw verhuizing was langer dan {{daysInPastWarning}} dagen geleden.</div>
+          <div class="WarningSubtitleLeft">De gemeente zal uw verhuisdatum aanpassen naar de datum van vandaag ({{currentDateText}}).</div>
+        </div>
+      </div>
+    </template>
+  </dom-if>
 </playback-screen-wrapper>
