@@ -1,5 +1,5 @@
 <playback-screen-wrapper next-callback="[[_nextCallback(question)]]" skip-callback="[[_skipCallback(question)]]" disabled="[[_isDisabled(order)]]">
-  <polymer-openajax-datepicker id="datePicker" date="{{datepickerValue}}"></polymer-openajax-datepicker>
+  <polymer-openajax-datepicker id="datePicker" date="{{datepickerValue}}" max-date="{{datepickerMaxDate}}"></polymer-openajax-datepicker>
   <div class="selectedDateBox">
     <div class="selectedDateLabel">Verhuisdatum:</div>
     <div class="selectedDateField">{{datepickerValueText}}</div>

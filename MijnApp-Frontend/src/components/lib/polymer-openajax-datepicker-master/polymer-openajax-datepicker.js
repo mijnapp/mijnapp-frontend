@@ -1,4 +1,5 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element';
+import { afterNextRender } from '@polymer/polymer/lib/utils/render-status.js';
 import { connect } from 'pwa-helpers/connect-mixin';
 import { store } from '../../../redux/store';
 var moment = require('moment');
@@ -70,6 +71,7 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
         type: String,
         value: '',
         notify: true,
+        observer: '_maxDateChanged',
       },
     };
   }
@@ -185,7 +187,7 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
 
   _initDateChanged(newInitDate, oldInitDate) {
     if (typeof oldInitDate !== 'undefined' && newInitDate !== oldInitDate) {
-      Polymer.RenderStatus.afterNextRender(this, function () {
+      afterNextRender(this, function () {
         this._unBindHandlers();
         this._unBindCellsClickHandlers();
         this._renderCalendar();
@@ -196,10 +198,19 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
   _minDateChanged(minDate) {
     if (minDate !== '') {
       this.minDateMoment = moment(minDate);
-      Polymer.RenderStatus.afterNextRender(this, function() {
+      afterNextRender(this, function() {
         this._checkDatesRange();
         this._updateAvailableDays();
       });
+    }
+  }
+  _maxDateChanged(maxDate) {
+    if (maxDate !== '') {
+      this.maxDateMoment = moment(maxDate);
+      afterNextRender(this, function() {
+          this._checkDatesRange();
+          this._updateAvailableDays();
+        });
     }
   }
 
