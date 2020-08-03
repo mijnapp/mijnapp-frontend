@@ -144,6 +144,11 @@ export default class PlaybackScreenPersonsMoving extends connect(store)(PolymerE
     }
     if (this.question.type === QUESTION_TYPE_PERSONS_MOVING && this.personsStatus === REQUEST_PERSONS_MOVING_SKIPQUESTION) {
       const self = this;
+      if (self.persons && self.persons.length === 1) {
+        bsns.push(self.persons[0].burgerservicenummer);
+        names.push(self._formatPersonInformation(self.persons[0]));
+      }
+
       store.dispatch({
         type:'DoNothing',
         action1: store.dispatch(requestPersonsMovingSkipQuestion()),
