@@ -145,6 +145,7 @@ export default class PlaybackScreenPersonsMoving extends connect(store)(PolymerE
     if (this.question.type === QUESTION_TYPE_PERSONS_MOVING && this.personsStatus === REQUEST_PERSONS_MOVING_SKIPQUESTION) {
       const self = this;
       store.dispatch({
+        type:'DoNothing',
         action1: store.dispatch(requestPersonsMovingSkipQuestion()),
         action2: store.dispatch(orderSkip(self.current)),
         action3: store.dispatch(orderNext(self.question.next)),
