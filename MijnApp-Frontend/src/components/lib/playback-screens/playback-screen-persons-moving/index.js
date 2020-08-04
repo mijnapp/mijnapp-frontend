@@ -53,10 +53,8 @@ export default class PlaybackScreenPersonsMoving extends connect(store)(PolymerE
     }
   }
 
-  selectAllPersons() {
-    for (let i = 0; i < this.persons.length; i++) {
-      this.set(`persons.${i}.selected`, true);
-    }
+  selectOnlyFirstPerson() {
+    this.set(`persons.${0}.selected`, true);
     this.saveSelectedPersons();
   }
 
@@ -157,7 +155,7 @@ export default class PlaybackScreenPersonsMoving extends connect(store)(PolymerE
       });
     }
     if (this.question.type === QUESTION_TYPE_PERSONS_MOVING && this.personsStatus === REQUEST_PERSONS_MOVING_SELECT_ALL) {
-      this.selectAllPersons();
+      this.selectOnlyFirstPerson();
     }
   }
 }
