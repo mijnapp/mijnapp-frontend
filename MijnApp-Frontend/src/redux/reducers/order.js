@@ -23,12 +23,7 @@ export const order = (state = { data: [], current: JOURNEY_START, skipList: [], 
         current: nextCurrent,
         data:
           nextCurrent < state.data.length
-            ? state.data[nextCurrent].question === action.question
             ? [...state.data]
-            : [
-              ...state.data.filter((o, i) => i < nextCurrent),
-              item(null, action),
-            ]
             : [...state.data, item(null, action)],
         order_status: ORDER_STATUS_NOT_SEND,
       };
