@@ -10,6 +10,7 @@ import { JOURNEY_START, JOURNEY_END, ORDER_STATUS_SENDING, ORDER_STATUS_SEND_OK,
 import css from './style.pcss';
 import template from './template.html';
 import '../../playback-screen-wrapper';
+import '../../../objects/maf-object-user-display';
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 var moment = require('moment');

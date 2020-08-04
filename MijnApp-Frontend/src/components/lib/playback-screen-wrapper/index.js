@@ -10,6 +10,7 @@ import css from './style.pcss';
 import template from './template.html';
 
 import '../maki/maki-button';
+import '../../objects/maf-object-user-display';
 
 export default class PlaybackScreenWrapper extends connect(store)(
   PolymerElement
