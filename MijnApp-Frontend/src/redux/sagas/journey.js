@@ -4,6 +4,7 @@ import { DELETE_QUESTION_PREFLIGHT, CHECK_PRECONDITIONS, requestCheckPreconditio
 import { journeyApi } from '../api/journey';
 import { jwtBearerToken } from '../helpers/headers';
 import { SET_QUESTION_TYPE, deleteQuestion } from '../actions/journey';
+import { requestPersonData } from '../actions/person';
 import { JOURNEY_END, QUESTION_TYPE_END } from '../../helpers/common';
 
 export function* watchDeleteQuestionPreflight() {
@@ -73,6 +74,7 @@ function* checkPreconditions() {
     } else {
       const result = yield call(journeyApi.checkPreconditions(state.journey.request_type_id, jwtBearerToken()));
       yield put(requestCheckPreconditionsSuccess(result.data));
+      yield put(requestPersonData());
     }
   } catch (e) {
     yield put(requestCheckPreconditionsFailure(e));
