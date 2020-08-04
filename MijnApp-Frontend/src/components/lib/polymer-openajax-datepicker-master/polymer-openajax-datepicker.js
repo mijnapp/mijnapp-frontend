@@ -521,11 +521,32 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
   }
 
   /**
+   * Checks if the selected date is inside the range of the min and max date. (Added by Solviteers)
+   * Prevents using the keyboard to select a date outside of the allowed range.
+   * @method _checkDateIsInsideRange
+   * @param (date) the moment date to check.
+   * @return (boolean) true if inside the range.
+   */
+  _checkDateIsInsideRange(dateToCheck) {
+    var check = true;
+    if (this.minDateMoment !== undefined) {
+      check = dateToCheck.isSameOrAfter(this.minDateMoment);
+    }
+    if (this.maxDateMoment !== undefined) {
+      check = check && dateToCheck.isSameOrBefore(this.maxDateMoment);
+    }
+    return check;
+  }
+
+  /**
     * It will set the selected date with format ISO 8601
     * @method _setSelectedDate
   * */
   _setSelectedDate(curDay) {
-    this.set('date', moment([this.year, this.month, curDay.innerText]).format('DD-MM-YYYY'));
+    var momentDate = moment([this.year, this.month, curDay.innerText]);
+    if (this._checkDateIsInsideRange(momentDate)) {
+      this.set('date', momentDate.format('DD-MM-YYYY'));
+    }
   }
 
   /**
