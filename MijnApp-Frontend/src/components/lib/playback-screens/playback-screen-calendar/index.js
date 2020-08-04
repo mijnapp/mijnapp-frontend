@@ -23,6 +23,10 @@ export default class PlaybackScreenCalendar extends connect(store)(
       daysInPastWarning: {
         type: Number,
       },
+      daysInFutureDisabled: {
+        type: Number,
+        observer: '_daysInFutureDisabledChanged',
+      },
     };
   }
 
@@ -36,8 +40,10 @@ export default class PlaybackScreenCalendar extends connect(store)(
     moment.locale('nl');
     this.currentDateText = moment().format('D MMMM YYYY');
     this.showDaysInPastWarningMessage = false;
-    var daysInFuture = 28;
-    this.datepickerMaxDate = moment().add(daysInFuture, 'days').format('YYYY-MM-DD'); // ISO 8601 format
+  }
+
+  _daysInFutureDisabledChanged() {
+    this.datepickerMaxDate = moment().add(this.daysInFutureDisabled, 'days').format('YYYY-MM-DD'); // ISO 8601 format
   }
 
   _title(question) {
