@@ -135,11 +135,17 @@ table#cal td.disabled {
 }
 
 table#cal td:hover {
-  background-color: var(--datepicker-hover-color);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 20px;
 }
 
 table#cal td.focus {
+  background-color: var(--datepicker-hover-color);
+  border-color: var(--datepicker-hover-color);
+  border-radius: 20px;
+}
+
+table#cal td.selectedDay {
   background-color: rgba(119, 211, 83, 0.32);
   border-color: #77D353;
   border-radius: 20px;
@@ -148,6 +154,7 @@ table#cal td.focus {
 table#cal td.empty:hover,
 table#cal td.disabled:hover {
   background-color: var(--datepicker-cellempty-color);
+  border: none;
   cursor: default;
 }
 

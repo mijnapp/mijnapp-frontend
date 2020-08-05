@@ -546,6 +546,13 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
     var momentDate = moment([this.year, this.month, curDay.innerText]);
     if (this._checkDateIsInsideRange(momentDate)) {
       this.set('date', momentDate.format('DD-MM-YYYY'));
+
+      if (this.$grid !== null && this.$grid.querySelector('.selectedDay') !== null) {
+        if (this.$grid.querySelector('.selectedDay').classList.length > 0) {
+          this.$grid.querySelector('.selectedDay').classList.remove('selectedDay');
+        }
+      }
+      curDay.classList.add('selectedDay');
     }
   }
 
@@ -774,7 +781,7 @@ export default class PolymerOpenajaxDatePicker extends connect(store)(PolymerEle
 
           $curDay.classList.remove('focus');
           $curDay.setAttribute('aria-selected', 'false');
-          $prevDay.classList.add('focus')
+          $prevDay.classList.add('focus');
           $prevDay.setAttribute('aria-selected', 'true');
 
           this.$grid.setAttribute('aria-activedescendant', $prevDay.getAttribute('id'));
