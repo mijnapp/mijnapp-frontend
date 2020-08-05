@@ -112,7 +112,7 @@ function* doJwtLogout401(action) {
   window.errorDialog.open();
   // Here we do a selectPageNoHistory, so that when the user logs in again, he is navigated to were he was.
   setTimeout(function() {
-    yield put(selectPageNoHistory('signin'));
+    put(selectPageNoHistory('signin'));
   }, 2000);
 
 }
