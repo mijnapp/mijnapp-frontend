@@ -57,7 +57,7 @@ export default class PlaybackScreenCalendar extends connect(store)(
     if (data) {
       var selectedDate = moment(data, 'DD-MM-YYYY');
       this.datepickerValueText = selectedDate.format('D MMMM YYYY');
-      var selectedDateWithDaysAdded = selectedDate.add(this.daysInPastWarning, 'days');
+      var selectedDateWithDaysAdded = selectedDate.add(this.daysInPastWarning + 1, 'days');
       // If the selected date + offset is before the current date, show the warning.
       this.showDaysInPastWarningMessage = selectedDateWithDaysAdded.isBefore(moment());
       if (this.showDaysInPastWarningMessage) {
