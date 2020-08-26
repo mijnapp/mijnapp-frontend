@@ -171,7 +171,7 @@ namespace MijnApp_Backend.Controllers
                 properties = new Dictionary<string, object>(),
                 organization = _webResourceBaseUri  + "organizations/" + organization.id,
                 requestType = _orderTypeBaseUri + "request_types/" + order.requestType,
-                status = "complete",
+                status = "submitted",
             };
             foreach (var question in order.data.Where(q => q.question != "END"))
             {
