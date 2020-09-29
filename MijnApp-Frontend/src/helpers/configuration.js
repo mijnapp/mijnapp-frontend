@@ -6,7 +6,7 @@ class Configuration {
   }
 
   HAS_FAKE_INLOG_ENABLED() {
-    return this._configuration.HAS_FAKE_INLOG_ENABLED;
+    return (this._configuration.HAS_FAKE_INLOG_ENABLED === 'true');
   }
   BASE_URL_API() {
     return this._configuration.BACKEND_URL;
