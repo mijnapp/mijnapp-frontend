@@ -58,26 +58,31 @@ export default class MafApp extends connect(store)(PolymerElement) {
     super();
 
     // Temporary until we have a service to retrieve the possible journeys
-    this.setFakeJourneys();
+    var self = this;
+    self.setFakeJourneys();
 
     window.onpopstate = function(event) {
       store.dispatch(selectPageNoHistory(event.state));
     };
 
-    if (window.location.pathname && window.location.pathname.length > 0) {
-      if (window.location.pathname.indexOf('digidcgifinished') > -1) {
-        this._handleDigidCgi();
-      } else if (window.location.pathname.indexOf('startjourney') > -1) {
-        this._handleStartJourney();
-      } else {
-        //const path = window.location.pathname.charAt(0) === '/' ? window.location.pathname.substring(1) : window.location.pathname;
-        //store.dispatch(selectPageNoHistory(path));
+    //Add a 500 ms timeout to make sure the setFakeJourneys is done.
+    setTimeout(function() {
+        if (window.location.pathname && window.location.pathname.length > 0) {
+          if (window.location.pathname.indexOf('digidcgifinished') > -1) {
+            self._handleDigidCgi();
+          } else if (window.location.pathname.indexOf('startjourney') > -1) {
+            self._handleStartJourney();
+          } else {
+            //const path = window.location.pathname.charAt(0) === '/' ? window.location.pathname.substring(1) : window.location.pathname;
+            //store.dispatch(selectPageNoHistory(path));
 
-        //Whatever the user navigates to, force him to start the Verhuizen journey
+            //Whatever the user navigates to, force him to start the Verhuizen journey
 
-        this._handleStartJourney('verhuizen');
-      }
-    }
+            self._handleStartJourney('verhuizen');
+          }
+        }
+      },
+      500);
   }
 
   ready() {

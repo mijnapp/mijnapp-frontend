@@ -14,7 +14,7 @@
         //nationaliteit
         public Geboorte geboorte { get; set; }
         //opschorting_bijhouding
-        //overlijden
+        public Overlijden overlijden { get; set; }
         public Verblijfplaats verblijfplaats { get; set; }
         //gezagsverhouding
         //verblijfstitel

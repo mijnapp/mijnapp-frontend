@@ -80,7 +80,8 @@ namespace MijnApp_Backend.Services
                 var person = JsonConvert.DeserializeObject<Persoon>(result);
 
                 var familyAddressDescription = person.verblijfplaats.AddressString();
-                if (personAddressDescription == familyAddressDescription)
+                var personOverleden = person.overlijden != null && person.overlijden.indicatieOverleden;
+                if (personAddressDescription == familyAddressDescription && !personOverleden)
                 {
                     personList.Add(person);
                 }
