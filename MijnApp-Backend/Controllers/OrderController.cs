@@ -30,7 +30,7 @@ namespace MijnApp_Backend.Controllers
         private const string GetRequest = "{0}requests?submitters.brp={1}";
         private const string GetAddressOnBagId = "{0}adressen?bagid={1}";
         private const string TargetOrganizationDenBosch = "1709124";
-        private const string OrganizationIdDenBosch = "4f387d0e-a2e5-44c0-9902-c31b63a8ee36"; // DEV = "1e452f11-a098-464e-8902-8fc2f1ee6acb";
+        private const string OrganizationIdDenBosch = "4f387d0e-a2e5-44c0-9902-c31b63a8ee36"; //DEV en PROD = "4f387d0e-a2e5-44c0-9902-c31b63a8ee36"
         private const string MovePersonRequestTypeId = "9d76fb58-0711-4437-acc4-9f4d9d403cdf";
         private readonly Dictionary<string, string> _cachedPersonsNames;
 

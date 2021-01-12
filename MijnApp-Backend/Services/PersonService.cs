@@ -54,7 +54,11 @@ namespace MijnApp_Backend.Services
             var familyBsns = new List<string>();
             var personWithFamily = await GetPersonWithFamilyFromApi(user);
             personList.Add(personWithFamily);
-            var personAddressDescription = personWithFamily.verblijfplaats.AddressString();
+            var personAddressDescription = "";
+            if (personWithFamily.verblijfplaats != null)
+            {
+                personAddressDescription = personWithFamily.verblijfplaats.AddressString();
+            }            
 
             //Mee verhuizers zijn eerstegraad familie: zit zijn de partners, ouders en kinderen.
             if (personWithFamily.partners != null)
@@ -79,9 +83,15 @@ namespace MijnApp_Backend.Services
                 var result = await CallApi(url);
                 var person = JsonConvert.DeserializeObject<Persoon>(result);
 
-                var familyAddressDescription = person.verblijfplaats.AddressString();
+                var familyAddressDescription = "";
+                if(person.verblijfplaats != null)
+                {
+                    familyAddressDescription = person.verblijfplaats.AddressString();
+                }                
                 var personOverleden = person.overlijden != null && person.overlijden.indicatieOverleden;
-                if (personAddressDescription == familyAddressDescription && !personOverleden)
+                if (!string.IsNullOrEmpty(familyAddressDescription) &&
+                    personAddressDescription == familyAddressDescription &&
+                    !personOverleden)
                 {
                     personList.Add(person);
                 }

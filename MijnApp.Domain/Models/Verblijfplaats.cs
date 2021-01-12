@@ -12,6 +12,10 @@
 
         public string AddressString()
         {
+            if(postcode != null)
+            {
+                return postcode.Replace(" ", "") + " " + straatnaam + " " + huisnummer + " " + huisnummertoevoeging + " " + huisletter;
+            }            
             return postcode + " " + straatnaam + " " + huisnummer + " " + huisnummertoevoeging + " " + huisletter;
         }
     }
