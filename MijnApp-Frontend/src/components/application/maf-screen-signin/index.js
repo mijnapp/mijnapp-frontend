@@ -56,6 +56,7 @@ export default class MafScreenSignin extends connect(store)(PolymerElement) {
             { bsn: '999990317', name: 'Nasier Boeddhoe' },
             { bsn: '999993793', name: 'Rodney Plieger' },
             { bsn: '999990561', name: 'Thomas Thuisloos' },
+            { bsn: '999998870', name: 'Marjolein Thuisloos' },
           ];
         },
       },
