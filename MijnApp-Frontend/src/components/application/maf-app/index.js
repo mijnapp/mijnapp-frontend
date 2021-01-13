@@ -65,24 +65,41 @@ export default class MafApp extends connect(store)(PolymerElement) {
       store.dispatch(selectPageNoHistory(event.state));
     };
 
-    //Add a 500 ms timeout to make sure the setFakeJourneys is done.
-    setTimeout(function() {
-        if (window.location.pathname && window.location.pathname.length > 0) {
-          if (window.location.pathname.indexOf('digidcgifinished') > -1) {
-            self._handleDigidCgi();
-          } else if (window.location.pathname.indexOf('startjourney') > -1) {
-            self._handleStartJourney();
+    if (window.location.pathname && window.location.pathname.length > 0) {
+      if (window.location.pathname.indexOf('digidcgifinished') > -1) {
+        self._handleDigidCgi();
+      } else if (window.location.pathname.indexOf('startjourney') > -1) {
+        self._handleStartJourney();
+      } else {
+        //const path = window.location.pathname.charAt(0) === '/' ? window.location.pathname.substring(1) : window.location.pathname;
+        //store.dispatch(selectPageNoHistory(path));
+
+        //Whatever the user navigates to, force him to start the Verhuizen journey
+
+        self._handleStartJourney('verhuizen');
+      }
+    }
+
+    setTimeout(function () {
+      if (window.location.pathname && window.location.pathname.length > 0) {
+        if (window.location.pathname.indexOf('home') > -1) {
+          if (self._isiOS()) {
+            if (store.getState() != undefined &&
+              store.getState().person != undefined &&
+              store.getState().person.data != undefined &&
+              store.getState().person.data.naam != undefined) {
+              self.setFakeJourneys();
+              self._handleStartJourney('verhuizen');
+              location.reload();
+            } else {
+              console.log('On home: client is iOS, but has a person in the state');
+            }
           } else {
-            //const path = window.location.pathname.charAt(0) === '/' ? window.location.pathname.substring(1) : window.location.pathname;
-            //store.dispatch(selectPageNoHistory(path));
-
-            //Whatever the user navigates to, force him to start the Verhuizen journey
-
-            self._handleStartJourney('verhuizen');
+            console.log('On home: client is not iOS');
           }
         }
-      },
-      500);
+      }
+    }, 3000);
   }
 
   ready() {
@@ -118,20 +135,11 @@ export default class MafApp extends connect(store)(PolymerElement) {
     }
 
     this.theme = new MakiTheme().set(theme);
+  }
 
-    // var self = this;
-
-    // const f = () => {
-    //  setTimeout(function() {
-    //    self.theme = new MakiTheme();
-    //    setTimeout(function() {
-    //      self.theme = new MakiTheme().set(theme);
-    //      f();
-    //    }, 3000);
-    //  }, 1000);
-    // };
-
-    // f();
+  _isiOS() {
+    return ['iPad Simulator', 'iPhone Simulator', 'iPod Simulator', 'iPad', 'iPhone', 'iPod'].includes(navigator.platform)
+      || (navigator.userAgent.includes("Mac") && "ontouchend" in document);
   }
 
   _handleDigidCgi() {
