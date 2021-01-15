@@ -59,7 +59,7 @@ export default class MafApp extends connect(store)(PolymerElement) {
 
     // Temporary until we have a service to retrieve the possible journeys
     var self = this;
-    //self.setFakeJourneys();
+    self.setFakeJourneys();
 
     window.onpopstate = function(event) {
       store.dispatch(selectPageNoHistory(event.state));
