@@ -59,7 +59,7 @@ export default class MafApp extends connect(store)(PolymerElement) {
 
     // Temporary until we have a service to retrieve the possible journeys
     var self = this;
-    self.setFakeJourneys();
+    //self.setFakeJourneys();
 
     window.onpopstate = function(event) {
       store.dispatch(selectPageNoHistory(event.state));
@@ -88,15 +88,17 @@ export default class MafApp extends connect(store)(PolymerElement) {
               store.getState().person != undefined &&
               store.getState().person.data != undefined &&
               store.getState().person.data.naam != undefined) {
-              self.setFakeJourneys();
-              self._handleStartJourney('verhuizen');
-              location.reload();
+              console.log('On home: client is iOS, no person in the state');
             } else {
               console.log('On home: client is iOS, but has a person in the state');
             }
           } else {
             console.log('On home: client is not iOS');
           }
+          console.log('On home: force redirect to journey');
+          self.setFakeJourneys();
+          self._handleStartJourney('verhuizen');
+          location.reload();
         }
       }
     }, 3000);
